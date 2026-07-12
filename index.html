@@ -551,7 +551,7 @@
       <div class="room-head reveal">
         <span class="kicker">Salle III · Les branches</span>
         <h2>Une maison,<br>plusieurs <em>métiers</em>.</h2>
-        <p class="intro measure">Sous le même nom, quatre métiers complémentaires.</p>
+        <p class="intro measure">Sous le même nom, plusieurs métiers complémentaires.</p>
       </div>
       <div class="branches">
         <div class="branch reveal">
@@ -562,11 +562,15 @@
           <div><h3>onlee relations</h3><div class="role label">Relationnel B2B · actif</div></div>
           <p class="b-desc">Mise en relation marques, lieux et organisateurs.</p>
         </div>
-        <div class="branch soon reveal" style="--d:.16s" aria-disabled="true">
+        <div class="branch reveal" style="--d:.16s">
+          <div><h3>onlee formation</h3><div class="role label">Formation IA · actif</div></div>
+          <p class="b-desc">Formation à l'IA pour les entreprises : audit, cas d'usage, prise en main. Finançable.</p>
+        </div>
+        <div class="branch soon reveal" style="--d:.24s" aria-disabled="true">
           <div><h3>onlee studio</h3><div class="role label">Création &amp; contenu <span class="terra">·</span> bientôt</div></div>
           <p class="b-desc">Photo, vidéo, branding et réseaux sociaux.</p>
         </div>
-        <div class="branch soon reveal" style="--d:.24s" aria-disabled="true">
+        <div class="branch soon reveal" style="--d:.32s" aria-disabled="true">
           <div><h3>votre branche&nbsp;?</h3><div class="role label">Nouvelle activité <span class="terra">·</span> bientôt</div></div>
           <p class="b-desc">Ouvert aux partenariats — écrivez-nous.</p>
         </div>
@@ -784,17 +788,19 @@
 
       { sel: '#branches .kicker', en: 'Room III · The branches' },
       { sel: '#branches h2', en: 'One house,<br>many <em>crafts</em>.' },
-      { sel: '#branches .intro', en: 'Under one name, four complementary crafts.' },
+      { sel: '#branches .intro', en: 'Under one name, several complementary crafts.' },
       { sel: '.branch .role', all: true, en: [
         'Events · active',
         'B2B relations · active',
+        'AI training · active',
         'Creation &amp; content <span class="terra">·</span> soon',
         'New activity <span class="terra">·</span> soon'
       ] },
-      { sel: '.branch h3', all: true, en: [null, null, null, 'your branch&nbsp;?'] },
+      { sel: '.branch h3', all: true, en: [null, null, null, null, 'your branch&nbsp;?'] },
       { sel: '.branch .b-desc', all: true, en: [
         'Events: art direction, line-up, staging.',
         'Connecting brands, venues and organizers.',
+        'AI training for companies: audit, use cases, hands-on. Fundable.',
         'Photo, video, branding and social media.',
         'Open to partnerships — write to us.'
       ] },
