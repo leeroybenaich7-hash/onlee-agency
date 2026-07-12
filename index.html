@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" href="assets/favicon-light.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -55,9 +55,9 @@
     --figure-bg: var(--paper);
     --logo-filter: none;
     --on-gold: #34150F;
-    --serif: 'Instrument Serif', 'Newsreader', Georgia, 'Times New Roman', serif;
-    --sans: 'Familjen Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --num: 'Newsreader', 'Instrument Serif', Georgia, serif;
+    --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --sans: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --num: 'Cormorant Garamond', Georgia, serif;
     --ease: cubic-bezier(.22,.61,.36,1);
     --maxw: 1180px;
     --gutter: clamp(28px, 6vw, 64px);
@@ -192,7 +192,7 @@
     padding-block: clamp(60px,10vw,120px); }
   .hero .kicker { margin-bottom: 30px; }
   .hero-logo { width: clamp(210px, 34vw, 360px); height: auto; margin-bottom: 34px; filter: var(--logo-filter); }
-  .hero h1 { font-weight: 300; font-size: clamp(3.4rem, 11vw, 7rem); line-height: .95; letter-spacing: -.03em; }
+  .hero h1 { font-weight: 500; font-size: clamp(3.6rem, 11vw, 7.4rem); line-height: .96; letter-spacing: -.015em; }
   .hero h1 em { font-style: italic; }
   .hero p.lede { margin-top: 30px; color: var(--ink); font-weight: 300; font-size: clamp(17px,1.6vw,19px); }
   .hero .scrollcue { margin-top: 56px; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--wall);
@@ -216,7 +216,7 @@
   .figure:hover { box-shadow: inset 0 0 0 1px var(--acc, var(--line)), 0 46px 90px -34px rgba(52,21,15,.5); }
   .figure:hover img { transform: scale(1.035); }
   .plate { background: var(--alcove); border-top: 1px solid var(--acc, var(--brass)); padding: clamp(28px,4vw,40px); }
-  .plate .no { font-family: var(--num); font-weight: 400; font-size: clamp(2.4rem,4.6vw,3.4rem); line-height: 1; color: var(--acc, var(--brass));
+  .plate .no { font-family: var(--num); font-weight: 500; font-size: clamp(2.7rem,5vw,3.8rem); line-height: 1; color: var(--acc, var(--brass));
     letter-spacing: -.01em; font-variant-numeric: tabular-nums lining-nums; }
   @supports ((-webkit-background-clip: text) or (background-clip: text)) {
     .plate .no { background: linear-gradient(155deg, var(--acc, var(--brass)), var(--acc2, var(--patine))); -webkit-background-clip: text;
@@ -271,7 +271,7 @@
 
   /* ---- manifeste ---- */
   .manifesto .wrap { max-width: 900px; }
-  .manifesto .big { font-family: var(--serif); font-weight: 300; font-size: clamp(1.7rem, 3.6vw, 3rem);
+  .manifesto .big { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.7vw, 3.1rem);
     line-height: 1.28; letter-spacing: -.01em; margin-top: 24px; }
   .manifesto .big em { font-style: italic; color: var(--brass); }
   .manifesto .sign { margin-top: 34px; }
