@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#0C0B0A" />
 <meta property="og:site_name" content="onlee agency" />
 <meta property="og:title" content="onlee agency — studio créatif" />
-<meta property="og:description" content="Du dancefloor à l'app. Une collection de créations : nao · studio pilates, onlee billetterie, prisme rh, optic city, eyes b&b." />
+<meta property="og:description" content="Du dancefloor à l'app. Une collection de créations : nao · studio pilates, onlee billetterie, prisme rh, optic city, eyes b&b, vizor." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://onlee.fr/" />
 <meta property="og:image" content="https://onlee.fr/assets/og-cover.png" />
@@ -427,7 +427,7 @@
       <div class="room-head reveal">
         <span class="kicker">Salle I · Les créations</span>
         <h2>La <em>collection</em>.</h2>
-        <p class="intro measure">Cinq projets livrés.</p>
+        <p class="intro measure">Six projets livrés.</p>
       </div>
 
       <div class="collection">
@@ -509,6 +509,22 @@
             <div class="credit">Client — Sarcelles</div>
             <p class="notice">Opticien et audioprothésiste aux Flanades. Vitrine et prise de rendez-vous.</p>
             <a class="see" href="https://eyes-bnb.vercel.app" target="_blank" rel="noopener">Voir le projet <span class="arr">→</span></a>
+          </aside>
+        </article>
+
+        <!-- 06 vizor -->
+        <article class="piece">
+          <a class="figure reveal" href="https://vizor-alpha.vercel.app" target="_blank" rel="noopener">
+            <img src="assets/work/vizor.jpg" width="1100" height="688" alt="Vizor, caisse et tiers payant pour opticiens, par onlee" loading="lazy">
+          </a>
+          <aside class="plate reveal" style="--d:.12s">
+            <div class="no">N° 06</div>
+            <div class="no-rule"></div>
+            <h3>vizor</h3>
+            <div class="meta"><span class="label">SaaS, caisse &amp; tiers payant</span><span class="label">2026</span></div>
+            <div class="credit">Produit onlee</div>
+            <p class="notice">Caisse et tiers payant pour opticiens : ventes en 10 s, mutuelles suivies, export comptable. Essai 14 jours.</p>
+            <a class="see" href="https://vizor-alpha.vercel.app" target="_blank" rel="noopener">Voir le projet <span class="arr">→</span></a>
           </aside>
         </article>
 
@@ -759,21 +775,23 @@
 
       { sel: '#creations .kicker', en: 'Room I · The work' },
       { sel: '#creations h2', en: 'The <em>collection</em>.' },
-      { sel: '#creations .intro', en: 'Five projects delivered.' },
+      { sel: '#creations .intro', en: 'Six projects delivered.' },
       { sel: '.piece .plate .meta .label:first-child', all: true, en: [
         'Showcase site, booking, trilingual',
         'Platform, 2D floor plan, payment',
         'App, time off &amp; absences',
         'Showcase site, eyewear stylist',
-        'Showcase site, optician &amp; hearing care'
+        'Showcase site, optician &amp; hearing care',
+        'SaaS, checkout &amp; insurance billing'
       ] },
-      { sel: '.piece .plate .credit', all: true, en: [null, 'onlee product', 'onlee product', null, null] },
+      { sel: '.piece .plate .credit', all: true, en: [null, 'onlee product', 'onlee product', null, null, 'onlee product'] },
       { sel: '.piece .plate .notice', all: true, en: [
         'A Pilates studio in Herzliya. Online booking, trilingual (right-to-left Hebrew included).',
         'Ticketing for clubs: 2D floor plan, QR tickets, revenue dashboard.',
         'Time off and absences: employee space + management dashboard, in real time.',
         'Eyewear stylist at Les Flanades. Showcase and appointment booking.',
-        'Optician and hearing care at Les Flanades. Showcase and appointment booking.'
+        'Optician and hearing care at Les Flanades. Showcase and appointment booking.',
+        'Checkout and insurance billing for opticians: sales in 10s, tracked coverage, accountant export. 14-day trial.'
       ] },
       { sel: '.piece .plate .see', all: true, en: 'View the project <span class="arr">→</span>' },
 
