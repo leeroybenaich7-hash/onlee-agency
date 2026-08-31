@@ -189,7 +189,13 @@
 
   /* ---- hero ---- */
   .hero { min-height: 92vh; display: flex; flex-direction: column; justify-content: center;
-    padding-block: clamp(60px,10vw,120px); }
+    padding-block: clamp(60px,10vw,120px); position: relative; overflow: hidden; }
+  .hero .wrap { position: relative; z-index: 2; }
+  .hero-live { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; pointer-events: none; }
+  .hero-veil { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      radial-gradient(120% 92% at 28% 52%, rgba(12,11,10,.74) 0%, rgba(12,11,10,.32) 46%, rgba(12,11,10,0) 76%),
+      linear-gradient(180deg, rgba(12,11,10,.55) 0%, rgba(12,11,10,0) 24%, rgba(12,11,10,0) 76%, rgba(12,11,10,.9) 100%); }
   .hero .kicker { margin-bottom: 30px; }
   .hero-logo { width: clamp(210px, 34vw, 360px); height: auto; margin-bottom: 34px; filter: var(--logo-filter); }
   .hero h1 { font-weight: 500; font-size: clamp(3.6rem, 11vw, 7.4rem); line-height: .96; letter-spacing: -.015em; }
@@ -391,6 +397,8 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <canvas class="hero-live" aria-hidden="true"></canvas>
+    <div class="hero-veil" aria-hidden="true"></div>
     <div class="wrap">
       <img src="assets/onlee-logo-ink.png" alt="onlee" class="hero-logo reveal" style="--d:0s">
       <span class="kicker reveal" style="--d:.12s">Studio créatif <span class="terra">·</span> Paris</span>
@@ -889,6 +897,72 @@
 
     const btn = document.querySelector('.lang');
     if (btn) btn.addEventListener('click', () => apply(document.documentElement.lang === 'en' ? 'fr' : 'en'));
+  })();
+
+  // ===== hero vivant : lumière dorée générative (WebGL) =====
+  (function () {
+    var canvas = document.querySelector('.hero-live');
+    if (!canvas) return;
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var gl = canvas.getContext('webgl', { alpha: false, antialias: false, depth: false })
+          || canvas.getContext('experimental-webgl');
+    if (!gl) return; // pas de WebGL -> le hero reste noir, aucun souci
+
+    var VERT = 'attribute vec2 p; void main(){ gl_Position = vec4(p,0.0,1.0); }';
+    var FRAG = [
+      'precision highp float;',
+      'uniform vec2 uRes; uniform float uTime;',
+      'float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)))*43758.5453123); }',
+      'float noise(vec2 p){ vec2 i=floor(p), f=fract(p); vec2 u=f*f*(3.0-2.0*f);',
+      '  return mix(mix(hash(i),hash(i+vec2(1.0,0.0)),u.x), mix(hash(i+vec2(0.0,1.0)),hash(i+vec2(1.0,1.0)),u.x), u.y); }',
+      'float fbm(vec2 p){ float v=0.0,a=0.5; for(int i=0;i<4;i++){ v+=a*noise(p); p=p*2.0+11.3; a*=0.5; } return v; }',
+      'void main(){',
+      '  vec2 uv = gl_FragCoord.xy/uRes.xy;',
+      '  vec2 p = vec2(uv.x*(uRes.x/uRes.y), uv.y);',
+      '  float t = uTime*0.045;',
+      '  vec2 q = vec2(fbm(p*1.4 + vec2(0.0, t)), fbm(p*1.4 + vec2(5.2, -t*0.8)));',
+      '  float f = fbm(p*1.4 + 1.8*q + vec2(t*0.5, -t*0.35));',
+      '  float wisp = smoothstep(0.46, 0.90, f);',
+      '  vec3 base = vec3(0.047,0.043,0.039);',
+      '  vec3 gold = vec3(0.79,0.62,0.28);',
+      '  vec3 goldHi = vec3(0.95,0.83,0.55);',
+      '  vec3 col = base + mix(gold, goldHi, wisp)*wisp*0.72;',
+      '  float vig = smoothstep(1.30,0.30, length(uv-0.5));',
+      '  col *= 0.6 + 0.4*vig;',
+      '  gl_FragColor = vec4(col, 1.0);',
+      '}'
+    ].join('\n');
+
+    function sh(type, src){ var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s);
+      if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){ return null; } return s; }
+    var vs=sh(gl.VERTEX_SHADER,VERT), fs=sh(gl.FRAGMENT_SHADER,FRAG);
+    if(!vs||!fs) return;
+    var prog=gl.createProgram(); gl.attachShader(prog,vs); gl.attachShader(prog,fs); gl.linkProgram(prog);
+    if(!gl.getProgramParameter(prog,gl.LINK_STATUS)) return;
+    gl.useProgram(prog);
+    var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+    var aP=gl.getAttribLocation(prog,'p'); gl.enableVertexAttribArray(aP); gl.vertexAttribPointer(aP,2,gl.FLOAT,false,0,0);
+    var uRes=gl.getUniformLocation(prog,'uRes'), uTime=gl.getUniformLocation(prog,'uTime');
+
+    function fit(){ var r=canvas.getBoundingClientRect(); var dpr=Math.min(window.devicePixelRatio||1, 1.6);
+      canvas.width=Math.max(1,Math.round(r.width*dpr)); canvas.height=Math.max(1,Math.round(r.height*dpr));
+      gl.viewport(0,0,canvas.width,canvas.height); gl.uniform2f(uRes,canvas.width,canvas.height); }
+    fit();
+
+    var raf=0, running=false, t0=null, visible=true;
+    function frame(now){ if(!running) return; if(t0===null) t0=now; gl.uniform1f(uTime,(now-t0)/1000);
+      gl.drawArrays(gl.TRIANGLES,0,3); raf=requestAnimationFrame(frame); }
+    function start(){ if(running||reduce) return; running=true; t0=null; raf=requestAnimationFrame(frame); }
+    function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=0; }
+
+    gl.uniform1f(uTime, 0.0); gl.drawArrays(gl.TRIANGLES,0,3); // 1er rendu (statique aussi en reduced-motion)
+
+    var rt; addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(function(){ fit(); if(!running){ gl.drawArrays(gl.TRIANGLES,0,3); } }, 150); });
+    document.addEventListener('visibilitychange', function(){ if(document.hidden) stop(); else if(visible) start(); });
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ es.forEach(function(e){ visible=e.isIntersecting; if(visible&&!document.hidden) start(); else stop(); }); }, {threshold:0.01}).observe(canvas);
+    } else { start(); }
   })();
 </script>
 
