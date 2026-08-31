@@ -218,9 +218,11 @@
   .figure { background: var(--figure-bg); padding: 9px; overflow: hidden;
     box-shadow: inset 0 0 0 1px var(--line), 0 24px 55px -30px rgba(52,21,15,.4);
     transition: box-shadow .6s var(--ease); }
-  .figure img { width: 100%; height: auto; transition: transform 1.2s ease-out; }
+  .figure img { width: 100%; height: auto; }
+  .night .figure img { transition: transform 1.2s ease-out; }
+  .piece .figure img { transform: scale(1.1); will-change: transform; }
   .figure:hover { box-shadow: inset 0 0 0 1px var(--acc, var(--line)), 0 46px 90px -34px rgba(52,21,15,.5); }
-  .figure:hover img { transform: scale(1.035); }
+  .night .figure:hover img { transform: scale(1.045); }
   .plate { background: var(--alcove); border-top: 1px solid var(--acc, var(--brass)); padding: clamp(28px,4vw,40px); }
   .plate .no { font-family: var(--num); font-weight: 500; font-size: clamp(2.7rem,5vw,3.8rem); line-height: 1; color: var(--acc, var(--brass));
     letter-spacing: -.01em; font-variant-numeric: tabular-nums lining-nums; }
@@ -324,8 +326,9 @@
   .wa svg { width: 24px; height: 24px; }
 
   /* ---- reveal ---- */
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
-  .reveal.in { opacity: 1; transform: none; }
+  .reveal { opacity: 0; transform: translateY(44px); filter: blur(7px);
+    transition: opacity 1.15s var(--ease), transform 1.15s var(--ease), filter 1.15s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; filter: none; }
   .reveal[style*="--d"] { transition-delay: var(--d); }
 
   /* ---- focus & motion ---- */
@@ -334,8 +337,9 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
-    .reveal { opacity: 1; transform: none; }
+    .reveal { opacity: 1; transform: none; filter: none; }
     .figure:hover img { transform: none; }
+    .parallax { transform: none !important; }
     .plate .no { opacity: 1 !important; transform: none !important; }
     .plate .no-rule { transform: none !important; }
   }
@@ -720,6 +724,33 @@
 
   // séquence d'entrée du hero (au chargement)
   requestAnimationFrame(() => heroReveals.forEach((el) => el.classList.add('in')));
+
+  // parallaxe cinématique (scroll natif, rAF) — profondeur des visuels + dérive du hero
+  (function () {
+    if (PRM) return;
+    var imgs = [].slice.call(document.querySelectorAll('.piece .figure img'));
+    var heroWrap = document.querySelector('.hero .wrap');
+    var vh = innerHeight, tick = false;
+    function apply() {
+      tick = false;
+      var y = scrollY;
+      if (heroWrap && y < vh) {
+        heroWrap.style.transform = 'translate3d(0,' + (y * 0.22).toFixed(1) + 'px,0)';
+        heroWrap.style.opacity = Math.max(0, 1 - y / (vh * 0.72)).toFixed(3);
+      }
+      for (var i = 0; i < imgs.length; i++) {
+        var im = imgs[i], r = im.getBoundingClientRect();
+        if (r.bottom < -120 || r.top > vh + 120) continue;
+        var d = (r.top + r.height / 2 - vh / 2) / vh;
+        d = d < -1 ? -1 : d > 1 ? 1 : d;
+        im.style.transform = 'translate3d(0,' + (-d * r.height * 0.04).toFixed(1) + 'px,0) scale(1.1)';
+      }
+    }
+    function onScroll() { if (!tick) { tick = true; requestAnimationFrame(apply); } }
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', function () { vh = innerHeight; onScroll(); }, { passive: true });
+    apply();
+  })();
 
   // scroll-spy : lien de nav actif
   const spy = new IntersectionObserver((es) => {
