@@ -399,7 +399,9 @@
 
   @media (max-width: 820px) {
     nav.links { display: none; }
-    .menu-write { display: inline-flex; }
+    .menu-write { display: inline-flex; white-space: nowrap; letter-spacing: .08em; }
+    .brand span { display: none; }
+    .bar-right { gap: 16px; }
   }
   @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
 </style>
