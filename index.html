@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="kesef">
+<html lang="fr" data-theme="apple">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
 
 <link rel="canonical" href="https://onlee.fr/" />
 <meta name="robots" content="index, follow" />
-<meta name="theme-color" content="#F5F3EE" />
+<meta name="theme-color" content="#ffffff" />
 <meta property="og:site_name" content="onlee agency" />
 <meta property="og:title" content="onlee agency — studio créatif" />
 <meta property="og:description" content="Du dancefloor à l'app. Une collection de créations : nao · studio pilates, onlee billetterie, prisme rh, optic city, eyes b&b, vizor." />
@@ -124,6 +124,15 @@
     --logo-filter:none;
     --pill-solid-bg:#16150F; --pill-solid-fg:#FAF9F6;
   }
+  /* APPLE — blanc, accent bleu, très aéré (look apple.com) */
+  html[data-theme="apple"] {
+    --paper:#ffffff; --alcove:#f5f5f7; --ink:#1d1d1f; --wall:#6e6e73;
+    --brass:#0066cc; --patine:#0066cc; --terra:#0066cc; --on-gold:#ffffff;
+    --header-bg:rgba(255,255,255,.72); --figure-bg:#f5f5f7;
+    --select:rgba(0,102,204,.16); --line:rgba(0,0,0,.11);
+    --logo-filter:none;
+    --pill-solid-bg:#0071e3; --pill-solid-fg:#ffffff;
+  }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -153,18 +162,18 @@
   #manifeste { position:relative; overflow:hidden; }
   #manifeste::before { content:""; position:absolute; right:-4%; bottom:-40%; width:min(155%,1500px);
     aspect-ratio:969/504; background:url(assets/onlee-logo.png) no-repeat right bottom / contain;
-    filter:sepia(.45) saturate(1.5) brightness(1.06); opacity:.08; pointer-events:none; z-index:0; }
+    filter:grayscale(1) brightness(.4); opacity:.04; pointer-events:none; z-index:0; }
   .manifesto .wrap { position:relative; z-index:1; }
   @media (max-width:640px) { #manifeste::before { display:none; } }
 
-  h1, h2, h3, .serif { font-family: var(--serif); font-optical-sizing: auto; font-weight: 400; }
+  h1, h2, h3, .serif { font-family: var(--serif); font-optical-sizing: auto; font-weight: 600; }
 
   /* ---- cartel / labels ---- */
-  .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .09em; text-transform: uppercase;
-    font-weight: 500; color: var(--brass); display: inline-flex; align-items: center; gap: 12px; }
-  .kicker::before { content: ""; width: 24px; height: 1px; background: var(--brass); opacity: .7; }
-  .label { font-family: var(--mono); font-size: 11.5px; letter-spacing: .05em; text-transform: uppercase;
-    font-weight: 500; color: var(--wall); }
+  .kicker { font-family: var(--sans); font-size: 14px; letter-spacing: 0; text-transform: none;
+    font-weight: 600; color: var(--brass); display: inline-flex; align-items: center; gap: 0; }
+  .kicker::before { display: none; }
+  .label { font-family: var(--sans); font-size: 11.5px; letter-spacing: .05em; text-transform: uppercase;
+    font-weight: 600; color: var(--wall); }
   .terra { color: var(--terra); }
 
   /* ---- header ---- */
@@ -172,13 +181,13 @@
   header .bar { display: flex; align-items: center; justify-content: space-between;
     padding: clamp(18px,2.2vw,26px) var(--gutter); border-bottom: 1px solid transparent;
     transition: padding .35s var(--ease), border-color .35s var(--ease); }
-  header.is-scrolled .bar { padding-top: 12px; padding-bottom: 12px; border-bottom-color: rgba(133,67,30,.4); }
+  header.is-scrolled .bar { padding-top: 12px; padding-bottom: 12px; border-bottom-color: var(--line); }
   .brand { display: inline-flex; align-items: baseline; gap: 10px; }
   .brand img { height: 26px; width: auto; filter: var(--logo-filter); transition: height .35s var(--ease), filter .3s var(--ease); }
   header.is-scrolled .brand img { height: 22px; }
   .brand span { font-size: 10.5px; letter-spacing: .34em; text-transform: uppercase; color: var(--wall); }
   nav.links { display: flex; gap: 30px; }
-  nav.links a { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--wall);
+  nav.links a { font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--wall);
     position: relative; padding-bottom: 4px; transition: color .3s var(--ease); }
   nav.links a:hover { color: var(--ink); }
   nav.links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
@@ -196,12 +205,10 @@
   .lang:hover [data-lang]:not(.on) { color: var(--ink); }
 
   /* ---- hero ---- */
-  .hero { min-height: 96vh; display: flex; flex-direction: column; justify-content: center;
-    padding-block: clamp(90px,12vw,150px); position: relative; overflow: hidden; text-align: center;
-    background: #141210;
-    --ink:#F4EFE7; --wall:#B6A996; --brass:#E0A45C; --terra:#E0A45C; --line:rgba(244,239,231,.16);
-    --pill-solid-bg:#FAF6EE; --pill-solid-fg:#141210;
-    --logo-filter: invert(1) sepia(.28) saturate(1.2) brightness(1.05); }
+  .hero { min-height: 92vh; display: flex; flex-direction: column; justify-content: center;
+    padding-block: clamp(96px,13vw,170px); position: relative; overflow: hidden; text-align: center;
+    color: var(--ink);
+    background: radial-gradient(130% 90% at 50% -10%, #ffffff 0%, #f5f5f7 55%, #ececef 100%); }
   .hero .wrap { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
   .hero-live { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; pointer-events: none; }
   .hero-veil { position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -212,7 +219,7 @@
   .hero .kicker::before { display: none; }
   .hero-logo { width: clamp(148px, 22vw, 232px); height: auto; margin-bottom: 30px; filter: var(--logo-filter); }
   .hero h1 { font-weight: 600; font-size: clamp(3.4rem, 10vw, 7.2rem); line-height: .98; letter-spacing: -.035em; max-width: 15ch; }
-  .hero h1 em { font-style: normal; }
+  .hero h1 em { font-style: normal; color: var(--brass); }
   .hero h1 .dot { color: var(--brass); }
   .hero p.lede { margin: 26px auto 0; color: var(--wall); font-weight: 400; font-size: clamp(17px,1.7vw,20px); max-width: 46ch; line-height: 1.5; }
   .hero-cta { margin-top: 42px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
@@ -236,17 +243,17 @@
   /* ---- pieces (cartel de musée) ---- */
   .collection { display: flex; flex-direction: column; gap: clamp(96px, 14vw, 168px); }
   .piece { display: grid; grid-template-columns: 1fr; gap: 34px; align-items: center; }
-  .figure { background: var(--figure-bg); padding: 9px; overflow: hidden;
-    box-shadow: inset 0 0 0 1px var(--line), 0 24px 55px -30px rgba(52,21,15,.4);
+  .figure { background: var(--figure-bg); padding: 8px; overflow: hidden; border-radius: 20px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 20px 46px -26px rgba(0,0,0,.30);
     transition: box-shadow .6s var(--ease); }
-  .figure img { width: 100%; height: auto; }
+  .figure img { width: 100%; height: auto; border-radius: 13px; }
   .night .figure img { transition: transform 1.2s ease-out; }
   .piece .figure img { transform: scale(1.1); will-change: transform; }
-  .figure:hover { box-shadow: inset 0 0 0 1px var(--acc, var(--line)), 0 46px 90px -34px rgba(52,21,15,.5); }
+  .figure:hover { box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 34px 70px -30px rgba(0,0,0,.36); }
   .night .figure:hover img { transform: scale(1.045); }
-  .plate { background: var(--alcove); border-top: 1px solid var(--acc, var(--brass)); padding: clamp(28px,4vw,40px); }
-  .plate .no { font-family: var(--num); font-weight: 500; font-size: clamp(2.7rem,5vw,3.8rem); line-height: 1; color: var(--acc, var(--brass));
-    letter-spacing: -.01em; font-variant-numeric: tabular-nums lining-nums; }
+  .plate { background: var(--alcove); border-radius: 20px; padding: clamp(28px,4vw,40px); }
+  .plate .no { font-family: var(--sans); font-weight: 600; font-size: clamp(2.7rem,5vw,3.8rem); line-height: 1; color: var(--acc, var(--brass));
+    letter-spacing: -.02em; font-variant-numeric: tabular-nums lining-nums; }
   @supports ((-webkit-background-clip: text) or (background-clip: text)) {
     .plate .no { background: linear-gradient(155deg, var(--acc, var(--brass)), var(--acc2, var(--patine))); -webkit-background-clip: text;
       background-clip: text; -webkit-text-fill-color: transparent; }
@@ -292,7 +299,7 @@
   .branch { display: grid; grid-template-columns: 1fr; gap: 4px 40px; padding: clamp(26px,3.4vw,38px) 0;
     border-top: 1px solid var(--line); }
   .branch:last-child { border-bottom: 1px solid var(--line); }
-  .branch h3 { font-weight: 400; font-size: clamp(1.7rem,3.4vw,2.6rem); line-height: 1; letter-spacing: -.01em; }
+  .branch h3 { font-weight: 600; font-size: clamp(1.7rem,3.4vw,2.6rem); line-height: 1; letter-spacing: -.025em; }
   .branch.soon h3 { color: var(--wall); }
   .branch .role { margin-top: 8px; }
   .branch .b-desc { color: var(--wall); font-size: 15.5px; }
@@ -322,7 +329,7 @@
   .faq-item .ans { color: var(--ink); font-weight: 300; font-size: 16px; padding: 0 40px 30px 0; max-width: 62ch; }
 
   /* ---- contact ---- */
-  .contact h2 { font-weight: 400; font-size: clamp(2.6rem,7vw,5rem); line-height: .98; letter-spacing: -.02em; margin: 20px 0 24px; }
+  .contact h2 { font-weight: 600; font-size: clamp(2.6rem,7vw,5rem); line-height: .98; letter-spacing: -.035em; margin: 20px 0 24px; }
   .contact .exits { display: flex; flex-wrap: wrap; gap: 14px 44px; margin-top: 40px; }
   .exit { display: inline-flex; align-items: baseline; gap: 12px; }
   .exit .x-label { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--wall); }
@@ -422,8 +429,6 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <canvas class="hero-live" aria-hidden="true"></canvas>
-    <div class="hero-veil" aria-hidden="true"></div>
     <div class="wrap">
       <img src="assets/onlee-logo-ink.png" alt="onlee" class="hero-logo reveal" style="--d:0s">
       <span class="kicker reveal" style="--d:.12s">Studio créatif <span class="terra">·</span> Paris</span>
