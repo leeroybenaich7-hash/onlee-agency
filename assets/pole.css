@@ -28,8 +28,8 @@ header { position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(-
   border-bottom:1px solid transparent; transition:border-color .35s var(--ease); }
 header.is-scrolled { border-bottom-color:var(--line); }
 header .bar { display:flex; align-items:center; justify-content:space-between; padding:clamp(14px,2vw,20px) var(--gutter); }
-.brand { display:inline-flex; align-items:baseline; gap:11px; }
-.brand img { height:26px; width:auto; }
+.brand { display:inline-flex; align-items:center; gap:13px; }
+.brand img { height:38px; width:auto; }
 .brand span { font-size:10.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); }
 .back { font-size:13.5px; color:var(--muted); transition:color .3s var(--ease); }
 .back:hover { color:var(--ink); }
@@ -59,10 +59,14 @@ header .pill { padding:10px 20px; font-size:13.5px; }
 .presta .go { margin-top:18px; display:inline-flex; align-items:center; gap:8px; font-size:13px; letter-spacing:.1em;
   text-transform:uppercase; font-weight:600; color:var(--ink); border-bottom:2px solid var(--gold); padding-bottom:5px; transition:gap .3s var(--ease), color .3s var(--ease); }
 .presta .go:hover { gap:14px; color:var(--gold); }
-.presta .media { border-radius:14px; overflow:hidden; border:1px solid var(--line-2); box-shadow:0 24px 50px -34px rgba(0,0,0,.22); }
+.presta .media { position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line-2);
+  box-shadow:0 28px 56px -32px rgba(0,0,0,.28); background:var(--card); padding-top:32px; }
+.presta .media::before { content:""; position:absolute; top:0; left:0; right:0; height:32px; background:var(--paper-2); border-bottom:1px solid var(--line); }
+.presta .media::after { content:""; position:absolute; top:12px; left:16px; width:8px; height:8px; border-radius:50%; background:rgba(42,33,26,.22); box-shadow:15px 0 0 rgba(42,33,26,.22), 30px 0 0 rgba(42,33,26,.22); }
+.presta .media img { display:block; width:100%; height:auto; }
 .presta .soon { display:inline-block; margin-top:16px; font-size:12.5px; letter-spacing:.06em; color:var(--muted); border:1px solid var(--line-2); border-radius:999px; padding:6px 13px; }
 @media (min-width:860px) {
-  .presta .row { grid-template-columns:64px 1.1fr .9fr; align-items:center; }
+  .presta .row { grid-template-columns:54px 1fr 1.2fr; align-items:center; }
   .presta.no-media .row { grid-template-columns:64px 1fr; }
 }
 
