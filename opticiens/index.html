@@ -124,6 +124,7 @@
 </a>
 
 <script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   document.getElementById('year').textContent = new Date().getFullYear();
   const head=document.getElementById('head'); let t=false;
   addEventListener('scroll',()=>{ if(t)return; t=true; requestAnimationFrame(()=>{ head.classList.toggle('is-scrolled',scrollY>30); t=false; }); });

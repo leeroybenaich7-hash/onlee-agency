@@ -503,6 +503,7 @@
 
 <script>
   document.documentElement.classList.add('js');
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   const PRM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.getElementById('year').textContent = new Date().getFullYear();
 
