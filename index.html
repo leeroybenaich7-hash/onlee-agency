@@ -213,6 +213,9 @@
   .branch h3 { font-size:clamp(1.6rem,3vw,2.3rem); line-height:1; }
   .branch .role { margin-top:8px; }
   .branch .b-desc { color:var(--muted); font-size:15.5px; }
+  a.branch-link { transition:border-color .3s var(--ease); }
+  a.branch-link:hover h3 { color:var(--gold); }
+  a.branch-link:hover .role { color:var(--ink); }
   @media (min-width:820px) { .branch { grid-template-columns:1fr 1fr; align-items:baseline; } }
 
   /* ---- manifeste ---- */
@@ -418,6 +421,10 @@
           <div><h3>onlee studio</h3><div class="role label">Produits &amp; logiciels · actif</div></div>
           <p class="b-desc">Conception et édition de nos propres apps et SaaS.</p>
         </div>
+        <a class="branch branch-link reveal" href="evenements/" style="--d:.04s">
+          <div><h3>onlee événements</h3><div class="role label">Réceptions &amp; célébrations · voir →</div></div>
+          <p class="b-desc">Faire-part, Mazal Box, logos &amp; design pour bar-mitsvas, mariages et réceptions.</p>
+        </a>
         <div class="branch reveal" style="--d:.08s">
           <div><h3>onlee crew</h3><div class="role label">Événementiel · actif</div></div>
           <p class="b-desc">Soirées : direction artistique, line-up, scénographie.</p>
