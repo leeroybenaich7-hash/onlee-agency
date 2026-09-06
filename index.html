@@ -129,6 +129,18 @@
   .pill-ghost:hover { transform:translateY(-2px); border-color:var(--ink); }
   header .menu-write.pill { padding:10px 20px; font-size:13.5px; }
 
+  /* ---- burger + menu mobile ---- */
+  .burger { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; padding:9px; background:none; border:0; cursor:pointer; }
+  .burger span { display:block; height:2px; width:100%; background:var(--ink); border-radius:2px; transition:transform .3s var(--ease), opacity .25s var(--ease); }
+  .burger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity:0; }
+  .burger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  .mobile-nav { display:none; flex-direction:column; padding:6px var(--gutter) 22px; background:color-mix(in srgb, var(--paper) 97%, transparent); border-top:1px solid var(--line); }
+  .mobile-nav:not([hidden]) { display:flex; }
+  .mobile-nav a { padding:15px 2px; font-size:19px; font-family:var(--serif); color:var(--ink); border-bottom:1px solid var(--line); }
+  .mobile-nav a.mnav-cta { margin-top:16px; border:0; background:var(--gold); color:var(--on-accent); text-align:center; border-radius:999px;
+    font-family:var(--sans); font-size:15px; font-weight:600; padding:14px; }
+
   /* ---- hero ---- */
   .hero { padding-top:clamp(48px,8vw,96px); padding-bottom:clamp(48px,7vw,96px); overflow:hidden; }
   .hero .eyebrow { margin-bottom:26px; }
@@ -138,6 +150,14 @@
   .hero-cta { margin-top:38px; display:flex; gap:13px; flex-wrap:wrap; }
   .hero .trust { margin-top:26px; font-size:13.5px; color:var(--muted); letter-spacing:.01em; }
   .hero .trust b { color:var(--ink); font-weight:600; }
+
+  /* ---- bande clients (preuve sociale, vrais clients) ---- */
+  .clients { padding-block:clamp(26px,3.6vw,42px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .clients-inner { display:flex; align-items:center; gap:clamp(16px,3vw,40px); flex-wrap:wrap; }
+  .clients-lead { font-size:13px; color:var(--muted); }
+  .clients-list { list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:clamp(14px,3vw,36px); margin:0; padding:0; }
+  .clients-list li { font-family:var(--serif); font-size:clamp(1rem,1.7vw,1.35rem); color:var(--ink); opacity:.7; letter-spacing:-.01em; transition:opacity .3s var(--ease); }
+  .clients-list li:hover { opacity:1; }
 
   /* ---- hero : portrait fondateur ---- */
   .hero-grid { display:block; }
@@ -403,7 +423,8 @@
 
   @media (max-width:860px) {
     nav.links { display:none; }
-    .menu-write { display:inline-flex; }
+    .menu-write { display:none; }
+    .burger { display:flex; }
     .brand span { display:none; }
     .proof-row { grid-template-columns:1fr; gap:0; }
     .proof + .proof { border-left:0; padding-left:0; border-top:1px solid var(--line); padding-top:18px; margin-top:18px; }
@@ -426,11 +447,19 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="bar-right">
-      <a href="#poles" class="nav-poles-mob">Pôles</a>
       <button class="lang" type="button" aria-label="Language / Langue"><span data-lang="fr">FR</span><span class="sep">·</span><span data-lang="en">EN</span></button>
       <a href="#contact" class="menu-write pill pill-solid">Nous écrire</a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <nav class="mobile-nav" id="mobileNav" hidden>
+    <a href="#poles">Pôles</a>
+    <a href="#studio">Atelier</a>
+    <a href="#maison">Maison</a>
+    <a href="#manifeste">Manifeste</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="mnav-cta">Nous écrire</a>
+  </nav>
 </header>
 
 <main>
@@ -454,12 +483,26 @@
     </div>
   </section>
 
+  <!-- CLIENTS (preuve sociale) -->
+  <section class="clients reveal" aria-label="Ils utilisent nos outils">
+    <div class="wrap">
+      <div class="clients-inner">
+        <span class="clients-lead">Déjà à leurs côtés —</span>
+        <ul class="clients-list">
+          <li>Optic City</li>
+          <li>Eyes B&amp;B</li>
+          <li>Jofre Tapis</li>
+          <li>nao · pilates</li>
+          <li>Brandon Coaching</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <!-- AVIS CLIENTS -->
   <section id="avis" class="reviews alt">
     <div class="wrap">
       <div class="rev-head reveal">
-        <span class="eyebrow">Ils travaillent avec onlee</span>
         <h2>Ils <em>recommandent</em> onlee.</h2>
         <div class="rev-summary"><span class="rev-summary-stars">★★★★★</span> <b>5,0</b> <span>· 10 avis clients</span></div>
       </div>
@@ -617,6 +660,21 @@
 
   // avis qui défilent : on duplique le contenu de chaque rangée pour une boucle sans couture
   document.querySelectorAll('.rev-row').forEach(function (r) { r.innerHTML += r.innerHTML; });
+
+  // menu mobile (burger)
+  (function () {
+    const burger = document.querySelector('.burger');
+    const mnav = document.getElementById('mobileNav');
+    if (!burger || !mnav) return;
+    function setOpen(open) {
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mnav.hidden = !open;
+    }
+    burger.addEventListener('click', () => setOpen(mnav.hidden));
+    mnav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  })();
 
   // pôles : dépliage 3D déclenché au scroll (quand la section entre à l'écran)
   const pmSlots = document.querySelectorAll('#polesStage .pm-slot');
