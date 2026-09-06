@@ -114,6 +114,15 @@ header .pill { padding:10px 20px; font-size:13.5px; }
 .feat-list .f h3 { font-size:1.35rem; margin-bottom:6px; }
 .feat-list .f p { color:var(--muted); font-size:15.5px; max-width:46ch; }
 
+/* ---- ajustements mobile ---- */
+@media (max-width:560px) {
+  .brand span { display:none; }            /* on masque le label du pôle (le logo suffit) */
+  header .back { display:none; }           /* le logo ramène déjà à l'accueil */
+  .bar-right { gap:12px; }
+  header .pill { padding:9px 15px; font-size:12.5px; }
+  .cover-frame { aspect-ratio:16/10; }     /* bandeau photo un peu plus haut sur petit écran */
+}
+
 .real { background:var(--paper-2); }
 .real h2 { font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.04; margin-bottom:16px; }
 .real p { color:var(--muted); max-width:56ch; font-size:17px; }
