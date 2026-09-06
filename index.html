@@ -270,21 +270,21 @@
   .rev-foot a { color:var(--gold); font-weight:600; border-bottom:1px solid transparent; transition:border-color .3s var(--ease); }
   .rev-foot a:hover { border-bottom-color:var(--gold); }
 
-  /* avis qui défilent (2 rangées, pause au survol) */
-  .rev-marquee { display:flex; flex-direction:column; gap:clamp(14px,1.6vw,18px); margin-top:clamp(6px,1.4vw,16px); overflow:hidden; max-width:100%;
+  /* avis : défilement auto continu + glissable au doigt / à la souris */
+  .rev-marquee { display:flex; flex-direction:column; gap:clamp(14px,1.6vw,18px); margin-top:clamp(6px,1.4vw,16px);
+    overflow-x:auto; overflow-y:hidden; max-width:100%; cursor:grab; -webkit-overflow-scrolling:touch; touch-action:pan-x;
+    scrollbar-width:none; overscroll-behavior-x:contain;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
             mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); }
-  .rev-row { display:flex; gap:clamp(14px,1.6vw,18px); width:max-content; align-items:stretch; will-change:transform; }
-  .rev-row-a { animation:rev-scroll 72s linear infinite; }
-  .rev-row-b { animation:rev-scroll 90s linear infinite reverse; }
-  /* les avis défilent en continu, ne s'arrêtent jamais (même au survol) */
-  @keyframes rev-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .rev-marquee::-webkit-scrollbar { display:none; }
+  .rev-marquee.dragging { cursor:grabbing; scroll-behavior:auto; }
+  .rev-row { display:flex; gap:clamp(14px,1.6vw,18px); width:max-content; align-items:stretch; user-select:none; -webkit-user-select:none; }
   .rev-marquee .rev { flex:0 0 clamp(280px,26vw,338px); width:clamp(280px,26vw,338px); }
+  .rev-marquee .rev * { -webkit-user-drag:none; }
   .rev-util { margin-top:auto; padding-top:13px; border-top:1px solid var(--line); display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:500; color:var(--muted); }
   .rev-util svg { width:15px; height:15px; }
   @media (prefers-reduced-motion: reduce) {
-    .rev-row { animation:none; }
-    .rev-marquee { overflow-x:auto; -webkit-mask-image:none; mask-image:none; }
+    .rev-marquee { -webkit-mask-image:none; mask-image:none; }
   }
 
   /* ---- bandeau preuve ---- */
@@ -813,6 +813,57 @@
 
   // avis qui défilent : on duplique le contenu de chaque rangée pour une boucle sans couture
   document.querySelectorAll('.rev-row, .clients-track').forEach(function (r) { r.innerHTML += r.innerHTML; });
+
+  /* Avis : défile tout seul en continu + on peut l'attraper au doigt (tactile) ou à la souris (glisser) */
+  (function () {
+    var m = document.querySelector('.rev-marquee');
+    if (!m) return;
+    var PRM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var speed = 0.55, half = 0, paused = false, dragging = false, startX = 0, startScroll = 0, resumeT;
+    function measure() { half = m.scrollWidth / 2; }
+    measure();
+    addEventListener('resize', measure);
+    setTimeout(measure, 800); // recalage une fois polices/images chargées
+
+    function wrap() {
+      if (!half) return;
+      if (m.scrollLeft >= half) m.scrollLeft -= half;
+      else if (m.scrollLeft <= 0) m.scrollLeft += half;
+    }
+    (function loop() {
+      if (half && !paused && !PRM) { m.scrollLeft += speed; if (m.scrollLeft >= half) m.scrollLeft -= half; }
+      requestAnimationFrame(loop);
+    })();
+    m.addEventListener('scroll', wrap, { passive: true });
+
+    function pause() { paused = true; clearTimeout(resumeT); }
+    function resumeSoon() { clearTimeout(resumeT); resumeT = setTimeout(function () { paused = false; }, 1400); }
+
+    // Tactile : le glissement du doigt scrolle nativement, on met juste l'auto en pause
+    m.addEventListener('touchstart', pause, { passive: true });
+    m.addEventListener('touchend', resumeSoon, { passive: true });
+    m.addEventListener('touchcancel', resumeSoon, { passive: true });
+
+    // Souris (ordinateur) : cliquer-glisser
+    m.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'touch') return;
+      dragging = true; pause(); m.classList.add('dragging');
+      startX = e.clientX; startScroll = m.scrollLeft;
+      try { m.setPointerCapture(e.pointerId); } catch (_) {}
+    });
+    m.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      m.scrollLeft = startScroll - (e.clientX - startX); wrap();
+    });
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false; m.classList.remove('dragging');
+      try { m.releasePointerCapture(e.pointerId); } catch (_) {}
+      resumeSoon();
+    }
+    m.addEventListener('pointerup', endDrag);
+    m.addEventListener('pointercancel', endDrag);
+  })();
 
   // menu mobile (burger)
   (function () {
