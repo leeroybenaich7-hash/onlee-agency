@@ -294,11 +294,15 @@
   }
 
   /* ---- atelier ---- */
-  .studio-grid { display:grid; grid-template-columns:1fr; gap:clamp(22px,3vw,34px); margin-top:clamp(30px,4vw,48px); }
-  .scol { border-top:2px solid var(--gold); padding-top:18px; }
+  .studio-grid { display:grid; grid-template-columns:1fr; gap:clamp(28px,3.5vw,40px); margin-top:clamp(30px,4vw,48px); }
+  .scol { display:flex; flex-direction:column; }
+  .scol-media { border-radius:14px; overflow:hidden; aspect-ratio:16/11; margin-bottom:20px; border:1px solid var(--line); background:var(--paper-2); }
+  .scol-media img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s var(--ease); }
+  .scol:hover .scol-media img { transform:scale(1.045); }
+  .scol-body { border-top:2px solid var(--gold); padding-top:16px; }
   .scol h3 { font-size:1.35rem; margin-bottom:6px; }
   .scol p { color:var(--muted); font-size:15.5px; }
-  @media (min-width:760px) { .studio-grid { grid-template-columns:repeat(3,1fr); gap:clamp(28px,4vw,56px); } }
+  @media (min-width:760px) { .studio-grid { grid-template-columns:repeat(3,1fr); gap:clamp(24px,3vw,40px); } }
 
   /* ---- maison ---- */
   .branches { display:flex; flex-direction:column; }
@@ -503,9 +507,18 @@
         <p class="intro">De l'idée à la mise en ligne. Aucune sous-traitance.</p>
       </div>
       <div class="studio-grid">
-        <div class="scol reveal"><h3>Conception</h3><p>On cadre l'idée, le parcours et ce qui compte vraiment.</p></div>
-        <div class="scol reveal" style="--d:.1s"><h3>Design</h3><p>On dessine chaque écran, jusqu'au moindre détail.</p></div>
-        <div class="scol reveal" style="--d:.2s"><h3>Code &amp; mise en ligne</h3><p>On développe, on déploie, on fait vivre le produit.</p></div>
+        <div class="scol reveal">
+          <div class="scol-media"><img src="assets/studio/conception.jpg" alt="Conception — cadrage et prise de notes" loading="lazy"></div>
+          <div class="scol-body"><h3>Conception</h3><p>On cadre l'idée, le parcours et ce qui compte vraiment.</p></div>
+        </div>
+        <div class="scol reveal" style="--d:.1s">
+          <div class="scol-media"><img src="assets/studio/design.jpg" alt="Design — maquettes et interfaces" loading="lazy"></div>
+          <div class="scol-body"><h3>Design</h3><p>On dessine chaque écran, jusqu'au moindre détail.</p></div>
+        </div>
+        <div class="scol reveal" style="--d:.2s">
+          <div class="scol-media"><img src="assets/studio/code.jpg" alt="Code &amp; mise en ligne — développement" loading="lazy"></div>
+          <div class="scol-body"><h3>Code &amp; mise en ligne</h3><p>On développe, on déploie, on fait vivre le produit.</p></div>
+        </div>
       </div>
     </div>
   </section>

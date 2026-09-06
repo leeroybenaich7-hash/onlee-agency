@@ -72,6 +72,10 @@ header .pill { padding:10px 20px; font-size:13.5px; }
 .presta .media::before { content:""; position:absolute; top:0; left:0; right:0; height:32px; background:var(--paper-2); border-bottom:1px solid var(--line); }
 .presta .media::after { content:""; position:absolute; top:12px; left:16px; width:8px; height:8px; border-radius:50%; background:rgba(42,33,26,.22); box-shadow:15px 0 0 rgba(42,33,26,.22), 30px 0 0 rgba(42,33,26,.22); }
 .presta .media img { display:block; width:100%; height:auto; }
+/* média « photo » (maquette, sans la barre de navigateur) */
+.presta .media.plain { padding-top:0; background:transparent; border:none; box-shadow:none; overflow:visible; max-width:340px; margin:0 auto; }
+.presta .media.plain::before, .presta .media.plain::after { content:none; display:none; }
+.presta .media.plain img { border-radius:22px; box-shadow:0 34px 64px -38px rgba(42,33,26,.42); }
 .presta .soon { display:inline-block; margin-top:16px; font-size:12.5px; letter-spacing:.06em; color:var(--muted); border:1px solid var(--line-2); border-radius:999px; padding:6px 13px; }
 @media (min-width:860px) {
   .presta .row { grid-template-columns:54px 1fr 1.2fr; align-items:center; }
