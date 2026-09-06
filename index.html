@@ -157,7 +157,7 @@
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
             mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); }
   .clients-track { display:flex; align-items:center; width:max-content; will-change:transform; animation:clients-scroll 30s linear infinite; }
-  .clients:hover .clients-track { animation-play-state:paused; }
+  /* défile en continu, ne s'arrête jamais (même au survol) */
   @keyframes clients-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
   .c-item { font-family:var(--serif); font-size:clamp(1.15rem,1.9vw,1.5rem); color:var(--ink); opacity:.6; white-space:nowrap; letter-spacing:-.01em; }
   .c-item::after { content:"·"; margin:0 clamp(22px,3vw,44px); color:var(--muted); opacity:.55; }
@@ -213,7 +213,7 @@
   .rev-row { display:flex; gap:clamp(14px,1.6vw,18px); width:max-content; align-items:stretch; will-change:transform; }
   .rev-row-a { animation:rev-scroll 72s linear infinite; }
   .rev-row-b { animation:rev-scroll 90s linear infinite reverse; }
-  .rev-marquee:hover .rev-row { animation-play-state:paused; }
+  /* les avis défilent en continu, ne s'arrêtent jamais (même au survol) */
   @keyframes rev-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
   .rev-marquee .rev { flex:0 0 clamp(280px,26vw,338px); width:clamp(280px,26vw,338px); }
   .rev-util { margin-top:auto; padding-top:13px; border-top:1px solid var(--line); display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:500; color:var(--muted); }
