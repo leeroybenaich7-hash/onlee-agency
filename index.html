@@ -139,6 +139,42 @@
   .hero .trust { margin-top:26px; font-size:13.5px; color:var(--muted); letter-spacing:.01em; }
   .hero .trust b { color:var(--ink); font-weight:600; }
 
+  /* ---- hero : portrait fondateur ---- */
+  .hero-grid { display:block; }
+  .hero-portrait { margin:34px auto 0; max-width:300px; position:relative; }
+  .hero-portrait img { width:100%; height:auto; border-radius:20px; border:1px solid var(--line-2);
+    box-shadow:0 40px 80px -46px rgba(0,0,0,.5); }
+  .hero-portrait figcaption { position:absolute; left:12px; right:12px; bottom:12px; display:flex; flex-direction:column; gap:1px;
+    padding:10px 14px; border-radius:13px; background:color-mix(in srgb, var(--paper) 80%, transparent); backdrop-filter:blur(8px); border:1px solid var(--line); }
+  .hero-portrait figcaption b { font-family:var(--serif); font-weight:500; font-size:1.02rem; line-height:1.1; }
+  .hero-portrait figcaption span { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  @media (min-width:900px) {
+    .hero-grid { display:grid; grid-template-columns:1.32fr .68fr; gap:clamp(34px,5vw,72px); align-items:center; }
+    .hero-portrait { margin:0; max-width:none; }
+    .hero h1 { font-size:clamp(2.4rem,5.4vw,4.6rem); }
+  }
+
+  /* ---- avis clients ---- */
+  .reviews .rev-head { text-align:center; max-width:var(--maxw); margin:0 auto clamp(34px,5vw,58px); }
+  .reviews .rev-head .eyebrow { justify-content:center; }
+  .reviews .rev-head h2 { font-size:clamp(2rem,4vw,3.1rem); line-height:1.05; margin:16px 0 12px; }
+  .reviews .rev-head .intro { color:var(--muted); max-width:48ch; margin:0 auto; }
+  .rev-grid { display:grid; grid-template-columns:1fr; gap:clamp(16px,2vw,22px); }
+  @media (min-width:660px) { .rev-grid { grid-template-columns:1fr 1fr; } }
+  @media (min-width:1040px) { .rev-grid { grid-template-columns:repeat(4,1fr); } }
+  .rev { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:clamp(22px,2.4vw,27px);
+    display:flex; flex-direction:column; gap:15px; margin:0;
+    transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease); }
+  .rev:hover { transform:translateY(-4px); border-color:var(--gold); box-shadow:0 30px 60px -44px rgba(0,0,0,.2); }
+  .rev-stars { color:var(--gold); letter-spacing:3px; font-size:15px; }
+  .rev blockquote { font-family:var(--serif); font-weight:400; font-size:1.05rem; line-height:1.5; color:var(--ink); flex:1; }
+  .rev figcaption { display:flex; align-items:center; gap:12px; }
+  .rev-av { width:42px; height:42px; border-radius:50%; display:grid; place-items:center; flex:none;
+    background:var(--gold); color:var(--on-accent); font-family:var(--serif); font-size:1.1rem; }
+  .rev-id { display:flex; flex-direction:column; line-height:1.3; }
+  .rev-id b { font-weight:600; font-size:14.5px; }
+  .rev-id span { font-size:12.5px; color:var(--muted); }
+
   /* ---- bandeau preuve ---- */
   .proof-strip { padding-block:clamp(30px,4vw,44px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .proof-row { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
@@ -371,17 +407,73 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="wrap">
-      <h1 class="reveal">On conçoit, on code,<br>et on <span class="mark">édite</span> nos <span class="mark">produits</span>.</h1>
-      <p class="lede measure reveal" style="--d:.16s">onlee est un studio né d'un collectif de soirées. Aujourd'hui, on dessine et on développe nos propres logiciels — jusqu'à la boutique qui s'en sert chaque jour.</p>
-      <div class="hero-cta reveal" style="--d:.24s">
-        <a href="#poles" class="pill pill-solid">Voir nos pôles</a>
-        <a href="#contact" class="pill pill-ghost">Nous écrire</a>
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 class="reveal">On conçoit, on code,<br>et on <span class="mark">édite</span> nos <span class="mark">produits</span>.</h1>
+        <p class="lede measure reveal" style="--d:.16s">onlee est un studio né d'un collectif de soirées. Aujourd'hui, on dessine et on développe nos propres logiciels — jusqu'à la boutique qui s'en sert chaque jour.</p>
+        <div class="hero-cta reveal" style="--d:.24s">
+          <a href="#poles" class="pill pill-solid">Voir nos pôles</a>
+          <a href="#contact" class="pill pill-ghost">Nous écrire</a>
+        </div>
+        <p class="trust reveal" style="--d:.32s"><b>3 produits en ligne</b> · utilisés par de vraies boutiques.</p>
       </div>
-      <p class="trust reveal" style="--d:.32s"><b>3 produits en ligne</b> · utilisés par de vraies boutiques.</p>
+      <figure class="hero-portrait reveal" style="--d:.2s">
+        <img src="assets/leeroy.jpg" alt="Leeroy Ben-Aich, fondateur d'onlee" width="825" height="1100">
+        <figcaption><b>Leeroy Ben-Aich</b><span>Fondateur · onlee</span></figcaption>
+      </figure>
     </div>
   </section>
 
+
+  <!-- AVIS CLIENTS -->
+  <section id="avis" class="reviews alt">
+    <div class="wrap">
+      <div class="rev-head reveal">
+        <span class="eyebrow">Ils travaillent avec onlee</span>
+        <h2>Ce qu'en <em>disent</em> nos clients.</h2>
+        <p class="intro">De vraies boutiques, de vrais événements — voici leurs retours.</p>
+      </div>
+      <div class="rev-grid">
+
+        <figure class="rev reveal">
+          <div class="rev-stars" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote>« Avant, je tenais ma caisse sur un cahier et j'oubliais des remboursements mutuelle. Avec Vizor, ma journée est claire en un coup d'œil et je ne cours plus après les tiers payants. »</blockquote>
+          <figcaption>
+            <span class="rev-av" aria-hidden="true">S</span>
+            <span class="rev-id"><b>Sabine</b><span>Optic City · Sarcelles</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="rev reveal" style="--d:.08s">
+          <div class="rev-stars" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote>« Mes clients adorent : plus de cartes papier perdues, le solde se met à jour à chaque passage. Simple pour l'équipe, et ça les fait revenir. »</blockquote>
+          <figcaption>
+            <span class="rev-av" aria-hidden="true">D</span>
+            <span class="rev-id"><b>David</b><span>Eyes B&amp;B · opticien</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="rev reveal" style="--d:.16s">
+          <div class="rev-stars" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote>« Pour la bar-mitsva de mon fils, la borne Mazal Box a fait un carton. Faire-part, logo, borne : tout était raccord et sans stress. »</blockquote>
+          <figcaption>
+            <span class="rev-av" aria-hidden="true">D</span>
+            <span class="rev-id"><b>Déborah</b><span>Réception privée · Paris</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="rev reveal" style="--d:.24s">
+          <div class="rev-stars" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote>« Mes salariés posent leurs congés depuis leur téléphone, je valide en un clic. Fini les échanges de messages et les plannings sur papier. »</blockquote>
+          <figcaption>
+            <span class="rev-av" aria-hidden="true">M</span>
+            <span class="rev-id"><b>Michaël</b><span>Noga · gérant de boutiques</span></span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
 
   <!-- PÔLES — se déplient en 3D au scroll -->
   <section id="poles">
@@ -625,6 +717,22 @@
       { sel: '.hero-cta .pill-solid', en: 'See our areas' },
       { sel: '.hero-cta .pill-ghost', en: 'Get in touch' },
       { sel: '.hero .trust', en: '<b>3 products live</b> · used by real shops.' },
+
+      { sel: '#avis .eyebrow', en: 'They work with onlee' },
+      { sel: '#avis h2', en: 'What our <em>clients</em> say.' },
+      { sel: '#avis .intro', en: 'Real shops, real events — here is their feedback.' },
+      { sel: '.rev blockquote', all: true, en: [
+        '“I used to keep my till in a notebook and forget insurance refunds. With Vizor my day is clear at a glance and I no longer chase third-party payments.”',
+        '“My clients love it: no more lost paper cards, the balance updates on every visit. Easy for the team, and it brings them back.”',
+        '“For my son’s bar mitzvah the Mazal Box was a hit. Invitation, logo, box: all matching, zero stress.”',
+        '“My staff request time off from their phone, I approve in one click. No more back-and-forth messages or paper schedules.”'
+      ] },
+      { sel: '.rev-id span', all: true, en: [
+        'Optic City · Sarcelles',
+        'Eyes B&amp;B · optician',
+        'Private event · Paris',
+        'Noga · retail owner'
+      ] },
 
       { sel: '#poles h2', en: 'Three <em>areas</em>, one house.' },
       { sel: '#poles .intro', en: 'We design, draw and code our own tools — grouped by trade. Each area has its own page.' },
