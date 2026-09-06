@@ -76,6 +76,10 @@ header .pill { padding:10px 20px; font-size:13.5px; }
 .presta .media.plain { padding-top:0; background:transparent; border:none; box-shadow:none; overflow:visible; max-width:340px; margin:0 auto; }
 .presta .media.plain::before, .presta .media.plain::after { content:none; display:none; }
 .presta .media.plain img { border-radius:22px; box-shadow:0 34px 64px -38px rgba(42,33,26,.42); }
+/* média « planche » (book d'identité, papeterie) — pleine largeur de colonne */
+.presta .media.flat { padding-top:0; background:transparent; border:none; box-shadow:none; overflow:visible; max-width:430px; margin:0 auto; }
+.presta .media.flat::before, .presta .media.flat::after { content:none; display:none; }
+.presta .media.flat img { border-radius:16px; box-shadow:0 32px 62px -40px rgba(42,33,26,.38); display:block; width:100%; }
 .presta .soon { display:inline-block; margin-top:16px; font-size:12.5px; letter-spacing:.06em; color:var(--muted); border:1px solid var(--line-2); border-radius:999px; padding:6px 13px; }
 @media (min-width:860px) {
   .presta .row { grid-template-columns:54px 1fr 1.2fr; align-items:center; }
@@ -87,6 +91,16 @@ header .pill { padding:10px 20px; font-size:13.5px; }
 .feat .f h3 { font-size:1.3rem; margin-bottom:6px; }
 .feat .f p { color:var(--muted); font-size:15.5px; }
 @media (min-width:760px) { .feat { grid-template-columns:repeat(3,1fr); gap:clamp(28px,4vw,52px); } }
+
+/* section RH : app sur téléphone + points listés à côté */
+.feat-showcase { display:grid; grid-template-columns:1fr; gap:clamp(30px,5vw,56px); align-items:center; margin-top:clamp(18px,3vw,34px); }
+@media (min-width:820px) { .feat-showcase { grid-template-columns:.82fr 1.18fr; } }
+.feat-visual { display:flex; justify-content:center; }
+.feat-visual img { width:100%; max-width:330px; height:auto; }
+.feat-list { display:flex; flex-direction:column; gap:clamp(22px,3vw,30px); }
+.feat-list .f { border-top:2px solid var(--gold); padding-top:16px; }
+.feat-list .f h3 { font-size:1.35rem; margin-bottom:6px; }
+.feat-list .f p { color:var(--muted); font-size:15.5px; max-width:46ch; }
 
 .real { background:var(--paper-2); }
 .real h2 { font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.04; margin-bottom:16px; }
