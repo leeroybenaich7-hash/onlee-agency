@@ -658,6 +658,19 @@
   const PRM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // navigation interne : défilement fluide vers les sections (répare le scroll d'ancre + smooth scroll)
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      const href = a.getAttribute('href');
+      if (href.length < 2) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: PRM ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', location.pathname + location.search);
+    });
+  });
+
   // avis qui défilent : on duplique le contenu de chaque rangée pour une boucle sans couture
   document.querySelectorAll('.rev-row').forEach(function (r) { r.innerHTML += r.innerHTML; });
 
