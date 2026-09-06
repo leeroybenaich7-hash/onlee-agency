@@ -151,13 +151,17 @@
   .hero .trust { margin-top:26px; font-size:13.5px; color:var(--muted); letter-spacing:.01em; }
   .hero .trust b { color:var(--ink); font-weight:600; }
 
-  /* ---- bande clients (preuve sociale, vrais clients) ---- */
-  .clients { padding-block:clamp(26px,3.6vw,42px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .clients-inner { display:flex; align-items:center; gap:clamp(16px,3vw,40px); flex-wrap:wrap; }
-  .clients-lead { font-size:13px; color:var(--muted); }
-  .clients-list { list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:clamp(14px,3vw,36px); margin:0; padding:0; }
-  .clients-list li { font-family:var(--serif); font-size:clamp(1rem,1.7vw,1.35rem); color:var(--ink); opacity:.7; letter-spacing:-.01em; transition:opacity .3s var(--ease); }
-  .clients-list li:hover { opacity:1; }
+  /* ---- bandeau clients qui défile (preuve sociale, vrais clients) ---- */
+  .clients { padding-block:clamp(24px,3.2vw,38px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .clients-marquee { overflow:hidden; max-width:100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); }
+  .clients-track { display:flex; align-items:center; width:max-content; will-change:transform; animation:clients-scroll 30s linear infinite; }
+  .clients:hover .clients-track { animation-play-state:paused; }
+  @keyframes clients-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .c-item { font-family:var(--serif); font-size:clamp(1.15rem,1.9vw,1.5rem); color:var(--ink); opacity:.6; white-space:nowrap; letter-spacing:-.01em; }
+  .c-item::after { content:"·"; margin:0 clamp(22px,3vw,44px); color:var(--muted); opacity:.55; }
+  @media (prefers-reduced-motion: reduce) { .clients-track { animation:none; } .clients-marquee { overflow-x:auto; } }
 
   /* ---- hero : portrait fondateur ---- */
   .hero-grid { display:block; }
@@ -485,16 +489,13 @@
 
   <!-- CLIENTS (preuve sociale) -->
   <section class="clients reveal" aria-label="Ils utilisent nos outils">
-    <div class="wrap">
-      <div class="clients-inner">
-        <span class="clients-lead">Déjà à leurs côtés —</span>
-        <ul class="clients-list">
-          <li>Optic City</li>
-          <li>Eyes B&amp;B</li>
-          <li>Jofre Tapis</li>
-          <li>nao · pilates</li>
-          <li>Brandon Coaching</li>
-        </ul>
+    <div class="clients-marquee">
+      <div class="clients-track">
+        <span class="c-item">Optic City</span>
+        <span class="c-item">Eyes B&amp;B</span>
+        <span class="c-item">Jofre Tapis</span>
+        <span class="c-item">nao · pilates</span>
+        <span class="c-item">Brandon Coaching</span>
       </div>
     </div>
   </section>
@@ -672,7 +673,7 @@
   });
 
   // avis qui défilent : on duplique le contenu de chaque rangée pour une boucle sans couture
-  document.querySelectorAll('.rev-row').forEach(function (r) { r.innerHTML += r.innerHTML; });
+  document.querySelectorAll('.rev-row, .clients-track').forEach(function (r) { r.innerHTML += r.innerHTML; });
 
   // menu mobile (burger)
   (function () {
