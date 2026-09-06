@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>onlee — studio créatif, Paris</title>
-<meta name="description" content="onlee est un studio créatif né d'un collectif de soirées. Aujourd'hui, on conçoit, on dessine et on code nos propres logiciels : Vizor, Noga, Mazal Box. Une maison, plusieurs métiers. Paris." />
+<meta name="description" content="onlee est un studio créatif né d'un collectif de soirées. On conçoit, on dessine et on code nos propres logiciels : Vizor, Noga, Mazal Box. Une maison, plusieurs métiers. Paris." />
 
 <link rel="canonical" href="https://onlee.fr/" />
 <meta name="robots" content="index, follow" />
@@ -43,17 +43,15 @@
 <style>
   :root {
     --paper:#0C0B0A;      /* noir chaud */
-    --paper-2:#151311;    /* section alternée */
+    --paper-2:#141210;    /* section alternée */
     --card:#17140F;
     --ink:#ECE5D6;        /* ivoire chaud */
     --muted:#9F9179;      /* tan sourd */
     --line:rgba(236,229,214,.12);
     --line-2:rgba(236,229,214,.24);
-    --violet:#CBA85E;     /* OR — accent (liens, italiques, boutons) */
-    --violet-soft:#E7C888;/* or clair (survol) */
-    /* surligneur = or translucide */
-    --hl-yellow:rgba(203,168,94,.5); --hl-orange:rgba(203,168,94,.5); --hl-pink:rgba(203,168,94,.5);
-    --hl-lav:rgba(203,168,94,.5); --hl-mint:rgba(203,168,94,.5); --hl-cyan:rgba(203,168,94,.5);
+    --gold:#CBA85E;       /* OR mat (accent rare) */
+    --gold-hi:#E7C888;    /* or clair (survol) */
+    --gold-soft:rgba(203,168,94,.5);
     --serif:'Instrument Serif', Georgia, 'Times New Roman', serif;
     --sans:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
     --ease:cubic-bezier(.22,.61,.36,1);
@@ -70,7 +68,12 @@
   }
   a { color:inherit; text-decoration:none; }
   img { max-width:100%; display:block; }
-  ::selection { background:var(--hl-lav); color:var(--ink); }
+  ::selection { background:var(--gold-soft); color:var(--ink); }
+
+  /* grain film très léger sur le noir (matière "velours") */
+  .grain { position:fixed; inset:0; z-index:3; pointer-events:none; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:140px 140px; }
 
   .wrap { max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter); }
   .measure { max-width:56ch; }
@@ -80,15 +83,13 @@
   h1,h2,h3,.serif { font-family:var(--serif); font-weight:400; letter-spacing:-.01em; }
   em { font-style:italic; }
 
-  /* surligneur pastel (swipe bas, = Vizor) */
-  .mark { background:linear-gradient(transparent 58%, var(--m, var(--hl-lav)) 58%);
-    padding:0 .04em; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
-  .mark.y{--m:var(--hl-yellow)} .mark.o{--m:var(--hl-orange)} .mark.p{--m:var(--hl-pink)}
-  .mark.l{--m:var(--hl-lav)} .mark.m{--m:var(--hl-mint)} .mark.c{--m:var(--hl-cyan)}
+  /* surligneur or translucide (swipe bas) — réservé aux mots-clés des titres */
+  .mark { background:linear-gradient(transparent 56%, var(--gold-soft) 56%); padding:0 .04em;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone; }
 
   .eyebrow { font-family:var(--sans); font-size:12.5px; font-weight:600; letter-spacing:.16em;
     text-transform:uppercase; color:var(--muted); display:inline-flex; align-items:center; gap:9px; }
-  .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--violet); }
+  .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--gold); }
   .label { font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:.08em;
     text-transform:uppercase; color:var(--muted); }
 
@@ -107,7 +108,7 @@
   nav.links a { font-size:14.5px; color:var(--muted); position:relative; padding-bottom:3px; transition:color .3s var(--ease); }
   nav.links a:hover, nav.links a.active { color:var(--ink); }
   nav.links a::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; border-radius:2px;
-    background:var(--violet); transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease); }
+    background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease); }
   nav.links a.active::after { transform:scaleX(1); }
   .bar-right { display:flex; align-items:center; gap:20px; }
   .lang { display:inline-flex; align-items:center; gap:6px; background:none; border:0; cursor:pointer;
@@ -122,61 +123,91 @@
     font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:-.005em; line-height:1;
     padding:14px 26px; border-radius:999px; cursor:pointer; border:1px solid transparent; white-space:nowrap;
     transition:transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease); }
-  .pill-solid { background:var(--violet); color:#0C0B0A; }
-  .pill-solid:hover { transform:translateY(-2px); background:var(--violet-soft); }
+  .pill-solid { background:var(--gold); color:#0C0B0A; }
+  .pill-solid:hover { transform:translateY(-2px); background:var(--gold-hi); }
   .pill-ghost { background:transparent; color:var(--ink); border-color:var(--line-2); }
   .pill-ghost:hover { transform:translateY(-2px); border-color:var(--ink); }
   header .menu-write.pill { padding:10px 20px; font-size:13.5px; }
 
   /* ---- hero ---- */
-  .hero { padding-top:clamp(48px,8vw,96px); padding-bottom:clamp(64px,9vw,120px); overflow:hidden; }
-  .confetti { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
-  .confetti i { position:absolute; display:block; height:16px; border-radius:5px; opacity:.55; }
-  .hero .wrap { position:relative; z-index:1; }
+  .hero { padding-top:clamp(48px,8vw,96px); padding-bottom:clamp(48px,7vw,96px); overflow:hidden; }
   .hero .eyebrow { margin-bottom:26px; }
   .hero h1 { font-size:clamp(3rem, 8.4vw, 6.6rem); line-height:1.0; letter-spacing:-.022em; max-width:16ch; }
-  .hero h1 em { color:var(--violet); }
+  .hero h1 em { color:var(--gold); }
   .hero .lede { margin-top:28px; color:var(--muted); font-size:clamp(17px,1.55vw,20px); line-height:1.55; max-width:52ch; }
   .hero-cta { margin-top:38px; display:flex; gap:13px; flex-wrap:wrap; }
   .hero .trust { margin-top:26px; font-size:13.5px; color:var(--muted); letter-spacing:.01em; }
   .hero .trust b { color:var(--ink); font-weight:600; }
+
+  /* ---- bandeau preuve ---- */
+  .proof-strip { padding-block:clamp(30px,4vw,44px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .proof-row { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .proof { display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+  .proof + .proof { border-left:1px solid var(--line); padding-left:clamp(20px,4vw,48px); }
+  .pfig { font-family:var(--serif); font-size:clamp(2.2rem,4vw,3rem); line-height:1; color:var(--gold); }
+  .plab { font-size:13.5px; color:var(--muted); }
 
   /* ---- room head ---- */
   .room-head { max-width:var(--maxw); margin-bottom:clamp(40px,6vw,72px); }
   .room-head h2 { font-size:clamp(2.3rem,5.4vw,4rem); line-height:1.02; letter-spacing:-.02em; margin:16px 0 18px; }
   .room-head .intro { color:var(--muted); font-size:17px; max-width:48ch; }
 
-  /* ---- produits ---- */
-  .products { display:flex; flex-direction:column; gap:clamp(72px,11vw,132px); }
-  .product { display:grid; grid-template-columns:1fr; gap:30px; align-items:center; }
-  .product .shot { display:block; border-radius:16px; overflow:hidden; background:var(--card);
-    border:1px solid var(--line-2); box-shadow:0 30px 70px -40px rgba(0,0,0,.75);
+  /* ====== SHOWCASE ÉPINGLÉ (produits) ====== */
+  .showcase { padding:0; }
+  .showcase .track { height:340vh; position:relative; }
+  .showcase .stage { position:sticky; top:0; height:100vh; min-height:640px; display:flex; flex-direction:column;
+    justify-content:center; overflow:hidden; padding-block:clamp(84px,12vh,120px); }
+  .stage-top { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:clamp(20px,3vh,36px); }
+  .progress { display:flex; gap:10px; align-items:center; }
+  .progress .pg { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:12px;
+    font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); opacity:.5; transition:opacity .4s var(--ease), color .4s var(--ease); }
+  .progress .pg b { font-family:var(--serif); font-weight:400; font-size:15px; letter-spacing:0; }
+  .progress .pg.on { opacity:1; color:var(--gold); }
+  .slides { position:relative; flex:1; }
+  .slide { display:grid; grid-template-columns:1fr; gap:30px; align-items:center; }
+  html.js .showcase .slide { position:absolute; inset:0; opacity:0; transform:translateY(26px) scale(.986);
+    transition:opacity .6s var(--ease), transform .6s var(--ease); pointer-events:none; }
+  html.js .showcase .slide.is-active { opacity:1; transform:none; pointer-events:auto; }
+  .slide-media { display:block; border-radius:16px; overflow:hidden; background:var(--card);
+    border:1px solid var(--line-2); box-shadow:0 40px 90px -50px rgba(0,0,0,.9);
     transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
-  .product .shot img { width:100%; height:auto; }
-  .product .shot:hover { transform:translateY(-4px); box-shadow:0 44px 90px -44px rgba(0,0,0,.85), 0 0 0 1px var(--violet); }
-  .pnum { font-family:var(--serif); font-size:clamp(2.4rem,4vw,3.2rem); line-height:1; color:var(--line-2); }
-  .product h3 { font-size:clamp(2rem,3.4vw,2.9rem); line-height:1.04; margin:6px 0 12px; }
+  .slide-media:hover { transform:translateY(-4px); box-shadow:0 50px 100px -50px rgba(0,0,0,.95), 0 0 0 1px var(--gold); }
+  .slide-media img { width:100%; height:auto; max-height:56vh; object-fit:cover; object-position:top; }
+  .pnum { font-family:var(--serif); font-size:clamp(2.2rem,3.6vw,3rem); line-height:1; color:var(--gold); }
+  .slide-text h3 { font-size:clamp(2rem,3.6vw,3rem); line-height:1.02; margin:2px 0 12px; }
   .pcat { display:inline-block; margin-bottom:16px; }
   .pdesc { color:var(--ink); font-size:16.5px; line-height:1.62; max-width:44ch; }
+  .pstat { margin-top:14px; font-size:14.5px; color:var(--muted); }
+  .pstat b { color:var(--ink); font-weight:600; }
   .see { margin-top:24px; display:inline-flex; align-items:center; gap:9px; font-family:var(--sans);
     font-size:13px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--ink);
-    border-bottom:2px solid var(--violet); padding-bottom:5px; transition:gap .3s var(--ease), color .3s var(--ease); }
-  .see:hover { gap:15px; color:var(--violet); }
+    border-bottom:2px solid var(--gold); padding-bottom:5px; transition:gap .3s var(--ease), color .3s var(--ease); }
+  .see:hover { gap:15px; color:var(--gold); }
   .see .arr { transition:transform .3s var(--ease); }
   .see:hover .arr { transform:translateX(4px); }
   @media (min-width:900px) {
-    .product { grid-template-columns:1.06fr .94fr; gap:clamp(48px,6vw,92px); }
-    .product:nth-child(even) .shot { order:2; }
+    .slide { grid-template-columns:1.04fr .96fr; gap:clamp(48px,6vw,88px); }
+    .slide:nth-child(even) .slide-media { order:2; }
+  }
+  /* repli mobile / sans-JS / reduced-motion : on empile, pas d'épinglage */
+  @media (max-width:899px) {
+    .showcase .track { height:auto; }
+    .showcase .stage { position:static; height:auto; min-height:0; padding-block:0; display:block; }
+    .slides { display:flex; flex-direction:column; gap:clamp(64px,12vw,96px); }
+    html.js .showcase .slide { position:static; opacity:1; transform:none; pointer-events:auto; }
+    .slide-media img { max-height:none; }
+    .progress { display:none; }
+    .slide-media { margin-bottom:6px; }
   }
 
-  /* ---- studio (atelier) ---- */
+  /* ---- atelier ---- */
   .studio-grid { display:grid; grid-template-columns:1fr; gap:clamp(22px,3vw,34px); margin-top:clamp(30px,4vw,48px); }
-  .scol { border-top:2px solid var(--ink); padding-top:18px; }
+  .scol { border-top:2px solid var(--gold); padding-top:18px; }
   .scol h3 { font-size:1.35rem; margin-bottom:6px; }
   .scol p { color:var(--muted); font-size:15.5px; }
   @media (min-width:760px) { .studio-grid { grid-template-columns:repeat(3,1fr); gap:clamp(28px,4vw,56px); } }
 
-  /* ---- maison (branches) ---- */
+  /* ---- maison ---- */
   .branches { display:flex; flex-direction:column; }
   .branch { display:grid; grid-template-columns:1fr; gap:6px 40px; padding:clamp(22px,3vw,32px) 0; border-top:1px solid var(--line); }
   .branch:last-child { border-bottom:1px solid var(--line); }
@@ -189,7 +220,7 @@
   .manifesto .wrap { max-width:900px; }
   .manifesto .big { font-family:var(--serif); font-size:clamp(1.9rem,3.8vw,3.1rem); line-height:1.22;
     letter-spacing:-.015em; margin-top:22px; }
-  .manifesto .big em { color:var(--violet); }
+  .manifesto .big em { color:var(--gold); }
   .manifesto .sign { margin-top:30px; }
 
   /* ---- contact ---- */
@@ -199,7 +230,7 @@
   .exit .x-label { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; }
   .exit a { font-family:var(--serif); font-size:clamp(1.2rem,2.4vw,1.7rem); color:var(--ink);
     border-bottom:1px solid transparent; transition:border-color .3s var(--ease); }
-  .exit a:hover { border-bottom-color:var(--violet); }
+  .exit a:hover { border-bottom-color:var(--gold); }
 
   .form-head { margin-top:clamp(44px,6vw,68px); margin-bottom:20px; }
   .cform { max-width:560px; display:grid; gap:24px; }
@@ -207,13 +238,13 @@
   .cform label { font-family:var(--sans); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--muted); }
   .cform input, .cform textarea { font-family:var(--sans); font-size:16px; color:var(--ink); background:var(--card);
     border:1px solid var(--line-2); border-radius:12px; padding:13px 14px; width:100%; transition:border-color .3s var(--ease); }
-  .cform input:focus, .cform textarea:focus { outline:none; border-color:var(--violet); }
+  .cform input:focus, .cform textarea:focus { outline:none; border-color:var(--gold); }
   .cform textarea { resize:vertical; min-height:110px; line-height:1.55; }
   .cbtn { justify-self:start; font-family:var(--sans); font-size:15px; font-weight:600; color:#0C0B0A;
-    background:var(--violet); border:1px solid transparent; padding:14px 28px; border-radius:999px; cursor:pointer;
+    background:var(--gold); border:1px solid transparent; padding:14px 28px; border-radius:999px; cursor:pointer;
     transition:transform .3s var(--ease), background .3s var(--ease); }
-  .cbtn:hover { transform:translateY(-2px); background:var(--violet-soft); }
-  .cform-note { min-height:1.3em; font-size:14px; color:var(--violet); margin:2px 0 0; }
+  .cbtn:hover { transform:translateY(-2px); background:var(--gold-hi); }
+  .cform-note { min-height:1.3em; font-size:14px; color:var(--gold); margin:2px 0 0; }
 
   /* ---- footer ---- */
   footer { border-top:1px solid var(--line); padding:clamp(44px,6vw,72px) 0; }
@@ -221,13 +252,13 @@
   footer .flogo { width:120px; height:auto; }
   footer .fmeta { color:var(--muted); font-size:12.5px; text-align:right; line-height:1.7; }
   footer .fmeta a { border-bottom:1px solid transparent; }
-  footer .fmeta a:hover { border-bottom-color:var(--violet); }
+  footer .fmeta a:hover { border-bottom-color:var(--gold); }
 
   /* ---- whatsapp ---- */
   .wa { position:fixed; right:22px; bottom:22px; z-index:60; width:52px; height:52px; border-radius:50%;
-    display:inline-flex; align-items:center; justify-content:center; background:var(--violet); color:#0C0B0A;
+    display:inline-flex; align-items:center; justify-content:center; background:var(--gold); color:#0C0B0A;
     box-shadow:0 16px 34px -14px rgba(203,168,94,.4); transition:transform .3s var(--ease), background .3s var(--ease); }
-  .wa:hover { transform:translateY(-3px); background:var(--violet-soft); }
+  .wa:hover { transform:translateY(-3px); background:var(--gold-hi); }
   .wa svg { width:24px; height:24px; }
   @keyframes wa-pulse { 0%,88%,100%{transform:none} 94%{transform:scale(1.08)} }
   .wa { animation:wa-pulse 6.5s var(--ease) 3s infinite; }
@@ -238,21 +269,30 @@
   .reveal.in { opacity:1; transform:none; }
   .reveal[style*="--d"] { transition-delay:var(--d); }
 
-  a:focus-visible, button:focus-visible, summary:focus-visible { outline:2px solid var(--violet); outline-offset:3px; border-radius:4px; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--gold); outline-offset:3px; border-radius:4px; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior:auto; }
     *, *::before, *::after { animation:none !important; transition:none !important; }
     .reveal { opacity:1; transform:none; }
+    .showcase .track { height:auto; }
+    .showcase .stage { position:static; height:auto; min-height:0; padding-block:0; display:block; }
+    .slides { display:flex; flex-direction:column; gap:72px; }
+    html.js .showcase .slide { position:static; opacity:1; transform:none; }
+    .progress { display:none; }
+    .grain { display:none; }
   }
 
   @media (max-width:860px) {
     nav.links { display:none; }
     .menu-write { display:inline-flex; }
     .brand span { display:none; }
+    .proof-row { grid-template-columns:1fr; gap:0; }
+    .proof + .proof { border-left:0; padding-left:0; border-top:1px solid var(--line); padding-top:18px; margin-top:18px; }
   }
 </style>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 <span id="top"></span>
 
 <header id="head">
@@ -278,7 +318,7 @@
   <section class="hero" id="hero">
     <div class="wrap">
       <span class="eyebrow reveal">Studio créatif · Paris</span>
-      <h1 class="reveal" style="--d:.08s">On conçoit, on code,<br>et on <span class="mark l">édite</span> nos <span class="mark o">produits</span>.</h1>
+      <h1 class="reveal" style="--d:.08s">On conçoit, on code,<br>et on <span class="mark">édite</span> nos <span class="mark">produits</span>.</h1>
       <p class="lede measure reveal" style="--d:.16s">onlee est un studio né d'un collectif de soirées. Aujourd'hui, on dessine et on développe nos propres logiciels — jusqu'à la boutique qui s'en sert chaque jour.</p>
       <div class="hero-cta reveal" style="--d:.24s">
         <a href="#produits" class="pill pill-solid">Voir les produits</a>
@@ -288,59 +328,77 @@
     </div>
   </section>
 
-  <!-- PRODUITS -->
-  <section id="produits">
-    <div class="wrap">
-      <div class="room-head reveal">
-        <span class="eyebrow">Nos produits</span>
-        <h2>Ce qu'on <span class="mark m">fabrique</span>.</h2>
-        <p class="intro">Trois logiciels, conçus, dessinés et édités par onlee.</p>
-      </div>
+  <!-- BANDEAU PREUVE -->
+  <section class="proof-strip">
+    <div class="wrap proof-row">
+      <div class="proof reveal"><div class="pfig">03</div><div class="plab">produits édités &amp; en ligne</div></div>
+      <div class="proof reveal" style="--d:.1s"><div class="pfig">100%</div><div class="plab">conçu, dessiné &amp; codé en interne</div></div>
+      <div class="proof reveal" style="--d:.2s"><div class="pfig">Paris</div><div class="plab">studio créatif, né d'un collectif</div></div>
+    </div>
+  </section>
 
-      <div class="products">
-
-        <!-- 01 Vizor -->
-        <article class="product">
-          <a class="shot reveal" href="https://leeroybenaich7-hash.github.io/vizor-site/" target="_blank" rel="noopener">
-            <img src="assets/work/vizor.jpg" width="1100" height="688" alt="Vizor — caisse et tiers payant pour opticiens, par onlee" loading="lazy">
-          </a>
-          <div class="pinfo reveal" style="--d:.1s">
-            <div class="pnum">01</div>
-            <h3>Vizor</h3>
-            <div class="pcat label">SaaS · Caisse &amp; tiers payant · opticiens</div>
-            <p class="pdesc">Les ventes du jour, les restes à encaisser et les remboursements mutuelles sur un seul écran, tenu à jour tout seul. Un magasin à Sarcelles s'en sert tous les jours.</p>
-            <a class="see" href="https://leeroybenaich7-hash.github.io/vizor-site/" target="_blank" rel="noopener">Découvrir <span class="arr">→</span></a>
+  <!-- PRODUITS (épinglé) -->
+  <section id="produits" class="showcase">
+    <div class="track">
+      <div class="stage">
+        <div class="wrap" style="display:flex;flex-direction:column;height:100%">
+          <div class="stage-top">
+            <span class="eyebrow">Nos produits</span>
+            <div class="progress" aria-hidden="true">
+              <span class="pg on" data-i="0"><b>01</b> Vizor</span>
+              <span class="pg" data-i="1"><b>02</b> Noga</span>
+              <span class="pg" data-i="2"><b>03</b> Mazal Box</span>
+            </div>
           </div>
-        </article>
+          <div class="slides">
 
-        <!-- 02 Noga -->
-        <article class="product">
-          <a class="shot reveal" href="https://prisme-rh.vercel.app" target="_blank" rel="noopener">
-            <img src="assets/work/noga.jpg" width="1100" height="688" alt="Noga — la gestion RH des commerces, par onlee" loading="lazy">
-          </a>
-          <div class="pinfo reveal" style="--d:.1s">
-            <div class="pnum">02</div>
-            <h3>Noga</h3>
-            <div class="pcat label">SaaS · Gestion RH · commerces</div>
-            <p class="pdesc">Congés, arrêts maladie, jours en plus : les salariés déposent depuis leur téléphone, la direction valide en un clic. Le planning et le bilan du mois se tiennent à jour tout seuls.</p>
-            <a class="see" href="https://prisme-rh.vercel.app" target="_blank" rel="noopener">Découvrir <span class="arr">→</span></a>
+            <!-- 01 Vizor -->
+            <article class="slide is-active" data-i="0">
+              <a class="slide-media" href="https://leeroybenaich7-hash.github.io/vizor-site/" target="_blank" rel="noopener">
+                <img src="assets/work/vizor.jpg" width="1100" height="688" alt="Vizor — caisse et tiers payant pour opticiens, par onlee" loading="lazy">
+              </a>
+              <div class="slide-text">
+                <div class="pnum">01</div>
+                <h3>Vizor</h3>
+                <div class="pcat label">SaaS · Caisse &amp; tiers payant · opticiens</div>
+                <p class="pdesc">Les ventes du jour, les restes à encaisser et les remboursements mutuelles sur un seul écran, tenu à jour tout seul.</p>
+                <p class="pstat"><b>Utilisé tous les jours</b> par un magasin à Sarcelles.</p>
+                <a class="see" href="https://leeroybenaich7-hash.github.io/vizor-site/" target="_blank" rel="noopener">Découvrir <span class="arr">→</span></a>
+              </div>
+            </article>
+
+            <!-- 02 Noga -->
+            <article class="slide" data-i="1">
+              <a class="slide-media" href="https://prisme-rh.vercel.app" target="_blank" rel="noopener">
+                <img src="assets/work/noga.jpg" width="1100" height="688" alt="Noga — la gestion RH des commerces, par onlee" loading="lazy">
+              </a>
+              <div class="slide-text">
+                <div class="pnum">02</div>
+                <h3>Noga</h3>
+                <div class="pcat label">SaaS · Gestion RH · commerces</div>
+                <p class="pdesc">Congés, arrêts maladie, jours en plus : les salariés déposent depuis leur téléphone, la direction valide en un clic.</p>
+                <p class="pstat"><b>Le planning et le bilan du mois</b> se tiennent à jour tout seuls.</p>
+                <a class="see" href="https://prisme-rh.vercel.app" target="_blank" rel="noopener">Découvrir <span class="arr">→</span></a>
+              </div>
+            </article>
+
+            <!-- 03 Mazal Box -->
+            <article class="slide" data-i="2">
+              <a class="slide-media" href="https://mazal-box.vercel.app" target="_blank" rel="noopener">
+                <img src="assets/work/mazal-box.jpg" width="1100" height="688" alt="Mazal Box — la roulette cadeau des réceptions, par onlee" loading="lazy">
+              </a>
+              <div class="slide-text">
+                <div class="pnum">03</div>
+                <h3>Mazal Box</h3>
+                <div class="pcat label">App · Réceptions &amp; événements</div>
+                <p class="pdesc">Chaque invité retrouve son nom et une roulette lui révèle le cadeau qui lui est réservé.</p>
+                <p class="pstat"><b>Pensé pour</b> les bar-mitsva et les grandes tablées.</p>
+                <a class="see" href="https://mazal-box.vercel.app" target="_blank" rel="noopener">Découvrir <span class="arr">→</span></a>
+              </div>
+            </article>
+
           </div>
-        </article>
-
-        <!-- 03 Mazal Box -->
-        <article class="product">
-          <a class="shot reveal" href="https://mazal-box.vercel.app" target="_blank" rel="noopener">
-            <img src="assets/work/mazal-box.jpg" width="1100" height="688" alt="Mazal Box — la roulette cadeau des réceptions, par onlee" loading="lazy">
-          </a>
-          <div class="pinfo reveal" style="--d:.1s">
-            <div class="pnum">03</div>
-            <h3>Mazal Box</h3>
-            <div class="pcat label">App · Réceptions &amp; événements</div>
-            <p class="pdesc">À la réception, chaque invité retrouve son nom et une roulette lui révèle le cadeau qui lui est réservé. Pensé pour les bar-mitsva et les grandes tablées.</p>
-            <a class="see" href="https://mazal-box.vercel.app" target="_blank" rel="noopener">Découvrir <span class="arr">→</span></a>
-          </div>
-        </article>
-
+        </div>
       </div>
     </div>
   </section>
@@ -350,7 +408,7 @@
     <div class="wrap">
       <div class="room-head reveal">
         <span class="eyebrow">L'atelier</span>
-        <h2>Tout en <span class="mark c">interne</span>.</h2>
+        <h2>Tout en <span class="mark">interne</span>.</h2>
         <p class="intro">De l'idée à la mise en ligne. Aucune sous-traitance.</p>
       </div>
       <div class="studio-grid">
@@ -366,7 +424,7 @@
     <div class="wrap">
       <div class="room-head reveal">
         <span class="eyebrow">La maison</span>
-        <h2>Une maison,<br>plusieurs <span class="mark p">métiers</span>.</h2>
+        <h2>Une maison,<br>plusieurs <span class="mark">métiers</span>.</h2>
         <p class="intro">Sous un même nom, des activités complémentaires.</p>
       </div>
       <div class="branches">
@@ -406,7 +464,7 @@
     <div class="wrap">
       <div class="reveal">
         <span class="eyebrow">Nous écrire</span>
-        <h2>Un projet en <span class="mark y">tête</span> ?</h2>
+        <h2>Un projet en <span class="mark">tête</span> ?</h2>
         <p class="intro measure" style="color:var(--muted)">Écrivez-nous, on répond vite.</p>
         <div class="exits">
           <span class="exit"><span class="x-label">WhatsApp</span><a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener">+33 6 80 71 52 62</a></span>
@@ -460,6 +518,7 @@
 </a>
 
 <script>
+  document.documentElement.classList.add('js');
   const PRM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -476,6 +535,44 @@
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.14 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // ===== section produits épinglée =====
+  (function () {
+    const track = document.querySelector('.showcase .track');
+    const stage = document.querySelector('.showcase .stage');
+    const slides = [...document.querySelectorAll('.showcase .slide')];
+    const pgs = [...document.querySelectorAll('.showcase .progress .pg')];
+    if (!track || !slides.length) return;
+    const desktop = matchMedia('(min-width:900px)');
+    let tick = false, cur = -1;
+    function setActive(i) {
+      if (i === cur) return; cur = i;
+      slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+      pgs.forEach((p, k) => p.classList.toggle('on', k === i));
+    }
+    function apply() {
+      tick = false;
+      if (PRM || !desktop.matches) { slides.forEach(s => s.classList.add('is-active')); return; }
+      const r = track.getBoundingClientRect();
+      const dist = r.height - window.innerHeight;
+      let p = dist > 0 ? (-r.top) / dist : 0;
+      p = p < 0 ? 0 : p > 0.9999 ? 0.9999 : p;
+      setActive(Math.floor(p * slides.length));
+    }
+    function onScroll() { if (!tick) { tick = true; requestAnimationFrame(apply); } }
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', () => { cur = -1; onScroll(); });
+    // clic sur la progression = aller au produit
+    pgs.forEach((p, i) => p.addEventListener('click', () => {
+      if (!desktop.matches) { slides[i].scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+      const r = track.getBoundingClientRect();
+      const top = window.scrollY + r.top;
+      const dist = track.offsetHeight - window.innerHeight;
+      window.scrollTo({ top: top + dist * ((i + 0.5) / slides.length), behavior: 'smooth' });
+    }));
+    pgs.forEach(p => p.style.cursor = 'pointer');
+    apply();
+  })();
 
   // scroll-spy
   const spy = new IntersectionObserver((es) => {
@@ -524,29 +621,34 @@
       { sel: 'nav.links a', all: true, en: ['Products', 'Studio', 'House', 'Manifesto', 'Contact'] },
 
       { sel: '.hero .eyebrow', en: 'Creative studio · Paris' },
-      { sel: '.hero h1', en: 'We design, we code,<br>and we <span class="mark l">ship</span> our own <span class="mark o">products</span>.' },
+      { sel: '.hero h1', en: 'We design, we code,<br>and we <span class="mark">ship</span> our own <span class="mark">products</span>.' },
       { sel: '.hero .lede', en: 'onlee is a studio born from a nightlife collective. Today we design and build our own software — all the way to the shop that uses it every day.' },
       { sel: '.hero-cta .pill-solid', en: 'See the products' },
       { sel: '.hero-cta .pill-ghost', en: 'Get in touch' },
       { sel: '.hero .trust', en: '<b>3 products live</b> · used by real shops.' },
 
+      { sel: '.proof .plab', all: true, en: ['products shipped &amp; live', 'designed &amp; coded in-house', 'creative studio, born from a collective'] },
+
       { sel: '#produits .eyebrow', en: 'Our products' },
-      { sel: '#produits h2', en: 'What we <span class="mark m">build</span>.' },
-      { sel: '#produits .intro', en: 'Three pieces of software, designed and shipped by onlee.' },
-      { sel: '.product .pcat', all: true, en: [
+      { sel: '.slide .pcat', all: true, en: [
         'SaaS · Checkout &amp; insurance billing · opticians',
         'SaaS · HR management · retail',
         'App · Receptions &amp; events'
       ] },
-      { sel: '.product .pdesc', all: true, en: [
-        "The day's sales, what's still owed, and the insurance refunds you're waiting on — all on one screen, kept up to date on its own. A shop in Sarcelles uses it every day.",
-        'Time off, sick leave, extra days: staff file from their phone, management approves in one click. The planning and the monthly report keep themselves up to date.',
-        'At the reception, each guest finds their name and a wheel reveals the gift set aside for them. Built for bar mitzvahs and big gatherings.'
+      { sel: '.slide .pdesc', all: true, en: [
+        "The day's sales, what's still owed and the insurance refunds you're waiting on — all on one screen, kept up to date on its own.",
+        'Time off, sick leave, extra days: staff file from their phone, management approves in one click.',
+        'Each guest finds their name and a wheel reveals the gift set aside for them.'
       ] },
-      { sel: '.product .see', all: true, en: 'Explore <span class="arr">→</span>' },
+      { sel: '.slide .pstat', all: true, en: [
+        '<b>Used every day</b> by a shop in Sarcelles.',
+        '<b>The planning and monthly report</b> keep themselves up to date.',
+        '<b>Built for</b> bar mitzvahs and big gatherings.'
+      ] },
+      { sel: '.slide .see', all: true, en: 'Explore <span class="arr">→</span>' },
 
       { sel: '#studio .eyebrow', en: 'The studio' },
-      { sel: '#studio h2', en: 'All <span class="mark c">in-house</span>.' },
+      { sel: '#studio h2', en: 'All <span class="mark">in-house</span>.' },
       { sel: '#studio .intro', en: 'From idea to launch. No outsourcing.' },
       { sel: '.scol h3', all: true, en: ['Conception', 'Design', 'Code &amp; launch'] },
       { sel: '.scol p', all: true, en: [
@@ -556,7 +658,7 @@
       ] },
 
       { sel: '#maison .eyebrow', en: 'The house' },
-      { sel: '#maison h2', en: 'One house,<br>many <span class="mark p">crafts</span>.' },
+      { sel: '#maison h2', en: 'One house,<br>many <span class="mark">crafts</span>.' },
       { sel: '#maison .intro', en: 'Under one name, complementary activities.' },
       { sel: '.branch .role', all: true, en: [
         'Products &amp; software · active',
@@ -576,7 +678,7 @@
       { sel: '#manifeste .sign', en: '— the onlee crew' },
 
       { sel: '#contact .eyebrow', en: 'Get in touch' },
-      { sel: '#contact h2', en: 'A project in <span class="mark y">mind</span>?' },
+      { sel: '#contact h2', en: 'A project in <span class="mark">mind</span>?' },
       { sel: '#contact .intro', en: 'Write to us — we reply fast.' },
       { sel: '.form-head .eyebrow', en: 'Or right here' },
       { sel: '.cform label', all: true, en: ['Your name', 'Your email', 'Your project in a few words'] },
