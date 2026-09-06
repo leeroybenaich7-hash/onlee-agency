@@ -1,4 +1,27 @@
+# onlee.fr — robots
+# On accueille tous les moteurs de recherche ET les IA (pour être cité dans leurs réponses).
+
 User-agent: *
+Allow: /
+
+# Moteurs génératifs / IA (GEO) — explicitement autorisés
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://onlee.fr/sitemap.xml

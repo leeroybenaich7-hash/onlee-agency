@@ -1,0 +1,24 @@
+# onlee
+
+> onlee est un studio créatif français basé à Paris. Il conçoit, dessine et développe en interne ses propres logiciels et applications (Vizor, Noga, Mazal Box), et accompagne ses clients sur l'événementiel, la création de sites et la formation à l'IA. Fondateur : Leeroy Ben-Aich.
+
+onlee réunit plusieurs métiers sous une même maison : édition de produits logiciels (SaaS), événementiel, mise en relation B2B et formation. Les outils sont utilisés par de vrais commerces (opticiens, boutiques) au quotidien.
+
+## Produits
+
+- [Vizor](https://onlee.fr/opticiens/) : logiciel de caisse et de tiers payant pour les magasins d'optique. Enregistre une vente en 10 secondes, suit les restes à encaisser et les remboursements mutuelles, export comptable inclus. SaaS, essai 14 jours. Site produit : https://vizor.onlee.fr
+- [Noga](https://onlee.fr/rh/) : logiciel de gestion RH pour les commerces et boutiques (congés, arrêts maladie, planning, préparation de la paie). Les salariés déposent depuis leur téléphone, la direction valide en un clic. SaaS multi-boutiques, essai 14 jours. Site produit : https://prisme-rh.vercel.app
+- [Mazal Box](https://onlee.fr/evenements/) : application de roulette-cadeau pour les événements (bar-mitsva, réceptions). L'invité tape son nom, la roulette tombe sur le cadeau prévu. Application web : https://mazal-box.vercel.app
+
+## Pôles
+
+- [Opticiens](https://onlee.fr/opticiens/) : les logiciels du magasin d'optique — caisse, tiers payant, fidélité (Vizor et Bons de fidélité).
+- [RH](https://onlee.fr/rh/) : la gestion RH des boutiques et commerces (Noga).
+- [Événementiel](https://onlee.fr/evenements/) : soirées, faire-part web, Mazal Box, partage de photos en direct, design et logos.
+
+## Contact
+
+- Site : https://onlee.fr
+- Email : contact@onlee.fr
+- WhatsApp : +33 6 80 71 52 62
+- Instagram : https://www.instagram.com/onlee.crew/

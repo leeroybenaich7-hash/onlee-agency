@@ -28,15 +28,79 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "onlee",
-  "alternateName": "onlee agency",
-  "url": "https://onlee.fr/",
-  "logo": "https://onlee.fr/assets/onlee-logo-ink.png",
-  "description": "Studio créatif né d'un collectif de soirées : édition de produits logiciels (Vizor, Noga, Mazal Box), événementiel, relations B2B, formation IA.",
-  "email": "contact@onlee.fr",
-  "areaServed": "FR",
-  "sameAs": ["https://www.instagram.com/onlee.crew/"]
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onlee.fr/#organization",
+      "name": "onlee",
+      "alternateName": "onlee agency",
+      "url": "https://onlee.fr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://onlee.fr/assets/onlee-logo-ink.png"
+      },
+      "image": "https://onlee.fr/assets/og-cover-blue.png",
+      "description": "Studio créatif français : édition de produits logiciels (Vizor, Noga, Mazal Box), événementiel, relations B2B et formation à l'IA. Conçus, dessinés et codés en interne.",
+      "email": "contact@onlee.fr",
+      "telephone": "+33680715262",
+      "areaServed": "FR",
+      "foundingLocation": "Paris, France",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressRegion": "Île-de-France",
+        "addressCountry": "FR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Leeroy Ben-Aich"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@onlee.fr",
+        "telephone": "+33680715262",
+        "availableLanguage": ["French", "English"]
+      },
+      "knowsAbout": ["Logiciel opticien", "Caisse opticien", "Tiers payant", "Gestion RH commerce", "Événementiel", "Création de site web", "Formation IA"],
+      "sameAs": ["https://www.instagram.com/onlee.crew/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onlee.fr/#website",
+      "url": "https://onlee.fr/",
+      "name": "onlee",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://onlee.fr/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Vizor",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://vizor.onlee.fr",
+      "description": "Logiciel de caisse et de tiers payant pour les magasins d'optique : ventes du jour, restes à encaisser et remboursements mutuelles sur un seul écran, export comptable inclus.",
+      "publisher": { "@id": "https://onlee.fr/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Noga",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://prisme-rh.vercel.app",
+      "description": "Logiciel de gestion RH pour les commerces et boutiques : congés, arrêts maladie, planning et préparation de la paie. Les salariés déposent depuis leur téléphone, la direction valide en un clic.",
+      "publisher": { "@id": "https://onlee.fr/#organization" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Mazal Box",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Web",
+      "url": "https://mazal-box.vercel.app",
+      "description": "Application de roulette-cadeau pour les événements (bar-mitsva, réceptions) : l'invité tape son nom, la roulette tombe sur le cadeau prévu.",
+      "publisher": { "@id": "https://onlee.fr/#organization" }
+    }
+  ]
 }
 </script>
 
@@ -599,6 +663,79 @@
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <style>
+    #faq .faq-head{ margin-bottom:clamp(28px,4vw,48px); }
+    #faq .faq-list{ max-width:840px; }
+    #faq .faq-item{ border-top:1px solid var(--line); padding:clamp(20px,2.4vw,28px) 0; }
+    #faq .faq-item:last-child{ border-bottom:1px solid var(--line); }
+    #faq .faq-item h3{ font-size:clamp(19px,2.2vw,23px); font-weight:500; margin-bottom:9px; letter-spacing:-.01em; }
+    #faq .faq-item p{ color:var(--muted); max-width:66ch; }
+  </style>
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="room-head reveal faq-head">
+        <h2>Questions <span class="mark">fréquentes</span>.</h2>
+        <p class="intro">Ce qu'on nous demande le plus souvent.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <h3>C'est quoi onlee ?</h3>
+          <p>onlee est un studio créatif français, basé à Paris. On conçoit, on dessine et on développe en interne nos propres logiciels (Vizor, Noga, Mazal Box), et on accompagne nos clients sur l'événementiel, la création de sites et la formation à l'IA.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Quels logiciels édite onlee ?</h3>
+          <p>Trois produits, utilisés par de vrais commerces : Vizor (caisse et tiers payant pour opticiens), Noga (gestion RH pour boutiques et commerces) et Mazal Box (roulette-cadeau pour les événements). Tout est conçu, dessiné et codé en interne.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Vizor, c'est pour qui ?</h3>
+          <p>Pour les magasins d'optique. Vizor réunit les ventes du jour, les restes à encaisser et les remboursements mutuelles sur un seul écran, avec export comptable. Une vente s'enregistre en 10 secondes, et un essai gratuit de 14 jours est disponible.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Comment onlee peut aider mon commerce ?</h3>
+          <p>Selon votre besoin : un logiciel métier (caisse, RH, fidélité), un site web, une identité visuelle, ou l'organisation d'un événement. On part de votre quotidien pour livrer un outil simple et prêt à l'emploi, pas une usine à gaz.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Comment vous contacter ?</h3>
+          <p>Par WhatsApp au 06 80 71 52 62, par email à contact@onlee.fr, ou en réservant un créneau d'appel directement en ligne. On répond vite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "C'est quoi onlee ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "onlee est un studio créatif français, basé à Paris. On conçoit, on dessine et on développe en interne nos propres logiciels (Vizor, Noga, Mazal Box), et on accompagne nos clients sur l'événementiel, la création de sites et la formation à l'IA." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels logiciels édite onlee ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Trois produits, utilisés par de vrais commerces : Vizor (caisse et tiers payant pour opticiens), Noga (gestion RH pour boutiques et commerces) et Mazal Box (roulette-cadeau pour les événements). Tout est conçu, dessiné et codé en interne." }
+      },
+      {
+        "@type": "Question",
+        "name": "Vizor, c'est pour qui ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pour les magasins d'optique. Vizor réunit les ventes du jour, les restes à encaisser et les remboursements mutuelles sur un seul écran, avec export comptable. Une vente s'enregistre en 10 secondes, et un essai gratuit de 14 jours est disponible." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment onlee peut aider mon commerce ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Selon votre besoin : un logiciel métier (caisse, RH, fidélité), un site web, une identité visuelle, ou l'organisation d'un événement. On part de votre quotidien pour livrer un outil simple et prêt à l'emploi." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment contacter onlee ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Par WhatsApp au +33 6 80 71 52 62, par email à contact@onlee.fr, ou en réservant un créneau d'appel en ligne." }
+      }
+    ]
+  }
+  </script>
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
