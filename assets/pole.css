@@ -1,9 +1,9 @@
 /* ===== Style partagé des pages "pôle" onlee (noir & or, épuré) ===== */
 :root {
-  --paper:#F6F1E7; --paper-2:#EFE8DA; --card:#FBF7EF;
-  --ink:#2A211A; --muted:#857868;
-  --line:rgba(42,33,26,.12); --line-2:rgba(42,33,26,.22);
-  --gold:#B5532E; --gold-hi:#C56A44; --on-accent:#F6F1E7;
+  --paper:#FBFBFA; --paper-2:#F1F2F4; --card:#FFFFFF;
+  --ink:#0B1220; --muted:#83868F;
+  --line:rgba(11,18,32,.08); --line-2:rgba(11,18,32,.14);
+  --gold:#0055FF; --gold-hi:#2E70FF; --on-accent:#FFFFFF;
   --serif:'Playfair Display', Georgia, serif;
   --sans:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
   --ease:cubic-bezier(.22,.61,.36,1);
@@ -81,10 +81,22 @@ header .pill { padding:10px 20px; font-size:13.5px; }
 .presta .media.flat::before, .presta .media.flat::after { content:none; display:none; }
 .presta .media.flat img { border-radius:16px; box-shadow:0 32px 62px -40px rgba(42,33,26,.38); display:block; width:100%; }
 .presta .soon { display:inline-block; margin-top:16px; font-size:12.5px; letter-spacing:.06em; color:var(--muted); border:1px solid var(--line-2); border-radius:999px; padding:6px 13px; }
+/* captures présentées en perspective 3D (elles se redressent au survol) */
+.presta .media { transition:transform .7s var(--ease), box-shadow .5s var(--ease); }
 @media (min-width:860px) {
   .presta .row { grid-template-columns:54px 1fr 1.2fr; align-items:center; }
   .presta.no-media .row { grid-template-columns:64px 1fr; }
+  .presta .media { transform:perspective(1700px) rotateY(-6deg) scale(.985); }
+  .presta .media:hover { transform:perspective(1700px) rotateY(0deg) scale(1); }
+  /* placement alterné (zigzag) : les prestations paires passent l'image à gauche */
+  .presta:not(.no-media):nth-of-type(even) .row { grid-template-columns:1.2fr 1fr 54px; }
+  .presta:not(.no-media):nth-of-type(even) .row > *:nth-child(1) { order:3; text-align:right; }
+  .presta:not(.no-media):nth-of-type(even) .row > *:nth-child(2) { order:2; }
+  .presta:not(.no-media):nth-of-type(even) .row > *:nth-child(3) { order:1; }
+  .presta:not(.no-media):nth-of-type(even) .media { transform:perspective(1700px) rotateY(6deg) scale(.985); }
+  .presta:not(.no-media):nth-of-type(even) .media:hover { transform:perspective(1700px) rotateY(0deg) scale(1); }
 }
+@media (prefers-reduced-motion: reduce) { .presta .media { transform:none!important; } }
 
 .feat { display:grid; grid-template-columns:1fr; gap:clamp(20px,3vw,30px); margin-top:clamp(30px,4vw,48px); }
 .feat .f { border-top:2px solid var(--gold); padding-top:16px; }
