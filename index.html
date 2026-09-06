@@ -320,16 +320,18 @@
   @media (min-width:760px) { .studio-grid { grid-template-columns:repeat(3,1fr); gap:clamp(24px,3vw,40px); } }
 
   /* ---- maison ---- */
-  .branches { display:flex; flex-direction:column; }
-  .branch { display:grid; grid-template-columns:1fr; gap:6px 40px; padding:clamp(22px,3vw,32px) 0; border-top:1px solid var(--line); }
-  .branch:last-child { border-bottom:1px solid var(--line); }
-  .branch h3 { font-size:clamp(1.6rem,3vw,2.3rem); line-height:1; }
-  .branch .role { margin-top:8px; }
-  .branch .b-desc { color:var(--muted); font-size:15.5px; }
-  a.branch-link { transition:border-color .3s var(--ease); }
-  a.branch-link:hover h3 { color:var(--gold); }
-  a.branch-link:hover .role { color:var(--ink); }
-  @media (min-width:820px) { .branch { grid-template-columns:1fr 1fr; align-items:baseline; } }
+  .branches { display:grid; grid-template-columns:1fr; gap:clamp(16px,2vw,20px); }
+  @media (min-width:720px) { .branches { grid-template-columns:1fr 1fr; } }
+  .branch { display:flex; align-items:center; gap:clamp(16px,2vw,22px); padding:clamp(16px,1.8vw,20px);
+    background:var(--card); border:1px solid var(--line); border-radius:18px;
+    transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease); }
+  .branch:hover { transform:translateY(-4px); border-color:var(--gold); box-shadow:0 26px 54px -44px rgba(11,18,32,.18); }
+  .branch-media { flex:0 0 clamp(88px,11vw,116px); }
+  .branch-media img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:13px; display:block; }
+  .branch-body { flex:1; min-width:0; }
+  .branch h3 { font-size:clamp(1.25rem,2vw,1.6rem); line-height:1.05; }
+  .branch .role { margin-top:6px; }
+  .branch .b-desc { color:var(--muted); font-size:14.5px; margin-top:8px; line-height:1.5; }
 
   /* ---- manifeste ---- */
   .manifesto .wrap { max-width:900px; }
@@ -524,20 +526,20 @@
       </div>
       <div class="branches">
         <div class="branch reveal">
-          <div><h3>onlee studio</h3><div class="role label">Produits &amp; logiciels · actif</div></div>
-          <p class="b-desc">Conception et édition de nos propres apps et SaaS.</p>
+          <div class="branch-media"><img src="assets/maison/studio.jpg" alt="onlee studio — produits et logiciels" loading="lazy"></div>
+          <div class="branch-body"><h3>onlee studio</h3><div class="role label">Produits &amp; logiciels · actif</div><p class="b-desc">Conception et édition de nos propres apps et SaaS.</p></div>
         </div>
         <div class="branch reveal" style="--d:.08s">
-          <div><h3>onlee crew</h3><div class="role label">Événementiel · actif</div></div>
-          <p class="b-desc">Soirées : direction artistique, line-up, scénographie.</p>
+          <div class="branch-media"><img src="assets/maison/crew.jpg" alt="onlee crew — soirées et événementiel" loading="lazy"></div>
+          <div class="branch-body"><h3>onlee crew</h3><div class="role label">Événementiel · actif</div><p class="b-desc">Soirées : direction artistique, line-up, scénographie.</p></div>
         </div>
         <div class="branch reveal" style="--d:.16s">
-          <div><h3>onlee relations</h3><div class="role label">Relationnel B2B · actif</div></div>
-          <p class="b-desc">Mise en relation marques, lieux et organisateurs.</p>
+          <div class="branch-media"><img src="assets/maison/relations.jpg" alt="onlee relations — relationnel B2B" loading="lazy"></div>
+          <div class="branch-body"><h3>onlee relations</h3><div class="role label">Relationnel B2B · actif</div><p class="b-desc">Mise en relation marques, lieux et organisateurs.</p></div>
         </div>
         <div class="branch reveal" style="--d:.24s">
-          <div><h3>onlee formation</h3><div class="role label">Formation IA · actif</div></div>
-          <p class="b-desc">Former les équipes à l'IA : audit, cas d'usage, prise en main. Finançable.</p>
+          <div class="branch-media"><img src="assets/maison/formation.jpg" alt="onlee formation — formation à l'IA" loading="lazy"></div>
+          <div class="branch-body"><h3>onlee formation</h3><div class="role label">Formation IA · actif</div><p class="b-desc">Former les équipes à l'IA : audit, cas d'usage, prise en main. Finançable.</p></div>
         </div>
       </div>
     </div>
