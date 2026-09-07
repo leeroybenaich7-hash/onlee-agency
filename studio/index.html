@@ -84,6 +84,26 @@
   .cta-price b { font-family:var(--serif); font-size:clamp(2rem,4.4vw,2.9rem); font-weight:600; color:var(--gold); line-height:1; }
   .cta-price em { font-style:normal; font-size:14.5px; color:var(--muted); }
   .work-card .price { display:inline-block; margin:12px 10px 0 0; font-size:14px; font-weight:700; color:var(--ink); }
+  /* étapes en zigzag (texte / visuel accent alterné) */
+  .steps-zz { display:flex; flex-direction:column; gap:clamp(44px,7vw,96px); margin-top:clamp(38px,5vw,64px); }
+  .zz { display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,64px); align-items:center; }
+  .zz:nth-of-type(even) .zz-text { order:2; }
+  @media (max-width:760px){ .zz { grid-template-columns:1fr; gap:22px; } .zz:nth-of-type(even) .zz-text { order:0; } }
+  .zz-head { display:flex; align-items:center; gap:12px; margin-bottom:14px; flex-wrap:wrap; }
+  .zz-no { font-family:var(--serif); font-weight:600; font-size:clamp(1.8rem,3vw,2.4rem); color:var(--gold); line-height:1; }
+  .zz-text .lead-in { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .zz-text .step-price { display:inline-block; font-family:var(--sans); font-size:12.5px; font-weight:700; color:#fff; background:var(--gold); padding:3px 11px; border-radius:999px; }
+  .zz-text h3 { font-size:clamp(1.5rem,2.6vw,2.1rem); line-height:1.08; margin-bottom:12px; }
+  .zz-text p { color:var(--muted); font-size:15.5px; line-height:1.6; max-width:52ch; }
+  .accent { position:relative; aspect-ratio:4/3; border-radius:20px; padding:clamp(26px,3.4vw,42px); display:flex; flex-direction:column; justify-content:center; overflow:hidden;
+    background:linear-gradient(155deg,#EFF4FF 0%,#FBFCFF 62%); border:1px solid var(--line); box-shadow:0 34px 66px -46px rgba(11,18,32,.30); }
+  .accent .big { font-family:var(--serif); font-weight:600; font-size:clamp(2.6rem,6.4vw,4.6rem); line-height:.98; color:var(--gold); letter-spacing:-.02em; }
+  .accent .sup { margin-top:16px; font-size:16px; color:var(--ink); max-width:24ch; line-height:1.45; }
+  .accent .sup b { font-weight:600; }
+  .accent .ic { position:absolute; top:24px; right:24px; width:46px; height:46px; border-radius:13px; background:rgba(0,85,255,.12); display:grid; place-items:center; }
+  .accent .ic svg { width:24px; height:24px; stroke:var(--gold); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .accent .bars { display:flex; align-items:flex-end; gap:clamp(8px,1.4vw,14px); height:clamp(118px,15vw,168px); margin-bottom:18px; }
+  .accent .bars i { flex:1; background:linear-gradient(180deg,#5B8CFF,var(--gold)); border-radius:7px 7px 0 0; }
 </style>
 </head>
 <body>
@@ -150,13 +170,74 @@
         <h2>De l'audit aux heures gagnées, en 5 étapes.</h2>
         <p class="lede" style="margin-top:12px">Une méthode claire. On commence toujours par comprendre où part votre temps — vous savez à chaque instant où on en est.</p>
       </div>
-      <ol class="steps">
-        <li class="step reveal"><div class="s-no">01</div><div><span class="lead-in">Étape 1</span><span class="step-price">250 €</span><h3>L'audit, chez vous</h3><p>On passe une demi-journée dans votre activité : vos logiciels, vos fichiers, les gestes que vous répétez sans y penser. On note chaque tâche répétitive, chaque double saisie, chaque oubli qui vous coûte du temps.</p></div></li>
-        <li class="step reveal" style="--d:.06s"><div class="s-no">02</div><div><span class="lead-in">Étape 2</span><h3>On chiffre les heures perdues</h3><p>Recopier un dossier deux fois, refaire un devis à la main, relancer un client de tête : on mesure ce que ces gestes vous coûtent. Puis on vous rend une liste claire — les 3 ou 4 tâches à faire disparaître en premier, et le temps gagné sur chacune.</p></div></li>
-        <li class="step reveal" style="--d:.12s"><div class="s-no">03</div><div><span class="lead-in">Étape 3</span><h3>On construit vos outils et vos agents</h3><p>Un outil qui saisit vos données une seule fois au lieu de trois. Un agent qui lit un document et remplit la fiche à votre place. Fait pour votre métier, pas un logiciel générique.</p></div></li>
-        <li class="step reveal" style="--d:.18s"><div class="s-no">04</div><div><span class="lead-in">Étape 4</span><h3>On installe et on forme votre équipe</h3><p>On branche les outils dans votre quotidien et on montre à chacun comment s'en servir. En quelques minutes, tout le monde est autonome. Vous continuez à travailler, en mieux.</p></div></li>
-        <li class="step reveal" style="--d:.24s"><div class="s-no">05</div><div><span class="lead-in">Étape 5</span><h3>On suit, vous gagnez du temps</h3><p>On mesure les heures gagnées, on corrige, on ajoute ce qui manque. Vos outils évoluent avec votre activité — et le temps récupéré retourne à votre métier.</p></div></li>
-      </ol>
+      <div class="steps-zz">
+
+        <div class="zz reveal">
+          <div class="zz-text">
+            <div class="zz-head"><span class="zz-no">01</span><span class="lead-in">Étape 1</span><span class="step-price">250 €</span></div>
+            <h3>L'audit, chez vous</h3>
+            <p>On passe une demi-journée dans votre activité : vos logiciels, vos fichiers, les gestes que vous répétez sans y penser. On note chaque tâche répétitive, chaque double saisie, chaque oubli qui vous coûte du temps.</p>
+          </div>
+          <div class="zz-visual"><div class="accent">
+            <span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg></span>
+            <div class="big">250 €</div>
+            <div class="sup">L'audit, chez vous — une demi-journée sur place, et un plan chiffré à la clé.</div>
+          </div></div>
+        </div>
+
+        <div class="zz reveal">
+          <div class="zz-text">
+            <div class="zz-head"><span class="zz-no">02</span><span class="lead-in">Étape 2</span></div>
+            <h3>On chiffre les heures perdues</h3>
+            <p>Recopier un dossier deux fois, refaire un devis à la main, relancer un client de tête : on mesure ce que ces gestes vous coûtent. Puis on vous rend une liste claire — les 3 ou 4 tâches à faire disparaître en premier, et le temps gagné sur chacune.</p>
+          </div>
+          <div class="zz-visual"><div class="accent">
+            <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div class="bars"><i style="height:36%"></i><i style="height:50%"></i><i style="height:44%"></i><i style="height:66%"></i><i style="height:82%"></i><i style="height:100%"></i></div>
+            <div class="sup"><b>Des heures récupérées</b>, chiffrées noir sur blanc.</div>
+          </div></div>
+        </div>
+
+        <div class="zz reveal">
+          <div class="zz-text">
+            <div class="zz-head"><span class="zz-no">03</span><span class="lead-in">Étape 3</span></div>
+            <h3>On construit vos outils et vos agents</h3>
+            <p>Un outil qui saisit vos données une seule fois au lieu de trois. Un agent qui lit un document et remplit la fiche à votre place. Fait pour votre métier, pas un logiciel générique.</p>
+          </div>
+          <div class="zz-visual"><div class="accent">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 12.5 12 17l9-4.5"/></svg></span>
+            <div class="big">Sur-mesure.</div>
+            <div class="sup">Taillé pour votre métier — pas un logiciel générique de plus.</div>
+          </div></div>
+        </div>
+
+        <div class="zz reveal">
+          <div class="zz-text">
+            <div class="zz-head"><span class="zz-no">04</span><span class="lead-in">Étape 4</span></div>
+            <h3>On installe et on forme votre équipe</h3>
+            <p>On branche les outils dans votre quotidien et on montre à chacun comment s'en servir. En quelques minutes, tout le monde est autonome. Vous continuez à travailler, en mieux.</p>
+          </div>
+          <div class="zz-visual"><div class="accent">
+            <span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.3"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5"/><path d="M16 5.6a3.4 3.4 0 0 1 0 6.4M17.5 20c0-2-.8-3.6-2-4.6"/></svg></span>
+            <div class="big">Autonome.</div>
+            <div class="sup">Votre équipe prend l'outil en main en quelques minutes.</div>
+          </div></div>
+        </div>
+
+        <div class="zz reveal">
+          <div class="zz-text">
+            <div class="zz-head"><span class="zz-no">05</span><span class="lead-in">Étape 5</span></div>
+            <h3>On suit, vous gagnez du temps</h3>
+            <p>On mesure les heures gagnées, on corrige, on ajoute ce qui manque. Vos outils évoluent avec votre activité — et le temps récupéré retourne à votre métier.</p>
+          </div>
+          <div class="zz-visual"><div class="accent">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+            <div class="big">+ de temps.</div>
+            <div class="sup">Récupéré chaque semaine, rendu à votre métier.</div>
+          </div></div>
+        </div>
+
+      </div>
     </div>
   </section>
 
