@@ -53,7 +53,16 @@
       },
       "founder": {
         "@type": "Person",
-        "name": "Leeroy Ben-Aich"
+        "name": "Leeroy Ben-Aich",
+        "jobTitle": "Fondateur",
+        "alumniOf": { "@type": "EducationalOrganization", "name": "Developers Institute" },
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "name": "GenAI & Machine Learning Bootcamp",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "EducationalOrganization", "name": "Developers Institute" },
+          "url": "https://octopus.developers.institute/courses/di_learning_certificate/bcc39b0d-60c5-451e-90a4-4f6ebf914c96"
+        }
       },
       "contactPoint": {
         "@type": "ContactPoint",
@@ -246,6 +255,11 @@
     padding:10px 14px; border-radius:13px; background:color-mix(in srgb, var(--paper) 80%, transparent); backdrop-filter:blur(8px); border:1px solid var(--line); }
   .hero-portrait figcaption b { font-family:var(--serif); font-weight:500; font-size:1.02rem; line-height:1.1; }
   .hero-portrait figcaption span { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .hero .cred { margin-top:13px; font-size:13px; line-height:1.5; }
+  .hero .cred a { display:inline-flex; align-items:center; gap:8px; color:var(--muted); border-bottom:1px solid transparent; transition:color .3s var(--ease), border-color .3s var(--ease); }
+  .hero .cred a:hover { color:var(--gold); border-bottom-color:var(--gold); }
+  .hero .cred svg { width:16px; height:16px; color:var(--gold); flex:none; }
+  .hero .cred b { color:var(--ink); font-weight:600; }
   @media (min-width:900px) {
     .hero-grid { display:grid; grid-template-columns:1.32fr .68fr; gap:clamp(34px,5vw,72px); align-items:center; }
     .hero-portrait { margin:0; max-width:none; }
@@ -568,6 +582,7 @@
           <a href="#contact" class="pill pill-ghost">Nous écrire</a>
         </div>
         <p class="trust reveal" style="--d:.32s"><b>3 produits en ligne</b> · utilisés par de vraies boutiques.</p>
+        <p class="cred reveal" style="--d:.38s"><a href="https://octopus.developers.institute/courses/di_learning_certificate/bcc39b0d-60c5-451e-90a4-4f6ebf914c96" target="_blank" rel="noopener" title="Voir le certificat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="m8.5 13.2-1.3 7.3 4.8-2 4.8 2-1.3-7.3"/><path d="m10 9 1.4 1.4L14.2 7.6"/></svg><span>Fondateur <b>diplômé GenAI &amp; Machine Learning</b> — Developers Institute</span></a></p>
       </div>
       <figure class="hero-portrait reveal" style="--d:.2s">
         <img src="assets/leeroy.jpg" alt="Leeroy Ben-Aich, fondateur d'onlee" width="825" height="1100">
@@ -1116,6 +1131,7 @@
       { sel: '#contact .intro', en: 'Write to us — we reply fast.' },
       { sel: '.rdv-txt b', en: 'Book a call slot' },
       { sel: '.rdv-txt span', en: 'Pick a time that suits you — straight into my calendar.' },
+      { sel: '.cred a span', en: 'Founder — <b>certified in GenAI &amp; Machine Learning</b>, Developers Institute' },
       { sel: '.form-head .eyebrow', en: 'Or right here' },
       { sel: '.cform label', all: true, en: ['Your name', 'Your email', 'Your project in a few words'] },
       { sel: '.cbtn', en: 'Send message' },
