@@ -357,12 +357,10 @@
   /* fond électrocardiogramme (vrai tracé hôpital qui défile comme un moniteur) */
   #poles { position:relative; }
   #poles .wrap { position:relative; z-index:1; }
-  .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-            mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
-  .ecg-track { position:absolute; top:50%; left:0; width:200%; height:clamp(180px,28vh,260px); transform:translate(0,-50%); will-change:transform; }
-  .ecg-line { fill:none; stroke:var(--gold); stroke-width:2.2; opacity:.18; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
-  @media (prefers-reduced-motion: reduce) { .ecg-track { animation:none; } }
+  .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+  .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:94%; }
+  .ecg-line { fill:none; stroke:var(--ink); stroke-width:3.4; opacity:.15; stroke-linejoin:round; stroke-linecap:round; }
+  .ecg-dot { fill:var(--ink); opacity:.26; }
   .pm-slot { perspective:1400px; margin-bottom:46px; }
   .pm-slot:last-child { margin-bottom:0; }
   .pm-item { display:flex; align-items:center; gap:22px; padding:30px 34px; margin-bottom:0; background:var(--card);
@@ -663,7 +661,7 @@
 
   <!-- PÔLES (fusion « nos pôles » + « une maison, plusieurs métiers ») -->
   <section id="poles">
-    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" class="ecg-track" viewBox="0 0 2400 240" preserveAspectRatio="none"><path id="ecgPath" class="ecg-line"/></svg></div>
+    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" viewBox="0 0 2000 400" preserveAspectRatio="none"><path id="ecgL" class="ecg-line"/><path id="ecgR" class="ecg-line"/><circle id="ecgDotL" class="ecg-dot" r="9"/><circle id="ecgDotR" class="ecg-dot" r="9"/></svg></div>
     <div class="wrap">
       <h2 class="reveal" style="text-align:center;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin-bottom:12px">Une maison,<br>plusieurs <em>pôles</em>.</h2>
       <p class="intro reveal" style="text-align:center;max-width:52ch;margin:0 auto clamp(34px,5vw,54px)">Sous un même nom, des métiers complémentaires. Chacun a sa page.</p>
@@ -958,29 +956,45 @@
     t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(); } });
   });
 
-  // fond électrocardiogramme : vrai tracé hôpital, bouge UNIQUEMENT au scroll, gros pics & creux
+  // fond électrocardiogramme : part du milieu et s'étend en grandissant au scroll, boule au bout
   (function () {
-    var track = document.getElementById('ecg'); var path = document.getElementById('ecgPath'); if (!track || !path) return;
-    var y = 120;
-    function beat(bx) {
-      return ' L ' + (bx + 62) + ' ' + y
-        + ' L ' + (bx + 74) + ' ' + (y - 14) + ' L ' + (bx + 86) + ' ' + y
-        + ' L ' + (bx + 150) + ' ' + y
-        + ' L ' + (bx + 162) + ' ' + (y + 18) + ' L ' + (bx + 176) + ' ' + (y - 98) + ' L ' + (bx + 190) + ' ' + (y + 58) + ' L ' + (bx + 203) + ' ' + y
-        + ' L ' + (bx + 272) + ' ' + y
-        + ' L ' + (bx + 287) + ' ' + (y - 26) + ' L ' + (bx + 301) + ' ' + y
-        + ' L ' + (bx + 400) + ' ' + y;
+    var pL = document.getElementById('ecgL'), pR = document.getElementById('ecgR');
+    var dL = document.getElementById('ecgDotL'), dR = document.getElementById('ecgDotR'), sec = document.getElementById('poles');
+    if (!pL || !pR || !sec) return;
+    var cx = 1000, cy = 200, reach = 1000, U = 320;
+    function side(dir) {
+      var d = 'M ' + cx + ' ' + cy, off = 0;
+      function X(o) { return cx + dir * o; }
+      while (off < reach) {
+        var a = 0.20 + 0.80 * Math.min(1, (off + U) / reach);
+        var R = 128 * a, S = 66 * a, P = 15 * a, T = 24 * a;
+        d += ' L ' + X(off + 80) + ' ' + cy
+          + ' L ' + X(off + 94) + ' ' + (cy - P) + ' L ' + X(off + 108) + ' ' + cy
+          + ' L ' + X(off + 170) + ' ' + cy
+          + ' L ' + X(off + 182) + ' ' + (cy + S * 0.35) + ' L ' + X(off + 196) + ' ' + (cy - R) + ' L ' + X(off + 210) + ' ' + (cy + S) + ' L ' + X(off + 224) + ' ' + cy
+          + ' L ' + X(off + 275) + ' ' + cy
+          + ' L ' + X(off + 289) + ' ' + (cy - T) + ' L ' + X(off + 303) + ' ' + cy
+          + ' L ' + X(off + U) + ' ' + cy;
+        off += U;
+      }
+      return d;
     }
-    var d = 'M 0 ' + y;
-    for (var i = 0; i < 6; i++) d += beat(i * 400);
-    path.setAttribute('d', d);
+    pL.setAttribute('d', side(-1)); pR.setAttribute('d', side(1));
+    var lenL = pL.getTotalLength(), lenR = pR.getTotalLength();
+    pL.style.strokeDasharray = lenL; pR.style.strokeDasharray = lenR;
     var PRM = matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false;
+    function draw(p) {
+      pL.style.strokeDashoffset = lenL * (1 - p); pR.style.strokeDashoffset = lenR * (1 - p);
+      var a = pL.getPointAtLength(Math.max(0.1, lenL * p)), b = pR.getPointAtLength(Math.max(0.1, lenR * p));
+      dL.setAttribute('cx', a.x); dL.setAttribute('cy', a.y);
+      dR.setAttribute('cx', b.x); dR.setAttribute('cy', b.y);
+    }
     function upd() {
       ticking = false;
-      if (PRM) { track.style.transform = 'translate(0,-50%)'; return; }
-      var half = track.getBoundingClientRect().width / 2 || 600;
-      var off = (((window.pageYOffset || 0) * 0.4) % half);
-      track.style.transform = 'translate(' + (-off) + 'px,-50%)';
+      if (PRM) { draw(1); return; }
+      var r = sec.getBoundingClientRect(), vh = innerHeight || 800;
+      var p = (vh - r.top) / (vh + r.height); p = Math.max(0, Math.min(1, p));
+      draw(p);
     }
     addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
     addEventListener('resize', upd); upd();
