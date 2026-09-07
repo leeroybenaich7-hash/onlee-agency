@@ -223,14 +223,18 @@
   .clients-track { display:flex; align-items:center; width:max-content; will-change:transform; animation:clients-scroll 30s linear infinite; }
   /* défile en continu, ne s'arrête jamais (même au survol) */
   @keyframes clients-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
-  .c-logo { display:inline-flex; align-items:center; gap:11px; margin-right:clamp(34px,5vw,66px); color:var(--ink); opacity:.55; white-space:nowrap;
-    filter:grayscale(1); transition:opacity .45s var(--ease), filter .45s var(--ease); }
-  .c-logo:hover { opacity:1; filter:grayscale(0); }
-  .c-mark { height:clamp(24px,2.5vw,30px); width:auto; display:block; }
-  .c-name { font-family:var(--serif); font-weight:600; font-size:clamp(1.05rem,1.7vw,1.34rem); letter-spacing:-.01em; line-height:1; }
-  .c-name.nao { font-style:italic; font-weight:500; }
-  .c-name.nao .sub { font-family:var(--sans); font-style:normal; font-weight:600; font-size:.46em; letter-spacing:.16em; text-transform:uppercase; opacity:.65; margin-left:.42em; vertical-align:middle; }
-  .c-name.brandon { font-family:var(--sans); font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:clamp(.82rem,1.35vw,1rem); }
+  .c-logo { display:inline-flex; align-items:center; gap:11px; margin-right:clamp(34px,5vw,66px); white-space:nowrap;
+    transition:transform .4s var(--ease); }
+  .c-logo:hover { transform:translateY(-2px); }
+  .c-mark { height:clamp(25px,2.6vw,31px); width:auto; display:block; }
+  .c-name { font-family:var(--serif); font-weight:600; font-size:clamp(1.05rem,1.7vw,1.34rem); letter-spacing:-.01em; line-height:1; color:var(--ink); }
+  .c-name.optic { color:#96743d; }
+  .c-name.eyes  { color:#8A6D35; }
+  .c-name.jofre { color:#2B57C4; }
+  .c-name.nao   { font-style:italic; font-weight:500; color:#9E122C; }
+  .c-name.nao .sub { font-family:var(--sans); font-style:normal; font-weight:600; font-size:.46em; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-left:.42em; vertical-align:middle; }
+  .c-name.brandon { font-family:var(--sans); font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:clamp(.82rem,1.35vw,1rem); color:var(--ink); }
+  .c-name.brandon .ember { color:#E11024; }
   @media (prefers-reduced-motion: reduce) { .clients-track { animation:none; } .clients-marquee { overflow-x:auto; } }
 
   /* ---- hero : portrait fondateur ---- */
@@ -562,11 +566,11 @@
   <section class="clients reveal" aria-label="Ils utilisent nos outils">
     <div class="clients-marquee">
       <div class="clients-track">
-        <span class="c-logo"><img class="c-mark" src="assets/clients/optic-city.svg" alt="" aria-hidden="true"><span class="c-name">Optic City</span></span>
-        <span class="c-logo"><img class="c-mark" src="assets/clients/eyes-bnb.svg" alt="" aria-hidden="true"><span class="c-name">Eyes B&amp;B</span></span>
-        <span class="c-logo"><span class="c-name">Jofre Tapis</span></span>
+        <span class="c-logo"><img class="c-mark" src="assets/clients/optic-city.svg" alt="" aria-hidden="true"><span class="c-name optic">Optic City</span></span>
+        <span class="c-logo"><img class="c-mark" src="assets/clients/eyes-bnb.svg" alt="" aria-hidden="true"><span class="c-name eyes">Eyes B&amp;B</span></span>
+        <span class="c-logo"><span class="c-name jofre">Jofre Tapis</span></span>
         <span class="c-logo"><span class="c-name nao">nao<span class="sub">pilates</span></span></span>
-        <span class="c-logo"><span class="c-name brandon">Brandon Coaching</span></span>
+        <span class="c-logo"><span class="c-name brandon">Brandon <span class="ember">Coaching</span></span></span>
       </div>
     </div>
   </section>
