@@ -1,8 +1,8 @@
 # onlee
 
-> onlee est un studio créatif français basé à Paris. Il conçoit, dessine et développe en interne ses propres logiciels et applications (Vizor, Noga, Mazal Box), et accompagne ses clients sur l'événementiel, la création de sites et la formation à l'IA. Fondateur : Leeroy Ben-Aich.
+> onlee est une agence française d'automatisation et d'intelligence artificielle, basée à Paris. Elle crée des automatisations, des agents IA et des logiciels sur-mesure pour les commerces et les entreprises, et édite ses propres logiciels métier (Vizor, Noga, Mazal Box). Conçus, dessinés et codés en interne. Fondateur : Leeroy Ben-Aich.
 
-onlee réunit plusieurs métiers sous une même maison : édition de produits logiciels (SaaS), événementiel, mise en relation B2B et formation. Les outils sont utilisés par de vrais commerces (opticiens, boutiques) au quotidien.
+onlee réunit plusieurs métiers : automatisation et agents IA sur-mesure (pôle Studio), édition de logiciels SaaS (Vizor, Noga), événementiel et animation de soirées en club (Crew). Les outils sont utilisés par de vrais commerces (opticiens, boutiques) au quotidien.
 
 ## Produits
 
@@ -12,9 +12,11 @@ onlee réunit plusieurs métiers sous une même maison : édition de produits lo
 
 ## Pôles
 
+- [Studio](https://onlee.fr/studio/) : automatisation, outils sur-mesure et agents IA. On observe ce qui fait perdre du temps dans une activité, puis on crée les outils, les automatisations et les agents IA qui rendent ces heures — audit, développement et formation de l'équipe.
 - [Opticiens](https://onlee.fr/opticiens/) : les logiciels du magasin d'optique — caisse, tiers payant, fidélité (Vizor et Bons de fidélité).
 - [RH](https://onlee.fr/rh/) : la gestion RH des boutiques et commerces (Noga).
 - [Événementiel](https://onlee.fr/evenements/) : soirées, faire-part web, Mazal Box, partage de photos en direct, design et logos.
+- [Crew](https://onlee.fr/crew/) : onlee Crew amène sa soirée et son public dans les clubs.
 
 ## Contact
 
