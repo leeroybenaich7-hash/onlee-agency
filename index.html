@@ -501,6 +501,7 @@
   .mf-quote { position:absolute; top:-.42em; left:-.04em; z-index:0; pointer-events:none; user-select:none;
     font-family:var(--serif); font-weight:600; font-style:italic; line-height:.8;
     font-size:clamp(5.5rem,13vw,10rem); color:rgba(0,85,255,.10); }
+  .mf-quote-end { top:auto; bottom:-.5em; left:auto; right:-.02em; }
   .manifesto .big { font-family:var(--serif); font-size:clamp(2rem,4.1vw,3.4rem); line-height:1.2;
     letter-spacing:-.02em; margin-top:20px; color:rgba(11,18,32,.16); }
   .manifesto .big em { color:var(--gold); }
@@ -513,9 +514,13 @@
   .manifesto .big em.mf-accent { position:relative; color:rgba(0,85,255,calc(.28 + .72*var(--lit,1))); }
   .manifesto .big em.mf-accent::after { content:''; position:absolute; left:0; bottom:-.02em; width:100%; height:.045em;
     background:rgba(0,85,255,.55); transform:scaleX(var(--lit,1)); transform-origin:left center; }
+  /* les 3 verbes conçoit · dessine · code : soulignement encre qui se trace en s'allumant (le 3e = code en bleu) */
+  .manifesto .big .mf-verb { position:relative; }
+  .manifesto .big .mf-verb::after { content:''; position:absolute; left:0; bottom:-.02em; width:100%; height:.04em;
+    background:rgba(11,18,32,.42); transform:scaleX(var(--lit,1)); transform-origin:left center; }
   @media (prefers-reduced-motion: reduce){
     .manifesto .big .mf-w { transform:none!important; filter:none!important; transition:color .2s linear; }
-    .manifesto .big em.mf-accent::after { transform:scaleX(1); } }
+    .manifesto .big em.mf-accent::after, .manifesto .big .mf-verb::after { transform:scaleX(1); } }
   .manifesto .sign { margin-top:30px; }
 
   /* ---- contact ---- */
@@ -715,9 +720,10 @@
     <div class="wrap">
       <span class="mf-quote" aria-hidden="true">«</span>
       <div class="reveal">
-        <p class="big">Parti d'un collectif de soirées parisien, onlee est devenu un studio qui conçoit, dessine et <em>code</em> ses propres logiciels — jusqu'aux automatisations et agents IA sur-mesure. Une maison, plusieurs métiers.</p>
+        <p class="big">Parti d'un collectif de soirées parisien, onlee est devenu un studio qui <span class="mf-verb">conçoit</span>, <span class="mf-verb">dessine</span> et <em>code</em> ses propres logiciels — jusqu'aux automatisations et agents IA sur-mesure. Une maison, plusieurs métiers.</p>
         <div class="sign label">— le crew onlee</div>
       </div>
+      <span class="mf-quote mf-quote-end" aria-hidden="true">»</span>
     </div>
   </section>
 
@@ -1233,7 +1239,7 @@
       { sel: '.b-go', all: true, en: ['Discover', 'Discover'] },
 
       { sel: '#manifeste .eyebrow', en: 'The manifesto' },
-      { sel: '#manifeste .big', en: 'Born from a Paris nightlife collective, onlee became a studio that designs, draws and <em>codes</em> its own software. One house, many crafts.' },
+      { sel: '#manifeste .big', en: 'Born from a Paris nightlife collective, onlee became a studio that <span class="mf-verb">designs</span>, <span class="mf-verb">draws</span> and <em>codes</em> its own software. One house, many crafts.' },
       { sel: '#manifeste .sign', en: '— the onlee crew' },
 
       { sel: '#contact .eyebrow', en: 'Get in touch' },
