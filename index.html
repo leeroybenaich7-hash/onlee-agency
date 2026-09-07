@@ -993,46 +993,61 @@
     t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(); } });
   });
 
-  // fond électrocardiogramme : avance de gauche à droite au scroll, boule au bout, ligne de base visible
+  // fond électrocardiogramme : tracé RESPONSIVE en géométrie 1:1 (viewBox = taille réelle en px)
+  // -> pas de distorsion (mobile inclus), trait homogène, boule pile sur la pointe
   (function () {
-    var path = document.getElementById('ecgPath'), dot = document.getElementById('ecgDot'), sec = document.getElementById('poles');
-    if (!path || !sec) return;
-    var W = 2000, cy = 300, U = 400, baseR = 172, baseS = 150;
-    // battements irréguliers : [montée R, descente S] — très grand, petit, très très grand, moyen, grand
+    var path = document.getElementById('ecgPath'), dot = document.getElementById('ecgDot'),
+        sec = document.getElementById('poles'), svg = path && path.ownerSVGElement,
+        base = svg && svg.querySelector('.ecg-base');
+    if (!path || !sec || !svg) return;
+    // battements irréguliers : [montée, descente] — très grand, petit, très très grand, moyen, grand
     var beats = [[1.45, 0.60], [0.55, 0.45], [1.75, 0.95], [0.80, 0.50], [1.20, 0.70]];
-    var d = 'M 0 ' + cy, x = 0, i = 0;
-    while (x < W) {
-      var b = beats[i % beats.length]; i++;
-      var R = baseR * b[0], S = baseS * b[1];
-      d += ' L ' + (x + 150) + ' ' + cy
-        + ' L ' + (x + 172) + ' ' + (cy + 26)
-        + ' L ' + (x + 192) + ' ' + (cy - R)
-        + ' L ' + (x + 212) + ' ' + (cy + S)
-        + ' L ' + (x + 234) + ' ' + cy
-        + ' L ' + (x + U) + ' ' + cy;
-      x += U;
+    var W = 0, H = 0, cy = 0, len = 0;
+    function build() {
+      W = Math.round(svg.getBoundingClientRect().width || innerWidth || 1000);
+      H = Math.round(svg.getBoundingClientRect().height || 460);
+      cy = Math.round(H / 2);
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      if (base) { base.setAttribute('x1', 0); base.setAttribute('y1', cy); base.setAttribute('x2', W); base.setAttribute('y2', cy); }
+      // géométrie voulue EN PX ÉCRAN, calibrée mobile / desktop
+      var mob = W < 760;
+      var pitch = mob ? 150 : 300, qrs = mob ? 46 : 78, baseR = mob ? 96 : 150, baseS = mob ? 74 : 120;
+      var d = 'M 0 ' + cy, x = 0, i = 0;
+      while (x < W) {
+        var b = beats[i % beats.length]; i++;
+        var R = (baseR * b[0]).toFixed(1), S = (baseS * b[1]).toFixed(1), s = x + pitch * 0.46;
+        d += ' L ' + (s).toFixed(1) + ' ' + cy
+          + ' L ' + (s + qrs * 0.22).toFixed(1) + ' ' + (cy + 14)
+          + ' L ' + (s + qrs * 0.5).toFixed(1) + ' ' + (cy - R)
+          + ' L ' + (s + qrs * 0.78).toFixed(1) + ' ' + (cy + +S)
+          + ' L ' + (s + qrs).toFixed(1) + ' ' + cy
+          + ' L ' + (x + pitch).toFixed(1) + ' ' + cy;
+        x += pitch;
+      }
+      d += ' L ' + W + ' ' + cy;
+      path.setAttribute('d', d);
+      len = path.getTotalLength(); path.style.strokeDasharray = len;
     }
-    d += ' L ' + W + ' ' + cy;
-    path.setAttribute('d', d);
-    var len = path.getTotalLength(); path.style.strokeDasharray = len;
     var PRM = matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false;
     function draw(p) {
+      if (!len) return;
       path.style.strokeDashoffset = len * (1 - p);
       var pt = path.getPointAtLength(Math.max(0.1, len * p));
-      var sr = path.ownerSVGElement.getBoundingClientRect(), br = dot.parentElement.getBoundingClientRect();
-      dot.style.left = (sr.left - br.left + (pt.x / 2000) * sr.width) + 'px';
-      dot.style.top = (sr.top - br.top + (pt.y / 600) * sr.height) + 'px';
+      var sr = svg.getBoundingClientRect(), br = dot.parentElement.getBoundingClientRect();
+      dot.style.left = (sr.left - br.left + (pt.x / W) * sr.width) + 'px';
+      dot.style.top = (sr.top - br.top + (pt.y / H) * sr.height) + 'px';
     }
     function upd() {
       ticking = false;
       if (PRM) { draw(1); return; }
       var r = sec.getBoundingClientRect(), vh = innerHeight || 800;
-      var SPEED = 2; // 2× plus rapide : le tracé se complète vers le milieu de la section
+      var SPEED = 2; // le tracé se complète vers le milieu de la section
       var p = SPEED * (vh - r.top) / (vh + r.height); p = Math.max(0, Math.min(1, p));
       draw(p);
     }
+    build(); upd();
     addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
-    addEventListener('resize', upd); upd();
+    var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { build(); upd(); }, 160); });
   })();
 
   // manifeste : le texte s'allume mot par mot au scroll (gris clair -> encre, « code » -> bleu)
