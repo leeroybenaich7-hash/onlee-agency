@@ -371,13 +371,20 @@
   .pm-close:hover { opacity:1; color:var(--gold); }
   .pm-stage { max-width:820px; margin:0 auto; }
   /* fond électrocardiogramme (vrai tracé hôpital qui défile comme un moniteur) */
-  #poles { position:relative; padding-block:clamp(120px,16vw,250px); }
+  #poles { position:relative; padding-block:clamp(120px,16vw,250px);
+    background:radial-gradient(120% 72% at 50% 44%, rgba(0,85,255,.07), transparent 62%); }
   #poles .wrap { position:relative; z-index:1; }
   .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
   .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:clamp(300px,54vh,560px); }
-  .ecg-base { stroke:var(--ink); stroke-width:1.2; opacity:.06; vector-effect:non-scaling-stroke; }
-  .ecg-line { fill:none; stroke:var(--ink); stroke-width:2.4; opacity:.9; stroke-linejoin:round; stroke-linecap:round; }
-  .ecg-dot { position:absolute; width:15px; height:15px; border-radius:50%; background:var(--ink); transform:translate(-50%,-50%); pointer-events:none; box-shadow:0 0 0 6px rgba(11,18,32,.10); }
+  .ecg-base { stroke:#0055FF; stroke-width:1.2; opacity:.08; vector-effect:non-scaling-stroke; }
+  .ecg-line { fill:none; stroke:#0055FF; stroke-width:2.6; opacity:.22; stroke-linejoin:round; stroke-linecap:round; }
+  .ecg-dot { position:absolute; width:14px; height:14px; border-radius:50%; background:#0055FF; transform:translate(-50%,-50%); pointer-events:none;
+    box-shadow:0 0 0 4px rgba(0,85,255,.16); animation:ecg-beat 1.6s ease-in-out infinite; }
+  @keyframes ecg-beat {
+    0%,100% { transform:translate(-50%,-50%) scale(1);    box-shadow:0 0 0 4px rgba(0,85,255,.18); }
+    45%     { transform:translate(-50%,-50%) scale(1.32); box-shadow:0 0 0 13px rgba(0,85,255,0); }
+  }
+  @media (prefers-reduced-motion: reduce){ .ecg-dot { animation:none; } }
   .pm-slot { perspective:1400px; margin-bottom:76px; }
   .pm-slot:last-child { margin-bottom:0; }
   .pm-item { display:flex; align-items:center; gap:22px; padding:30px 34px; margin-bottom:0; background:var(--card);
