@@ -495,14 +495,27 @@
   a.branch:hover .b-go::after { transform:translateX(5px); }
 
   /* ---- manifeste ---- */
-  .manifesto .wrap { max-width:900px; }
-  .manifesto .big { font-family:var(--serif); font-size:clamp(1.9rem,3.8vw,3.1rem); line-height:1.22;
-    letter-spacing:-.015em; margin-top:22px; color:rgba(11,18,32,.20); }
+  .manifesto .wrap { max-width:940px; position:relative; }
+  .manifesto .reveal { position:relative; z-index:1; }
+  /* grand guillemet décoratif en filigrane */
+  .mf-quote { position:absolute; top:-.42em; left:-.04em; z-index:0; pointer-events:none; user-select:none;
+    font-family:var(--serif); font-weight:600; font-style:italic; line-height:.8;
+    font-size:clamp(5.5rem,13vw,10rem); color:rgba(0,85,255,.10); }
+  .manifesto .big { font-family:var(--serif); font-size:clamp(2rem,4.1vw,3.4rem); line-height:1.2;
+    letter-spacing:-.02em; margin-top:20px; color:rgba(11,18,32,.16); }
   .manifesto .big em { color:var(--gold); }
-  /* révélation mot par mot au scroll : gris clair -> encre, « code » -> bleu */
-  .manifesto .big .mf-w { color:rgba(11,18,32,calc(.20 + .80*var(--lit,1))); transition:color .2s linear; }
-  .manifesto .big em.mf-accent { color:rgba(0,85,255,calc(.30 + .70*var(--lit,1))); }
-  @media (prefers-reduced-motion: reduce){ .manifesto .big .mf-w, .manifesto .big em.mf-accent { transition:none; } }
+  /* révélation mot par mot au scroll : chaque mot se matérialise (flou + montée qui se nettoient) */
+  .manifesto .big .mf-w { display:inline-block; color:rgba(11,18,32,calc(.16 + .84*var(--lit,1)));
+    transform:translateY(calc((1 - var(--lit,1)) * .16em));
+    filter:blur(calc((1 - var(--lit,1)) * 4px));
+    transition:color .25s linear, transform .45s var(--ease), filter .45s var(--ease); }
+  /* le mot accent « code » : bleu + soulignement qui se trace en s'allumant */
+  .manifesto .big em.mf-accent { position:relative; color:rgba(0,85,255,calc(.28 + .72*var(--lit,1))); }
+  .manifesto .big em.mf-accent::after { content:''; position:absolute; left:0; bottom:-.02em; width:100%; height:.045em;
+    background:rgba(0,85,255,.55); transform:scaleX(var(--lit,1)); transform-origin:left center; }
+  @media (prefers-reduced-motion: reduce){
+    .manifesto .big .mf-w { transform:none!important; filter:none!important; transition:color .2s linear; }
+    .manifesto .big em.mf-accent::after { transform:scaleX(1); } }
   .manifesto .sign { margin-top:30px; }
 
   /* ---- contact ---- */
@@ -700,6 +713,7 @@
   <!-- MANIFESTE -->
   <section id="manifeste" class="manifesto alt">
     <div class="wrap">
+      <span class="mf-quote" aria-hidden="true">«</span>
       <div class="reveal">
         <p class="big">Parti d'un collectif de soirées parisien, onlee est devenu un studio qui conçoit, dessine et <em>code</em> ses propres logiciels — jusqu'aux automatisations et agents IA sur-mesure. Une maison, plusieurs métiers.</p>
         <div class="sign label">— le crew onlee</div>
@@ -1046,8 +1060,8 @@
       if (PRM) { for (var k = 0; k < ws.length; k++) ws[k].style.setProperty('--lit', '1'); return; }
       var r = sec.getBoundingClientRect(), vh = innerHeight || 800;
       var p = (vh * 0.88 - r.top) / (r.height + vh * 0.12); p = Math.max(0, Math.min(1, p));
-      var n = ws.length, headw = p * (n + 8) - 4;
-      for (var i = 0; i < n; i++) { var t = headw - i; t = t < 0 ? 0 : (t > 1 ? 1 : t); ws[i].style.setProperty('--lit', t.toFixed(3)); }
+      var n = ws.length, headw = p * (n + 8) - 4, SOFT = 2.6;
+      for (var i = 0; i < n; i++) { var t = (headw - i) / SOFT; t = t < 0 ? 0 : (t > 1 ? 1 : t); ws[i].style.setProperty('--lit', t.toFixed(3)); }
     }
     split(big); reveal();
     // l'i18n réécrit le innerHTML au changement de langue -> on re-découpe
