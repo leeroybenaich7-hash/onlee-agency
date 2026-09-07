@@ -358,10 +358,10 @@
   #poles { position:relative; }
   #poles .wrap { position:relative; z-index:1; }
   .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
-  .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:88%; }
-  .ecg-base { stroke:var(--ink); stroke-width:1.4; opacity:.07; }
-  .ecg-line { fill:none; stroke:var(--ink); stroke-width:2.6; opacity:.32; stroke-linejoin:round; stroke-linecap:round; }
-  .ecg-dot { fill:var(--ink); opacity:.55; }
+  .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:clamp(230px,36vh,360px); }
+  .ecg-base { stroke:var(--ink); stroke-width:1.2; opacity:.06; vector-effect:non-scaling-stroke; }
+  .ecg-line { fill:none; stroke:var(--ink); stroke-width:1.7; opacity:.62; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+  .ecg-dot { fill:var(--ink); opacity:.85; }
   .pm-slot { perspective:1400px; margin-bottom:46px; }
   .pm-slot:last-child { margin-bottom:0; }
   .pm-item { display:flex; align-items:center; gap:22px; padding:30px 34px; margin-bottom:0; background:var(--card);
@@ -964,8 +964,8 @@
     if (!path || !sec) return;
     var W = 2000, cy = 200, U = 300, d = 'M 0 ' + cy, x = 0;
     while (x < W) {
-      var a = 0.62 + 0.38 * (x / W);
-      var R = 112 * a, S = 54 * a, P = 13 * a, T = 20 * a;
+      var a = 0.80 + 0.20 * (x / W);
+      var R = 152 * a, S = 84 * a, P = 9 * a, T = 12 * a;
       d += ' L ' + (x + 84) + ' ' + cy
         + ' L ' + (x + 96) + ' ' + (cy - P) + ' L ' + (x + 108) + ' ' + cy
         + ' L ' + (x + 162) + ' ' + cy
