@@ -451,6 +451,9 @@
   a.branch:hover .branch-body h3 { color:var(--gold); }
   .branch.soon { opacity:.5; }
   .branch.soon:hover { transform:none; border-color:var(--line); box-shadow:none; }
+  .b-go { display:inline-flex; align-items:center; gap:7px; margin-top:13px; font-family:var(--sans); font-size:13.5px; font-weight:600; color:var(--gold); }
+  .b-go::after { content:"→"; font-size:15px; transition:transform .3s var(--ease); }
+  a.branch:hover .b-go::after { transform:translateX(5px); }
 
   /* ---- manifeste ---- */
   .manifesto .wrap { max-width:900px; }
@@ -653,11 +656,11 @@
       <div class="branches">
         <a class="branch reveal" href="/studio/">
           <div class="branch-media"><img src="assets/maison/studio.jpg" alt="onlee studio — produits et logiciels" loading="lazy"></div>
-          <div class="branch-body"><h3>onlee studio</h3><div class="role label">Produits &amp; logiciels · actif</div><p class="b-desc">Conception et édition de nos propres apps et SaaS.</p></div>
+          <div class="branch-body"><h3>onlee studio</h3><div class="role label">Produits &amp; logiciels · actif</div><p class="b-desc">Conception et édition de nos propres apps et SaaS.</p><span class="b-go">Découvrir</span></div>
         </a>
         <a class="branch reveal" href="/crew/" style="--d:.08s">
           <div class="branch-media"><img src="assets/maison/crew.jpg" alt="onlee crew — soirées et événementiel" loading="lazy"></div>
-          <div class="branch-body"><h3>onlee crew</h3><div class="role label">Événementiel · actif</div><p class="b-desc">Soirées : direction artistique, line-up, scénographie.</p></div>
+          <div class="branch-body"><h3>onlee crew</h3><div class="role label">Événementiel · actif</div><p class="b-desc">Soirées : direction artistique, line-up, scénographie.</p><span class="b-go">Découvrir</span></div>
         </a>
         <div class="branch soon reveal" style="--d:.16s" aria-disabled="true">
           <div class="branch-media"><img src="assets/maison/relations.jpg" alt="onlee relations — relationnel B2B" loading="lazy"></div>
@@ -1091,6 +1094,7 @@
         'Designing and shipping our own apps and SaaS.',
         'Events: art direction, line-up, staging.'
       ] },
+      { sel: '.b-go', all: true, en: ['Discover', 'Discover'] },
 
       { sel: '#manifeste .eyebrow', en: 'The manifesto' },
       { sel: '#manifeste .big', en: 'Born from a Paris nightlife collective, onlee became a studio that designs, draws and <em>codes</em> its own software. One house, many crafts.' },
