@@ -374,11 +374,10 @@
   #poles { position:relative; padding-block:clamp(120px,16vw,250px);
     background:radial-gradient(120% 72% at 50% 44%, rgba(0,85,255,.07), transparent 62%); }
   #poles .wrap { position:relative; z-index:1; }
-  /* fond électrocardiogramme : fixe sur TOUTE la page (avance avec le scroll global) */
-  .ecg-bg { position:fixed; inset:0; z-index:2; overflow:hidden; pointer-events:none; }
-  .ecg-bg svg { position:absolute; top:50%; left:0; transform:translateY(-50%); width:100%; height:clamp(280px,50vh,520px); }
-  .ecg-base { stroke:#0055FF; stroke-width:1.2; opacity:.05; vector-effect:non-scaling-stroke; }
-  .ecg-line { fill:none; stroke:#0055FF; stroke-width:2.4; opacity:.14; stroke-linejoin:round; stroke-linecap:round; }
+  .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+  .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:clamp(300px,54vh,560px); }
+  .ecg-base { stroke:#0055FF; stroke-width:1.2; opacity:.08; vector-effect:non-scaling-stroke; }
+  .ecg-line { fill:none; stroke:#0055FF; stroke-width:2.6; opacity:.22; stroke-linejoin:round; stroke-linecap:round; }
   .ecg-dot { position:absolute; width:14px; height:14px; border-radius:50%; background:#0055FF; transform:translate(-50%,-50%); pointer-events:none;
     box-shadow:0 0 0 4px rgba(0,85,255,.16); animation:ecg-beat 1.6s ease-in-out infinite; }
   @keyframes ecg-beat {
@@ -622,7 +621,6 @@
 <body>
 <script>try{if('scrollRestoration'in history)history.scrollRestoration='manual';if(location.hash)history.replaceState(null,'',location.pathname+location.search);}catch(e){}addEventListener('pageshow',function(){window.scrollTo(0,0);});</script>
 <div class="grain" aria-hidden="true"></div>
-<div class="ecg-bg" aria-hidden="true"><svg id="ecg" viewBox="0 0 2000 600" preserveAspectRatio="none"><line class="ecg-base" x1="0" y1="300" x2="2000" y2="300"/><path id="ecgPath" class="ecg-line"/></svg><span class="ecg-dot" id="ecgDot"></span></div>
 <span id="top"></span>
 
 <header id="head">
@@ -711,6 +709,7 @@
 
   <!-- PÔLES (fusion « nos pôles » + « une maison, plusieurs métiers ») -->
   <section id="poles">
+    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" viewBox="0 0 2000 600" preserveAspectRatio="none"><line class="ecg-base" x1="0" y1="300" x2="2000" y2="300"/><path id="ecgPath" class="ecg-line"/></svg><span class="ecg-dot" id="ecgDot"></span></div>
     <div class="wrap">
       <h2 class="reveal" style="text-align:center;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin-bottom:12px">Une maison,<br>plusieurs <em>pôles</em>.</h2>
       <p class="intro reveal" style="text-align:center;max-width:52ch;margin:0 auto clamp(34px,5vw,54px)">Sous un même nom, des métiers complémentaires. Chacun a sa page.</p>
@@ -1013,7 +1012,7 @@
     var path = document.getElementById('ecgPath'), dot = document.getElementById('ecgDot'),
         sec = document.getElementById('poles'), svg = path && path.ownerSVGElement,
         base = svg && svg.querySelector('.ecg-base');
-    if (!path || !svg) return;
+    if (!path || !sec || !svg) return;
     // battements irréguliers : [montée, descente] — très grand, petit, très très grand, moyen, grand
     var beats = [[1.45, 0.60], [0.55, 0.45], [1.75, 0.95], [0.80, 0.50], [1.20, 0.70]];
     var W = 0, H = 0, cy = 0, len = 0;
@@ -1054,10 +1053,9 @@
     function upd() {
       ticking = false;
       if (PRM) { draw(1); return; }
-      // avancée mappée sur le scroll de TOUTE la page : vide en haut, complet en bas
-      var doc = document.documentElement;
-      var max = (doc.scrollHeight - innerHeight) || 1;
-      var p = (window.pageYOffset || doc.scrollTop) / max; p = Math.max(0, Math.min(1, p));
+      var r = sec.getBoundingClientRect(), vh = innerHeight || 800;
+      var SPEED = 2; // le tracé se complète vers le milieu de la section
+      var p = SPEED * (vh - r.top) / (vh + r.height); p = Math.max(0, Math.min(1, p));
       draw(p);
     }
     build(); upd();
