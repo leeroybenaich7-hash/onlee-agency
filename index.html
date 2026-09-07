@@ -354,6 +354,15 @@
   .poles-menu.open .pm-close { opacity:.7; }
   .pm-close:hover { opacity:1; color:var(--gold); }
   .pm-stage { max-width:820px; margin:0 auto; }
+  /* fond électrocardiogramme (pouls qui monte au scroll) */
+  #poles { position:relative; }
+  #poles .wrap { position:relative; z-index:1; }
+  .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);
+            mask-image:linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent); }
+  .ecg-bg svg { position:absolute; left:0; bottom:0; width:100%; height:80%; will-change:transform; }
+  .ecg-bg .ecg-line { fill:none; stroke:var(--gold); stroke-width:2.4; opacity:.20; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+  .ecg-bg .ecg-fill { fill:url(#ecgGrad); stroke:none; }
   .pm-slot { perspective:1400px; margin-bottom:46px; }
   .pm-slot:last-child { margin-bottom:0; }
   .pm-item { display:flex; align-items:center; gap:22px; padding:30px 34px; margin-bottom:0; background:var(--card);
@@ -654,6 +663,7 @@
 
   <!-- PÔLES (fusion « nos pôles » + « une maison, plusieurs métiers ») -->
   <section id="poles">
+    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" viewBox="0 0 1600 700" preserveAspectRatio="none"><defs><linearGradient id="ecgGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0055FF" stop-opacity=".16"/><stop offset="1" stop-color="#0055FF" stop-opacity="0"/></linearGradient></defs><path id="ecgFill" class="ecg-fill"/><path id="ecgPath" class="ecg-line"/></svg></div>
     <div class="wrap">
       <h2 class="reveal" style="text-align:center;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin-bottom:12px">Une maison,<br>plusieurs <em>pôles</em>.</h2>
       <p class="intro reveal" style="text-align:center;max-width:52ch;margin:0 auto clamp(34px,5vw,54px)">Sous un même nom, des métiers complémentaires. Chacun a sa page.</p>
@@ -947,6 +957,37 @@
     t.addEventListener('click', tog);
     t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(); } });
   });
+
+  // fond électrocardiogramme : tracé qui grimpe, et qui monte au scroll
+  (function () {
+    var svg = document.getElementById('ecg'); var line = document.getElementById('ecgPath'); var fill = document.getElementById('ecgFill'); var sec = document.getElementById('poles');
+    if (!svg || !line || !sec) return;
+    var W = 1600, H = 700, seg = 232;
+    function baseAt(x) { return H * 0.90 - (x / W) * (H * 0.74); }
+    var d = 'M 0 ' + baseAt(0), x = 0;
+    while (x < W) {
+      var yb = baseAt(x + seg);
+      d += ' L ' + (x + seg * 0.5) + ' ' + baseAt(x + seg * 0.5);
+      d += ' L ' + (x + seg * 0.58) + ' ' + (yb + 14);
+      d += ' L ' + (x + seg * 0.64) + ' ' + (yb - 104);
+      d += ' L ' + (x + seg * 0.70) + ' ' + (yb + 28);
+      d += ' L ' + (x + seg * 0.80) + ' ' + yb;
+      x += seg;
+    }
+    d += ' L ' + W + ' ' + baseAt(W);
+    line.setAttribute('d', d);
+    if (fill) fill.setAttribute('d', d + ' L ' + W + ' ' + H + ' L 0 ' + H + ' Z');
+    var PRM = matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false;
+    function upd() {
+      ticking = false;
+      var r = sec.getBoundingClientRect(), vh = innerHeight || 800;
+      var prog = (vh - r.top) / (vh + r.height);
+      prog = Math.max(0, Math.min(1, prog));
+      svg.style.transform = 'translateY(' + (PRM ? 0 : -Math.round(prog * 90)) + 'px)';
+    }
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+    addEventListener('resize', upd); upd();
+  })();
 
   // header condensé au scroll
   const head = document.getElementById('head');
