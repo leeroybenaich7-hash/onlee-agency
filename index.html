@@ -267,6 +267,14 @@
   }
 
   /* ---- avis clients (style « fiche d'avis ») ---- */
+  #avis.reviews { position:relative; background:
+    radial-gradient(130% 90% at 50% -12%, rgba(0,85,255,.06), transparent 55%),
+    var(--paper-2); }
+  #avis.reviews::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.55;
+    background-image:radial-gradient(rgba(11,18,32,.05) 1px, transparent 1.5px); background-size:26px 26px;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 28%,#000 72%,transparent);
+            mask-image:linear-gradient(180deg,transparent,#000 28%,#000 72%,transparent); }
+  #avis.reviews > * { position:relative; z-index:1; }
   .reviews .rev-head { text-align:center; max-width:var(--maxw); margin:0 auto clamp(30px,4vw,50px); }
   .reviews .rev-head .eyebrow { justify-content:center; }
   .reviews .rev-head h2 { font-size:clamp(2rem,4vw,3.1rem); line-height:1.05; margin:16px 0 14px; }
@@ -361,7 +369,7 @@
   .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:clamp(230px,36vh,360px); }
   .ecg-base { stroke:var(--ink); stroke-width:1.2; opacity:.06; vector-effect:non-scaling-stroke; }
   .ecg-line { fill:none; stroke:var(--ink); stroke-width:1.7; opacity:.9; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
-  .ecg-dot { fill:var(--ink); opacity:1; }
+  .ecg-dot { position:absolute; width:15px; height:15px; border-radius:50%; background:var(--ink); transform:translate(-50%,-50%); pointer-events:none; box-shadow:0 0 0 6px rgba(11,18,32,.10); }
   .pm-slot { perspective:1400px; margin-bottom:46px; }
   .pm-slot:last-child { margin-bottom:0; }
   .pm-item { display:flex; align-items:center; gap:22px; padding:30px 34px; margin-bottom:0; background:var(--card);
@@ -663,7 +671,7 @@
 
   <!-- PÔLES (fusion « nos pôles » + « une maison, plusieurs métiers ») -->
   <section id="poles">
-    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" viewBox="0 0 2000 400" preserveAspectRatio="none"><line class="ecg-base" x1="0" y1="200" x2="2000" y2="200"/><path id="ecgPath" class="ecg-line"/><circle id="ecgDot" class="ecg-dot" r="7"/></svg></div>
+    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" viewBox="0 0 2000 600" preserveAspectRatio="none"><line class="ecg-base" x1="0" y1="300" x2="2000" y2="300"/><path id="ecgPath" class="ecg-line"/></svg><span class="ecg-dot" id="ecgDot"></span></div>
     <div class="wrap">
       <h2 class="reveal" style="text-align:center;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin-bottom:12px">Une maison,<br>plusieurs <em>pôles</em>.</h2>
       <p class="intro reveal" style="text-align:center;max-width:52ch;margin:0 auto clamp(34px,5vw,54px)">Sous un même nom, des métiers complémentaires. Chacun a sa page.</p>
@@ -962,12 +970,12 @@
   (function () {
     var path = document.getElementById('ecgPath'), dot = document.getElementById('ecgDot'), sec = document.getElementById('poles');
     if (!path || !sec) return;
-    var W = 2000, cy = 200, U = 560, d = 'M 0 ' + cy, x = 0;
+    var W = 2000, cy = 300, U = 560, d = 'M 0 ' + cy, x = 0;
     while (x < W) {
       var a = 0.85 + 0.15 * (x / W);
-      var R = 176 * a, S = 148 * a;
+      var R = 264 * a, S = 222 * a;
       d += ' L ' + (x + 215) + ' ' + cy
-        + ' L ' + (x + 240) + ' ' + (cy + 22)
+        + ' L ' + (x + 240) + ' ' + (cy + 34)
         + ' L ' + (x + 260) + ' ' + (cy - R)
         + ' L ' + (x + 280) + ' ' + (cy + S)
         + ' L ' + (x + 305) + ' ' + cy
@@ -981,7 +989,9 @@
     function draw(p) {
       path.style.strokeDashoffset = len * (1 - p);
       var pt = path.getPointAtLength(Math.max(0.1, len * p));
-      dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
+      var sr = path.ownerSVGElement.getBoundingClientRect(), br = dot.parentElement.getBoundingClientRect();
+      dot.style.left = (sr.left - br.left + (pt.x / 2000) * sr.width) + 'px';
+      dot.style.top = (sr.top - br.top + (pt.y / 600) * sr.height) + 'px';
     }
     function upd() {
       ticking = false;
