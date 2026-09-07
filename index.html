@@ -369,6 +369,9 @@
   .pm-desc { color:var(--muted); font-size:13.5px; margin-top:6px; display:block; }
   .pm-arr { color:var(--gold); font-size:1.4rem; transition:transform .3s var(--ease); }
   .pm-item:hover .pm-arr { transform:translateX(6px); }
+  .pm-item.pm-soon, .pm-slot.in .pm-item.pm-soon { opacity:.5; cursor:default; }
+  .pm-item.pm-soon:hover { border-color:var(--line); background:var(--card); }
+  .pm-soon-tag { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
   body.pm-lock { overflow:hidden; }
   .nav-poles-mob { display:none; }
   @media (max-width:860px) { .nav-poles-mob { display:inline-flex; align-items:center; font-size:13px; letter-spacing:.02em; color:var(--muted); } }
@@ -555,7 +558,6 @@
     <a href="#top" class="brand"><img src="assets/onlee-logo-ink.png" alt="onlee"><span>Studio</span></a>
     <nav class="links">
       <a href="#poles">Pôles</a>
-      <a href="#maison">Maison</a>
       <a href="#manifeste">Manifeste</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -567,7 +569,6 @@
   </div>
   <nav class="mobile-nav" id="mobileNav" hidden>
     <a href="#poles">Pôles</a>
-    <a href="#maison">Maison</a>
     <a href="#manifeste">Manifeste</a>
     <a href="#contact">Contact</a>
     <a href="#contact" class="mnav-cta">Nous écrire</a>
@@ -634,38 +635,18 @@
     <div class="wrap"><p class="rev-foot reveal">Des retours de clients qui utilisent nos outils au quotidien. <a href="#contact">Travailler avec nous →</a></p></div>
   </section>
 
-  <!-- PÔLES — se déplient en 3D au scroll -->
+  <!-- PÔLES (fusion « nos pôles » + « une maison, plusieurs métiers ») -->
   <section id="poles">
     <div class="wrap">
-      <h2 class="reveal" style="text-align:center;font-size:clamp(2rem,4vw,3rem);margin-bottom:clamp(30px,5vw,54px)">Nos <em>pôles</em>.</h2>
+      <h2 class="reveal" style="text-align:center;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin-bottom:12px">Une maison,<br>plusieurs <em>pôles</em>.</h2>
+      <p class="intro reveal" style="text-align:center;max-width:52ch;margin:0 auto clamp(34px,5vw,54px)">Sous un même nom, des métiers complémentaires. Chacun a sa page.</p>
       <div class="pm-stage" id="polesStage">
-        <div class="pm-slot"><a class="pm-item" href="evenements/"><span class="pm-no">01</span><span class="pm-tx"><span class="pm-name">Événementiel</span><span class="pm-desc">Faire-part · Mazal Box · Logos · Design</span></span><span class="pm-arr">→</span></a></div>
-        <div class="pm-slot"><a class="pm-item" href="rh/"><span class="pm-no">02</span><span class="pm-tx"><span class="pm-name">RH</span><span class="pm-desc">Noga · gestion RH des boutiques</span></span><span class="pm-arr">→</span></a></div>
-        <div class="pm-slot"><a class="pm-item" href="opticiens/"><span class="pm-no">03</span><span class="pm-tx"><span class="pm-name">Opticiens</span><span class="pm-desc">Vizor · bons de fidélité</span></span><span class="pm-arr">→</span></a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAISON -->
-  <section id="maison">
-    <div class="wrap">
-      <div class="room-head reveal">
-        <h2>Une maison,<br>plusieurs <span class="mark">métiers</span>.</h2>
-        <p class="intro">Sous un même nom, des activités complémentaires.</p>
-      </div>
-      <div class="branches">
-        <a class="branch reveal" href="/studio/">
-          <div class="branch-media"><img src="assets/maison/studio.jpg" alt="onlee studio — produits et logiciels" loading="lazy"></div>
-          <div class="branch-body"><h3>onlee studio</h3><div class="role label">Produits &amp; logiciels · actif</div><p class="b-desc">Conception et édition de nos propres apps et SaaS.</p><span class="b-go">Découvrir</span></div>
-        </a>
-        <a class="branch reveal" href="/crew/" style="--d:.08s">
-          <div class="branch-media"><img src="assets/maison/crew.jpg" alt="onlee crew — soirées et événementiel" loading="lazy"></div>
-          <div class="branch-body"><h3>onlee crew</h3><div class="role label">Événementiel · actif</div><p class="b-desc">Soirées : direction artistique, line-up, scénographie.</p><span class="b-go">Découvrir</span></div>
-        </a>
-        <div class="branch soon reveal" style="--d:.16s" aria-disabled="true">
-          <div class="branch-media"><img src="assets/maison/relations.jpg" alt="onlee relations — relationnel B2B" loading="lazy"></div>
-          <div class="branch-body"><h3>onlee relations</h3><div class="role label">Relationnel B2B · bientôt</div></div>
-        </div>
+        <div class="pm-slot"><a class="pm-item" href="/studio/"><span class="pm-no">01</span><span class="pm-tx"><span class="pm-name">onlee studio</span><span class="pm-desc">Outils, automatisations &amp; agents IA · on vous fait gagner des heures</span></span><span class="pm-arr">→</span></a></div>
+        <div class="pm-slot"><a class="pm-item" href="/opticiens/"><span class="pm-no">02</span><span class="pm-tx"><span class="pm-name">Opticiens</span><span class="pm-desc">Vizor · caisse, tiers payant &amp; fidélité</span></span><span class="pm-arr">→</span></a></div>
+        <div class="pm-slot"><a class="pm-item" href="/rh/"><span class="pm-no">03</span><span class="pm-tx"><span class="pm-name">RH</span><span class="pm-desc">Noga · gestion RH des boutiques</span></span><span class="pm-arr">→</span></a></div>
+        <div class="pm-slot"><a class="pm-item" href="/evenements/"><span class="pm-no">04</span><span class="pm-tx"><span class="pm-name">Événementiel</span><span class="pm-desc">Faire-part · Mazal Box · logos &amp; design</span></span><span class="pm-arr">→</span></a></div>
+        <div class="pm-slot"><a class="pm-item" href="/crew/"><span class="pm-no">05</span><span class="pm-tx"><span class="pm-name">onlee crew</span><span class="pm-desc">Soirées en club · en partenariat</span></span><span class="pm-arr">→</span></a></div>
+        <div class="pm-slot"><div class="pm-item pm-soon" aria-disabled="true"><span class="pm-no">06</span><span class="pm-tx"><span class="pm-name">onlee relations</span><span class="pm-desc">Relationnel B2B</span></span><span class="pm-soon-tag">Bientôt</span></div></div>
       </div>
     </div>
   </section>
@@ -1045,8 +1026,8 @@
       // (les cartes d'avis restent en français dans les deux langues — carrousel dupliqué en JS)
       { sel: '.rev-foot', en: 'Feedback from clients who use our tools every day. <a href="#contact">Work with us →</a>' },
 
-      { sel: '#poles h2', en: 'Three <em>areas</em>, one house.' },
-      { sel: '#poles .intro', en: 'We design, draw and code our own tools — grouped by trade. Each area has its own page.' },
+      { sel: '#poles h2', en: 'One house,<br>many <em>areas</em>.' },
+      { sel: '#poles .intro', en: 'Under one name, complementary crafts. Each has its own page.' },
       { sel: '.pole-card h3', all: true, en: ['Events', 'HR', 'Opticians'] },
       { sel: '.pole-card p', all: true, en: [
         'Invitations, Mazal Box, logos &amp; design for bar mitzvahs, weddings and receptions.',
