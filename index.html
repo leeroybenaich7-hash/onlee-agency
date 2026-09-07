@@ -270,12 +270,13 @@
 
   /* ---- avis clients (style « fiche d'avis ») ---- */
   #avis.reviews { position:relative; background:
-    radial-gradient(130% 90% at 50% -12%, rgba(0,85,255,.06), transparent 55%),
-    var(--paper-2); }
-  #avis.reviews::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.55;
-    background-image:radial-gradient(rgba(11,18,32,.05) 1px, transparent 1.5px); background-size:26px 26px;
-    -webkit-mask-image:linear-gradient(180deg,transparent,#000 28%,#000 72%,transparent);
-            mask-image:linear-gradient(180deg,transparent,#000 28%,#000 72%,transparent); }
+    radial-gradient(120% 80% at 50% -10%, rgba(0,85,255,.10), transparent 52%),
+    radial-gradient(90% 60% at 50% 110%, rgba(0,85,255,.05), transparent 55%),
+    var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  #avis.reviews::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.9;
+    background-image:radial-gradient(rgba(11,18,32,.09) 1.1px, transparent 1.6px); background-size:24px 24px;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);
+            mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent); }
   #avis.reviews > * { position:relative; z-index:1; }
   .reviews .rev-head { text-align:center; max-width:var(--maxw); margin:0 auto clamp(30px,4vw,50px); }
   .reviews .rev-head .eyebrow { justify-content:center; }
@@ -365,14 +366,14 @@
   .pm-close:hover { opacity:1; color:var(--gold); }
   .pm-stage { max-width:820px; margin:0 auto; }
   /* fond électrocardiogramme (vrai tracé hôpital qui défile comme un moniteur) */
-  #poles { position:relative; }
+  #poles { position:relative; padding-block:clamp(120px,16vw,250px); }
   #poles .wrap { position:relative; z-index:1; }
   .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
-  .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:clamp(230px,36vh,360px); }
+  .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:clamp(300px,54vh,560px); }
   .ecg-base { stroke:var(--ink); stroke-width:1.2; opacity:.06; vector-effect:non-scaling-stroke; }
   .ecg-line { fill:none; stroke:var(--ink); stroke-width:1.7; opacity:.9; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
   .ecg-dot { position:absolute; width:15px; height:15px; border-radius:50%; background:var(--ink); transform:translate(-50%,-50%); pointer-events:none; box-shadow:0 0 0 6px rgba(11,18,32,.10); }
-  .pm-slot { perspective:1400px; margin-bottom:46px; }
+  .pm-slot { perspective:1400px; margin-bottom:76px; }
   .pm-slot:last-child { margin-bottom:0; }
   .pm-item { display:flex; align-items:center; gap:22px; padding:30px 34px; margin-bottom:0; background:var(--card);
     border:1px solid var(--line-2); border-radius:20px; text-decoration:none; color:var(--ink);
@@ -972,15 +973,18 @@
   (function () {
     var path = document.getElementById('ecgPath'), dot = document.getElementById('ecgDot'), sec = document.getElementById('poles');
     if (!path || !sec) return;
-    var W = 2000, cy = 300, U = 560, d = 'M 0 ' + cy, x = 0;
+    var W = 2000, cy = 300, U = 400, baseR = 172, baseS = 150;
+    // battements irréguliers : [montée R, descente S] — très grand, petit, très très grand, moyen, grand
+    var beats = [[1.45, 0.60], [0.55, 0.45], [1.75, 0.95], [0.80, 0.50], [1.20, 0.70]];
+    var d = 'M 0 ' + cy, x = 0, i = 0;
     while (x < W) {
-      var a = 0.85 + 0.15 * (x / W);
-      var R = 264 * a, S = 222 * a;
-      d += ' L ' + (x + 215) + ' ' + cy
-        + ' L ' + (x + 240) + ' ' + (cy + 34)
-        + ' L ' + (x + 260) + ' ' + (cy - R)
-        + ' L ' + (x + 280) + ' ' + (cy + S)
-        + ' L ' + (x + 305) + ' ' + cy
+      var b = beats[i % beats.length]; i++;
+      var R = baseR * b[0], S = baseS * b[1];
+      d += ' L ' + (x + 150) + ' ' + cy
+        + ' L ' + (x + 172) + ' ' + (cy + 26)
+        + ' L ' + (x + 192) + ' ' + (cy - R)
+        + ' L ' + (x + 212) + ' ' + (cy + S)
+        + ' L ' + (x + 234) + ' ' + cy
         + ' L ' + (x + U) + ' ' + cy;
       x += U;
     }
