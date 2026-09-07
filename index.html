@@ -360,8 +360,8 @@
   .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
   .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:clamp(230px,36vh,360px); }
   .ecg-base { stroke:var(--ink); stroke-width:1.2; opacity:.06; vector-effect:non-scaling-stroke; }
-  .ecg-line { fill:none; stroke:var(--ink); stroke-width:1.7; opacity:.62; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
-  .ecg-dot { fill:var(--ink); opacity:.85; }
+  .ecg-line { fill:none; stroke:var(--ink); stroke-width:1.7; opacity:.9; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+  .ecg-dot { fill:var(--ink); opacity:1; }
   .pm-slot { perspective:1400px; margin-bottom:46px; }
   .pm-slot:last-child { margin-bottom:0; }
   .pm-item { display:flex; align-items:center; gap:22px; padding:30px 34px; margin-bottom:0; background:var(--card);
@@ -962,16 +962,15 @@
   (function () {
     var path = document.getElementById('ecgPath'), dot = document.getElementById('ecgDot'), sec = document.getElementById('poles');
     if (!path || !sec) return;
-    var W = 2000, cy = 200, U = 300, d = 'M 0 ' + cy, x = 0;
+    var W = 2000, cy = 200, U = 560, d = 'M 0 ' + cy, x = 0;
     while (x < W) {
-      var a = 0.80 + 0.20 * (x / W);
-      var R = 152 * a, S = 84 * a, P = 9 * a, T = 12 * a;
-      d += ' L ' + (x + 84) + ' ' + cy
-        + ' L ' + (x + 96) + ' ' + (cy - P) + ' L ' + (x + 108) + ' ' + cy
-        + ' L ' + (x + 162) + ' ' + cy
-        + ' L ' + (x + 174) + ' ' + (cy + S * 0.35) + ' L ' + (x + 186) + ' ' + (cy - R) + ' L ' + (x + 198) + ' ' + (cy + S) + ' L ' + (x + 210) + ' ' + cy
-        + ' L ' + (x + 252) + ' ' + cy
-        + ' L ' + (x + 265) + ' ' + (cy - T) + ' L ' + (x + 278) + ' ' + cy
+      var a = 0.85 + 0.15 * (x / W);
+      var R = 176 * a, S = 148 * a;
+      d += ' L ' + (x + 215) + ' ' + cy
+        + ' L ' + (x + 240) + ' ' + (cy + 22)
+        + ' L ' + (x + 260) + ' ' + (cy - R)
+        + ' L ' + (x + 280) + ' ' + (cy + S)
+        + ' L ' + (x + 305) + ' ' + cy
         + ' L ' + (x + U) + ' ' + cy;
       x += U;
     }
