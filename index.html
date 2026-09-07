@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>onlee — studio créatif, Paris</title>
-<meta name="description" content="onlee est un studio créatif né d'un collectif de soirées. On conçoit, on dessine et on code nos propres logiciels : Vizor, Noga, Mazal Box. Une maison, plusieurs métiers. Paris." />
+<title>onlee — agence d'automatisation &amp; IA, Paris</title>
+<meta name="description" content="Agence française d'automatisation et d'IA à Paris. Automatisations, agents IA et logiciels sur-mesure (Vizor, Noga) qui font gagner des heures à votre activité." />
 
 <link rel="canonical" href="https://onlee.fr/" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#FBFBFA" />
 <meta property="og:site_name" content="onlee" />
-<meta property="og:title" content="onlee — studio créatif, Paris" />
-<meta property="og:description" content="Un studio qui édite ses propres produits : Vizor, Noga, Mazal Box. Conçus, dessinés et codés en interne." />
+<meta property="og:title" content="onlee — agence d'automatisation &amp; IA, Paris" />
+<meta property="og:description" content="Automatisations, agents IA et logiciels sur-mesure (Vizor, Noga), conçus et codés en interne. Paris." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://onlee.fr/" />
 <meta property="og:image" content="https://onlee.fr/assets/og-cover-blue.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="onlee — studio créatif" />
-<meta name="twitter:description" content="Un studio qui édite ses propres produits. Paris." />
+<meta name="twitter:title" content="onlee — agence d'automatisation &amp; IA" />
+<meta name="twitter:description" content="Automatisations, agents IA et logiciels sur-mesure. Conçus et codés en interne. Paris." />
 <meta name="twitter:image" content="https://onlee.fr/assets/og-cover-blue.png" />
 
 <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -358,9 +358,10 @@
   #poles { position:relative; }
   #poles .wrap { position:relative; z-index:1; }
   .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
-  .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:94%; }
-  .ecg-line { fill:none; stroke:var(--ink); stroke-width:3.4; opacity:.15; stroke-linejoin:round; stroke-linecap:round; }
-  .ecg-dot { fill:var(--ink); opacity:.26; }
+  .ecg-bg svg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:88%; }
+  .ecg-base { stroke:var(--ink); stroke-width:1.4; opacity:.07; }
+  .ecg-line { fill:none; stroke:var(--ink); stroke-width:2.6; opacity:.32; stroke-linejoin:round; stroke-linecap:round; }
+  .ecg-dot { fill:var(--ink); opacity:.55; }
   .pm-slot { perspective:1400px; margin-bottom:46px; }
   .pm-slot:last-child { margin-bottom:0; }
   .pm-item { display:flex; align-items:center; gap:22px; padding:30px 34px; margin-bottom:0; background:var(--card);
@@ -605,8 +606,9 @@
   <section class="hero" id="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <h1 class="reveal">On conçoit, on code,<br>et on <span class="mark">édite</span> nos <span class="mark">produits</span>.</h1>
-        <p class="lede measure reveal" style="--d:.16s">onlee est un studio né d'un collectif de soirées. Aujourd'hui, on dessine et on développe nos propres logiciels — jusqu'à la boutique qui s'en sert chaque jour.</p>
+        <span class="eyebrow reveal">Agence d'automatisation &amp; IA — Paris</span>
+        <h1 class="reveal" style="--d:.08s">On conçoit, on code<br>et on <span class="mark">automatise</span> avec l'<span class="mark">IA</span>.</h1>
+        <p class="lede measure reveal" style="--d:.16s">onlee est une agence d'automatisation et d'IA. On crée les outils, les automatisations et les agents IA qui font gagner des heures à votre activité — et on édite nos propres logiciels, Vizor et Noga, utilisés chaque jour par de vrais commerces.</p>
         <div class="hero-cta reveal" style="--d:.24s">
           <a href="#poles" class="pill pill-ghost">Voir nos pôles</a>
           <a href="https://cal.com/leeroy-benaich" target="_blank" rel="noopener" class="pill pill-solid">Prendre rendez-vous</a>
@@ -661,7 +663,7 @@
 
   <!-- PÔLES (fusion « nos pôles » + « une maison, plusieurs métiers ») -->
   <section id="poles">
-    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" viewBox="0 0 2000 400" preserveAspectRatio="none"><path id="ecgL" class="ecg-line"/><path id="ecgR" class="ecg-line"/><circle id="ecgDotL" class="ecg-dot" r="9"/><circle id="ecgDotR" class="ecg-dot" r="9"/></svg></div>
+    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" viewBox="0 0 2000 400" preserveAspectRatio="none"><line class="ecg-base" x1="0" y1="200" x2="2000" y2="200"/><path id="ecgPath" class="ecg-line"/><circle id="ecgDot" class="ecg-dot" r="7"/></svg></div>
     <div class="wrap">
       <h2 class="reveal" style="text-align:center;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin-bottom:12px">Une maison,<br>plusieurs <em>pôles</em>.</h2>
       <p class="intro reveal" style="text-align:center;max-width:52ch;margin:0 auto clamp(34px,5vw,54px)">Sous un même nom, des métiers complémentaires. Chacun a sa page.</p>
@@ -956,38 +958,31 @@
     t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(); } });
   });
 
-  // fond électrocardiogramme : part du milieu et s'étend en grandissant au scroll, boule au bout
+  // fond électrocardiogramme : avance de gauche à droite au scroll, boule au bout, ligne de base visible
   (function () {
-    var pL = document.getElementById('ecgL'), pR = document.getElementById('ecgR');
-    var dL = document.getElementById('ecgDotL'), dR = document.getElementById('ecgDotR'), sec = document.getElementById('poles');
-    if (!pL || !pR || !sec) return;
-    var cx = 1000, cy = 200, reach = 1000, U = 320;
-    function side(dir) {
-      var d = 'M ' + cx + ' ' + cy, off = 0;
-      function X(o) { return cx + dir * o; }
-      while (off < reach) {
-        var a = 0.20 + 0.80 * Math.min(1, (off + U) / reach);
-        var R = 128 * a, S = 66 * a, P = 15 * a, T = 24 * a;
-        d += ' L ' + X(off + 80) + ' ' + cy
-          + ' L ' + X(off + 94) + ' ' + (cy - P) + ' L ' + X(off + 108) + ' ' + cy
-          + ' L ' + X(off + 170) + ' ' + cy
-          + ' L ' + X(off + 182) + ' ' + (cy + S * 0.35) + ' L ' + X(off + 196) + ' ' + (cy - R) + ' L ' + X(off + 210) + ' ' + (cy + S) + ' L ' + X(off + 224) + ' ' + cy
-          + ' L ' + X(off + 275) + ' ' + cy
-          + ' L ' + X(off + 289) + ' ' + (cy - T) + ' L ' + X(off + 303) + ' ' + cy
-          + ' L ' + X(off + U) + ' ' + cy;
-        off += U;
-      }
-      return d;
+    var path = document.getElementById('ecgPath'), dot = document.getElementById('ecgDot'), sec = document.getElementById('poles');
+    if (!path || !sec) return;
+    var W = 2000, cy = 200, U = 300, d = 'M 0 ' + cy, x = 0;
+    while (x < W) {
+      var a = 0.62 + 0.38 * (x / W);
+      var R = 112 * a, S = 54 * a, P = 13 * a, T = 20 * a;
+      d += ' L ' + (x + 84) + ' ' + cy
+        + ' L ' + (x + 96) + ' ' + (cy - P) + ' L ' + (x + 108) + ' ' + cy
+        + ' L ' + (x + 162) + ' ' + cy
+        + ' L ' + (x + 174) + ' ' + (cy + S * 0.35) + ' L ' + (x + 186) + ' ' + (cy - R) + ' L ' + (x + 198) + ' ' + (cy + S) + ' L ' + (x + 210) + ' ' + cy
+        + ' L ' + (x + 252) + ' ' + cy
+        + ' L ' + (x + 265) + ' ' + (cy - T) + ' L ' + (x + 278) + ' ' + cy
+        + ' L ' + (x + U) + ' ' + cy;
+      x += U;
     }
-    pL.setAttribute('d', side(-1)); pR.setAttribute('d', side(1));
-    var lenL = pL.getTotalLength(), lenR = pR.getTotalLength();
-    pL.style.strokeDasharray = lenL; pR.style.strokeDasharray = lenR;
+    d += ' L ' + W + ' ' + cy;
+    path.setAttribute('d', d);
+    var len = path.getTotalLength(); path.style.strokeDasharray = len;
     var PRM = matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false;
     function draw(p) {
-      pL.style.strokeDashoffset = lenL * (1 - p); pR.style.strokeDashoffset = lenR * (1 - p);
-      var a = pL.getPointAtLength(Math.max(0.1, lenL * p)), b = pR.getPointAtLength(Math.max(0.1, lenR * p));
-      dL.setAttribute('cx', a.x); dL.setAttribute('cy', a.y);
-      dR.setAttribute('cx', b.x); dR.setAttribute('cy', b.y);
+      path.style.strokeDashoffset = len * (1 - p);
+      var pt = path.getPointAtLength(Math.max(0.1, len * p));
+      dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
     }
     function upd() {
       ticking = false;
