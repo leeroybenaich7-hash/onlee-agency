@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>onlee — studio créatif &amp; IA, Paris</title>
+<title>onlee · studio créatif &amp; IA, Paris</title>
 <meta name="description" content="onlee, studio créatif à Paris. On conçoit, on dessine et on code nos propres logiciels (Vizor, Noga, Mazal Box), des sites, de l'événementiel et des automatisations IA. Une maison, plusieurs métiers." />
 
 <link rel="canonical" href="https://onlee.fr/" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#FBFBFA" />
 <meta property="og:site_name" content="onlee" />
-<meta property="og:title" content="onlee — studio créatif &amp; IA, Paris" />
+<meta property="og:title" content="onlee · studio créatif &amp; IA, Paris" />
 <meta property="og:description" content="Un studio qui édite ses propres produits (Vizor, Noga, Mazal Box) et crée sites, événements et automatisations IA. Paris." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://onlee.fr/" />
 <meta property="og:image" content="https://onlee.fr/assets/og-cover-blue.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="onlee — studio créatif &amp; IA" />
+<meta name="twitter:title" content="onlee · studio créatif &amp; IA" />
 <meta name="twitter:description" content="Studio créatif : produits, sites, événementiel et automatisations IA. Paris." />
 <meta name="twitter:image" content="https://onlee.fr/assets/og-cover-blue.png" />
 
@@ -306,7 +306,9 @@
   .rev-stars { color:#FBBC04; letter-spacing:1.5px; font-size:14px; }
   .rev-date { font-size:12px; color:var(--muted); }
   .rev blockquote { font-family:var(--sans); font-weight:400; font-size:14px; line-height:1.62; color:#3a3128; }
-  .rev-foot { text-align:center; margin-top:clamp(24px,3vw,36px); font-size:13.5px; color:var(--muted); }
+  .rev-foot { display:block; width:max-content; max-width:100%; margin:clamp(26px,3.4vw,40px) auto 0; text-align:center;
+    font-size:13.5px; color:var(--muted); background:var(--card); border:1px solid var(--line); border-radius:999px; padding:12px 24px;
+    box-shadow:0 1px 2px rgba(11,18,32,.04); }
   .rev-foot a { color:var(--gold); font-weight:600; border-bottom:1px solid transparent; transition:border-color .3s var(--ease); }
   .rev-foot a:hover { border-bottom-color:var(--gold); }
 
@@ -318,7 +320,7 @@
             mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); }
   .rev-marquee::-webkit-scrollbar { display:none; }
   .rev-marquee.dragging { cursor:grabbing; scroll-behavior:auto; }
-  .rev-row { display:flex; gap:clamp(14px,1.6vw,18px); width:max-content; align-items:stretch; user-select:none; -webkit-user-select:none; }
+  .rev-row { display:flex; gap:clamp(14px,1.6vw,18px); width:max-content; align-items:flex-start; user-select:none; -webkit-user-select:none; }
   .rev-marquee .rev { flex:0 0 clamp(280px,26vw,338px); width:clamp(280px,26vw,338px); }
   .rev-marquee .rev * { -webkit-user-drag:none; }
   .rev-util { margin-top:auto; padding-top:13px; border-top:1px solid var(--line); display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:500; color:var(--muted); }
@@ -571,6 +573,22 @@
     transition:transform .3s var(--ease), background .3s var(--ease); }
   .cbtn:hover { transform:translateY(-2px); background:var(--gold-hi); }
   .cform-note { min-height:1.3em; font-size:14px; color:var(--gold); margin:2px 0 0; }
+  /* contact en 2 colonnes : Réserver un appel · ou · Formulaire */
+  .contact-cols { display:grid; grid-template-columns:1fr auto 1fr; gap:clamp(22px,3.4vw,50px); align-items:stretch;
+    margin-top:clamp(30px,4vw,48px); }
+  .contact-call { display:flex; flex-direction:column; gap:clamp(20px,2.4vw,28px); }
+  .contact-call .rdv-cta { width:100%; margin-top:0; }
+  .contact-call .exits { margin-top:auto; display:grid; grid-template-columns:1fr 1fr; gap:20px 24px; }
+  .contact-or { display:flex; flex-direction:column; align-items:center; align-self:stretch; }
+  .contact-or::before, .contact-or::after { content:""; width:1px; flex:1; background:var(--line); }
+  .contact-or span { font-family:var(--serif); font-style:italic; font-size:1.15rem; color:var(--muted); padding:14px 0; }
+  .contact-cols .cform { max-width:none; width:100%; }
+  @media (max-width:820px){
+    .contact-cols { grid-template-columns:1fr; gap:24px; }
+    .contact-or { flex-direction:row; width:100%; }
+    .contact-or::before, .contact-or::after { width:auto; height:1px; }
+    .contact-or span { padding:0 16px; }
+  }
 
   /* ---- footer ---- */
   footer { border-top:1px solid var(--line); padding:clamp(44px,6vw,72px) 0; }
@@ -652,14 +670,14 @@
     <div class="wrap hero-grid">
       <div class="hero-text">
         <span class="eyebrow reveal">Studio créatif · Paris</span>
-        <h1 class="reveal" style="--d:.08s">On conçoit, on code,<br>et on <span class="mark">édite</span> nos <span class="mark">produits</span>.</h1>
-        <p class="lede measure reveal" style="--d:.16s">onlee est un studio né d'un collectif de soirées. Aujourd'hui, on conçoit et on code nos propres logiciels, des sites et des automatisations IA — jusqu'à la boutique qui s'en sert chaque jour.</p>
+        <h1 class="reveal" style="--d:.08s">On conçoit, on <span class="mark">code</span>.</h1>
+        <p class="lede measure reveal" style="--d:.16s">onlee est un studio né d'un collectif de soirées. Aujourd'hui, on conçoit et on code nos propres logiciels, des sites et des automatisations IA, jusqu'à la boutique qui s'en sert chaque jour.</p>
         <div class="hero-cta reveal" style="--d:.24s">
           <a href="#poles" class="pill pill-ghost">Voir nos pôles</a>
           <a href="https://cal.com/leeroy-benaich" target="_blank" rel="noopener" class="pill pill-solid">Prendre rendez-vous</a>
           <a href="#contact" class="pill pill-ghost">Nous écrire</a>
         </div>
-        <p class="cred reveal" style="--d:.30s"><a href="https://octopus.developers.institute/courses/di_learning_certificate/bcc39b0d-60c5-451e-90a4-4f6ebf914c96" target="_blank" rel="noopener" title="Voir le certificat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="m8.5 13.2-1.3 7.3 4.8-2 4.8 2-1.3-7.3"/><path d="m10 9 1.4 1.4L14.2 7.6"/></svg><span>Fondateur <b>diplômé GenAI &amp; Machine Learning</b> — Developers Institute</span></a></p>
+        <p class="cred reveal" style="--d:.30s"><a href="https://octopus.developers.institute/courses/di_learning_certificate/bcc39b0d-60c5-451e-90a4-4f6ebf914c96" target="_blank" rel="noopener" title="Voir le certificat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="m8.5 13.2-1.3 7.3 4.8-2 4.8 2-1.3-7.3"/><path d="m10 9 1.4 1.4L14.2 7.6"/></svg><span>Fondateur <b>diplômé GenAI &amp; Machine Learning</b> · Developers Institute</span></a></p>
       </div>
       <figure class="hero-portrait reveal" style="--d:.2s">
         <img src="assets/leeroy.jpg" alt="Leeroy Ben-Aich, fondateur d'onlee" width="825" height="1100">
@@ -694,7 +712,7 @@
       <div class="rev-row rev-row-a">
         <figure class="rev"><header class="rev-top"><span class="rev-av" style="--c:#1A73E8" aria-hidden="true">S</span><span class="rev-who"><b>Sabine M.</b><span class="rev-sub">Optic City · Sarcelles</span></span></header><div class="rev-line"><span class="rev-stars" aria-label="5 sur 5">★★★★★</span><span class="rev-date">il y a 3 semaines</span></div><blockquote>Ça fait 6 mois qu'on utilise Vizor à la boutique, je ne pourrais plus m'en passer. Je vois mes ventes du jour et ce qu'il reste à encaisser en un coup d'œil, et les tiers payants ne passent plus à la trappe. Leeroy est super réactif dès que j'ai une question.</blockquote><footer class="rev-util"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4.5-8a2 2 0 0 1 2.8 2.4L13 9h5.5a2 2 0 0 1 2 2.5l-2 7A2 2 0 0 1 16.6 20H7"/></svg>Utile</footer></figure>
         <figure class="rev"><header class="rev-top"><span class="rev-av" style="--c:#1E8E3E" aria-hidden="true">D</span><span class="rev-who"><b>Déborah H.</b><span class="rev-sub">Paris</span></span></header><div class="rev-line"><span class="rev-stars" aria-label="5 sur 5">★★★★★</span><span class="rev-date">il y a 2 mois</span></div><blockquote>Pour la bar-mitsva de mon fils on a pris la borne Mazal Box et c'était LE truc de la soirée, les invités ont adoré. En plus ils ont fait le faire-part et le logo assortis. Tout était nickel et sans stress, merci encore !</blockquote><footer class="rev-util"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4.5-8a2 2 0 0 1 2.8 2.4L13 9h5.5a2 2 0 0 1 2 2.5l-2 7A2 2 0 0 1 16.6 20H7"/></svg>Utile</footer></figure>
-        <figure class="rev"><header class="rev-top"><span class="rev-av" style="--c:#F9AB00" aria-hidden="true">J</span><span class="rev-who"><b>Julien R.</b><span class="rev-sub">Jofre Tapis · Groslay</span></span></header><div class="rev-line"><span class="rev-stars" aria-label="5 sur 5">★★★★★</span><span class="rev-date">il y a 1 mois</span></div><blockquote>700 clients en tournée gérés sur des cahiers, c'était devenu ingérable. onlee nous a fait un outil sur-mesure qui suit les abonnements et les livreurs — un vrai soulagement au quotidien.</blockquote><footer class="rev-util"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4.5-8a2 2 0 0 1 2.8 2.4L13 9h5.5a2 2 0 0 1 2 2.5l-2 7A2 2 0 0 1 16.6 20H7"/></svg>Utile</footer></figure>
+        <figure class="rev"><header class="rev-top"><span class="rev-av" style="--c:#F9AB00" aria-hidden="true">J</span><span class="rev-who"><b>Julien R.</b><span class="rev-sub">Jofre Tapis · Groslay</span></span></header><div class="rev-line"><span class="rev-stars" aria-label="5 sur 5">★★★★★</span><span class="rev-date">il y a 1 mois</span></div><blockquote>700 clients en tournée gérés sur des cahiers, c'était devenu ingérable. onlee nous a fait un outil sur-mesure qui suit les abonnements et les livreurs, un vrai soulagement au quotidien.</blockquote><footer class="rev-util"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4.5-8a2 2 0 0 1 2.8 2.4L13 9h5.5a2 2 0 0 1 2 2.5l-2 7A2 2 0 0 1 16.6 20H7"/></svg>Utile</footer></figure>
         <figure class="rev"><header class="rev-top"><span class="rev-av" style="--c:#A142F4" aria-hidden="true">R</span><span class="rev-who"><b>Rachel L.</b><span class="rev-sub">Mariage · Paris</span></span></header><div class="rev-line"><span class="rev-stars" aria-label="5 sur 5">★★★★★</span><span class="rev-date">il y a 2 mois</span></div><blockquote>Le faire-part web qu'ils m'ont créé était magnifique, et suivre les réponses en direct m'a enlevé un stress énorme. Je recommande à 100 %.</blockquote><footer class="rev-util"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4.5-8a2 2 0 0 1 2.8 2.4L13 9h5.5a2 2 0 0 1 2 2.5l-2 7A2 2 0 0 1 16.6 20H7"/></svg>Utile</footer></figure>
         <figure class="rev"><header class="rev-top"><span class="rev-av" style="--c:#FA7B17" aria-hidden="true">A</span><span class="rev-who"><b>Anthony M.</b><span class="rev-sub">Réception · Paris</span></span></header><div class="rev-line"><span class="rev-stars" aria-label="5 sur 5">★★★★★</span><span class="rev-date">il y a 5 jours</span></div><blockquote>L'album photo partagé a fait un carton, tout le monde a joué le jeu. On a récupéré plus de 300 photos qu'on n'aurait jamais eues autrement.</blockquote><footer class="rev-util"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4.5-8a2 2 0 0 1 2.8 2.4L13 9h5.5a2 2 0 0 1 2 2.5l-2 7A2 2 0 0 1 16.6 20H7"/></svg>Utile</footer></figure>
         <figure class="rev"><header class="rev-top"><span class="rev-av" style="--c:#D93025" aria-hidden="true">D</span><span class="rev-who"><b>David A.</b><span class="rev-sub">Eyes B&amp;B · Sarcelles</span></span></header><div class="rev-line"><span class="rev-stars" aria-label="5 sur 5">★★★★★</span><span class="rev-date">il y a 1 mois</span></div><blockquote>On a remplacé nos cartes de fidélité papier par leur système et les clients adorent. Le solde se met à jour à chaque passage, plus rien ne se perd, et c'est simple pour l'équipe. Je recommande les yeux fermés.</blockquote><footer class="rev-util"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4.5-8a2 2 0 0 1 2.8 2.4L13 9h5.5a2 2 0 0 1 2 2.5l-2 7A2 2 0 0 1 16.6 20H7"/></svg>Utile</footer></figure>
@@ -733,8 +751,8 @@
     <div class="wrap">
       <span class="mf-quote" aria-hidden="true">«</span>
       <div class="reveal">
-        <p class="big">Parti d'un collectif de soirées parisien, onlee est devenu un studio qui <span class="mf-verb">conçoit</span>, <span class="mf-verb">dessine</span> et <em>code</em> ses propres logiciels — jusqu'aux automatisations et agents IA sur-mesure. Une maison, plusieurs métiers.</p>
-        <div class="sign label">— le crew onlee</div>
+        <p class="big">Parti d'un collectif de soirées parisien, onlee est devenu un studio qui <span class="mf-verb">conçoit</span>, <span class="mf-verb">dessine</span> et <em>code</em> ses propres logiciels, jusqu'aux automatisations et agents IA sur-mesure. Une maison, plusieurs métiers.</p>
+        <div class="sign label">le crew onlee</div>
       </div>
       <span class="mf-quote mf-quote-end" aria-hidden="true">»</span>
     </div>
@@ -818,20 +836,27 @@
     <div class="wrap">
       <div class="reveal">
         <h2>Un projet en <span class="mark">tête</span> ?</h2>
-        <p class="intro measure" style="color:var(--muted)">Écrivez-nous, on répond vite.</p>
-        <a class="rdv-cta" href="https://cal.com/leeroy-benaich" target="_blank" rel="noopener">
-          <span class="rdv-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="m8.5 14.5 2.2 2.2 4.5-4.8"/></svg></span>
-          <span class="rdv-txt"><b>Réserver un créneau d'appel</b><span>Choisissez l'heure qui vous arrange — direct dans mon agenda.</span></span>
-          <span class="rdv-go" aria-hidden="true">→</span>
-        </a>
-        <div class="exits">
-          <a class="exit" href="tel:+33680715262"><span class="x-label">Mobile</span><span class="x-val">+33 6 80 71 52 62</span></a>
-          <a class="exit" href="https://www.instagram.com/onlee.crew/" target="_blank" rel="noopener"><span class="x-label">Instagram</span><span class="x-val">@onlee.crew</span></a>
-          <a class="exit" href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener"><span class="x-label">LinkedIn</span><span class="x-val">Leeroy Ben-Aich</span></a>
-          <a class="exit" href="mailto:contact@onlee.fr"><span class="x-label">Email</span><span class="x-val">contact@onlee.fr</span></a>
+        <p class="intro measure" style="color:var(--muted)">Réservez un appel ou écrivez-nous. On répond vite.</p>
+      </div>
+
+      <div class="contact-cols reveal">
+        <div class="contact-call">
+          <a class="rdv-cta" href="https://cal.com/leeroy-benaich" target="_blank" rel="noopener">
+            <span class="rdv-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="m8.5 14.5 2.2 2.2 4.5-4.8"/></svg></span>
+            <span class="rdv-txt"><b>Réserver un créneau d'appel</b><span>Choisissez l'heure qui vous arrange, direct dans mon agenda.</span></span>
+            <span class="rdv-go" aria-hidden="true">→</span>
+          </a>
+          <div class="exits">
+            <a class="exit" href="tel:+33680715262"><span class="x-label">Mobile</span><span class="x-val">+33 6 80 71 52 62</span></a>
+            <a class="exit" href="https://www.instagram.com/onlee.crew/" target="_blank" rel="noopener"><span class="x-label">Instagram</span><span class="x-val">@onlee.crew</span></a>
+            <a class="exit" href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener"><span class="x-label">LinkedIn</span><span class="x-val">Leeroy Ben-Aich</span></a>
+            <a class="exit" href="mailto:contact@onlee.fr"><span class="x-label">Email</span><span class="x-val">contact@onlee.fr</span></a>
+          </div>
         </div>
 
-        <form class="cform reveal" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <div class="contact-or" aria-hidden="true"><span>ou</span></div>
+
+        <form class="cform" action="https://api.web3forms.com/submit" method="POST" novalidate>
           <input type="hidden" name="access_key" value="REMPLACER_PAR_CLE_WEB3FORMS">
           <input type="hidden" name="subject" value="Nouveau message depuis onlee.fr">
           <input type="hidden" name="from_name" value="Site onlee.fr">
@@ -861,7 +886,7 @@
   <div class="wrap frow">
     <a href="#top"><img src="assets/onlee-logo-ink.png" alt="onlee" class="flogo"></a>
     <div class="fmeta">
-      onlee — <span class="i18n-studio">studio créatif, Paris</span>.<br>
+      onlee · <span class="i18n-studio">studio créatif, Paris</span>.<br>
       © <span id="year"></span> · <span class="i18n-madeby">Conçu &amp; codé par onlee.</span> ·
       <a href="https://www.instagram.com/onlee.crew/" target="_blank" rel="noopener">Instagram</a> ·
       <a href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener">LinkedIn</a> ·
@@ -1180,7 +1205,7 @@
       const message = cform.querySelector('[name="message"]').value.trim();
       if (!keyReady) {
         const body = encodeURIComponent(`Nom : ${name}\nEmail : ${email}\n\n${message}`);
-        window.location.href = `mailto:contact@onlee.fr?subject=${encodeURIComponent('Projet — via onlee.fr')}&body=${body}`;
+        window.location.href = `mailto:contact@onlee.fr?subject=${encodeURIComponent('Projet · via onlee.fr')}&body=${body}`;
         note.textContent = 'On ouvre votre messagerie pour finaliser l’envoi…';
         return;
       }
@@ -1188,7 +1213,7 @@
       try {
         const res = await fetch(cform.action, { method: 'POST', body: new FormData(cform), headers: { Accept: 'application/json' } });
         const data = await res.json();
-        if (data.success) { cform.reset(); note.textContent = 'Message envoyé — on revient vers vous très vite.'; }
+        if (data.success) { cform.reset(); note.textContent = 'Message envoyé. On revient vers vous très vite.'; }
         else { note.textContent = 'Envoi impossible pour le moment. Écrivez-nous sur WhatsApp ou à contact@onlee.fr.'; }
       } catch (err) {
         note.textContent = 'Envoi impossible pour le moment. Écrivez-nous sur WhatsApp ou à contact@onlee.fr.';
@@ -1203,8 +1228,8 @@
       { sel: 'nav.links a', all: true, en: ['Areas', 'Studio', 'House', 'Manifesto', 'Contact'] },
 
       { sel: '.hero .eyebrow', en: 'Creative studio · Paris' },
-      { sel: '.hero h1', en: 'We design, we code,<br>and we <span class="mark">ship</span> our own <span class="mark">products</span>.' },
-      { sel: '.hero .lede', en: 'onlee is a studio born from a nightlife collective. Today we design and build our own software — all the way to the shop that uses it every day.' },
+      { sel: '.hero h1', en: 'We design, we <span class="mark">code</span>.' },
+      { sel: '.hero .lede', en: 'onlee is a studio born from a nightlife collective. Today we design and build our own software, all the way to the shop that uses it every day.' },
       { sel: '.hero-cta .pill-solid', en: 'Book a call' },
       { sel: '.hero-cta .pill-ghost', all: true, en: ['See our areas', 'Get in touch'] },
       { sel: '.hero .trust', en: '<b>3 products live</b> · used by real shops.' },
@@ -1234,7 +1259,7 @@
         'App · Receptions &amp; events'
       ] },
       { sel: '.slide .pdesc', all: true, en: [
-        "The day's sales, what's still owed and the insurance refunds you're waiting on — all on one screen, kept up to date on its own.",
+        "The day's sales, what's still owed and the insurance refunds you're waiting on, all on one screen, kept up to date on its own.",
         'Time off, sick leave, extra days: staff file from their phone, management approves in one click.',
         'Each guest finds their name and a wheel reveals the gift set aside for them.'
       ] },
@@ -1268,14 +1293,14 @@
 
       { sel: '#manifeste .eyebrow', en: 'The manifesto' },
       { sel: '#manifeste .big', en: 'Born from a Paris nightlife collective, onlee became a studio that <span class="mf-verb">designs</span>, <span class="mf-verb">draws</span> and <em>codes</em> its own software. One house, many crafts.' },
-      { sel: '#manifeste .sign', en: '— the onlee crew' },
+      { sel: '#manifeste .sign', en: 'the onlee crew' },
 
       { sel: '#contact .eyebrow', en: 'Get in touch' },
       { sel: '#contact h2', en: 'A project in <span class="mark">mind</span>?' },
-      { sel: '#contact .intro', en: 'Write to us — we reply fast.' },
+      { sel: '#contact .intro', en: 'Book a call or write to us. We reply fast.' },
       { sel: '.rdv-txt b', en: 'Book a call slot' },
-      { sel: '.rdv-txt span', en: 'Pick a time that suits you — straight into my calendar.' },
-      { sel: '.cred a span', en: 'Founder — <b>certified in GenAI &amp; Machine Learning</b>, Developers Institute' },
+      { sel: '.rdv-txt span', en: 'Pick a time that suits you, straight into my calendar.' },
+      { sel: '.cred a span', en: 'Founder · <b>certified in GenAI &amp; Machine Learning</b>, Developers Institute' },
       { sel: '.form-head .eyebrow', en: 'Or right here' },
       { sel: '.cform label', all: true, en: ['Your name', 'Your email', 'Your project in a few words'] },
       { sel: '.cbtn', en: 'Send message' },
@@ -1289,7 +1314,7 @@
       else { const el = document.querySelector(t.sel); t.fr = el ? el.innerHTML : null; }
     });
 
-    const TITLES = { fr: 'onlee — studio créatif, Paris', en: 'onlee — creative studio, Paris' };
+    const TITLES = { fr: 'onlee · studio créatif, Paris', en: 'onlee · creative studio, Paris' };
 
     function apply(lang) {
       T.forEach((t) => {
