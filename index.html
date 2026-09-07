@@ -442,12 +442,26 @@
 
   /* ---- contact ---- */
   .contact h2 { font-size:clamp(2.6rem,7vw,5rem); line-height:1.0; letter-spacing:-.02em; margin:16px 0 20px; }
-  .exits { display:flex; flex-wrap:wrap; gap:14px 44px; margin-top:34px; }
-  .exit { display:inline-flex; align-items:baseline; gap:12px; }
+  /* RDV mis en avant (action principale) */
+  .rdv-cta { display:inline-flex; align-items:center; gap:15px; margin-top:32px; max-width:100%;
+    background:var(--gold); color:var(--on-accent); border-radius:16px; padding:15px 20px; text-align:left;
+    box-shadow:0 20px 42px -24px var(--gold); transition:transform .35s var(--ease), background .3s var(--ease); }
+  .rdv-cta:hover { transform:translateY(-2px); background:var(--gold-hi); }
+  .rdv-ic { flex:none; width:42px; height:42px; border-radius:11px; display:grid; place-items:center; background:rgba(255,255,255,.16); }
+  .rdv-ic svg { width:22px; height:22px; }
+  .rdv-txt { display:flex; flex-direction:column; gap:2px; line-height:1.22; }
+  .rdv-txt b { font-family:var(--sans); font-weight:600; font-size:clamp(1rem,2vw,1.16rem); }
+  .rdv-txt span { font-size:12.5px; opacity:.85; }
+  .rdv-go { flex:none; margin-left:8px; font-size:20px; transition:transform .35s var(--ease); }
+  .rdv-cta:hover .rdv-go { transform:translateX(4px); }
+  /* autres moyens de contact — colonnes propres (label au-dessus de la valeur) */
+  .exits { display:flex; flex-wrap:wrap; gap:20px 44px; margin-top:24px; }
+  .exit { display:flex; flex-direction:column; gap:5px; }
   .exit .x-label { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; }
-  .exit a { font-family:var(--serif); font-size:clamp(1.2rem,2.4vw,1.7rem); color:var(--ink);
+  .exit .x-val { font-family:var(--serif); font-size:clamp(1.15rem,2vw,1.45rem); color:var(--ink); width:max-content; max-width:100%;
     border-bottom:1px solid transparent; transition:border-color .3s var(--ease); }
-  .exit a:hover { border-bottom-color:var(--gold); }
+  .exit:hover .x-val { border-bottom-color:var(--gold); }
+  @media (max-width:560px){ .rdv-cta{ width:100%; } .exits{ gap:18px 30px; } }
 
   .form-head { margin-top:clamp(44px,6vw,68px); margin-bottom:20px; }
   .cform { max-width:560px; display:grid; gap:24px; }
@@ -753,11 +767,15 @@
       <div class="reveal">
         <h2>Un projet en <span class="mark">tête</span> ?</h2>
         <p class="intro measure" style="color:var(--muted)">Écrivez-nous, on répond vite.</p>
+        <a class="rdv-cta" href="https://cal.com/leeroy-benaich" target="_blank" rel="noopener">
+          <span class="rdv-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="m8.5 14.5 2.2 2.2 4.5-4.8"/></svg></span>
+          <span class="rdv-txt"><b>Réserver un créneau d'appel</b><span>Choisissez l'heure qui vous arrange — direct dans mon agenda.</span></span>
+          <span class="rdv-go" aria-hidden="true">→</span>
+        </a>
         <div class="exits">
-          <span class="exit"><span class="x-label">Rendez-vous</span><a href="https://cal.com/leeroy-benaich" target="_blank" rel="noopener">Réserver un créneau</a></span>
-          <span class="exit"><span class="x-label">WhatsApp</span><a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener">+33 6 80 71 52 62</a></span>
-          <span class="exit"><span class="x-label">Instagram</span><a href="https://www.instagram.com/onlee.crew/" target="_blank" rel="noopener">@onlee.crew</a></span>
-          <span class="exit"><span class="x-label">Email</span><a href="mailto:contact@onlee.fr">contact@onlee.fr</a></span>
+          <a class="exit" href="tel:+33680715262"><span class="x-label">Mobile</span><span class="x-val">+33 6 80 71 52 62</span></a>
+          <a class="exit" href="https://www.instagram.com/onlee.crew/" target="_blank" rel="noopener"><span class="x-label">Instagram</span><span class="x-val">@onlee.crew</span></a>
+          <a class="exit" href="mailto:contact@onlee.fr"><span class="x-label">Email</span><span class="x-val">contact@onlee.fr</span></a>
         </div>
 
         <form class="cform reveal" action="https://api.web3forms.com/submit" method="POST" novalidate>
@@ -1096,6 +1114,8 @@
       { sel: '#contact .eyebrow', en: 'Get in touch' },
       { sel: '#contact h2', en: 'A project in <span class="mark">mind</span>?' },
       { sel: '#contact .intro', en: 'Write to us — we reply fast.' },
+      { sel: '.rdv-txt b', en: 'Book a call slot' },
+      { sel: '.rdv-txt span', en: 'Pick a time that suits you — straight into my calendar.' },
       { sel: '.form-head .eyebrow', en: 'Or right here' },
       { sel: '.cform label', all: true, en: ['Your name', 'Your email', 'Your project in a few words'] },
       { sel: '.cbtn', en: 'Send message' },
