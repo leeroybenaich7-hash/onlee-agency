@@ -377,6 +377,7 @@
   .pm-item.pm-toggle[aria-expanded="true"] .pm-chev { transform:rotate(45deg); }
   .pm-item.pm-toggle[aria-expanded="true"] { border-color:var(--gold); background:#fff; }
   .pm-sub { display:grid; gap:11px; padding:16px 0 6px 64px; }
+  .pm-sub[hidden] { display:none; }
   @media (max-width:560px){ .pm-sub { padding-left:16px; } }
   .pm-subitem { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 22px; background:var(--card);
     border:1px solid var(--line); border-radius:14px; font-size:15.5px; color:var(--ink); transition:border-color .3s var(--ease), transform .3s var(--ease); }
