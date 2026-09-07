@@ -283,7 +283,8 @@
     -webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);
             mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent); }
   #avis.reviews > * { position:relative; z-index:1; }
-  .reviews .rev-head { text-align:center; max-width:var(--maxw); margin:0 auto clamp(30px,4vw,50px); }
+  #avis { padding-block:clamp(46px,7vw,86px); }
+  .reviews .rev-head { text-align:center; max-width:var(--maxw); margin:0 auto clamp(20px,2.6vw,32px); }
   .reviews .rev-head .eyebrow { justify-content:center; }
   .reviews .rev-head h2 { font-size:clamp(2rem,4vw,3.1rem); line-height:1.05; margin:16px 0 14px; }
   .rev-summary { display:inline-flex; align-items:center; gap:8px; font-size:15px; color:var(--muted); }
@@ -305,7 +306,8 @@
   .rev-line { display:flex; align-items:center; gap:9px; }
   .rev-stars { color:#FBBC04; letter-spacing:1.5px; font-size:14px; }
   .rev-date { font-size:12px; color:var(--muted); }
-  .rev blockquote { font-family:var(--sans); font-weight:400; font-size:13.5px; line-height:1.5; color:#3a3128; }
+  .rev blockquote { font-family:var(--sans); font-weight:400; font-size:13.5px; line-height:1.5; color:#3a3128;
+    display:-webkit-box; -webkit-line-clamp:4; line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; }
   .rev-foot { display:block; width:max-content; max-width:100%; margin:clamp(20px,2.6vw,30px) auto 0; text-align:center;
     font-size:15.5px; font-weight:500; color:#fff; background:var(--gold); border:0; border-radius:999px; padding:17px 34px;
     box-shadow:0 20px 44px -22px rgba(0,85,255,.6); }
