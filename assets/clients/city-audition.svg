@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="#1B2A4A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- ondes sonores -->
+  <path d="M22 48v24"/>
+  <path d="M36 34v52"/>
+  <path d="M50 54v12"/>
+  <!-- oreille : contour + concha + lobe -->
+  <path d="M60 88a28 28 0 1 1 16 6"/>
+  <path d="M74 56a11 11 0 1 0 -7 19q-3 6 4 9"/>
+</svg>
