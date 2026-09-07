@@ -38,8 +38,17 @@
       "operatingSystem": "Web",
       "url": "https://vizor.onlee.fr",
       "description": "Logiciel de caisse et de tiers payant pour les magasins d'optique : ventes du jour, restes à encaisser et remboursements mutuelles sur un seul écran, export comptable inclus.",
-      "offers": { "@type": "Offer", "category": "SaaS", "eligibleCustomerType": "https://schema.org/Business" },
+      "offers": { "@type": "Offer", "price": "39.99", "priceCurrency": "EUR", "category": "SaaS", "eligibleCustomerType": "https://schema.org/Business" },
       "publisher": { "@type": "Organization", "name": "onlee", "url": "https://onlee.fr/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Vizor gère-t-il le tiers payant et les mutuelles ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Vizor suit la part mutuelle de chaque vente, ce que les mutuelles vous doivent et les remboursements en attente — plus aucun tiers payant oublié." } },
+        { "@type": "Question", "name": "Combien coûte un logiciel de caisse pour opticien comme Vizor ?", "acceptedAnswer": { "@type": "Answer", "text": "Vizor coûte 39,99 € HT par mois et par magasin, tout compris : caisse, tiers payant, restes à encaisser et export comptable. Essai gratuit de 14 jours, sans engagement." } },
+        { "@type": "Question", "name": "Faut-il installer un logiciel ou changer de matériel ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Vizor fonctionne dans votre navigateur, sur les postes que vous avez déjà en magasin. Vos données sont synchronisées en temps réel." } },
+        { "@type": "Question", "name": "Peut-on essayer Vizor gratuitement ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, 14 jours gratuits, sans carte bancaire. Vous testez la caisse et le tiers payant sur vos vraies ventes." } }
+      ]
     }
   ]
 }
@@ -63,8 +72,8 @@
 
   <section class="hero">
     <div class="wrap">
-      <h1 class="reveal">Le logiciel de votre <em>magasin d'optique</em>.</h1>
-      <p class="lede reveal" style="--d:.12s">Caisse, tiers payant, fidélité. onlee développe les outils pensés pour les opticiens — les ventes du jour, les mutuelles et vos clients fidèles, tenus au clair sans y passer vos soirées.</p>
+      <h1 class="reveal">Le logiciel de caisse et de tiers payant des <em>opticiens</em>.</h1>
+      <p class="lede reveal" style="--d:.12s">Vizor est le logiciel qui réunit la caisse, le tiers payant et la fidélité de votre magasin d'optique sur un seul écran. Les ventes du jour, les remboursements mutuelles et vos clients fidèles tenus au clair — sans y passer vos soirées.</p>
       <div class="hero-cta reveal" style="--d:.22s">
         <a href="https://leeroybenaich7-hash.github.io/vizor-site/" target="_blank" rel="noopener" class="pill pill-solid">Découvrir Vizor</a>
         <a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20suis%20opticien%20et%20je%20vous%20contacte" target="_blank" rel="noopener" class="pill pill-ghost">Nous écrire</a>
@@ -130,6 +139,31 @@
           <span class="chip">Export comptable</span>
           <span class="chip">Essai 14 jours</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    #faq-op .faq-head{ margin-bottom:clamp(20px,3vw,34px); }
+    #faq-op h2{ margin-bottom:8px; }
+    #faq-op .fq{ border-top:1px solid var(--line); padding:clamp(15px,2vw,20px) 0; }
+    #faq-op .fq:last-child{ border-bottom:1px solid var(--line); }
+    #faq-op summary{ font-family:var(--serif); font-weight:500; font-size:clamp(17px,2vw,21px); cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:14px; color:var(--ink); }
+    #faq-op summary::-webkit-details-marker{ display:none; }
+    #faq-op summary::after{ content:"+"; color:var(--gold); font-weight:700; margin-left:auto; }
+    #faq-op details[open] summary::after{ content:"–"; }
+    #faq-op .fq p{ color:var(--muted); margin:.7em 0 0; max-width:64ch; }
+  </style>
+  <section id="faq-op">
+    <div class="wrap">
+      <div class="reveal faq-head">
+        <h2>Questions fréquentes</h2>
+      </div>
+      <div class="reveal">
+        <details class="fq" open><summary>Vizor gère-t-il le tiers payant et les mutuelles ?</summary><p>Oui. Vizor suit la part mutuelle de chaque vente, ce que les mutuelles vous doivent et les remboursements en attente — plus aucun tiers payant oublié.</p></details>
+        <details class="fq"><summary>Combien coûte un logiciel de caisse pour opticien comme Vizor ?</summary><p>Vizor coûte 39,99 € HT par mois et par magasin, tout compris : caisse, tiers payant, restes à encaisser et export comptable. Essai gratuit de 14 jours, sans engagement.</p></details>
+        <details class="fq"><summary>Faut-il installer un logiciel ou changer de matériel ?</summary><p>Non. Vizor fonctionne dans votre navigateur, sur les postes que vous avez déjà en magasin. Vos données sont synchronisées en temps réel.</p></details>
+        <details class="fq"><summary>Peut-on essayer Vizor gratuitement ?</summary><p>Oui, 14 jours gratuits, sans carte bancaire. Vous testez la caisse et le tiers payant sur vos vraies ventes.</p></details>
       </div>
     </div>
   </section>
