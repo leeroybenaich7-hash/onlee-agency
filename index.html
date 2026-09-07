@@ -536,6 +536,16 @@
     .manifesto .big .mf-w { transform:none!important; filter:none!important; transition:color .2s linear; }
     .manifesto .big em.mf-accent::after, .manifesto .big .mf-verb::after { transform:scaleX(1); } }
   .manifesto .sign { margin-top:30px; }
+  /* Manifeste : fond bleu, écriture blanche (retour dev Lior) */
+  .manifesto.alt { background:#0055FF; }
+  .manifesto .big { color:rgba(255,255,255,.24); }
+  .manifesto .big .mf-w { color:rgba(255,255,255,calc(.24 + .76*var(--lit,1))); }
+  .manifesto .big em.mf-accent { color:rgba(255,255,255,calc(.34 + .66*var(--lit,1))); }
+  .manifesto .big em.mf-accent::after { background:rgba(255,255,255,.75); }
+  .manifesto .big .mf-verb::after { background:rgba(255,255,255,.5); }
+  .mf-quote { color:rgba(255,255,255,.17); }
+  .manifesto .sign { color:rgba(255,255,255,.72); }
+  .manifesto .eyebrow { color:rgba(255,255,255,.82); }
 
   /* ---- contact ---- */
   .contact h2 { font-size:clamp(2.6rem,7vw,5rem); line-height:1.0; letter-spacing:-.02em; margin:16px 0 20px; }
