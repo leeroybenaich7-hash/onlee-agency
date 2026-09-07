@@ -51,6 +51,23 @@
   #etapes .step h3 { font-size:clamp(1.15rem,2vw,1.4rem); margin-bottom:6px; }
   #etapes .step p { color:var(--muted); font-size:15px; line-height:1.6; max-width:60ch; }
   #etapes .step .lead-in { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  /* cover : montrer le CRM en entier */
+  .pole-cover .cover-frame { aspect-ratio:16/10; }
+  /* galerie « ce qu'on construit » */
+  #showcase .lede { margin-top:12px; }
+  .work-grid { display:grid; grid-template-columns:1fr; gap:clamp(18px,2.4vw,26px); margin-top:clamp(28px,4vw,44px); }
+  @media (min-width:760px){ .work-grid { grid-template-columns:1fr 1fr; } .work-card.wide { grid-column:1 / -1; } }
+  .work-card { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; color:inherit;
+    transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease); }
+  a.work-card:hover { transform:translateY(-4px); border-color:var(--gold); box-shadow:0 26px 54px -40px rgba(11,18,32,.22); }
+  .wc-media { aspect-ratio:16/10; overflow:hidden; background:var(--paper-2); border-bottom:1px solid var(--line); }
+  .work-card.wide .wc-media { aspect-ratio:2.62/1; }
+  .wc-media img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .5s var(--ease); }
+  a.work-card:hover .wc-media img { transform:scale(1.03); }
+  .work-card figcaption { padding:clamp(18px,2.2vw,22px); }
+  .work-card figcaption b { font-size:16.5px; font-weight:600; display:block; }
+  .work-card figcaption span.d { color:var(--muted); font-size:14px; line-height:1.55; display:block; margin-top:6px; }
+  .work-card .on { display:inline-block; margin-top:12px; font-size:11.5px; font-weight:600; color:#1E8E3E; background:rgba(30,142,62,.10); padding:4px 10px; border-radius:999px; }
 </style>
 </head>
 <body>
@@ -83,7 +100,7 @@
   <section class="pole-cover">
     <div class="wrap">
       <figure class="cover-frame reveal">
-        <img src="../assets/maison/studio.jpg" alt="onlee studio — l'atelier où l'on conçoit outils, automatisations et agents IA" width="1600" height="760" loading="lazy">
+        <img src="../assets/work/studio-crm.jpg" alt="Exemple de CRM et tableau de bord sur-mesure fabriqué par onlee — clients, chiffre d'affaires, automatisations et temps gagné" width="1600" height="1000" loading="lazy">
       </figure>
     </div>
   </section>
@@ -101,6 +118,29 @@
         <li class="step reveal" style="--d:.18s"><div class="s-no">04</div><div><span class="lead-in">Étape 4</span><h3>On installe et on forme votre équipe</h3><p>On branche les outils dans votre quotidien et on montre à chacun comment s'en servir. En quelques minutes, tout le monde est autonome. Vous continuez à travailler, en mieux.</p></div></li>
         <li class="step reveal" style="--d:.24s"><div class="s-no">05</div><div><span class="lead-in">Étape 5</span><h3>On suit, vous gagnez du temps</h3><p>On mesure les heures gagnées, on corrige, on ajoute ce qui manque. Vos outils évoluent avec votre activité — et le temps récupéré retourne à votre métier.</p></div></li>
       </ol>
+    </div>
+  </section>
+
+  <section id="showcase">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Des exemples concrets de ce qu'on construit.</h2>
+        <p class="lede">Des vrais outils déjà en ligne, et des maquettes sur-mesure. Voilà à quoi ressemble « gagner des heures ».</p>
+      </div>
+      <div class="work-grid">
+        <figure class="work-card wide reveal">
+          <div class="wc-media"><img src="../assets/work/studio-agent.jpg" alt="Agent IA qui lit un devis et remplit la fiche client automatiquement" loading="lazy"></div>
+          <figcaption><b>Agent IA · lecture de documents</b><span class="d">Il lit un devis, une facture ou une ordonnance et remplit la fiche à votre place. Vous validez en un clic — zéro ressaisie.</span></figcaption>
+        </figure>
+        <a class="work-card reveal" style="--d:.06s" href="https://vizor.onlee.fr" target="_blank" rel="noopener">
+          <div class="wc-media"><img src="../assets/work/vizor.jpg" alt="Vizor — caisse et tiers payant pour opticiens" loading="lazy"></div>
+          <figcaption><b>Vizor · caisse opticiens</b><span class="d">La caisse et le tiers payant des magasins d'optique. Utilisé tous les jours en boutique.</span><span class="on">En ligne ✓</span></figcaption>
+        </a>
+        <a class="work-card reveal" style="--d:.12s" href="https://prisme-rh.vercel.app" target="_blank" rel="noopener">
+          <div class="wc-media"><img src="../assets/work/noga.jpg" alt="Noga — gestion RH des commerces" loading="lazy"></div>
+          <figcaption><b>Noga · RH des commerces</b><span class="d">Congés, planning et paie pour les boutiques. Les salariés déposent, la direction valide.</span><span class="on">En ligne ✓</span></figcaption>
+        </a>
+      </div>
     </div>
   </section>
 
