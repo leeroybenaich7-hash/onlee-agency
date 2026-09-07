@@ -497,8 +497,12 @@
   /* ---- manifeste ---- */
   .manifesto .wrap { max-width:900px; }
   .manifesto .big { font-family:var(--serif); font-size:clamp(1.9rem,3.8vw,3.1rem); line-height:1.22;
-    letter-spacing:-.015em; margin-top:22px; }
+    letter-spacing:-.015em; margin-top:22px; color:rgba(11,18,32,.20); }
   .manifesto .big em { color:var(--gold); }
+  /* révélation mot par mot au scroll : gris clair -> encre, « code » -> bleu */
+  .manifesto .big .mf-w { color:rgba(11,18,32,calc(.20 + .80*var(--lit,1))); transition:color .2s linear; }
+  .manifesto .big em.mf-accent { color:rgba(0,85,255,calc(.30 + .70*var(--lit,1))); }
+  @media (prefers-reduced-motion: reduce){ .manifesto .big .mf-w, .manifesto .big em.mf-accent { transition:none; } }
   .manifesto .sign { margin-top:30px; }
 
   /* ---- contact ---- */
@@ -1009,6 +1013,47 @@
     }
     addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
     addEventListener('resize', upd); upd();
+  })();
+
+  // manifeste : le texte s'allume mot par mot au scroll (gris clair -> encre, « code » -> bleu)
+  (function () {
+    var sec = document.getElementById('manifeste');
+    var big = sec && sec.querySelector('.big');
+    if (!big) return;
+    var PRM = matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false;
+    function split(el) {
+      if (el.querySelector('.mf-w')) return; // déjà découpé
+      var nodes = Array.prototype.slice.call(el.childNodes);
+      var frag = document.createDocumentFragment();
+      nodes.forEach(function (node) {
+        if (node.nodeType === 3) {
+          node.textContent.split(/(\s+)/).forEach(function (tok) {
+            if (tok === '') return;
+            if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(tok)); }
+            else { var s = document.createElement('span'); s.className = 'mf-w'; s.textContent = tok; frag.appendChild(s); }
+          });
+        } else if (node.nodeType === 1) {
+          var c = node.cloneNode(true); c.classList.add('mf-w');
+          if (c.tagName === 'EM') c.classList.add('mf-accent');
+          frag.appendChild(c);
+        } else { frag.appendChild(node.cloneNode(true)); }
+      });
+      el.innerHTML = ''; el.appendChild(frag);
+    }
+    function reveal() {
+      ticking = false;
+      var ws = big.querySelectorAll('.mf-w'); if (!ws.length) return;
+      if (PRM) { for (var k = 0; k < ws.length; k++) ws[k].style.setProperty('--lit', '1'); return; }
+      var r = sec.getBoundingClientRect(), vh = innerHeight || 800;
+      var p = (vh * 0.88 - r.top) / (r.height + vh * 0.12); p = Math.max(0, Math.min(1, p));
+      var n = ws.length, headw = p * (n + 8) - 4;
+      for (var i = 0; i < n; i++) { var t = headw - i; t = t < 0 ? 0 : (t > 1 ? 1 : t); ws[i].style.setProperty('--lit', t.toFixed(3)); }
+    }
+    split(big); reveal();
+    // l'i18n réécrit le innerHTML au changement de langue -> on re-découpe
+    new MutationObserver(function () { if (!big.querySelector('.mf-w')) { split(big); reveal(); } }).observe(big, { childList: true });
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(reveal); } }, { passive: true });
+    addEventListener('resize', reveal);
   })();
 
   // header condensé au scroll
