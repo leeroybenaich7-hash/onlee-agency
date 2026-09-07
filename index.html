@@ -360,9 +360,7 @@
   .ecg-bg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
             mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
-  .ecg-track { position:absolute; top:50%; left:0; width:200%; height:clamp(150px,24vh,210px); transform:translate(0,-50%);
-    animation:ecg-scroll 24s linear infinite; will-change:transform; }
-  @keyframes ecg-scroll { from { transform:translate(0,-50%); } to { transform:translate(-50%,-50%); } }
+  .ecg-track { position:absolute; top:50%; left:0; width:200%; height:clamp(180px,28vh,260px); transform:translate(0,-50%); will-change:transform; }
   .ecg-line { fill:none; stroke:var(--gold); stroke-width:2.2; opacity:.18; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
   @media (prefers-reduced-motion: reduce) { .ecg-track { animation:none; } }
   .pm-slot { perspective:1400px; margin-bottom:46px; }
@@ -665,7 +663,7 @@
 
   <!-- PÔLES (fusion « nos pôles » + « une maison, plusieurs métiers ») -->
   <section id="poles">
-    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" class="ecg-track" viewBox="0 0 2400 190" preserveAspectRatio="none"><path id="ecgPath" class="ecg-line"/></svg></div>
+    <div class="ecg-bg" aria-hidden="true"><svg id="ecg" class="ecg-track" viewBox="0 0 2400 240" preserveAspectRatio="none"><path id="ecgPath" class="ecg-line"/></svg></div>
     <div class="wrap">
       <h2 class="reveal" style="text-align:center;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin-bottom:12px">Une maison,<br>plusieurs <em>pôles</em>.</h2>
       <p class="intro reveal" style="text-align:center;max-width:52ch;margin:0 auto clamp(34px,5vw,54px)">Sous un même nom, des métiers complémentaires. Chacun a sa page.</p>
@@ -960,22 +958,32 @@
     t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(); } });
   });
 
-  // fond électrocardiogramme : vrai tracé hôpital (ligne plate + P / QRS / T), défile en CSS
+  // fond électrocardiogramme : vrai tracé hôpital, bouge UNIQUEMENT au scroll, gros pics & creux
   (function () {
-    var path = document.getElementById('ecgPath'); if (!path) return;
-    var y = 95;
+    var track = document.getElementById('ecg'); var path = document.getElementById('ecgPath'); if (!track || !path) return;
+    var y = 120;
     function beat(bx) {
       return ' L ' + (bx + 62) + ' ' + y
-        + ' L ' + (bx + 74) + ' ' + (y - 9) + ' L ' + (bx + 86) + ' ' + y
+        + ' L ' + (bx + 74) + ' ' + (y - 14) + ' L ' + (bx + 86) + ' ' + y
         + ' L ' + (bx + 150) + ' ' + y
-        + ' L ' + (bx + 162) + ' ' + (y + 12) + ' L ' + (bx + 176) + ' ' + (y - 72) + ' L ' + (bx + 190) + ' ' + (y + 22) + ' L ' + (bx + 203) + ' ' + y
+        + ' L ' + (bx + 162) + ' ' + (y + 18) + ' L ' + (bx + 176) + ' ' + (y - 98) + ' L ' + (bx + 190) + ' ' + (y + 58) + ' L ' + (bx + 203) + ' ' + y
         + ' L ' + (bx + 272) + ' ' + y
-        + ' L ' + (bx + 287) + ' ' + (y - 16) + ' L ' + (bx + 301) + ' ' + y
+        + ' L ' + (bx + 287) + ' ' + (y - 26) + ' L ' + (bx + 301) + ' ' + y
         + ' L ' + (bx + 400) + ' ' + y;
     }
     var d = 'M 0 ' + y;
     for (var i = 0; i < 6; i++) d += beat(i * 400);
     path.setAttribute('d', d);
+    var PRM = matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false;
+    function upd() {
+      ticking = false;
+      if (PRM) { track.style.transform = 'translate(0,-50%)'; return; }
+      var half = track.getBoundingClientRect().width / 2 || 600;
+      var off = (((window.pageYOffset || 0) * 0.4) % half);
+      track.style.transform = 'translate(' + (-off) + 'px,-50%)';
+    }
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+    addEventListener('resize', upd); upd();
   })();
 
   // header condensé au scroll
