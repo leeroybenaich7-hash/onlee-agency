@@ -243,8 +243,7 @@
   .c-name.jofre { color:#2B57C4; }
   .c-name.nao   { font-style:italic; font-weight:500; color:#9E122C; }
   .c-name.nao .sub { font-family:var(--sans); font-style:normal; font-weight:600; font-size:.46em; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-left:.42em; vertical-align:middle; }
-  .c-name.brandon { font-family:var(--sans); font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:clamp(.82rem,1.35vw,1rem); color:var(--ink); }
-  .c-name.brandon .ember { color:#E11024; }
+  .c-name.shimone { color:#0E9AA7; }
   @media (prefers-reduced-motion: reduce) { .clients-track { animation:none; } .clients-marquee { overflow-x:auto; } }
 
   /* ---- hero : portrait fondateur ---- */
@@ -447,6 +446,11 @@
   .branch h3 { font-size:clamp(1.25rem,2vw,1.6rem); line-height:1.05; }
   .branch .role { margin-top:6px; }
   .branch .b-desc { color:var(--muted); font-size:14.5px; margin-top:8px; line-height:1.5; }
+  a.branch { cursor:pointer; }
+  a.branch .branch-body h3 { transition:color .3s var(--ease); }
+  a.branch:hover .branch-body h3 { color:var(--gold); }
+  .branch.soon { opacity:.5; }
+  .branch.soon:hover { transform:none; border-color:var(--line); box-shadow:none; }
 
   /* ---- manifeste ---- */
   .manifesto .wrap { max-width:900px; }
@@ -597,7 +601,7 @@
         <span class="c-logo"><img class="c-mark" src="assets/clients/eyes-bnb.svg" alt="" aria-hidden="true"><span class="c-name eyes">Eyes B&amp;B</span></span>
         <span class="c-logo"><span class="c-name jofre">Jofre Tapis</span></span>
         <span class="c-logo"><span class="c-name nao">nao<span class="sub">pilates</span></span></span>
-        <span class="c-logo"><span class="c-name brandon">Brandon <span class="ember">Coaching</span></span></span>
+        <span class="c-logo"><img class="c-mark" src="assets/clients/shimone.png" alt="" aria-hidden="true"><span class="c-name shimone">Shimone</span></span>
       </div>
     </div>
   </section>
@@ -647,21 +651,17 @@
         <p class="intro">Sous un même nom, des activités complémentaires.</p>
       </div>
       <div class="branches">
-        <div class="branch reveal">
+        <a class="branch reveal" href="/studio/">
           <div class="branch-media"><img src="assets/maison/studio.jpg" alt="onlee studio — produits et logiciels" loading="lazy"></div>
           <div class="branch-body"><h3>onlee studio</h3><div class="role label">Produits &amp; logiciels · actif</div><p class="b-desc">Conception et édition de nos propres apps et SaaS.</p></div>
-        </div>
-        <div class="branch reveal" style="--d:.08s">
+        </a>
+        <a class="branch reveal" href="/crew/" style="--d:.08s">
           <div class="branch-media"><img src="assets/maison/crew.jpg" alt="onlee crew — soirées et événementiel" loading="lazy"></div>
           <div class="branch-body"><h3>onlee crew</h3><div class="role label">Événementiel · actif</div><p class="b-desc">Soirées : direction artistique, line-up, scénographie.</p></div>
-        </div>
-        <div class="branch reveal" style="--d:.16s">
+        </a>
+        <div class="branch soon reveal" style="--d:.16s" aria-disabled="true">
           <div class="branch-media"><img src="assets/maison/relations.jpg" alt="onlee relations — relationnel B2B" loading="lazy"></div>
-          <div class="branch-body"><h3>onlee relations</h3><div class="role label">Relationnel B2B · actif</div><p class="b-desc">Mise en relation marques, lieux et organisateurs.</p></div>
-        </div>
-        <div class="branch reveal" style="--d:.24s">
-          <div class="branch-media"><img src="assets/maison/formation.jpg" alt="onlee formation — formation à l'IA" loading="lazy"></div>
-          <div class="branch-body"><h3>onlee formation</h3><div class="role label">Formation IA · actif</div><p class="b-desc">Former les équipes à l'IA : audit, cas d'usage, prise en main. Finançable.</p></div>
+          <div class="branch-body"><h3>onlee relations</h3><div class="role label">Relationnel B2B · bientôt</div></div>
         </div>
       </div>
     </div>
@@ -1085,14 +1085,11 @@
       { sel: '.branch .role', all: true, en: [
         'Products &amp; software · active',
         'Events · active',
-        'B2B relations · active',
-        'AI training · active'
+        'B2B relations · soon'
       ] },
       { sel: '.branch .b-desc', all: true, en: [
         'Designing and shipping our own apps and SaaS.',
-        'Events: art direction, line-up, staging.',
-        'Connecting brands, venues and organizers.',
-        'AI training for teams: audit, use cases, hands-on. Fundable.'
+        'Events: art direction, line-up, staging.'
       ] },
 
       { sel: '#manifeste .eyebrow', en: 'The manifesto' },
