@@ -1003,7 +1003,8 @@
       ticking = false;
       if (PRM) { draw(1); return; }
       var r = sec.getBoundingClientRect(), vh = innerHeight || 800;
-      var p = (vh - r.top) / (vh + r.height); p = Math.max(0, Math.min(1, p));
+      var SPEED = 2; // 2× plus rapide : le tracé se complète vers le milieu de la section
+      var p = SPEED * (vh - r.top) / (vh + r.height); p = Math.max(0, Math.min(1, p));
       draw(p);
     }
     addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
