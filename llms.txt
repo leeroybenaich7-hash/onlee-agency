@@ -1,8 +1,8 @@
 # onlee
 
-> onlee est une agence française d'automatisation et d'intelligence artificielle, basée à Paris. Elle crée des automatisations, des agents IA et des logiciels sur-mesure pour les commerces et les entreprises, et édite ses propres logiciels métier (Vizor, Noga, Mazal Box). Conçus, dessinés et codés en interne. Fondateur : Leeroy Ben-Aich.
+> onlee est un studio créatif français basé à Paris. Il conçoit, dessine et développe en interne ses propres logiciels et applications (Vizor, Noga, Mazal Box), crée des automatisations et des agents IA sur-mesure, et accompagne ses clients sur l'événementiel et la création de sites. Une maison, plusieurs métiers. Fondateur : Leeroy Ben-Aich.
 
-onlee réunit plusieurs métiers : automatisation et agents IA sur-mesure (pôle Studio), édition de logiciels SaaS (Vizor, Noga), événementiel et animation de soirées en club (Crew). Les outils sont utilisés par de vrais commerces (opticiens, boutiques) au quotidien.
+onlee réunit plusieurs métiers sous une même maison : édition de produits logiciels (SaaS : Vizor, Noga), automatisations et agents IA sur-mesure (pôle Studio), événementiel, et animation de soirées en club (Crew). Les outils sont utilisés par de vrais commerces (opticiens, boutiques) au quotidien.
 
 ## Produits
 
