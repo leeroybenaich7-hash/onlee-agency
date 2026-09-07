@@ -372,6 +372,17 @@
   .pm-item.pm-soon, .pm-slot.in .pm-item.pm-soon { opacity:.5; cursor:default; }
   .pm-item.pm-soon:hover { border-color:var(--line); background:var(--card); }
   .pm-soon-tag { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+  .pm-item.pm-toggle { cursor:pointer; }
+  .pm-chev { transition:transform .3s var(--ease); font-weight:400; }
+  .pm-item.pm-toggle[aria-expanded="true"] .pm-chev { transform:rotate(45deg); }
+  .pm-item.pm-toggle[aria-expanded="true"] { border-color:var(--gold); background:#fff; }
+  .pm-sub { display:grid; gap:11px; padding:16px 0 6px 64px; }
+  @media (max-width:560px){ .pm-sub { padding-left:16px; } }
+  .pm-subitem { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 22px; background:var(--card);
+    border:1px solid var(--line); border-radius:14px; font-size:15.5px; color:var(--ink); transition:border-color .3s var(--ease), transform .3s var(--ease); }
+  .pm-subitem:hover { border-color:var(--gold); transform:translateX(4px); }
+  .pm-subitem b { font-weight:600; }
+  .pm-subitem .s-arr { color:var(--gold); font-size:1.2rem; flex:none; }
   body.pm-lock { overflow:hidden; }
   .nav-poles-mob { display:none; }
   @media (max-width:860px) { .nav-poles-mob { display:inline-flex; align-items:center; font-size:13px; letter-spacing:.02em; color:var(--muted); } }
@@ -642,11 +653,15 @@
       <p class="intro reveal" style="text-align:center;max-width:52ch;margin:0 auto clamp(34px,5vw,54px)">Sous un même nom, des métiers complémentaires. Chacun a sa page.</p>
       <div class="pm-stage" id="polesStage">
         <div class="pm-slot"><a class="pm-item" href="/studio/"><span class="pm-no">01</span><span class="pm-tx"><span class="pm-name">onlee studio</span><span class="pm-desc">Outils, automatisations &amp; agents IA · on vous fait gagner des heures</span></span><span class="pm-arr">→</span></a></div>
-        <div class="pm-slot"><a class="pm-item" href="/opticiens/"><span class="pm-no">02</span><span class="pm-tx"><span class="pm-name">Opticiens</span><span class="pm-desc">Vizor · caisse, tiers payant &amp; fidélité</span></span><span class="pm-arr">→</span></a></div>
-        <div class="pm-slot"><a class="pm-item" href="/rh/"><span class="pm-no">03</span><span class="pm-tx"><span class="pm-name">RH</span><span class="pm-desc">Noga · gestion RH des boutiques</span></span><span class="pm-arr">→</span></a></div>
-        <div class="pm-slot"><a class="pm-item" href="/evenements/"><span class="pm-no">04</span><span class="pm-tx"><span class="pm-name">Événementiel</span><span class="pm-desc">Faire-part · Mazal Box · logos &amp; design</span></span><span class="pm-arr">→</span></a></div>
-        <div class="pm-slot"><a class="pm-item" href="/crew/"><span class="pm-no">05</span><span class="pm-tx"><span class="pm-name">onlee crew</span><span class="pm-desc">Soirées en club · en partenariat</span></span><span class="pm-arr">→</span></a></div>
-        <div class="pm-slot"><div class="pm-item pm-soon" aria-disabled="true"><span class="pm-no">06</span><span class="pm-tx"><span class="pm-name">onlee relations</span><span class="pm-desc">Relationnel B2B</span></span><span class="pm-soon-tag">Bientôt</span></div></div>
+        <div class="pm-slot"><div class="pm-item pm-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="sub-logiciels"><span class="pm-no">02</span><span class="pm-tx"><span class="pm-name">Mes logiciels</span><span class="pm-desc">Vizor &amp; Noga · des SaaS que j'ai conçus et codés</span></span><span class="pm-arr pm-chev">+</span></div>
+          <div class="pm-sub" id="sub-logiciels" hidden>
+            <a class="pm-subitem" href="/opticiens/"><span><b>Vizor</b> · caisse &amp; tiers payant pour opticiens</span><span class="s-arr">→</span></a>
+            <a class="pm-subitem" href="/rh/"><span><b>Noga</b> · gestion RH des boutiques &amp; commerces</span><span class="s-arr">→</span></a>
+          </div>
+        </div>
+        <div class="pm-slot"><a class="pm-item" href="/evenements/"><span class="pm-no">03</span><span class="pm-tx"><span class="pm-name">Événementiel</span><span class="pm-desc">Faire-part · Mazal Box · logos &amp; design</span></span><span class="pm-arr">→</span></a></div>
+        <div class="pm-slot"><a class="pm-item" href="/crew/"><span class="pm-no">04</span><span class="pm-tx"><span class="pm-name">onlee crew</span><span class="pm-desc">Soirées en club · en partenariat</span></span><span class="pm-arr">→</span></a></div>
+        <div class="pm-slot"><div class="pm-item pm-soon" aria-disabled="true"><span class="pm-no">05</span><span class="pm-tx"><span class="pm-name">onlee relations</span><span class="pm-desc">Relationnel B2B</span></span><span class="pm-soon-tag">Bientôt</span></div></div>
       </div>
     </div>
   </section>
@@ -914,6 +929,18 @@
       pmSlots.forEach((s) => s.classList.add('in'));
     }
   }
+
+  // « Mes logiciels » : déplie le choix Vizor / Noga au clic
+  document.querySelectorAll('.pm-toggle').forEach(function (t) {
+    function tog() {
+      var open = t.getAttribute('aria-expanded') === 'true';
+      t.setAttribute('aria-expanded', String(!open));
+      var sub = t.parentElement.querySelector('.pm-sub');
+      if (sub) sub.hidden = open;
+    }
+    t.addEventListener('click', tog);
+    t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(); } });
+  });
 
   // header condensé au scroll
   const head = document.getElementById('head');
