@@ -1094,11 +1094,11 @@
     addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   })();
 
-  // pôles : dépliage 3D au scroll, RÉVERSIBLE (se déplie en descendant, se replie en remontant)
+  // pôles : dépliage 3D au scroll, UNE seule fois (se déplie en arrivant puis reste déplié, pas de repli parasite)
   const pmSlots = document.querySelectorAll('#polesStage .pm-slot');
   if (pmSlots.length) {
     if ('IntersectionObserver' in window) {
-      const pio = new IntersectionObserver((es) => es.forEach((e) => { e.target.classList.toggle('in', e.isIntersecting); }), { threshold: 0.35 });
+      const pio = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); pio.unobserve(e.target); } }), { threshold: 0.35 });
       pmSlots.forEach((s) => pio.observe(s));
     } else {
       pmSlots.forEach((s) => s.classList.add('in'));
@@ -1242,9 +1242,9 @@
     requestAnimationFrame(() => { head.classList.toggle('is-scrolled', scrollY > 30); ticking = false; });
   });
 
-  // fondus au scroll — RÉVERSIBLES : s'animent dans les 2 sens (descente ET remontée), peu importe où on est
+  // fondus au scroll : chaque bloc apparaît UNE seule fois puis reste (plus de clignotement/disparition en scrollant)
   const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { e.target.classList.toggle('in', e.isIntersecting); });
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
