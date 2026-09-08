@@ -1098,7 +1098,7 @@
   const pmSlots = document.querySelectorAll('#polesStage .pm-slot');
   if (pmSlots.length) {
     if ('IntersectionObserver' in window) {
-      const pio = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); pio.unobserve(e.target); } }), { threshold: 0.35 });
+      const pio = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: 0.35 });
       pmSlots.forEach((s) => pio.observe(s));
     } else {
       pmSlots.forEach((s) => s.classList.add('in'));
@@ -1244,7 +1244,7 @@
 
   // fondus au scroll : chaque bloc apparaît UNE seule fois puis reste (plus de clignotement/disparition en scrollant)
   const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
