@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>onlee RH, Noga, la gestion RH de vos boutiques</title>
-<meta name="description" content="Le pôle RH d'onlee : Noga, la gestion RH des commerces. Congés, arrêts maladie, planning et fiche de paie, les salariés déposent depuis leur téléphone, la direction valide en un clic." />
+<meta name="description" content="Le pôle RH d'onlee : Noga, la gestion RH des commerces. Congés, arrêts maladie, planning et fiche de paie, validés en un clic depuis le téléphone." />
 <meta name="theme-color" content="#FBFBFA" />
 <link rel="canonical" href="https://onlee.fr/rh/" />
 <meta name="robots" content="index, follow" />
@@ -16,9 +16,32 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://onlee.fr/assets/pole/rh.jpg" />
 <link rel="icon" type="image/png" href="../assets/favicon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/playfair-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+</style>
 <link rel="stylesheet" href="../assets/pole.css">
 <script type="application/ld+json">
 {
@@ -36,7 +59,7 @@
       "name": "Noga",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
-      "url": "https://prisme-rh.vercel.app",
+      "url": "https://noga.onlee.fr/",
       "description": "Logiciel de gestion RH pour les commerces et boutiques : congés, arrêts maladie, planning et préparation de la paie. Les salariés déposent depuis leur téléphone, la direction valide en un clic.",
       "offers": { "@type": "Offer", "category": "SaaS", "eligibleCustomerType": "https://schema.org/Business" },
       "publisher": { "@type": "Organization", "name": "onlee", "url": "https://onlee.fr/" }
@@ -51,10 +74,10 @@
 
 <header id="head">
   <div class="bar">
-    <a href="../" class="brand"><img src="../assets/onlee-logo-ink.png" alt="onlee"><span>RH</span></a>
+    <a href="../" class="brand"><img src="../assets/onlee-logo-ink.webp" alt="onlee"><span>RH</span></a>
     <div class="bar-right">
       <a href="../" class="back">← onlee</a>
-      <a href="https://prisme-rh.vercel.app" target="_blank" rel="noopener" class="pill pill-solid">Découvrir Noga</a>
+      <a href="https://noga.onlee.fr/" target="_blank" rel="noopener" class="pill pill-solid">Découvrir Noga</a>
     </div>
   </div>
 </header>
@@ -66,7 +89,7 @@
       <h1 class="reveal">La RH de vos <em>boutiques</em>.</h1>
       <p class="lede reveal" style="--d:.12s">Congés, arrêts maladie, jours travaillés, planning, fiche de paie. <strong style="color:var(--ink);font-weight:600">Noga</strong> réunit toute la gestion RH de vos commerces sur un seul écran, du comptoir au bulletin.</p>
       <div class="hero-cta reveal" style="--d:.22s">
-        <a href="https://prisme-rh.vercel.app" target="_blank" rel="noopener" class="pill pill-solid">Découvrir Noga</a>
+        <a href="https://noga.onlee.fr/" target="_blank" rel="noopener" class="pill pill-solid">Découvrir Noga</a>
         <a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20pour%20Noga%20(RH)" target="_blank" rel="noopener" class="pill pill-ghost">Nous écrire</a>
       </div>
     </div>
@@ -88,11 +111,11 @@
           <div>
             <h3>Noga</h3>
             <span class="tag">SaaS · Gestion RH · commerces</span>
-            <div style="display:flex;align-items:baseline;gap:9px;margin-top:16px"><b style="font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:600;color:var(--gold);line-height:1">39 €</b><span style="font-size:13.5px;color:var(--muted);font-weight:500">/mois · essai 14 jours</span></div>
+            <div style="display:flex;align-items:baseline;gap:9px;margin-top:16px"><b style="font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:600;color:var(--gold);line-height:1">dès 19 €</b><span style="font-size:13.5px;color:var(--muted);font-weight:500">/mois · 1er mois offert</span></div>
             <p class="desc" style="margin-top:14px">Les salariés déposent leurs demandes (congés, maladie, absences) depuis leur téléphone. La direction valide en un clic. Le planning de l'équipe et le bilan du mois se tiennent à jour tout seuls, prêts pour la paie.</p>
-            <a class="go" href="https://prisme-rh.vercel.app" target="_blank" rel="noopener">Découvrir Noga <span>→</span></a>
+            <a class="go" href="https://noga.onlee.fr/" target="_blank" rel="noopener">Découvrir Noga <span>→</span></a>
           </div>
-          <a class="media" href="https://prisme-rh.vercel.app" target="_blank" rel="noopener">
+          <a class="media" href="https://noga.onlee.fr/" target="_blank" rel="noopener">
             <img src="../assets/work/noga.jpg" width="1100" height="688" alt="Noga, la gestion RH des commerces, par onlee" loading="lazy">
           </a>
         </div>
@@ -119,13 +142,14 @@
     <div class="wrap">
       <div class="reveal">
         <h2>Pensé pour le terrain.</h2>
-        <p>Noga est né dans de vrais commerces, pas dans un tableur. Multi-boutiques, simple pour les équipes, clair pour la direction, et un essai gratuit pour tester chez vous.</p>
+        <p>Noga est né dans de vrais commerces, pas dans un tableur. Multi-boutiques, simple pour les équipes, clair pour la direction, et le 1er mois offert pour tester chez vous.</p>
+        <p style="margin-top:12px">Trois formules selon le nombre de boutiques : 19 € par mois jusqu'à 3, 29 € jusqu'à 6, 39 € jusqu'à 12. Salariés illimités dans toutes les formules, sans engagement, résiliable à tout moment. Vos données sont hébergées en Europe.</p>
         <div class="chips">
           <span class="chip">Multi-boutiques</span>
           <span class="chip">Congés &amp; absences</span>
           <span class="chip">Planning</span>
           <span class="chip">Export paie</span>
-          <span class="chip">Essai 14 jours</span>
+          <span class="chip">1er mois offert</span>
         </div>
       </div>
     </div>
@@ -136,7 +160,7 @@
       <div class="reveal">
         <h2>On simplifie votre RH ?</h2>
         <p>Testez Noga gratuitement, ou écrivez-nous pour qu'on vous le montre sur vos boutiques.</p>
-        <a href="https://prisme-rh.vercel.app" target="_blank" rel="noopener" class="pill pill-solid">Découvrir Noga</a>
+        <a href="https://noga.onlee.fr/" target="_blank" rel="noopener" class="pill pill-solid">Découvrir Noga</a>
         <div class="exits">
           <a href="https://wa.me/33680715262" target="_blank" rel="noopener">WhatsApp · +33 6 80 71 52 62</a>
           <a href="mailto:contact@onlee.fr">contact@onlee.fr</a>
@@ -149,12 +173,12 @@
 
 <footer>
   <div class="wrap frow">
-    <a href="../"><img src="../assets/onlee-logo-ink.png" alt="onlee" class="flogo"></a>
+    <a href="../"><img src="../assets/onlee-logo-ink.webp" alt="onlee" class="flogo"></a>
     <div class="fmeta">
       onlee RH, un pôle du studio onlee, Paris.<br>
       Autres pôles : <a href="../studio/">Studio</a> &middot; <a href="../opticiens/">Opticiens</a> &middot; <a href="../evenements/">Événementiel</a> &middot; <a href="../crew/">Crew</a><br>
       © <span id="year"></span> · <a href="../">onlee.fr</a> ·
-      <a href="https://prisme-rh.vercel.app" target="_blank" rel="noopener">Noga</a>
+      <a href="https://noga.onlee.fr/" target="_blank" rel="noopener">Noga</a>
     </div>
   </div>
 </footer>
