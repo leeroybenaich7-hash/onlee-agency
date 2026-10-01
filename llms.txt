@@ -6,8 +6,8 @@ onlee réunit plusieurs métiers sous une même maison : édition de produits lo
 
 ## Produits
 
-- [Vizor](https://onlee.fr/opticiens/) : logiciel de caisse et de tiers payant pour les magasins d'optique. Enregistre une vente en 10 secondes, suit les restes à encaisser et les remboursements mutuelles, export comptable inclus. SaaS, essai 14 jours. Site produit : https://vizor.onlee.fr
-- [Noga](https://onlee.fr/rh/) : logiciel de gestion RH pour les commerces et boutiques (congés, arrêts maladie, planning, préparation de la paie). Les salariés déposent depuis leur téléphone, la direction valide en un clic. SaaS multi-boutiques, essai 14 jours. Site produit : https://prisme-rh.vercel.app
+- [Vizor](https://onlee.fr/opticiens/) : logiciel de caisse et de tiers payant pour les magasins d'optique. Enregistre une vente en 10 secondes, suit les restes à encaisser et les remboursements mutuelles, export comptable inclus. SaaS à 39,99 € HT par mois, sans engagement, démo et prise en main offertes. Site produit : https://vizor.onlee.fr
+- [Noga](https://onlee.fr/rh/) : logiciel de gestion RH pour les commerces et boutiques (congés, arrêts maladie, planning, préparation de la paie). Les salariés déposent depuis leur téléphone, la direction valide en un clic. SaaS multi-boutiques, dès 19 € par mois, 1er mois offert. Site produit : https://noga.onlee.fr
 - [Mazal Box](https://onlee.fr/evenements/) : application de roulette-cadeau pour les événements (bar-mitsva, réceptions). L'invité tape son nom, la roulette tombe sur le cadeau prévu. Application web : https://mazal-box.vercel.app
 
 ## Pôles
