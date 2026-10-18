@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Logiciel pour audioprothésiste, suivi du tiers payant | onlee</title>
+<meta name="description" content="Logiciel pour audioprothésiste : suivi du tiers payant, des dossiers binauraux, de l'essai de 30 jours, du SAV et du planning d'équipe, à côté de votre logiciel métier. 14 jours d'essai." />
+<meta name="theme-color" content="#FBFBFA" />
+<link rel="canonical" href="https://onlee.fr/audioprothesistes/" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Logiciel pour audioprothésiste, suivi du tiers payant | onlee" />
+<meta property="og:description" content="AudioVizor : suivi du tiers payant, de l'essai, du SAV et du planning pour les centres d'audioprothèse indépendants." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://onlee.fr/audioprothesistes/" />
+<meta property="og:image" content="https://onlee.fr/assets/pole/audioprothesistes.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://onlee.fr/assets/pole/audioprothesistes.webp" />
+<link rel="icon" type="image/png" href="../assets/favicon.png" />
+<link rel="preload" href="/assets/fonts/playfair-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+</style>
+<link rel="stylesheet" href="../assets/pole.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "onlee",
+          "item": "https://onlee.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Audioprothésistes",
+          "item": "https://onlee.fr/audioprothesistes/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AudioVizor",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://audiovizor.onlee.fr/",
+      "description": "Logiciel de suivi du tiers payant pour les audioprothésistes indépendants : dossiers binauraux, essai de 30 jours, restes à charge, compte rendu ORL, SAV et planning d'équipe, à côté du logiciel métier.",
+      "offers": {
+        "@type": "Offer",
+        "price": "39.99",
+        "priceCurrency": "EUR",
+        "category": "SaaS",
+        "eligibleCustomerType": "https://schema.org/Business"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "onlee",
+        "url": "https://onlee.fr/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "AudioVizor fait-il la télétransmission ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. AudioVizor ne fait ni la télétransmission ni la facturation aux organismes, et il n'est relié ni aux mutuelles ni à l'Assurance maladie. Ces envois restent faits depuis votre logiciel métier. AudioVizor sert à suivre chaque dossier : accord de prise en charge, envoi, paiement, reste à charge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AudioVizor a-t-il un planning ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Un planning de la semaine, partagé en temps réel entre les postes du centre, avec une couleur par audioprothésiste et des durées types : essai d'appareil, réglage, rendez-vous ORL, retrait, contrôle, SAV. Il ne prend pas de rendez-vous en ligne et n'envoie aucun rappel aux patients."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien coûte AudioVizor ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "39,99 € par mois et par centre, TVA non applicable (art. 293 B du CGI), sans engagement. Les 14 premiers jours sont gratuits : carte demandée à l'inscription, rien débité avant le 15e jour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il installer quelque chose ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. AudioVizor s'ouvre dans le navigateur, sur les postes que vous avez déjà, et les postes partagent les mêmes données en temps réel. Votre logiciel métier garde l'audiométrie et le dossier médical."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<script>try{if('scrollRestoration'in history)history.scrollRestoration='manual';if(location.hash)history.replaceState(null,'',location.pathname+location.search);}catch(e){}addEventListener('pageshow',function(){window.scrollTo(0,0);});</script>
+<div class="grain" aria-hidden="true"></div>
+
+<header id="head">
+  <div class="bar">
+    <a href="../" class="brand"><img src="../assets/onlee-logo-ink.webp" alt="onlee"><span>Audioprothésistes</span></a>
+    <div class="bar-right">
+      <a href="../" class="back">← onlee</a>
+      <a href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener" class="pill pill-solid">Découvrir AudioVizor</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="reveal">Le logiciel de suivi du tiers payant des <em>audioprothésistes</em>.</h1>
+      <p class="lede reveal" style="--d:.12s">AudioVizor suit l'argent et le parcours de vos patients appareillés, à côté de votre logiciel métier : dossiers binauraux, essai de 30 jours, accords de prise en charge, remboursements mutuelles, restes à charge, compte rendu ORL, SAV et planning d'équipe, sur un seul écran.</p>
+      <div class="hero-cta reveal" style="--d:.22s">
+        <a href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener" class="pill pill-solid">Découvrir AudioVizor</a>
+        <a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20suis%20audioproth%C3%A9siste%20et%20je%20vous%20contacte" target="_blank" rel="noopener" class="pill pill-ghost">Nous écrire</a>
+      </div>
+    </div>
+  </section>
+  <section class="pole-cover">
+    <div class="wrap">
+      <figure class="cover-frame reveal">
+        <img src="../assets/pole/audioprothesistes.webp" alt="Illustration : AudioVizor ouvert sur l'ordinateur du comptoir d'un centre d'audioprothèse" width="1885" height="834" loading="lazy">
+      </figure>
+    </div>
+  </section>
+  <section id="outils" style="padding-top:0">
+    <div class="wrap">
+      <article class="presta reveal">
+        <div class="row">
+          <div class="no">01</div>
+          <div>
+            <h3>AudioVizor</h3>
+            <span class="tag">SaaS · Tiers payant, essai, SAV &amp; planning</span>
+            <div style="display:flex;align-items:baseline;gap:9px;margin-top:16px"><b style="font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:600;color:var(--gold);line-height:1">39,99 €</b><span style="font-size:13.5px;color:var(--muted)">/ mois · TVA non applicable</span></div>
+            <p class="desc" style="margin-top:14px">Un dossier réunit les deux oreilles, avec la classe et le code LPP de chaque appareil. Le compteur d'essai, les accords de prise en charge, les remboursements attendus et les restes à charge sont suivis à partir de ce que vous saisissez et pointez. Le compte rendu ORL se rédige à partir de quelques réponses, le SAV suit chaque réparation, et le planning de la semaine est partagé entre les postes.</p>
+            <a class="go" href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener">Découvrir AudioVizor <span>→</span></a>
+          </div>
+          <a class="media" href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener">
+            <img src="../assets/work/audiovizor.webp" width="1000" height="443" alt="AudioVizor, logiciel de suivi du tiers payant pour audioprothésistes, par onlee" loading="lazy">
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="real">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Ce qu'AudioVizor fait, et ce qu'il ne fait pas.</h2>
+        <p>AudioVizor ne remplace pas votre logiciel métier : il ne fait ni la télétransmission ni la facturation, et il n'envoie ni SMS ni e-mail à vos patients. Il vous montre, chaque matin, les essais en cours, les dossiers à relancer, les réparations en cours et ce que chacun vous doit encore.</p>
+        <div class="chips">
+          <span class="chip">Dossier binaural</span>
+          <span class="chip">Essai de 30 jours</span>
+          <span class="chip">Tiers payant &amp; mutuelles</span>
+          <span class="chip">Compte rendu ORL</span>
+          <span class="chip">SAV</span>
+          <span class="chip">Planning d'équipe</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    #faq-au .faq-head{ margin-bottom:clamp(20px,3vw,34px); }
+    #faq-au h2{ margin-bottom:8px; }
+    #faq-au .fq{ border-top:1px solid var(--line); padding:clamp(15px,2vw,20px) 0; }
+    #faq-au .fq:last-child{ border-bottom:1px solid var(--line); }
+    #faq-au summary{ font-family:var(--serif); font-weight:500; font-size:clamp(17px,2vw,21px); cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:14px; color:var(--ink); }
+    #faq-au summary::-webkit-details-marker{ display:none; }
+    #faq-au summary::after{ content:"+"; color:var(--gold); font-weight:700; margin-left:auto; }
+    #faq-au details[open] summary::after{ content:"–"; }
+    #faq-au .fq p{ color:var(--muted); margin:.7em 0 0; max-width:64ch; }
+  </style>
+  <section id="faq-au">
+    <div class="wrap">
+      <div class="reveal faq-head">
+        <h2>Questions fréquentes</h2>
+      </div>
+      <div class="reveal">
+        <details class="fq" open><summary>AudioVizor fait-il la télétransmission ?</summary><p>Non. AudioVizor ne fait ni la télétransmission ni la facturation aux organismes, et il n'est relié ni aux mutuelles ni à l'Assurance maladie. Ces envois restent faits depuis votre logiciel métier. AudioVizor sert à suivre chaque dossier : accord de prise en charge, envoi, paiement, reste à charge.</p></details>
+        <details class="fq"><summary>AudioVizor a-t-il un planning ?</summary><p>Oui. Un planning de la semaine, partagé en temps réel entre les postes du centre, avec une couleur par audioprothésiste et des durées types : essai d'appareil, réglage, rendez-vous ORL, retrait, contrôle, SAV. Il ne prend pas de rendez-vous en ligne et n'envoie aucun rappel aux patients.</p></details>
+        <details class="fq"><summary>Combien coûte AudioVizor ?</summary><p>39,99 € par mois et par centre, TVA non applicable (art. 293 B du CGI), sans engagement. Les 14 premiers jours sont gratuits : carte demandée à l'inscription, rien débité avant le 15e jour.</p></details>
+        <details class="fq"><summary>Faut-il installer quelque chose ?</summary><p>Non. AudioVizor s'ouvre dans le navigateur, sur les postes que vous avez déjà, et les postes partagent les mêmes données en temps réel. Votre logiciel métier garde l'audiométrie et le dossier médical.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>On équipe votre centre ?</h2>
+        <p>Essayez AudioVizor 14 jours : fini les Excel et les classeurs, le suivi de vos patients appareillés est centralisé.</p>
+        <a href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener" class="pill pill-solid">Découvrir AudioVizor</a>
+        <div class="exits">
+          <a href="https://wa.me/33680715262" target="_blank" rel="noopener">WhatsApp · +33 6 80 71 52 62</a>
+          <a href="mailto:contact@onlee.fr">contact@onlee.fr</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap frow">
+    <a href="../"><img src="../assets/onlee-logo-ink.webp" alt="onlee" class="flogo"></a>
+    <div class="fmeta">
+      onlee audioprothésistes, un pôle du studio onlee, Île-de-France.<br>
+      Autres pôles : <a href="../opticiens/">Opticiens</a> &middot; <a href="../studio/">Studio</a> &middot; <a href="../rh/">RH</a> &middot; <a href="../evenements/">Événementiel</a> &middot; <a href="../crew/">Crew</a><br>
+      © <span id="year"></span> · <a href="../">onlee.fr</a> ·
+      <a href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener">AudioVizor</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20suis%20audioproth%C3%A9siste%20et%20je%20vous%20contacte" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.19.84.85-3.11-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+</a>
+
+<script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=a.getAttribute('href');if(h.length<2)return;var t=document.querySelector(h);if(!t)return;e.preventDefault();t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});history.replaceState(null,'',location.pathname+location.search);});});
+  const head=document.getElementById('head'); let t=false;
+  addEventListener('scroll',()=>{ if(t)return; t=true; requestAnimationFrame(()=>{ head.classList.toggle('is-scrolled',scrollY>30); t=false; }); });
+  const io=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }); },{threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+<script>/* onlee-trafic : statistiques sans cookie (Cockpit Onlee) */(function(){try{var S="onlee",E="https://cockpit-drab-psi.vercel.app/api/t",q=new URLSearchParams(location.search),moi=false;try{if(q.get("moi")==="1")localStorage.setItem("onlee_moi","1");if(q.get("moi")==="0")localStorage.removeItem("onlee_moi");moi=localStorage.getItem("onlee_moi")==="1"}catch(_){}if(moi||navigator.webdriver)return;function e(d){d.site=S;d.path=location.pathname;var b=JSON.stringify(d);try{if(navigator.sendBeacon&&navigator.sendBeacon(E,b))return}catch(_){}fetch(E,{method:"POST",body:b,keepalive:true,mode:"no-cors"}).catch(function(){})}e({type:"page",ref:document.referrer||"",utm_source:q.get("utm_source")||q.get("ref")||"",utm_campaign:q.get("utm_campaign")||"",lang:navigator.language||""});var t0=Date.now(),vu=0,fin=false;document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden"){vu+=Date.now()-t0;if(!fin){fin=true;e({type:"duree",valeur:Math.round(vu/1000)})}}else{t0=Date.now()}});document.addEventListener("click",function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest("a,button");if(!a)return;var h=a.getAttribute("href")||"",x=(a.innerText||a.getAttribute("aria-label")||"").replace(/\s+/g," ").trim().slice(0,60);if(/calendly|app\.html|\/app\b|#inscription|#demo|wa\.me|whatsapp|mailto:|tel:|stripe/i.test(h)||/rendez-vous|d[ée]mo|commencer|essai|inscri|connecter|contact|[ée]crire|devis|acheter|abonner/i.test(x))e({type:"clic",label:x||h,cible:h.slice(0,200)})},true)}catch(_){}})();</script>
+</body>
+</html>

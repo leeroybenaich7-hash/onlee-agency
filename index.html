@@ -117,14 +117,15 @@
       "offers": { "@type": "Offer", "price": "39.99", "priceCurrency": "EUR", "category": "SaaS" },
       "publisher": { "@id": "https://onlee.fr/#organization" }
     },
+    { "@type": "SoftwareApplication", "name": "AudioVizor", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://audiovizor.onlee.fr/", "description": "Logiciel de suivi du tiers payant pour les audioprothésistes indépendants : dossiers binauraux, essai de 30 jours, restes à charge, compte rendu ORL, SAV et planning d'équipe, à côté du logiciel métier.", "offers": { "@type": "Offer", "price": "39.99", "priceCurrency": "EUR", "category": "SaaS" }, "publisher": { "@id": "https://onlee.fr/#organization" } },
     {
       "@type": "SoftwareApplication",
       "name": "Noga",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "url": "https://noga.onlee.fr/",
-      "description": "Logiciel de gestion RH pour les commerces et boutiques : congés, arrêts maladie, planning et préparation de la paie. Les salariés déposent depuis leur téléphone, la direction valide en un clic.",
-      "offers": { "@type": "Offer", "price": "39", "priceCurrency": "EUR", "category": "SaaS" },
+      "description": "Logiciel de gestion RH pour les commerces et boutiques : congés, arrêts maladie, planning des absences et bilan du mois pour le comptable. Les salariés déposent depuis leur téléphone, la direction valide en un clic.",
+      "offers": { "@type": "AggregateOffer", "lowPrice": "19", "highPrice": "39", "priceCurrency": "EUR", "offerCount": "3", "category": "SaaS" },
       "publisher": { "@id": "https://onlee.fr/#organization" }
     },
     {
@@ -779,7 +780,7 @@
         <div class="pm-slot"><div class="pm-item pm-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="sub-logiciels"><span class="pm-no">02</span><span class="pm-tx"><span class="pm-name">Mes logiciels</span><span class="pm-desc">Vizor, AudioVizor &amp; Noga · des SaaS que j'ai conçus et codés</span></span><span class="pm-arr pm-chev">+</span></div>
           <div class="pm-sub" id="sub-logiciels">
             <a class="pm-subitem" href="/opticiens/"><span><b>Vizor</b> · tiers payant &amp; ventes pour opticiens</span><span class="s-arr">→</span></a>
-            <a class="pm-subitem" href="https://audiovizor.onlee.fr"><span><b>AudioVizor</b> · gestion &amp; tiers payant pour audioprothésistes</span><span class="s-arr">→</span></a>
+            <a class="pm-subitem" href="/audioprothesistes/"><span><b>AudioVizor</b> · tiers payant, essai, SAV &amp; planning pour audioprothésistes</span><span class="s-arr">→</span></a>
             <a class="pm-subitem" href="/rh/"><span><b>Noga</b> · gestion RH des boutiques &amp; commerces</span><span class="s-arr">→</span></a>
           </div>
         </div>
@@ -864,7 +865,7 @@
         </div>
         <div class="faq-item reveal">
           <h3>Quels logiciels édite onlee ?</h3>
-          <p>Trois produits, utilisés par de vrais commerces : Vizor (suivi du tiers payant pour opticiens), Noga (gestion RH pour boutiques et commerces) et Mazal Box (roulette-cadeau pour les événements). Tout est conçu, dessiné et codé en interne.</p>
+          <p>Quatre produits : Vizor (suivi du tiers payant pour opticiens), AudioVizor (suivi du tiers payant pour audioprothésistes), Noga (gestion RH pour boutiques et commerces) et Mazal Box (roulette-cadeau pour les événements). Tout est conçu, dessiné et codé en interne.</p>
         </div>
         <div class="faq-item reveal">
           <h3>Vizor, c'est pour qui ?</h3>
@@ -872,7 +873,7 @@
         </div>
         <div class="faq-item reveal">
           <h3>Comment onlee peut aider mon commerce ?</h3>
-          <p>Selon votre besoin : un logiciel métier (caisse, RH, fidélité), un site web, une automatisation IA, ou l'organisation d'un événement. On part de votre quotidien pour livrer un outil simple et prêt à l'emploi, pas une usine à gaz.</p>
+          <p>Selon votre besoin : un logiciel métier (suivi du tiers payant, RH, fidélité), un site web, une automatisation IA, ou l'organisation d'un événement. On part de votre quotidien pour livrer un outil simple et prêt à l'emploi, pas une usine à gaz.</p>
         </div>
         <div class="faq-item reveal">
           <h3>Comment vous contacter ?</h3>
@@ -894,7 +895,7 @@
       {
         "@type": "Question",
         "name": "Quels logiciels édite onlee ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Trois produits, utilisés par de vrais commerces : Vizor (suivi du tiers payant pour opticiens), Noga (gestion RH pour boutiques et commerces) et Mazal Box (roulette-cadeau pour les événements). Tout est conçu, dessiné et codé en interne." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Quatre produits : Vizor (suivi du tiers payant pour opticiens), AudioVizor (suivi du tiers payant pour audioprothésistes), Noga (gestion RH pour boutiques et commerces) et Mazal Box (roulette-cadeau pour les événements). Tout est conçu, dessiné et codé en interne." }
       },
       {
         "@type": "Question",
@@ -904,7 +905,7 @@
       {
         "@type": "Question",
         "name": "Comment onlee peut aider mon commerce ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Selon votre besoin : un logiciel métier (caisse, RH, fidélité), un site web, une automatisation IA, ou l'organisation d'un événement. On part de votre quotidien pour livrer un outil simple et prêt à l'emploi." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Selon votre besoin : un logiciel métier (suivi du tiers payant, RH, fidélité), un site web, une automatisation IA, ou l'organisation d'un événement. On part de votre quotidien pour livrer un outil simple et prêt à l'emploi." }
       },
       {
         "@type": "Question",

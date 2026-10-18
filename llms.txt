@@ -1,19 +1,21 @@
 # onlee
 
-> onlee est un studio créatif français basé en Île-de-France. Il conçoit, dessine et développe en interne ses propres logiciels et applications (Vizor, Noga, Mazal Box), crée des automatisations et des agents IA sur-mesure, et accompagne ses clients sur l'événementiel et la création de sites. Une maison, plusieurs métiers. Fondateur : Leeroy Ben-Aich.
+> onlee est un studio créatif français basé en Île-de-France. Il conçoit, dessine et développe en interne ses propres logiciels et applications (Vizor, AudioVizor, Noga, Mazal Box), crée des automatisations et des agents IA sur-mesure, et accompagne ses clients sur l'événementiel et la création de sites. Une maison, plusieurs métiers. Fondateur : Leeroy Ben-Aich.
 
-onlee réunit plusieurs métiers sous une même maison : édition de produits logiciels (SaaS : Vizor, Noga), automatisations et agents IA sur-mesure (pôle Studio), événementiel, et animation de soirées en club (Crew). Les outils sont utilisés par de vrais commerces (opticiens, boutiques) au quotidien.
+onlee réunit plusieurs métiers sous une même maison : édition de produits logiciels (SaaS : Vizor, AudioVizor, Noga), automatisations et agents IA sur-mesure (pôle Studio), événementiel, et animation de soirées en club (Crew). Vizor et Noga sont utilisés au quotidien dans des magasins d'optique et d'audition.
 
 ## Produits
 
 - [Vizor](https://onlee.fr/opticiens/) : logiciel de suivi du tiers payant pour les magasins d'optique, utilisé à côté du logiciel d'optique (ce n'est pas un logiciel de caisse). Enregistre une vente en quelques secondes, suit les restes à encaisser et les remboursements mutuelles à partir des saisies de l'opticien, export Excel pour le comptable inclus. SaaS à 39,99 € HT par mois (TVA autoliquidée avec un n° de TVA intracommunautaire, sinon 47,99 € TTC), sans engagement, essai 7 jours (carte demandée, rien débité avant le 8e jour), aide au démarrage gratuite par téléphone ou WhatsApp. Site produit : https://vizor.onlee.fr
-- [Noga](https://onlee.fr/rh/) : logiciel de gestion RH pour les commerces et boutiques (congés, arrêts maladie, planning, préparation de la paie). Les salariés déposent depuis leur téléphone, la direction valide en un clic. SaaS multi-boutiques, dès 19 € par mois, 1er mois offert. Site produit : https://noga.onlee.fr
+- [AudioVizor](https://onlee.fr/audioprothesistes/) : logiciel de suivi du tiers payant pour les audioprothésistes indépendants, utilisé à côté du logiciel métier (pas de télétransmission ni de facturation). Dossiers binauraux, essai de 30 jours, accords de prise en charge, restes à charge, compte rendu ORL, SAV et planning d'équipe partagé. 39,99 € par mois (TVA non applicable), sans engagement, essai 14 jours (carte demandée). Site produit : https://audiovizor.onlee.fr
+- [Noga](https://onlee.fr/rh/) : logiciel RH pour les commerces et boutiques (congés, arrêts maladie, planning des absences, bilan du mois pour le comptable ; pas de calcul de paie). Les salariés déposent depuis leur téléphone, la direction valide en un clic. SaaS multi-boutiques, dès 19 € par mois, 1er mois offert. Site produit : https://noga.onlee.fr
 - [Mazal Box](https://onlee.fr/evenements/) : application de roulette-cadeau pour les événements (bar-mitsva, réceptions). L'invité tape son nom, la roulette tombe sur le cadeau prévu. Application web : https://mazal-box.vercel.app
 
 ## Pôles
 
 - [Studio](https://onlee.fr/studio/) : automatisation, outils sur-mesure et agents IA. On observe ce qui fait perdre du temps dans une activité, puis on crée les outils, les automatisations et les agents IA qui rendent ces heures — audit, développement et formation de l'équipe.
 - [Opticiens](https://onlee.fr/opticiens/) : les logiciels du magasin d'optique — suivi du tiers payant, fidélité (Vizor et Bons de fidélité).
+- [Audioprothésistes](https://onlee.fr/audioprothesistes/) : le suivi du tiers payant des centres d'audioprothèse (AudioVizor).
 - [RH](https://onlee.fr/rh/) : la gestion RH des boutiques et commerces (Noga).
 - [Événementiel](https://onlee.fr/evenements/) : soirées, faire-part web, Mazal Box, partage de photos en direct, design et logos.
 - [Crew](https://onlee.fr/crew/) : onlee Crew amène sa soirée et son public dans les clubs.
