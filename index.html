@@ -517,11 +517,11 @@
           </div>
         </div>
         <div class="contact-or" aria-hidden="true"><span data-en="or">ou</span></div>
-        <form class="cform" action="https://api.web3forms.com/submit" method="POST" novalidate>
-          <input type="hidden" name="access_key" value="REMPLACER_PAR_CLE_WEB3FORMS">
-          <input type="hidden" name="subject" value="Nouveau message depuis onlee.fr">
-          <input type="hidden" name="from_name" value="Site onlee.fr">
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <form class="cform" action="https://formsubmit.co/ajax/contact@onlee.fr" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Nouveau message · onlee.fr">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="field"><label for="cf-name" data-en="Your name">Votre nom</label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
           <div class="field"><label for="cf-email" data-en="Your email">Votre email</label><input id="cf-email" name="email" type="email" required autocomplete="email"></div>
           <div class="field"><label for="cf-msg" data-en="Your project in a few words">Votre projet en quelques mots</label><textarea id="cf-msg" name="message" rows="4" required></textarea></div>
@@ -623,28 +623,27 @@
     set(saved==='en'?'en':'fr');
   })();
 
-  // formulaire contact (Web3Forms + repli mailto si clé non configurée)
+  // formulaire contact (FormSubmit AJAX, sans compte ni clé)
   var cform=document.querySelector('.cform');
   if(cform){
     var note=cform.querySelector('.cform-note');
-    var key=(cform.querySelector('[name=access_key]')||{}).value||'';
-    var ready=key && key.indexOf('REMPLACER')<0;
+    var EN=function(){ return document.documentElement.lang==='en'; };
     cform.addEventListener('submit', async function(e){
       e.preventDefault();
       if(!cform.reportValidity()) return;
-      var n=cform.name.value.trim(), m=cform.email.value.trim(), msg=cform.message.value.trim();
-      if(!ready){
-        var body=encodeURIComponent('Nom: '+n+'\nEmail: '+m+'\n\n'+msg);
-        window.location.href='mailto:contact@onlee.fr?subject='+encodeURIComponent('Projet · via onlee.fr')+'&body='+body;
-        note.textContent='On ouvre votre messagerie…'; return;
-      }
-      note.textContent='Envoi…';
+      note.textContent = EN()?'Sending…':'Envoi…';
       try{
         var r=await fetch(cform.action,{method:'POST',body:new FormData(cform),headers:{Accept:'application/json'}});
-        var d=await r.json();
-        if(d.success){ cform.reset(); note.textContent='Message envoyé. On revient vers vous très vite.'; }
-        else note.textContent='Envoi impossible. Écrivez-nous sur WhatsApp ou à contact@onlee.fr.';
-      }catch(_){ note.textContent='Envoi impossible. Écrivez-nous sur WhatsApp ou à contact@onlee.fr.'; }
+        var d=await r.json().catch(function(){return {};});
+        if(r.ok && (d.success===true || d.success==='true')){
+          cform.reset();
+          note.textContent = EN()?'Message sent. We’ll get back to you very soon.':'Message envoyé. On revient vers vous très vite.';
+        } else {
+          note.textContent = EN()?'Could not send. Write to us on WhatsApp or at contact@onlee.fr.':'Envoi impossible. Écrivez-nous sur WhatsApp ou à contact@onlee.fr.';
+        }
+      }catch(_){
+        note.textContent = EN()?'Could not send. Write to us on WhatsApp or at contact@onlee.fr.':'Envoi impossible. Écrivez-nous sur WhatsApp ou à contact@onlee.fr.';
+      }
     });
   }
 })();
