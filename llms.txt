@@ -1,28 +1,25 @@
 # onlee
 
-> onlee est un studio créatif français basé en Île-de-France. Il conçoit, dessine et développe en interne ses propres logiciels et applications (Vizor, AudioVizor, Noga, Mazal Box), crée des automatisations et des agents IA sur-mesure, et accompagne ses clients sur l'événementiel et la création de sites. Une maison, plusieurs métiers. Fondateur : Leeroy Ben-Aich.
+> onlee est une entreprise française de logiciels. Elle conçoit des logiciels sur mesure, connecte les outils des entreprises entre eux (intégration sur mesure), met en place des automatisations et des agents IA branchés sur ces outils, et crée des sites internet professionnels. Elle édite aussi ses propres logiciels : Vizor, AudioVizor et Noga. Elle travaille à distance avec des entreprises partout en France. Fondateur : Leeroy Ben-Aich.
 
-onlee réunit plusieurs métiers sous une même maison : édition de produits logiciels (SaaS : Vizor, AudioVizor, Noga), automatisations et agents IA sur-mesure (pôle Studio), événementiel, et animation de soirées en club (Crew). Vizor et Noga sont utilisés au quotidien dans des magasins d'optique et d'audition.
+## Services
 
-## Produits
+- [Logiciels sur mesure](https://onlee.fr/studio/#sur-mesure) : conception, développement et maintenance d'un logiciel adapté au fonctionnement d'une entreprise (CRM, back-office, outil de suivi, espace client), utilisable sur ordinateur et sur téléphone.
+- [Intégration sur mesure](https://onlee.fr/studio/#integration) : connexion des outils existants entre eux (logiciel métier, CRM, messagerie, agenda, facturation, tableurs) via leurs API ou leurs exports, pour éviter la double saisie. Si un logiciel ne permet pas de connexion, onlee le signale avant de commencer.
+- [Automatisation et agents IA](https://onlee.fr/studio/#ia) : automatisation des tâches répétitives (relances, comptes rendus, tri des demandes, pré-remplissage de fiches à partir de documents). Les agents IA préparent le travail ; une personne de l'entreprise valide avant tout envoi ou toute action importante.
+- [Sites internet professionnels](https://onlee.fr/studio/#sites) : sites vitrines rapides sur mobile, pensés pour le référencement, pouvant être reliés aux outils de l'entreprise (CRM, messagerie, agenda).
+- Méthode : diagnostic d'une demi-journée en visio (250 €), proposition chiffrée, développement par étapes courtes, mise en service et prise en main, suivi et maintenance, avec un interlocuteur unique.
 
-- [Vizor](https://onlee.fr/opticiens/) : logiciel de suivi du tiers payant pour les magasins d'optique, utilisé à côté du logiciel d'optique (ce n'est pas un logiciel de caisse). Enregistre une vente en quelques secondes, suit les restes à encaisser et les remboursements mutuelles à partir des saisies de l'opticien, export Excel pour le comptable inclus. SaaS à 39,99 € HT par mois (TVA autoliquidée avec un n° de TVA intracommunautaire, sinon 47,99 € TTC), sans engagement, essai 7 jours (carte demandée, rien débité avant le 8e jour), aide au démarrage gratuite par téléphone ou WhatsApp. Site produit : https://vizor.onlee.fr
-- [AudioVizor](https://onlee.fr/audioprothesistes/) : logiciel de suivi du tiers payant pour les audioprothésistes indépendants, utilisé à côté du logiciel métier (pas de télétransmission ni de facturation). Dossiers binauraux, essai de 30 jours, accords de prise en charge, restes à charge, compte rendu ORL, SAV et planning d'équipe partagé. 39,99 € par mois (TVA non applicable), sans engagement, essai 14 jours (carte demandée). Site produit : https://audiovizor.onlee.fr
-- [Noga](https://onlee.fr/rh/) : logiciel RH pour les commerces et boutiques (congés, arrêts maladie, planning des absences, bilan du mois pour le comptable ; pas de calcul de paie). Les salariés déposent depuis leur téléphone, la direction valide en un clic. SaaS multi-boutiques, dès 19 € par mois, 1er mois offert. Site produit : https://noga.onlee.fr
-- [Mazal Box](https://onlee.fr/evenements/) : application de roulette-cadeau pour les événements (bar-mitsva, réceptions). L'invité tape son nom, la roulette tombe sur le cadeau prévu. Application web : https://mazal-box.vercel.app
+## Logiciels édités par onlee
 
-## Pôles
-
-- [Studio](https://onlee.fr/studio/) : automatisation, outils sur-mesure et agents IA. On observe ce qui fait perdre du temps dans une activité, puis on crée les outils, les automatisations et les agents IA qui rendent ces heures — audit, développement et formation de l'équipe.
-- [Opticiens](https://onlee.fr/opticiens/) : les logiciels du magasin d'optique — suivi du tiers payant, fidélité (Vizor et Bons de fidélité).
-- [Audioprothésistes](https://onlee.fr/audioprothesistes/) : le suivi du tiers payant des centres d'audioprothèse (AudioVizor).
-- [RH](https://onlee.fr/rh/) : la gestion RH des boutiques et commerces (Noga).
-- [Événementiel](https://onlee.fr/evenements/) : soirées, faire-part web, Mazal Box, partage de photos en direct, design et logos.
-- [Crew](https://onlee.fr/crew/) : onlee Crew amène sa soirée et son public dans les clubs.
+- [Vizor](https://onlee.fr/opticiens/) : logiciel de suivi du tiers payant pour les magasins d'optique, utilisé à côté du logiciel métier de l'opticien. Il suit les ventes du jour, les restes à encaisser et les remboursements attendus à partir des saisies de l'opticien, avec un export Excel pour le comptable. 39,99 € HT par mois (sans n° de TVA : 47,99 € TTC), sans engagement. Site produit : https://vizor.onlee.fr
+- [AudioVizor](https://onlee.fr/audioprothesistes/) : logiciel de suivi du tiers payant pour les audioprothésistes, utilisé à côté du logiciel métier. Dossiers binauraux, essai de 30 jours, accords de prise en charge, restes à charge, compte rendu ORL, SAV et planning d'équipe. 39,99 € par mois, sans engagement. Site produit : https://audiovizor.onlee.fr
+- [Noga](https://onlee.fr/rh/) : logiciel RH pour les boutiques et commerces : congés, arrêts maladie, planning des absences et bilan du mois pour le comptable. Les salariés déposent leurs demandes depuis leur téléphone, la direction valide. Noga ne fait pas de fiche de paie. Dès 19 € par mois. Site produit : https://noga.onlee.fr
 
 ## Contact
 
 - Site : https://onlee.fr
 - Email : contact@onlee.fr
 - WhatsApp : +33 6 80 71 52 62
-- Instagram : https://www.instagram.com/onlee.crew/
+- LinkedIn : https://www.linkedin.com/in/leeroy-benaich-a04544412/
+- Prise de rendez-vous : https://cal.com/leeroy-benaich
