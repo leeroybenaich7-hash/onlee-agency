@@ -16,6 +16,11 @@
 - [AudioVizor](https://onlee.fr/audioprothesistes/) : logiciel de suivi du tiers payant pour les audioprothésistes, utilisé à côté du logiciel métier. Dossiers binauraux, essai de 30 jours, accords de prise en charge, restes à charge, compte rendu ORL, SAV et planning d'équipe. 39,99 € par mois, sans engagement. Site produit : https://audiovizor.onlee.fr
 - [Noga](https://onlee.fr/rh/) : logiciel RH pour les boutiques et commerces : congés, arrêts maladie, planning des absences et bilan du mois pour le comptable. Les salariés déposent leurs demandes depuis leur téléphone, la direction valide. Noga ne fait pas de fiche de paie. Dès 19 € par mois. Site produit : https://noga.onlee.fr
 
+## Articles
+
+- [Articles onlee](https://onlee.fr/blog/) : repères pour les dirigeants de PME sur les logiciels sur mesure, l'intégration des outils et l'automatisation IA. Un sujet par article, une réponse concrète.
+- [Logiciel sur mesure ou logiciel du marché : comment choisir pour une PME ?](https://onlee.fr/blog/logiciel-sur-mesure-ou-logiciel-du-marche/) (09/11/2026) : quand le logiciel du marché suffit, quand le sur mesure se justifie, et la troisième voie souvent oubliée — connecter les outils déjà en place.
+
 ## Contact
 
 - Site : https://onlee.fr
