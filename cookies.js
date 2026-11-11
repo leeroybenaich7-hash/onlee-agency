@@ -450,5 +450,13 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   window.onleeCookies = { ouvrir: bandeau };
 
   var c = lire();
-  if (c === "oui") accepter(); else if (c !== "non") bandeau();
+  if (c === "oui") accepter();
+  else if (c !== "non") {
+    /* 11/11 : la page s'affiche d'abord, la fenêtre cookies arrive ensuite (sinon voile blanc à l'arrivée sur téléphone) */
+    var parti = false;
+    var ouvrirTard = function () { if (parti) return; parti = true; bandeau(); };
+    var apresChargement = function () { setTimeout(ouvrirTard, 2200); };
+    if (document.readyState === "complete") apresChargement(); else window.addEventListener("load", apresChargement, { once: true });
+    setTimeout(ouvrirTard, 6000);   // filet : si le chargement traîne, on l'ouvre quand même
+  }
 })();

@@ -387,6 +387,10 @@
     </div>
   </section>
 </main>
+<script>
+/* le titre et les widgets du haut apparaissent en douceur (comme sur la maquette validée) — lancé dès que le haut est lu, sans attendre le reste de la page (11/11) */
+requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.getElementById('haut').classList.add('joue'); }); });
+</script>
 
 <div class="sec-ab" id="realisations">
 <section class="ab" id="ab" aria-labelledby="ab-titre">
@@ -734,15 +738,11 @@ if("IntersectionObserver" in window&&!red){var io=new IntersectionObserver(funct
   </div>
 </footer>
 
-<script>
-/* le titre et les widgets du haut apparaissent en douceur (comme sur la maquette validée) */
-requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.getElementById('haut').classList.add('joue'); }); });
-</script>
 <script src="/js/commun.js" defer></script>
 <script defer src="/js/cal.js"></script>
 <script defer src="/js/cta-express.js" data-logo="/assets/onlee-logo-ink.png" data-photo="/assets/leeroy-visage.webp"></script>
 <script src="/js/trafic.js" defer></script>
-<script src="/cookies.js?v=boite1" defer></script>
+<script src="/cookies.js?v=boite2" defer></script>
 <script defer src="/js/haut-v1.js"></script>
 <script defer src="/js/realisations.js"></script>
 <script>
