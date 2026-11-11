@@ -671,9 +671,9 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   var V2F = ['#0055FF', '#0E0F13', '#FFFFFF', '#0055FF'], V2C = ['#FFFFFF', '#FFFFFF', NOIR, '#FFFFFF'];
   function pivote(x, cx, cy, a, f){ x.save(); x.translate(cx, cy); x.rotate(a); x.translate(-cx, -cy); f(); x.restore(); }
   function v2(x, w, h, i, L){
-    var s = S[i], fond = (window.CARTES_FONDS || V2F)[i], enc = (window.CARTES_TEXTES || V2C)[i], blanc = fond === '#FFFFFF';
+    var s = S[i], fond = String((window.CARTES_FONDS || V2F)[i]).toUpperCase(), enc = String((window.CARTES_TEXTES || V2C)[i]).toUpperCase(), blanc = fond === '#FFFFFF';   // majuscules : la boîte envoie « #ffffff » (11/11 : numéros illisibles)
     var c = support(x, w, h, fond, blanc ? 'rgba(14,15,19,.28)' : null, 3), X = c.X, Y = c.Y, W = c.W, H = c.H, p = 70;
-    var pale = enc === '#FFFFFF' ? 'rgba(255,255,255,.2)' : 'rgba(0,85,255,.12)';
+    var pale = enc === '#FFFFFF' ? 'rgba(255,255,255,.34)' : (blanc ? 'rgba(0,85,255,.16)' : 'rgba(14,15,19,.3)');
     T(x, s.n, X + p - 12, Y + 312, 300, 800, pale, { f: TITRE, esp: -12 });
     rangLogos(x, s, L, X + W - p, Y + p, 56, !blanc);
     var mw = W * .84, mx = X + (W - mw) / 2 + 16, my = Y + 352, mh = 640, ny = Y + 936, ang = -.03;
