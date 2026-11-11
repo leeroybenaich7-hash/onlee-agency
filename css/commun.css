@@ -172,3 +172,11 @@
 /* textes « souris » / « doigt » : chacun sur son type d'écran */
 .si-tactile{display:none}
 @media(hover:none){.si-souris{display:none}.si-tactile{display:inline}}
+
+/* ---------- Téléphone / tablette tactile : pas de flou d'arrière-plan (très coûteux, surtout par-dessus la 3D qui bouge) ---------- */
+@media (max-width:900px), (hover:none) and (pointer:coarse){
+  .onav-capsule{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(255,255,255,.96)!important}
+  .chap,.choix-boite,.carte-w,.ap-photo figcaption{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .chap{background:rgba(255,255,255,.98)!important}
+  .choix-boite,.carte-w,.ap-photo figcaption{background:rgba(255,255,255,.96)!important}
+}
