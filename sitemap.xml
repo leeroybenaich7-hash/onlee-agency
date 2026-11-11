@@ -1,45 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://onlee.fr/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/"/>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://onlee.fr/studio/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <loc>https://onlee.fr/logiciels/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/logiciels/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/custom-software/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/logiciels/"/>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://onlee.fr/opticiens/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <loc>https://onlee.fr/publicites/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/publicites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/publicites/"/>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://onlee.fr/audioprothesistes/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <loc>https://onlee.fr/sites/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/sites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/websites/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/sites/"/>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://onlee.fr/rh/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <loc>https://onlee.fr/vizor/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/vizor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/vizor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/vizor/"/>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/realisations/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/realisations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/realisations/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://onlee.fr/blog/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/"/>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://onlee.fr/blog/logiciel-sur-mesure-ou-logiciel-du-marche/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/logiciel-sur-mesure-ou-logiciel-du-marche/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/logiciel-sur-mesure-ou-logiciel-du-marche/"/>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/en/custom-software/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/logiciels/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/custom-software/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/logiciels/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/en/ads/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/publicites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/publicites/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/en/websites/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/sites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/websites/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/sites/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/en/vizor/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/vizor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/vizor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/vizor/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/en/work/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/realisations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/realisations/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

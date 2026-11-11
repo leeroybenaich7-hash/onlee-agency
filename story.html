@@ -1,91 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
-<link rel="preload" href="/assets/fonts/playfair-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/instrument-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style>
-@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-</style>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html, body { width:1080px; height:1920px; overflow:hidden; }
-  body {
-    background: radial-gradient(132% 76% at 50% 22%, #99541f 0%, #7c4019 46%, #5d2d12 78%, #46230f 100%);
-    color:#EACEAA; font-family:'Inter', sans-serif; position:relative;
-    -webkit-font-smoothing:antialiased;
-  }
-  .glow { position:absolute; top:-300px; left:50%; transform:translateX(-50%); width:1200px; height:1000px;
-    background:radial-gradient(circle at 50% 50%, rgba(242,228,204,.17), transparent 62%); pointer-events:none; }
-  .vig { position:absolute; inset:0; pointer-events:none;
-    background:radial-gradient(125% 92% at 50% 44%, transparent 54%, rgba(28,14,6,.6) 100%); }
-
-  .stage { position:relative; z-index:2; height:100%; display:flex; flex-direction:column; align-items:center;
-    padding:236px 110px 250px; text-align:center; }
-
-  .eyebrow { display:flex; align-items:center; gap:22px; font-size:24px; letter-spacing:.42em;
-    text-transform:uppercase; font-weight:500; color:#E8CBA2; }
-  .eyebrow::before, .eyebrow::after { content:""; width:48px; height:1px; background:#CB9C60; }
-
-  .logo { width:548px; margin-top:82px; filter:drop-shadow(0 18px 40px rgba(30,14,6,.4)); }
-
-  h1 { font-family:'Fraunces', serif; font-weight:300; font-size:152px; line-height:.9; letter-spacing:-.03em;
-    color:#F4E6CE; margin-top:70px; }
-  h1 em { font-style:italic; }
-
-  .sub { max-width:660px; margin-top:44px; font-size:35px; line-height:1.5; font-weight:300; color:#E6C9A2; }
-
-  .rule { width:84px; height:1px; background:#CB9C60; margin:62px 0; opacity:.75; }
-
-  .cta-label { font-size:25px; letter-spacing:.32em; text-transform:uppercase; color:#DFC198; margin-bottom:30px; }
-  .pill { display:inline-flex; align-items:center; gap:24px; background:#EFDBB8; color:#7C4019;
-    font-family:'Fraunces', serif; font-weight:400; font-size:66px; letter-spacing:.01em; padding:30px 66px;
-    box-shadow:0 26px 60px -22px rgba(28,14,6,.6); }
-  .pill .arr { font-family:'Inter', sans-serif; font-size:46px; font-weight:400; }
-
-  .foot { position:absolute; z-index:2; bottom:224px; left:0; right:0; text-align:center;
-    font-size:31px; letter-spacing:.18em; color:#E8CBA2; display:flex; align-items:center; justify-content:center; gap:16px; }
-  .foot svg { width:34px; height:34px; fill:none; stroke:#E8CBA2; stroke-width:2; }
-</style>
+<meta charset="utf-8">
+<title>Cette page a déménagé · onlee</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://onlee.fr/">
+<meta http-equiv="refresh" content="0; url=/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/assets/favicon-32.png">
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;font:16px/1.5 Inter,-apple-system,sans-serif;color:#0E0F13;background:#fff;text-align:center;padding:20px}a{color:#0055FF;font-weight:600}</style>
+<script>location.replace("/");</script>
 </head>
 <body>
-  <div class="glow"></div>
-  <div class="vig"></div>
-  <div class="stage">
-    <div class="eyebrow">Studio créatif · Île-de-France</div>
-    <img class="logo" src="assets/onlee-logo.png" alt="onlee">
-    <h1>on <em>crée</em>.</h1>
-    <div class="sub">Du dancefloor à l'application, chaque projet est traité comme une pièce.</div>
-    <div class="rule"></div>
-    <div class="cta-label">Découvrez la collection</div>
-    <div class="pill">onlee.fr <span class="arr">&#8599;</span></div>
-  </div>
-  <div class="foot">
-    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E8CBA2" stroke="none"/></svg>
-    @onlee.crew
-  </div>
-<script>/* onlee-trafic : statistiques sans cookie (Cockpit Onlee) */(function(){try{var S="onlee",E="https://cockpit-drab-psi.vercel.app/api/t",q=new URLSearchParams(location.search),moi=false;try{if(q.get("moi")==="1")localStorage.setItem("onlee_moi","1");if(q.get("moi")==="0")localStorage.removeItem("onlee_moi");moi=localStorage.getItem("onlee_moi")==="1"}catch(_){}if(moi||navigator.webdriver)return;function e(d){d.site=S;d.path=location.pathname;var b=JSON.stringify(d);try{if(navigator.sendBeacon&&navigator.sendBeacon(E,b))return}catch(_){}fetch(E,{method:"POST",body:b,keepalive:true,mode:"no-cors"}).catch(function(){})}e({type:"page",ref:document.referrer||"",utm_source:q.get("utm_source")||q.get("ref")||"",utm_campaign:q.get("utm_campaign")||"",lang:navigator.language||""});var onleeHb=setInterval(function(){if(document.visibilityState==="visible")e({type:"ping"})},25000);var t0=Date.now(),vu=0,fin=false;document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden"){vu+=Date.now()-t0;if(!fin){fin=true;e({type:"duree",valeur:Math.round(vu/1000)})}}else{t0=Date.now()}});document.addEventListener("click",function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest("a,button");if(!a)return;var h=a.getAttribute("href")||"",x=(a.innerText||a.getAttribute("aria-label")||"").replace(/\s+/g," ").trim().slice(0,60);if(/calendly|app\.html|\/app\b|#inscription|#demo|wa\.me|whatsapp|mailto:|tel:|stripe/i.test(h)||/rendez-vous|d[ée]mo|commencer|essai|inscri|connecter|contact|[ée]crire|devis|acheter|abonner/i.test(x))e({type:"clic",label:x||h,cible:h.slice(0,200)})},true)}catch(_){}})();</script>
+<p>Cette page a déménagé : <a href="/">continuer vers l’accueil</a>.</p>
 </body>
 </html>

@@ -1,0 +1,114 @@
+/* =====================================================================
+   onlee · page Réalisations (/realisations/ et /en/work/)
+   Grandes cartes dans l'esprit des cartes « Écran » de la boîte de l'accueil :
+   fond de couleur pleine, grand numéro, vraie capture posée de biais, petite notification.
+   (copiée dans site/css/projets.css par outils/assembler/pages.py)
+   ===================================================================== */
+
+/* ---------- filtres ---------- */
+.rp-filtres{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:32px auto 0;padding:0;max-width:640px}
+.rp-filtre{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 18px;border:0;border-radius:999px;cursor:pointer;
+  background:var(--gris);color:var(--encre);font:600 15px var(--corps);transition:background .3s var(--courbe),color .3s var(--courbe)}
+.rp-filtre:hover{background:#E8E9EC}
+.rp-filtre[aria-pressed="true"]{background:var(--encre);color:#fff}
+.rp-filtre small{font-size:12px;font-weight:600;opacity:.5}
+
+/* ---------- grille (flex : un nombre impair de cartes reste centré) ---------- */
+.rp-grille{width:min(1240px,calc(100% - 32px));margin:0 auto;padding:clamp(30px,4vw,56px) 0 clamp(50px,7vw,100px);
+  display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(18px,2vw,28px)}
+.rp-carte{--t:#FFFFFF;--pale:rgba(255,255,255,.2);--voile:rgba(255,255,255,.16);
+  position:relative;flex:0 1 calc(50% - clamp(18px,2vw,28px) / 2);min-width:0;display:flex;flex-direction:column;
+  padding:clamp(22px,2.6vw,38px);border-radius:32px;background:var(--f);color:var(--t);overflow:hidden;
+  box-shadow:0 30px 60px -42px rgba(14,15,19,.6);
+  transition:transform .5s var(--courbe),box-shadow .5s var(--courbe),opacity .25s ease}
+.rp-carte.rp-clair{--pale:rgba(14,15,19,.09);--voile:rgba(14,15,19,.06);box-shadow:0 0 0 1px rgba(14,15,19,.05),0 30px 60px -42px rgba(14,15,19,.5)}
+.rp-carte:hover{transform:translateY(-6px);box-shadow:0 44px 70px -42px rgba(14,15,19,.62)}
+.rp-carte.rp-sort{opacity:0;transform:translateY(10px) scale(.985)}
+.rp-carte[hidden]{display:none}
+
+/* haut : grand numéro + étiquettes */
+.rp-haut{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.rp-num{font-family:var(--titre);font-weight:800;font-size:clamp(80px,8.6vw,138px);line-height:.78;letter-spacing:-.06em;color:var(--pale);user-select:none}
+.rp-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;padding-top:4px}
+.rp-tag{padding:6px 12px;border-radius:999px;background:var(--voile);font-size:12.5px;font-weight:600;line-height:1.3;white-space:nowrap}
+.rp-tag.rp-fort{background:var(--t);color:var(--f)}
+
+/* la capture, posée de biais, dans une fenêtre de navigateur */
+.rp-scene{position:relative;margin-top:clamp(14px,1.6vw,22px);padding-bottom:30px}
+.rp-ecran{margin:0 auto;width:93%;border-radius:14px;overflow:hidden;background:#fff;
+  box-shadow:0 0 0 1px rgba(14,15,19,.06),0 34px 54px -26px rgba(6,10,30,.55);transform:rotate(-1.8deg);transition:transform .7s var(--courbe)}
+.rp-carte:hover .rp-ecran{transform:rotate(-1deg) translateY(-3px)}
+.rp-barre{height:26px;display:flex;align-items:center;gap:5px;padding:0 10px;background:#F3F3F5;border-bottom:1px solid rgba(14,15,19,.07)}
+.rp-barre i{flex:none;width:8px;height:8px;border-radius:50%;background:#D6D7DC}
+.rp-barre span{margin:0 auto;transform:translateX(-14px);max-width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  padding:0 10px;height:17px;line-height:17px;border-radius:6px;background:#fff;font-size:10.5px;font-weight:500;color:#6B6E78}
+.rp-ecran img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top center}
+
+/* les deux vraies pubs, côte à côte */
+.rp-pubs{display:flex;justify-content:center;align-items:flex-start;padding-top:6px}
+.rp-pub{margin:0;width:41%;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 34px 54px -26px rgba(6,10,30,.6);transition:transform .7s var(--courbe)}
+.rp-pub img{display:block;width:100%;height:auto;aspect-ratio:4/5}
+.rp-pub-1{transform:rotate(-4deg) translateX(5%)}
+.rp-pub-2{transform:rotate(3deg) translate(-5%,22px)}
+.rp-carte:hover .rp-pub-1{transform:rotate(-3deg) translate(4%,-3px)}
+.rp-carte:hover .rp-pub-2{transform:rotate(2deg) translate(-4%,18px)}
+
+/* notification façon iPhone, posée sur le bas de la capture */
+.rp-notif{position:absolute;left:5%;bottom:0;width:min(76%,370px);display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:18px;
+  background:rgba(250,250,252,.98);color:#0E0F13;text-align:left;box-shadow:0 20px 38px -14px rgba(6,10,30,.5),0 0 0 1px rgba(14,15,19,.04);
+  transition:transform .7s var(--courbe)}
+.rp-carte:hover .rp-notif{transform:translateY(-4px)}
+.rp-ico{flex:none;width:36px;height:36px;border-radius:9px;display:grid;place-items:center;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px rgba(0,0,0,.07)}
+.rp-ico svg{width:24px;height:24px}
+.rp-ico img{width:30px;height:auto}
+.rp-ico.rp-ico-plein{box-shadow:none}
+.rp-ico.rp-ico-plein svg{width:20px;height:20px}
+.rp-nt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.rp-nt b{font-size:13.5px;font-weight:700}
+.rp-nt span{font-size:13px;color:#3A3D47}
+.rp-h{align-self:flex-start;flex:none;font-size:11.5px;color:#8A8F9C}
+
+/* texte : nom, métier, ce qu'on a fait */
+.rp-txt{margin-top:auto;padding-top:24px}
+.rp-txt h2{margin:0;font-family:var(--titre);font-weight:800;letter-spacing:-.045em;line-height:.98;font-size:clamp(34px,3.5vw,52px);text-wrap:balance}
+.rp-lien{color:inherit;text-decoration:none}
+.rp-lien::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
+.rp-lien:focus-visible{outline:none}
+.rp-lien:focus-visible::after{outline:3px solid var(--t);outline-offset:-6px}
+.rp-metier{margin:10px 0 0;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.rp-fait{margin:12px 0 0;max-width:46ch;font-size:16px;line-height:1.5;opacity:.92}
+.rp-actions{margin:22px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.rp-voir,.rp-site{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;font-size:14.5px;font-weight:600;white-space:nowrap}
+.rp-voir{background:var(--t);color:var(--f);transition:transform .35s var(--courbe)}
+.rp-carte:hover .rp-voir{transform:translateX(3px)}
+.rp-voir svg{width:16px;height:16px}
+.rp-site{position:relative;z-index:2;color:inherit;text-decoration:none;box-shadow:inset 0 0 0 1.5px var(--pale);transition:background .25s}
+.rp-site:hover{background:var(--voile)}
+.rp-site svg{width:15px;height:15px}
+.rp-note{font-size:13.5px;font-weight:600;opacity:.7}
+
+/* ---------- téléphone : une carte par ligne, tout centré ---------- */
+@media(max-width:820px){
+  .rp-carte{flex-basis:100%;text-align:center;border-radius:26px}
+  .rp-haut{flex-direction:column;align-items:center;gap:10px}
+  .rp-tags{justify-content:center;padding-top:0}
+  .rp-num{font-size:clamp(72px,22vw,110px)}
+  .rp-scene{margin-top:18px}
+  .rp-ecran{width:96%}
+  .rp-notif{left:50%;width:min(90%,370px);transform:translateX(-50%)}
+  .rp-carte:hover .rp-notif{transform:translateX(-50%) translateY(-4px)}
+  .rp-fait{margin-left:auto;margin-right:auto}
+  .rp-actions{justify-content:center}
+  .rp-pub{width:44%}
+}
+@media(max-width:400px){
+  .rp-carte{padding:20px 16px 24px}
+  .rp-nt b{font-size:12.5px}
+  .rp-nt span{font-size:12px}
+  .rp-ico{width:32px;height:32px}
+  .rp-voir,.rp-site{padding:0 15px;font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rp-carte,.rp-ecran,.rp-pub,.rp-notif,.rp-voir{transition:none}
+  .rp-carte:hover{transform:none}
+}

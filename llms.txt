@@ -1,25 +1,34 @@
 # onlee
 
-> onlee est une entreprise française de logiciels. Elle conçoit des logiciels sur mesure, connecte les outils des entreprises entre eux (intégration sur mesure), met en place des automatisations et des agents IA branchés sur ces outils, et crée des sites internet professionnels. Elle édite aussi ses propres logiciels : Vizor, AudioVizor et Noga. Elle travaille à distance avec des entreprises partout en France. Fondateur : Leeroy Ben-Aich.
+> onlee est une entreprise française qui conçoit des logiciels sur mesure, gère les publicités Facebook et Instagram de ses clients et crée des sites internet avec le référencement (SEO) qui va avec. Elle édite aussi ses propres logiciels : Vizor (opticiens) et AudioVizor (audioprothésistes). Elle travaille à distance avec des entreprises partout en France. Fondateur : Leeroy Ben-Aich.
 
 ## Services
 
-- [Logiciels sur mesure](https://onlee.fr/studio/#sur-mesure) : conception, développement et maintenance d'un logiciel adapté au fonctionnement d'une entreprise (CRM, back-office, outil de suivi, espace client), utilisable sur ordinateur et sur téléphone.
-- [Intégration sur mesure](https://onlee.fr/studio/#integration) : connexion des outils existants entre eux (logiciel métier, CRM, messagerie, agenda, facturation, tableurs) via leurs API ou leurs exports, pour éviter la double saisie. Si un logiciel ne permet pas de connexion, onlee le signale avant de commencer.
-- [Automatisation et agents IA](https://onlee.fr/studio/#ia) : automatisation des tâches répétitives (relances, comptes rendus, tri des demandes, pré-remplissage de fiches à partir de documents). Les agents IA préparent le travail ; une personne de l'entreprise valide avant tout envoi ou toute action importante.
-- [Sites internet professionnels](https://onlee.fr/studio/#sites) : sites vitrines rapides sur mobile, pensés pour le référencement, pouvant être reliés aux outils de l'entreprise (CRM, messagerie, agenda).
-- Méthode : diagnostic d'une demi-journée en visio (250 €), proposition chiffrée, développement par étapes courtes, mise en service et prise en main, suivi et maintenance, avec un interlocuteur unique.
+- [Logiciels sur mesure](https://onlee.fr/logiciels/) : conception, développement et suivi d'un logiciel adapté à la façon de travailler d'une entreprise (CRM, application, portail client, outil de suivi), utilisable sur ordinateur et sur téléphone, avec des automatisations et de l'IA là où elles font gagner du temps. Un seul interlocuteur, du premier appel à la mise en ligne.
+- [Gestion des pubs Facebook et Instagram](https://onlee.fr/publicites/) : création des visuels et des vidéos de pub, réglage et suivi des campagnes. Les personnes intéressées écrivent directement sur WhatsApp.
+- [Sites internet et SEO](https://onlee.fr/sites/) : sites rapides sur téléphone, au design fait pour chaque client, et référencement suivi chaque mois (fiche Google, articles, pages lisibles par les IA).
 
 ## Logiciels édités par onlee
 
-- [Vizor](https://onlee.fr/opticiens/) : logiciel de suivi du tiers payant pour les magasins d'optique, utilisé à côté du logiciel métier de l'opticien. Il suit les ventes du jour, les restes à encaisser et les remboursements attendus à partir des saisies de l'opticien, avec un export Excel pour le comptable. 39,99 € HT par mois (sans n° de TVA : 47,99 € TTC), sans engagement. Site produit : https://vizor.onlee.fr
-- [AudioVizor](https://onlee.fr/audioprothesistes/) : logiciel de suivi du tiers payant pour les audioprothésistes, utilisé à côté du logiciel métier. Dossiers binauraux, essai de 30 jours, accords de prise en charge, restes à charge, compte rendu ORL, SAV et planning d'équipe. 39,99 € par mois, sans engagement. Site produit : https://audiovizor.onlee.fr
-- [Noga](https://onlee.fr/rh/) : logiciel RH pour les boutiques et commerces : congés, arrêts maladie, planning des absences et bilan du mois pour le comptable. Les salariés déposent leurs demandes depuis leur téléphone, la direction valide. Noga ne fait pas de fiche de paie. Dès 19 € par mois. Site produit : https://noga.onlee.fr
+- [Vizor](https://onlee.fr/vizor/?metier=opticien) : logiciel de suivi du tiers payant pour les opticiens, utilisé à côté du logiciel métier. Chaque dossier est suivi jusqu'au paiement, avec les relances au bon moment. Site produit : https://vizor.onlee.fr
+- [AudioVizor](https://onlee.fr/vizor/?metier=audio) : logiciel de suivi du tiers payant pour les audioprothésistes, utilisé à côté du logiciel métier. Site produit : https://audiovizor.onlee.fr
+
+## Réalisations
+
+- [Réalisations](https://onlee.fr/realisations/) : tous les projets d'onlee en grandes cartes, avec leurs vrais écrans, filtrables par type.
+- Logiciels sur mesure : Hello Collection, portail de commande pour les professionnels d'un magasin de meubles (https://hellocollection-pro.fr) ; Onlee Tournées, logiciel de tournées de livraison et d'abonnements, présenté en démo avec des données fictives.
+- Nos logiciels : Vizor (opticiens : ventes du jour et suivi du tiers payant jusqu'au paiement) et AudioVizor (suivi du tiers payant de l'audition).
+- Sites internet : nao · studio pilates (https://nao-pilates.vercel.app) et un site de fabricant de tapis logo dont la nouvelle version est en préparation.
+- Pubs Facebook et Instagram : les campagnes de Vizor et AudioVizor.
 
 ## Articles
 
-- [Articles onlee](https://onlee.fr/blog/) : repères pour les dirigeants de PME sur les logiciels sur mesure, l'intégration des outils et l'automatisation IA. Un sujet par article, une réponse concrète.
+- [Articles onlee](https://onlee.fr/blog/) : repères pour les dirigeants de PME sur les logiciels sur mesure, les pubs et les sites internet. Un sujet par article, une réponse concrète.
 - [Logiciel sur mesure ou logiciel du marché : comment choisir pour une PME ?](https://onlee.fr/blog/logiciel-sur-mesure-ou-logiciel-du-marche/) (09/11/2026) : quand le logiciel du marché suffit, quand le sur mesure se justifie, et la troisième voie souvent oubliée — connecter les outils déjà en place.
+
+## English
+
+- [onlee in English](https://onlee.fr/en/) : the same site in English — [custom software](https://onlee.fr/en/custom-software/), [Facebook and Instagram ads](https://onlee.fr/en/ads/), [websites and SEO](https://onlee.fr/en/websites/), [Vizor and AudioVizor](https://onlee.fr/en/vizor/), [our work](https://onlee.fr/en/work/). Articles are in French only.
 
 ## Contact
 
@@ -27,4 +36,4 @@
 - Email : contact@onlee.fr
 - WhatsApp : +33 6 80 71 52 62
 - LinkedIn : https://www.linkedin.com/in/leeroy-benaich-a04544412/
-- Prise de rendez-vous : https://cal.com/leeroy-benaich
+- Prise de rendez-vous (30 minutes en visio) : https://cal.com/leeroy-benaich/30min

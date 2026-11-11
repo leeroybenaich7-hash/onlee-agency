@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gestion des pubs Facebook et Instagram · onlee</title>
+<meta name="description" content="On crée tes pubs Facebook et Instagram, on les règle et on les suit pour toi. Chaque personne intéressée t’écrit directement sur WhatsApp.">
+<link rel="canonical" href="https://onlee.fr/publicites/">
+<link rel="alternate" hreflang="fr" href="https://onlee.fr/publicites/">
+<link rel="alternate" hreflang="en" href="https://onlee.fr/en/ads/">
+<link rel="alternate" hreflang="x-default" href="https://onlee.fr/publicites/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:site_name" content="onlee">
+<meta property="og:title" content="Gestion des pubs Facebook et Instagram · onlee">
+<meta property="og:description" content="On crée tes pubs Facebook et Instagram, on les règle et on les suit pour toi. Chaque personne intéressée t’écrit directement sur WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://onlee.fr/publicites/">
+<meta property="og:image" content="https://onlee.fr/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gestion des pubs Facebook et Instagram · onlee">
+<meta name="twitter:description" content="On crée tes pubs Facebook et Instagram, on les règle et on les suit pour toi. Chaque personne intéressée t’écrit directement sur WhatsApp.">
+<meta name="twitter:image" content="https://onlee.fr/assets/og-cover.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Service",
+   "name": "Gestion des pubs Facebook et Instagram",
+   "url": "https://onlee.fr/publicites/",
+   "description": "Création, réglage et suivi de campagnes Facebook et Instagram. Les demandes arrivent directement sur WhatsApp.",
+   "areaServed": {
+    "@type": "Country",
+    "name": "France"
+   },
+   "provider": {
+    "@type": "Organization",
+    "@id": "https://onlee.fr/#organization",
+    "name": "onlee",
+    "url": "https://onlee.fr/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "onlee",
+     "item": "https://onlee.fr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Gestion des pubs",
+     "item": "https://onlee.fr/publicites/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" data-polices onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<style>
+:root{
+  --blanc:#FFFFFF; --gris-fond:#F4F4F5; --encre:#0E0F13; --texte:#64656D; --pale:#A3A4AB; --filet:rgba(0,0,0,.10);
+  --bleu:#0055FF; --bleu-fonce:#0045D1;
+  --fb:#0866FF; --ig:#0095F6; --wa:#25D366;
+  --titre:"Bricolage Grotesque","Inter",-apple-system,sans-serif;
+  --corps:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --ios:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --courbe:cubic-bezier(.16,1,.3,1);
+  --labo:0px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--blanc);color:var(--encre);font-family:var(--corps);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:var(--labo)}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit}
+img,video{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.logo{display:block;width:76px;height:38px;background:var(--encre);-webkit-mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat;mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat;flex:none}
+
+@media(max-width:600px){.labo .d,.labo .nom{display:none}.labo{justify-content:center}}
+/* petit sélecteur d'accroche */
+.choix{display:inline-flex;align-items:center;gap:2px;letter-spacing:.12em}
+.choix a{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;color:var(--pale);letter-spacing:0;transition:background .25s, color .25s}
+.choix a:hover{color:var(--encre)}
+.choix a.on{background:var(--encre);color:#fff}
+.choix .pt{color:var(--pale);opacity:.6}
+
+/* ===== Capsule de navigation (reprise de l'accueil) ===== */
+.n2{position:sticky;top:var(--labo);z-index:50;height:0}
+.n2 .capsule{position:relative;margin:14px auto 0;width:min(1120px,calc(100% - 28px));height:64px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 9px 0 22px;
+  background:rgba(255,255,255,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 0 0 1px rgba(14,15,19,.07),0 10px 30px -18px rgba(14,15,19,.3);
+  transition:transform .55s var(--courbe), width .55s var(--courbe), box-shadow .4s}
+.n2.cache .capsule{transform:translateY(-140px)}
+.n2.compact .capsule{width:min(980px,calc(100% - 28px));box-shadow:0 0 0 1px rgba(14,15,19,.08),0 18px 40px -20px rgba(14,15,19,.4)}
+.n2 .liens{display:flex;gap:2px}
+.n2 .liens a{font-size:14.5px;font-weight:500;color:var(--texte);padding:9px 14px;border-radius:999px;transition:background .2s, color .2s}
+.n2 .liens a:hover{background:rgba(14,15,19,.05);color:var(--encre)}
+.n2 .droite{display:flex;align-items:center;gap:8px}
+.langue{display:inline-flex;align-items:center;height:32px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--filet);padding:2px;font-size:11.5px;font-weight:700;letter-spacing:.06em}
+.langue span{padding:5px 8px;border-radius:999px;color:var(--texte)}
+.langue span.on{background:var(--encre);color:#fff}
+@media(max-width:900px){.n2 .liens{display:none}.langue{display:none}}
+
+/* ===== Boutons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;border:0;cursor:pointer;font-weight:600;font-size:15.5px;white-space:nowrap;
+  transition:transform .25s var(--courbe), background .25s var(--courbe), box-shadow .25s var(--courbe), color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-bleu{background:var(--bleu);color:#fff;box-shadow:0 12px 26px -12px rgba(0,85,255,.75)}
+.btn-bleu:hover{background:var(--bleu-fonce)}
+.btn-ligne{background:#fff;color:var(--encre);box-shadow:inset 0 0 0 1.5px var(--filet)}
+.btn-ligne:hover{box-shadow:inset 0 0 0 1.5px var(--encre)}
+.btn-ligne svg{width:18px;height:18px}
+.btn-petit{height:42px;padding:0 18px;font-size:14px}
+.fleche{display:inline-block;transition:transform .3s var(--courbe)}
+.btn:hover .fleche{transform:translateX(3px)}
+
+main{padding-top:88px}
+.t-xl{font-family:var(--titre);font-weight:700;letter-spacing:-.035em;line-height:.98;margin:0;text-wrap:balance}
+.t-l{font-family:var(--titre);font-weight:700;letter-spacing:-.03em;line-height:1.02;margin:0;font-size:clamp(34px,4.4vw,60px);text-wrap:balance}
+.bleu{color:var(--bleu)}
+
+/* apparitions douces */
+.monte{opacity:0;transform:translateY(24px);transition:opacity .9s var(--courbe), transform .9s var(--courbe)}
+.monte.vu{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* ============================================================
+   L'IPHONE : proportions d'un iPhone 15/16 Pro
+   corps 300 × 620 · cadre titane 3,5 px · verre noir 7,5 px
+   écran 278 × 598 (≈ 19,5:9) · coins 39 px · Dynamic Island 89 × 26
+   ============================================================ */
+.iph{position:relative;flex:none;width:300px;height:620px}
+.iph .cadre{position:absolute;inset:0;border-radius:51px;padding:3.5px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.55) 0,rgba(255,255,255,0) 1.4%,rgba(255,255,255,0) 98.4%,rgba(255,255,255,.35) 100%),
+    linear-gradient(90deg,#1c1c1f 0%,#8d8d93 1.1%,#4a4a4f 2.4%,#2b2b2f 6%,#232326 50%,#2b2b2f 94%,#4a4a4f 97.6%,#9a9aa0 98.9%,#1c1c1f 100%);
+  box-shadow:
+    inset 0 0 0 .6px rgba(255,255,255,.28),
+    0 0 0 .5px rgba(0,0,0,.55),
+    0 2px 3px rgba(14,15,19,.18),
+    0 22px 34px -14px rgba(14,15,19,.38),
+    0 60px 90px -40px rgba(14,15,19,.5)}
+.iph .verre{position:relative;width:100%;height:100%;border-radius:47.5px;padding:7.5px;background:#050506;box-shadow:inset 0 0 0 1px #000,inset 0 0 0 1.6px rgba(255,255,255,.07)}
+.iph .ecran{position:relative;width:100%;height:100%;border-radius:39px;overflow:hidden;background:#fff;color:#000;font-family:var(--ios);-webkit-font-smoothing:antialiased;isolation:isolate}
+/* reflet du verre */
+.iph .reflet{position:absolute;inset:0;z-index:40;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(116deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.07) 24%,rgba(255,255,255,0) 38%,rgba(255,255,255,0) 78%,rgba(255,255,255,.05) 100%);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
+/* Dynamic Island */
+.iph .ilot{position:absolute;top:8px;left:50%;width:89px;height:26px;margin-left:-44.5px;border-radius:13px;background:#000;z-index:35}
+.iph .ilot::after{content:"";position:absolute;right:9px;top:8px;width:10px;height:10px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#2b3a55 0,#141a26 45%,#050608 70%);box-shadow:0 0 0 1px #0b0b0d}
+/* boutons latéraux */
+.iph .bt{position:absolute;width:3.5px;border-radius:2px;z-index:-1;
+  background:linear-gradient(90deg,#1b1b1e,#6e6e74 45%,#2a2a2e)}
+.iph .bt.g{left:-2.5px}.iph .bt.d{right:-2.5px}
+.iph .b-action{top:124px;height:28px}
+.iph .b-vol1{top:176px;height:50px}
+.iph .b-vol2{top:238px;height:50px}
+.iph .b-power{top:196px;height:80px}
+/* barre d'état */
+.sb{position:absolute;top:0;left:0;right:0;height:42px;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:4px 0 0;font-size:13px;font-weight:600;letter-spacing:-.01em;pointer-events:none}
+.sb .h{width:94px;text-align:center;padding-left:10px}
+.sb .ics{width:94px;display:flex;justify-content:center;align-items:center;gap:5px;padding-right:6px}
+.sb svg{display:block}
+.sb.blanc{color:#fff}
+.ecran .fond-sb{position:absolute;top:0;left:0;right:0;height:42px;background:#fff;z-index:29}
+/* barre d'accueil */
+.indic{position:absolute;bottom:7px;left:50%;width:96px;height:4px;margin-left:-48px;border-radius:3px;background:#000;z-index:36}
+.indic.blanc{background:rgba(255,255,255,.92)}
+
+/* --- Instagram : fil --- */
+.ig{position:absolute;inset:0;padding-top:42px;background:#fff}
+.post-tete{display:flex;align-items:center;gap:9px;height:46px;padding:0 12px}
+.av{flex:none;width:30px;height:30px;border-radius:50%;overflow:hidden;background:#eee;box-shadow:0 0 0 .5px rgba(0,0,0,.12)}
+.av img{width:100%;height:100%;object-fit:cover}
+.post-tete b{display:block;font-size:12.5px;font-weight:600;line-height:1.2}
+.post-tete small{display:block;font-size:11px;color:#262626;line-height:1.25}
+.post-tete .pts{margin-left:auto;display:flex;gap:2.5px}
+.post-tete .pts i{width:3px;height:3px;border-radius:50%;background:#000}
+.ig-media{position:relative;width:100%;aspect-ratio:4/5;background:#f2f2f2;overflow:hidden}
+.ig-media video,.ig-media img{width:100%;height:100%;object-fit:cover}
+.ig-cta{display:flex;align-items:center;justify-content:space-between;height:38px;padding:0 12px;background:#F2F2F2;color:#000;font-size:13px;font-weight:600;transition:background .7s ease,color .7s ease}
+.ig-cta.actif{background:var(--ig);color:#fff}
+.ig-cta svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.ig-act{display:flex;align-items:center;gap:15px;height:40px;padding:0 12px}
+.ig-act .sv{margin-left:auto}
+.o{width:22px;height:22px;fill:none;stroke:#000;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ig-leg{padding:0 12px;font-size:12px;line-height:1.38;color:#000;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ig-leg b{font-weight:600}
+.mini-son{position:absolute;right:9px;bottom:9px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.62);display:grid;place-items:center;border:0;padding:0;cursor:pointer;z-index:3;transition:background .25s}
+.mini-son:hover{background:rgba(0,0,0,.8)}
+.mini-son svg{width:13px;height:13px}
+.mini-son.on{background:#fff}
+.mini-son.on svg{color:#000}
+/* barre d'onglets Instagram */
+.ig-tabs{position:absolute;left:0;right:0;bottom:0;height:62px;background:#fff;border-top:.5px solid rgba(0,0,0,.14);display:flex;justify-content:space-around;align-items:flex-start;padding:10px 10px 0;z-index:20}
+.ig-tabs svg{width:23px;height:23px}
+.ig-tabs .moi{width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#fff 0 22%,transparent 23%),radial-gradient(ellipse at 50% 100%,#fff 0 42%,transparent 43%),#C7C7CC;box-shadow:0 0 0 1.5px #fff inset,0 0 0 1px #000}
+
+/* --- Facebook : fil --- */
+.fb{position:absolute;inset:0;padding-top:42px;background:#fff}
+.fb .bande{height:7px;background:#CED0D4}
+.fb .post-tete{height:52px}
+.fb .post-tete .av{width:36px;height:36px}
+.fb .post-tete b{font-size:13.5px;color:#050505}
+.fb .post-tete small{display:flex;align-items:center;gap:4px;color:#65676B;font-size:11.5px}
+.fb .post-tete small svg{width:11px;height:11px}
+.fb .post-tete .x{margin-left:14px;width:14px;height:14px;stroke:#65676B;stroke-width:2.2}
+.fb .post-tete .pts i{background:#65676B}
+.fb-txt{padding:0 12px 9px;font-size:13px;line-height:1.36;color:#050505}
+.fb-media{width:100%;aspect-ratio:4/5;overflow:hidden;background:#eee}
+.fb-media img{width:100%;height:100%;object-fit:cover}
+.fb-lien{display:flex;align-items:center;gap:10px;padding:9px 12px;background:#F0F2F5}
+.fb-lien span{flex:1;min-width:0}
+.fb-lien small{display:block;font-size:10.5px;color:#65676B;text-transform:uppercase;letter-spacing:.02em}
+.fb-lien b{display:block;font-size:13px;color:#050505;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fb-lien i{font-style:normal;flex:none;background:#E2E5E9;color:#050505;font-size:12.5px;font-weight:600;padding:7px 11px;border-radius:6px}
+.fb-tabs{position:absolute;left:0;right:0;bottom:0;height:62px;background:#fff;border-top:.5px solid rgba(0,0,0,.14);display:flex;justify-content:space-around;align-items:flex-start;padding:9px 6px 0;z-index:20}
+.fb-tabs svg{width:23px;height:23px;fill:none;stroke:#65676B;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fb-tabs svg.on{fill:var(--fb);stroke:var(--fb)}
+
+/* --- Instagram : story --- */
+.story{position:absolute;inset:0;background:#000;color:#fff}
+.story .fondu{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(26px) brightness(.5)}
+.story .med{position:absolute;left:0;right:0;top:50%;transform:translateY(-52%);aspect-ratio:4/5}
+.story .med video{width:100%;height:100%;object-fit:cover}
+.story .progs{position:absolute;top:46px;left:9px;right:9px;display:flex;gap:3px;z-index:3}
+.story .progs i{flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,.38);overflow:hidden}
+.story .progs i:first-child{background:#fff}
+.story .progs i:nth-child(2)::after{content:"";display:block;height:100%;width:40%;background:#fff}
+.story .qui{position:absolute;top:56px;left:11px;right:11px;display:flex;align-items:center;gap:8px;z-index:3;font-size:12.5px}
+.story .qui .av{width:28px;height:28px}
+.story .qui b{font-weight:600}
+.story .qui small{opacity:.8;font-size:11px;display:block;line-height:1.2}
+.story .mini-son{top:58px;bottom:auto;right:11px;background:rgba(0,0,0,.35)}
+.story .mini-son.on{background:#fff}
+.story .bas{position:absolute;bottom:30px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:6px;z-index:3}
+.story .bas svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.story .bas span{background:#fff;color:#000;font-size:13px;font-weight:600;border-radius:999px;padding:8px 18px}
+
+/* ============================================================
+   HAUT DE PAGE
+   ============================================================ */
+.haut{padding:clamp(18px,2.4vw,36px) 0 clamp(40px,5vw,70px);overflow:hidden}
+.haut .grille{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center}
+.haut .grille > *{min-width:0}
+.haut .t-xl{font-size:clamp(44px,4.6vw,72px);line-height:.95;letter-spacing:-.045em}
+.haut .t-xl span{display:block}
+/* la taille du titre s'ajuste pour tenir sur 2 lignes (voir le script « Accroche ») */
+.haut .t-xl.ajuste span{width:max-content;white-space:nowrap}
+.haut .t-xl.libre span{width:auto;white-space:normal}
+.haut .chapo{margin:28px 0 0;max-width:40ch;color:var(--texte);font-size:17.5px}
+.haut .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* les trois applis */
+.applis{display:flex;align-items:flex-start;gap:0;margin:0 0 34px}
+.appli{display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;transform:translateY(16px) scale(.9);animation:arrive .9s var(--courbe) forwards}
+.appli:nth-child(1){animation-delay:.15s}.appli:nth-child(2){animation-delay:.27s}.appli:nth-child(4){animation-delay:.45s}
+.appli .ic{display:block;width:56px;height:56px;border-radius:12.6px;box-shadow:0 0 0 .5px rgba(0,0,0,.08) inset,0 10px 20px -10px rgba(14,15,19,.45),0 2px 4px rgba(14,15,19,.08);animation:flotte 6s ease-in-out 1.4s infinite}
+.appli:nth-child(2) .ic{animation-delay:2.2s}.appli:nth-child(4) .ic{animation-delay:3s}
+.appli .ic svg{display:block;width:100%;height:100%;border-radius:inherit}
+.appli small{font-size:11.5px;font-weight:600;color:var(--texte);letter-spacing:.01em}
+.applis .duo{display:flex;gap:12px}
+@keyframes arrive{to{opacity:1;transform:none}}
+@keyframes flotte{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.fil{position:relative;width:clamp(70px,9vw,120px);height:56px;margin:0 14px;opacity:0;animation:arrive .9s var(--courbe) .38s forwards}
+.fil::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1.5px dashed rgba(14,15,19,.22)}
+.fil::after{content:"";position:absolute;right:-1px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-top:1.5px solid rgba(14,15,19,.35);border-right:1.5px solid rgba(14,15,19,.35);transform:rotate(45deg)}
+.fil i{position:absolute;top:50%;left:0;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--bleu);box-shadow:0 0 0 4px rgba(0,85,255,.14);animation:passe 4.8s var(--courbe) 1.4s infinite;opacity:0}
+@keyframes passe{0%{left:0;opacity:0}8%{opacity:1}40%{left:100%;opacity:1}48%,100%{left:100%;opacity:0}}
+.applis .legende{align-self:center;margin:-22px 0 0 20px;font-size:13.5px;line-height:1.4;color:var(--texte);max-width:21ch;opacity:0;animation:arrive .9s var(--courbe) .6s forwards}
+.applis .legende b{color:var(--encre);font-weight:600}
+
+/* l'éventail de téléphones */
+.scene{position:relative}
+.eventail{position:relative;height:680px;perspective:1700px}
+.eventail .groupe{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(6deg) rotateY(-13deg);transition:transform 1.2s var(--courbe)}
+.eventail .iph{position:absolute;left:50%;top:50%;margin:-310px 0 0 -150px;transition:transform 1.2s var(--courbe)}
+.eventail .t1{transform:translate3d(-175px,26px,-150px) rotateZ(-6deg) scale(.86)}
+.eventail .t2{transform:translate3d(0,0,0)}
+.eventail .t3{transform:translate3d(175px,36px,-150px) rotateZ(6deg) scale(.86)}
+.eventail.ouvert .t1{transform:translate3d(-212px,26px,-170px) rotateZ(-8deg) scale(.86)}
+.eventail.ouvert .t3{transform:translate3d(212px,36px,-170px) rotateZ(8deg) scale(.86)}
+.eventail .sol{position:absolute;left:50%;bottom:4px;width:560px;height:46px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(14,15,19,.22),rgba(14,15,19,0));pointer-events:none}
+
+/* ===== Widget : la demande qui arrive ===== */
+.wid{position:absolute;left:-30px;bottom:40px;z-index:20;width:322px;font-family:var(--ios);color:#000}
+.wid-notif{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;border:0;cursor:pointer;background:rgba(246,246,248,.86);backdrop-filter:blur(26px) saturate(1.8);-webkit-backdrop-filter:blur(26px) saturate(1.8);border-radius:22px;padding:11px 13px 12px 11px;font-family:var(--ios);
+  box-shadow:0 0 0 .5px rgba(14,15,19,.10),0 24px 50px -24px rgba(14,15,19,.55),0 6px 14px -8px rgba(14,15,19,.2);
+  opacity:0;transform:translateY(-14px) scale(.95);transition:opacity .6s var(--courbe), transform .8s var(--courbe), box-shadow .3s}
+.wid.arrive .wid-notif{opacity:1;transform:none}
+.wid-notif:hover{box-shadow:0 0 0 .5px rgba(14,15,19,.14),0 28px 56px -24px rgba(14,15,19,.6),0 6px 14px -8px rgba(14,15,19,.2)}
+.wid-notif:active{transform:scale(.98)}
+.wid-notif .app{flex:none;width:38px;height:38px;border-radius:9px;overflow:hidden}
+.wid-notif .app svg{width:100%;height:100%;display:block}
+.wid-notif .c{flex:1;min-width:0}
+.wid-notif .tt{display:flex;color:#000;justify-content:space-between;gap:8px;font-size:14px;font-weight:600;letter-spacing:-.015em;line-height:1.25}
+.wid-notif .tt span{font-size:12.5px;font-weight:400;color:rgba(0,0,0,.45);white-space:nowrap}
+.wid-notif .tx{display:block;margin:2px 0 0;font-size:13.5px;line-height:1.3;letter-spacing:-.01em;color:#111}
+.wid-aide{display:inline-flex;align-items:center;gap:8px;margin:12px 0 0 8px;padding:6px 12px 6px 10px;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 0 0 1px rgba(14,15,19,.06),0 6px 16px -10px rgba(14,15,19,.35);font:500 12.5px var(--corps);color:var(--texte);opacity:0;transition:opacity .6s var(--courbe) .5s}
+.wid.arrive .wid-aide{opacity:1}
+.wid-aide i{position:relative;width:8px;height:8px;border-radius:50%;background:var(--bleu)}
+.wid-aide i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1.5px solid var(--bleu);opacity:0;animation:onde 2.2s ease-out 3}
+@keyframes onde{0%{transform:scale(.5);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+/* la conversation WhatsApp (s'ouvre au toucher) */
+.wid-chat{position:absolute;left:0;right:0;bottom:0;height:336px;border-radius:22px;overflow:hidden;background:#EFEAE2;display:flex;flex-direction:column;
+  box-shadow:0 0 0 .5px rgba(14,15,19,.12),0 40px 80px -36px rgba(14,15,19,.6),0 8px 20px -10px rgba(14,15,19,.25);
+  opacity:0;transform:translateY(16px) scale(.94);transform-origin:50% 100%;pointer-events:none;transition:opacity .45s var(--courbe), transform .7s var(--courbe)}
+.wid.ouvert .wid-chat{opacity:1;transform:none;pointer-events:auto}
+.wid.ouvert .wid-notif{opacity:0;transform:scale(.96);pointer-events:none}
+.wid.ouvert .wid-aide{opacity:0}
+.wc-tete{display:flex;align-items:center;gap:9px;padding:10px 12px;background:#F6F5F3;border-bottom:.5px solid rgba(0,0,0,.1)}
+.wc-tete .ret{border:0;background:none;padding:2px;cursor:pointer;display:grid;place-items:center}
+.wc-tete .ret svg{width:18px;height:18px;fill:none;stroke:#007AFF;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.wc-tete .pp{width:32px;height:32px;border-radius:50%;background:#C9D3DC;color:#fff;display:grid;place-items:center;font:600 13px var(--ios)}
+.wc-tete b{display:block;font-size:14.5px;line-height:1.15;font-weight:600}
+.wc-tete small{display:block;font-size:11.5px;color:#667781;line-height:1.2;transition:color .3s}
+.wc-tete small.ecrit{color:#1DA851}
+.wc-tete .tel-ic{margin-left:auto;width:20px;height:20px;fill:none;stroke:#007AFF;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.wc-fil{flex:1;padding:10px 10px 8px;display:flex;flex-direction:column;gap:6px;justify-content:flex-end;overflow:hidden}
+.wc-sys{align-self:center;max-width:92%;text-align:center;font-size:11.5px;line-height:1.35;color:#54656F;background:#FFF5C4;border-radius:8px;padding:5px 10px;box-shadow:0 1px .5px rgba(0,0,0,.08)}
+.bul{max-width:84%;background:#fff;border-radius:10px;padding:6px 9px 5px;font-size:13.5px;line-height:1.36;color:#111B21;box-shadow:0 1px .5px rgba(0,0,0,.1);align-self:flex-start}
+.bul .h{float:right;margin:6px 0 -4px 8px;font-size:10.5px;color:#667781;line-height:1}
+.bul.moi{align-self:flex-end;background:#D9FDD3}
+.bul .vu{display:inline-block;margin-left:2px;color:#8696A0;letter-spacing:-3px;transition:color .4s}
+.bul .vu.lu{color:#53BDEB}
+.bul.entre{animation:entre .5s var(--courbe) both}
+@keyframes entre{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+.tape{align-self:flex-start;background:#fff;border-radius:10px;padding:9px 11px;display:flex;gap:4px;box-shadow:0 1px .5px rgba(0,0,0,.1)}
+.tape i{width:6px;height:6px;border-radius:50%;background:#8696A0;animation:tape 1s ease-in-out infinite}
+.tape i:nth-child(2){animation-delay:.15s}.tape i:nth-child(3){animation-delay:.3s}
+@keyframes tape{0%,100%{opacity:.35;transform:none}50%{opacity:1;transform:translateY(-2px)}}
+.wc-saisie{display:flex;align-items:flex-end;gap:7px;padding:7px 8px 9px;background:#F6F5F3;border-top:.5px solid rgba(0,0,0,.08)}
+.wc-champ{flex:1;min-height:32px;max-height:74px;overflow:hidden;background:#fff;border-radius:17px;box-shadow:inset 0 0 0 .5px rgba(0,0,0,.15);padding:7px 12px;font-size:13.5px;line-height:1.35;color:#111B21}
+.wc-champ .ph{color:#8696A0}
+.wc-champ .cur{display:inline-block;width:1.5px;height:15px;margin-left:1px;vertical-align:-2px;background:#25D366;animation:cligne 1s steps(1) infinite}
+@keyframes cligne{50%{visibility:hidden}}
+.wc-env{flex:none;width:32px;height:32px;border-radius:50%;border:0;background:#25D366;display:grid;place-items:center;cursor:pointer;transition:transform .2s}
+.wc-env:active,.wc-env.clic{transform:scale(.88)}
+.wc-env svg{width:15px;height:15px;fill:#fff;margin-left:2px}
+.wid-pied{position:absolute;left:0;right:0;top:calc(100% + 10px);display:flex;justify-content:space-between;align-items:center;padding:6px 8px 6px 14px;border-radius:999px;background:rgba(255,255,255,.94);box-shadow:0 0 0 1px rgba(14,15,19,.06),0 6px 16px -10px rgba(14,15,19,.35);font:500 12px var(--corps);color:var(--pale);opacity:0;transition:opacity .5s .3s}
+.wid.ouvert .wid-pied{opacity:1}
+.wid-pied button{border:0;background:none;padding:0;font:600 12.5px var(--corps);color:var(--encre);cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(14,15,19,.25)}
+
+@media(max-width:1180px){.wid{left:0}}
+@media(max-width:980px){
+  .haut .grille{grid-template-columns:1fr}
+  .scene{display:flex;flex-direction:column;align-items:center}
+  .eventail{width:100%;transform:scale(.8);margin:-50px 0 -40px}
+  .wid{position:relative;left:auto;bottom:auto;margin:0 auto}
+  .wid-chat{bottom:auto;top:0}
+  .wid.ouvert{height:336px}
+}
+@media(max-width:560px){
+  .eventail{transform:scale(.58);margin:-140px -80px -120px;width:calc(100% + 160px)}
+  .applis .legende{display:none}
+  .wid{width:min(322px,100%)}
+}
+
+/* ============================================================
+   LES VRAIES PUBS (fond noir, avec le son)
+   ============================================================ */
+.pubs{background:var(--encre);color:#fff;padding:clamp(80px,9vw,130px) 0}
+.pubs .entete{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,56px)}
+.pubs .t-l{color:#fff}
+.pubs .entete p{margin:0;max-width:46ch;color:rgba(255,255,255,.62);font-size:16px}
+.pubs .entete p b{color:#fff;font-weight:600}
+.galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px)}
+.crea .m{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#1a1b20;cursor:pointer}
+.crea .m.fixe{cursor:default}
+.crea .m video,.crea .m img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--courbe)}
+.crea:hover .m video,.crea:hover .m img{transform:scale(1.02)}
+.crea .tag{position:absolute;left:12px;top:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(14,15,19,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:8px;padding:4px 9px;z-index:3}
+.crea .lecture{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px;border-radius:50%;background:rgba(14,15,19,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;opacity:0;transform:scale(.9);transition:opacity .35s var(--courbe), transform .45s var(--courbe);pointer-events:none;z-index:3}
+.crea .lecture svg{width:24px;height:24px;fill:#fff;margin-left:4px}
+.crea .m.pause .lecture{opacity:1;transform:none}
+.son{position:absolute;left:12px;bottom:16px;z-index:4;display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 17px 0 13px;border-radius:999px;border:0;cursor:pointer;background:var(--bleu);color:#fff;font:600 14.5px var(--corps);
+  box-shadow:0 12px 26px -10px rgba(0,30,120,.7);transition:background .3s var(--courbe), color .3s, transform .25s var(--courbe)}
+.son:hover{transform:translateY(-2px)}
+.son svg{width:20px;height:20px}
+.son .eq{display:none;align-items:flex-end;gap:2px;height:14px}
+.son .eq i{width:3px;border-radius:1px;background:currentColor;height:40%}
+.son.on{background:#fff;color:var(--encre)}
+.son.on .eq{display:inline-flex}
+.son.on .eq i{animation:eq .9s ease-in-out infinite}
+.son.on .eq i:nth-child(2){animation-delay:.2s}.son.on .eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{0%,100%{height:30%}50%{height:100%}}
+.m.pause .son.on .eq i{animation-play-state:paused}
+.prog{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.18);z-index:4}
+.prog i{display:block;height:100%;width:0;background:#fff;transition:width .26s linear}
+.crea b{display:block;margin-top:18px;font-size:17px;font-weight:600;letter-spacing:-.01em}
+.crea small{display:block;margin-top:4px;color:rgba(255,255,255,.6);font-size:14.5px;line-height:1.5;max-width:40ch}
+@media(max-width:900px){.galerie{grid-template-columns:1fr 1fr}.galerie .crea:last-child{grid-column:1/-1;max-width:calc(50% - 10px)}}
+@media(max-width:600px){.galerie{grid-template-columns:1fr}.galerie .crea:last-child{max-width:none}}
+
+/* ============================================================
+   LES GUIDES (un article par étape, conseils gratuits)
+   ============================================================ */
+.guides{padding:clamp(80px,9vw,130px) 0 0}
+.guides .entete{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,56px)}
+.guides .entete p{margin:0;max-width:44ch;color:var(--texte);font-size:16px}
+.guides .entete p b{color:var(--encre);font-weight:600}
+.liste-guides{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,22px)}
+.guide{display:flex;flex-direction:column;background:#fff;border-radius:24px;padding:9px;box-shadow:0 0 0 1px var(--filet);
+  transition:transform .5s var(--courbe), box-shadow .5s var(--courbe)}
+.guide:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(14,15,19,.14),0 28px 50px -32px rgba(14,15,19,.4)}
+.guide .corps{flex:1;display:flex;flex-direction:column;padding:20px 13px 8px}
+.guide .rep{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.guide .num{font-family:var(--titre);font-weight:700;font-size:46px;line-height:.8;letter-spacing:-.05em;color:var(--encre)}
+.guide .rep small{font-size:12px;line-height:1.35;color:var(--pale);text-align:right;font-weight:500}
+.guide .rep small b{display:block;color:var(--texte);font-weight:600}
+.guide h3{margin:18px 0 0;font-family:var(--titre);font-weight:700;font-size:20.5px;line-height:1.12;letter-spacing:-.025em;text-wrap:balance}
+.tips{list-style:none;margin:14px 0 22px;padding:0;display:grid;gap:9px}
+.tips li{position:relative;padding-left:17px;font-size:14px;line-height:1.48;color:var(--texte)}
+.tips li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:2px;border-radius:1px;background:var(--bleu)}
+.guide .pied-g{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:15px;border-top:1px solid var(--filet)}
+.lire{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--encre);cursor:default}
+.lire .fleche{color:var(--pale)}
+.bientot{font-size:11.5px;font-weight:600;color:var(--texte);background:var(--gris-fond);border-radius:999px;padding:3px 9px}
+
+/* vignettes réalistes */
+.vg{position:relative;height:184px;border-radius:16px;background:var(--gris-fond);overflow:hidden;display:grid;place-items:center;font-family:var(--ios);color:#1c1e21}
+.vg > *{transition:transform .8s var(--courbe)}
+.guide:hover .vg > *{transform:translateY(-3px)}
+/* 1. audience Meta */
+.mc{width:84%;background:#fff;border-radius:12px;padding:11px 12px 12px;box-shadow:0 0 0 .5px rgba(0,0,0,.08),0 12px 26px -16px rgba(14,15,19,.4)}
+.mc-t{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;margin-bottom:6px}
+.mc-t span{font-size:10px;font-weight:600;color:var(--fb);background:#E7F0FF;border-radius:5px;padding:2px 6px}
+.mc .lg{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 0;border-top:.5px solid rgba(0,0,0,.08);font-size:11px}
+.mc .lg span{color:#65676B}
+.mc .lg b{font-weight:600;font-size:11px}
+.mc .lg i{font-style:normal;font-size:10px;font-weight:600;background:#F0F2F5;border-radius:5px;padding:2px 6px;margin-left:3px}
+.jauge{display:flex;align-items:center;gap:7px;margin-top:6px;font-size:9.5px;color:#65676B}
+.jauge i{flex:1;height:5px;border-radius:3px;background:linear-gradient(90deg,#E4E6EB 0 30%,#31A24C 30% 66%,#E4E6EB 66%);position:relative}
+.jauge em{position:absolute;left:48%;top:50%;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px #31A24C,0 2px 4px rgba(0,0,0,.2)}
+/* 2. formats de pub */
+.vg-formats{display:flex;align-items:center;justify-content:center;gap:12px}
+.cadre-pub{position:relative;border-radius:10px;overflow:hidden;background:#ddd;box-shadow:0 0 0 .5px rgba(0,0,0,.1),0 14px 24px -14px rgba(14,15,19,.5)}
+.cadre-pub img{width:100%;height:100%;object-fit:cover}
+.cadre-pub.f45{width:96px;height:120px;transform:rotate(-4deg)}
+.cadre-pub.f916{width:86px;height:152px;background:#111}
+.cadre-pub.f916 img{height:auto;position:absolute;top:50%;transform:translateY(-50%)}
+.guide:hover .cadre-pub.f45{transform:rotate(-4deg) translateY(-3px)}
+.cadre-pub .muet{position:absolute;right:6px;top:6px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,.55);display:grid;place-items:center;color:#fff}
+.cadre-pub .muet svg{width:10px;height:10px}
+.cadre-pub .barre{position:absolute;left:6px;right:6px;top:5px;height:2px;border-radius:2px;background:rgba(255,255,255,.4)}
+.cadre-pub .barre::after{content:"";display:block;width:35%;height:100%;border-radius:inherit;background:#fff}
+.cadre-pub .sous{position:absolute;left:6px;right:6px;bottom:10px;text-align:center;font-size:8.5px;font-weight:700;line-height:1.25;color:#fff;background:rgba(0,0,0,.72);border-radius:4px;padding:3px 4px}
+/* 3. réglages de campagne */
+.camp{width:86%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 0 0 .5px rgba(0,0,0,.08),0 12px 26px -16px rgba(14,15,19,.4);font-size:11px}
+.camp .ct{display:flex;justify-content:space-between;align-items:center;padding:9px 11px;font-weight:700;font-size:11.5px;border-bottom:.5px solid rgba(0,0,0,.08)}
+.camp .ct span{font-size:10px;color:#65676B;font-weight:500}
+.camp .rg{display:flex;align-items:center;gap:8px;padding:7px 11px;border-bottom:.5px solid rgba(0,0,0,.06)}
+.camp .rg:last-child{border-bottom:0}
+.inter{flex:none;width:24px;height:14px;border-radius:7px;background:#C9CCD1;position:relative}
+.inter::after{content:"";position:absolute;left:2px;top:2px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.inter.on{background:var(--fb)}
+.inter.on::after{left:12px}
+.camp .rg b{flex:1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.etat{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#65676B;white-space:nowrap}
+.etat::before{content:"";width:6px;height:6px;border-radius:50%;background:#31A24C}
+.etat.app::before{background:#F7B928}
+.etat.off::before{background:#BCC0C4}
+/* 4. conversation WhatsApp */
+.vg-wa{background:#EFEAE2;place-items:stretch;padding:0}
+.wa-mini{display:flex;flex-direction:column;height:100%}
+.wa-mini .wt{display:flex;align-items:center;gap:7px;padding:8px 11px;background:#F6F5F3;border-bottom:.5px solid rgba(0,0,0,.08);font-size:11.5px}
+.wa-mini .wt .pp{width:22px;height:22px;border-radius:50%;background:#C9D3DC;color:#fff;display:grid;place-items:center;font-size:10px;font-weight:600}
+.wa-mini .wt b{display:block;font-weight:600;line-height:1.1}
+.wa-mini .wt small{display:block;font-size:9.5px;color:#667781;line-height:1.1}
+.wa-mini .wf{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:5px;padding:8px 10px 11px}
+.wa-mini .bl{max-width:86%;background:#fff;border-radius:8px;padding:5px 8px 4px;font-size:11px;line-height:1.35;color:#111B21;box-shadow:0 1px .5px rgba(0,0,0,.1)}
+.wa-mini .bl.moi{align-self:flex-end;background:#D9FDD3}
+.wa-mini .bl .h{float:right;margin:5px 0 -3px 6px;font-size:9px;color:#667781}
+.wa-mini .bl .vu{color:#53BDEB;letter-spacing:-2px;margin-left:2px}
+
+@media(max-width:1100px){.liste-guides{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.liste-guides{grid-template-columns:1fr}.vg{height:200px}}
+
+/* ============================================================
+   APPEL FINAL
+   ============================================================ */
+.final{padding:clamp(70px,8vw,110px) 0 clamp(70px,8vw,110px)}
+.final .bloc{position:relative;overflow:hidden;background:var(--bleu);color:#fff;border-radius:clamp(24px,3vw,40px);padding:clamp(48px,7vw,110px) clamp(24px,6vw,96px);text-align:center}
+.final .bloc::before{content:"";position:absolute;left:50%;top:-40%;width:120%;height:90%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.14),rgba(255,255,255,0));pointer-events:none}
+.final .sur{position:relative;display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:rgba(255,255,255,.85);padding:7px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);margin:0 0 30px}
+.final .sur i{width:7px;height:7px;border-radius:50%;background:#fff}
+.final .t-xl{position:relative;color:#fff;font-size:clamp(50px,8.4vw,132px);line-height:.92;letter-spacing:-.045em}
+.final p{position:relative;color:rgba(255,255,255,.82);font-size:clamp(17px,1.5vw,20px);margin:28px auto 0;max-width:46ch}
+.final .actions{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:40px}
+.btn-final{height:76px;padding:0 14px 0 34px;gap:18px;font-size:19px;font-weight:600;background:#fff;color:var(--encre);box-shadow:0 24px 50px -22px rgba(0,20,90,.75)}
+.btn-final .rond{width:52px;height:52px;border-radius:50%;background:var(--encre);color:#fff;display:grid;place-items:center;transition:transform .35s var(--courbe), background .3s}
+.btn-final .rond svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn-final:hover{transform:translateY(-3px);box-shadow:0 30px 60px -22px rgba(0,20,90,.85)}
+.btn-final:hover .rond{transform:rotate(-45deg)}
+.final .petit{font-size:14px;color:rgba(255,255,255,.72)}
+.final .petit a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.4)}
+@media(max-width:560px){.btn-final{height:66px;font-size:17px;padding:0 10px 0 24px}.btn-final .rond{width:46px;height:46px}}
+
+/* ===== Pied ===== */
+.pied-page{border-top:1px solid var(--filet);padding:30px 0 40px;font-size:13.5px;color:var(--texte)}
+.pied-page .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.pied-page .logo{width:64px;height:32px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.monte,.appli,.fil,.applis .legende{opacity:1;transform:none}}
+</style>
+<link rel="stylesheet" href="/css/p-2bdf1d6686.css" data-sources="/css/commun.css,/css/cta-express.css">
+</head>
+<body>
+
+<!-- ===== Symboles : vrais logos + icônes iOS ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="lg-ig" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  <symbol id="lg-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+  <!-- icônes d'applis iOS (carré arrondi 100×100) -->
+  <radialGradient id="ig-app" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient>
+  <linearGradient id="wa-app" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FFC7B"/><stop offset="1" stop-color="#28D146"/></linearGradient>
+  <linearGradient id="fb-app" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A77FF"/><stop offset="1" stop-color="#0861F2"/></linearGradient>
+  <symbol id="app-fb" viewBox="0 0 100 100"><rect width="100" height="100" fill="url(#fb-app)"/><path fill="#fff" transform="translate(29 17.5) scale(.165)" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></symbol>
+  <symbol id="app-ig" viewBox="0 0 100 100"><rect width="100" height="100" fill="url(#ig-app)"/><use href="#lg-ig" x="21" y="21" width="58" height="58" fill="#fff"/></symbol>
+  <symbol id="app-wa" viewBox="0 0 100 100"><rect width="100" height="100" fill="url(#wa-app)"/><use href="#lg-wa" x="19" y="19" width="62" height="62" fill="#fff"/></symbol>
+  <!-- icônes iOS / Instagram / Facebook -->
+  <symbol id="i-coeur" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8.2 3.4 4.5 7 4.5c2.1 0 3.6 1.2 5 3 1.4-1.8 2.9-3 5-3 3.6 0 5.5 3.7 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></symbol>
+  <symbol id="i-bulle" viewBox="0 0 24 24"><path d="M20.7 16.4A9 9 0 1 0 17 20l4 1z"/></symbol>
+  <symbol id="i-envoi" viewBox="0 0 24 24"><path d="M22 3 9.2 10.8M22 3l-7.4 18-3.2-8.3L3 9.6z"/></symbol>
+  <symbol id="i-signet" viewBox="0 0 24 24"><path d="M19 21l-7-5.5L5 21V3h14z"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-maison" viewBox="0 0 24 24"><path d="M3.5 10.2 12 3l8.5 7.2V21h-5.6v-6.2H9.1V21H3.5z" fill="currentColor"/></symbol>
+  <symbol id="i-loupe" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7"/><path d="M16 16l5 5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="i-reels" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 8.5h18M8.5 3l3 5.5M14.5 3l3 5.5M10.2 12v5.6l4.8-2.8z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3.5"/><path d="M10 9.2v5.6l4.6-2.8z"/></symbol>
+  <symbol id="i-amis" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 19.5c.6-3.4 3.1-5.4 6.2-5.4s5.6 2 6.2 5.4M15.8 4.8a3.3 3.3 0 0 1 0 6.4M17.6 14.4c2 .6 3.3 2.4 3.6 5.1"/></symbol>
+  <symbol id="i-boutique" viewBox="0 0 24 24"><path d="M4 9.5V20h16V9.5M3 9.5l1.6-5.5h14.8L21 9.5c0 1.5-1.3 2.6-2.8 2.6S15.4 11 15.4 9.5c0 1.5-1.2 2.6-2.7 2.6h-1.4C9.8 12.1 8.6 11 8.6 9.5 8.6 11 7.3 12.1 5.8 12.1S3 11 3 9.5zM10 20v-5h4v5"/></symbol>
+  <symbol id="i-cloche" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></symbol>
+  <symbol id="i-monde" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.6 2.6 3.6 5.6 3.6 9s-1 6.4-3.6 9c-2.6-2.6-3.6-5.6-3.6-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke-linecap="round"/></symbol>
+  <!-- son : haut-parleur barré / activé -->
+  <symbol id="i-son-off" viewBox="0 0 24 24"><path d="M3.5 9.2v5.6h3.7L12 19V5L7.2 9.2z" fill="currentColor"/><path d="M15.8 9.3l5 5.4M20.8 9.3l-5 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-son-on" viewBox="0 0 24 24"><path d="M3.5 9.2v5.6h3.7L12 19V5L7.2 9.2z" fill="currentColor"/><path d="M15.4 8.6a4.8 4.8 0 0 1 0 6.8M18.3 5.8a8.8 8.8 0 0 1 0 12.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-lecture" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></symbol>
+</defs></svg>
+
+
+<!-- ============ Capsule de navigation ============ -->
+<header class="onav" id="n2">
+  <div class="onav-capsule">
+    <a class="onav-logo" href="/" aria-label="onlee, accueil"></a>
+    <nav class="onav-liens" aria-label="Navigation principale">
+      <div class="onav-item"><a class="l ici" href="/#services">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="onav-deroule"><div class="dr-grille"><a href="/logiciels/" style="--c:#0E0F13;--ic:#fff;--k:0"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7.5 13.5h4M7.5 16.5h7"/></svg></span><span class="dr-tx"><b>Logiciels sur mesure</b><small>Le logiciel qu’il manque à ton entreprise</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/publicites/" style="--c:#0866FF;--ic:#fff;--k:1"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.2v3.6a1 1 0 0 0 1 1h2.2L12 18.5v-13L7.2 9.2H5a1 1 0 0 0-1 1z"/><path d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.5 7.5 0 0 1 0 10.4"/></svg></span><span class="dr-tx"><b>Gestion des pubs</b><small>Campagnes Facebook et Instagram</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/sites/" style="--c:#F9AB00;--ic:#0E0F13;--k:2"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9S9.6 5.6 12 3z"/></svg></span><span class="dr-tx"><b>Sites internet et SEO</b><small>Rapides, trouvés sur Google et par les IA</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/vizor/?metier=opticien" style="--c:#4C3175;--ic:#fff;--k:3"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6.5h10M10 12h10M10 17.5h10"/><path d="M4 6.5l1.2 1.2L7.5 5.4M4 12l1.2 1.2 2.3-2.3M4 17.5l1.2 1.2 2.3-2.3"/></svg></span><span class="dr-tx"><b>Vizor et AudioVizor</b><small>Nos logiciels pour opticiens et audioprothésistes</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
+      <a class="l" href="/realisations/">Réalisations</a>
+      <a class="l" href="/#a-propos">À propos</a>
+      <a class="l" href="/#faq">FAQ</a>
+      <a class="l" href="/blog/">Conseils</a>
+    </nav>
+    <div class="onav-droite">
+      <span class="onav-langue"><a class="on" href="/publicites/" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/en/ads/" hreflang="en" lang="en">EN</a></span>
+      <button type="button" class="onav-cta" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel</button>
+      <button type="button" class="onav-menu" aria-expanded="false" aria-controls="onav-panneau" aria-label="Ouvrir le menu"><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="onav-panneau" id="onav-panneau" aria-hidden="true">
+    <a class="grand" href="/#services">Services <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <div class="sous"><a href="/logiciels/">Logiciels sur mesure<small>Le logiciel qu’il manque à ton entreprise</small></a><a href="/publicites/">Gestion des pubs<small>Campagnes Facebook et Instagram</small></a><a href="/sites/">Sites internet et SEO<small>Rapides, trouvés sur Google et par les IA</small></a><a href="/vizor/?metier=opticien">Vizor et AudioVizor<small>Nos logiciels</small></a></div>
+    <a class="grand" href="/realisations/">Réalisations <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/#a-propos">À propos <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/#faq">FAQ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/blog/">Conseils <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <div class="bas"><span class="onav-langue"><a class="on" href="/publicites/" hreflang="fr" lang="fr">FR</a><a href="/en/ads/" hreflang="en" lang="en">EN</a></span><button type="button" class="onav-cta" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel</button></div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HAUT : l'affiche ============ -->
+<section class="haut"><div class="wrap grille">
+  <div>
+    <div class="applis" aria-label="Facebook et Instagram vers WhatsApp">
+      <div class="duo">
+        <span class="appli"><span class="ic"><svg viewBox="0 0 100 100"><use href="#app-fb"/></svg></span><small>Facebook</small></span>
+        <span class="appli"><span class="ic"><svg viewBox="0 0 100 100"><use href="#app-ig"/></svg></span><small>Instagram</small></span>
+      </div>
+      <span class="fil" aria-hidden="true"><i></i></span>
+      <span class="appli" style="animation-delay:.45s"><span class="ic"><svg viewBox="0 0 100 100"><use href="#app-wa"/></svg></span><small>WhatsApp</small></span>
+      <span class="legende">Tes pubs d’un côté. <b>Tes demandes de l’autre.</b></span>
+    </div>
+    <h1 class="t-xl monte d1" id="accroche"><span>On s’occupe de tes pubs.</span><span class="bleu">Toi, de tes clients.</span></h1>
+    <p class="chapo monte d2">On crée tes pubs Facebook et Instagram, on les règle et on les suit pour toi. Chaque personne intéressée t’écrit directement sur WhatsApp.</p>
+    <div class="ctas monte d3">
+      <button type="button" class="btn btn-bleu" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel <span class="fleche">→</span></button>
+      <a class="btn btn-ligne" href="#pubs"><svg viewBox="0 0 24 24"><use href="#i-son-on"/></svg>Écouter nos pubs</a>
+    </div>
+  </div>
+
+  <div class="scene">
+    <div class="eventail" id="eventail">
+      <div class="groupe" id="groupe">
+        <div class="iph t1" data-ecran="fb" data-pub="vizorImg"></div>
+        <div class="iph t3" data-ecran="story" data-pub="audiovizor"></div>
+        <div class="iph t2" data-ecran="ig" data-pub="vizor" data-premiere="1"></div>
+      </div>
+      <span class="sol"></span>
+    </div>
+
+    <!-- Widget : une demande qui arrive -->
+    <div class="wid" id="wid">
+      <button class="wid-notif" type="button" id="wid-notif" aria-label="Ouvrir la demande de Karim">
+        <span class="app"><svg viewBox="0 0 100 100"><use href="#app-wa"/></svg></span>
+        <span class="c"><span class="tt">Demandes · pubs<span>maintenant</span></span><span class="tx">Nouveau contact : <b>Karim</b> a rempli ton formulaire. Pub Instagram Vizor.</span></span>
+      </button>
+      <p class="wid-aide"><i></i>Touche la notification</p>
+      <div class="wid-chat" aria-live="polite">
+        <div class="wc-tete">
+          <button class="ret" type="button" id="wid-retour" aria-label="Revenir"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <span class="pp">K</span>
+          <span><b>Karim</b><small id="wid-statut">opticien · Lyon</small></span>
+          <svg class="tel-ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        </div>
+        <div class="wc-fil" id="wid-fil">
+          <span class="wc-sys">Karim vient de laisser son numéro sous ta pub Vizor. 06 39 98 27 14</span>
+        </div>
+        <div class="wc-saisie">
+          <div class="wc-champ" id="wid-champ"><span class="ph">Message</span></div>
+          <button class="wc-env" type="button" id="wid-env" aria-label="Envoyer"><svg viewBox="0 0 24 24"><path d="M3 20.5 21.5 12 3 3.5 3 10l12 2-12 2z"/></svg></button>
+        </div>
+      </div>
+      <div class="wid-pied"><span>Exemple : prénom et numéro inventés</span><button type="button" id="wid-rejouer">Rejouer</button></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ LES VRAIES PUBS, AVEC LE SON ============ -->
+<section class="pubs" id="pubs"><div class="wrap">
+  <div class="entete">
+    <h2 class="t-l monte">De vraies pubs,<br>faites ici.</h2>
+    <p class="monte d1">Monte le son : voix off, musique et sous-titres, tout est fait chez onlee. <b>Touche « Écouter avec le son ».</b></p>
+  </div>
+  <div class="galerie">
+    <div class="crea monte">
+      <div class="m pause" data-video>
+        <video muted playsinline preload="metadata" poster="/publicites/medias/pub-vizor.webp" src="/publicites/medias/pub-vizor.mp4" data-auto></video>
+        <span class="tag">Vidéo · 30 s</span>
+        <span class="lecture"><svg><use href="#i-lecture"/></svg></span>
+        <button class="son" type="button"><svg><use href="#i-son-off"/></svg><span class="lib">Écouter avec le son</span><span class="eq"><i></i><i></i><i></i></span></button>
+        <span class="prog"><i></i></span>
+      </div>
+      <b>Vizor</b>
+      <small>La pub de Vizor, notre logiciel de suivi du tiers payant pour les opticiens. Vrais écrans du logiciel, voix off, sous-titres.</small>
+    </div>
+    <div class="crea monte d1">
+      <div class="m pause" data-video>
+        <video muted playsinline preload="metadata" poster="/publicites/medias/pub-audiovizor.webp" src="/publicites/medias/pub-audiovizor.mp4" data-auto></video>
+        <span class="tag">Vidéo · 30 s</span>
+        <span class="lecture"><svg><use href="#i-lecture"/></svg></span>
+        <button class="son" type="button"><svg><use href="#i-son-off"/></svg><span class="lib">Écouter avec le son</span><span class="eq"><i></i><i></i><i></i></span></button>
+        <span class="prog"><i></i></span>
+      </div>
+      <b>AudioVizor</b>
+      <small>La même idée pour les audioprothésistes. Une histoire de dossier impayé en 30 secondes, et un formulaire « Ça m’intéresse ».</small>
+    </div>
+    <div class="crea monte d2">
+      <div class="m fixe"><img src="/publicites/medias/pub-vizor-excel.webp" alt="Pub Vizor : Fini les Excel et les classeurs" loading="lazy" decoding="async" width="720" height="900"><span class="tag">Visuel</span></div>
+      <b>Vizor · visuel</b>
+      <small>Un visuel fixe pour le fil Facebook et Instagram, avec une vraie capture du logiciel (données de démonstration).</small>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ LES GUIDES : un article par étape ============ -->
+<section class="guides" id="guides"><div class="wrap">
+  <div class="entete">
+    <h2 class="t-l monte">Un article gratuit<br>pour chaque étape.</h2>
+    <p class="monte d1">Les bases qu’on applique sur nos propres pubs, de la cible jusqu’au rendez-vous. <b>Le reste, on le fait pour toi.</b></p>
+  </div>
+  <div class="liste-guides">
+
+    <article class="guide monte">
+      <div class="vg" aria-hidden="true">
+        <div class="mc">
+          <div class="mc-t">Audience<span>Meta</span></div>
+          <div class="lg"><span>Lieu</span><b>Lyon + 15 km</b></div>
+          <div class="lg"><span>Âge</span><b>30 – 60 ans</b></div>
+          <div class="lg"><span>Intérêts</span><b><i>Optique</i><i>Santé</i></b></div>
+          <div class="jauge"><span>Précise</span><i><em></em></i><span>Large</span></div>
+        </div>
+      </div>
+      <div class="corps">
+        <div class="rep"><span class="num">01</span><small><b>La cible et l’offre</b>4 min de lecture</small></div>
+        <h3>À qui tu parles, et ce que tu proposes</h3>
+        <ul class="tips">
+          <li>Décris ton client en une phrase&nbsp;: qui il est, où il est, ce qui l’embête. Si tu n’y arrives pas, ta pub non plus.</li>
+          <li>Une pub, une seule offre. Pas tout ton catalogue.</li>
+          <li>Donne une raison d’écrire maintenant&nbsp;: un essai, un devis, un créneau.</li>
+        </ul>
+        <div class="pied-g"><a class="lire" href="#" aria-disabled="true">Lire l'article <span class="fleche">→</span></a><span class="bientot">bientôt</span></div>
+      </div>
+    </article>
+
+    <article class="guide monte d1">
+      <div class="vg vg-formats" aria-hidden="true">
+        <div class="cadre-pub f45"><img src="/publicites/medias/pub-vizor-excel.webp" alt="" loading="lazy" decoding="async" width="720" height="900"></div>
+        <div class="cadre-pub f916"><img src="/publicites/medias/pub-audiovizor.webp" alt="" loading="lazy" decoding="async" width="720" height="900"><span class="barre"></span><span class="muet"><svg viewBox="0 0 24 24"><use href="#i-son-off"/></svg></span></div>
+      </div>
+      <div class="corps">
+        <div class="rep"><span class="num">02</span><small><b>Le visuel ou la vidéo</b>5 min de lecture</small></div>
+        <h3>Ta pub se joue dans les premières secondes</h3>
+        <ul class="tips">
+          <li>Montre le vrai&nbsp;: ton produit, ton lieu, ton équipe. On fait plus confiance à ce qui a l’air vrai.</li>
+          <li>Beaucoup regardent sans le son&nbsp;: écris l’essentiel à l’écran.</li>
+          <li>Filme en vertical. Ta pub sera vue sur un téléphone.</li>
+        </ul>
+        <div class="pied-g"><a class="lire" href="#" aria-disabled="true">Lire l'article <span class="fleche">→</span></a><span class="bientot">bientôt</span></div>
+      </div>
+    </article>
+
+    <article class="guide monte d2">
+      <div class="vg" aria-hidden="true">
+        <div class="camp">
+          <div class="ct">Campagne · Demandes<span>Aujourd’hui</span></div>
+          <div class="rg"><span class="inter on"></span><b>Vidéo · 30 s</b><span class="etat">Active</span></div>
+          <div class="rg"><span class="inter on"></span><b>Visuel · fil</b><span class="etat app">Apprentissage</span></div>
+          <div class="rg"><span class="inter"></span><b>Ancienne pub</b><span class="etat off">En pause</span></div>
+        </div>
+      </div>
+      <div class="corps">
+        <div class="rep"><span class="num">03</span><small><b>Les réglages et le suivi</b>6 min de lecture</small></div>
+        <h3>Régler ta campagne sans gaspiller ton budget</h3>
+        <ul class="tips">
+          <li>Commence petit et laisse tourner quelques jours avant de juger&nbsp;: Meta a besoin de temps pour trouver les bonnes personnes.</li>
+          <li>Change une seule chose à la fois, sinon tu ne sais pas ce qui a marché.</li>
+          <li>Regarde ce que te coûte une demande, pas le nombre de «&nbsp;j’aime&nbsp;».</li>
+        </ul>
+        <div class="pied-g"><a class="lire" href="#" aria-disabled="true">Lire l'article <span class="fleche">→</span></a><span class="bientot">bientôt</span></div>
+      </div>
+    </article>
+
+    <article class="guide monte d3">
+      <div class="vg vg-wa" aria-hidden="true">
+        <div class="wa-mini">
+          <div class="wt"><span class="pp">S</span><span><b>Sarah</b><small>en ligne</small></span></div>
+          <div class="wf">
+            <div class="bl">Bonjour, j’ai vu votre pub. Vous faites des devis&nbsp;?<span class="h">09:12</span></div>
+            <div class="bl moi">Bonjour Sarah&nbsp;! Je vous appelle mardi à 10 h ou jeudi à 15 h&nbsp;?<span class="h">09:14 <span class="vu">✓✓</span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="corps">
+        <div class="rep"><span class="num">04</span><small><b>La réponse aux demandes</b>4 min de lecture</small></div>
+        <h3>D’une demande à un vrai rendez-vous</h3>
+        <ul class="tips">
+          <li>Réponds le jour même. Plus tu attends, plus la personne oublie qu’elle t’a écrit.</li>
+          <li>Rappelle son prénom et la pub qu’elle a vue.</li>
+          <li>Propose deux créneaux précis plutôt que «&nbsp;quand vous voulez&nbsp;».</li>
+        </ul>
+        <div class="pied-g"><a class="lire" href="#" aria-disabled="true">Lire l'article <span class="fleche">→</span></a><span class="bientot">bientôt</span></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- ============ APPEL FINAL ============ -->
+<section class="final" id="rdv"><div class="wrap">
+  <div class="bloc monte">
+    <p class="sur"><i></i>30 minutes · en visio ou au téléphone</p>
+    <h2 class="t-xl">Parlons de<br>tes pubs.</h2>
+    <p>Tu nous dis ce que tu vends et à qui. On te montre ce qu’on ferait, avec de vrais exemples. Sans engagement.</p>
+    <div class="actions">
+      <button type="button" class="btn btn-final" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel<span class="rond"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      <span class="petit">Tu choisis ton créneau, c’est confirmé tout de suite. Ou écris-nous : <a href="mailto:contact@onlee.fr">contact@onlee.fr</a></span>
+    </div>
+  </div>
+</div></section>
+
+</main>
+
+<footer class="opied">
+  <div class="opied-wrap">
+    <div class="opied-haut">
+      <div class="opied-marque"><a class="opied-logo" href="/" aria-label="onlee, accueil"></a><p>On conçoit des logiciels sur mesure, on gère tes pubs Facebook et Instagram et on crée des sites internet. Éditeur de Vizor et AudioVizor. À distance, partout en France.</p></div>
+      <div><h3>Services</h3><ul><li><a href="/logiciels/">Logiciels sur mesure</a></li><li><a href="/publicites/">Gestion des pubs</a></li><li><a href="/sites/">Sites internet et SEO</a></li><li><a href="/vizor/?metier=opticien">Vizor et AudioVizor</a></li></ul></div>
+      <div><h3>onlee</h3><ul><li><a href="/realisations/">Réalisations</a></li><li><a href="/#a-propos">À propos</a></li><li><a href="/blog/">Conseils</a></li><li><a href="/#faq">Questions fréquentes</a></li><li><a href="https://vizor.onlee.fr/" target="_blank" rel="noopener">Vizor <small>pour les opticiens</small></a></li><li><a href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener">AudioVizor <small>pour les audioprothésistes</small></a></li></ul></div>
+      <div class="opied-contact"><h3>Contact</h3><ul><li><a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.19.84.85-3.11-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg><span>WhatsApp<small>+33 6 80 71 52 62</small></span></a></li><li><a href="mailto:contact@onlee.fr"><svg viewBox="0 0 24 24" fill="none" stroke="#0E0F13" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><span>E-mail<small>contact@onlee.fr</small></span></a></li><li><a href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h2.3V17H7.1zM8.25 6a1.33 1.33 0 1 1 0 2.66 1.33 1.33 0 0 1 0-2.66zM10.9 9.6h2.2v1h.03c.31-.58 1.06-1.2 2.18-1.2 2.33 0 2.76 1.53 2.76 3.53V17h-2.3v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9V17h-2.3z"/></svg><span>LinkedIn<small>Leeroy Ben-Aich</small></span></a></li></ul></div>
+    </div>
+    <span class="opied-geant" aria-hidden="true"></span>
+    <div class="opied-bas"><span>© <span data-annee>2026</span> onlee · Conçu et codé par onlee</span><nav aria-label="Liens légaux"><a href="/mentions-legales/">Mentions légales</a><a href="/mentions-legales/#cookies">Confidentialité</a><a href="#cookies" id="cookies-gerer" hidden>Gérer les cookies</a></nav></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+/* ---------- Les vraies pubs ---------- */
+var PUBS = {
+  vizor:      { compte:'vizor.onlee', av:'/publicites/medias/profil-vizor.png', video:'/publicites/medias/pub-vizor.mp4', poster:'/publicites/medias/pub-vizor.webp',
+                leg:'Le tiers payant, enfin sous contrôle. Essaie Vizor 7 jours, sans engagement.' },
+  audiovizor: { compte:'audiovizor.onlee', av:'/publicites/medias/profil-audiovizor.png', video:'/publicites/medias/pub-audiovizor.mp4', poster:'/publicites/medias/pub-audiovizor.webp' },
+  vizorImg:   { compte:'Vizor', av:'/publicites/medias/profil-vizor.png', image:'/publicites/medias/pub-vizor-excel.webp',
+                txt:'Fini les Excel et les classeurs : chaque dossier de tiers payant au même endroit.' }
+};
+function U(id, cls){ return '<svg class="'+(cls||'')+'" viewBox="0 0 24 24"><use href="#'+id+'"/></svg>'; }
+
+/* barre d'état iOS : heure, réseau, wifi, batterie */
+function barreEtat(blanc){
+  return '<div class="sb'+(blanc?' blanc':'')+'"><span class="h">9:41</span><span class="ics">' +
+    '<svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7.2" width="3" height="3.8" rx=".9"/><rect x="4.6" y="5" width="3" height="6" rx=".9"/><rect x="9.2" y="2.6" width="3" height="8.4" rx=".9"/><rect x="13.8" y="0" width="3" height="11" rx=".9"/></svg>' +
+    '<svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 2.3c2.1 0 4 .8 5.5 2.1l1.1-1.1A9.4 9.4 0 0 0 7.5.7 9.4 9.4 0 0 0 .9 3.3L2 4.4a7.9 7.9 0 0 1 5.5-2.1z"/><path d="M7.5 5.3c1.3 0 2.4.5 3.3 1.2l1.1-1.1A6.3 6.3 0 0 0 7.5 3.7c-1.7 0-3.2.6-4.4 1.7l1.1 1.1c.9-.7 2-1.2 3.3-1.2z"/><path d="M7.5 8.2c.5 0 1 .2 1.3.5L7.5 10.2 6.2 8.7c.3-.3.8-.5 1.3-.5z"/></svg>' +
+    '<svg width="25" height="12" viewBox="0 0 25 12"><rect x=".5" y=".5" width="21.5" height="11" rx="3.4" fill="none" stroke="currentColor" opacity=".38"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/><path d="M23.3 4v4c.8-.3 1.3-1.1 1.3-2s-.5-1.7-1.3-2z" fill="currentColor" opacity=".45"/></svg>' +
+    '</span></div>';
+}
+function videoHTML(p, premiere){
+  return '<video muted loop playsinline '+(premiere?'preload="auto" autoplay':'preload="metadata"')+' poster="'+p.poster+'" src="'+p.video+'" data-auto></video>';
+}
+var miniSon = '<button class="mini-son" type="button" aria-label="Activer le son">'+U('i-son-off')+'</button>';
+
+/* ---------- Les trois écrans ---------- */
+function ecranIG(p, premiere){
+  return '<div class="fond-sb"></div>' + barreEtat(false) +
+    '<div class="ig">' +
+      '<div class="post-tete"><span class="av"><img src="'+p.av+'" alt="" loading="lazy" decoding="async"></span><span><b>'+p.compte+'</b><small>Sponsorisé</small></span><span class="pts"><i></i><i></i><i></i></span></div>' +
+      '<div class="ig-media">'+videoHTML(p, premiere)+miniSon+'</div>' +
+      '<div class="ig-cta">En savoir plus'+U('i-chev')+'</div>' +
+      '<div class="ig-act">'+U('i-coeur','o')+U('i-bulle','o')+U('i-envoi','o')+'<span class="sv">'+U('i-signet','o')+'</span></div>' +
+      '<div class="ig-leg"><b>'+p.compte+'</b> '+p.leg+'</div>' +
+    '</div>' +
+    '<div class="ig-tabs">'+U('i-maison')+U('i-loupe','o')+U('i-plus','o')+U('i-reels','o')+'<span class="moi"></span></div>' +
+    '<span class="indic"></span>';
+}
+function ecranFB(p){
+  return '<div class="fond-sb"></div>' + barreEtat(false) +
+    '<div class="fb"><div class="bande"></div>' +
+      '<div class="post-tete"><span class="av"><img src="'+p.av+'" alt="" loading="lazy" decoding="async"></span><span><b>'+p.compte+'</b><small>Sponsorisé · <svg viewBox="0 0 24 24"><use href="#i-monde"/></svg></small></span><span class="pts"><i></i><i></i><i></i></span><svg class="x" viewBox="0 0 24 24"><use href="#i-x"/></svg></div>' +
+      '<div class="fb-txt">'+p.txt+'</div>' +
+      '<div class="fb-media"><img src="'+p.image+'" alt="" loading="lazy" decoding="async"></div>' +
+      '<div class="fb-lien"><span><small>Logiciel pour opticiens</small><b>Essaie Vizor 7 jours</b></span><i>En savoir plus</i></div>' +
+    '</div>' +
+    '<div class="fb-tabs"><svg class="on" viewBox="0 0 24 24"><use href="#i-maison"/></svg>'+U('i-play')+U('i-amis')+U('i-boutique')+U('i-cloche')+U('i-menu')+'</div>' +
+    '<span class="indic"></span>';
+}
+function ecranStory(p){
+  return barreEtat(true) +
+    '<div class="story"><div class="fondu" style="background-image:url('+p.poster+')"></div>' +
+      '<div class="med">'+videoHTML(p, false)+'</div>' +
+      '<div class="progs"><i></i><i></i><i></i></div>' +
+      '<div class="qui"><span class="av"><img src="'+p.av+'" alt="" loading="lazy" decoding="async"></span><span><b>'+p.compte+'</b><small>Sponsorisé</small></span></div>' +
+      miniSon +
+      '<div class="bas">'+U('i-chev').replace('<svg','<svg style="transform:rotate(-90deg)"')+'<span>En savoir plus</span></div>' +
+    '</div>' +
+    '<span class="indic blanc"></span>';
+}
+function construire(el){
+  var p = PUBS[el.dataset.pub], type = el.dataset.ecran, contenu;
+  if (type === 'fb') contenu = ecranFB(p);
+  else if (type === 'story') contenu = ecranStory(p);
+  else contenu = ecranIG(p, !!el.dataset.premiere);
+  el.innerHTML =
+    '<span class="bt g b-action"></span><span class="bt g b-vol1"></span><span class="bt g b-vol2"></span><span class="bt d b-power"></span>' +
+    '<div class="cadre"><div class="verre"><div class="ecran">' + contenu + '<span class="ilot"></span><span class="reflet"></span></div></div></div>';
+}
+document.querySelectorAll('.iph[data-ecran]').forEach(construire);
+
+/* ---------- Le son : une seule vidéo avec le son à la fois ---------- */
+var videos = [].slice.call(document.querySelectorAll('video'));
+function majBoutons(v){
+  var on = !v.muted && !v.paused;
+  var m = v.closest('[data-video]');
+  if (m) {
+    var b = m.querySelector('.son');
+    b.classList.toggle('on', !v.muted);
+    b.querySelector('svg').innerHTML = '<use href="#'+(v.muted?'i-son-off':'i-son-on')+'"/>';
+    b.querySelector('.lib').textContent = v.muted ? 'Écouter avec le son' : 'Son activé';
+    b.setAttribute('aria-label', v.muted ? 'Activer le son' : 'Couper le son');
+    m.classList.toggle('pause', v.paused);
+  }
+  var ms = v.parentNode.parentNode.querySelector('.mini-son') || (v.closest('.ecran') && v.closest('.ecran').querySelector('.mini-son'));
+  if (ms) {
+    ms.classList.toggle('on', !v.muted);
+    ms.innerHTML = U(v.muted ? 'i-son-off' : 'i-son-on');
+    ms.setAttribute('aria-label', v.muted ? 'Activer le son' : 'Couper le son');
+  }
+}
+function avecSon(v){
+  videos.forEach(function(x){ if (x !== v && !x.muted) { x.muted = true; } });
+  v.muted = false;
+  try { v.currentTime = 0; } catch(e){}
+  v.volume = 1;
+  v.play().catch(function(){});
+}
+function sansSon(v){ v.muted = true; }
+videos.forEach(function(v){
+  ['volumechange','play','pause'].forEach(function(ev){ v.addEventListener(ev, function(){ majBoutons(v); }); });
+  var m = v.closest('[data-video]');
+  if (m) {
+    var barre = m.querySelector('.prog i');
+    v.addEventListener('timeupdate', function(){ if (v.duration) barre.style.width = (v.currentTime / v.duration * 100) + '%'; });
+    v.addEventListener('ended', function(){ v.muted = true; v.currentTime = 0; v.play().catch(function(){}); });
+    m.querySelector('.son').addEventListener('click', function(e){
+      e.stopPropagation();
+      if (v.muted) avecSon(v); else sansSon(v);
+    });
+    // toucher la vidéo : lecture avec le son, puis pause / reprise
+    m.addEventListener('click', function(){
+      if (v.muted) avecSon(v);
+      else if (v.paused) v.play().catch(function(){});
+      else v.pause();
+    });
+  } else {
+    v.loop = true;
+  }
+});
+document.querySelectorAll('.mini-son').forEach(function(b){
+  b.addEventListener('click', function(e){
+    e.stopPropagation();
+    var v = b.closest('.ecran').querySelector('video');
+    if (v.muted) avecSon(v); else sansSon(v);
+  });
+});
+
+/* vidéos jouées (muettes) seulement quand elles sont visibles */
+if ('IntersectionObserver' in window) {
+  var obsV = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v = e.target;
+      if (e.isIntersecting) { v.play().catch(function(){}); }
+      else { v.pause(); if (!v.muted) v.muted = true; }
+    });
+  }, {threshold:.35});
+  videos.forEach(function(v){ obsV.observe(v); });
+} else {
+  videos.forEach(function(v){ v.play().catch(function(){}); });
+}
+
+/* le bouton « En savoir plus » d'Instagram passe au bleu, comme dans l'appli */
+setTimeout(function(){ document.querySelectorAll('.ig-cta').forEach(function(c){ c.classList.add('actif'); }); }, 3200);
+
+/* ---------- Éventail : suit doucement la souris ---------- */
+var ev = document.getElementById('eventail'), gr = document.getElementById('groupe'), evTic = false;
+ev.addEventListener('mousemove', function(e){
+  if (evTic) return; evTic = true;
+  requestAnimationFrame(function(){
+    var r = ev.getBoundingClientRect(), x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+    gr.style.transition = 'transform .7s cubic-bezier(.16,1,.3,1)';
+    gr.style.transform = 'rotateX('+(6 - y*8)+'deg) rotateY('+(-13 + x*18)+'deg)';
+    evTic = false;
+  });
+});
+ev.addEventListener('mouseenter', function(){ ev.classList.add('ouvert'); });
+ev.addEventListener('mouseleave', function(){ ev.classList.remove('ouvert'); gr.style.transition = ''; gr.style.transform = ''; });
+
+/* ---------- Widget : la demande de Karim ---------- */
+var wid = document.getElementById('wid'), fil = document.getElementById('wid-fil'), champ = document.getElementById('wid-champ'),
+    env = document.getElementById('wid-env'), statut = document.getElementById('wid-statut'), minut = [], etape = 0;
+var MSG = 'Bonjour Karim, merci pour ta demande ! Je peux t’appeler aujourd’hui pour te montrer Vizor ?';
+function tard(fn, ms){ minut.push(setTimeout(fn, ms)); }
+function stop(){ minut.forEach(clearTimeout); minut = []; }
+function heure(){ var d = new Date(); return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2); }
+function vider(){
+  stop(); etape = 0;
+  fil.querySelectorAll('.bul,.tape').forEach(function(x){ x.remove(); });
+  champ.innerHTML = '<span class="ph">Message</span>';
+  statut.textContent = 'opticien · Lyon'; statut.classList.remove('ecrit');
+}
+function taper(){
+  etape = 1; var i = 0;
+  champ.innerHTML = '<span class="t"></span><i class="cur"></i>';
+  var t = champ.querySelector('.t');
+  (function suite(){
+    if (i <= MSG.length) { t.textContent = MSG.slice(0, i); i += 2; tard(suite, 34); }
+    else { etape = 2; tard(envoyer, 650); }
+  })();
+}
+function envoyer(){
+  if (etape === 3) return;
+  stop(); etape = 3;
+  env.classList.add('clic'); setTimeout(function(){ env.classList.remove('clic'); }, 180);
+  champ.innerHTML = '<span class="ph">Message</span>';
+  var b = document.createElement('div'); b.className = 'bul moi entre';
+  b.innerHTML = MSG + '<span class="h">'+heure()+' <span class="vu">✓✓</span></span>';
+  fil.appendChild(b);
+  tard(function(){ b.querySelector('.vu').classList.add('lu'); }, 1100);
+  tard(function(){
+    statut.textContent = 'écrit…'; statut.classList.add('ecrit');
+    var tp = document.createElement('div'); tp.className = 'tape'; tp.innerHTML = '<i></i><i></i><i></i>'; fil.appendChild(tp);
+    tard(function(){
+      tp.remove(); statut.textContent = 'en ligne'; statut.classList.remove('ecrit');
+      var r = document.createElement('div'); r.className = 'bul entre';
+      r.innerHTML = 'Oui, vers 14 h c’est parfait. Merci !<span class="h">'+heure()+'</span>';
+      fil.appendChild(r);
+    }, 1900);
+  }, 1700);
+}
+function ouvrir(){ vider(); wid.classList.add('ouvert'); tard(taper, 700); }
+document.getElementById('wid-notif').addEventListener('click', ouvrir);
+env.addEventListener('click', function(){ if (etape >= 1 && etape < 3) envoyer(); });
+document.getElementById('wid-retour').addEventListener('click', function(){ vider(); wid.classList.remove('ouvert'); });
+document.getElementById('wid-rejouer').addEventListener('click', function(){ vider(); tard(taper, 300); });
+var t0 = Date.now();
+function faireArriver(){ setTimeout(function(){ wid.classList.add('arrive'); }, Math.max(500, 2300 - (Date.now() - t0))); }
+if ('IntersectionObserver' in window) {
+  var obsW = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { faireArriver(); obsW.disconnect(); } }); }, {threshold:.5});
+  obsW.observe(wid);
+}
+setTimeout(faireArriver, 6000); // filet de sécurité
+if (!('IntersectionObserver' in window)) faireArriver();
+
+/* ---------- Apparitions douces ---------- */
+setTimeout(function(){ document.querySelectorAll('.haut .monte').forEach(function(el){ el.classList.add('vu'); }); }, 60);
+if ('IntersectionObserver' in window) {
+  var obsM = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('vu'); obsM.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.monte').forEach(function(el){ obsM.observe(el); });
+} else document.querySelectorAll('.monte').forEach(function(el){ el.classList.add('vu'); });
+
+
+})();
+</script>
+<script>
+/* ---------- Accroche : 3 propositions (?a=1|2|3), la 1 par défaut ---------- */
+(function(){
+  var ACCROCHES = {
+    '1': ['On gère tes pubs.', 'Toi, tu reçois les clients.'],
+    '2': ['On s’occupe de tes pubs.', 'Toi, de tes clients.'],
+    '3': ['On lance tes pubs.', 'Les clients t’écrivent.']
+  };
+  var h1 = document.getElementById('accroche');
+  var liens = document.querySelectorAll('.choix a');
+  function poser(n){
+    if (!ACCROCHES[n]) n = '2';
+    var l = ACCROCHES[n], s = h1.querySelectorAll('span');
+    s[0].textContent = l[0]; s[1].textContent = l[1];
+    liens.forEach(function(a){ a.classList.toggle('on', a.dataset.a === n); });
+    ajuster();
+  }
+  /* taille du titre : la plus grande possible pour tenir sur 2 lignes */
+  function ajuster(){
+    h1.classList.remove('libre'); h1.classList.add('ajuste');
+    h1.style.fontSize = '100px';
+    var dispo = h1.clientWidth, large = 0;
+    h1.querySelectorAll('span').forEach(function(s){ large = Math.max(large, s.getBoundingClientRect().width); });
+    var t = Math.min(96, Math.floor(100 * dispo / large * 0.93));
+    if (t < 30) { h1.classList.remove('ajuste'); h1.classList.add('libre'); t = Math.min(46, Math.max(38, Math.round(dispo / 7.6))); }
+    h1.style.fontSize = t + 'px';
+  }
+  liens.forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      history.replaceState(null, '', '?a=' + a.dataset.a + location.hash);
+      poser(a.dataset.a);
+    });
+  });
+  poser('2');   /* accroche validée : « On s’occupe de tes pubs. / Toi, de tes clients. » */
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuster);
+  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(ajuster, 120); });
+  /* guides : les articles arrivent bientôt, le lien ne fait rien pour l'instant */
+  document.querySelectorAll('.lire[aria-disabled="true"]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); }); });
+})();
+</script>
+<script src="/js/commun.js" defer></script>
+<script defer src="/js/cal.js"></script>
+<script defer src="/js/cta-express.js" data-logo="/assets/onlee-logo-ink.png" data-photo="/assets/leeroy-visage.webp"></script>
+<script src="/js/trafic.js" defer></script>
+<script src="/cookies.js?v=boite1" defer></script>
+<script src="/js/retour.js" defer></script>
+</body>
+</html>

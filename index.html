@@ -1,696 +1,763 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="facebook-domain-verification" content="ao0n1ducovcn8ao95feumjklktiace" />
-<title>onlee · logiciels sur mesure, intégration et agents IA</title>
-<meta name="description" content="onlee conçoit des logiciels sur mesure, connecte les outils de votre entreprise entre eux et y branche des automatisations et des agents IA. Éditeur de Vizor, AudioVizor et Noga. À distance, partout en France." />
-
-<link rel="canonical" href="https://onlee.fr/" />
-<meta name="robots" content="index, follow" />
-<meta name="theme-color" content="#FBFBFA" />
-<meta property="og:site_name" content="onlee" />
-<meta property="og:title" content="onlee · logiciels sur mesure, intégration et agents IA" />
-<meta property="og:description" content="Logiciels sur mesure, intégration de vos outils, automatisations et agents IA, sites internet. Éditeur de Vizor, AudioVizor et Noga. Partout en France." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://onlee.fr/" />
-<meta property="og:image" content="https://onlee.fr/assets/og-cover-logiciels.png" />
-<meta property="og:locale" content="fr_FR" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="onlee · logiciels sur mesure, intégration et agents IA" />
-<meta name="twitter:description" content="Logiciels sur mesure, intégration de vos outils, automatisations et agents IA. Éditeur de Vizor, AudioVizor et Noga." />
-<meta name="twitter:image" content="https://onlee.fr/assets/og-cover-logiciels.png" />
-
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4" />
-<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png?v=4" />
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4" />
-<link rel="preload" href="/assets/fonts/playfair-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/instrument-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style>
-@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/instrument-sans-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/instrument-sans-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/playfair-display-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(/assets/fonts/playfair-display-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-</style>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>onlee · logiciels sur mesure, pubs Facebook et Instagram, sites internet</title>
+<meta name="description" content="onlee conçoit des logiciels sur mesure, gère tes pubs Facebook et Instagram et crée des sites rapides, trouvés sur Google. Éditeur de Vizor et AudioVizor.">
+<link rel="canonical" href="https://onlee.fr/">
+<link rel="alternate" hreflang="fr" href="https://onlee.fr/">
+<link rel="alternate" hreflang="en" href="https://onlee.fr/en/">
+<link rel="alternate" hreflang="x-default" href="https://onlee.fr/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:site_name" content="onlee">
+<meta property="og:title" content="onlee · logiciels sur mesure, pubs Facebook et Instagram, sites internet">
+<meta property="og:description" content="onlee conçoit des logiciels sur mesure, gère tes pubs Facebook et Instagram et crée des sites rapides, trouvés sur Google. Éditeur de Vizor et AudioVizor.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://onlee.fr/">
+<meta property="og:image" content="https://onlee.fr/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="onlee · logiciels sur mesure, pubs Facebook et Instagram, sites internet">
+<meta name="twitter:description" content="onlee conçoit des logiciels sur mesure, gère tes pubs Facebook et Instagram et crée des sites rapides, trouvés sur Google. Éditeur de Vizor et AudioVizor.">
+<meta name="twitter:image" content="https://onlee.fr/assets/og-cover.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="facebook-domain-verification" content="ao0n1ducovcn8ao95feumjklktiace">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Archivo:wdth,wght@125,800;125,900&family=Patrick+Hand&display=swap" data-polices onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Archivo:wdth,wght@125,800;125,900&family=Patrick+Hand&display=swap"></noscript>
+<link rel="stylesheet" href="/css/p-aee0d05472.css" data-sources="/css/commun.css,/css/accueil.css,/css/refonte.css,/css/haut-v1.css,/css/realisations.css,/css/cta-express.css">
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
     {
-      "@type": "Organization",
-      "@id": "https://onlee.fr/#organization",
-      "name": "onlee",
-      "alternateName": ["onlee studio", "onlee agence", "onlee logiciels", "onlee.fr"],
-      "url": "https://onlee.fr/",
-      "logo": { "@type": "ImageObject", "url": "https://onlee.fr/assets/onlee-logo-ink.png" },
-      "image": "https://onlee.fr/assets/og-cover-logiciels.png",
-      "description": "Entreprise française de logiciels : logiciels sur mesure, intégration des outils d'une entreprise, automatisations et agents IA, sites internet professionnels. Éditeur de Vizor, AudioVizor et Noga.",
-      "email": "contact@onlee.fr",
-      "telephone": "+33680715262",
-      "areaServed": { "@type": "Country", "name": "France" },
-      "address": { "@type": "PostalAddress", "addressCountry": "FR" },
-      "founder": {
-        "@type": "Person",
-        "name": "Leeroy Ben-Aich",
-        "jobTitle": "Fondateur",
-        "sameAs": ["https://www.linkedin.com/in/leeroy-benaich-a04544412/"],
-        "alumniOf": { "@type": "EducationalOrganization", "name": "Developers Institute" },
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "name": "GenAI & Machine Learning Bootcamp",
-          "credentialCategory": "certificate",
-          "recognizedBy": { "@type": "EducationalOrganization", "name": "Developers Institute" },
-          "url": "https://octopus.developers.institute/courses/di_learning_certificate/bcc39b0d-60c5-451e-90a4-4f6ebf914c96"
-        }
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "email": "contact@onlee.fr",
-        "telephone": "+33680715262",
-        "areaServed": "FR",
-        "availableLanguage": ["French", "English"]
-      },
-      "knowsAbout": ["Logiciel sur mesure", "Intégration de logiciels", "Intégration API", "Connexion CRM", "Automatisation des processus", "Agent IA", "Création de site internet", "Suivi du tiers payant opticien", "Suivi du tiers payant audioprothésiste", "Gestion RH commerce"],
-      "sameAs": ["https://www.linkedin.com/in/leeroy-benaich-a04544412/", "https://www.instagram.com/onlee.crew/"]
+     "@type": "Question",
+     "name": "« Ça va prendre combien de temps ? »",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ça dépend de ce que ton logiciel doit faire. Je te montre vite une première maquette cliquable, puis on construit par étapes : tu utilises une première version avant que tout soit fini. Tu as un calendrier précis après notre appel."
+     }
     },
     {
-      "@type": "ProfessionalService",
-      "@id": "https://onlee.fr/#service",
-      "name": "onlee",
-      "url": "https://onlee.fr/",
-      "image": "https://onlee.fr/assets/og-cover-logiciels.png",
-      "description": "Conception de logiciels sur mesure, intégration et connexion des outils d'entreprise (logiciel métier, CRM, messagerie, agenda, facturation, tableurs, API), automatisations et agents IA, sites internet professionnels. Accompagnement à distance, partout en France.",
-      "email": "contact@onlee.fr",
-      "telephone": "+33680715262",
-      "areaServed": { "@type": "Country", "name": "France" },
-      "address": { "@type": "PostalAddress", "addressCountry": "FR" },
-      "parentOrganization": { "@id": "https://onlee.fr/#organization" },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Services onlee",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logiciels sur mesure", "url": "https://onlee.fr/studio/", "description": "Conception et développement d'un logiciel adapté au fonctionnement de votre entreprise." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Intégration sur mesure", "url": "https://onlee.fr/studio/#integration", "description": "Connexion des outils existants entre eux (logiciel métier, CRM, messagerie, agenda, facturation, tableurs, API) pour éviter la double saisie." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatisations et agents IA", "url": "https://onlee.fr/studio/#ia", "description": "Automatisations et agents IA branchés sur vos outils, avec validation humaine des actions importantes." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sites internet professionnels", "url": "https://onlee.fr/studio/#sites", "description": "Sites vitrines rapides, référencés et faciles à faire évoluer." } }
-        ]
-      }
+     "@type": "Question",
+     "name": "« Ça coûte combien ? »",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chaque projet est différent, alors je ne donne pas de prix au hasard. Après un appel de 30 minutes, gratuit et sans engagement, tu reçois un devis clair avant qu’on commence."
+     }
     },
     {
-      "@type": "WebSite",
-      "@id": "https://onlee.fr/#website",
-      "url": "https://onlee.fr/",
-      "name": "onlee",
-      "inLanguage": "fr-FR",
-      "publisher": { "@id": "https://onlee.fr/#organization" }
+     "@type": "Question",
+     "name": "« Je suis nul en informatique. »",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Aucun souci, c’est mon travail. Je te parle simplement, je te forme, toi et ton équipe, et je reste joignable après la mise en ligne."
+     }
     },
     {
-      "@type": "SoftwareApplication", "name": "Vizor", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://vizor.onlee.fr",
-      "description": "Logiciel de suivi du tiers payant pour les magasins d'optique, utilisé à côté du logiciel métier : ventes du jour, restes à encaisser et remboursements attendus sur un seul écran, export Excel pour le comptable.",
-      "offers": { "@type": "Offer", "price": "39.99", "priceCurrency": "EUR", "category": "SaaS" }, "publisher": { "@id": "https://onlee.fr/#organization" }
+     "@type": "Question",
+     "name": "« J’ai tout sur Excel, je dois tout ressaisir ? »",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non. On reprend tes données existantes (Excel, exports de ton ancien outil) : tu n’as rien à retaper."
+     }
     },
     {
-      "@type": "SoftwareApplication", "name": "AudioVizor", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://audiovizor.onlee.fr/",
-      "description": "Logiciel de suivi du tiers payant pour les audioprothésistes, utilisé à côté du logiciel métier : dossiers binauraux, essai de 30 jours, restes à charge, compte rendu ORL, SAV et planning d'équipe.",
-      "offers": { "@type": "Offer", "price": "39.99", "priceCurrency": "EUR", "category": "SaaS" }, "publisher": { "@id": "https://onlee.fr/#organization" }
+     "@type": "Question",
+     "name": "« Ça marche sur mon téléphone ? »",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. Tout ce qu’on construit s’utilise sur ordinateur, tablette et téléphone."
+     }
     },
     {
-      "@type": "SoftwareApplication", "name": "Noga", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://noga.onlee.fr/",
-      "description": "Logiciel RH pour les boutiques et commerces : congés, arrêts maladie, planning des absences et bilan du mois pour le comptable. Pas de fiche de paie.",
-      "offers": { "@type": "AggregateOffer", "lowPrice": "19", "highPrice": "39", "priceCurrency": "EUR", "offerCount": "3", "category": "SaaS" }, "publisher": { "@id": "https://onlee.fr/#organization" }
+     "@type": "Question",
+     "name": "« Pour les pubs, il faut un gros budget ? »",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non. On commence petit, on regarde ce que te coûte une demande, puis on ajuste chaque semaine."
+     }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Que fait onlee ?", "acceptedAnswer": { "@type": "Answer", "text": "onlee est une entreprise française de logiciels. Nous concevons des logiciels sur mesure, nous connectons les outils des entreprises entre eux, nous mettons en place des automatisations et des agents IA, et nous créons des sites internet professionnels. Nous éditons aussi nos propres logiciels : Vizor, AudioVizor et Noga." } },
-        { "@type": "Question", "name": "Qu'est-ce que l'intégration sur mesure ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est relier les outils que vous utilisez déjà : logiciel métier, CRM, messagerie, agenda, facturation, tableurs. Quand un outil propose une API ou un export, nous faisons circuler les informations entre eux pour éviter la double saisie. Si une connexion n'est pas possible, nous vous le disons dès le départ." } },
-        { "@type": "Question", "name": "Que peut faire un agent IA dans mon entreprise ?", "acceptedAnswer": { "@type": "Answer", "text": "Trier des e-mails et préparer des brouillons de réponse, lire un document et pré-remplir une fiche, résumer un échange ou une demande. L'agent travaille avec vos outils, et une personne de votre équipe valide avant tout envoi ou toute action importante." } },
-        { "@type": "Question", "name": "Quels logiciels édite onlee ?", "acceptedAnswer": { "@type": "Answer", "text": "Trois logiciels : Vizor, le suivi du tiers payant des opticiens ; AudioVizor, le suivi du tiers payant des audioprothésistes ; Noga, la gestion RH des boutiques (congés, arrêts maladie, planning des absences, bilan du mois). Vizor et AudioVizor s'utilisent à côté de votre logiciel métier. Noga ne fait pas de fiche de paie." } },
-        { "@type": "Question", "name": "Où intervenez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Partout en France, à distance. Les échanges se font en visio, par téléphone ou sur WhatsApp, et les outils sont installés en ligne." } },
-        { "@type": "Question", "name": "Comment contacter onlee ?", "acceptedAnswer": { "@type": "Answer", "text": "Par WhatsApp au +33 6 80 71 52 62, par email à contact@onlee.fr, ou en réservant un créneau d'appel en ligne." } }
-      ]
+     "@type": "Question",
+     "name": "« Tu me mets premier sur Google ? »",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Personne d’honnête ne peut te le promettre. Par contre, on soigne tout ce qui compte : vitesse, fiche Google, textes, pages lisibles par les IA, et un article utile par mois si tu veux."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "« On peut se voir ? »",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On travaille à distance, avec des entreprises partout en France. On se parle en visio sur Google Meet : 30 minutes suffisent pour voir si je peux t’aider, et je te le dis franchement si ce n’est pas le cas."
+     }
     }
-  ]
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://onlee.fr/#organization",
+   "name": "onlee",
+   "alternateName": [
+    "onlee agence",
+    "onlee.fr"
+   ],
+   "url": "https://onlee.fr/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://onlee.fr/assets/onlee-logo-ink.png"
+   },
+   "image": "https://onlee.fr/assets/og-cover.png",
+   "description": "Entreprise française : logiciels sur mesure, gestion des pubs Facebook et Instagram, sites internet et SEO. Éditeur de Vizor (opticiens) et AudioVizor (audioprothésistes).",
+   "email": "contact@onlee.fr",
+   "telephone": "+33680715262",
+   "areaServed": {
+    "@type": "Country",
+    "name": "France"
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "FR"
+   },
+   "founder": {
+    "@type": "Person",
+    "name": "Leeroy Ben-Aich",
+    "jobTitle": "Fondateur",
+    "sameAs": [
+     "https://www.linkedin.com/in/leeroy-benaich-a04544412/"
+    ]
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "contact@onlee.fr",
+    "telephone": "+33680715262",
+    "areaServed": "FR",
+    "availableLanguage": [
+     "French",
+     "English"
+    ]
+   },
+   "knowsAbout": [
+    "Logiciel sur mesure",
+    "CRM sur mesure",
+    "Automatisation",
+    "Publicité Facebook",
+    "Publicité Instagram",
+    "Création de site internet",
+    "Référencement SEO",
+    "Suivi du tiers payant opticien",
+    "Suivi du tiers payant audioprothésiste"
+   ],
+   "sameAs": [
+    "https://www.linkedin.com/in/leeroy-benaich-a04544412/"
+   ]
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://onlee.fr/#service",
+   "name": "onlee",
+   "url": "https://onlee.fr/",
+   "image": "https://onlee.fr/assets/og-cover.png",
+   "description": "Logiciels sur mesure, gestion des pubs Facebook et Instagram, sites internet et SEO. À distance, partout en France.",
+   "email": "contact@onlee.fr",
+   "telephone": "+33680715262",
+   "areaServed": {
+    "@type": "Country",
+    "name": "France"
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "FR"
+   },
+   "parentOrganization": {
+    "@id": "https://onlee.fr/#organization"
+   },
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services onlee",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Logiciels sur mesure",
+       "url": "https://onlee.fr/logiciels/"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Gestion des pubs Facebook et Instagram",
+       "url": "https://onlee.fr/publicites/"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Sites internet et SEO",
+       "url": "https://onlee.fr/sites/"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "SoftwareApplication",
+       "name": "Vizor",
+       "applicationCategory": "BusinessApplication",
+       "url": "https://vizor.onlee.fr/"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "SoftwareApplication",
+       "name": "AudioVizor",
+       "applicationCategory": "BusinessApplication",
+       "url": "https://audiovizor.onlee.fr/"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://onlee.fr/#website",
+   "url": "https://onlee.fr/",
+   "name": "onlee",
+   "inLanguage": "fr-FR",
+   "publisher": {
+    "@id": "https://onlee.fr/#organization"
+   }
+  }
+ ]
 }
 </script>
-
-<style>
-  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-  :root{
-    --paper:#FBFBFA; --paper-2:#F3F4F6; --card:#FFFFFF;
-    --ink:#0B1220; --muted:#6B7180; --soft:#9AA0AC;
-    --line:rgba(11,18,32,.09); --line-2:rgba(11,18,32,.16);
-    --blue:#0055FF; --blue-hi:#2E70FF; --blue-soft:rgba(0,85,255,.10);
-    --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
-    --sans:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-    --ease:cubic-bezier(.22,.61,.36,1);
-    --maxw:1180px; --gutter:clamp(20px,5vw,40px); --radius:20px;
-  }
-  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
-  body{ background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
-  img{ max-width:100%; display:block; }
-  a{ color:inherit; text-decoration:none; }
-  ::selection{ background:var(--blue-soft); color:var(--ink); }
-  h1,h2,h3{ font-family:var(--serif); font-weight:500; letter-spacing:-.02em; line-height:1.06; text-wrap:balance; }
-  em{ font-style:italic; color:var(--blue); }
-  .wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding-inline:var(--gutter); }
-  section{ padding-block:clamp(64px,9vw,120px); position:relative; }
-  .alt{ background:var(--paper-2); }
-  .eyebrow{ display:inline-flex; align-items:center; gap:9px; font-family:var(--sans); font-size:12.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
-  .eyebrow::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--blue); flex:none; }
-  .lead{ color:var(--muted); font-size:clamp(16px,1.6vw,18.5px); max-width:60ch; }
-
-  /* buttons */
-  .pill{ display:inline-flex; align-items:center; justify-content:center; gap:9px; font-family:var(--sans); font-size:15px; font-weight:600; padding:13px 24px; border-radius:999px; border:1px solid transparent; cursor:pointer; transition:transform .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease); white-space:nowrap; }
-  .pill-solid{ background:var(--blue); color:#fff; box-shadow:0 14px 30px -14px rgba(0,85,255,.6); }
-  .pill-solid:hover{ background:var(--blue-hi); transform:translateY(-2px); }
-  .pill-ghost{ background:transparent; color:var(--ink); border-color:var(--line-2); }
-  .pill-ghost:hover{ border-color:var(--ink); transform:translateY(-2px); }
-
-  /* header */
-  #head{ position:sticky; top:0; z-index:60; background:color-mix(in srgb, var(--paper) 80%, transparent); backdrop-filter:saturate(180%) blur(14px); border-bottom:1px solid transparent; transition:border-color .3s var(--ease), background .3s var(--ease); }
-  #head.scrolled{ border-bottom-color:var(--line); }
-  .bar{ max-width:var(--maxw); margin:0 auto; padding:14px var(--gutter); display:flex; align-items:center; justify-content:space-between; gap:20px; }
-  .brand{ display:inline-flex; align-items:center; gap:11px; }
-  .brand img{ height:26px; width:auto; }
-  .brand span{ font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--soft); }
-  nav.links{ display:flex; gap:clamp(22px,2.4vw,36px); }
-  nav.links a{ font-size:15px; font-weight:500; color:var(--ink); position:relative; padding-bottom:3px; transition:color .3s var(--ease); }
-  nav.links a::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--blue); border-radius:2px; transform:scaleX(0); transform-origin:left; transition:transform .3s var(--ease); }
-  nav.links a:hover{ color:var(--blue); } nav.links a:hover::after{ transform:scaleX(1); }
-  .bar-right{ display:flex; align-items:center; gap:14px; }
-  .lang{ display:inline-flex; align-items:center; gap:6px; background:none; border:0; cursor:pointer; font-family:var(--sans); font-size:13px; font-weight:600; color:var(--soft); }
-  .lang span[data-lang]{ transition:color .2s; } .lang span.on{ color:var(--ink); }
-  .lang .sep{ color:var(--line-2); }
-  .burger{ display:none; flex-direction:column; justify-content:center; gap:5px; width:42px; height:42px; padding:10px; background:none; border:1px solid var(--line); border-radius:12px; cursor:pointer; }
-  .burger span{ height:2px; background:var(--ink); border-radius:2px; transition:transform .3s var(--ease), opacity .2s; }
-  .mobile-nav{ display:none; flex-direction:column; padding:8px var(--gutter) 24px; border-top:1px solid var(--line); background:var(--paper); }
-  .mobile-nav:not([hidden]){ display:flex; }
-  .mobile-nav a{ padding:15px 2px; font-family:var(--serif); font-size:21px; border-bottom:1px solid var(--line); }
-  .mobile-nav a.mnav-cta{ margin-top:16px; border:0; background:var(--blue); color:#fff; text-align:center; border-radius:999px; font-family:var(--sans); font-size:15px; font-weight:600; padding:15px; }
-
-  /* hero */
-  .hero{ padding-top:clamp(40px,6vw,72px); overflow:hidden; }
-  .hero::before{ content:""; position:absolute; top:-30%; right:-10%; width:70vw; height:70vw; max-width:900px; max-height:900px; background:radial-gradient(circle at 50% 50%, rgba(0,85,255,.12), transparent 62%); pointer-events:none; z-index:0; }
-  .hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns:1.08fr .92fr; gap:clamp(30px,5vw,68px); align-items:center; }
-  .hero-text .eyebrow{ margin-bottom:22px; }
-  .hero h1{ font-size:clamp(2.7rem,6.6vw,5.2rem); margin-bottom:22px; }
-  .hero h1 em{ color:var(--blue); }
-  .hero .lead{ margin-bottom:30px; }
-  .hero-cta{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:26px; }
-  .cred{ font-size:13.5px; color:var(--muted); }
-  .cred a{ display:inline-flex; align-items:center; gap:9px; }
-  .cred a:hover{ color:var(--blue); }
-  .cred svg{ width:19px; height:19px; stroke:var(--blue); fill:none; stroke-width:1.8; flex:none; }
-  .cred b{ color:var(--ink); font-weight:600; }
-  .hero-portrait{ position:relative; border-radius:24px; overflow:hidden; border:1px solid var(--line); box-shadow:0 40px 80px -48px rgba(11,18,32,.5); }
-  .hero-portrait img{ width:100%; height:100%; object-fit:cover; aspect-ratio:4/5; }
-  .hero-portrait figcaption{ position:absolute; left:16px; right:16px; bottom:16px; display:flex; flex-direction:column; gap:2px; background:color-mix(in srgb, var(--paper) 80%, transparent); backdrop-filter:blur(10px); border:1px solid var(--line); border-radius:14px; padding:12px 16px; }
-  .hero-portrait figcaption b{ font-family:var(--serif); font-size:1.12rem; font-weight:600; }
-  .hero-portrait figcaption span{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
-
-  /* clients marquee */
-  .clients{ padding-block:clamp(26px,3.4vw,40px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; }
-  .clients-lab{ text-align:center; font-size:11.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--soft); margin-bottom:22px; }
-  .marquee{ position:relative; -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent); mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent); }
-  .marquee-track{ display:flex; width:max-content; gap:clamp(40px,6vw,72px); align-items:center; animation:scroll 42s linear infinite; }
-  .marquee:hover .marquee-track{ animation-play-state:paused; }
-  @keyframes scroll{ to{ transform:translateX(-50%); } }
-  .c-logo{ display:inline-flex; align-items:center; gap:12px; white-space:nowrap; transition:transform .3s var(--ease); }
-  .c-logo:hover{ transform:translateY(-2px); }
-  .c-mark{ height:30px; width:auto; }
-  .c-logo .c-hc{ height:42px; }
-  .c-name{ font-family:var(--serif); font-weight:600; font-size:clamp(1.1rem,1.7vw,1.35rem); color:var(--ink); }
-  .c-name .sub{ font-family:var(--sans); font-size:.5em; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--soft); margin-left:.42em; vertical-align:middle; }
-
-  /* section head */
-  .shead{ max-width:620px; margin-bottom:clamp(32px,4.4vw,56px); }
-  .shead.center{ margin-inline:auto; text-align:center; }
-  .shead h2{ font-size:clamp(2.1rem,4.6vw,3.3rem); margin:16px 0 14px; }
-  .shead .lead{ margin-inline:auto; }
-
-  /* poles */
-  .pm-stage{ display:flex; flex-direction:column; gap:16px; max-width:900px; margin:0 auto; }
-  .pm-item{ display:flex; align-items:center; gap:20px; padding:clamp(22px,2.6vw,30px) clamp(22px,2.8vw,34px); background:var(--card); border:1px solid var(--line); border-radius:var(--radius); color:var(--ink); transition:border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease); }
-  a.pm-item:hover, .pm-toggle:hover{ border-color:var(--blue); transform:translateY(-3px); box-shadow:0 30px 60px -44px rgba(0,85,255,.45); }
-  .pm-no{ font-family:var(--serif); font-size:1.5rem; font-weight:600; color:var(--blue); min-width:40px; }
-  .pm-tx{ flex:1; display:flex; flex-direction:column; gap:5px; min-width:0; }
-  .pm-name{ font-family:var(--serif); font-weight:500; font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.05; }
-  .pm-desc{ color:var(--muted); font-size:14.5px; }
-  .pm-arr{ color:var(--blue); font-size:1.4rem; transition:transform .3s var(--ease); flex:none; }
-  a.pm-item:hover .pm-arr{ transform:translateX(6px); }
-  .pm-toggle{ cursor:pointer; width:100%; text-align:left; }
-  .pm-chev{ transition:transform .3s var(--ease); }
-  .pm-toggle[aria-expanded="true"]{ border-color:var(--blue); }
-  .pm-toggle[aria-expanded="true"] .pm-chev{ transform:rotate(45deg); }
-  .pm-sub{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .4s var(--ease); max-width:900px; margin:-4px auto 0; }
-  .pm-sub.open{ grid-template-rows:1fr; }
-  .pm-sub-inner{ overflow:hidden; display:flex; flex-direction:column; gap:10px; padding-left:clamp(0px,3vw,60px); }
-  .pm-sub.open .pm-sub-inner{ padding-top:14px; }
-  .pm-subitem{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 22px; background:var(--card); border:1px solid var(--line); border-radius:14px; font-size:15.5px; color:var(--ink); transition:border-color .3s var(--ease), transform .3s var(--ease); }
-  .pm-subitem:hover{ border-color:var(--blue); transform:translateX(5px); }
-  .pm-subitem b{ font-weight:600; }
-  .pm-subitem .s-arr{ color:var(--blue); flex:none; }
-  .pm-soon{ opacity:.6; }
-  .pm-soon-tag{ font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line-2); padding:5px 11px; border-radius:999px; flex:none; }
-
-  /* manifeste */
-  .manifesto{ background:var(--blue); color:#fff; text-align:center; }
-  .manifesto .wrap{ max-width:900px; position:relative; }
-  .mf-quote{ font-family:var(--serif); font-weight:600; font-style:italic; font-size:clamp(4rem,10vw,7rem); line-height:.6; color:rgba(255,255,255,.26); display:block; }
-  .mf-quote-end{ text-align:right; }
-  .manifesto .big{ font-family:var(--serif); font-weight:500; font-size:clamp(1.6rem,3.6vw,2.7rem); line-height:1.3; letter-spacing:-.01em; margin:6px 0; }
-  .manifesto .big em{ color:#fff; font-style:italic; }
-  .manifesto .sign{ margin-top:26px; font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.78); }
-
-  /* about */
-  .about-wrap{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(30px,6vw,84px); align-items:start; }
-  .about-head h2{ font-size:clamp(2.1rem,4.6vw,3.4rem); margin-top:16px; line-height:1.05; }
-  .about-body p{ color:var(--muted); font-size:16px; line-height:1.7; max-width:58ch; margin-bottom:16px; }
-  .about-body p:first-of-type{ color:var(--ink); font-size:clamp(17px,1.9vw,20px); line-height:1.6; }
-  .about-meta{ display:flex; flex-direction:column; gap:14px; margin-top:24px; }
-  .about-dip{ display:flex; align-items:flex-start; gap:10px; width:fit-content; max-width:100%; font-size:14px; font-weight:500; }
-  .about-dip:hover{ color:var(--blue); }
-  .about-dip svg{ width:20px; height:20px; stroke:var(--blue); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex:none; }
-  .about-social{ display:flex; flex-wrap:wrap; gap:10px; }
-  .about-social a{ font-size:13px; font-weight:600; border:1px solid var(--line-2); border-radius:999px; padding:9px 16px; transition:border-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease); }
-  .about-social a:hover{ border-color:var(--blue); color:var(--blue); transform:translateY(-2px); }
-
-  /* stats */
-  .stats{ background:var(--ink); color:#fff; }
-  .stats-grid{ display:grid; grid-template-columns:repeat(3,1fr); }
-  .stat{ text-align:center; padding:clamp(10px,1.6vw,20px) clamp(18px,2.6vw,34px); border-left:1px solid rgba(255,255,255,.12); }
-  .stat:first-child{ border-left:0; }
-  .stat-n{ display:block; font-family:var(--serif); font-weight:600; font-size:clamp(2.7rem,5.6vw,4.1rem); line-height:1; color:#5B8CFF; font-variant-numeric:tabular-nums; }
-  .stat-u{ color:#fff; }
-  .stat-l{ display:block; margin-top:12px; font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:rgba(255,255,255,.64); line-height:1.5; }
-
-  /* faq */
-  .faq-list{ max-width:860px; }
-  .faq-item{ border-top:1px solid var(--line); padding:clamp(20px,2.4vw,28px) 0; }
-  .faq-item:last-child{ border-bottom:1px solid var(--line); }
-  .faq-item h3{ font-family:var(--serif); font-size:clamp(19px,2.2vw,23px); font-weight:500; margin-bottom:10px; }
-  .faq-item p{ color:var(--muted); max-width:70ch; font-size:16px; }
-  .faq-item a{ color:var(--blue); text-decoration:underline; text-underline-offset:3px; }
-
-  /* contact */
-  .contact-cols{ display:grid; grid-template-columns:1fr auto 1fr; gap:clamp(22px,3.4vw,50px); align-items:stretch; margin-top:clamp(30px,4vw,48px); }
-  .contact-call{ display:flex; flex-direction:column; gap:clamp(20px,2.4vw,28px); }
-  .rdv-cta{ display:flex; align-items:center; gap:16px; background:var(--blue); color:#fff; border-radius:var(--radius); padding:20px 24px; box-shadow:0 24px 50px -26px rgba(0,85,255,.6); transition:transform .3s var(--ease), background .3s var(--ease); }
-  .rdv-cta:hover{ transform:translateY(-3px); background:var(--blue-hi); }
-  .rdv-ic{ width:46px; height:46px; border-radius:13px; background:rgba(255,255,255,.16); display:grid; place-items:center; flex:none; }
-  .rdv-ic svg{ width:24px; height:24px; }
-  .rdv-txt{ flex:1; display:flex; flex-direction:column; gap:3px; }
-  .rdv-txt b{ font-size:1.1rem; font-weight:600; }
-  .rdv-txt span{ font-size:13px; color:rgba(255,255,255,.82); }
-  .rdv-go{ font-size:22px; }
-  .exits{ margin-top:auto; display:grid; grid-template-columns:1fr 1fr; gap:20px 24px; }
-  .exit{ display:flex; flex-direction:column; gap:5px; }
-  .exit .x-label{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; }
-  .exit .x-val{ font-family:var(--serif); font-size:clamp(1.1rem,2vw,1.35rem); width:max-content; max-width:100%; border-bottom:1px solid transparent; transition:border-color .3s; }
-  .exit:hover .x-val{ border-bottom-color:var(--blue); }
-  .contact-or{ display:flex; flex-direction:column; align-items:center; align-self:stretch; }
-  .contact-or::before, .contact-or::after{ content:""; width:1px; flex:1; background:var(--line); }
-  .contact-or span{ font-family:var(--serif); font-style:italic; font-size:1.15rem; color:var(--muted); padding:14px 0; }
-  .cform{ display:grid; gap:20px; }
-  .cform .field{ display:grid; gap:8px; }
-  .cform label{ font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--muted); }
-  .cform input, .cform textarea{ font-family:var(--sans); font-size:16px; color:var(--ink); background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:13px 14px; width:100%; transition:border-color .3s; }
-  .cform input:focus, .cform textarea:focus{ outline:none; border-color:var(--blue); }
-  .cform textarea{ resize:vertical; min-height:120px; line-height:1.55; }
-  .cbtn{ justify-self:start; font-family:var(--sans); font-size:15px; font-weight:600; color:#fff; background:var(--blue); border:0; padding:14px 28px; border-radius:999px; cursor:pointer; transition:transform .3s, background .3s; }
-  .cbtn:hover{ transform:translateY(-2px); background:var(--blue-hi); }
-  .cform-note{ min-height:1.3em; font-size:14px; color:var(--blue); }
-
-  /* footer */
-  footer{ border-top:1px solid var(--line); padding-block:clamp(40px,6vw,64px); }
-  .frow{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
-  .flogo{ height:30px; }
-  .fmeta{ font-size:13.5px; color:var(--muted); line-height:1.8; text-align:right; }
-  .fmeta a{ color:var(--ink); } .fmeta a:hover{ color:var(--blue); }
-
-  /* whatsapp float */
-  .wa{ position:fixed; right:20px; bottom:20px; z-index:50; width:54px; height:54px; border-radius:50%; background:var(--blue); color:#fff; display:grid; place-items:center; box-shadow:0 18px 36px -14px rgba(0,85,255,.7); transition:transform .3s var(--ease); }
-  .wa:hover{ transform:scale(1.07); }
-  .wa svg{ width:28px; height:28px; }
-
-  /* reveal */
-  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
-  .reveal[style*="--d"]{ transition-delay:var(--d); }
-  .reveal.in{ opacity:1; transform:none; }
-  @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } .marquee-track{ animation:none; } }
-
-  /* responsive */
-  @media (max-width:900px){
-    nav.links{ display:none; } .burger{ display:flex; }
-    .menu-write{ display:none; }
-    .hero-grid{ grid-template-columns:1fr; gap:36px; }
-    .hero-portrait{ max-width:440px; }
-    .about-wrap{ grid-template-columns:1fr; gap:20px; }
-    .contact-cols{ grid-template-columns:1fr; gap:26px; }
-    .contact-or{ flex-direction:row; width:100%; } .contact-or::before,.contact-or::after{ width:auto; height:1px; } .contact-or span{ padding:0 16px; }
-  }
-  @media (max-width:640px){
-    .stats-grid{ grid-template-columns:1fr; }
-    .stat{ border-left:0; border-top:1px solid rgba(255,255,255,.1); padding:22px; } .stat:first-child{ border-top:0; }
-    .pm-item{ gap:14px; } .pm-no{ min-width:30px; font-size:1.2rem; }
-    .fmeta{ text-align:left; } .frow{ justify-content:flex-start; }
-    .exits{ grid-template-columns:1fr 1fr; }
-  }
-</style>
 </head>
-
 <body>
-<script>try{if('scrollRestoration'in history)history.scrollRestoration='manual';if(location.hash)history.replaceState(null,'',location.pathname+location.search);}catch(e){}</script>
-<span id="top"></span>
 
-<header id="head">
-  <div class="bar">
-    <a href="#top" class="brand"><img src="assets/onlee-logo-ink.webp" alt="onlee"><span data-en="Software">Logiciels</span></a>
-    <nav class="links">
-      <a href="#expertises" data-en="Services">Expertises</a>
-      <a href="#logiciels" data-en="Our software">Nos logiciels</a>
-      <a href="#apropos" data-en="About">À propos</a>
-      <a href="/blog/" data-en="Articles">Articles</a>
-      <a href="#contact" data-en="Contact">Contact</a>
+<header class="onav" id="n2">
+  <div class="onav-capsule">
+    <a class="onav-logo" href="/" aria-label="onlee, accueil"></a>
+    <nav class="onav-liens" aria-label="Navigation principale">
+      <div class="onav-item"><a class="l" href="/#services">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="onav-deroule"><div class="dr-grille"><a href="/logiciels/" style="--c:#0E0F13;--ic:#fff;--k:0"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7.5 13.5h4M7.5 16.5h7"/></svg></span><span class="dr-tx"><b>Logiciels sur mesure</b><small>Le logiciel qu’il manque à ton entreprise</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/publicites/" style="--c:#0866FF;--ic:#fff;--k:1"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.2v3.6a1 1 0 0 0 1 1h2.2L12 18.5v-13L7.2 9.2H5a1 1 0 0 0-1 1z"/><path d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.5 7.5 0 0 1 0 10.4"/></svg></span><span class="dr-tx"><b>Gestion des pubs</b><small>Campagnes Facebook et Instagram</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/sites/" style="--c:#F9AB00;--ic:#0E0F13;--k:2"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9S9.6 5.6 12 3z"/></svg></span><span class="dr-tx"><b>Sites internet et SEO</b><small>Rapides, trouvés sur Google et par les IA</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/vizor/?metier=opticien" style="--c:#4C3175;--ic:#fff;--k:3"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6.5h10M10 12h10M10 17.5h10"/><path d="M4 6.5l1.2 1.2L7.5 5.4M4 12l1.2 1.2 2.3-2.3M4 17.5l1.2 1.2 2.3-2.3"/></svg></span><span class="dr-tx"><b>Vizor et AudioVizor</b><small>Nos logiciels pour opticiens et audioprothésistes</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
+      <a class="l" href="/realisations/">Réalisations</a>
+      <a class="l" href="/#a-propos">À propos</a>
+      <a class="l" href="/#faq">FAQ</a>
+      <a class="l" href="/blog/">Conseils</a>
     </nav>
-    <div class="bar-right">
-      <button class="lang" type="button" aria-label="Language / Langue"><span data-lang="fr">FR</span><span class="sep">·</span><span data-lang="en">EN</span></button>
-      <a href="#contact" class="menu-write pill pill-solid" data-en="Get in touch">Nous écrire</a>
-      <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+    <div class="onav-droite">
+      <span class="onav-langue"><a class="on" href="/" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/en/" hreflang="en" lang="en">EN</a></span>
+      <button type="button" class="onav-cta" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel</button>
+      <button type="button" class="onav-menu" aria-expanded="false" aria-controls="onav-panneau" aria-label="Ouvrir le menu"><i></i><i></i></button>
     </div>
   </div>
-  <nav class="mobile-nav" id="mobileNav" hidden>
-    <a href="#expertises" data-en="Services">Expertises</a>
-    <a href="#logiciels" data-en="Our software">Nos logiciels</a>
-    <a href="#apropos" data-en="About">À propos</a>
-    <a href="/blog/" data-en="Articles">Articles</a>
-    <a href="#contact" data-en="Contact">Contact</a>
-    <a href="#contact" class="mnav-cta" data-en="Get in touch">Nous écrire</a>
-  </nav>
+  <div class="onav-panneau" id="onav-panneau" aria-hidden="true">
+    <a class="grand" href="/#services">Services <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <div class="sous"><a href="/logiciels/">Logiciels sur mesure<small>Le logiciel qu’il manque à ton entreprise</small></a><a href="/publicites/">Gestion des pubs<small>Campagnes Facebook et Instagram</small></a><a href="/sites/">Sites internet et SEO<small>Rapides, trouvés sur Google et par les IA</small></a><a href="/vizor/?metier=opticien">Vizor et AudioVizor<small>Nos logiciels</small></a></div>
+    <a class="grand" href="/realisations/">Réalisations <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/#a-propos">À propos <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/#faq">FAQ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/blog/">Conseils <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <div class="bas"><span class="onav-langue"><a class="on" href="/" hreflang="fr" lang="fr">FR</a><a href="/en/" hreflang="en" lang="en">EN</a></span><button type="button" class="onav-cta" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel</button></div>
+  </div>
 </header>
 
-<main>
+<main id="haut">
+  <section class="haut" id="sect-haut" data-h="2">
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-text">
-        <span class="eyebrow reveal" data-en="Software company · France">Éditeur de logiciels · France</span>
-        <h1 class="reveal" style="--d:.06s" data-en="<em>Custom</em> software.">Des logiciels <em>sur mesure</em>.</h1>
-        <p class="lead reveal" style="--d:.14s" data-en="onlee designs custom software, connects your company's tools to each other and plugs automations and AI agents into them. We also publish our own software: Vizor, AudioVizor and Noga. Remotely, anywhere in France.">onlee conçoit des logiciels sur mesure, connecte les outils de votre entreprise entre eux et y branche des automatisations et des agents IA. Nous éditons aussi nos propres logiciels : Vizor, AudioVizor et Noga. À distance, partout en France.</p>
-        <div class="hero-cta reveal" style="--d:.22s">
-          <a href="#contact" class="pill pill-solid" data-en="Book a call">Prendre rendez-vous</a>
-          <a href="#expertises" class="pill pill-ghost" data-en="See our services">Voir nos expertises</a>
+    
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="app-fb" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#0866FF"/><path d="M22.4 33V21.6h3.8l.6-4.4h-4.4v-2.8c0-1.3.4-2.1 2.2-2.1h2.3V8.4c-.4-.1-1.8-.2-3.4-.2-3.3 0-5.6 2-5.6 5.8v3.2h-3.8v4.4h3.8V33z" fill="#fff"/></symbol>
+<symbol id="app-wa" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#25D366"/><path d="M20 8.5a11.4 11.4 0 0 0-9.8 17.2L8.7 31.5l5.9-1.5A11.4 11.4 0 1 0 20 8.5z" fill="#fff"/><path d="M15.8 14.6c.3-.6.6-.6.9-.6h.8c.2 0 .5 0 .7.6l1 2.4c.1.2.1.5 0 .7l-.6.8c-.2.2-.3.4-.1.7a9 9 0 0 0 4.2 3.7c.3.1.5.1.7-.1l.9-1.1c.2-.3.5-.3.8-.2l2.4 1.1c.3.2.5.3.5.5 0 .6-.2 1.6-1 2.2-.8.6-2 1-3.3.6a14.7 14.7 0 0 1-7.6-6.8c-.9-1.6-.6-3 .1-4.5z" fill="#25D366"/></symbol>
+<symbol id="app-cal" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#fff"/><text x="20" y="13.5" text-anchor="middle" font-size="7.5" font-weight="600" fill="#FF3B30" font-family="-apple-system,Helvetica">JEU.</text><text x="20" y="32" text-anchor="middle" font-size="19" font-weight="300" fill="#111" font-family="-apple-system,Helvetica">12</text></symbol>
+<symbol id="app-ig" viewBox="0 0 40 40"><defs><radialGradient id="igg" cx=".3" cy="1.05" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset=".35" stop-color="#F3772C"/><stop offset=".6" stop-color="#E1306C"/><stop offset="1" stop-color="#7B3FD3"/></radialGradient></defs><rect width="40" height="40" rx="9" fill="url(#igg)"/><rect x="10" y="10" width="20" height="20" rx="6" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="20" cy="20" r="4.6" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="26.2" cy="13.8" r="1.4" fill="#fff"/></symbol>
+<symbol id="app-on" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#0055FF"/><text x="20" y="25.5" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Bricolage Grotesque,Helvetica" letter-spacing="-.5">onlee</text></symbol>
+</defs></svg>
+    <div class="coin g"><span class="defiler"></span>Défiler</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-ig" viewBox="0 0 40 40"><defs><radialGradient id="igg" cx=".3" cy="1.05" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset=".35" stop-color="#F3772C"/><stop offset=".6" stop-color="#E1306C"/><stop offset="1" stop-color="#7B3FD3"/></radialGradient></defs><rect width="40" height="40" rx="9" fill="url(#igg)"/><rect x="10" y="10" width="20" height="20" rx="6" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="20" cy="20" r="4.6" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="26.2" cy="13.8" r="1.4" fill="#fff"/></symbol><symbol id="i-wa" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#25D366"/><g transform="translate(8 8)"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></g></symbol><symbol id="i-meta" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#0081FB"/><g transform="translate(5.6 6.2) scale(1.2)"><path fill="#fff" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></g></symbol><symbol id="i-cal" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#fff"/><text x="20" y="13.5" text-anchor="middle" font-size="7.5" font-weight="600" fill="#FF3B30" font-family="-apple-system,Helvetica">JEU.</text><text x="20" y="32" text-anchor="middle" font-size="19" font-weight="300" fill="#111" font-family="-apple-system,Helvetica">12</text></symbol><symbol id="i-om" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#0055FF"/><text x="20" y="25.6" text-anchor="middle" font-size="13.5" font-weight="800" fill="#fff" font-family="Inter,Helvetica" letter-spacing="-.4">OM</text></symbol><symbol id="lunettes" viewBox="0 0 120 40"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><circle cx="30" cy="22" r="15"/><circle cx="90" cy="22" r="15"/><path d="M45 20c5-5 25-5 30 0M15 18L3 8M105 18l12-10"/></g></symbol></defs></svg>
+    <div class="cote c1" data-s="1"><div class="mw-c"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-ig"/></svg><b>Campagne Instagram</b><i class="pastille-on">Active</i></div>
+      <p class="resume">Ta pub tourne autour de ton magasin.</p>
+      <div class="plus"><div><div class="pub-mini"><span class="pm-tete"><i></i>ton-commerce · Sponsorisé</span><span class="pm-visuel"><b>Ton offre,</b><em>au bon public.</em></span><span class="pm-cta">En savoir plus <svg viewBox="0 0 10 10"><path d="M3 1l4 4-4 4"/></svg></span></div>
+      <svg class="pm-courbe" viewBox="0 0 200 44" preserveAspectRatio="none"><defs><linearGradient id="pmg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0055FF" stop-opacity=".22"/><stop offset="1" stop-color="#0055FF" stop-opacity="0"/></linearGradient></defs><path class="aire" d="M2 38 C30 34 42 30 62 31 S96 22 116 23 S150 12 170 13 S190 7 198 6 L198 44 L2 44Z" fill="url(#pmg)"/><path class="trait" d="M2 38 C30 34 42 30 62 31 S96 22 116 23 S150 12 170 13 S190 7 198 6"/></svg></div></div></div></div>
+    <div class="cote c2" data-s="2"><div class="mw-c"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-fb"/></svg><b>Nouveau contact</b><i>maintenant</i></div>
+      <p class="resume"><b>Sarah L.</b> a rempli ton formulaire.</p>
+      <div class="plus"><div><div class="champ2"><small>Prénom</small><b>Sarah</b></div><div class="champ2"><small>Téléphone</small><b>06 •• •• •• 24</b></div><div class="champ2"><small>Sa demande</small><b>Un rendez-vous cette semaine</b></div>
+      <div class="actions2"><span>Rappeler</span><span class="wa">WhatsApp</span></div></div></div></div></div>
+    <div class="cote c3" data-s="3"><div class="mw-c"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-wa"/></svg><b>WhatsApp</b><i>10:41</i></div>
+      <p class="resume">Sarah t'a écrit, tu réponds en un clic.</p>
+      <div class="plus"><div class="fil-wa"><span class="m r">Bonjour, j’ai vu votre pub. Un rendez-vous cette semaine ?</span><span class="m e">Bonjour Sarah ! Jeudi 10h, ça vous va ?<em>✓✓</em></span><span class="m r">Parfait, à jeudi !</span></div></div></div></div>
+    <div class="cote c4" data-s="4"><div class="mw-c"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-cal"/></svg><b>Agenda</b><i>cette semaine</i></div>
+      <p class="resume"><b>Jeudi 10:00</b> · Rendez-vous avec Sarah L.</p>
+      <div class="plus"><div><div class="semaine"><span>LUN<b>9</b></span><span>MAR<b>10</b></span><span>MER<b>11</b></span><span class="jour">JEU<b>12</b></span><span>VEN<b>13</b></span></div>
+      <div class="creneau"><i></i><span><b>10:00 – 10:30</b>Sarah L. · vient de ta pub Instagram</span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg></div></div></div></div></div>
+
+    <div class="wrap scene-h">
+      <div class="txt">
+        <h1 class="h1"><span class="l l1"><span>On crée tes outils.</span></span><span class="l l2"><span>On lance tes pubs.</span></span></h1>
+        <div class="ctas monte d3">
+          <button class="btn btn-bleu" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-onlee-express data-cal-config='{"layout":"month_view","theme":"light"}'>Réserver un appel <span class="fleche">→</span></button>
+          <a class="btn btn-ligne" href="#realisations">Voir nos réalisations</a>
         </div>
-        <p class="cred reveal" style="--d:.3s"><a href="https://octopus.developers.institute/courses/di_learning_certificate/bcc39b0d-60c5-451e-90a4-4f6ebf914c96" target="_blank" rel="noopener" title="Voir le certificat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="m8.5 13.2-1.3 7.3 4.8-2 4.8 2-1.3-7.3"/><path d="m10 9 1.4 1.4L14.2 7.6"/></svg><span data-en="Founder <b>certified in GenAI &amp; Machine Learning</b> · Developers Institute">Fondateur <b>certifié GenAI &amp; Machine Learning</b> · Developers Institute</span></a></p>
+  <div class="histoire">
+    <div class="scene-ile">
+      <button class="ile" id="ile" type="button" data-s="0" aria-label="Étape suivante de l’histoire">
+        <!-- 1 · la pub -->
+        <span class="et" data-s="1">
+          <span class="rang">
+            <svg class="app"><use href="#i-ig"/></svg>
+            <span class="tx"><b>Ta pub est en ligne</b><small><i class="vert"></i>Instagram · en diffusion</small></span>
+            <span class="vignette" aria-hidden="true"><span class="vg-post"><b>Ton offre</b><em><svg viewBox="0 0 10 10"><path d="M3 1.5 6.5 5 3 8.5"/></svg></em></span></span>
+          </span>
+        </span>
+        <!-- 2 · le contact -->
+        <span class="et" data-s="2">
+          <span class="rang">
+            <svg class="app"><use href="#i-meta"/></svg>
+            <span class="tx"><b>Nouveau contact : Sarah L.</b><small>a rempli ton formulaire · maintenant</small></span>
+            <span class="rond-wa"><svg viewBox="0 0 40 40"><use href="#i-wa"/></svg></span>
+          </span>
+        </span>
+        <!-- 3 · la réponse -->
+        <span class="et" data-s="3">
+          <span class="wa-tete"><svg class="app petit"><use href="#i-wa"/></svg><b>Sarah L.</b><small>WhatsApp</small></span>
+          <span class="bul r">Bonjour, j’ai vu votre pub. Un rendez-vous cette semaine, c’est possible ?</span>
+          <span class="bul e2">Bonjour Sarah ! Jeudi 10h, ça vous va ?<em>10:41 <span class="vu">✓✓</span></em></span>
+        </span>
+        <!-- 4 · le rendez-vous -->
+        <span class="et" data-s="4">
+          <span class="rang">
+            <svg class="app"><use href="#i-cal"/></svg>
+            <span class="tx"><b>Rendez-vous confirmé</b><small>Jeudi 12 · 10:00 · Sarah L.</small></span>
+            <svg class="coche" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><path d="M13.5 22.5l6 6 11-12"/></svg>
+          </span>
+        </span>
+        <!-- 5 · le logiciel -->
+        <span class="et" data-s="5">
+          <span class="rang">
+            <svg class="app"><use href="#i-om"/></svg>
+            <span class="tx"><b>Sarah L. est dans ton logiciel</b><small>Fiche créée toute seule</small></span>
+          </span>
+          <span class="puces"><span class="puce bleue">Nouveau client</span><span class="puce">Vient de ta pub Instagram</span><span class="puce">Jeu. 10:00</span></span>
+        </span>
+      </button>
+    </div>
+    <ol class="h-etapes" id="etapes">
+      <li style="--duree:2.6s"><button type="button" data-s="1"><i></i><span>La pub</span></button></li>
+      <li style="--duree:2.9s"><button type="button" data-s="2"><i></i><span>Le contact</span></button></li>
+      <li style="--duree:3.4s"><button type="button" data-s="3"><i></i><span>La réponse</span></button></li>
+      <li style="--duree:2.6s"><button type="button" data-s="4"><i></i><span>Le rendez-vous</span></button></li>
+      <li style="--duree:3.2s"><button type="button" data-s="5"><i></i><span>Ton logiciel</span></button></li>
+    </ol>
+  </div>
       </div>
-      <figure class="hero-portrait reveal" style="--d:.18s">
-        <img src="assets/leeroy.webp?v=2" alt="Leeroy Ben-Aich, fondateur d'onlee" width="825" height="1100">
-        <figcaption><b>Leeroy Ben-Aich</b><span data-en="Founder · onlee">Fondateur · onlee</span></figcaption>
-      </figure>
+      </div>
+  </section>
+  <span id="services" class="ancre-services" aria-hidden="true"></span>
+  <section class="boite-sec" id="boite-sec" aria-label="Nos services">
+    <div class="colle">
+      <div class="boite3d" id="boite3d"></div>
+      <div class="propose" id="propose"><span class="pl-logo" role="img" aria-label="onlee"></span><span class="pl-mots" aria-label="vous propose"><i style="--i:0">v</i><i style="--i:1">o</i><i style="--i:2">u</i><i style="--i:3">s</i><i class="sp"> </i><i style="--i:5">p</i><i style="--i:6">r</i><i style="--i:7">o</i><i style="--i:8">p</i><i style="--i:9">o</i><i style="--i:10">s</i><i style="--i:11">e</i></span></div>
+      <div class="chap-panneaux"><article class="chap" data-i="0"><span class="chap-num">01<em>/04</em></span><h3>Logiciels sur mesure</h3><p>Ton CRM, ton appli, ton portail client : un outil fait pour ta façon de travailler, pas l’inverse.</p><ul><li>Tes clients, devis et relances au même endroit</li><li>Sur ordinateur et sur téléphone</li><li>De l’IA et des automatisations là où tu perds du temps</li></ul><div class="chap-act"><a class="chap-lien" href="/logiciels/">Découvrir</a><a class="chap-suiv" href="#">Service suivant ↓</a></div></article><article class="chap" data-i="1"><span class="chap-num">02<em>/04</em></span><h3>Gestion des pubs</h3><p>On crée et on pilote tes campagnes Facebook et Instagram, de l’idée jusqu’aux premiers contacts.</p><ul><li>Visuels et vidéos de pub préparés pour toi</li><li>Réglages suivis et ajustés chaque semaine</li><li>Les demandes arrivent directement sur ton téléphone</li></ul><div class="chap-act"><a class="chap-lien" href="/publicites/">Découvrir</a><a class="chap-suiv" href="#">Service suivant ↓</a></div></article><article class="chap" data-i="2"><span class="chap-num">03<em>/04</em></span><h3>Sites internet et SEO</h3><p>Un site rapide et clair, et le référencement qui va avec : pour être trouvé sur Google et cité par les IA.</p><ul><li>Un design fait pour toi, pas un modèle</li><li>Rapide sur téléphone</li><li>Le SEO suivi chaque mois : fiche Google, articles, pages lues par les IA</li></ul><div class="chap-act"><a class="chap-lien" href="/sites/">Découvrir</a><a class="chap-suiv" href="#">Service suivant ↓</a></div></article><article class="chap" data-i="3"><span class="chap-num">04<em>/04</em></span><h3>Vizor et AudioVizor</h3><p>Nos propres logiciels pour opticiens et audioprothésistes : le suivi du tiers payant, sans prise de tête.</p><ul><li>Chaque dossier suivi jusqu’au paiement</li><li>Les relances au bon moment</li><li>Pensés avec des professionnels du métier</li></ul><div class="chap-act"><a class="chap-lien" href="/vizor/?metier=opticien">Découvrir</a><a class="chap-suiv" href="#">Tout voir ↓</a></div></article></div>
+      <div class="mini-widgets"><div class="mw" data-i="0"><div class="mw-w s1"><div class="mw-c" data-act="ouvre"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-wa"/></svg><b>WhatsApp</b><i>maintenant</i></div><p>Ton logiciel a relancé <b>Garage Nova</b> pour son devis.</p><div class="mw-det"><div><span>Voir le devis</span><span>Appeler</span></div></div></div></div><div class="mw-w s2"><div class="mw-c mw-kanban" data-act="avance"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-on"/></svg><b>Prospects</b><i>Ton CRM</i></div><div class="kb"><span class="kb-col">Nouveau</span><span class="kb-col">Devis</span><span class="kb-col">Signé</span><em class="kb-chip">Boulangerie Léa</em></div><small class="aide">Touche pour avancer le client</small></div></div><div class="mw-w s3"><div class="mw-c" data-act="coche"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-cal"/></svg><b>Tournée de demain</b><i>3 passages</i></div><ul class="liste"><li class="fait">Martin Optique · 9:00</li><li>Boulangerie Léa · 10:30</li><li>Garage Nova · 14:00</li></ul><small class="aide">Touche une ligne pour la cocher</small></div></div><div class="mw-w s4"><div class="mw-c mw-sign" data-act="signe"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#0d0e12"/><rect x="14" y="9" width="12" height="22" rx="3" fill="none" stroke="#fff" stroke-width="2"/></svg><b>Preuve de passage</b><i>appli livreur</i></div><div class="pad"><svg viewBox="0 0 220 60"><path d="M10 42 C25 10 35 50 50 30 S70 12 82 38 S100 50 112 26 S135 14 150 40 S180 30 205 22"/></svg></div><small class="aide">Touche pour faire signer le client</small></div></div><div class="mw-w s5"><div class="mw-c mw-import" data-act="envoie"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#107C41"/><path d="M13 12h5l2.5 5 2.5-5h5l-5 8 5 8h-5l-2.5-5-2.5 5h-5l5-8z" fill="#fff"/></svg><b>Import Excel</b><i>sans ressaisie</i></div><p>Ton fichier <b>clients.xlsx</b> est repris tel quel.</p><div class="barre"><i></i></div><small class="aide">Touche pour importer</small></div></div></div><div class="mw" data-i="1"><div class="mw-w s1"><div class="mw-c" data-act="ouvre"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-fb"/></svg><b>Nouveau contact</b><i>il y a 2 min</i></div><p><b>Karim</b> a rempli ton formulaire « Ça m’intéresse ».</p><div class="mw-det"><div><span>Rappeler</span><span>WhatsApp</span></div></div></div></div><div class="mw-w s2"><div class="mw-c mw-switch on" data-act="bascule"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-ig"/></svg><b>Campagne Instagram</b></div><div class="sw-l"><span class="etat">Active<small>Diffusion en cours</small></span><span class="inter-w"></span></div><svg class="mw-courbe" viewBox="0 0 200 40" preserveAspectRatio="none"><path d="M2 34 C30 30 40 26 60 27 S95 18 115 19 S150 9 170 10 S190 5 198 4"/></svg></div></div><div class="mw-w s3"><div class="mw-c mw-post" data-act="aime"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-on"/></svg><b>onlee</b><i>Sponsorisé</i></div><div class="visuel"><b>Ton offre,</b><span>au bon public.</span></div><div class="post-pied"><svg class="coeur" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3.2 4.5 6.9 4.5c2 0 3.6 1.1 5.1 3 1.5-1.9 3.1-3 5.1-3 3.7 0 6 3.8 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg><span>En savoir plus</span></div></div></div><div class="mw-w s4"><div class="mw-c mw-form" data-act="envoie"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-fb"/></svg><b>Formulaire</b><i>Ça m’intéresse</i></div><div class="champ">Prénom<b>Karim</b></div><div class="champ">Téléphone<b>06 •• •• •• 12</b></div><span class="envoi">Envoyer</span><small class="aide">Touche pour envoyer : il arrive sur ton WhatsApp</small></div></div><div class="mw-w s5"><div class="mw-c" data-act="choix"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-on"/></svg><b>Audience</b><i>Meta</i></div><div class="chips"><span class="chip pris">Paris + 15 km</span><span class="chip">25-55 ans</span><span class="chip">Commerçants</span></div><small class="aide">Ta cible, réglée avec toi</small></div></div></div><div class="mw" data-i="2"><div class="mw-w s1"><div class="mw-c mw-google" data-act="cherche"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#fff"/><path d="M33 20.4c0-.9-.1-1.8-.2-2.6H20v4.9h7.3a6.3 6.3 0 0 1-2.7 4.1v3.4h4.4c2.6-2.4 4-5.9 4-9.8z" fill="#4285F4"/><path d="M20 34c3.6 0 6.7-1.2 8.9-3.3l-4.4-3.4a8 8 0 0 1-12-4.2H8v3.5A13.5 13.5 0 0 0 20 34z" fill="#34A853"/><path d="M12.5 23.1a8 8 0 0 1 0-5.2v-3.5H8a13.5 13.5 0 0 0 0 12.2z" fill="#FBBC05"/><path d="M20 11.4c2 0 3.8.7 5.2 2l3.9-3.9A13.5 13.5 0 0 0 8 14.4l4.5 3.5a8 8 0 0 1 7.5-6.5z" fill="#EA4335"/></svg><b>Google</b></div><div class="g-barre"><span class="g-txt"></span><i class="g-curseur"></i></div><div class="g-res"><small>ton-commerce.fr</small><b>Ton commerce · Réserve en ligne</b><p>Ouvert du mardi au samedi. Réservation en 2 clics.</p></div></div></div><div class="mw-w s2"><div class="mw-c" data-act="ouvre"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#0d0e12"/><rect x="14" y="9" width="12" height="22" rx="3" fill="none" stroke="#fff" stroke-width="2"/></svg><b>Sur téléphone</b><i>vérifié</i></div><p>Ton site s’affiche vite et bien sur tous les téléphones.</p><div class="mw-det"><div><span>iPhone ✓</span><span>Android ✓</span></div></div></div></div><div class="mw-w s3"><div class="mw-c" data-act="coche"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#fff"/><path d="M33 20.4c0-.9-.1-1.8-.2-2.6H20v4.9h7.3a6.3 6.3 0 0 1-2.7 4.1v3.4h4.4c2.6-2.4 4-5.9 4-9.8z" fill="#4285F4"/><path d="M20 34c3.6 0 6.7-1.2 8.9-3.3l-4.4-3.4a8 8 0 0 1-12-4.2H8v3.5A13.5 13.5 0 0 0 20 34z" fill="#34A853"/><path d="M12.5 23.1a8 8 0 0 1 0-5.2v-3.5H8a13.5 13.5 0 0 0 0 12.2z" fill="#FBBC05"/><path d="M20 11.4c2 0 3.8.7 5.2 2l3.9-3.9A13.5 13.5 0 0 0 8 14.4l4.5 3.5a8 8 0 0 1 7.5-6.5z" fill="#EA4335"/></svg><b>Référencement</b><i>SEO</i></div><ul class="liste"><li class="fait">Fiche Google à jour</li><li class="fait">Article du mois publié</li><li>Pages lues par les IA</li></ul><small class="aide">Le SEO, suivi chaque mois</small></div></div><div class="mw-w s4"><div class="mw-c" data-act="choix"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-cal"/></svg><b>Réservation en ligne</b><i>sur ton site</i></div><div class="chips"><span class="chip">Mar. 10:00</span><span class="chip">Mer. 14:30</span><span class="chip">Sam. 11:00</span></div><small class="aide">Tes clients réservent directement</small></div></div><div class="mw-w s5"><div class="mw-c mw-url" data-act="ouvre"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-on"/></svg><b>En ligne</b><i>à ton nom</i></div><div class="url"><svg viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3h1v11H6V10zm2 0h6V7a3 3 0 0 0-6 0z"/></svg>ton-commerce.fr</div><div class="mw-det"><div><span>Sécurisé</span><span>Ton nom de domaine</span></div></div></div></div></div><div class="mw" data-i="3"><div class="mw-w s1"><div class="mw-c" data-act="ouvre"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#4C3175"/><text x="20" y="27" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Inter,Helvetica">V</text></svg><b>Vizor</b><i>ce matin</i></div><p>Virement mutuelle reçu : <b>dossier 2481 payé</b>.</p><div class="mw-det"><div><span>Pointer</span><span>Voir le dossier</span></div></div></div></div><div class="mw-w s2"><div class="mw-c mw-suivi" data-act="avance"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#0A6E8A"/><text x="20" y="27" text-anchor="middle" font-size="15" font-weight="800" fill="#fff" font-family="Inter,Helvetica">AV</text></svg><b>AudioVizor</b><i>suivi du dossier</i></div><ol class="etapes"><li class="ok">Devis</li><li class="ok">Accord</li><li class="cur">Essai</li><li>Facturé</li><li>Payé</li></ol><small class="aide">Touche pour avancer le dossier</small></div></div><div class="mw-w s3"><div class="mw-c" data-act="coche"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#4C3175"/><text x="20" y="27" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Inter,Helvetica">V</text></svg><b>À relancer aujourd’hui</b></div><ul class="liste"><li>Dossier 2476 · mutuelle</li><li class="fait">Dossier 2470 · Sécu</li><li>Dossier 2468 · mutuelle</li></ul><small class="aide">Touche une ligne quand c’est relancé</small></div></div><div class="mw-w s4"><div class="mw-c mw-ticket" data-act="ouvre"><div class="ent"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#4C3175"/><text x="20" y="27" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Inter,Helvetica">V</text></svg><b>Ventes du jour</b></div><div class="tk-l"><span>Monture + verres</span><b>Vendu</b></div><div class="tk-l"><span>Part mutuelle</span><b class="att">En attente</b></div><div class="tk-l"><span>Reste à charge</span><b class="ok">Réglé</b></div></div></div><div class="mw-w s5"><div class="mw-c" data-act="ouvre"><div class="ent"><svg viewBox="0 0 40 40"><use href="#app-on"/></svg><b>Vizor et AudioVizor</b></div><p>Il s’utilise <b>à côté de ton logiciel métier</b>, sans rien changer à tes habitudes.</p><div class="mw-det"><div><span>Opticiens</span><span>Audioprothésistes</span></div></div></div></div></div></div>
+      <div class="chap-prog" aria-label="Services"><i title="Logiciels"></i><i title="Pubs"></i><i title="Sites"></i><i title="Vizor"></i></div>
+      <div class="boite-ui"><div class="astuce-b" id="astuce-b"></div></div>
+      <div class="infobulle" id="infobulle"></div>
     </div>
   </section>
-
-  <!-- CLIENTS -->
-  <section class="clients reveal" aria-label="Ils nous font confiance">
-    <p class="clients-lab" data-en="They work with onlee">Ils nous font confiance</p>
-    <div class="marquee">
-      <div class="marquee-track" id="cTrack">
-        <span class="c-logo"><img class="c-mark" src="assets/clients/optic-city.svg" alt="" aria-hidden="true"><span class="c-name" style="color:#8A6D35">Optic City</span></span>
-        <span class="c-logo"><img class="c-mark" src="assets/clients/eyes-bnb.svg" alt="" aria-hidden="true"><span class="c-name" style="color:#0055FF">Eyes B&amp;B</span></span>
-        <span class="c-logo"><span class="c-name" style="color:#B5531F">Jofre Tapis</span></span>
-        <span class="c-logo"><span class="c-name" style="color:#9E122C;font-style:italic">nao<span class="sub">pilates</span></span></span>
-        <span class="c-logo"><img class="c-mark" src="assets/clients/city-audition.svg?v=3" alt="" aria-hidden="true"><span class="c-name" style="color:#1B2A4A">City Audition</span></span>
-        <span class="c-logo"><img class="c-mark c-hc" src="assets/clients/hello-collection.png?v=1" alt="Hello Collection"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERTISES -->
-  <section id="expertises">
-    <div class="wrap">
-      <div class="shead center reveal">
-        <span class="eyebrow" data-en="Our services">Nos expertises</span>
-        <h2 data-en="What we <em>build</em> for you.">Ce que nous <em>construisons</em> pour vous.</h2>
-        <p class="lead" data-en="Four complementary services, handled by the same team from the first call to maintenance.">Quatre métiers complémentaires, portés par la même équipe, du premier échange à la maintenance.</p>
-      </div>
-      <div class="pm-stage reveal">
-        <a class="pm-item" href="/studio/"><span class="pm-no">01</span><span class="pm-tx"><span class="pm-name" data-en="Custom software">Logiciels sur mesure</span><span class="pm-desc" data-en="A tool designed around the way you work, when nothing on the market fits.">Un outil conçu pour votre façon de travailler, quand aucun logiciel du marché ne convient.</span></span><span class="pm-arr">→</span></a>
-        <a class="pm-item" href="/studio/#integration"><span class="pm-no">02</span><span class="pm-tx"><span class="pm-name" data-en="Custom integration">Intégration sur mesure</span><span class="pm-desc" data-en="Business software, CRM, email, calendar, invoicing, spreadsheets, APIs: your tools connected to each other.">Logiciel métier, CRM, messagerie, agenda, facturation, tableurs, API : vos outils connectés entre eux.</span></span><span class="pm-arr">→</span></a>
-        <a class="pm-item" href="/studio/#ia"><span class="pm-no">03</span><span class="pm-tx"><span class="pm-name" data-en="Automation &amp; AI agents">Automatisation &amp; agents IA</span><span class="pm-desc" data-en="Repetitive tasks handled for you, plugged into your tools, with your approval on what matters.">Les tâches répétitives prises en charge, branchées sur vos outils, avec votre validation sur ce qui compte.</span></span><span class="pm-arr">→</span></a>
-        <a class="pm-item" href="/studio/#sites"><span class="pm-no">04</span><span class="pm-tx"><span class="pm-name" data-en="Professional websites">Sites internet professionnels</span><span class="pm-desc" data-en="Fast, clear, well-referenced websites that you can keep improving.">Des sites rapides, clairs et bien référencés, que vous pouvez faire évoluer.</span></span><span class="pm-arr">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOGICIELS -->
-  <section id="logiciels" class="alt">
-    <div class="wrap">
-      <div class="shead center reveal">
-        <span class="eyebrow" data-en="Our software">Nos logiciels</span>
-        <h2 data-en="Software we <em>publish</em>.">Les logiciels que nous <em>éditons</em>.</h2>
-        <p class="lead" data-en="We design, host and maintain our own software, online and by subscription. The same know-how goes into your custom projects.">Nous concevons, hébergeons et maintenons nos propres logiciels, en ligne et sur abonnement. Le même savoir-faire sert vos projets sur mesure.</p>
-      </div>
-      <div class="pm-stage reveal">
-        <a class="pm-item" href="/opticiens/"><span class="pm-no">01</span><span class="pm-tx"><span class="pm-name">Vizor</span><span class="pm-desc" data-en="Insurance-billing tracking for opticians · used alongside your practice software">Suivi du tiers payant pour opticiens · à côté de votre logiciel métier</span></span><span class="pm-arr">→</span></a>
-        <a class="pm-item" href="/audioprothesistes/"><span class="pm-no">02</span><span class="pm-tx"><span class="pm-name">AudioVizor</span><span class="pm-desc" data-en="Insurance-billing tracking for audiologists · used alongside your practice software">Suivi du tiers payant pour audioprothésistes · à côté de votre logiciel métier</span></span><span class="pm-arr">→</span></a>
-        <a class="pm-item" href="/rh/"><span class="pm-no">03</span><span class="pm-tx"><span class="pm-name">Noga</span><span class="pm-desc" data-en="HR software for shops · leave, sick leave, absence planning, monthly summary">Logiciel RH des boutiques · congés, arrêts maladie, planning des absences, bilan du mois</span></span><span class="pm-arr">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MÉTHODE -->
-  <section id="methode" class="manifesto">
-    <div class="wrap reveal">
-      <span class="mf-quote" aria-hidden="true">«</span>
-      <p class="big" data-en="A useful piece of software starts on the ground. We look at how you work, <em>connect</em> what already exists, and only build what is missing.">Un logiciel utile part du terrain. On regarde comment vous travaillez, on <em>relie</em> ce qui existe déjà, et on ne construit que ce qui manque.</p>
-      <div class="sign" data-en="the onlee method">la méthode onlee</div>
-      <span class="mf-quote mf-quote-end" aria-hidden="true">»</span>
-    </div>
-  </section>
-
-  <!-- À PROPOS -->
-  <section id="apropos" class="about">
-    <div class="wrap">
-      <div class="about-wrap">
-        <div class="about-head reveal">
-          <span class="eyebrow" data-en="About">À propos</span>
-          <h2 data-en="A software company, <em>human-sized</em>.">Une entreprise de logiciels, <em>à taille humaine</em>.</h2>
-        </div>
-        <div class="about-body reveal" style="--d:.08s">
-          <p data-en="onlee is a French software company founded by Leeroy Ben-Aich. We design, code and maintain everything we deliver ourselves: our own software, Vizor, AudioVizor and Noga, as well as our clients' custom projects.">onlee est une entreprise française de logiciels fondée par Leeroy Ben-Aich. Nous concevons, codons et maintenons nous-mêmes tout ce que nous livrons : nos logiciels Vizor, AudioVizor et Noga, comme les projets sur mesure de nos clients.</p>
-          <p data-en="Leeroy is certified in <b>GenAI &amp; Machine Learning</b> at the Developers Institute. Every project starts with a conversation about your business, then moves forward in short steps, with a single point of contact from start to finish. We work remotely with companies anywhere in France.">Leeroy est certifié <b>GenAI &amp; Machine Learning</b> au Developers Institute. Chaque projet commence par un échange sur votre activité, puis avance par étapes courtes, avec un interlocuteur unique du début à la fin. Nous travaillons à distance avec des entreprises partout en France.</p>
-          <div class="about-meta">
-            <a class="about-dip" href="https://octopus.developers.institute/courses/di_learning_certificate/bcc39b0d-60c5-451e-90a4-4f6ebf914c96" target="_blank" rel="noopener" title="Voir le certificat">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="m8.5 13.2-1.3 7.3 4.8-2 4.8 2-1.3-7.3"/><path d="m10 9 1.4 1.4L14.2 7.6"/></svg>
-              <span data-en="Certified in GenAI &amp; Machine Learning · view certificate">Certifié GenAI &amp; Machine Learning · voir le certificat</span>
-            </a>
-            <div class="about-social">
-              <a href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener">LinkedIn · Leeroy Ben-Aich</a>
-              <a href="mailto:contact@onlee.fr">contact@onlee.fr</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHIFFRES -->
-  <section id="chiffres" class="stats reveal" aria-label="onlee en chiffres">
-    <div class="wrap">
-      <div class="stats-grid">
-        <div class="stat"><b class="stat-n" data-to="6">6<span class="stat-u">+</span></b><span class="stat-l" data-en="client companies supported">entreprises clientes accompagnées</span></div>
-        <div class="stat"><b class="stat-n" data-to="3">3</b><span class="stat-l" data-en="software live · Vizor, AudioVizor, Noga">logiciels en ligne · Vizor, AudioVizor, Noga</span></div>
-        <div class="stat"><b class="stat-n" data-to="100">100<span class="stat-u">%</span></b><span class="stat-l" data-en="designed &amp; coded in-house">conçu &amp; codé en interne</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="alt">
-    <div class="wrap">
-      <div class="shead reveal">
-        <span class="eyebrow" data-en="FAQ">FAQ</span>
-        <h2 data-en="Frequently asked.">Questions <em>fréquentes</em>.</h2>
-        <p class="lead" data-en="What we get asked the most.">Ce qu'on nous demande le plus souvent.</p>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item reveal"><h3 data-en="What does onlee do?">Que fait onlee ?</h3><p data-en="onlee is a French software company. We design custom software, connect companies' tools to each other, set up automations and AI agents, and build professional websites. We also publish our own software: Vizor, AudioVizor and Noga.">onlee est une entreprise française de logiciels. Nous concevons des logiciels sur mesure, nous connectons les outils des entreprises entre eux, nous mettons en place des automatisations et des agents IA, et nous créons des sites internet professionnels. Nous éditons aussi nos propres logiciels : Vizor, AudioVizor et Noga.</p></div>
-        <div class="faq-item reveal"><h3 data-en="What is custom integration?">Qu'est-ce que l'intégration sur mesure ?</h3><p data-en="Connecting the tools you already use: business software, CRM, email, calendar, invoicing, spreadsheets. When a tool offers an API or an export, we make the information flow between them to avoid entering it twice. If a connection is not possible, we tell you from the start.">C'est relier les outils que vous utilisez déjà : logiciel métier, CRM, messagerie, agenda, facturation, tableurs. Quand un outil propose une API ou un export, nous faisons circuler les informations entre eux pour éviter la double saisie. Si une connexion n'est pas possible, nous vous le disons dès le départ.</p></div>
-        <div class="faq-item reveal"><h3 data-en="What can an AI agent do in my company?">Que peut faire un agent IA dans mon entreprise ?</h3><p data-en="Sort emails and prepare draft replies, read a document and pre-fill a record, summarise a conversation or a request. The agent works with your tools, and someone on your team approves before anything is sent or any important action is taken.">Trier des e-mails et préparer des brouillons de réponse, lire un document et pré-remplir une fiche, résumer un échange ou une demande. L'agent travaille avec vos outils, et une personne de votre équipe valide avant tout envoi ou toute action importante.</p></div>
-        <div class="faq-item reveal"><h3 data-en="Which software does onlee publish?">Quels logiciels édite onlee ?</h3><p data-en="Three: Vizor, insurance-billing tracking for opticians; AudioVizor, the same for audiologists; Noga, HR management for shops (leave, sick leave, absence planning, monthly summary). Vizor and AudioVizor are used alongside your practice software. Noga does not produce payslips.">Trois logiciels : <a href="/opticiens/">Vizor</a>, le suivi du tiers payant des opticiens ; <a href="/audioprothesistes/">AudioVizor</a>, le suivi du tiers payant des audioprothésistes ; <a href="/rh/">Noga</a>, la gestion RH des boutiques (congés, arrêts maladie, planning des absences, bilan du mois). Vizor et AudioVizor s'utilisent à côté de votre logiciel métier. Noga ne fait pas de fiche de paie.</p></div>
-        <div class="faq-item reveal"><h3 data-en="Where do you work?">Où intervenez-vous ?</h3><p data-en="Anywhere in France, remotely. We talk by video call, phone or WhatsApp, and the tools are set up online.">Partout en France, à distance. Les échanges se font en visio, par téléphone ou sur WhatsApp, et les outils sont installés en ligne.</p></div>
-        <div class="faq-item reveal"><h3 data-en="How to reach onlee?">Comment contacter onlee ?</h3><p data-en="By WhatsApp at +33 6 80 71 52 62, by email at contact@onlee.fr, or by booking a call online.">Par WhatsApp au 06 80 71 52 62, par email à contact@onlee.fr, ou en réservant un créneau d'appel en ligne.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <div class="shead reveal">
-        <span class="eyebrow" data-en="Contact">Contact</span>
-        <h2 data-en="A project in <em>mind</em>?">Un projet en <em>tête</em> ?</h2>
-        <p class="lead" data-en="Book a call or write to us. Tell us about your tools and what slows you down.">Réservez un appel ou écrivez-nous. Dites-nous quels outils vous utilisez et ce qui vous ralentit.</p>
-      </div>
-      <div class="contact-cols reveal">
-        <div class="contact-call">
-          <a class="rdv-cta" href="https://cal.com/leeroy-benaich" target="_blank" rel="noopener">
-            <span class="rdv-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="m8.5 14.5 2.2 2.2 4.5-4.8"/></svg></span>
-            <span class="rdv-txt"><b data-en="Book a call slot">Réserver un créneau d'appel</b><span data-en="Pick a time that suits you, straight into my calendar.">Choisissez l'heure qui vous arrange, direct dans mon agenda.</span></span>
-            <span class="rdv-go" aria-hidden="true">→</span>
-          </a>
-          <div class="exits">
-            <a class="exit" href="tel:+33680715262"><span class="x-label">Mobile</span><span class="x-val">+33 6 80 71 52 62</span></a>
-            <a class="exit" href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener"><span class="x-label">WhatsApp</span><span class="x-val">+33 6 80 71 52 62</span></a>
-            <a class="exit" href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener"><span class="x-label">LinkedIn</span><span class="x-val">Leeroy Ben-Aich</span></a>
-            <a class="exit" href="mailto:contact@onlee.fr"><span class="x-label">Email</span><span class="x-val">contact@onlee.fr</span></a>
-          </div>
-        </div>
-        <div class="contact-or" aria-hidden="true"><span data-en="or">ou</span></div>
-        <form class="cform" data-clarity-mask="true" action="https://formsubmit.co/ajax/contact@onlee.fr" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="Nouveau message · onlee.fr">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <div class="field"><label for="cf-name" data-en="Your name">Votre nom</label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
-          <div class="field"><label for="cf-email" data-en="Your email">Votre email</label><input id="cf-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="field"><label for="cf-msg" data-en="Your project in a few words">Votre projet en quelques mots</label><textarea id="cf-msg" name="message" rows="4" required></textarea></div>
-          <button type="submit" class="cbtn" data-en="Send message">Envoyer le message</button>
-          <p class="cform-note" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<footer>
-  <div class="wrap frow">
-    <a href="#top"><img src="assets/onlee-logo-ink.webp" alt="onlee" class="flogo"></a>
-    <div class="fmeta">
-      onlee · <span data-en="custom software, integration &amp; AI agents · France">logiciels sur mesure, intégration &amp; agents IA · France</span>.<br>
-      <a href="/studio/" data-en="Custom software">Sur mesure</a> ·
-      <a href="/opticiens/">Vizor</a> ·
-      <a href="/audioprothesistes/">AudioVizor</a> ·
-      <a href="/rh/">Noga</a><br>
-      © <span id="year"></span> · <span data-en="Designed &amp; coded by onlee.">Conçu &amp; codé par onlee.</span> ·
-      <a href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a href="mailto:contact@onlee.fr">Email</a> · <a href="/mentions-legales/">Mentions légales</a> · <a href="#cookies" id="cookies-gerer" hidden>Gérer les cookies</a>
+<div class="sec-ab" id="realisations">
+<section class="ab" id="ab" aria-labelledby="ab-titre">
+    <div class="wrap ab-intro">
+      <h2 class="h2">Avant. <span class="b">Après.</span></h2>
+      <p class="chapo">D’abord le quotidien de nos clients, puis le logiciel qu’on leur a construit, sur ordinateur et sur téléphone.</p>
+    </div>
+
+    <div class="scene-ab" id="scene">
+      <div class="wrap">
+        <div class="tete">
+          <h2 class="h2" id="ab-titre">Avant. <span class="b">Après.</span></h2>
+          <p class="chapo">À gauche, le quotidien de nos clients. À droite, le logiciel qu’on leur a construit, sur ordinateur et sur téléphone.</p>
+        </div>
+
+        <div class="zone" id="zone">
+          <div class="duo" id="duo" data-sens="avant">
+            <div class="col-cadre">
+              <div class="cadre" id="cadre" data-sens="avant">
+
+          <!-- ============ 1 · Onlee Tournées ============ -->
+          <div class="cas on" data-i="0" data-fx="0" data-fxa="0">
+            <div class="avant" aria-hidden="true"><div class="scene">
+              <div class="bureau"></div>
+              <div class="xl2" style="left:22px;top:30px;width:720px;height:556px">
+  <div class="xtb"><span class="xlogo"><b>X</b></span><span class="xauto">Enregistrement automatique <i class="xsw"><i></i></i> Désactivé</span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2.5h8.5L13.5 4.5v9H3z"/><path d="M5.5 2.5v3.5h5V2.5M5 13.5V9h6v4.5"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h6a3.5 3.5 0 0 1 0 7H6M6.5 3.5 3.5 6.5l3 3"/></svg></span><span class="xch">⌄</span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5H6a3.5 3.5 0 0 0 0 7h4M9.5 3.5l3 3-3 3"/></svg></span><span class="xnomf">tournees-clients-2026.xlsx <em>· Enregistré sur ce PC</em> <span class="xch">⌄</span></span><span class="xrech"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="4.2"/><path d="M10.2 10.2 13.5 13.5"/></svg>Rechercher</span><span class="xwin"><i>—</i><i>▢</i><i>✕</i></span></div>
+  <div class="xtabs"><span class="">Fichier</span><span class="on">Accueil</span><span class="">Insertion</span><span class="">Dessin</span><span class="">Mise en page</span><span class="">Formules</span><span class="">Données</span><span class="">Révision</span><span class="">Affichage</span><span class="">Aide</span><span class="xpart"><span class="xcom">Commentaires</span><span class="xpartb">Partager</span></span></div>
+  <div class="xrib">
+  <div class="xg" style="width:84px"><div class="xgc" style="flex-direction:row;align-items:flex-start;gap:4px"><span class="xbig"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="5" width="15" height="19" rx="2" fill="#F3E3C3" stroke="#8A6D3B" stroke-width="1.2"/><rect x="9" y="3" width="7" height="4" rx="1" fill="#fff" stroke="#616161" stroke-width="1.2"/><rect x="12" y="11" width="11" height="14" rx="1.2" fill="#fff" stroke="#616161" stroke-width="1.2"/><path d="M14.5 15h6M14.5 18h6M14.5 21h4" stroke="#9E9E9E" stroke-width="1.1"/></svg><small>Coller <span class="xch">⌄</span></small></span><span class="xcol"><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="4.5" cy="12" r="2"/><circle cx="11.5" cy="12" r="2"/><path d="M5.8 10.5 11 2.5M10.2 10.5 5 2.5"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="8.5" height="9.5" rx="1"/><path d="M3 11V3a1 1 0 0 1 1-1h6"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2.5h9v3.5H3z" fill="#FFE36E"/><path d="M12 4h1.5v3H8v2.5"/><rect x="7" y="9.5" width="2" height="4.5" rx=".6"/></svg></span></span></div><em>Presse-papiers</em></div>
+  <div class="xg" style="width:186px"><div class="xgc"><div class="xr"><span class="xdd" style="width:96px">Aptos Narrow<i>⌄</i></span><span class="xdd" style="width:34px">11<i>⌄</i></span><span class="xb "><span style="font:400 12px/1 Segoe UI">A<sup style="font-size:7px">▲</sup></span></span><span class="xb "><span style="font:400 10px/1 Segoe UI">A<sup style="font-size:7px">▼</sup></span></span></div><div class="xr"><span class="xb "><b style="font:700 13px/1 Segoe UI,Arial">G</b></span><span class="xb "><i style="font:italic 400 13px/1 Georgia,serif">I</i></span><span class="xb "><u style="font:400 13px/1 Segoe UI,Arial">S</u></span><span class="xch">⌄</span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="11" height="11" stroke-dasharray="1.6 1.4"/><path d="M2.5 13.5h11" stroke-dasharray="0" stroke-width="1.6"/></svg></span><span class="xch">⌄</span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5 8.5 3 13 7.5 8.5 12z"/><path d="M13.5 9.5c.6.9 1 1.5 1 2a1 1 0 0 1-2 0c0-.5.4-1.1 1-2z" fill="currentColor"/><rect x="1" y="13.4" width="14" height="2.6" fill="#FFFF00" stroke="none"/></svg></span><span class="xch">⌄</span><span class="xb "><span style="display:inline-flex;flex-direction:column;align-items:center;font:600 12px/1 Segoe UI,Arial">A<i style="display:block;width:14px;height:3px;background:#E00;margin-top:1px"></i></span></span><span class="xch">⌄</span></div></div><em>Police</em></div>
+  <div class="xg" style="width:150px"><div class="xgc"><div class="xr"><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2.5h12M5 6h6M5 9h6M5 12h6" /></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h6M2 8h12M5 12.5h6"/></svg></span><span class="xb on"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h6M5 6.5h6M5 10h6M2 13.5h12"/></svg></span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 12 4M9 4h3v3"/></svg></span><span class="xch">⌄</span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h12M2 7.5h10a2 2 0 0 1 0 4H8M9.5 9.8 8 11.5l1.5 1.7M2 11.5h3"/></svg></span></div><div class="xr"><span class="xb on"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12M2 6.5h8M2 10h12M2 13.5h8"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12M4 6.5h8M2 10h12M4 13.5h8"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12M6 6.5h8M2 10h12M6 13.5h8"/></svg></span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7M7 6.5h7M7 10h7M2 13.5h12M2 5l2.5 2.5L2 10"/></svg></span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M4 8h8M10 6l2 2-2 2M6 6 4 8l2 2"/></svg></span><span class="xch">⌄</span></div></div><em>Alignement</em></div>
+  <div class="xg" style="width:118px"><div class="xgc"><div class="xr"><span class="xdd" style="width:96px">Standard<i>⌄</i></span></div><div class="xr"><span class="xt">€</span><span class="xch">⌄</span><span class="xt">%</span><span class="xt">000</span><span class="xt" style="font-size:10px">,0<sup>←</sup></span><span class="xt" style="font-size:10px">,00<sup>→</sup></span></div></div><em>Nombre</em></div>
+  <div class="xg" style="width:184px"><div class="xgc" style="gap:1px"><span class="xl1"><svg width="18" height="18" viewBox="0 0 18 18"><rect x="1" y="2" width="16" height="14" rx="1.2" fill="#fff" stroke="#616161"/><rect x="3" y="4.5" width="5" height="3" fill="#F8696B"/><rect x="10" y="4.5" width="5" height="3" fill="#FFEB84"/><rect x="3" y="10" width="5" height="3" fill="#63BE7B"/><rect x="10" y="10" width="5" height="3" fill="#5A8AC6"/></svg>Mise en forme conditionnelle <span class="xch">⌄</span></span><span class="xl1"><svg width="18" height="18" viewBox="0 0 18 18"><rect x="1" y="2" width="16" height="14" rx="1.2" fill="#fff" stroke="#616161"/><rect x="1" y="2" width="16" height="4" fill="#4472C4"/><path d="M1 9.5h16M1 13h16M6.5 6v10M12 6v10" stroke="#9DC3E6"/></svg>Mettre sous forme de tableau <span class="xch">⌄</span></span><span class="xl1"><svg width="18" height="18" viewBox="0 0 18 18"><rect x="1" y="2" width="16" height="14" rx="1.2" fill="#fff" stroke="#616161"/><rect x="3" y="4" width="12" height="4" fill="#C6EFCE"/><rect x="3" y="10" width="12" height="4" fill="#FFC7CE"/></svg>Styles de cellules <span class="xch">⌄</span></span></div><em>Styles</em></div>
+  <div class="xg" style="width:84px"><div class="xgc" style="gap:1px"><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2.5" width="12" height="11" rx="1"/><path d="M2 8h12M8 2.5v11"/><path d="M11 11.5h4M13 9.5v4" stroke="#107C41" stroke-width="1.6"/></svg>Insérer <span class="xch">⌄</span></span><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2.5" width="12" height="11" rx="1"/><path d="M2 8h12M8 2.5v11"/><path d="M11 9.5l3.5 3.5M14.5 9.5 11 13" stroke="#C42B1C" stroke-width="1.6"/></svg>Supprimer <span class="xch">⌄</span></span><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2.5" width="12" height="11" rx="1"/><path d="M2 8h12M8 2.5v11"/></svg>Format <span class="xch">⌄</span></span></div><em>Cellules</em></div>
+  <div class="xg" style="width:70px"><div class="xgc" style="gap:1px"><span class="xl1"><span style="font:600 15px/1 Segoe UI,Arial;color:#424242">Σ</span> <span class="xch">⌄</span></span><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5v11M2 11.5l2 2 2-2M9 3h5M9 6.5h4M9 10h3"/></svg>Trier <span class="xch">⌄</span></span><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg>Rechercher</span></div><em>Édition</em></div>
+</div>
+  <div class="xfx"><span class="xnb">E15 <i>⌄</i></span><span class="xdots">⋮</span><span class="xfxi"><i>✕</i><i>✓</i><em>fx</em></span><span class="xform">=NB.SI(E2:E14;"Mehdi")</span></div>
+  <div class="xgrille"><table style="width:750px"><colgroup><col style="width:32px"><col style="width:26px"><col style="width:150px"><col style="width:86px"><col style="width:56px"><col style="width:62px"><col style="width:72px"><col style="width:46px"><col style="width:220px"></colgroup><tr><th class="xcoin"></th><th class="">A</th><th class="">B</th><th class="">C</th><th class="">D</th><th class="xhs">E</th><th class="">F</th><th class="">G</th><th class="">H</th></tr><tr><td class="xn">1</td><td class="xh">N°</td><td class="xh">CLIENT</td><td class="xh">VILLE</td><td class="xh">JOUR</td><td class="xh">LIVREUR</td><td class="xh">TAPIS</td><td class="xh">DERNIER</td><td class="xh">REMARQUE</td></tr><tr><td class="xn">2</td><td>1</td><td>Boulangerie M. Roche</td><td>Lyon 2</td><td>mardi</td><td>Mehdi</td><td>85x150</td><td class="d">####</td><td></td></tr><tr><td class="xn">3</td><td>2</td><td>Pharmacie Brotteaux</td><td>Lyon 6</td><td>mardi</td><td>Mehdi</td><td>85x150</td><td class="d">####</td><td class="j">+ diffuseur ?</td></tr><tr><td class="xn">4</td><td>3</td><td>Hôtel des Terreaux</td><td>Lyon 1</td><td>mar/ven</td><td>Mehdi</td><td>2x 115x180</td><td class="d">6</td><td></td></tr><tr><td class="xn">5</td><td>4</td><td class="o note">Tabac Bellecour</td><td>Lyon 2</td><td>mardi</td><td>Mehdi</td><td>60x85</td><td class="d">####</td><td class="r note">FERMÉ 2 fois</td></tr><tr><td class="xn">6</td><td>5</td><td>Salon Nina</td><td>Lyon 3</td><td class="j">???</td><td></td><td class="deb"><span>voir avec le patron pour le parfum</span></td><td></td><td></td></tr><tr><td class="xn">7</td><td>6</td><td>Garage Delorme</td><td>Lyon 3</td><td>mardi</td><td>Mehdi</td><td>115x180</td><td class="d">####</td><td></td></tr><tr><td class="xn">8</td><td>7</td><td>Cabinet dentaire GC</td><td>Villeurbanne</td><td>mardi</td><td>Thomas</td><td>85x150</td><td class="d">####</td><td></td></tr><tr><td class="xn">9</td><td>8</td><td>Pizzeria Da Marco</td><td>Villeurbanne</td><td>mardi</td><td>Thomas</td><td>85x150</td><td class="d">####</td><td></td></tr><tr><td class="xn">10</td><td>9</td><td class="j note">Kiné Charpennes</td><td>Villeurbanne</td><td>merc</td><td>Thomas</td><td>60x85</td><td class="d">####</td><td class="note">a changé de jour ?</td></tr><tr><td class="xn">11</td><td>10</td><td>Café des Facultés</td><td>Lyon 7</td><td>mardi</td><td>Sofiane</td><td>85x150</td><td class="d">####</td><td></td></tr><tr><td class="xn">12</td><td>11</td><td>Librairie J. Macé</td><td>Lyon 7</td><td>mardi</td><td>Sofiane</td><td>60x85</td><td class="d">####</td><td></td></tr><tr><td class="xn">13</td><td>12</td><td class="o">Cave St Louis</td><td>Lyon 7</td><td>mardi</td><td>Sofiane</td><td></td><td class="d">####</td><td class="r">tapis pas rendu</td></tr><tr><td class="xn">14</td><td>13</td><td>Supérette du Bourg</td><td>Caluire</td><td>mardi</td><td>Lucas</td><td>115x180</td><td class="d">####</td><td></td></tr><tr><td class="xn xhs">15</td><td></td><td></td><td></td><td class="d b">Mehdi :</td><td class="d xact">5</td><td></td><td></td><td></td></tr><tr><td class="xn">16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">17</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></div>
+  <div class="xfeuilles"><span class="xnav">◀ ▶</span><span class="on">Tournées</span><span class="">Clients</span><span class="">Feuil3</span><span class="xplus">+</span><span class="xdefil"><i></i></span></div>
+  <div class="xetat"><span>Prêt</span><span class="xacc">Accessibilité : vérification nécessaire</span><span class="xzoom"><i class="xv"></i><i class="xv"></i><i class="xv"></i>−<span class="xrail"><i></i></span>+ <b>100 %</b></span></div>
+</div>
+              <div class="papier" style="left:700px;top:70px;width:470px;height:640px;transform:rotate(2deg)">
+                <div class="lg" style="top:18px;font-size:28px">Tournée MARDI · Mehdi</div>
+                <div class="lg" style="top:70px"><s>1. Boulangerie Roche · 85x150</s> ✓</div>
+                <div class="lg" style="top:104px"><s>2. Pharmacie Brotteaux</s> ✓</div>
+                <div class="lg" style="top:138px"><s>3. Hôtel Terreaux · 2 tapis</s> ✓</div>
+                <div class="lg" style="top:172px">4. Tabac Bellecour · <u>fermé !!</u></div>
+                <div class="lg" style="top:206px"><s>5. Salon Nina · parfum</s> ✓</div>
+                <div class="lg" style="top:240px">6. Garage Delorme · 115x180</div>
+                <div class="lg" style="top:274px">7. Fleurs &amp; Co</div>
+                <div class="lg" style="top:308px">8. Agence Rive Gauche · fontaine</div>
+                <div class="lg gris" style="top:376px">signature ? → demander au patron</div>
+                <div class="lg gris" style="top:410px">rappeler le bureau pour le tabac</div>
+                <div class="lg gris" style="top:444px">photo ?? (pas de réseau)</div>
+              </div>
+              <div class="postit" style="left:300px;top:556px;width:212px;transform:rotate(-4deg)">Tabac fermé,<br>repasser jeudi ?<br>(prévenir Thomas)</div>
+            </div></div>
+            <div class="fen"><img src="/assets/realisations/tournees-bureau.webp" width="1600" height="1000" decoding="async" alt="Onlee Tournées : la semaine des 4 livreurs, avec photo et signature à chaque passage (démo, clients fictifs)" loading="lazy" srcset="/assets/realisations/tournees-bureau-900.webp 900w, /assets/realisations/tournees-bureau.webp 1600w" sizes="(max-width: 760px) 92vw, 880px"></div>
+          </div>
+
+          <!-- ============ 2 · Vizor ============ -->
+          <div class="cas" data-i="1" data-fx="0" data-fxa="20">
+            <div class="avant" aria-hidden="true"><div class="scene">
+              <div class="bureau"></div>
+              <div class="xl2" style="left:22px;top:24px;width:790px;height:540px">
+  <div class="xtb"><span class="xlogo"><b>X</b></span><span class="xauto">Enregistrement automatique <i class="xsw"><i></i></i> Désactivé</span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2.5h8.5L13.5 4.5v9H3z"/><path d="M5.5 2.5v3.5h5V2.5M5 13.5V9h6v4.5"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h6a3.5 3.5 0 0 1 0 7H6M6.5 3.5 3.5 6.5l3 3"/></svg></span><span class="xch">⌄</span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5H6a3.5 3.5 0 0 0 0 7h4M9.5 3.5l3 3-3 3"/></svg></span><span class="xnomf">suivi-mutuelles-OCTOBRE.xlsx <em>· Enregistré sur ce PC</em> <span class="xch">⌄</span></span><span class="xrech"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="4.2"/><path d="M10.2 10.2 13.5 13.5"/></svg>Rechercher</span><span class="xwin"><i>—</i><i>▢</i><i>✕</i></span></div>
+  <div class="xtabs"><span class="">Fichier</span><span class="on">Accueil</span><span class="">Insertion</span><span class="">Dessin</span><span class="">Mise en page</span><span class="">Formules</span><span class="">Données</span><span class="">Révision</span><span class="">Affichage</span><span class="">Aide</span><span class="xpart"><span class="xcom">Commentaires</span><span class="xpartb">Partager</span></span></div>
+  <div class="xrib">
+  <div class="xg" style="width:84px"><div class="xgc" style="flex-direction:row;align-items:flex-start;gap:4px"><span class="xbig"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="5" width="15" height="19" rx="2" fill="#F3E3C3" stroke="#8A6D3B" stroke-width="1.2"/><rect x="9" y="3" width="7" height="4" rx="1" fill="#fff" stroke="#616161" stroke-width="1.2"/><rect x="12" y="11" width="11" height="14" rx="1.2" fill="#fff" stroke="#616161" stroke-width="1.2"/><path d="M14.5 15h6M14.5 18h6M14.5 21h4" stroke="#9E9E9E" stroke-width="1.1"/></svg><small>Coller <span class="xch">⌄</span></small></span><span class="xcol"><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="4.5" cy="12" r="2"/><circle cx="11.5" cy="12" r="2"/><path d="M5.8 10.5 11 2.5M10.2 10.5 5 2.5"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="8.5" height="9.5" rx="1"/><path d="M3 11V3a1 1 0 0 1 1-1h6"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2.5h9v3.5H3z" fill="#FFE36E"/><path d="M12 4h1.5v3H8v2.5"/><rect x="7" y="9.5" width="2" height="4.5" rx=".6"/></svg></span></span></div><em>Presse-papiers</em></div>
+  <div class="xg" style="width:186px"><div class="xgc"><div class="xr"><span class="xdd" style="width:96px">Aptos Narrow<i>⌄</i></span><span class="xdd" style="width:34px">11<i>⌄</i></span><span class="xb "><span style="font:400 12px/1 Segoe UI">A<sup style="font-size:7px">▲</sup></span></span><span class="xb "><span style="font:400 10px/1 Segoe UI">A<sup style="font-size:7px">▼</sup></span></span></div><div class="xr"><span class="xb "><b style="font:700 13px/1 Segoe UI,Arial">G</b></span><span class="xb "><i style="font:italic 400 13px/1 Georgia,serif">I</i></span><span class="xb "><u style="font:400 13px/1 Segoe UI,Arial">S</u></span><span class="xch">⌄</span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="11" height="11" stroke-dasharray="1.6 1.4"/><path d="M2.5 13.5h11" stroke-dasharray="0" stroke-width="1.6"/></svg></span><span class="xch">⌄</span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5 8.5 3 13 7.5 8.5 12z"/><path d="M13.5 9.5c.6.9 1 1.5 1 2a1 1 0 0 1-2 0c0-.5.4-1.1 1-2z" fill="currentColor"/><rect x="1" y="13.4" width="14" height="2.6" fill="#FFFF00" stroke="none"/></svg></span><span class="xch">⌄</span><span class="xb "><span style="display:inline-flex;flex-direction:column;align-items:center;font:600 12px/1 Segoe UI,Arial">A<i style="display:block;width:14px;height:3px;background:#E00;margin-top:1px"></i></span></span><span class="xch">⌄</span></div></div><em>Police</em></div>
+  <div class="xg" style="width:150px"><div class="xgc"><div class="xr"><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2.5h12M5 6h6M5 9h6M5 12h6" /></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h6M2 8h12M5 12.5h6"/></svg></span><span class="xb on"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h6M5 6.5h6M5 10h6M2 13.5h12"/></svg></span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 12 4M9 4h3v3"/></svg></span><span class="xch">⌄</span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h12M2 7.5h10a2 2 0 0 1 0 4H8M9.5 9.8 8 11.5l1.5 1.7M2 11.5h3"/></svg></span></div><div class="xr"><span class="xb on"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12M2 6.5h8M2 10h12M2 13.5h8"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12M4 6.5h8M2 10h12M4 13.5h8"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12M6 6.5h8M2 10h12M6 13.5h8"/></svg></span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7M7 6.5h7M7 10h7M2 13.5h12M2 5l2.5 2.5L2 10"/></svg></span><span class="xsep"></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M4 8h8M10 6l2 2-2 2M6 6 4 8l2 2"/></svg></span><span class="xch">⌄</span></div></div><em>Alignement</em></div>
+  <div class="xg" style="width:118px"><div class="xgc"><div class="xr"><span class="xdd" style="width:96px">Standard<i>⌄</i></span></div><div class="xr"><span class="xt">€</span><span class="xch">⌄</span><span class="xt">%</span><span class="xt">000</span><span class="xt" style="font-size:10px">,0<sup>←</sup></span><span class="xt" style="font-size:10px">,00<sup>→</sup></span></div></div><em>Nombre</em></div>
+  <div class="xg" style="width:184px"><div class="xgc" style="gap:1px"><span class="xl1"><svg width="18" height="18" viewBox="0 0 18 18"><rect x="1" y="2" width="16" height="14" rx="1.2" fill="#fff" stroke="#616161"/><rect x="3" y="4.5" width="5" height="3" fill="#F8696B"/><rect x="10" y="4.5" width="5" height="3" fill="#FFEB84"/><rect x="3" y="10" width="5" height="3" fill="#63BE7B"/><rect x="10" y="10" width="5" height="3" fill="#5A8AC6"/></svg>Mise en forme conditionnelle <span class="xch">⌄</span></span><span class="xl1"><svg width="18" height="18" viewBox="0 0 18 18"><rect x="1" y="2" width="16" height="14" rx="1.2" fill="#fff" stroke="#616161"/><rect x="1" y="2" width="16" height="4" fill="#4472C4"/><path d="M1 9.5h16M1 13h16M6.5 6v10M12 6v10" stroke="#9DC3E6"/></svg>Mettre sous forme de tableau <span class="xch">⌄</span></span><span class="xl1"><svg width="18" height="18" viewBox="0 0 18 18"><rect x="1" y="2" width="16" height="14" rx="1.2" fill="#fff" stroke="#616161"/><rect x="3" y="4" width="12" height="4" fill="#C6EFCE"/><rect x="3" y="10" width="12" height="4" fill="#FFC7CE"/></svg>Styles de cellules <span class="xch">⌄</span></span></div><em>Styles</em></div>
+  <div class="xg" style="width:84px"><div class="xgc" style="gap:1px"><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2.5" width="12" height="11" rx="1"/><path d="M2 8h12M8 2.5v11"/><path d="M11 11.5h4M13 9.5v4" stroke="#107C41" stroke-width="1.6"/></svg>Insérer <span class="xch">⌄</span></span><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2.5" width="12" height="11" rx="1"/><path d="M2 8h12M8 2.5v11"/><path d="M11 9.5l3.5 3.5M14.5 9.5 11 13" stroke="#C42B1C" stroke-width="1.6"/></svg>Supprimer <span class="xch">⌄</span></span><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2.5" width="12" height="11" rx="1"/><path d="M2 8h12M8 2.5v11"/></svg>Format <span class="xch">⌄</span></span></div><em>Cellules</em></div>
+  <div class="xg" style="width:70px"><div class="xgc" style="gap:1px"><span class="xl1"><span style="font:600 15px/1 Segoe UI,Arial;color:#424242">Σ</span> <span class="xch">⌄</span></span><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5v11M2 11.5l2 2 2-2M9 3h5M9 6.5h4M9 10h3"/></svg>Trier <span class="xch">⌄</span></span><span class="xl1"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg>Rechercher</span></div><em>Édition</em></div>
+</div>
+  <div class="xfx"><span class="xnb">D13 <i>⌄</i></span><span class="xdots">⋮</span><span class="xfxi"><i>✕</i><i>✓</i><em>fx</em></span><span class="xform">=SOMME(D2:D12)+#REF!</span></div>
+  <div class="xgrille"><table style="width:790px"><colgroup><col style="width:32px"><col style="width:46px"><col style="width:100px"><col style="width:150px"><col style="width:74px"><col style="width:56px"><col style="width:60px"><col style="width:46px"><col style="width:226px"></colgroup><tr><th class="xcoin"></th><th class="">A</th><th class="">B</th><th class="">C</th><th class="xhs">D</th><th class="">E</th><th class="">F</th><th class="">G</th><th class="">H</th></tr><tr><td class="xn">1</td><td class="xh">DATE</td><td class="xh">CLIENT</td><td class="xh">MUTUELLE</td><td class="xh">MONTANT</td><td class="xh">SÉCU</td><td class="xh">PAYÉ ?</td><td class="xh">VIR. LE</td><td class="xh">RELANCE</td></tr><tr><td class="xn">2</td><td>02/10</td><td>Perrin M.</td><td>Séveane / Santé Littoral</td><td class="d">85,00</td><td class="d">24,00</td><td class="v">oui</td><td class="d">####</td><td></td></tr><tr><td class="xn">3</td><td>03/10</td><td>Roux H.</td><td>Viamedis / Mut. Azur</td><td class="d">320,00</td><td class="d">12,00</td><td class="j">?</td><td></td><td>appeler</td></tr><tr><td class="xn">4</td><td>03/10</td><td>Gauthier I.</td><td>Séveane</td><td class="d">610,00</td><td class="d">30,00</td><td class="v">oui</td><td class="d">####</td><td></td></tr><tr><td class="xn">5</td><td>07/10</td><td class="note">Robin P.</td><td>Kalixia / Atlas</td><td class="d">159,00</td><td></td><td class="o">non</td><td></td><td class="r note">REJET ? refaire la feuille</td></tr><tr><td class="xn">6</td><td>09/10</td><td>Picard Y.</td><td>Viamedis</td><td class="d">136,00</td><td class="d">18,00</td><td class="j">partiel</td><td class="d">####</td><td>voir relevé</td></tr><tr><td class="xn">7</td><td>10/10</td><td>Arnaud E.</td><td>Santéclair</td><td class="d">175,00</td><td class="d">18,00</td><td class="o">non</td><td></td><td>relancé 2x, toujours rien</td></tr><tr><td class="xn">8</td><td>14/10</td><td>Martin L.</td><td class="deb"><span>Almerys ou Itelis ? demander au client</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">9</td><td>15/10</td><td>Lefèvre C.</td><td>Carte Blanche</td><td class="d">412,50</td><td class="d">24,00</td><td class="v">oui</td><td class="d">####</td><td></td></tr><tr><td class="xn">10</td><td>16/10</td><td>Bonnet A.</td><td>Itelis</td><td class="d">98,00</td><td class="d">12,00</td><td class="j">?</td><td></td><td></td></tr><tr><td class="xn">11</td><td>18/10</td><td>Girard S.</td><td>Viamedis / Mut. Iris</td><td class="d">389,00</td><td class="d">18,00</td><td class="o">non</td><td></td><td class="note">mail envoyé</td></tr><tr><td class="xn">12</td><td>21/10</td><td>Mercier T.</td><td>Séveane</td><td class="d">455,00</td><td class="d">12,00</td><td></td><td></td><td></td></tr><tr><td class="xn xhs">13</td><td></td><td></td><td class="d b">TOTAL</td><td class="d b xact">#REF!</td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">17</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></div>
+  <div class="xfeuilles"><span class="xnav">◀ ▶</span><span class="">Septembre</span><span class="on">Octobre</span><span class="">Rejets</span><span class="">Feuil3</span><span class="xplus">+</span><span class="xdefil"><i></i></span></div>
+  <div class="xetat"><span>Prêt</span><span class="xacc">Accessibilité : vérification nécessaire</span><span class="xzoom"><i class="xv"></i><i class="xv"></i><i class="xv"></i>−<span class="xrail"><i></i></span>+ <b>100 %</b></span></div>
+</div>
+              <div class="papier trous" style="left:760px;top:84px;width:410px;height:620px;transform:rotate(2.5deg)">
+                <div class="lg" style="top:18px;font-size:27px">Tiers payant · à pointer</div>
+                <div class="lg" style="top:70px"><s>Perrin · Séveane</s> ✓ reçu</div>
+                <div class="lg" style="top:104px">Roux · Viamedis · <u>??</u></div>
+                <div class="lg" style="top:138px"><s>Gauthier · Séveane</s> ✓</div>
+                <div class="lg" style="top:172px">Robin · Kalixia · <u>rejet</u></div>
+                <div class="lg" style="top:206px">→ refaire la feuille</div>
+                <div class="lg" style="top:240px">Picard · partiel ?</div>
+                <div class="lg" style="top:274px">Arnaud · relancé 2x</div>
+                <div class="lg" style="top:308px">Martin · quelle mutuelle ?</div>
+                <div class="lg gris" style="top:376px">tout repointer le 1er</div>
+              </div>
+              <div class="releve" style="left:70px;top:556px;width:560px;transform:rotate(-1.5deg)">
+                <div class="t">RELEVÉ DE COMPTE · OCTOBRE</div>
+                <div><mark>14/10  VIR VIAMEDIS TP REF 0001284     1 248,30</mark></div>
+                <div>15/10  VIR ALMERYS LOT 22-10            412,50</div>
+                <div><mark class="v">18/10  VIR SEVEANE TP OPTIQUE           965,00</mark></div>
+                <div>21/10  VIR KALIXIA REGUL                -12,00</div>
+              </div>
+              <div class="postit" style="left:600px;top:560px;width:206px;transform:rotate(5deg)">Viamedis :<br>virement reçu<br>mais pour qui ??</div>
+            </div></div>
+            <div class="fen"><img src="/assets/realisations/vizor-suivi.webp" width="1600" height="1000" decoding="async" loading="lazy" alt="Vizor : le suivi mutuelle, dossier par dossier (démo, clients fictifs)" srcset="/assets/realisations/vizor-suivi-900.webp 900w, /assets/realisations/vizor-suivi.webp 1600w" sizes="(max-width: 760px) 92vw, 880px"></div>
+          </div>
+
+          <!-- ============ 3 · Hello Collection ============ -->
+          <div class="cas" data-i="2" data-fx="0" data-fxa="62">
+            <div class="avant" aria-hidden="true"><div class="scene">
+              <div class="bureau"></div>
+              <div class="xl2 xmini" style="left:592px;top:40px;width:584px;height:338px">
+  <div class="xtb"><span class="xlogo"><b>X</b></span><span class="xauto">Enregistrement automatique <i class="xsw"><i></i></i> Désactivé</span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2.5h8.5L13.5 4.5v9H3z"/><path d="M5.5 2.5v3.5h5V2.5M5 13.5V9h6v4.5"/></svg></span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h6a3.5 3.5 0 0 1 0 7H6M6.5 3.5 3.5 6.5l3 3"/></svg></span><span class="xch">⌄</span><span class="xb "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5H6a3.5 3.5 0 0 0 0 7h4M9.5 3.5l3 3-3 3"/></svg></span><span class="xnomf">stock-depot-novembre.xlsx <em>· Enregistré sur ce PC</em> <span class="xch">⌄</span></span><span class="xrech"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="4.2"/><path d="M10.2 10.2 13.5 13.5"/></svg>Rechercher</span><span class="xwin"><i>—</i><i>▢</i><i>✕</i></span></div>
+  <div class="xtabs"><span class="">Fichier</span><span class="on">Accueil</span><span class="">Insertion</span><span class="">Dessin</span><span class="">Mise en page</span><span class="">Formules</span><span class="">Données</span><span class="">Révision</span><span class="">Affichage</span><span class="">Aide</span><span class="xpart"><span class="xcom">Commentaires</span><span class="xpartb">Partager</span></span></div>
+  
+  <div class="xfx"><span class="xnb">E2 <i>⌄</i></span><span class="xdots">⋮</span><span class="xfxi"><i>✕</i><i>✓</i><em>fx</em></span><span class="xform">recompter</span></div>
+  <div class="xgrille"><table style="width:584px"><colgroup><col style="width:32px"><col style="width:96px"><col style="width:132px"><col style="width:44px"><col style="width:64px"><col style="width:216px"></colgroup><tr><th class="xcoin"></th><th class="">A</th><th class="">B</th><th class="">C</th><th class="">D</th><th class="xhs">E</th></tr><tr><td class="xn">1</td><td class="xh">MODÈLE</td><td class="xh">ÉLÉMENT</td><td class="xh">QTÉ</td><td class="xh">RÉSERVÉ</td><td class="xh">NOTE</td></tr><tr><td class="xn xhs">2</td><td>CALISTA</td><td>armoire coulis.</td><td class="d">3</td><td class="d">2</td><td class="xact">recompter</td></tr><tr><td class="xn">3</td><td>CALISTA</td><td>lit 160</td><td class="d">1</td><td></td><td class="j">1 au magasin ?</td></tr><tr><td class="xn">4</td><td class="o">LARA</td><td>ensemble</td><td class="d">0</td><td></td><td class="r note">arrivage ??</td></tr><tr><td class="xn">5</td><td>PERA</td><td>commode</td><td class="d">5</td><td></td><td>1 abîmée</td></tr><tr><td class="xn">6</td><td>SCARLET</td><td>chevets</td><td class="d">4</td><td class="d o">4</td><td>pour qui ?</td></tr><tr><td class="xn">7</td><td>ELISA</td><td>canapé angle</td><td class="d">2</td><td class="d">1</td><td class="j">G ou D ??</td></tr><tr><td class="xn">8</td><td>LIZBON</td><td>table</td><td class="d r">#N/A</td><td></td><td></td></tr><tr><td class="xn">9</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">10</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">11</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="xn">12</td><td></td><td></td><td></td><td></td><td></td></tr></table></div>
+  <div class="xfeuilles"><span class="xnav">◀ ▶</span><span class="on">Dépôt</span><span class="">Arrivages</span><span class="">Feuil3</span><span class="xplus">+</span><span class="xdefil"><i></i></span></div>
+  <div class="xetat"><span>Prêt</span><span class="xacc">Accessibilité : vérification nécessaire</span><span class="xzoom"><i class="xv"></i><i class="xv"></i><i class="xv"></i>−<span class="xrail"><i></i></span>+ <b>100 %</b></span></div>
+</div>
+              <div class="papier" style="left:640px;top:404px;width:528px;height:330px;transform:rotate(-2.5deg)">
+                <div class="lg" style="top:18px;font-size:27px">Commandes · semaine 46</div>
+                <div class="lg" style="top:70px">Lun · Atelier Rives : 2 armoires Calista</div>
+                <div class="lg" style="top:104px">&nbsp;&nbsp;&nbsp;+ 3 lits 160 → <u>stock ??</u></div>
+                <div class="lg" style="top:138px"><s>Mar · Déco Plus : 4 chevets Pera</s></div>
+                <div class="lg" style="top:172px">Mer · Maison Lenoir : commode blanche ?</div>
+                <div class="lg" style="top:206px"><u>rappeler Rives !!</u></div>
+              </div>
+              <div class="wa2" style="left:24px;top:18px;width:596px;height:676px">
+  <div class="wtete">
+    <span class="wavt"><svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#DFE5E7"/><circle cx="20" cy="15.5" r="6.6" fill="#fff"/><path d="M7 34.5c2.4-6.3 7.3-9.3 13-9.3s10.6 3 13 9.3A19.9 19.9 0 0 1 20 40a19.9 19.9 0 0 1-13-5.5z" fill="#fff"/></svg></span>
+    <div class="wqui"><b>Atelier Rives (pro)</b><small>en ligne</small></div>
+    <span class="wics">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#54656F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.5" width="13" height="11" rx="2.5"/><path d="M15.5 10.5 21 7.5v9l-5.5-3"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#54656F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6A16.6 16.6 0 0 1 3.4 5.2 1.6 1.6 0 0 1 5 3.5z"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#54656F" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+    </span>
+  </div>
+  <div class="wfond"><div class="wfil">
+    <span class="wjour">Lundi</span>
+    <div class="wb out q wdoc"><div class="wapercu"><img src="/assets/realisations/hc-calista.webp" width="640" height="320" alt="" loading="lazy" decoding="async"></div><div class="wfic"><svg width="28" height="34" viewBox="0 0 28 34"><path d="M3 1h15l8 8v22a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D6D6D6"/><path d="M18 1v6a2 2 0 0 0 2 2h6" fill="#EDEDED" stroke="#D6D6D6"/><rect x="0" y="17" width="20" height="10" rx="2" fill="#E5252A"/><text x="10" y="24.6" text-anchor="middle" font-family="Helvetica,Arial" font-weight="700" font-size="7" fill="#fff">PDF</text></svg><div><b>HELLO-COLLECTION-2026.pdf</b><small>31 pages · PDF · 48 Mo</small></div></div><span class="wh">09:12<svg class="wcoche" width="16" height="11" viewBox="0 0 16 11" fill="none" stroke="#53BDEB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l3 3 6-7.5M6.5 8.6l.9.9 6-7.5"/></svg></span></div>
+    <div class="wb in q wphoto"><img src="/assets/realisations/hc-calista.webp" width="640" height="320" alt="" loading="lazy" decoding="async"><p>Celle-là, page 7. Vous l’avez en stock ?<span class="wh">10:47</span></p></div>
+    <div class="wb out q">Je vérifie au dépôt et je vous redis<span class="wh">11:02<svg class="wcoche" width="16" height="11" viewBox="0 0 16 11" fill="none" stroke="#53BDEB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l3 3 6-7.5M6.5 8.6l.9.9 6-7.5"/></svg></span></div>
+    <span class="wjour">Aujourd’hui</span>
+    <div class="wb in q wvoc"><span class="wplay"><svg width="14" height="16" viewBox="0 0 14 16"><path d="M1 1.2v13.6c0 .8.9 1.3 1.6.8l10-6.8a1 1 0 0 0 0-1.6l-10-6.8C1.9-.1 1 .4 1 1.2z" fill="#54656F"/></svg></span><span class="wonde"><span class="wbille"></span><i style="height:4px"></i><i style="height:7px"></i><i style="height:12px"></i><i style="height:9px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:11px"></i><i style="height:6px"></i><i style="height:9px"></i><i style="height:14px"></i><i style="height:19px"></i><i style="height:16px"></i><i style="height:10px"></i><i style="height:7px"></i><i style="height:12px"></i><i style="height:17px"></i><i style="height:13px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:9px"></i><i style="height:13px"></i><i style="height:16px"></i><i style="height:12px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:6px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:7px"></i><i style="height:5px"></i><i style="height:4px"></i><i style="height:6px"></i></span><span class="wvavt"><svg width="34" height="34" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#DFE5E7"/><circle cx="20" cy="15.5" r="6.6" fill="#fff"/><path d="M7 34.5c2.4-6.3 7.3-9.3 13-9.3s10.6 3 13 9.3A19.9 19.9 0 0 1 20 40a19.9 19.9 0 0 1-13-5.5z" fill="#fff"/></svg><i><svg width="9" height="12" viewBox="0 0 9 12" fill="#25D366"><rect x="2.4" y="0" width="4.2" height="7.6" rx="2.1"/><path d="M.6 5.6a3.9 3.9 0 0 0 7.8 0" fill="none" stroke="#25D366" stroke-width="1.2"/><rect x="3.9" y="9.3" width="1.2" height="2.4"/></svg></i></span><span class="wdur">0:42</span><span class="wh">09:30</span></div>
+    <div class="wb in">Du coup ? Mon client attend la réponse<span class="wh">09:31</span></div>
+  </div></div>
+  <div class="wsaisie">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#54656F" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><circle cx="9" cy="10" r=".6" fill="#54656F"/><circle cx="15" cy="10" r=".6" fill="#54656F"/><path d="M8.3 14.2a4.4 4.4 0 0 0 7.4 0"/></svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#54656F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5 12 20a5.4 5.4 0 0 1-7.6-7.6l8.8-8.8a3.6 3.6 0 0 1 5.1 5.1l-8.8 8.8a1.8 1.8 0 0 1-2.5-2.5l8-8"/></svg>
+    <span class="wchamp">Entrez un message<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#54656F" stroke-width="1.7" stroke-linejoin="round"><path d="M3.5 8.5a2 2 0 0 1 2-2h2.6L9.6 4.5h4.8l1.5 2h2.6a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.8" r="3.6"/></svg></span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#54656F" stroke-width="1.7" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>
+  </div>
+</div>
+              <div class="postit" style="left:414px;top:516px;width:200px;transform:rotate(4deg);font-size:20px">Le PDF ne s’ouvre pas sur son téléphone !</div>
+            </div></div>
+            <div class="fen"><img src="/assets/realisations/hc-fiche.webp" width="1600" height="1000" decoding="async" loading="lazy" alt="Hello Collection : la fiche d’un modèle sur le portail des professionnels, avec sa composition, son délai et ses options" srcset="/assets/realisations/hc-fiche-900.webp 900w, /assets/realisations/hc-fiche.webp 1600w" sizes="(max-width: 760px) 92vw, 880px"></div>
+          </div>
+
+          
+                <span class="recon" id="recon">Avant : reconstitution, noms fictifs</span>
+                <span class="ligne" id="ligne" aria-hidden="true"></span>
+                <div class="poignee" id="poignee" role="slider" tabindex="0" aria-label="Comparer avant et après" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Avant">
+                  <span class="mot" id="motAv">Avant</span>
+                  <span class="grip" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0E0F13" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+                  <span class="mot" id="motAp">Après</span>
+                </div>
+              </div>
+
+              <div class="bas">
+                <div class="ind" role="tablist" aria-label="Projets">
+                  <button class="trait" type="button" role="tab" aria-selected="true" data-i="0" aria-label="Onlee Tournées"><i></i></button>
+                  <button class="trait" type="button" role="tab" aria-selected="false" data-i="1" aria-label="Vizor"><i></i></button>
+                  <button class="trait" type="button" role="tab" aria-selected="false" data-i="2" aria-label="Hello Collection"><i></i></button>
+                  <span class="ind-nom" aria-live="polite">
+                    <span class="on"><b>Onlee Tournées</b> <em>· livraison</em></span>
+                    <span><b>Vizor</b> <em>· opticiens</em></span>
+                    <span><b>Hello Collection</b> <em>· meubles pour les pros</em></span>
+                  </span>
+                </div>
+                <div class="legendes">
+              <div class="leg on" data-i="0">
+                <p class="av"><b>Avant.</b> Un fichier Excel et une feuille de route papier par livreur. Le bureau apprenait les soucis le soir.</p>
+                <p class="ap"><b>Après.</b> Le bureau prépare la semaine et l’envoie aux téléphones. Chaque passage revient avec une photo et une signature.</p>
+              </div>
+              <div class="leg" data-i="1">
+                <p class="av"><b>Avant.</b> Les dossiers de tiers payant dans un tableur et un classeur, pointés à la main contre les relevés.</p>
+                <p class="ap"><b>Après.</b> Chaque dossier passe de « à facturer » à « payé », mutuelle par mutuelle. Ce qui manque saute aux yeux.</p>
+              </div>
+              <div class="leg" data-i="2">
+                <p class="av"><b>Avant.</b> Le catalogue PDF de 31 pages envoyé sur WhatsApp, le stock dans un tableur, les commandes dans un cahier.</p>
+                <p class="ap"><b>Après.</b> Un portail réservé aux pros : chaque modèle en photos, avec ses dimensions et son délai, et la commande en ligne.</p>
+              </div>
+</div>
+              </div>
+            </div>
+
+            <div class="bas-tel">
+              <div class="col-tel">
+                <div class="tel-boite" id="telBoite">
+                  <div class="tel" aria-label="La version téléphone du projet en cours">
+                    <div class="vitre" id="vitre" data-clair="0">
+                <span class="ile"></span>
+                <div class="etat"><span>9:41</span><span class="ic"><svg width="18" height="11" viewBox="0 0 18 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="6" rx="1"/><rect x="10" y="2.5" width="3" height="8.5" rx="1"/><rect x="15" y="0" width="3" height="11" rx="1"/></svg><svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2.2c2.2 0 4.2.8 5.7 2.2l1.1-1.2A10 10 0 0 0 8 .6 10 10 0 0 0 1.2 3.2l1.1 1.2A8.3 8.3 0 0 1 8 2.2zm0 3.3c1.3 0 2.5.5 3.4 1.3l1.1-1.2A6.6 6.6 0 0 0 8 3.9a6.6 6.6 0 0 0-4.5 1.7l1.1 1.2A5 5 0 0 1 8 5.5zm0 3.2c.5 0 .9.2 1.2.5L8 10.5 6.8 9.2c.3-.3.7-.5 1.2-.5z"/></svg><svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x=".5" y=".5" width="22" height="11" rx="3.2" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/><path d="M24 4v4c.8-.3 1.3-1.1 1.3-2S24.8 4.3 24 4z" fill="currentColor" opacity=".5"/></svg></span></div>
+                <div class="ecran on" data-i="0" style="--hc:#0D1120"><div class="ecran-haut"></div><img src="/assets/realisations/m-tournees.webp" width="780" height="1688" decoding="async" alt="Onlee Tournées sur le téléphone du livreur : sa journée et son prochain arrêt (démo, clients fictifs)" loading="lazy"></div>
+                <div class="ecran" data-i="1" style="--hc:#190E2C"><div class="ecran-haut"></div><img src="/assets/realisations/m-vizor.webp" width="780" height="1688" decoding="async" loading="lazy" alt="Vizor sur téléphone : le suivi mutuelle (démo, clients fictifs)"></div>
+                <div class="ecran" data-i="2" style="--hc:#FFFFFF"><div class="ecran-haut"></div><img src="/assets/realisations/m-hello.webp" width="780" height="1688" decoding="async" loading="lazy" alt="Hello Collection sur téléphone : l’accueil du portail des professionnels"></div>
+                <span class="barre-accueil"></span>
+                    </div>
+                  </div>
+                </div>
+                <p class="tel-leg">Et sur téléphone</p>
+              </div>
+              <div class="legendes-tel"><div class="legendes">
+              <div class="leg on" data-i="0">
+                <p class="av"><b>Avant.</b> Un fichier Excel et une feuille de route papier par livreur. Le bureau apprenait les soucis le soir.</p>
+                <p class="ap"><b>Après.</b> Le bureau prépare la semaine et l’envoie aux téléphones. Chaque passage revient avec une photo et une signature.</p>
+              </div>
+              <div class="leg" data-i="1">
+                <p class="av"><b>Avant.</b> Les dossiers de tiers payant dans un tableur et un classeur, pointés à la main contre les relevés.</p>
+                <p class="ap"><b>Après.</b> Chaque dossier passe de « à facturer » à « payé », mutuelle par mutuelle. Ce qui manque saute aux yeux.</p>
+              </div>
+              <div class="leg" data-i="2">
+                <p class="av"><b>Avant.</b> Le catalogue PDF de 31 pages envoyé sur WhatsApp, le stock dans un tableur, les commandes dans un cahier.</p>
+                <p class="ap"><b>Après.</b> Un portail réservé aux pros : chaque modèle en photos, avec ses dimensions et son délai, et la commande en ligne.</p>
+              </div>
+</div></div>
+            </div>
+          </div>
+
+          <div class="cta" id="cta">
+            <h3>Et toi, c’est quoi ton <span class="b">avant ?</span></h3>
+            <p>Un tableur qui déborde, des feuilles volantes, des commandes par WhatsApp… Raconte-nous ton quotidien, on te dit ce qu’on construirait.</p>
+            <button class="btn gros" type="button" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel <span class="fl" aria-hidden="true">→</span></button>
+            <small>30 minutes en visio, avec Leeroy.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap pied"><a class="lien-fl" href="/logiciels/">Voir nos logiciels sur mesure <span aria-hidden="true">→</span></a></div>
+</div>
+
+<section class="clients" id="clients" aria-labelledby="clients-titre">
+  <div class="cl-tete"><p class="cl-sur">Nos clients</p><h2 id="clients-titre">Ils nous font <span>confiance.</span></h2></div>
+  <div class="cl-rangs">
+    <div class="cl-rang" data-sens="g"><div class="cl-piste"><div class="cl-carte"><span class="cl-l" role="img" aria-label="Optic City"><span class="cl-mot-l"><img src="/assets/clients/optic-city.svg" alt="" style="height:36px" loading="lazy" decoding="async"><b>Optic City</b></span></span><small>Opticien</small></div><div class="cl-carte"><span class="cl-l" role="img" aria-label="Jofre Tapis Logo"><img src="/assets/clients/jofre-tuile.webp" alt="" style="height:27px" loading="lazy" decoding="async" width="520" height="87"></span><small>Tapis logo</small></div><div class="cl-carte"><span class="cl-l" role="img" aria-label="nao · studio pilates"><img src="/assets/clients/nao-logo.webp" alt="" style="height:44px" loading="lazy" decoding="async" width="144" height="144"></span><small>Coach Pilates</small></div><div class="cl-carte"><span class="cl-l" role="img" aria-label="Hello Collection"><img src="/assets/clients/hello-collection.webp" alt="" style="height:50px" loading="lazy" decoding="async" width="149" height="80"></span><small>Meubles</small></div><div class="cl-carte"><span class="cl-l" role="img" aria-label="City Audition"><span class="cl-mot-l"><svg viewBox="0 0 30 24" fill="none" stroke="#1B2A4A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a5.5 5.5 0 1 1 11 0c0 2.6-1.8 3.9-3.1 5.1-.9.9-1.4 1.8-1.4 3.1a2.7 2.7 0 1 1-5.4 0"/><path d="M7.3 9a2.7 2.7 0 0 1 5.4 0c0 1.2-.8 2-1.5 2.6"/><path d="M20 7.5a5 5 0 0 1 0 9" opacity=".9"/><path d="M23.5 5a9 9 0 0 1 0 14" opacity=".45"/></svg><b>City Audition</b></span></span><small>Audioprothésiste</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><img src="/assets/clients/optic-city.svg" alt="" style="height:36px" loading="lazy" decoding="async"><b>Optic City</b></span></span><small>Opticien</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/jofre-tuile.webp" alt="" style="height:27px" loading="lazy" decoding="async" width="520" height="87"></span><small>Tapis logo</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/nao-logo.webp" alt="" style="height:44px" loading="lazy" decoding="async" width="144" height="144"></span><small>Coach Pilates</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/hello-collection.webp" alt="" style="height:50px" loading="lazy" decoding="async" width="149" height="80"></span><small>Meubles</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><svg viewBox="0 0 30 24" fill="none" stroke="#1B2A4A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a5.5 5.5 0 1 1 11 0c0 2.6-1.8 3.9-3.1 5.1-.9.9-1.4 1.8-1.4 3.1a2.7 2.7 0 1 1-5.4 0"/><path d="M7.3 9a2.7 2.7 0 0 1 5.4 0c0 1.2-.8 2-1.5 2.6"/><path d="M20 7.5a5 5 0 0 1 0 9" opacity=".9"/><path d="M23.5 5a9 9 0 0 1 0 14" opacity=".45"/></svg><b>City Audition</b></span></span><small>Audioprothésiste</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><img src="/assets/clients/optic-city.svg" alt="" style="height:36px" loading="lazy" decoding="async"><b>Optic City</b></span></span><small>Opticien</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/jofre-tuile.webp" alt="" style="height:27px" loading="lazy" decoding="async" width="520" height="87"></span><small>Tapis logo</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/nao-logo.webp" alt="" style="height:44px" loading="lazy" decoding="async" width="144" height="144"></span><small>Coach Pilates</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/hello-collection.webp" alt="" style="height:50px" loading="lazy" decoding="async" width="149" height="80"></span><small>Meubles</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><svg viewBox="0 0 30 24" fill="none" stroke="#1B2A4A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a5.5 5.5 0 1 1 11 0c0 2.6-1.8 3.9-3.1 5.1-.9.9-1.4 1.8-1.4 3.1a2.7 2.7 0 1 1-5.4 0"/><path d="M7.3 9a2.7 2.7 0 0 1 5.4 0c0 1.2-.8 2-1.5 2.6"/><path d="M20 7.5a5 5 0 0 1 0 9" opacity=".9"/><path d="M23.5 5a9 9 0 0 1 0 14" opacity=".45"/></svg><b>City Audition</b></span></span><small>Audioprothésiste</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><img src="/assets/clients/optic-city.svg" alt="" style="height:36px" loading="lazy" decoding="async"><b>Optic City</b></span></span><small>Opticien</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/jofre-tuile.webp" alt="" style="height:27px" loading="lazy" decoding="async" width="520" height="87"></span><small>Tapis logo</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/nao-logo.webp" alt="" style="height:44px" loading="lazy" decoding="async" width="144" height="144"></span><small>Coach Pilates</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/hello-collection.webp" alt="" style="height:50px" loading="lazy" decoding="async" width="149" height="80"></span><small>Meubles</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><svg viewBox="0 0 30 24" fill="none" stroke="#1B2A4A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a5.5 5.5 0 1 1 11 0c0 2.6-1.8 3.9-3.1 5.1-.9.9-1.4 1.8-1.4 3.1a2.7 2.7 0 1 1-5.4 0"/><path d="M7.3 9a2.7 2.7 0 0 1 5.4 0c0 1.2-.8 2-1.5 2.6"/><path d="M20 7.5a5 5 0 0 1 0 9" opacity=".9"/><path d="M23.5 5a9 9 0 0 1 0 14" opacity=".45"/></svg><b>City Audition</b></span></span><small>Audioprothésiste</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><img src="/assets/clients/optic-city.svg" alt="" style="height:36px" loading="lazy" decoding="async"><b>Optic City</b></span></span><small>Opticien</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/jofre-tuile.webp" alt="" style="height:27px" loading="lazy" decoding="async" width="520" height="87"></span><small>Tapis logo</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/nao-logo.webp" alt="" style="height:44px" loading="lazy" decoding="async" width="144" height="144"></span><small>Coach Pilates</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/hello-collection.webp" alt="" style="height:50px" loading="lazy" decoding="async" width="149" height="80"></span><small>Meubles</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><svg viewBox="0 0 30 24" fill="none" stroke="#1B2A4A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a5.5 5.5 0 1 1 11 0c0 2.6-1.8 3.9-3.1 5.1-.9.9-1.4 1.8-1.4 3.1a2.7 2.7 0 1 1-5.4 0"/><path d="M7.3 9a2.7 2.7 0 0 1 5.4 0c0 1.2-.8 2-1.5 2.6"/><path d="M20 7.5a5 5 0 0 1 0 9" opacity=".9"/><path d="M23.5 5a9 9 0 0 1 0 14" opacity=".45"/></svg><b>City Audition</b></span></span><small>Audioprothésiste</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><img src="/assets/clients/optic-city.svg" alt="" style="height:36px" loading="lazy" decoding="async"><b>Optic City</b></span></span><small>Opticien</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/jofre-tuile.webp" alt="" style="height:27px" loading="lazy" decoding="async" width="520" height="87"></span><small>Tapis logo</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/nao-logo.webp" alt="" style="height:44px" loading="lazy" decoding="async" width="144" height="144"></span><small>Coach Pilates</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><img src="/assets/clients/hello-collection.webp" alt="" style="height:50px" loading="lazy" decoding="async" width="149" height="80"></span><small>Meubles</small></div><div class="cl-carte" aria-hidden="true"><span class="cl-l"><span class="cl-mot-l"><svg viewBox="0 0 30 24" fill="none" stroke="#1B2A4A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a5.5 5.5 0 1 1 11 0c0 2.6-1.8 3.9-3.1 5.1-.9.9-1.4 1.8-1.4 3.1a2.7 2.7 0 1 1-5.4 0"/><path d="M7.3 9a2.7 2.7 0 0 1 5.4 0c0 1.2-.8 2-1.5 2.6"/><path d="M20 7.5a5 5 0 0 1 0 9" opacity=".9"/><path d="M23.5 5a9 9 0 0 1 0 14" opacity=".45"/></svg><b>City Audition</b></span></span><small>Audioprothésiste</small></div></div></div>
+  </div>
+</section>
+
+<section class="apropos" id="a-propos" aria-labelledby="apropos-titre">
+  <div class="ap-grille">
+    <figure class="ap-photo"><img src="/assets/leeroy.webp" width="1320" height="1650" alt="Leeroy Ben-Aich, fondateur d’onlee" loading="lazy" decoding="async"><figcaption><b>Leeroy Ben-Aich</b>Fondateur d’onlee</figcaption></figure>
+    <div class="ap-txt">
+      <p class="ap-sur">À propos</p>
+      <h2 id="apropos-titre">Un seul interlocuteur, <span>du premier appel à la mise en ligne.</span></h2>
+      <p>onlee, c’est l’entreprise de Leeroy Ben-Aich. On conçoit des logiciels sur mesure, on gère des pubs Facebook et Instagram et on crée des sites internet.</p>
+      <p>On édite aussi nos propres logiciels : <a href="/vizor/?metier=opticien">Vizor</a> pour les opticiens et <a href="/vizor/?metier=audio">AudioVizor</a> pour les audioprothésistes. On travaille à distance, avec des entreprises partout en France.</p>
+      <div class="ap-actions"><button type="button" class="btn btn-bleu" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel <span class="fleche">→</span></button><a class="btn btn-ligne ap-btn-li" href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener"><svg class="ap-li" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h2.6V18H7.1zM8.4 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM11.3 9.6h2.5v1.15h.04c.35-.66 1.2-1.36 2.47-1.36 2.64 0 3.13 1.74 3.13 4V18h-2.6v-4.07c0-.97-.02-2.22-1.35-2.22-1.36 0-1.57 1.06-1.57 2.15V18h-2.6z"/></svg>Leeroy sur LinkedIn</a></div>
     </div>
   </div>
-</footer>
+</section>
 
-<a class="wa" href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.19.84.85-3.11-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
-</a>
-
+<section class="faq" id="faq" aria-labelledby="faq-titre">
+  <div class="faq-tete">
+    <span class="fq-pensee p1" aria-hidden="true">hmm…</span><span class="fq-pensee p2" aria-hidden="true">c’est combien ?</span><span class="fq-pensee p3" aria-hidden="true">ça marche sur téléphone ?</span>
+    <p class="fq-tampon"><span class="fq-av-t"><img src="/assets/leeroy-mini.webp" alt="" width="30" height="30" loading="lazy" decoding="async"><i></i></span>Leeroy te répond<em> · en ligne</em></p>
+    <h2 id="faq-titre" aria-label="Tu te poses des questions ?"><span class="fq-m"><span>Tu</span></span> <span class="fq-m"><span>te</span></span> <span class="fq-m"><span>poses</span></span> <span class="fq-tape" data-texte="des questions"><span class="fq-lettres">des questions</span><i class="fq-curseur"></i></span><span class="fq-pq">?</span></h2>
+  </div>
+  <div class="fq-fil">
+    <div class="fq ouvert">
+      <button type="button" class="fq-q" aria-expanded="true" aria-controls="fq-r0" id="fq-q0"><span>« Ça va prendre combien de temps ? »</span></button>
+      <div class="fq-r" id="fq-r0" role="region" aria-labelledby="fq-q0"><span class="fq-ecrit" aria-hidden="true"><i></i><i></i><i></i></span><p>Ça dépend de ce que ton logiciel doit faire. Je te montre vite une première maquette cliquable, puis on construit par étapes : tu utilises une première version avant que tout soit fini. Tu as un calendrier précis après notre appel.</p><img class="fq-av" src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="fq">
+      <button type="button" class="fq-q" aria-expanded="false" aria-controls="fq-r1" id="fq-q1"><span>« Ça coûte combien ? »</span></button>
+      <div class="fq-r" id="fq-r1" role="region" aria-labelledby="fq-q1" hidden><span class="fq-ecrit" aria-hidden="true"><i></i><i></i><i></i></span><p>Chaque projet est différent, alors je ne donne pas de prix au hasard. Après un appel de 30 minutes, gratuit et sans engagement, tu reçois un devis clair avant qu’on commence.</p><img class="fq-av" src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="fq">
+      <button type="button" class="fq-q" aria-expanded="false" aria-controls="fq-r2" id="fq-q2"><span>« Je suis nul en informatique. »</span></button>
+      <div class="fq-r" id="fq-r2" role="region" aria-labelledby="fq-q2" hidden><span class="fq-ecrit" aria-hidden="true"><i></i><i></i><i></i></span><p>Aucun souci, c’est mon travail. Je te parle simplement, je te forme, toi et ton équipe, et je reste joignable après la mise en ligne.</p><img class="fq-av" src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="fq">
+      <button type="button" class="fq-q" aria-expanded="false" aria-controls="fq-r3" id="fq-q3"><span>« J’ai tout sur Excel, je dois tout ressaisir ? »</span></button>
+      <div class="fq-r" id="fq-r3" role="region" aria-labelledby="fq-q3" hidden><span class="fq-ecrit" aria-hidden="true"><i></i><i></i><i></i></span><p>Non. On reprend tes données existantes (Excel, exports de ton ancien outil) : tu n’as rien à retaper.</p><img class="fq-av" src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="fq">
+      <button type="button" class="fq-q" aria-expanded="false" aria-controls="fq-r4" id="fq-q4"><span>« Ça marche sur mon téléphone ? »</span></button>
+      <div class="fq-r" id="fq-r4" role="region" aria-labelledby="fq-q4" hidden><span class="fq-ecrit" aria-hidden="true"><i></i><i></i><i></i></span><p>Oui. Tout ce qu’on construit s’utilise sur ordinateur, tablette et téléphone.</p><img class="fq-av" src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="fq">
+      <button type="button" class="fq-q" aria-expanded="false" aria-controls="fq-r5" id="fq-q5"><span>« Pour les pubs, il faut un gros budget ? »</span></button>
+      <div class="fq-r" id="fq-r5" role="region" aria-labelledby="fq-q5" hidden><span class="fq-ecrit" aria-hidden="true"><i></i><i></i><i></i></span><p>Non. On commence petit, on regarde ce que te coûte une demande, puis on ajuste chaque semaine.</p><img class="fq-av" src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="fq">
+      <button type="button" class="fq-q" aria-expanded="false" aria-controls="fq-r6" id="fq-q6"><span>« Tu me mets premier sur Google ? »</span></button>
+      <div class="fq-r" id="fq-r6" role="region" aria-labelledby="fq-q6" hidden><span class="fq-ecrit" aria-hidden="true"><i></i><i></i><i></i></span><p>Personne d’honnête ne peut te le promettre. Par contre, on soigne tout ce qui compte : vitesse, fiche Google, textes, pages lisibles par les IA, et un article utile par mois si tu veux.</p><img class="fq-av" src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="fq">
+      <button type="button" class="fq-q" aria-expanded="false" aria-controls="fq-r7" id="fq-q7"><span>« On peut se voir ? »</span></button>
+      <div class="fq-r" id="fq-r7" role="region" aria-labelledby="fq-q7" hidden><span class="fq-ecrit" aria-hidden="true"><i></i><i></i><i></i></span><p>On travaille à distance, avec des entreprises partout en France. On se parle en visio sur Google Meet : 30 minutes suffisent pour voir si je peux t’aider, et je te le dis franchement si ce n’est pas le cas.</p><img class="fq-av" src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+  <p class="fq-autre">Une autre question ? <button type="button" class="fq-lien" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Pose-la-moi pendant l’appel →</button></p>
+</section>
 <script>
-(function(){
-  'use strict';
-  document.documentElement.classList.add('js');
-  var PRM = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
-
-  // smooth anchor + close mobile nav
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id=a.getAttribute('href'); if(id==='#'||id==='#top'){ return; }
-      var t=document.querySelector(id); if(!t) return;
-      e.preventDefault(); t.scrollIntoView({behavior:PRM?'auto':'smooth', block:'start'});
-      closeNav();
-    });
-  });
-
-  // header condense
-  var head=document.getElementById('head'), tk=false;
-  addEventListener('scroll', function(){ if(tk) return; tk=true; requestAnimationFrame(function(){ head.classList.toggle('scrolled', scrollY>12); tk=false; }); }, {passive:true});
-
-  // burger
-  var burger=document.querySelector('.burger'), mnav=document.getElementById('mobileNav');
-  function openNav(){ mnav.hidden=false; burger.setAttribute('aria-expanded','true'); }
-  function closeNav(){ if(mnav){ mnav.hidden=true; burger.setAttribute('aria-expanded','false'); } }
-  if(burger){ burger.addEventListener('click', function(){ mnav.hidden?openNav():closeNav(); }); }
-
-  // reveal (one-way, keep observing so nothing stays hidden)
-  if('IntersectionObserver'in window && !PRM){
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); }); }, {threshold:.14, rootMargin:'0px 0px -6% 0px'});
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
-
-  // clients marquee : duplicate track for seamless loop
-  var tr=document.getElementById('cTrack'); if(tr){ tr.innerHTML+=tr.innerHTML; }
-
-  // blocs dépliables (pm-toggle), s'il y en a
-  document.querySelectorAll('.pm-toggle').forEach(function(t){
-    function tog(){ var open=t.getAttribute('aria-expanded')==='true'; t.setAttribute('aria-expanded', String(!open)); var sub=document.getElementById(t.getAttribute('aria-controls')); if(sub) sub.classList.toggle('open', !open); }
-    t.addEventListener('click', tog);
-    t.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); tog(); } });
-  });
-
-  // stats count-up
-  (function(){
-    var band=document.getElementById('chiffres'); if(!band) return;
-    var nums=band.querySelectorAll('.stat-n[data-to]'), done=false;
-    function run(){ if(done) return; done=true; nums.forEach(function(el){
-      var to=parseFloat(el.getAttribute('data-to')); if(PRM){ el.firstChild.nodeValue=to; return; }
-      var t0=null; function step(ts){ if(!t0)t0=ts; var p=Math.min(1,(ts-t0)/1100), e=1-Math.pow(1-p,3); el.firstChild.nodeValue=Math.round(to*e); if(p<1) requestAnimationFrame(step); else el.firstChild.nodeValue=to; } requestAnimationFrame(step);
-    }); }
-    if('IntersectionObserver'in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) run(); }); }, {threshold:.4}).observe(band); } else run();
-  })();
-
-  // langue FR / EN
-  (function(){
-    var btn=document.querySelector('.lang'); if(!btn) return;
-    var nodes=document.querySelectorAll('[data-en]');
-    nodes.forEach(function(n){ n.dataset.fr=n.innerHTML; });
-    var T={ fr:'onlee · logiciels sur mesure, intégration et agents IA', en:'onlee · custom software, integration and AI agents' };
-    function set(lang){
-      document.documentElement.lang=lang;
-      nodes.forEach(function(n){ n.innerHTML = lang==='en'? n.dataset.en : n.dataset.fr; });
-      document.title=T[lang]||T.fr;
-      btn.querySelectorAll('[data-lang]').forEach(function(s){ s.classList.toggle('on', s.dataset.lang===lang); });
-      try{ localStorage.setItem('onlee-lang', lang); }catch(e){}
-    }
-    btn.addEventListener('click', function(){ set(document.documentElement.lang==='en'?'fr':'en'); });
-    var saved; try{ saved=localStorage.getItem('onlee-lang'); }catch(e){}
-    set(saved==='en'?'en':'fr');
-  })();
-
-  // formulaire contact (FormSubmit AJAX, sans compte ni clé)
-  var cform=document.querySelector('.cform');
-  if(cform){
-    var note=cform.querySelector('.cform-note');
-    var EN=function(){ return document.documentElement.lang==='en'; };
-    cform.addEventListener('submit', async function(e){
-      e.preventDefault();
-      if(!cform.reportValidity()) return;
-      note.textContent = EN()?'Sending…':'Envoi…';
-      try{
-        var r=await fetch(cform.action,{method:'POST',body:new FormData(cform),headers:{Accept:'application/json'}});
-        var d=await r.json().catch(function(){return {};});
-        if(r.ok && (d.success===true || d.success==='true')){
-          cform.reset();
-          note.textContent = EN()?'Message sent. We’ll get back to you very soon.':'Message envoyé. On revient vers vous très vite.';
-        } else {
-          note.textContent = EN()?'Could not send. Write to us on WhatsApp or at contact@onlee.fr.':'Envoi impossible. Écrivez-nous sur WhatsApp ou à contact@onlee.fr.';
-        }
-      }catch(_){
-        note.textContent = EN()?'Could not send. Write to us on WhatsApp or at contact@onlee.fr.':'Envoi impossible. Écrivez-nous sur WhatsApp ou à contact@onlee.fr.';
-      }
-    });
-  }
+(function(){var t=document.querySelector("#faq .fq-lettres");if(t){var tx=t.textContent;t.textContent="";for(var k=0;k<tx.length;k++){var c=document.createElement("span");c.textContent=tx[k];c.style.setProperty("--k",k);t.appendChild(c)}document.getElementById("faq").style.setProperty("--nl",tx.length);var mw=function(){var l=t.style.width;t.style.width="auto";t.parentNode.style.setProperty("--w",t.scrollWidth+"px");t.style.width=l};mw();if(document.fonts)document.fonts.ready.then(mw);addEventListener("resize",mw)}var h=document.querySelector("#faq .faq-tete");if(!h)return;if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){h.classList.add("joue","fini");return}var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){h.classList.add("joue");setTimeout(function(){h.classList.add("fini")},2400);o.disconnect()}},{threshold:.5});o.observe(h)})();
+(function(){var s=document.getElementById("faq");if(!s)return;var b=[].slice.call(s.querySelectorAll(".fq-q")),red=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function ouvrir(q){b.forEach(function(x){var o=x===q&&x.getAttribute("aria-expanded")!=="true",r=document.getElementById(x.getAttribute("aria-controls"));x.setAttribute("aria-expanded",o?"true":"false");x.parentNode.classList.toggle("ouvert",o);if(o){r.hidden=false;r.classList.remove("pret");void r.offsetWidth;setTimeout(function(){r.classList.add("pret")},red?0:650)}else{r.hidden=true;r.classList.remove("pret")}})}
+b.forEach(function(q){q.addEventListener("click",function(){ouvrir(q)})});
+var r0=document.getElementById("fq-r0");if(r0)r0.classList.add("pret");
+if("IntersectionObserver" in window&&!red){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("vu");io.unobserve(e.target)}})},{threshold:.2});[].slice.call(s.querySelectorAll(".fq")).forEach(function(f,k){f.style.transitionDelay=(k*60)+"ms";io.observe(f)})}else{[].slice.call(s.querySelectorAll(".fq")).forEach(function(f){f.classList.add("vu")})}
 })();
 </script>
 
-<script>/* onlee-trafic : statistiques sans cookie (Cockpit Onlee) */(function(){try{var S="onlee",E="https://cockpit-drab-psi.vercel.app/api/t",q=new URLSearchParams(location.search),moi=false;try{if(q.get("moi")==="1")localStorage.setItem("onlee_moi","1");if(q.get("moi")==="0")localStorage.removeItem("onlee_moi");moi=localStorage.getItem("onlee_moi")==="1"}catch(_){}if(moi||navigator.webdriver)return;function e(d){d.site=S;d.path=location.pathname;var b=JSON.stringify(d);try{if(navigator.sendBeacon&&navigator.sendBeacon(E,b))return}catch(_){}fetch(E,{method:"POST",body:b,keepalive:true,mode:"no-cors"}).catch(function(){})}e({type:"page",ref:document.referrer||"",utm_source:q.get("utm_source")||q.get("ref")||"",utm_campaign:q.get("utm_campaign")||"",lang:navigator.language||""});var onleeHb=setInterval(function(){if(document.visibilityState==="visible")e({type:"ping"})},25000);var t0=Date.now(),vu=0,fin=false;document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden"){vu+=Date.now()-t0;if(!fin){fin=true;e({type:"duree",valeur:Math.round(vu/1000)})}}else{t0=Date.now()}});document.addEventListener("click",function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest("a,button");if(!a)return;var h=a.getAttribute("href")||"",x=(a.innerText||a.getAttribute("aria-label")||"").replace(/\s+/g," ").trim().slice(0,60);if(/calendly|app\.html|\/app\b|#inscription|#demo|wa\.me|whatsapp|mailto:|tel:|stripe/i.test(h)||/rendez-vous|d[ée]mo|commencer|essai|inscri|connecter|contact|[ée]crire|devis|acheter|abonner/i.test(x))e({type:"clic",label:x||h,cible:h.slice(0,200)})},true)}catch(_){}})();</script>
-<script src="/cookies.js"></script>
+<section class="ofin" id="rdv" aria-labelledby="ofin-titre">
+  <div class="ofin-carte">
+    <div class="ofin-txt">
+      <p class="ofin-sur"><i></i>30 minutes · en visio ou au téléphone</p>
+      <h2 id="ofin-titre">Ton projet,<span>on en parle ?</span></h2>
+      <p class="ofin-p">Un appel de 30 minutes avec Leeroy. Tu racontes comment tu travailles aujourd’hui, on te dit ce qu’on ferait à ta place. Sans engagement.</p>
+      <div class="ofin-actions">
+        <button type="button" class="ofin-btn" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel<span class="rond"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+        <a class="ofin-wa" href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.19.84.85-3.11-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Ou écris-nous sur WhatsApp</a>
+      </div>
+    </div>
+    <button type="button" class="ofin-agenda" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express aria-label="Agenda : choisir un créneau pour un appel de 30 minutes">
+      <span class="ent"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#fff" stroke="#E4E6EB"/><text x="20" y="13.5" text-anchor="middle" font-size="7.5" font-weight="600" fill="#FF3B30" font-family="-apple-system,Helvetica">JEU.</text><text x="20" y="32" text-anchor="middle" font-size="19" font-weight="300" fill="#111" font-family="-apple-system,Helvetica">12</text></svg><b>Agenda</b><em>30 min · visio</em></span>
+      <span class="sem" aria-hidden="true"><span>LUN<b>9</b></span><span>MAR<b>10</b></span><span>MER<b>11</b></span><span class="j">JEU<b>12</b></span><span>VEN<b>13</b></span></span>
+      <span class="cr"><i></i><span><b>Appel avec Leeroy</b>Ton projet, tes questions</span><img src="/assets/leeroy-mini.webp" alt="" width="34" height="34" loading="lazy" decoding="async"></span>
+      <span class="choisir">Choisir mon créneau →</span>
+    </button>
+  </div>
+</section>
+
+<footer class="opied">
+  <div class="opied-wrap">
+    <div class="opied-haut">
+      <div class="opied-marque"><a class="opied-logo" href="/" aria-label="onlee, accueil"></a><p>On conçoit des logiciels sur mesure, on gère tes pubs Facebook et Instagram et on crée des sites internet. Éditeur de Vizor et AudioVizor. À distance, partout en France.</p></div>
+      <div><h3>Services</h3><ul><li><a href="/logiciels/">Logiciels sur mesure</a></li><li><a href="/publicites/">Gestion des pubs</a></li><li><a href="/sites/">Sites internet et SEO</a></li><li><a href="/vizor/?metier=opticien">Vizor et AudioVizor</a></li></ul></div>
+      <div><h3>onlee</h3><ul><li><a href="/realisations/">Réalisations</a></li><li><a href="/#a-propos">À propos</a></li><li><a href="/blog/">Conseils</a></li><li><a href="/#faq">Questions fréquentes</a></li><li><a href="https://vizor.onlee.fr/" target="_blank" rel="noopener">Vizor <small>pour les opticiens</small></a></li><li><a href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener">AudioVizor <small>pour les audioprothésistes</small></a></li></ul></div>
+      <div class="opied-contact"><h3>Contact</h3><ul><li><a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.19.84.85-3.11-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg><span>WhatsApp<small>+33 6 80 71 52 62</small></span></a></li><li><a href="mailto:contact@onlee.fr"><svg viewBox="0 0 24 24" fill="none" stroke="#0E0F13" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><span>E-mail<small>contact@onlee.fr</small></span></a></li><li><a href="https://www.linkedin.com/in/leeroy-benaich-a04544412/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h2.3V17H7.1zM8.25 6a1.33 1.33 0 1 1 0 2.66 1.33 1.33 0 0 1 0-2.66zM10.9 9.6h2.2v1h.03c.31-.58 1.06-1.2 2.18-1.2 2.33 0 2.76 1.53 2.76 3.53V17h-2.3v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9V17h-2.3z"/></svg><span>LinkedIn<small>Leeroy Ben-Aich</small></span></a></li></ul></div>
+    </div>
+    <span class="opied-geant" aria-hidden="true"></span>
+    <div class="opied-bas"><span>© <span data-annee>2026</span> onlee · Conçu et codé par onlee</span><nav aria-label="Liens légaux"><a href="/mentions-legales/">Mentions légales</a><a href="/mentions-legales/#cookies">Confidentialité</a><a href="#cookies" id="cookies-gerer" hidden>Gérer les cookies</a></nav></div>
+  </div>
+</footer>
+
+<script>
+/* le titre et les widgets du haut apparaissent en douceur (comme sur la maquette validée) */
+requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.getElementById('haut').classList.add('joue'); }); });
+</script>
+<script src="/js/commun.js" defer></script>
+<script defer src="/js/cal.js"></script>
+<script defer src="/js/cta-express.js" data-logo="/assets/onlee-logo-ink.png" data-photo="/assets/leeroy-visage.webp"></script>
+<script src="/js/trafic.js" defer></script>
+<script src="/cookies.js?v=boite1" defer></script>
+<script defer src="/js/haut-v1.js"></script>
+<script defer src="/js/realisations.js"></script>
+<script>
+/* La boîte 3D (Three.js, ~600 Ko) se charge sans bloquer la page : dès qu'on approche de la boîte,
+   ou juste après l'ouverture de la page quand le navigateur est libre. Si la 3D est impossible -> image fixe. */
+(function(){
+  var sec = document.getElementById('boite-sec'); if (!sec) return; var parti = false;
+  function sans3d(){ sec.classList.add('sans-3d'); }
+  function policesPretes(fin){ var t0 = Date.now();
+    (function v(){ var ok = !document.fonts || !document.fonts.forEach; if (!ok) document.fonts.forEach(function(f){ if (/Bricolage/.test(f.family)) ok = true; });
+      if (ok || Date.now() - t0 > 3000) fin(); else setTimeout(v, 60); })(); }
+  function charger(){ if (parti) return; parti = true;
+    policesPretes(function(){
+      ['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', '/js/cartes-atelier.js', '/js/boite.js'].forEach(function(u, i){
+        var s = document.createElement('script'); s.src = u; s.async = false;
+        if (!i) s.onerror = sans3d;
+        document.body.appendChild(s); }); }); }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es, o){ if (es[0].isIntersecting){ o.disconnect(); charger(); } }, { rootMargin: '120% 0px' }).observe(sec);
+  function auRepos(){ ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(charger, { timeout: 1500 }); }
+  if (document.readyState === 'complete') auRepos(); else addEventListener('load', auRepos);
+})();
+</script>
 </body>
 </html>
