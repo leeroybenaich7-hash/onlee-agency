@@ -1,3 +1,4 @@
+var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur les pages /en/ (voir outils/assembler/anglais.py) */
 /* Réalisations · Avant / Après piloté par la molette (repris de labo/pages/apres-boite-2) */
 (function(){
   'use strict';
@@ -77,7 +78,7 @@
     legGroupes.forEach(function(g){ g[actif].classList.toggle('cote-ap', u > .5); });
     traits[actif].style.setProperty('--f', u.toFixed(3));
     poignee.setAttribute('aria-valuenow', Math.round(u * 100));
-    poignee.setAttribute('aria-valuetext', u < .5 ? 'Avant' : 'Après');
+    poignee.setAttribute('aria-valuetext', u < .5 ? (__EN ? 'Before' : 'Avant') : (__EN ? 'After' : 'Après'));
   }
 
   /* ---------- amorti : rAF seulement tant que la barre bouge ---------- */

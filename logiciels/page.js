@@ -1,3 +1,4 @@
+var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur les pages /en/ (voir outils/assembler/anglais.py) */
 /* =====================================================================
    Page « Logiciels sur mesure » — carrousel piloté par le défilement
    Hello Collection → Onlee Tournées → Ton logiciel (rendez-vous)
@@ -11,35 +12,35 @@
 
   var PROJETS = [
     {
-      n: '01', nom: 'Hello Collection', type: 'Portail de commande pour professionnels', c: '#C82121',
-      statut: 'Projet client · en ligne', lien: 'https://hellocollection-pro.fr', lienTxt: 'hellocollection-pro.fr',
-      pourQui: 'Un fabricant et grossiste en mobilier qui vend à des magasins de meubles, en France et à l’étranger.',
-      besoin: 'Que ses clients pros voient toute la collection et passent commande à toute heure, sans tout faire par téléphone.',
-      construit: 'Un portail de commande : les vrais modèles en photo, le catalogue, un panier pro et plusieurs langues.',
+      n: '01', nom: 'Hello Collection', type: (__EN ? 'Ordering portal for trade customers' : 'Portail de commande pour professionnels'), c: '#C82121',
+      statut: (__EN ? 'Client project · live' : 'Projet client · en ligne'), lien: 'https://hellocollection-pro.fr', lienTxt: 'hellocollection-pro.fr',
+      pourQui: (__EN ? 'A furniture manufacturer and wholesaler selling to furniture stores, in France and abroad.' : 'Un fabricant et grossiste en mobilier qui vend à des magasins de meubles, en France et à l’étranger.'),
+      besoin: (__EN ? 'Let its trade customers see the whole collection and order at any time, without doing everything over the phone.' : 'Que ses clients pros voient toute la collection et passent commande à toute heure, sans tout faire par téléphone.'),
+      construit: (__EN ? 'An ordering portal: the real models in photos, the catalogue, a trade basket and several languages.' : 'Un portail de commande : les vrais modèles en photo, le catalogue, un panier pro et plusieurs langues.'),
       adresse: 'hellocollection-pro.fr',
-      ecrans: [{ src: '/logiciels/img/hc-accueil.webp', nom: 'Accueil' }, { src: '/logiciels/img/hc-catalogue.webp', nom: 'Catalogue' }],
-      mobiles: [{ src: '/logiciels/img/hc-mobile.webp', nom: 'Accueil sur téléphone' }, { src: '/logiciels/img/hc-mobile-produit.webp', nom: 'Fiche modèle' }],
-      notif: { ic: 'HC', titre: 'Commande à valider', texte: 'Un magasin pro vient de commander la chambre Scarlet.' }
+      ecrans: [{ src: '/logiciels/img/hc-accueil.webp', nom: (__EN ? 'Home' : 'Accueil') }, { src: '/logiciels/img/hc-catalogue.webp', nom: 'Catalogue' }],
+      mobiles: [{ src: '/logiciels/img/hc-mobile.webp', nom: (__EN ? 'Home on mobile' : 'Accueil sur téléphone') }, { src: '/logiciels/img/hc-mobile-produit.webp', nom: (__EN ? 'Model page' : 'Fiche modèle') }],
+      notif: { ic: 'HC', titre: (__EN ? 'Order to approve' : 'Commande à valider'), texte: (__EN ? 'A trade store just ordered the Scarlet bedroom set.' : 'Un magasin pro vient de commander la chambre Scarlet.') }
     },
     {
-      n: '02', nom: 'Onlee Tournées', type: 'Tournées de livraison et abonnements', c: '#2B57C4',
-      statut: 'Projet client · montré en démo, données fictives', lien: '', lienTxt: '',
-      pourQui: 'Une entreprise de services aux commerces, avec des livreurs sur la route chaque jour et des centaines de clients sous contrat.',
-      besoin: 'Savoir où passe chaque livreur, prouver que le passage a bien été fait, et retrouver l’historique d’un client en un clic.',
-      construit: 'Le planning des tournées, l’appli du livreur avec photo et signature, les fiches clients et la preuve de passage.',
-      adresse: 'Onlee Tournées · démo',
+      n: '02', nom: 'Onlee Tournées', type: (__EN ? 'Delivery routes and subscriptions' : 'Tournées de livraison et abonnements'), c: '#2B57C4',
+      statut: (__EN ? 'Client project · shown as a demo, fictional data' : 'Projet client · montré en démo, données fictives'), lien: '', lienTxt: '',
+      pourQui: (__EN ? 'A company providing services to shops, with drivers on the road every day and hundreds of customers under contract.' : 'Une entreprise de services aux commerces, avec des livreurs sur la route chaque jour et des centaines de clients sous contrat.'),
+      besoin: (__EN ? 'Knowing where each driver goes, proving every visit really happened, and pulling up a customer’s history in one click.' : 'Savoir où passe chaque livreur, prouver que le passage a bien été fait, et retrouver l’historique d’un client en un clic.'),
+      construit: (__EN ? 'Route planning, a driver app with photo and signature, customer records and proof of visit.' : 'Le planning des tournées, l’appli du livreur avec photo et signature, les fiches clients et la preuve de passage.'),
+      adresse: (__EN ? 'Onlee Tournées · demo' : 'Onlee Tournées · démo'),
       ecrans: [
-        { src: '/logiciels/img/tr-semaine.webp', nom: 'La semaine' },
-        { src: '/logiciels/img/tr-jour.webp', nom: 'Aujourd’hui' },
-        { src: '/logiciels/img/tr-fiche.webp', nom: 'Fiche client' },
-        { src: '/logiciels/img/tr-preuve.webp', nom: 'Preuve de passage' },
-        { src: '/logiciels/img/tr-tableau.webp', nom: 'Tableau de bord' }
+        { src: '/logiciels/img/tr-semaine.webp', nom: (__EN ? 'The week' : 'La semaine') },
+        { src: '/logiciels/img/tr-jour.webp', nom: (__EN ? 'Today' : 'Aujourd’hui') },
+        { src: '/logiciels/img/tr-fiche.webp', nom: (__EN ? 'Customer record' : 'Fiche client') },
+        { src: '/logiciels/img/tr-preuve.webp', nom: (__EN ? 'Proof of visit' : 'Preuve de passage') },
+        { src: '/logiciels/img/tr-tableau.webp', nom: (__EN ? 'Dashboard' : 'Tableau de bord') }
       ],
-      mobiles: [{ src: '/logiciels/img/tr-livreur.webp', nom: 'La tournée du livreur' }, { src: '/logiciels/img/tr-livreur-signature.webp', nom: 'Signature du client' }],
-      notif: { ic: 'M', titre: 'Mehdi · arrêt fait', texte: 'Boulangerie Martin : photo et signature reçues.' }
+      mobiles: [{ src: '/logiciels/img/tr-livreur.webp', nom: (__EN ? 'The driver’s route' : 'La tournée du livreur') }, { src: '/logiciels/img/tr-livreur-signature.webp', nom: (__EN ? 'Customer signature' : 'Signature du client') }],
+      notif: { ic: 'M', titre: (__EN ? 'Mehdi · stop done' : 'Mehdi · arrêt fait'), texte: (__EN ? 'Boulangerie Martin: photo and signature received.' : 'Boulangerie Martin : photo et signature reçues.') }
     }
   ];
-  var TOI = { n: '03', nom: 'Ton logiciel', type: 'Le prochain de la liste', c: '#0E0F13' };
+  var TOI = { n: '03', nom: (__EN ? 'Your software' : 'Ton logiciel'), type: (__EN ? 'Next on the list' : 'Le prochain de la liste'), c: '#0E0F13' };
   var TOUS = PROJETS.concat([TOI]), N = TOUS.length;
 
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -52,18 +53,18 @@
   /* ---------- morceaux d'une carte projet ---------- */
   function notif(p) {
     return '<div class="notif notif-scene"><span class="notif-ic" style="background:' + p.c + '">' + p.notif.ic + '</span>' +
-      '<div class="notif-t"><p><b>' + p.notif.titre + '</b><small>maintenant</small></p><span>' + p.notif.texte + '</span></div></div>';
+      '<div class="notif-t"><p><b>' + p.notif.titre + (__EN ? '</b><small>now</small></p><span>' : '</b><small>maintenant</small></p><span>') + p.notif.texte + '</span></div></div>';
   }
   function navigateur(p, prio) {
     return '<div class="navig"><div class="navig-barre"><i></i><i></i><i></i><span>' + p.adresse + '</span></div><div class="navig-ecran">' +
       p.ecrans.map(function (e, k) {
-        return '<img class="' + (k === 0 ? 'on' : '') + '" src="' + e.src + '" alt="' + p.nom + ' — ' + e.nom + ' (vraie capture)" ' +
+        return '<img class="' + (k === 0 ? 'on' : '') + '" src="' + e.src + '" alt="' + p.nom + ' — ' + e.nom + (__EN ? ' (real screenshot)" ' : ' (vraie capture)" ') +
           (prio && k === 0 ? 'fetchpriority="high"' : 'loading="lazy"') + ' decoding="async" width="1600" height="1000" srcset="' + e.src.replace('.webp', '-800.webp') + ' 800w, ' + e.src + ' 1600w" sizes="(max-width: 760px) 80vw, 560px">';
       }).join('') + '</div></div>';
   }
   function telephone(p) {
     return '<div class="tel"><div class="tel-cadre"><div class="tel-ecran">' + p.mobiles.map(function (m, k) {
-      return '<img class="' + (k === 0 ? 'on' : '') + '" src="' + m.src + '" alt="' + p.nom + ' — ' + m.nom + ' (vraie capture)" loading="lazy" decoding="async" srcset="' + m.src.replace('.webp', '-400.webp') + ' 400w, ' + m.src + ' 780w" sizes="(max-width: 760px) 20vw, 140px">';
+      return '<img class="' + (k === 0 ? 'on' : '') + '" src="' + m.src + '" alt="' + p.nom + ' — ' + m.nom + (__EN ? ' (real screenshot)" loading="lazy" decoding="async" srcset="' : ' (vraie capture)" loading="lazy" decoding="async" srcset="') + m.src.replace('.webp', '-400.webp') + ' 400w, ' + m.src + ' 780w" sizes="(max-width: 760px) 20vw, 140px">';
     }).join('') + '</div></div><div class="tel-points">' + p.mobiles.map(function (m, k) {
       return '<button type="button" class="' + (k === 0 ? 'on' : '') + '" data-m="' + k + '" aria-label="' + m.nom + '"></button>';
     }).join('') + '</div></div>';
@@ -71,9 +72,9 @@
   function carteProjet(p, i) {
     return '<article class="c3" data-i="' + i + '" style="--c:' + p.c + '">' +
       '<div class="c3-texte"><span class="num">' + p.n + '</span><h2>' + p.nom + '</h2><p class="statut">' + p.statut + '</p>' +
-      '<dl class="trois"><div><dt>Pour qui</dt><dd>' + p.pourQui + '</dd></div><div><dt>Le besoin</dt><dd>' + p.besoin + '</dd></div>' +
-      '<div><dt>Ce qu’on a construit</dt><dd>' + p.construit + '</dd></div></dl>' +
-      '<div class="liens-p">' + (p.lien ? '<a class="lien-site" href="' + p.lien + '" target="_blank" rel="noopener">' + p.lienTxt + ' ' + FLECHE_LIEN + '</a>' : '<span class="lien-site muet">Démo privée, montrée en appel</span>') + '</div></div>' +
+      (__EN ? '<dl class="trois"><div><dt>Who it’s for</dt><dd>' : '<dl class="trois"><div><dt>Pour qui</dt><dd>') + p.pourQui + (__EN ? '</dd></div><div><dt>The need</dt><dd>' : '</dd></div><div><dt>Le besoin</dt><dd>') + p.besoin + '</dd></div>' +
+      (__EN ? '<div><dt>What we built</dt><dd>' : '<div><dt>Ce qu’on a construit</dt><dd>') + p.construit + '</dd></div></dl>' +
+      '<div class="liens-p">' + (p.lien ? '<a class="lien-site" href="' + p.lien + '" target="_blank" rel="noopener">' + p.lienTxt + ' ' + FLECHE_LIEN + '</a>' : (__EN ? '<span class="lien-site muet">Private demo, shown on a call</span>' : '<span class="lien-site muet">Démo privée, montrée en appel</span>')) + '</div></div>' +
       '<div class="c3-scene"><div class="scene avec-tel"><div class="scene-pose">' + navigateur(p, i === 0) + telephone(p) + notif(p) + '</div>' +
       '<div class="ong-ecrans" role="tablist">' + p.ecrans.map(function (e, k) {
         return '<button type="button" role="tab" class="' + (k === 0 ? 'on' : '') + '" data-e="' + k + '">' + e.nom + '</button>';
@@ -84,19 +85,19 @@
     var os = function (cl, k) { return '<i class="os ' + cl + '" style="--k:' + k + '"></i>'; };
     var lignes = ''; for (var r = 0; r < 4; r++) lignes += os('os-ligne', 9 + r);
     return '<article class="c3 c3-toi" data-i="' + i + '" style="--c:' + TOI.c + '">' +
-      '<div class="c3-texte"><span class="num">03</span><h2>Ton logiciel</h2>' +
-      '<p class="phrase">Le prochain, c’est le tien.</p>' +
-      '<ul class="etiquettes"><li>ton métier</li><li>tes clients</li><li>tes outils</li></ul>' +
-      '<p class="toi-p">30 minutes au téléphone pour voir ensemble si un logiciel sur mesure a du sens pour toi.</p>' +
-      '<button class="btn btn-bleu btn-gros" ' + CAL + '>Réserver un appel <span class="fleche">→</span></button></div>' +
+      (__EN ? '<div class="c3-texte"><span class="num">03</span><h2>Your software</h2>' : '<div class="c3-texte"><span class="num">03</span><h2>Ton logiciel</h2>') +
+      (__EN ? '<p class="phrase">The next one is yours.</p>' : '<p class="phrase">Le prochain, c’est le tien.</p>') +
+      (__EN ? '<ul class="etiquettes"><li>your trade</li><li>your customers</li><li>your tools</li></ul>' : '<ul class="etiquettes"><li>ton métier</li><li>tes clients</li><li>tes outils</li></ul>') +
+      (__EN ? '<p class="toi-p">30 minutes on the phone to see together whether custom software makes sense for you.</p>' : '<p class="toi-p">30 minutes au téléphone pour voir ensemble si un logiciel sur mesure a du sens pour toi.</p>') +
+      '<button class="btn btn-bleu btn-gros" ' + CAL + (__EN ? '>Book a call <span class="fleche">→</span></button></div>' : '>Réserver un appel <span class="fleche">→</span></button></div>') +
       '<div class="c3-scene"><div class="scene"><div class="scene-pose">' +
-        '<div class="navig navig-vide"><div class="navig-barre"><i></i><i></i><i></i><span>ton-logiciel.fr</span></div>' +
+        (__EN ? '<div class="navig navig-vide"><div class="navig-barre"><i></i><i></i><i></i><span>your-software.com</span></div>' : '<div class="navig navig-vide"><div class="navig-barre"><i></i><i></i><i></i><span>ton-logiciel.fr</span></div>') +
         '<div class="navig-ecran"><div class="chantier">' +
           '<div class="ch-cote">' + os('os-logo', 0) + os('os-menu', 1) + os('os-menu', 2) + os('os-menu', 3) + os('os-menu', 4) + '</div>' +
           '<div class="ch-corps">' + os('os-titre', 2) + '<div class="ch-chiffres">' + os('os-bloc', 4) + os('os-bloc', 5) + os('os-bloc', 6) + '</div>' +
           '<div class="ch-tableau">' + lignes + '</div></div>' +
-        '</div><span class="ch-mot">Ton écran, à dessiner ensemble</span></div></div>' +
-        '<div class="notif notif-scene"><span class="notif-ic" style="background:#0055FF">On</span><div class="notif-t"><p><b>Appel réservé</b><small>maintenant</small></p><span>Jeudi 10:00 · 30 min pour parler de ton projet.</span></div></div>' +
+        (__EN ? '</div><span class="ch-mot">Your screen, to design together</span></div></div>' : '</div><span class="ch-mot">Ton écran, à dessiner ensemble</span></div></div>') +
+        (__EN ? '<div class="notif notif-scene"><span class="notif-ic" style="background:#0055FF">On</span><div class="notif-t"><p><b>Call booked</b><small>now</small></p><span>Thursday 10:00 · 30 min to talk about your project.</span></div></div>' : '<div class="notif notif-scene"><span class="notif-ic" style="background:#0055FF">On</span><div class="notif-t"><p><b>Appel réservé</b><small>maintenant</small></p><span>Jeudi 10:00 · 30 min pour parler de ton projet.</span></div></div>') +
       '</div></div></div></article>';
   }
 
@@ -147,7 +148,7 @@
     $$('button', ong).forEach(function (b, k) { b.classList.toggle('on', k === i); b.setAttribute('aria-selected', String(k === i)); });
     $('#fl3g').disabled = i === 0; $('#fl3d').disabled = i === N - 1;
     $('#avanceI').style.transform = 'scaleX(' + ((i + 1) / N) + ')';
-    $('#avanceT').textContent = i < N - 1 ? TOUS[i].n + ' / 0' + N + ' · fais défiler pour la suite' : '03 / 0' + N;
+    $('#avanceT').textContent = i < N - 1 ? TOUS[i].n + ' / 0' + N + (__EN ? ' · scroll for the next one' : ' · fais défiler pour la suite') : '03 / 0' + N;
     placer();
   }
 

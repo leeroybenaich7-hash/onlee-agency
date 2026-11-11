@@ -1,3 +1,4 @@
+var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur les pages /en/ (voir outils/assembler/anglais.py) */
 /* =====================================================================
    onlee · bouton « Réserver un appel » EXPRESS + décor autour de cal.com
    Fichier autonome. À charger APRÈS le script d'intégration cal.com.
@@ -99,13 +100,13 @@
     clone.className += ' oc-clone'; clone.tabIndex = -1;
     var enveloppe = creer('<span class="oc-xc"></span>'); enveloppe.appendChild(clone); coque.appendChild(enveloppe);
     calque.appendChild(coque);
-    var mention = creer('<span class="oc-mention">Exemple d’automatisation · rien n’est envoyé</span>');
+    var mention = creer((__EN ? '<span class="oc-mention">Automation example · nothing is sent</span>' : '<span class="oc-mention">Exemple d’automatisation · rien n’est envoyé</span>'));
     mention.style.left = px(Math.max(130, Math.min(innerWidth - 130, r.left + r.width / 2))); mention.style.top = px(r.bottom + 9);
     calque.appendChild(mention);
     document.body.appendChild(calque);
     var A = function (el, kf, o) { return el.animate(kf, Object.assign({ fill: 'both', easing: COURBE }, o)); };
     A(enveloppe, [{ transform: 'none', opacity: 1 }, { transform: 'translateY(-100%)', opacity: 0 }], { duration: 170, easing: 'cubic-bezier(.5,0,.75,0)' });
-    [['onlee', 'Fiche'], ['agenda', 'Agenda'], ['wa', 'WhatsApp']].forEach(function (e, i) {
+    [['onlee', (__EN ? 'Record' : 'Fiche')], ['agenda', (__EN ? 'Calendar' : 'Agenda')], ['wa', 'WhatsApp']].forEach(function (e, i) {
       var x = creer('<span class="oc-etape">' + SVG[e[0]] + e[1] + '<i class="oc-ok">' + SVG.ok + '</i></span>');
       coque.appendChild(x);
       var t = 120 + i * 240;
@@ -127,10 +128,10 @@
     decor = creer('<div class="oc-decor" aria-hidden="true">' +
       '<span class="oc-fond"></span><span class="oc-forme oc-f1"></span><span class="oc-forme oc-f2"></span><span class="oc-forme oc-f3"></span>' +
       '<span class="oc-filigrane"></span>' +
-      '<div class="oc-carte oc-c1" style="--rot:-2deg"><span class="oc-ic oc-ic-meet"><svg class="oc-meet" viewBox="0 0 87.5 72"><path fill="#00832d" d="M49.5 36l8.53 9.75 11.47 7.33 2-17.02-2-16.64-11.69 6.44z"/><path fill="#0066da" d="M0 51.5V66c0 3.315 2.685 6 6 6h14.5l3-10.96-3-9.54-9.95-3z"/><path fill="#e94235" d="M20.5 0L0 20.5l10.55 3 9.95-3 2.95-9.41z"/><path fill="#2684fc" d="M20.5 20.5H0v31h20.5z"/><path fill="#00ac47" d="M82.6 8.68L69.5 19.42v33.66l13.16 10.79c1.97 1.54 4.85.135 4.85-2.37V11c0-2.535-2.945-3.925-4.91-2.32zM49.5 36v15.5h-29V72h43c3.315 0 6-2.685 6-6V53.08z"/><path fill="#ffba00" d="M63.5 0h-43v20.5h29V36l20-16.57V6c0-3.315-2.685-6-6-6z"/></svg></span><span><b>30 min · en visio</b><small>Google Meet · le lien arrive par mail</small></span></div>' +
-      '<div class="oc-carte oc-c2" style="--rot:1.5deg"><span class="oc-av"></span><span><b>Leeroy t’écoute</b><small>Sans engagement</small></span></div>' +
-      '<div class="oc-carte oc-c3" style="--rot:1.5deg"><span class="oc-logos">' + SVG.wa.replace('<svg', '<svg class="oc-plein"') + SVG.meta + SVG.google + SVG.vizor.replace('<svg', '<svg class="oc-plein"') + '</span><span><b>On branche tes outils</b><small>WhatsApp, pubs Meta, Google…</small></span></div>' +
-      '<div class="oc-carte oc-c4" style="--rot:-1.5deg"><span class="oc-onlee"></span><span><b>Logiciels · Pubs · Sites</b><small>Faits pour ton métier</small></span></div>' +
+      (__EN ? '<div class="oc-carte oc-c1" style="--rot:-2deg"><span class="oc-ic oc-ic-meet"><svg class="oc-meet" viewBox="0 0 87.5 72"><path fill="#00832d" d="M49.5 36l8.53 9.75 11.47 7.33 2-17.02-2-16.64-11.69 6.44z"/><path fill="#0066da" d="M0 51.5V66c0 3.315 2.685 6 6 6h14.5l3-10.96-3-9.54-9.95-3z"/><path fill="#e94235" d="M20.5 0L0 20.5l10.55 3 9.95-3 2.95-9.41z"/><path fill="#2684fc" d="M20.5 20.5H0v31h20.5z"/><path fill="#00ac47" d="M82.6 8.68L69.5 19.42v33.66l13.16 10.79c1.97 1.54 4.85.135 4.85-2.37V11c0-2.535-2.945-3.925-4.91-2.32zM49.5 36v15.5h-29V72h43c3.315 0 6-2.685 6-6V53.08z"/><path fill="#ffba00" d="M63.5 0h-43v20.5h29V36l20-16.57V6c0-3.315-2.685-6-6-6z"/></svg></span><span><b>30 min · video call</b><small>Google Meet · the link arrives by email</small></span></div>' : '<div class="oc-carte oc-c1" style="--rot:-2deg"><span class="oc-ic oc-ic-meet"><svg class="oc-meet" viewBox="0 0 87.5 72"><path fill="#00832d" d="M49.5 36l8.53 9.75 11.47 7.33 2-17.02-2-16.64-11.69 6.44z"/><path fill="#0066da" d="M0 51.5V66c0 3.315 2.685 6 6 6h14.5l3-10.96-3-9.54-9.95-3z"/><path fill="#e94235" d="M20.5 0L0 20.5l10.55 3 9.95-3 2.95-9.41z"/><path fill="#2684fc" d="M20.5 20.5H0v31h20.5z"/><path fill="#00ac47" d="M82.6 8.68L69.5 19.42v33.66l13.16 10.79c1.97 1.54 4.85.135 4.85-2.37V11c0-2.535-2.945-3.925-4.91-2.32zM49.5 36v15.5h-29V72h43c3.315 0 6-2.685 6-6V53.08z"/><path fill="#ffba00" d="M63.5 0h-43v20.5h29V36l20-16.57V6c0-3.315-2.685-6-6-6z"/></svg></span><span><b>30 min · en visio</b><small>Google Meet · le lien arrive par mail</small></span></div>') +
+      (__EN ? '<div class="oc-carte oc-c2" style="--rot:1.5deg"><span class="oc-av"></span><span><b>Leeroy listens</b><small>No commitment</small></span></div>' : '<div class="oc-carte oc-c2" style="--rot:1.5deg"><span class="oc-av"></span><span><b>Leeroy t’écoute</b><small>Sans engagement</small></span></div>') +
+      '<div class="oc-carte oc-c3" style="--rot:1.5deg"><span class="oc-logos">' + SVG.wa.replace('<svg', '<svg class="oc-plein"') + SVG.meta + SVG.google + SVG.vizor.replace('<svg', '<svg class="oc-plein"') + (__EN ? '</span><span><b>We connect your tools</b><small>WhatsApp, Meta ads, Google…</small></span></div>' : '</span><span><b>On branche tes outils</b><small>WhatsApp, pubs Meta, Google…</small></span></div>') +
+      (__EN ? '<div class="oc-carte oc-c4" style="--rot:-1.5deg"><span class="oc-onlee"></span><span><b>Software · Ads · Websites</b><small>Made for your trade</small></span></div>' : '<div class="oc-carte oc-c4" style="--rot:-1.5deg"><span class="oc-onlee"></span><span><b>Logiciels · Pubs · Sites</b><small>Faits pour ton métier</small></span></div>') +
       '</div>');
     decor.style.setProperty('--oc-logo', 'url("' + LOGO + '")');
     decor.style.setProperty('--oc-photo', 'url("' + PHOTO + '")');
