@@ -346,3 +346,10 @@
 .invite-dos .iv-suite:hover{background:rgba(14,15,19,.06)}
 .invite-dos svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;animation:none!important}
 .invite-dos{transform:translate(-50%,-4%) scale(.92)!important}.invite-dos.on{transform:translate(-50%,-4%)!important}
+
+/* téléphone : les boutons sous la carte restent sur une ligne, plus compacts */
+.invite-dos a,.invite-dos button{white-space:nowrap}
+@media(max-width:760px){
+  .invite-dos a,.invite-dos button{height:34px;padding:0 12px;font-size:12.5px;gap:5px}
+  .invite-dos svg{width:14px;height:14px}
+}

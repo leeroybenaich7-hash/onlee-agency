@@ -439,10 +439,11 @@
       var E2 = emplacement(i); V.copy(bouche).lerp(P.feat, monte); V.lerp(E2.p, range); V.lerp(P.fin(i), fin);
       var sc = mix(mix(mix(.3, P.fs, monte), E2.s, range), P.fis, fin);
       var vedette = monte > .98 && range < .02 && fin < .02, fl = (m === survol && !drag) ? 1 : 0; if (!vedette && fin < .98) ud.flipC = 0;
-      if (vedette && !ud.autoT && !ud.vu) ud.autoT = now + 650; if (!vedette && ud.autoT){ ud.autoT = 0; }
-      if (ud.autoT){ var at = (now - ud.autoT) / 1000; encore = true; if (at >= 0 && at < 2.3) ud.flipC = 1; else if (at >= 2.3){ ud.flipC = 0; ud.autoT = 0; ud.vu = true; } }
+      /* retournement piloté par le défilement (plus de minuteur) : en descendant, la carte montre son dos puis revient de face ;
+         impossible de passer à côté, même en défilant vite (téléphone) */
+      if (vedette){ var fp = ci < .5 ? lisse(ph(ci, .34, .45)) : 1 - lisse(ph(ci, .58, .67)); ud.flipC = fp; if (ci > .5) ud.vu = true; }
       var tease = 0;
-      if (vedette && ud.vu && ud.flipC === 0 && ud.flip < .05){ carteInvite = m; }
+      if (vedette && ud.vu && ud.flipC < .01 && ud.flip < .05){ carteInvite = m; }
       var df = ud.flipC - ud.flip; ud.flip += df * .12; if (Math.abs(df) > .002) encore = true; else ud.flip = ud.flipC;
       var trx = vedette ? -my * .18 : 0, tr = vedette ? mx * .3 : 0; ud.rx += (trx - ud.rx) * .1; ud.ry += (tr - ud.ry) * .1; ud.lev += (fl - ud.lev) * .16;
       if (Math.abs(trx - ud.rx) > .001 || Math.abs(tr - ud.ry) > .001 || Math.abs(fl - ud.lev) > .004) encore = true;
