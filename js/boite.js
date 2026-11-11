@@ -138,6 +138,10 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   /* logo brillant noir sur noir (vernis sélectif) sur le couvercle */
   var vernis = new THREE.Mesh(new THREE.PlaneGeometry(CW * .5, CW * .5 * .36), new THREE.MeshStandardMaterial({ color: lin(0x050506), roughness: .08, metalness: 0, envMapIntensity: 1.6, transparent: true, polygonOffset: true, polygonOffsetFactor: -3 }));
   vernis.rotation.x = -Math.PI / 2; vernis.position.set(0, HL + .008, -.12); couv.add(vernis);
+  /* le DESSOUS de la boîte (visible quand on la fait basculer) : cadre en relief, logo vernis, étiquette de fabrication */
+  var imFond = decal(W - .03, D - .03); imFond.rotation.x = Math.PI / 2; imFond.position.y = -.008; base.add(imFond);
+  var vernisFond = new THREE.Mesh(new THREE.PlaneGeometry(W * .42, W * .42 * .36), new THREE.MeshStandardMaterial({ color: lin(0x050506), roughness: .08, metalness: 0, envMapIntensity: 1.6, transparent: true, polygonOffset: true, polygonOffsetFactor: -3 }));
+  vernisFond.rotation.x = Math.PI / 2; vernisFond.position.set(-.35, -.01, -.05); base.add(vernisFond);
 
   var SERVICES = [
     { nom:(__EN ? 'Custom software' : 'Logiciels sur mesure'), sous:(__EN ? 'CRM · APPS · PORTALS · AI' : 'CRM · APPLIS · PORTAILS · IA'), logos:['wa'], ref:'LOG-01' },
@@ -178,6 +182,20 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
       x.textAlign = 'center'; texte(x, 'ONLEE.FR', w / 2, h * .82, h * .05, 600, 'rgba(255,255,255,.75)', TEXTE, Math.round(h * .018) + 'px'); }, Math.round((CW - .04) * 600), Math.round((CD - .04) * 600)));
     var cv = toile(function(x, w, h){ var lw = logoImg.naturalWidth ? h * logoImg.naturalWidth / logoImg.naturalHeight : 0; logo(x, '#ffffff', (w - lw) / 2, 0, h); }, 1400, 504);
     var t = new THREE.CanvasTexture(cv); t.anisotropy = ANISO; vernis.material.alphaMap = t; vernis.material.needsUpdate = true;
+    vernisFond.material.alphaMap = t; vernisFond.material.needsUpdate = true;
+    poser(imFond, toile(function(x, w, h){
+      var m = h * .045, r = h * .02;   /* cadre embossé : un trait sombre + un trait clair décalé = relief */
+      x.lineWidth = h * .006; x.strokeStyle = 'rgba(0,0,0,.55)'; x.beginPath(); x.roundRect ? x.roundRect(m, m, w - 2 * m, h - 2 * m, r) : x.rect(m, m, w - 2 * m, h - 2 * m); x.stroke();
+      x.strokeStyle = 'rgba(255,255,255,.09)'; x.beginPath(); x.roundRect ? x.roundRect(m + h * .006, m + h * .006, w - 2 * m, h - 2 * m, r) : x.rect(m + h * .006, m + h * .006, w - 2 * m, h - 2 * m); x.stroke();
+      /* étiquette de fabrication */
+      var lw = w * .27, lh = h * .3, lx = w - m - h * .06 - lw, ly = h - m - h * .06 - lh;
+      bloc(x, lx, ly, lw, lh, h * .012, '#f4f4f2');
+      var p = lw * .07;
+      if (logoImg.naturalWidth){ var oh = lh * .17; logo(x, '#0d0e12', lx + p, ly + p * .9, oh); }
+      texte(x, (__EN ? 'SOFTWARE · ADS · WEBSITES' : 'LOGICIELS · PUBS · SITES'), lx + p, ly + lh * .44, lh * .075, 700, '#0d0e12', TEXTE, Math.round(lh * .008) + 'px');
+      texte(x, 'FAIT EN FRANCE  ·  ONLEE.FR', lx + p, ly + lh * .57, lh * .062, 500, 'rgba(13,14,18,.55)', TEXTE, Math.round(lh * .006) + 'px');
+      for (var k = 0, bx = lx + p; bx < lx + lw - p; k++){ var bw = (k * 7 % 5 === 0 ? 3 : k % 3 === 0 ? 2 : 1) * lh * .012; x.fillStyle = '#0d0e12'; x.fillRect(bx, ly + lh * .66, bw, lh * .22); bx += bw + lh * .014; }
+      x.textAlign = 'left'; }, Math.round((W - .03) * 600), Math.round((D - .03) * 600)));
   }
 
   /* ---------- les 4 cartes, avec un mini aperçu de chaque service ---------- */

@@ -349,18 +349,18 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   function statsAds(x, X, Y, w, h, L){
     fenetre(x, X, Y, w, h, { url: 'adsmanager.facebook.com' }, function(cx, cy, cw, ch, u){
       x.fillStyle = '#F5F6F8'; x.fillRect(cx, cy, cw, ch);
-      enteteMeta(x, cx, cy, cw, u, L, 3 * u, 'Boulangerie Léa');
+      enteteMeta(x, cx, cy, cw, u, L, 3 * u, 'Rénov Habitat');
       var mx = cx + 3 * u, mw = cw - 6 * u;
       bascule(x, mx, cy + 11.4 * u, u, true);
-      T(x, (__EN ? 'Sunday brioches' : 'Brioches du dimanche'), mx + 7 * u, cy + 13.6 * u, 2.8 * u, 700, '#1C2B33', { f: TITRE });
-      T(x, 'Facebook + Instagram · Villeurbanne 10 km', mx + 7 * u, cy + 16.8 * u, 1.75 * u, 500, '#6B7080');
+      T(x, (__EN ? 'Leads · renovation quotes' : 'Prospects · devis rénovation'), mx + 7 * u, cy + 13.6 * u, 2.8 * u, 700, '#1C2B33', { f: TITRE });
+      T(x, (__EN ? 'Meta lead form · Paris area' : 'Formulaire Meta · Île-de-France'), mx + 7 * u, cy + 16.8 * u, 1.75 * u, 500, '#6B7080');
       var pw = largeur(x, (__EN ? 'Last 7 days' : '7 derniers jours'), 1.8 * u, 600) + 6 * u; bloc(x, mx + mw - pw, cy + 11 * u, pw, 4.4 * u, 1 * u, '#fff'); cadreTrait(x, mx + mw - pw, cy + 11 * u, pw, 4.4 * u, 1 * u, '#DADDE3', .15 * u);
       T(x, (__EN ? 'Last 7 days' : '7 derniers jours'), mx + mw - pw + 2 * u, cy + 13.9 * u, 1.8 * u, 600, '#1C2B33'); chevron(x, mx + mw - 2 * u, cy + 13.2 * u, 1.4 * u, '#6B7080', .22 * u);
-      var kp = [[(__EN ? 'People reached' : 'Personnes touchées'), '12 480'], [(__EN ? 'Link clicks' : 'Clics sur le lien'), '836'], [(__EN ? 'Leads received' : 'Contacts reçus'), '47', 1]], kw = (mw - 3 * u) / 3;
+      var kp = [[(__EN ? 'Leads received' : 'Prospects reçus'), '47', 1], [(__EN ? 'Cost per lead' : 'Coût par prospect'), '6,40 €'], [(__EN ? 'Called back within 1 h' : 'Rappelés sous 1 h'), '92 %']], kw = (mw - 3 * u) / 3;
       kp.forEach(function(k, j){ var kx = mx + j * (kw + 1.5 * u), ky = cy + 20 * u; bloc(x, kx, ky, kw, 10.5 * u, 1.2 * u, '#fff'); cadreTrait(x, kx, ky, kw, 10.5 * u, 1.2 * u, k[2] ? '#1877F2' : '#E3E6EC', k[2] ? .3 * u : .15 * u);
         T(x, k[0], kx + 2 * u, ky + 3.8 * u, 1.75 * u, 500, '#6B7080'); T(x, k[1], kx + 2 * u, ky + 8.6 * u, 3.6 * u, 700, '#1C2B33'); });
       var gx = mx, gy = cy + 32.5 * u, gw = mw, gh = 21 * u; bloc(x, gx, gy, gw, gh, 1.2 * u, '#fff'); cadreTrait(x, gx, gy, gw, gh, 1.2 * u, '#E3E6EC', .15 * u);
-      T(x, (__EN ? 'Leads per day' : 'Contacts reçus par jour'), gx + 2 * u, gy + 3.8 * u, 1.9 * u, 700, '#1C2B33');
+      T(x, (__EN ? 'Leads per day' : 'Prospects reçus par jour'), gx + 2 * u, gy + 3.8 * u, 1.9 * u, 700, '#1C2B33');
       var px0 = gx + 6 * u, px1 = gx + gw - 3 * u, py0 = gy + gh - 4.2 * u, py1 = gy + 6.4 * u, vals = [4, 6, 5, 8, 7, 9, 8], vmax = 10;
       [0, 5, 10].forEach(function(t){ var yy = py0 - (py0 - py1) * t / vmax; ligne(x, px0, yy, px1, yy, '#EEF0F3', .12 * u); T(x, String(t), px0 - 1.4 * u, yy + .6 * u, 1.4 * u, 500, '#8A8F9C', { a: 'right' }); });
       var pts = vals.map(function(v, k){ return [px0 + k * (px1 - px0) / 6, py0 - (py0 - py1) * v / vmax]; });
@@ -681,7 +681,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     pivote(x, mx + mw / 2, my + mh / 2, ang, function(){ ecran(x, mx, my, mw, mh, L); });
     var nt = [
       { icone: iconeImg(x, L.wa), titre: 'Inès · Fleur et Sens', texte: (__EN ? 'Confirmed for 14 June, thank you!' : 'C’est validé pour le 14 juin, merci !') },
-      { icone: iconeImg(x, L.meta), titre: (__EN ? 'New lead' : 'Nouveau contact'), texte: (__EN ? 'Sarah M. wants to order 2 brioches for Sunday.' : 'Sarah M. veut commander 2 brioches pour dimanche.') },
+      { icone: iconeImg(x, L.meta), titre: (__EN ? 'New lead · Meta form' : 'Nouveau prospect · formulaire Meta'), texte: (__EN ? 'Karim B. wants a quote for his bathroom.' : 'Karim B. veut un devis pour sa salle de bain.') },
       { icone: iconeLettre(x, 'R', '#5A3418'), titre: (__EN ? 'New quote request' : 'Nouvelle demande de devis'), texte: (__EN ? 'Via your site: a custom kitchen in Villeurbanne.' : 'Via ton site : une cuisine sur mesure à Villeurbanne.') },
       { icone: iconeVizor(x), titre: (__EN ? 'Patient balance paid' : 'Reste à charge réglé'), texte: (__EN ? 'Paul Lacroix paid €85.00 for his sunglasses.' : 'Paul Lacroix a réglé ses 85,00 € de solaires.') } ][i];
     notif(x, X + W * .17, ny, W * .72, nt);
