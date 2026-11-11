@@ -44,16 +44,9 @@
   var gw = document.querySelector('.mw-google'); if (gw) new MutationObserver(function(){ if (gw.closest('.mw').classList.contains('on') && !gw.dataset.fait){ gw.dataset.fait = 1; taper(gw); } }).observe(gw.closest('.mw'), { attributes: true, attributeFilter: ['class'] });
   var reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var TEL = innerWidth < 760;
-  /* téléphone : pas de lissage matériel (la résolution x2 suffit), c'est le plus gros coût du processeur graphique */
-  var rendu; try { rendu = new THREE.WebGLRenderer({ antialias: !TEL, alpha: true, powerPreference: 'high-performance' }); } catch (er) { sans3d(); return; }
-  /* résolution plafonnée à 2 (net) ; sur téléphone, pendant que le doigt fait défiler : résolution réduite (fluide),
-     puis pleine netteté dès que ça s'arrête */
-  var DPR_PLEIN = Math.min(2, devicePixelRatio || 1), DPR_MOUV = TEL ? Math.min(1.25, DPR_PLEIN) : DPR_PLEIN, dprAct = DPR_PLEIN, tDpr = 0;
-  rendu.setPixelRatio(DPR_PLEIN);
-  function dprMouv(){ if (!TEL) return; if (dprAct !== DPR_MOUV){ dprAct = DPR_MOUV; rendu.setPixelRatio(dprAct); reveil(); }
-    clearTimeout(tDpr); tDpr = setTimeout(function(){ dprAct = DPR_PLEIN; rendu.setPixelRatio(dprAct); reveil(); }, 180); }
-  addEventListener('scroll', dprMouv, { passive: true }); addEventListener('touchmove', dprMouv, { passive: true }); rendu.outputEncoding = THREE.sRGBEncoding; rendu.toneMapping = THREE.NoToneMapping;
+  var rendu; try { rendu = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' }); } catch (er) { sans3d(); return; }
+  /* même rendu que sur ordinateur : lissage + résolution x2 (plafond pour ne pas faire chauffer les écrans x3) */
+  rendu.setPixelRatio(Math.min(2, devicePixelRatio || 1)); rendu.outputEncoding = THREE.sRGBEncoding; rendu.toneMapping = THREE.NoToneMapping;
   hote.appendChild(rendu.domElement);
   var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, 1, .1, 80);
   var lin = function(hex){ return new THREE.Color(hex).convertSRGBToLinear(); };
