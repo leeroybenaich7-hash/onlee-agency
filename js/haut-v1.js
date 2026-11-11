@@ -1,4 +1,3 @@
-var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur les pages /en/ (voir outils/assembler/anglais.py) */
 /* Premier écran, version 1 « Une seule histoire » : la bulle raconte pub → contact → réponse → rendez-vous → logiciel,
    les widgets des côtés s'éclairent avec l'étape. Repris de labo/haut (version 1). */
 (function(){

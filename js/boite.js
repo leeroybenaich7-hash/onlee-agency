@@ -1,4 +1,3 @@
-var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur les pages /en/ (voir outils/assembler/anglais.py) */
 /* =====================================================================
    LA BOÎTE ONLEE — boîte noire premium, racontée en 4 chapitres au défilement
    · fermée : grande, face à toi, se pilote à la souris (on peut l'attraper)
@@ -22,7 +21,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     if (!gl) { sans3d(); return; } var perdu = gl.getExtension('WEBGL_lose_context'); if (perdu) perdu.loseContext(); } catch (er) { sans3d(); return; }
   var minis = [].slice.call(document.querySelectorAll('.mw'));
   var invite = document.createElement('div'); invite.className = 'invite-dos';
-  invite.innerHTML = (__EN ? '<a class="iv-voir" href="#">See the page<svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a><button class="iv-suite" type="button">Continue<svg viewBox="0 0 24 24"><path d="M12 5v13M6 13l6 6 6-6"/></svg></button>' : '<a class="iv-voir" href="#">Voir la page<svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a><button class="iv-suite" type="button">Continuer<svg viewBox="0 0 24 24"><path d="M12 5v13M6 13l6 6 6-6"/></svg></button>');
+  invite.innerHTML = '<a class="iv-voir" href="#">Voir la page<svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a><button class="iv-suite" type="button">Continuer<svg viewBox="0 0 24 24"><path d="M12 5v13M6 13l6 6 6-6"/></svg></button>';
   sec.querySelector('.colle').appendChild(invite);
   var VP = new THREE.Vector3();
   var inviteCarte = null;
@@ -30,7 +29,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   /* widgets en couronne autour des cartes : on clique, ça réagit */
   document.querySelectorAll('.mw-c').forEach(function(w){ w.addEventListener('click', function(e){ var act = w.dataset.act, li = e.target.closest('li,.chip');
     if (act === 'ouvre') w.classList.toggle('ouvert');
-    else if (act === 'bascule'){ w.classList.toggle('on'); var et = w.querySelector('.etat'), on = w.classList.contains('on'); if (et) et.innerHTML = (on ? 'Active' : (__EN ? 'Paused' : 'En pause')) + '<small>' + (on ? (__EN ? 'Running' : 'Diffusion en cours') : (__EN ? 'Tap to restart' : 'Touche pour relancer')) + '</small>'; }
+    else if (act === 'bascule'){ w.classList.toggle('on'); var et = w.querySelector('.etat'), on = w.classList.contains('on'); if (et) et.innerHTML = (on ? 'Active' : 'En pause') + '<small>' + (on ? 'Diffusion en cours' : 'Touche pour relancer') + '</small>'; }
     else if (act === 'avance'){ var n = ((+w.dataset.n || 0) + 1) % 3; w.dataset.n = n;
       if (w.classList.contains('mw-suivi')){ var ls = w.querySelectorAll('li'), k = 2 + n; ls.forEach(function(l, j){ l.className = j < k ? 'ok' : j === k ? 'cur' : ''; }); } }
     else if (act === 'coche' && li) li.classList.toggle('fait');
@@ -39,15 +38,15 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     else if (act === 'signe') w.classList.toggle('signe');
     else if (act === 'aime') w.classList.toggle('aime');
     else if (act === 'cherche') taper(w); }); });
-  function taper(w){ var t = w.querySelector('.g-txt'), phrases = [(__EN ? 'bakery near me' : 'boulangerie près de moi'), (__EN ? 'book a hairdresser paris' : 'réserver coiffeur paris'), (__EN ? 'optician open saturday' : 'opticien ouvert samedi')], ph = phrases[(+w.dataset.k || 0) % phrases.length], k = 0;
+  function taper(w){ var t = w.querySelector('.g-txt'), phrases = ['boulangerie près de moi', 'réserver coiffeur paris', 'opticien ouvert samedi'], ph = phrases[(+w.dataset.k || 0) % phrases.length], k = 0;
     w.dataset.k = (+w.dataset.k || 0) + 1; w.classList.remove('trouve'); t.textContent = '';
     (function lettre(){ if (k <= ph.length){ t.textContent = ph.slice(0, k++); setTimeout(lettre, 45); } else setTimeout(function(){ w.classList.add('trouve'); }, 250); })(); }
   var gw = document.querySelector('.mw-google'); if (gw) new MutationObserver(function(){ if (gw.closest('.mw').classList.contains('on') && !gw.dataset.fait){ gw.dataset.fait = 1; taper(gw); } }).observe(gw.closest('.mw'), { attributes: true, attributeFilter: ['class'] });
   var reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var rendu; try { rendu = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' }); } catch (er) { sans3d(); return; }
-  /* téléphone : résolution plafonnée (net, sans faire chauffer) */
-  rendu.setPixelRatio(Math.min(innerWidth < 760 ? 1.5 : 2, devicePixelRatio || 1)); rendu.outputEncoding = THREE.sRGBEncoding; rendu.toneMapping = THREE.NoToneMapping;
+  /* résolution plafonnée à 2 (net sur téléphone, sans faire chauffer) */
+  rendu.setPixelRatio(Math.min(2, devicePixelRatio || 1)); rendu.outputEncoding = THREE.sRGBEncoding; rendu.toneMapping = THREE.NoToneMapping;
   hote.appendChild(rendu.domElement);
   var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, 1, .1, 80);
   var lin = function(hex){ return new THREE.Color(hex).convertSRGBToLinear(); };
@@ -140,10 +139,10 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   vernis.rotation.x = -Math.PI / 2; vernis.position.set(0, HL + .008, -.12); couv.add(vernis);
 
   var SERVICES = [
-    { nom:(__EN ? 'Custom software' : 'Logiciels sur mesure'), sous:(__EN ? 'CRM · APPS · PORTALS · AI' : 'CRM · APPLIS · PORTAILS · IA'), logos:['wa'], ref:'LOG-01' },
-    { nom:(__EN ? 'Ads management' : 'Gestion des pubs'), sous:'FACEBOOK · INSTAGRAM', logos:['meta','fb','ig'], ref:'ADS-02' },
-    { nom:(__EN ? 'Websites and SEO' : 'Sites internet et SEO'), sous:(__EN ? 'WEBSITES · GOOGLE SEO' : 'SITES · RÉFÉRENCEMENT GOOGLE'), logos:['google'], ref:'WEB-03' },
-    { nom:(__EN ? 'Vizor and AudioVizor' : 'Vizor et AudioVizor'), sous:(__EN ? 'OPTICIANS · AUDIOLOGISTS' : 'OPTICIENS · AUDIOPROTHÉSISTES'), logos:[], ref:'VIZ-04' }
+    { nom:'Logiciels sur mesure', sous:'CRM · APPLIS · PORTAILS · IA', logos:['wa'], ref:'LOG-01' },
+    { nom:'Gestion des pubs', sous:'FACEBOOK · INSTAGRAM', logos:['meta','fb','ig'], ref:'ADS-02' },
+    { nom:'Sites internet et SEO', sous:'SITES · RÉFÉRENCEMENT GOOGLE', logos:['google'], ref:'WEB-03' },
+    { nom:'Vizor et AudioVizor', sous:'OPTICIENS · AUDIOPROTHÉSISTES', logos:[], ref:'VIZ-04' }
   ];
   var PX = 900, BLEU = '#3D7BFF', impression = -2;
   function poser(mesh, c){ var m = mesh.material; if (m.map) m.map.dispose(); m.map = tex(c); m.needsUpdate = true; }
@@ -152,7 +151,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     var wB = Math.round((W - .02) * PX), hBp = Math.round((hB - .02) * PX);
     poser(imAvB, toile(function(x, w, h){
       if (!th){ logo(x, '#ffffff', w * .045, h * .25, h * .42);
-        x.textAlign = 'right'; texte(x, (__EN ? 'SOFTWARE · ADS · WEBSITES' : 'LOGICIELS · PUBS · SITES'), w * .955, h * .42, h * .075, 600, 'rgba(255,255,255,.6)', TEXTE, Math.round(h * .02) + 'px'); x.textAlign = 'left';
+        x.textAlign = 'right'; texte(x, 'LOGICIELS · PUBS · SITES', w * .955, h * .42, h * .075, 600, 'rgba(255,255,255,.6)', TEXTE, Math.round(h * .02) + 'px'); x.textAlign = 'left';
         pastilles(x, ['wa', 'meta', 'fb', 'ig', 'google'], w * .955, h * .52, h * .13); return; }
       x.fillStyle = BLEU; x.fillRect(w * .047, h * .2, h * .12, h * .022);
       texte(x, '0' + (i + 1) + ' / 04', w * .047 + h * .17, h * .235, h * .065, 600, 'rgba(255,255,255,.55)', TEXTE, Math.round(h * .01) + 'px');
@@ -163,8 +162,8 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     poser(imDrB, toile(function(x, w, h){
       var lw = w * .54, lh = h * .64, lx = w * .4, ly = h * .18; bloc(x, lx, ly, lw, lh, h * .01, '#f4f4f2');
       texte(x, 'ONLEE', lx + lw * .07, ly + lh * .22, lh * .13, 700, '#0d0e12');
-      texte(x, th ? th.nom.toUpperCase() : (__EN ? 'SOFTWARE · ADS · WEBSITES' : 'LOGICIELS · PUBS · SITES'), lx + lw * .07, ly + lh * .38, lh * .08, 600, '#0d0e12');
-      texte(x, (__EN ? 'REF. ' : 'RÉF. ') + (th ? th.ref : 'ONL-00') + (__EN ? '  ·  MADE TO MEASURE' : '  ·  SUR MESURE'), lx + lw * .07, ly + lh * .52, lh * .075, 500, 'rgba(13,14,18,.55)');
+      texte(x, th ? th.nom.toUpperCase() : 'LOGICIELS · PUBS · SITES', lx + lw * .07, ly + lh * .38, lh * .08, 600, '#0d0e12');
+      texte(x, 'RÉF. ' + (th ? th.ref : 'ONL-00') + '  ·  SUR MESURE', lx + lw * .07, ly + lh * .52, lh * .075, 500, 'rgba(13,14,18,.55)');
       for (var k = 0, bx = lx + lw * .07; bx < lx + lw * .9; k++){ var bw = (k * 7 % 5 === 0 ? 3 : k % 3 === 0 ? 2 : 1) * lh * .009; x.fillStyle = '#0d0e12'; x.fillRect(bx, ly + lh * .64, bw, lh * .22); bx += bw + lh * .011; }
       logo(x, '#ffffff', w * .06, h * .41, h * .17); }, Math.round((D - .02) * PX), hBp));
   }
@@ -182,41 +181,41 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
 
   /* ---------- les 4 cartes, avec un mini aperçu de chaque service ---------- */
   var CARTES = [
-    { t:(__EN ? 'Custom' : 'Logiciels'), t2:(__EN ? 'software' : 'sur mesure'), s:(__EN ? 'CRM, apps, portals, AI' : 'CRM, applis, portails, IA'), f:'#0055FF', c:'#ffffff', logos:['wa'], lien:(__EN ? '/en/custom-software/' : '/logiciels/'), apercu:'crm' },
-    { t:(__EN ? 'Ads' : 'Gestion'), t2:(__EN ? 'management' : 'des pubs'), s:(__EN ? 'Facebook and Instagram' : 'Facebook et Instagram'), f:'#ffffff', c:'#0d0e12', logos:['meta','fb','ig'], lien:(__EN ? '/en/ads/' : '/publicites/'), apercu:'pub' },
-    { t:(__EN ? 'Websites' : 'Sites internet'), t2:(__EN ? 'and SEO' : 'et SEO'), s:(__EN ? 'Fast, and found on Google' : 'Rapides et trouvés sur Google'), f:'#F1F3F7', c:'#0d0e12', logos:['google'], lien:(__EN ? '/en/websites/' : '/sites/'), apercu:'site' },
-    { t:(__EN ? 'Vizor and' : 'Vizor et'), t2:'AudioVizor', s:(__EN ? 'Our trade software' : 'Nos logiciels métier'), f:'#0d0e12', c:'#ffffff', logos:[], lien:(__EN ? '/en/vizor/?metier=opticien' : '/vizor/?metier=opticien'), apercu:'vizor' }
+    { t:'Logiciels', t2:'sur mesure', s:'CRM, applis, portails, IA', f:'#0055FF', c:'#ffffff', logos:['wa'], lien:'/logiciels/', apercu:'crm' },
+    { t:'Gestion', t2:'des pubs', s:'Facebook et Instagram', f:'#ffffff', c:'#0d0e12', logos:['meta','fb','ig'], lien:'/publicites/', apercu:'pub' },
+    { t:'Sites internet', t2:'et SEO', s:'Rapides et trouvés sur Google', f:'#F1F3F7', c:'#0d0e12', logos:['google'], lien:'/sites/', apercu:'site' },
+    { t:'Vizor et', t2:'AudioVizor', s:'Nos logiciels métier', f:'#0d0e12', c:'#ffffff', logos:[], lien:'/vizor/?metier=opticien', apercu:'vizor' }
   ];
   var APERCUS = {
     crm: function(x, X, Y, w, h){ bloc(x, X, Y, w, h, w * .04, '#ffffff'); var u = w / 100;
       [0, 1, 2].forEach(function(k){ x.fillStyle = ['#FF5F57', '#FEBC2E', '#28C840'][k]; x.beginPath(); x.arc(X + 5 * u + k * 4 * u, Y + 5 * u, 1.3 * u, 0, 7); x.fill(); });
       bloc(x, X + 3 * u, Y + 10 * u, 22 * u, h - 13 * u, 2 * u, '#F2F4F8');
-      [(__EN ? 'Leads' : 'Prospects'), (__EN ? 'Quotes' : 'Devis'), (__EN ? 'Follow-ups' : 'Relances'), (__EN ? 'Calendar' : 'Agenda')].forEach(function(s, k){ if (!k) bloc(x, X + 4.5 * u, Y + 12 * u, 19 * u, 6 * u, 1.5 * u, '#E3EBFF'); texte(x, s, X + 6.5 * u, Y + 16.2 * u + k * 8 * u, 2.9 * u, k ? 500 : 700, k ? '#5b6170' : '#0055FF'); });
-      texte(x, (__EN ? 'Leads' : 'Prospects'), X + 29 * u, Y + 16 * u, 4.2 * u, 700, '#0d0e12', TITRE);
-      var L = [['Martin Optique', (__EN ? 'Signed' : 'Signé'), '#1FA855', '#E3F7EA'], ['Boulangerie Léa', (__EN ? 'Quotes' : 'Devis'), '#0055FF', '#E3EBFF'], ['Garage Nova', (__EN ? 'Call back' : 'À rappeler'), '#C77700', '#FFF1DB'], ['Studio K', (__EN ? 'New' : 'Nouveau'), '#5b6170', '#EEF0F4']];
+      ['Prospects', 'Devis', 'Relances', 'Agenda'].forEach(function(s, k){ if (!k) bloc(x, X + 4.5 * u, Y + 12 * u, 19 * u, 6 * u, 1.5 * u, '#E3EBFF'); texte(x, s, X + 6.5 * u, Y + 16.2 * u + k * 8 * u, 2.9 * u, k ? 500 : 700, k ? '#5b6170' : '#0055FF'); });
+      texte(x, 'Prospects', X + 29 * u, Y + 16 * u, 4.2 * u, 700, '#0d0e12', TITRE);
+      var L = [['Martin Optique', 'Signé', '#1FA855', '#E3F7EA'], ['Boulangerie Léa', 'Devis', '#0055FF', '#E3EBFF'], ['Garage Nova', 'À rappeler', '#C77700', '#FFF1DB'], ['Studio K', 'Nouveau', '#5b6170', '#EEF0F4']];
       L.forEach(function(r, k){ var ry = Y + 22 * u + k * 10.5 * u; if (ry + 8 * u > Y + h) return; x.fillStyle = '#EEF0F4'; x.fillRect(X + 29 * u, ry - 3 * u, w - 32 * u, .25 * u);
         x.fillStyle = ['#0055FF', '#7B3FD3', '#F3772C', '#1FA855'][k]; x.beginPath(); x.arc(X + 32 * u, ry + 2.5 * u, 2.6 * u, 0, 7); x.fill();
         texte(x, r[0], X + 37 * u, ry + 3.6 * u, 3.1 * u, 600, '#0d0e12'); x.font = '700 ' + Math.round(2.6 * u) + 'px ' + TEXTE; var pw = x.measureText(r[1]).width + 4 * u;
         bloc(x, X + w - 3 * u - pw, ry - .5 * u, pw, 6 * u, 3 * u, r[3]); texte(x, r[1], X + w - 1 * u - pw, ry + 3.4 * u, 2.6 * u, 700, r[2]); }); },
     pub: function(x, X, Y, w, h){ var u = w / 100; bloc(x, X, Y, w, h, w * .04, '#ffffff'); x.strokeStyle = 'rgba(13,14,18,.1)'; x.lineWidth = .4 * u; arrondi(x, X, Y, w, h, w * .04); x.stroke();
       x.fillStyle = '#0055FF'; x.beginPath(); x.arc(X + 7 * u, Y + 7 * u, 3.4 * u, 0, 7); x.fill(); logo(x, '#ffffff', X + 4.6 * u, Y + 5.6 * u, 2.6 * u);
-      texte(x, 'onlee', X + 12.5 * u, Y + 6.6 * u, 3.2 * u, 700, '#0d0e12'); texte(x, (__EN ? 'Sponsored' : 'Sponsorisé'), X + 12.5 * u, Y + 10.4 * u, 2.6 * u, 500, '#7a8090');
+      texte(x, 'onlee', X + 12.5 * u, Y + 6.6 * u, 3.2 * u, 700, '#0d0e12'); texte(x, 'Sponsorisé', X + 12.5 * u, Y + 10.4 * u, 2.6 * u, 500, '#7a8090');
       var iy = Y + 14 * u, ih = h - 30 * u, g = x.createLinearGradient(X, iy, X + w, iy + ih); g.addColorStop(0, '#0B1430'); g.addColorStop(1, '#0055FF'); x.fillStyle = g; x.fillRect(X, iy, w, ih);
-      texte(x, (__EN ? 'Your offer,' : 'Ton offre,'), X + 7 * u, iy + ih * .45, 7 * u, 700, '#ffffff', TITRE); texte(x, (__EN ? 'to the right people.' : 'au bon public.'), X + 7 * u, iy + ih * .45 + 8 * u, 7 * u, 700, '#9DBBFF', TITRE);
-      bloc(x, X + 4 * u, Y + h - 12 * u, w - 8 * u, 8 * u, 2 * u, '#EEF2FF'); texte(x, (__EN ? 'Learn more' : 'En savoir plus'), X + 7 * u, Y + h - 6.8 * u, 3 * u, 700, '#0055FF'); texte(x, '›', X + w - 9 * u, Y + h - 6.6 * u, 3.6 * u, 700, '#0055FF'); },
+      texte(x, 'Ton offre,', X + 7 * u, iy + ih * .45, 7 * u, 700, '#ffffff', TITRE); texte(x, 'au bon public.', X + 7 * u, iy + ih * .45 + 8 * u, 7 * u, 700, '#9DBBFF', TITRE);
+      bloc(x, X + 4 * u, Y + h - 12 * u, w - 8 * u, 8 * u, 2 * u, '#EEF2FF'); texte(x, 'En savoir plus', X + 7 * u, Y + h - 6.8 * u, 3 * u, 700, '#0055FF'); texte(x, '›', X + w - 9 * u, Y + h - 6.6 * u, 3.6 * u, 700, '#0055FF'); },
     site: function(x, X, Y, w, h){ var u = w / 100; bloc(x, X, Y, w, h, w * .04, '#ffffff'); x.strokeStyle = 'rgba(13,14,18,.08)'; x.lineWidth = .4 * u; arrondi(x, X, Y, w, h, w * .04); x.stroke();
       [0, 1, 2].forEach(function(k){ x.fillStyle = ['#FF5F57', '#FEBC2E', '#28C840'][k]; x.beginPath(); x.arc(X + 5 * u + k * 4 * u, Y + 5 * u, 1.3 * u, 0, 7); x.fill(); });
-      bloc(x, X + 20 * u, Y + 2.4 * u, w - 26 * u, 5.4 * u, 2.7 * u, '#F1F3F7'); texte(x, (__EN ? 'your-business.com' : 'ton-commerce.fr'), X + 24 * u, Y + 6.1 * u, 2.6 * u, 500, '#5b6170');
-      texte(x, (__EN ? 'Welcome to' : 'Bienvenue chez'), X + 6 * u, Y + 20 * u, 5.4 * u, 700, '#0d0e12', TITRE); texte(x, (__EN ? 'your business' : 'ton commerce'), X + 6 * u, Y + 26.5 * u, 5.4 * u, 700, '#0055FF', TITRE);
+      bloc(x, X + 20 * u, Y + 2.4 * u, w - 26 * u, 5.4 * u, 2.7 * u, '#F1F3F7'); texte(x, 'ton-commerce.fr', X + 24 * u, Y + 6.1 * u, 2.6 * u, 500, '#5b6170');
+      texte(x, 'Bienvenue chez', X + 6 * u, Y + 20 * u, 5.4 * u, 700, '#0d0e12', TITRE); texte(x, 'ton commerce', X + 6 * u, Y + 26.5 * u, 5.4 * u, 700, '#0055FF', TITRE);
       x.fillStyle = '#c9ced8'; x.fillRect(X + 6 * u, Y + 31 * u, 34 * u, 1.3 * u); x.fillRect(X + 6 * u, Y + 34 * u, 26 * u, 1.3 * u);
-      bloc(x, X + 6 * u, Y + 38 * u, 20 * u, 6 * u, 3 * u, '#0d0e12'); texte(x, (__EN ? 'Book' : 'Réserver'), X + 9.5 * u, Y + 42 * u, 2.6 * u, 700, '#ffffff');
+      bloc(x, X + 6 * u, Y + 38 * u, 20 * u, 6 * u, 3 * u, '#0d0e12'); texte(x, 'Réserver', X + 9.5 * u, Y + 42 * u, 2.6 * u, 700, '#ffffff');
       var g = x.createLinearGradient(X + 52 * u, Y + 12 * u, X + 94 * u, Y + 46 * u); g.addColorStop(0, '#DDE6FF'); g.addColorStop(1, '#9DBBFF'); bloc(x, X + 52 * u, Y + 12 * u, 42 * u, 34 * u, 3 * u, g);
       [0, 1, 2].forEach(function(k){ var bx = X + 6 * u + k * 30 * u; if (Y + 50 * u + 14 * u < Y + h) { bloc(x, bx, Y + 51 * u, 26 * u, Math.min(14 * u, h - 53 * u), 2 * u, '#F1F3F7'); x.fillStyle = '#c9ced8'; x.fillRect(bx + 3 * u, Y + 55 * u, 14 * u, 1.3 * u); } }); },
     vizor: function(x, X, Y, w, h){ var u = w / 100; bloc(x, X, Y, w, h, w * .04, '#16181e');
-      texte(x, 'VIZOR', X + 5 * u, Y + 8 * u, 3.2 * u, 800, '#ffffff', TEXTE, Math.round(.8 * u) + 'px'); texte(x, (__EN ? 'Insurance payments' : 'Tiers payant'), X + 22 * u, Y + 8 * u, 3 * u, 500, 'rgba(255,255,255,.5)');
+      texte(x, 'VIZOR', X + 5 * u, Y + 8 * u, 3.2 * u, 800, '#ffffff', TEXTE, Math.round(.8 * u) + 'px'); texte(x, 'Tiers payant', X + 22 * u, Y + 8 * u, 3 * u, 500, 'rgba(255,255,255,.5)');
       var hs = [38, 52, 44, 66, 58, 80, 72], bw = (w - 14 * u) / 7; hs.forEach(function(v, k){ var bh = v / 100 * 22 * u, g = x.createLinearGradient(0, Y + 36 * u - bh, 0, Y + 36 * u); g.addColorStop(0, '#5B8CFF'); g.addColorStop(1, '#0055FF');
         bloc(x, X + 5 * u + k * bw + bw * .18, Y + 36 * u - bh, bw * .64, bh, 1 * u, g); });
-      [[(__EN ? 'Claim 2481' : 'Dossier 2481'), (__EN ? 'Paid' : 'Payé'), '#34C759'], [(__EN ? 'Claim 2480' : 'Dossier 2480'), (__EN ? 'Chased' : 'Relancé'), '#FF9F0A'], [(__EN ? 'Claim 2479' : 'Dossier 2479'), (__EN ? 'Pending' : 'En attente'), '#8a90a0']].forEach(function(r, k){ var ry = Y + 42 * u + k * 8.6 * u; if (ry + 6 * u > Y + h) return;
+      [['Dossier 2481', 'Payé', '#34C759'], ['Dossier 2480', 'Relancé', '#FF9F0A'], ['Dossier 2479', 'En attente', '#8a90a0']].forEach(function(r, k){ var ry = Y + 42 * u + k * 8.6 * u; if (ry + 6 * u > Y + h) return;
         x.fillStyle = 'rgba(255,255,255,.06)'; x.fillRect(X + 5 * u, ry - 3.6 * u, w - 10 * u, .25 * u); texte(x, r[0], X + 5 * u, ry + 2 * u, 3 * u, 600, '#ffffff');
         x.fillStyle = r[2]; x.beginPath(); x.arc(X + w - 24 * u, ry + 1 * u, 1.2 * u, 0, 7); x.fill(); texte(x, r[1], X + w - 21.5 * u, ry + 2 * u, 2.8 * u, 600, r[2]); }); }
   };
@@ -270,10 +269,10 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     var dos = new THREE.Mesh(m.geometry, new THREE.MeshBasicMaterial({ transparent: true, side: THREE.FrontSide })); dos.rotation.y = Math.PI; dos.position.z = -.012; m.add(dos);
     m.visible = false; m.userData = { o: o, i: i, lev: 0, rx: 0, ry: 0, etat: '', flip: 0, flipC: 0 }; scene.add(m); cartes.push(m); });
   var DOS = [
-    { t:[(__EN ? 'How we' : 'Comment on'), (__EN ? 'build it' : 'le construit')], e:[(__EN ? 'We listen to how you work' : 'On écoute ton métier'), (__EN ? 'A mock-up we approve together' : 'Une maquette à valider ensemble'), (__EN ? 'We build it and connect your tools' : 'On construit et on branche tes outils'), (__EN ? 'Training, then ongoing support' : 'Formation, puis suivi')], o:(__EN ? 'Connects to' : 'Se branche sur'), apps:[['excel', 'Excel'], ['agenda', (__EN ? 'Calendar' : 'Agenda')], ['gmail', 'Gmail'], ['wa', 'WhatsApp']] },
-    { t:[(__EN ? 'How we launch' : 'Comment on lance'), (__EN ? 'your ads' : 'tes pubs')], e:[(__EN ? 'Your audience and your offer' : 'Ta cible et ton offre'), (__EN ? 'Images and videos' : 'Visuels et vidéos'), (__EN ? 'Launch, then tweaks every week' : 'Lancement, puis réglages chaque semaine'), (__EN ? 'Leads land on your phone' : 'Les contacts arrivent sur ton téléphone')], o:(__EN ? 'On' : 'Sur'), apps:[['meta', 'Meta'], ['fb', 'Facebook'], ['ig', 'Instagram'], ['wa', 'WhatsApp']] },
-    { t:[(__EN ? 'How we make' : 'Comment on fait'), (__EN ? 'your website' : 'ton site')], e:[(__EN ? 'Your pages and your style' : 'Tes pages et ton style'), (__EN ? 'A mock-up to approve' : 'Une maquette à valider'), (__EN ? 'Fast on mobile' : 'Rapide sur téléphone'), (__EN ? 'SEO: Google, profile and articles' : 'SEO : Google, fiche et articles')], o:(__EN ? 'With' : 'Avec'), apps:[['google', 'Google'], ['agenda', (__EN ? 'Booking' : 'Réservation')], ['wa', 'WhatsApp'], ['gmail', 'Contact']] },
-    { t:[(__EN ? 'How' : 'Comment'), (__EN ? 'you get started' : 'tu démarres')], e:[(__EN ? 'A call to see how you work' : 'Un appel pour voir ta façon de faire'), (__EN ? 'We set up your account with you' : 'On crée ton compte avec toi'), (__EN ? 'We help you through the start' : 'On t’accompagne au début'), (__EN ? 'Every claim tracked until it’s paid' : 'Chaque dossier suivi jusqu’au paiement')], o:(__EN ? 'Our software' : 'Nos logiciels'), apps:[['vizor', 'Vizor'], ['audiovizor', 'AudioVizor']] }
+    { t:['Comment on', 'le construit'], e:['On écoute ton métier', 'Une maquette à valider ensemble', 'On construit et on branche tes outils', 'Formation, puis suivi'], o:'Se branche sur', apps:[['excel', 'Excel'], ['agenda', 'Agenda'], ['gmail', 'Gmail'], ['wa', 'WhatsApp']] },
+    { t:['Comment on lance', 'tes pubs'], e:['Ta cible et ton offre', 'Visuels et vidéos', 'Lancement, puis réglages chaque semaine', 'Les contacts arrivent sur ton téléphone'], o:'Sur', apps:[['meta', 'Meta'], ['fb', 'Facebook'], ['ig', 'Instagram'], ['wa', 'WhatsApp']] },
+    { t:['Comment on fait', 'ton site'], e:['Tes pages et ton style', 'Une maquette à valider', 'Rapide sur téléphone', 'SEO : Google, fiche et articles'], o:'Avec', apps:[['google', 'Google'], ['agenda', 'Réservation'], ['wa', 'WhatsApp'], ['gmail', 'Contact']] },
+    { t:['Comment', 'tu démarres'], e:['Un appel pour voir ta façon de faire', 'On crée ton compte avec toi', 'On t’accompagne au début', 'Chaque dossier suivi jusqu’au paiement'], o:'Nos logiciels', apps:[['vizor', 'Vizor'], ['audiovizor', 'AudioVizor']] }
   ];
   /* texte qui rentre toujours : on réduit la taille si besoin */
   function ajuste(x, txt, taille, poids, police, largeurMax){ x.font = poids + ' ' + Math.round(taille) + 'px ' + police; var w = x.measureText(txt).width;
@@ -314,7 +313,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
         poserTex(m.material, calque); poserTex(fondM.material, base); fondM.material.metalness = M.metal; fondM.material.roughness = M.rough; fondM.visible = true;
         plat = toile(function(x, w, h){ x.drawImage(base, 0, 0, w, h); x.drawImage(calque, 0, 0, w, h); }, 900, 1193); poserTex(m.children[1].material, toileDos(i, null, M.c, base)); }
       else if (ATELIER[STYLE] && window.CARTES_V && LOGOS_AT){ var CC = couleurs(); window.CARTES_FONDS = CC.map(function(k){ return k.f; }); window.CARTES_TEXTES = CC.map(function(k){ return k.c; });
-        var K = innerWidth < 760 ? 1 : 1.75; plat = toile(function(x){ x.scale(K, K); window.CARTES_V[ATELIER[STYLE]](x, 1200, 1591, i, LOGOS_AT); }, Math.round(1200 * K), Math.round(1591 * K)); partage = true; poserTex(m.material, plat); fondM.visible = false;
+        var K = innerWidth < 760 ? 1.4 : 1.75; plat = toile(function(x){ x.scale(K, K); window.CARTES_V[ATELIER[STYLE]](x, 1200, 1591, i, LOGOS_AT); }, Math.round(1200 * K), Math.round(1591 * K)); partage = true; poserTex(m.material, plat); fondM.visible = false;
         var dc = STYLE === 'ecran' ? CC[i] : STYLE === 'affiche' ? { f:'#ffffff', c:'#0E0F13' } : { f:'#0E0F13', c:'#ffffff' }; poserTex(m.children[1].material, toileDos(i, dc.f, dc.c)); }
       else { var oc = Object.assign({}, o, couleurs()[i]); plat = toileCarte(oc, i); poserTex(m.material, plat); fondM.visible = false; poserTex(m.children[1].material, toileDos(i, oc.f, oc.c)); }
       var pf = pile[i].material[4]; if (partage){ if (pf.map && pf.map !== m.material.map) pf.map.dispose(); pf.map = m.material.map; pf.needsUpdate = true; } else poserTex(pf, plat); });
@@ -323,7 +322,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     reveil(); }
   /* réglages en direct (pour choisir) */
   var reglages = document.createElement('div'); reglages.className = 'boite-reglages';
-  reglages.innerHTML = (__EN ? '<span>Cartes</span><button data-k="cartes" data-v="ecran">Écran</button><button data-k="cartes" data-v="affiche">Affiche</button><button data-k="cartes" data-v="telephone">Phone</button><button data-k="cartes" data-v="couleurs">Simples</button><button data-k="cartes" data-v="metal">Métal</button>' : '<span>Cartes</span><button data-k="cartes" data-v="ecran">Écran</button><button data-k="cartes" data-v="affiche">Affiche</button><button data-k="cartes" data-v="telephone">Téléphone</button><button data-k="cartes" data-v="couleurs">Simples</button><button data-k="cartes" data-v="metal">Métal</button>');
+  reglages.innerHTML = '<span>Cartes</span><button data-k="cartes" data-v="ecran">Écran</button><button data-k="cartes" data-v="affiche">Affiche</button><button data-k="cartes" data-v="telephone">Téléphone</button><button data-k="cartes" data-v="couleurs">Simples</button><button data-k="cartes" data-v="metal">Métal</button>';
   /* style validé : Écran (les autres restent dispo avec ?cartes=affiche|telephone|couleurs|metal) */
   function majReglages(){ reglages.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', String((b.dataset.k === 'cartes' ? STYLE : SITE) === b.dataset.v)); }); }
   reglages.addEventListener('click', function(e){ var b = e.target.closest('button'); if (!b) return; if (b.dataset.k === 'cartes') STYLE = b.dataset.v; else SITE = b.dataset.v; habillerCartes();
@@ -376,7 +375,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     if (drag){ var dx = e.clientX - x0, dy = e.clientY - y0; bouge = Math.max(bouge, Math.abs(dx) + Math.abs(dy)); dragY = dx / 160; dragX = Math.max(-.45, Math.min(.3, dy / 300)); }
     survol = null; var h = ray.intersectObjects(cartes.filter(function(m){ return m.visible; }), true)[0]; if (h){ var ob = h.object; while (ob && cartes.indexOf(ob) < 0) ob = ob.parent; survol = ob; } else if (pAff < S0) surBoite = ray.intersectObject(tourne, true).length > 0;
     hote.style.cursor = drag ? 'grabbing' : survol ? 'pointer' : surBoite ? 'grab' : '';
-    if (survol){ var et = survol.userData.etat; bulle.textContent = et === 'range' ? (__EN ? 'See again · ' : 'Revoir · ') + survol.userData.o.t + ' ' + survol.userData.o.t2 : (__EN ? 'See the page · ' : 'Voir la page · ') + survol.userData.o.t + ' ' + survol.userData.o.t2;
+    if (survol){ var et = survol.userData.etat; bulle.textContent = et === 'range' ? 'Revoir · ' + survol.userData.o.t + ' ' + survol.userData.o.t2 : 'Voir la page · ' + survol.userData.o.t + ' ' + survol.userData.o.t2;
       bulle.style.left = (e.clientX - r.left) + 'px'; bulle.style.top = (e.clientY - r.top) + 'px'; bulle.classList.add('on'); } else bulle.classList.remove('on');
     reveil(); });
   function lacher(){ if (!drag) return; drag = false; dragY = dragX = 0;
@@ -450,7 +449,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     if (tEclat > 0){ var age = (now - tEclat) / 1000; matP.opacity = Math.max(0, 1 - age / 1.5);
       for (var j = 0; j < NB; j++){ posP[j * 3] += velP[j][0]; posP[j * 3 + 1] += velP[j][1]; posP[j * 3 + 2] += velP[j][2]; velP[j][1] -= .0016; }
       geoP.attributes.position.needsUpdate = true; if (age > 1.6){ tEclat = -1; points.visible = false; } else encore = true; }
-    if (astuce) astuce.textContent = q < .05 ? (TACTILE ? (__EN ? 'Tap the box · scroll down to open it' : 'Touche la boîte · descends pour l’ouvrir') : (__EN ? 'Move your mouse · grab the box · scroll down to open it' : 'Bouge la souris · attrape la boîte · descends pour l’ouvrir')) : fin > .5 ? (TACTILE ? (__EN ? 'Tap a card' : 'Touche une carte') : (__EN ? 'Click a card' : 'Clique sur une carte')) : '';
+    if (astuce) astuce.textContent = q < .05 ? (TACTILE ? 'Touche la boîte · descends pour l’ouvrir' : 'Bouge la souris · attrape la boîte · descends pour l’ouvrir') : fin > .5 ? (TACTILE ? 'Touche une carte' : 'Clique sur une carte') : '';
     cam.lookAt(cible); rendu.render(scene, cam);
     if (encore) reveil();
   }

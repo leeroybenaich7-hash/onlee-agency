@@ -1,5 +1,6 @@
 /* Prise de rendez-vous réelle (cal.com) : s'ouvre par-dessus la page.
-   Chargée seulement quand elle sert : survol d'un bouton, clic, ou 3 s après l'ouverture (la page s'affiche plus vite).
+   Chargée seulement quand elle sert : survol d'un bouton, clic, ou 3 s après l'ouverture (la page s'affiche plus vite) ;
+   la page de réservation est ensuite préchargée (4,5 s) pour que l'agenda s'ouvre vite au clic.
    Tous les boutons « Réserver un appel » du site portent :
    data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express
    À charger AVANT /js/cta-express.js. */
@@ -13,5 +14,12 @@
   window.onleeChargerCal = chargerCal;
   document.addEventListener('pointerover', function(e){ if (e.target.closest && e.target.closest('[data-cal-link]')) chargerCal(); }, { passive: true });
   document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('[data-cal-link]'); if (!b || (window.Cal && window.Cal.loaded && window.__calPret)) return; chargerCal(); e.preventDefault(); e.stopPropagation(); var cfg = {}; try { cfg = JSON.parse(b.getAttribute('data-cal-config') || '{}'); } catch(er){} Cal.ns.rdv30('modal', { calLink: b.getAttribute('data-cal-link'), config: cfg }); }, true);
+  /* la page de réservation elle-même est préchargée en arrière-plan : au clic, l'agenda s'ouvre presque tout de suite */
+  var prechargee = false;
+  function precharger(){ if (prechargee) return; prechargee = true; chargerCal();
+    try { Cal.ns.rdv30('preload', { calLink: 'leeroy-benaich/30min' }); } catch (er) {} }
+  document.addEventListener('touchstart', function(e){ if (e.target.closest && e.target.closest('[data-cal-link]')) precharger(); }, { passive: true, capture: true });
+  document.addEventListener('pointerover', function(e){ if (e.target.closest && e.target.closest('[data-cal-link]')) precharger(); }, { passive: true });
   setTimeout(function(){ ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(function(){ chargerCal(); setTimeout(function(){ window.__calPret = true; }, 2500); }); }, 3000);
+  setTimeout(function(){ ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(precharger, { timeout: 2000 }); }, 4500);
 })();

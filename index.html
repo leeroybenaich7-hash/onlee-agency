@@ -740,22 +740,26 @@ requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.get
 <script defer src="/js/haut-v1.js"></script>
 <script defer src="/js/realisations.js"></script>
 <script>
-/* La boîte 3D (Three.js, ~600 Ko) se charge sans bloquer la page : dès qu'on approche de la boîte,
-   ou juste après l'ouverture de la page quand le navigateur est libre. Si la 3D est impossible -> image fixe. */
+/* La boîte 3D (Three.js) ne se prépare PAS pendant l'ouverture de la page (sinon le téléphone rame) :
+   elle part au premier geste (défilement, toucher, souris, clavier), ou 2,5 s après le chargement, ou si la boîte est déjà à l'écran.
+   Si la 3D est impossible -> image fixe. */
 (function(){
   var sec = document.getElementById('boite-sec'); if (!sec) return; var parti = false;
   function sans3d(){ sec.classList.add('sans-3d'); }
   function policesPretes(fin){ var t0 = Date.now();
     (function v(){ var ok = !document.fonts || !document.fonts.forEach; if (!ok) document.fonts.forEach(function(f){ if (/Bricolage/.test(f.family)) ok = true; });
       if (ok || Date.now() - t0 > 3000) fin(); else setTimeout(v, 60); })(); }
+  var GESTES = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'pointermove', 'keydown'];
   function charger(){ if (parti) return; parti = true;
+    GESTES.forEach(function(g){ removeEventListener(g, charger, true); });
     policesPretes(function(){
       ['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', '/js/cartes-atelier.js', '/js/boite.js'].forEach(function(u, i){
         var s = document.createElement('script'); s.src = u; s.async = false;
         if (!i) s.onerror = sans3d;
         document.body.appendChild(s); }); }); }
-  if ('IntersectionObserver' in window) new IntersectionObserver(function(es, o){ if (es[0].isIntersecting){ o.disconnect(); charger(); } }, { rootMargin: '120% 0px' }).observe(sec);
-  function auRepos(){ ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(charger, { timeout: 1500 }); }
+  GESTES.forEach(function(g){ addEventListener(g, charger, { capture: true, passive: true }); });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es, o){ if (es[0].isIntersecting){ o.disconnect(); charger(); } }, { rootMargin: '0px' }).observe(sec);
+  function auRepos(){ setTimeout(function(){ ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(charger, { timeout: 1500 }); }, 2500); }
   if (document.readyState === 'complete') auRepos(); else addEventListener('load', auRepos);
 })();
 </script>
