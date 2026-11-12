@@ -10,8 +10,8 @@
 
 ## Logiciels édités par onlee
 
-- [Vizor](https://onlee.fr/vizor/?metier=opticien) : logiciel de suivi du tiers payant pour les opticiens, utilisé à côté du logiciel métier. Chaque dossier est suivi jusqu'au paiement, avec les relances au bon moment. Site produit : https://vizor.onlee.fr
-- [AudioVizor](https://onlee.fr/vizor/?metier=audio) : logiciel de suivi du tiers payant pour les audioprothésistes, utilisé à côté du logiciel métier. Site produit : https://audiovizor.onlee.fr
+- [Vizor](https://vizor.onlee.fr/) : logiciel de suivi du tiers payant pour les opticiens, utilisé à côté du logiciel métier. Chaque dossier est suivi jusqu'au paiement, avec les relances au bon moment. Site produit : https://vizor.onlee.fr
+- [AudioVizor](https://audiovizor.onlee.fr/) : logiciel de suivi du tiers payant pour les audioprothésistes, utilisé à côté du logiciel métier. Site produit : https://audiovizor.onlee.fr
 
 ## Réalisations
 
