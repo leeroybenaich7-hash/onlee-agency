@@ -13,6 +13,10 @@
 - [Vizor](https://vizor.onlee.fr/) : logiciel de suivi du tiers payant pour les opticiens, utilisé à côté du logiciel métier. Chaque dossier est suivi jusqu'au paiement, avec les relances au bon moment. Site produit : https://vizor.onlee.fr
 - [AudioVizor](https://audiovizor.onlee.fr/) : logiciel de suivi du tiers payant pour les audioprothésistes, utilisé à côté du logiciel métier. Site produit : https://audiovizor.onlee.fr
 
+## Communauté
+
+- [Club Business, IA & SEO](https://onlee.fr/communaute/) : groupe WhatsApp gratuit animé par Leeroy, où des entrepreneurs s'entraident (clients, outils IA, référencement Google et ChatGPT). Débutant ou confirmé, entrée validée par Leeroy.
+
 ## Réalisations
 
 - [Réalisations](https://onlee.fr/realisations/) : tous les projets d'onlee en grandes cartes, avec leurs vrais écrans, filtrables par type.

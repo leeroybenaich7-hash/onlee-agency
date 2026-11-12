@@ -26,7 +26,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   sec.querySelector('.colle').appendChild(invite);
   var VP = new THREE.Vector3();
   var inviteCarte = null;
-  invite.querySelector('.iv-suite').addEventListener('click', function(){ if (!inviteCarte) return; var i = inviteCarte.userData.i; allerA(i < 3 ? S0 + (i + 1) * LCH + LCH * .5 : S0 + 4 * LCH + .05); });
+  invite.querySelector('.iv-suite').addEventListener('click', function(){ if (!inviteCarte) return; var i = inviteCarte.userData.i; allerA(i < NCH - 1 ? S0 + (i + 1) * LCH + LCH * .5 : FIN0 + .05); });
   /* widgets en couronne autour des cartes : on clique, ça réagit */
   document.querySelectorAll('.mw-c').forEach(function(w){ w.addEventListener('click', function(e){ var act = w.dataset.act, li = e.target.closest('li,.chip');
     if (act === 'ouvre') w.classList.toggle('ouvert');
@@ -153,6 +153,9 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     { nom:(__EN ? 'Websites and SEO' : 'Sites internet et SEO'), sous:(__EN ? 'WEBSITES · GOOGLE SEO' : 'SITES · RÉFÉRENCEMENT GOOGLE'), logos:['google'], ref:'WEB-03' },
     { nom:(__EN ? 'Vizor and AudioVizor' : 'Vizor et AudioVizor'), sous:(__EN ? 'OPTICIANS · AUDIOLOGISTS' : 'OPTICIENS · AUDIOPROTHÉSISTES'), logos:[], ref:'VIZ-04' }
   ];
+  /* 5e carte « Communauté » : seulement si la page la déclare (data-cinq) */
+  var CINQ = !!sec.dataset.cinq;
+  if (CINQ) SERVICES.push({ nom:'Communauté', sous:'LE CLUB · BUSINESS · IA · SEO', logos:['wa'], ref:'CLB-05' });
   var PX = innerWidth < 760 ? 560 : 900, BLEU = '#3D7BFF', impression = -2;
   function poser(mesh, c){ var m = mesh.material; if (m.map) m.map.dispose(); m.map = tex(c); m.needsUpdate = true; }
   /* i = -1 : impression « marque » (boîte fermée) ; 0..3 : le service du chapitre */
@@ -169,7 +172,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
         x.textAlign = 'right'; texte(x, (__EN ? 'SOFTWARE · ADS · WEBSITES' : 'LOGICIELS · PUBS · SITES'), w * .955, h * .42, h * .075, 600, 'rgba(255,255,255,.6)', TEXTE, Math.round(h * .02) + 'px'); x.textAlign = 'left';
         pastilles(x, ['wa', 'meta', 'fb', 'ig', 'google'], w * .955, h * .52, h * .13); return; }
       x.fillStyle = BLEU; x.fillRect(w * .047, h * .2, h * .12, h * .022);
-      texte(x, '0' + (i + 1) + ' / 04', w * .047 + h * .17, h * .235, h * .065, 600, 'rgba(255,255,255,.55)', TEXTE, Math.round(h * .01) + 'px');
+      texte(x, '0' + (i + 1) + ' / 0' + SERVICES.length, w * .047 + h * .17, h * .235, h * .065, 600, 'rgba(255,255,255,.55)', TEXTE, Math.round(h * .01) + 'px');
       texte(x, th.nom, w * .045, h * .56, h * .3, 700, '#ffffff', TITRE, '-' + Math.round(h * .006) + 'px');
       texte(x, th.sous, w * .047, h * .78, h * .075, 600, 'rgba(255,255,255,.55)', TEXTE, Math.round(h * .022) + 'px');
       if (th.logos.length) pastilles(x, th.logos, w * .955, h * .42, h * .19);
@@ -215,6 +218,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     { t:(__EN ? 'Websites' : 'Sites internet'), t2:(__EN ? 'and SEO' : 'et SEO'), s:(__EN ? 'Fast, and found on Google' : 'Rapides et trouvés sur Google'), f:'#F1F3F7', c:'#0d0e12', logos:['google'], lien:(__EN ? '/en/websites/' : '/sites/'), apercu:'site' },
     { t:(__EN ? 'Vizor and' : 'Vizor et'), t2:'AudioVizor', s:(__EN ? 'Our trade software' : 'Nos logiciels métier'), f:'#0d0e12', c:'#ffffff', logos:[], lien:(__EN ? '/en/vizor/?metier=opticien' : '/vizor/?metier=opticien'), apercu:'vizor' }
   ];
+  if (CINQ) CARTES.push({ t:'Communauté', t2:'le Club', s:'Groupe WhatsApp gratuit', f:'#0E0F13', c:'#ffffff', logos:['wa'], lien:'/communaute/', apercu:'club' });
   var APERCUS = {
     crm: function(x, X, Y, w, h){ bloc(x, X, Y, w, h, w * .04, '#ffffff'); var u = w / 100;
       [0, 1, 2].forEach(function(k){ x.fillStyle = ['#FF5F57', '#FEBC2E', '#28C840'][k]; x.beginPath(); x.arc(X + 5 * u + k * 4 * u, Y + 5 * u, 1.3 * u, 0, 7); x.fill(); });
@@ -253,7 +257,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
       var clair = o.c !== '#ffffff';
       texte(x, '0' + (i + 1), w * .08, h * .085, w * .045, 700, clair ? '#0055FF' : 'rgba(255,255,255,.7)', TEXTE, Math.round(w * .004) + 'px');
       if (o.logos.length) pastilles(x, o.logos, w * .92, h * .045, w * .07); else logo(x, o.c, w * .92 - w * .07 * 2.9, h * .052, w * .07);
-      APERCUS[o.apercu](x, w * .08, h * .135, w * .84, h * .47);
+      if (APERCUS[o.apercu]) APERCUS[o.apercu](x, w * .08, h * .135, w * .84, h * .47);
       texte(x, o.t, w * .08, h * .735, w * .118, 700, o.c, TITRE, '-' + Math.round(w * .003) + 'px'); texte(x, o.t2, w * .08, h * .735 + w * .128, w * .118, 700, o.c, TITRE, '-' + Math.round(w * .003) + 'px');
       x.globalAlpha = .62; texte(x, o.s, w * .085, h * .935, w * .04, 500, o.c); x.globalAlpha = 1; x.restore();
       if (!sansFond && (o.f === '#ffffff' || o.f === '#F1F3F7')){ x.strokeStyle = 'rgba(14,15,19,.12)'; x.lineWidth = 3; arrondi(x, 2, 2, w - 4, h - 4, r); x.stroke(); } }, 1200, Math.round(1200 * CHt / CL)); }
@@ -261,13 +265,13 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   var pile = CARTES.map(function(o, i){ var g = new THREE.Mesh(new THREE.BoxGeometry(CL, CHt, .018), [0, 0, 0, 0, 0, 0].map(function(){ return null; }));
     var cote = new THREE.MeshStandardMaterial({ color: lin(0xf2f2f0), roughness: .8 }), face = new THREE.MeshStandardMaterial({ roughness: .55, envMapIntensity: .4 });
     g.material = [cote, cote, cote, cote, face, cote]; var s = .9; g.scale.set(s, s, 1);
-    g.rotation.set(-Math.PI / 2, 0, Math.PI / 2 + [.02, -.035, .04, -.015][i]); g.position.set([.04, -.06, .05, -.03][i], E + .05 + (3 - i) * .028, [.02, -.04, .04, 0][i]);
+    g.rotation.set(-Math.PI / 2, 0, Math.PI / 2 + [.02, -.035, .04, -.015, .025][i]); g.position.set([.04, -.06, .05, -.03, .02][i], E + .05 + (CARTES.length - 1 - i) * .028, [.02, -.04, .04, 0, -.02][i]);
     base.add(g); return g; });
   var STYLE = 'ecran', RANG = 'haut', SITE = 'ambre';   /* style validé : cartes « Écran » */
   var SITES = { ambre: ['#F9AB00', '#0E0F13'], corail: ['#FF5A36', '#ffffff'], turquoise: ['#0A9396', '#ffffff'] };
   var ATELIER = { affiche: 1, ecran: 2, telephone: 3 }, LOGOS_AT = null;
   var logosAtelier = window.CARTES_V ? Promise.all([window.CARTES_V.chargerLogos('/assets/onlee-logo-ink.png'), window.CARTES_V.polices()]).then(function(r){ LOGOS_AT = r[0]; }) : Promise.resolve();
-  function couleurs(){ return [{ f:'#0E0F13', c:'#ffffff' }, { f:'#0866FF', c:'#ffffff' }, { f:SITES[SITE][0], c:SITES[SITE][1] }, { f:'#4C3175', c:'#ffffff' }]; }
+  function couleurs(){ return [{ f:'#0E0F13', c:'#ffffff' }, { f:'#0866FF', c:'#ffffff' }, { f:SITES[SITE][0], c:SITES[SITE][1] }, { f:'#4C3175', c:'#ffffff' }, { f:'#0E0F13', c:'#ffffff' }].slice(0, CARTES.length); }
   var METAUX = [
     { st:['#4a2812', '#9a5a2c', '#e3a979', '#8a4f27', '#d0915a', '#5a3218'], c:'#ffffff', rough:.34, metal:1 },
     { st:['#7d848d', '#e6eaee', '#aab2bc', '#fbfcfd', '#8e96a0'], c:'#141920', rough:.26, metal:1 },
@@ -303,6 +307,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     { t:[(__EN ? 'How we make' : 'Comment on fait'), (__EN ? 'your website' : 'ton site')], e:[(__EN ? 'Your pages and your style' : 'Tes pages et ton style'), (__EN ? 'A mock-up to approve' : 'Une maquette à valider'), (__EN ? 'Fast on mobile' : 'Rapide sur téléphone'), (__EN ? 'SEO: Google, profile and articles' : 'SEO : Google, fiche et articles')], o:(__EN ? 'With' : 'Avec'), apps:[['google', 'Google'], ['agenda', (__EN ? 'Booking' : 'Réservation')], ['wa', 'WhatsApp'], ['gmail', 'Contact']] },
     { t:[(__EN ? 'How' : 'Comment'), (__EN ? 'you get started' : 'tu démarres')], e:[(__EN ? 'A call to see how you work' : 'Un appel pour voir ta façon de faire'), (__EN ? 'We set up your account with you' : 'On crée ton compte avec toi'), (__EN ? 'We help you through the start' : 'On t’accompagne au début'), (__EN ? 'Every claim tracked until it’s paid' : 'Chaque dossier suivi jusqu’au paiement')], o:(__EN ? 'Our software' : 'Nos logiciels'), apps:[['vizor', 'Vizor'], ['audiovizor', 'AudioVizor']] }
   ];
+  if (CINQ) DOS.push({ t:[(__EN ? 'How' : 'Comment'), 'tu entres'], e:['Tu cliques sur « Rejoindre »', 'Tu demandes à entrer', 'Leeroy valide ton entrée', 'Tu te présentes au groupe'], o:(__EN ? 'On' : 'Sur'), apps:[['wa', 'WhatsApp']] });
   /* texte qui rentre toujours : on réduit la taille si besoin */
   function ajuste(x, txt, taille, poids, police, largeurMax){ x.font = poids + ' ' + Math.round(taille) + 'px ' + police; var w = x.measureText(txt).width;
     if (w > largeurMax){ taille *= largeurMax / w; x.font = poids + ' ' + Math.round(taille) + 'px ' + police; } return taille; }
@@ -360,7 +365,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   function emplacement(i){
     if (RANG === 'eventail') return { p: new THREE.Vector3((i - 1.5) * 1.05, racine.position.y + H + 1.05, -2.7), s: .5, rz: -(i - 1.5) * .16, ry: 0 };
     if (RANG === 'sol'){ var g = i % 2 ? 1 : -1, n = Math.floor(i / 2); return { p: new THREE.Vector3(g * (3.2 + n * 1.35), racine.position.y + CHt * .42 * .5 + .02, .5 - n * .4), s: .42, rz: 0, ry: -g * .35 }; }
-    return { p: new THREE.Vector3(-1.65 + i * 1.1, 4.95, .2), s: .42, rz: 0, ry: 0 };
+    return { p: new THREE.Vector3((i - (NCH - 1) / 2) * 1.1, 4.95, .2), s: .42, rz: 0, ry: 0 };
   }
 
   /* étincelles à l'ouverture */
@@ -372,7 +377,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     var a = Math.random() * Math.PI * 2, v = .015 + Math.random() * .035; velP.push([Math.cos(a) * v, .05 + Math.random() * .07, Math.sin(a) * v]); } geoP.attributes.position.needsUpdate = true; }
 
   /* ---------- le scénario ---------- */
-  var S0 = .15, LCH = .17, NCH = 4, FIN0 = S0 + NCH * LCH;   /* chapitres .15 → .83, puis vue d'ensemble tenue jusqu'à la fin */   /* chapitres de .17 à .93, puis récapitulatif */
+  var S0 = .15, NCH = CARTES.length, LCH = NCH > 4 ? .138 : .17, FIN0 = S0 + NCH * LCH;   /* chapitres .15 → .83, puis vue d'ensemble tenue jusqu'à la fin */   /* chapitres de .17 à .93, puis récapitulatif */
   var CAM_F = { p: new THREE.Vector3(0, 2.3, 9.4), c: new THREE.Vector3(0, .72, 0) }, CAM_O = { p: new THREE.Vector3(0, 3.4, 15.8), c: new THREE.Vector3(0, 1.95, 0) };
   var VUE_F = CAM_F.p.clone().sub(CAM_F.c), LARGEUR_VUE = .27;
   var cible = CAM_F.c.clone(); cam.position.copy(CAM_F.p);
@@ -389,10 +394,11 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
       if (!fait && t > .45){ fait = true; imprimer(cibleImp); } if (t >= 1){ tourne.position.y = 0; tourne.rotation.y = 0; tourne.scale.set(1, 1, 1); saut = null; } }; }
 
   function places(){
+    var cinq = NCH > 4, m = (NCH - 1) / 2;
     if (etroit) return { feat: new THREE.Vector3(0, 2.9, 1.2), fs: .82, park: null, ps: .3,
-      fin: function(i){ return new THREE.Vector3((i % 2 ? .62 : -.62) * CL * .8, 4.2 - Math.floor(i / 2) * 2.6, .4); }, fis: .76 };
+      fin: function(i){ var seul = cinq && i === NCH - 1; return new THREE.Vector3(seul ? 0 : (i % 2 ? .62 : -.62) * CL * (cinq ? .66 : .8), (cinq ? 4.75 : 4.2) - Math.floor(i / 2) * (cinq ? 2 : 2.6), .4); }, fis: cinq ? .58 : .76 };
     return { feat: new THREE.Vector3(0, 2.5, 1.6), fs: 1.02, park: null, ps: .3,
-      fin: function(i){ return new THREE.Vector3((i - 1.5) * 2.6, 2.75, .7 - Math.abs(i - 1.5) * .25); }, fis: .98 };
+      fin: function(i){ return new THREE.Vector3((i - m) * (cinq ? 2.15 : 2.6), 2.75, .7 - Math.abs(i - m) * .25); }, fis: cinq ? .82 : .98 };
   }
   var V = new THREE.Vector3(), V2 = new THREE.Vector3();
 
@@ -494,7 +500,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     /* préparer tous les shaders d'un coup (objets cachés compris), sinon ils se préparent pendant le défilement */
     file.push(function(){ var caches = []; scene.traverse(function(o){ if (!o.visible){ caches.push(o); o.visible = true; } }); try { rendu.compile(scene, cam); } catch (er) {} caches.forEach(function(o){ o.visible = false; }); return null; });
     cartes.forEach(function(m, i){ file.push(function(){ return m.material.map; }); file.push(function(){ return m.children[1].material.map; }); file.push(function(){ return pile[i].material[4] && pile[i].material[4].map; }); });
-    if (cacheImp) [-1, 0, 1, 2, 3].forEach(function(k){ file.push(function(){ if (CACHE_IMP[k]) return null;
+    if (cacheImp) [-1].concat(SERVICES.map(function(s, k){ return k; })).forEach(function(k){ file.push(function(){ if (CACHE_IMP[k]) return null;
       var avant = [imAvB.material.map, imDrB.material.map], impAvant = impression;
       imAvB.material.map = null; imDrB.material.map = null; impression = -3; imprimerDessin(k); CACHE_IMP[k] = [imAvB.material.map, imDrB.material.map];
       try { rendu.initTexture(CACHE_IMP[k][0]); rendu.initTexture(CACHE_IMP[k][1]); } catch (er) {}

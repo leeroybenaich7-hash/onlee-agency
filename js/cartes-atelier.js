@@ -611,6 +611,30 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   /* ===================================================================
      LES SERVICES
      =================================================================== */
+  /* 05 — le groupe WhatsApp du Club (conversation d'exemple, mêmes messages que la vidéo de bienvenue) */
+  function clubGroupe(x, X, Y, w, h, L){
+    fenetre(x, X, Y, w, h, { url: 'web.whatsapp.com' }, function(cx, cy, cw, ch, u){
+      x.fillStyle = '#EFE7DD'; x.fillRect(cx, cy, cw, ch);
+      x.save(); x.globalAlpha = .05; for (var q = 0; q < 60; q++){ rond(x, cx + ((q * 73) % 100) / 100 * cw, cy + 10 * u + ((q * 37) % 100) / 100 * (ch - 10 * u), .5 * u, '#6B5B45'); } x.restore();
+      x.fillStyle = '#F0F2F5'; x.fillRect(cx, cy, cw, 10 * u); ligne(x, cx, cy + 10 * u, cx + cw, cy + 10 * u, '#E1E3E6', .12 * u);
+      rond(x, cx + 6 * u, cy + 5 * u, 3.4 * u, BLEU); T(x, 'club.', cx + 6 * u, cy + 5.8 * u, 2.1 * u, 800, '#fff', { a: 'center', f: TITRE });
+      T(x, 'Club Business, IA & SEO', cx + 11.5 * u, cy + 4.6 * u, 2.6 * u, 700, '#111B21'); T(x, 'Sarah, Karim, Inès, toi', cx + 11.5 * u, cy + 7.7 * u, 1.9 * u, 400, '#667781');
+      image(x, L.wa, cx + cw - 7 * u, cy + 2.6 * u, 4.6 * u);
+      var y = cy + 13 * u; pastilleCentre(x, 'Exemple', cx + cw / 2, y, 1.8 * u, '#5B6170', 'rgba(255,255,255,.92)'); y += 6 * u;
+      function bulle(nom, cNom, t, sortant, heure){ var maxW = cw * .72, L2 = coupe(x, t, maxW - 5 * u, 2.3 * u, 400), haut = nom ? 3 * u : 0,
+          bw = Math.max(L2.largeur + 5 * u + (sortant ? 5 : 3) * u, nom ? largeur(x, nom, 1.9 * u, 700) + 5 * u : 0, 16 * u), bh = haut + L2.length * 3.2 * u + 5 * u;
+        var bx = sortant ? cx + cw - 3 * u - bw : cx + 3 * u;
+        x.save(); ombre(x, 'rgba(0,0,0,.10)', .4 * u, .15 * u); bloc(x, bx, y, bw, bh, 1.3 * u, sortant ? '#D9FDD3' : '#FFFFFF'); x.restore();
+        if (nom) T(x, nom, bx + 2.5 * u, y + 3.4 * u, 1.9 * u, 700, cNom);
+        L2.forEach(function(l, k){ T(x, l, bx + 2.5 * u, y + haut + 3.8 * u + k * 3.2 * u, 2.3 * u, 400, '#111B21'); });
+        T(x, heure, bx + bw - (sortant ? 5 : 1.8) * u, y + bh - 1.3 * u, 1.5 * u, 400, '#667781', { a: 'right' });
+        if (sortant){ coche(x, bx + bw - 3.2 * u, y + bh - 1.8 * u, 1.5 * u, '#53BDEB', .26 * u); coche(x, bx + bw - 2.5 * u, y + bh - 1.8 * u, 1.5 * u, '#53BDEB', .26 * u); }
+        y += bh + 1.8 * u; }
+      bulle('Karim', '#8B5CF6', 'Quelqu’un sait comment avoir plus d’avis Google ?', false, '18:02');
+      bulle('', '', 'Envoie le lien d’avis à tes clients juste après la prestation.', true, '18:03');
+      bulle('Karim', '#8B5CF6', 'Merci, ça m’aide vraiment !', false, '18:04');
+    }); }
+
   var S = [
     { n: '01', t1: (__EN ? 'Custom' : 'Logiciels'), t2: (__EN ? 'software' : 'sur mesure'), sous: (__EN ? 'CRM, apps, portals, AI' : 'CRM, applis, portails, IA'), logos: ['wa'],
       phrase: (__EN ? 'Your tool, built around the way you work.' : 'Ton outil, pensé pour ta façon de bosser.'), liste: [(__EN ? 'CRM and quotes' : 'CRM et devis'), (__EN ? 'Business apps' : 'Applis métier'), (__EN ? 'Client portals' : 'Portails clients'), (__EN ? 'WhatsApp messages' : 'Messages WhatsApp')] },
@@ -619,7 +643,9 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     { n: '03', t1: (__EN ? 'Websites' : 'Sites internet'), t2: (__EN ? 'and SEO' : 'et SEO'), sous: (__EN ? 'Fast, and found on Google' : 'Rapides et trouvés sur Google'), logos: ['google'],
       phrase: (__EN ? 'A fast site your customers can find.' : 'Un site rapide, que tes clients trouvent.'), liste: [(__EN ? 'Showcase site' : 'Site vitrine'), (__EN ? 'Online booking' : 'Prise de rendez-vous'), (__EN ? 'Google and AI' : 'Google et IA'), (__EN ? 'Hosting' : 'Hébergement')] },
     { n: '04', t1: (__EN ? 'Vizor and' : 'Vizor et'), t2: 'AudioVizor', sous: (__EN ? 'Our software for opticians and audiologists' : 'Nos logiciels pour opticiens et audios'), logos: [],
-      phrase: (__EN ? 'Insurance payments tracked, no spreadsheets.' : 'Le tiers payant suivi, sans tableau Excel.'), liste: [(__EN ? 'Insurer tracking' : 'Suivi mutuelle'), (__EN ? 'Patient balance' : 'Reste à charge'), (__EN ? 'Auto reminders' : 'Relances auto'), (__EN ? 'Opticians & audiologists' : 'Opticiens et audios')] }
+      phrase: (__EN ? 'Insurance payments tracked, no spreadsheets.' : 'Le tiers payant suivi, sans tableau Excel.'), liste: [(__EN ? 'Insurer tracking' : 'Suivi mutuelle'), (__EN ? 'Patient balance' : 'Reste à charge'), (__EN ? 'Auto reminders' : 'Relances auto'), (__EN ? 'Opticians & audiologists' : 'Opticiens et audios')] },
+    { n: '05', t1: 'Communauté', t2: 'le Club', sous: 'Groupe WhatsApp gratuit, entre entrepreneurs', logos: ['wa'],
+      phrase: 'Entre entrepreneurs, on s’entraide.', liste: ['Tes questions', 'Un avis sur ton site', 'Skills et outils', 'Gratuit'] }
   ];
 
   /* le support de carte : ombre + coins arrondis + découpe */
@@ -668,22 +694,47 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
      entier au-dessus de l'écran ; un écran différent de la V1 ; la
      notification se pose sur le bas vide de l'écran (aucun mot coupé)
      =================================================================== */
-  var V2F = ['#0055FF', '#0E0F13', '#FFFFFF', '#0055FF'], V2C = ['#FFFFFF', '#FFFFFF', NOIR, '#FFFFFF'];
+  var V2F = ['#0055FF', '#0E0F13', '#FFFFFF', '#0055FF', '#0E0F13'], V2C = ['#FFFFFF', '#FFFFFF', NOIR, '#FFFFFF', '#FFFFFF'];
   function pivote(x, cx, cy, a, f){ x.save(); x.translate(cx, cy); x.rotate(a); x.translate(-cx, -cy); f(); x.restore(); }
+  /* 05 — Communauté : la photo du groupe (logo « club. » compris), les membres autour, « Gratuit » en bleu */
+  function v2club(x, w, h, L){
+    var s = S[4], c = support(x, w, h, NOIR, 'rgba(255,255,255,.10)', 3), X = c.X, Y = c.Y, W = c.W, H = c.H, p = 70, im = L.club;
+    var ph = H * .74, k = Math.max(W / im.naturalWidth, ph / im.naturalHeight), iw = im.naturalWidth * k, ih = im.naturalHeight * k;
+    x.drawImage(im, X + (W - iw) / 2, Y + (ph - ih) * .35 - 58, iw, ih);
+    var g = x.createLinearGradient(0, Y + ph * .8, 0, Y + ph); g.addColorStop(0, 'rgba(14,15,19,0)'); g.addColorStop(1, NOIR); x.fillStyle = g; x.fillRect(X, Y + ph * .8, W, ph * .2 + 2);
+    x.fillStyle = NOIR; x.fillRect(X, Y + ph, W, H - ph);
+    var g2 = x.createLinearGradient(0, Y, 0, Y + 300); g2.addColorStop(0, 'rgba(14,15,19,.6)'); g2.addColorStop(1, 'rgba(14,15,19,0)'); x.fillStyle = g2; x.fillRect(X, Y, W, 300);
+    [[.9, .86, .62, .5], [.05, .5, .4, .32]].forEach(function(b){ var rg = x.createRadialGradient(X + W * b[0], Y + H * b[1], 0, X + W * b[0], Y + H * b[1], W * b[2]);
+      rg.addColorStop(0, 'rgba(0,85,255,' + b[3] + ')'); rg.addColorStop(1, 'rgba(0,85,255,0)'); x.fillStyle = rg; x.fillRect(X, Y, W, H); });
+    T(x, s.n, X + p - 12, Y + 312, 300, 800, 'rgba(255,255,255,.26)', { f: TITRE, esp: -12 });
+    rangLogos(x, s, L, X + W - p, Y + p, 56, true);
+    /* les membres autour (des initiales, jamais de visages), comme dans la vidéo du Club */
+    [['K', .13, 430, '#F1DCC8', NOIR], ['R', .09, 610, BLEU, '#fff'], ['N', .2, 760, NOIR, '#fff'], ['M', .87, 400, NOIR, '#fff'], ['L', .92, 545, '#E9ECF2', NOIR], ['A', .86, 790, BLEU, '#fff']]
+      .forEach(function(m){ var cx = X + W * m[1], cy = Y + m[2]; x.save(); ombre(x, 'rgba(0,0,0,.45)', 18, 6); rond(x, cx, cy, 38, 'rgba(255,255,255,.95)'); x.restore(); avatar(x, cx, cy, 33, m[3], m[0], m[4]); });
+    pivote(x, X + W * .73, Y + 655, -.12, function(){ var pw = largeur(x, 'Gratuit', 46, 800, TITRE) + 64, phh = 84;
+      x.save(); ombre(x, 'rgba(0,85,255,.55)', 30, 10); bloc(x, X + W * .73 - pw / 2, Y + 655 - phh / 2, pw, phh, phh / 2, BLEU); x.restore();
+      T(x, 'Gratuit', X + W * .73, Y + 671, 46, 800, '#fff', { a: 'center', f: TITRE }); });
+    notif(x, X + W * .17, Y + 936, W * .72, { icone: iconeImg(x, L.wa), titre: 'Club Business, IA & SEO', texte: 'Sarah : « Votre avis sur mon site ? »' });
+    T(x, s.t1, X + p - 4, Y + H - 232, 140, 800, '#FFFFFF', { f: TITRE, esp: -5, max: W - 2 * p });
+    T(x, s.t2, X + p - 4, Y + H - 104, 140, 800, '#FFFFFF', { f: TITRE, esp: -5, max: W - 2 * p });
+    T(x, s.sous, X + p, Y + H - 44, 34, 500, 'rgba(255,255,255,.75)', { max: W - 2 * p });
+    c.fin(); }
   function v2(x, w, h, i, L){
+    if (i === 4 && L.club && L.club.naturalWidth) return v2club(x, w, h, L);
     var s = S[i], fond = String((window.CARTES_FONDS || V2F)[i]).toUpperCase(), enc = String((window.CARTES_TEXTES || V2C)[i]).toUpperCase(), blanc = fond === '#FFFFFF';   // majuscules : la boîte envoie « #ffffff » (11/11 : numéros illisibles)
     var c = support(x, w, h, fond, blanc ? 'rgba(14,15,19,.28)' : null, 3), X = c.X, Y = c.Y, W = c.W, H = c.H, p = 70;
     var pale = enc === '#FFFFFF' ? 'rgba(255,255,255,.34)' : (blanc ? 'rgba(0,85,255,.16)' : 'rgba(14,15,19,.3)');
     T(x, s.n, X + p - 12, Y + 312, 300, 800, pale, { f: TITRE, esp: -12 });
     rangLogos(x, s, L, X + W - p, Y + p, 56, !blanc);
     var mw = W * .84, mx = X + (W - mw) / 2 + 16, my = Y + 352, mh = 640, ny = Y + 936, ang = -.03;
-    var ecran = [ficheClient, statsAds, function(x2, a, b, cw2, ch2){ siteBureau(x2, a, b, cw2, ch2, SITE_ROUX, { court: true }); }, vizorRAC][i];
+    var ecran = [ficheClient, statsAds, function(x2, a, b, cw2, ch2){ siteBureau(x2, a, b, cw2, ch2, SITE_ROUX, { court: true }); }, vizorRAC, clubGroupe][i];
     pivote(x, mx + mw / 2, my + mh / 2, ang, function(){ ecran(x, mx, my, mw, mh, L); });
     var nt = [
       { icone: iconeImg(x, L.wa), titre: 'Inès · Fleur et Sens', texte: (__EN ? 'Confirmed for 14 June, thank you!' : 'C’est validé pour le 14 juin, merci !') },
       { icone: iconeImg(x, L.meta), titre: (__EN ? 'New lead · Meta form' : 'Nouveau prospect · formulaire Meta'), texte: (__EN ? 'Karim B. wants a quote for his bathroom.' : 'Karim B. veut un devis pour sa salle de bain.') },
       { icone: iconeLettre(x, 'R', '#5A3418'), titre: (__EN ? 'New quote request' : 'Nouvelle demande de devis'), texte: (__EN ? 'Via your site: a custom kitchen in Villeurbanne.' : 'Via ton site : une cuisine sur mesure à Villeurbanne.') },
-      { icone: iconeVizor(x), titre: (__EN ? 'Patient balance paid' : 'Reste à charge réglé'), texte: (__EN ? 'Paul Lacroix paid €85.00 for his sunglasses.' : 'Paul Lacroix a réglé ses 85,00 € de solaires.') } ][i];
+      { icone: iconeVizor(x), titre: (__EN ? 'Patient balance paid' : 'Reste à charge réglé'), texte: (__EN ? 'Paul Lacroix paid €85.00 for his sunglasses.' : 'Paul Lacroix a réglé ses 85,00 € de solaires.') },
+      { icone: iconeImg(x, L.wa), titre: 'Club Business, IA & SEO', texte: 'Sarah : « Votre avis sur mon site ? »' } ][i];
     notif(x, X + W * .17, ny, W * .72, nt);
     T(x, s.t1, X + p - 4, Y + H - 232, 140, 800, enc, { f: TITRE, esp: -5, max: W - 2 * p });
     T(x, s.t2, X + p - 4, Y + H - 104, 140, 800, enc, { f: TITRE, esp: -5, max: W - 2 * p });
@@ -730,6 +781,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   };
   function chargerLogos(cheminOnlee){
     var L = {}, attente = Object.keys(LOGO_SVG).map(function(k){ return new Promise(function(r){ var im = new Image(); im.onload = r; im.onerror = r; im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(LOGO_SVG[k]); L[k] = im; }); });
+    if (document.querySelector('[data-cinq]')) attente.push(new Promise(function(r){ var im = new Image(); im.onload = r; im.onerror = r; im.src = '/communaute/medias/club-groupe.webp'; L.club = im; }));
     if (cheminOnlee) attente.push(new Promise(function(r){ var im = new Image(); im.onload = r; im.onerror = r; im.src = cheminOnlee; L.onlee = im; }));
     return Promise.all(attente).then(function(){ return L; }); }
   function polices(){ if (!document.fonts || !document.fonts.load) return Promise.resolve();
