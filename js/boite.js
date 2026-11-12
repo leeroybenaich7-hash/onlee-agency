@@ -155,7 +155,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   ];
   /* 5e carte « Communauté » : seulement si la page la déclare (data-cinq) */
   var CINQ = !!sec.dataset.cinq;
-  if (CINQ) SERVICES.push({ nom:'Communauté', sous:'LE CLUB · BUSINESS · IA · SEO', logos:['wa'], ref:'CLB-05' });
+  if (CINQ) SERVICES.push({ nom:(__EN ? 'Community' : 'Communauté'), sous:'LE CLUB · BUSINESS · IA · SEO', logos:['wa'], ref:'CLB-05' });
   var PX = innerWidth < 760 ? 560 : 900, BLEU = '#3D7BFF', impression = -2;
   function poser(mesh, c){ var m = mesh.material; if (m.map) m.map.dispose(); m.map = tex(c); m.needsUpdate = true; }
   /* i = -1 : impression « marque » (boîte fermée) ; 0..3 : le service du chapitre */
@@ -218,7 +218,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     { t:(__EN ? 'Websites' : 'Sites internet'), t2:(__EN ? 'and SEO' : 'et SEO'), s:(__EN ? 'Fast, and found on Google' : 'Rapides et trouvés sur Google'), f:'#F1F3F7', c:'#0d0e12', logos:['google'], lien:(__EN ? '/en/websites/' : '/sites/'), apercu:'site' },
     { t:(__EN ? 'Vizor and' : 'Vizor et'), t2:'AudioVizor', s:(__EN ? 'Our trade software' : 'Nos logiciels métier'), f:'#0d0e12', c:'#ffffff', logos:[], lien:(__EN ? '/en/vizor/?metier=opticien' : '/vizor/?metier=opticien'), apercu:'vizor' }
   ];
-  if (CINQ) CARTES.push({ t:'Communauté', t2:'le Club', s:'Groupe WhatsApp gratuit', f:'#0E0F13', c:'#ffffff', logos:['wa'], lien:'/communaute/', apercu:'club' });
+  if (CINQ) CARTES.push({ t:(__EN ? 'Community' : 'Communauté'), t2:'le Club', s:'Groupe WhatsApp gratuit', f:'#0E0F13', c:'#ffffff', logos:['wa'], lien:'/communaute/', apercu:'club' });
   var APERCUS = {
     crm: function(x, X, Y, w, h){ bloc(x, X, Y, w, h, w * .04, '#ffffff'); var u = w / 100;
       [0, 1, 2].forEach(function(k){ x.fillStyle = ['#FF5F57', '#FEBC2E', '#28C840'][k]; x.beginPath(); x.arc(X + 5 * u + k * 4 * u, Y + 5 * u, 1.3 * u, 0, 7); x.fill(); });

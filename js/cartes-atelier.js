@@ -644,7 +644,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
       phrase: (__EN ? 'A fast site your customers can find.' : 'Un site rapide, que tes clients trouvent.'), liste: [(__EN ? 'Showcase site' : 'Site vitrine'), (__EN ? 'Online booking' : 'Prise de rendez-vous'), (__EN ? 'Google and AI' : 'Google et IA'), (__EN ? 'Hosting' : 'Hébergement')] },
     { n: '04', t1: (__EN ? 'Vizor and' : 'Vizor et'), t2: 'AudioVizor', sous: (__EN ? 'Our software for opticians and audiologists' : 'Nos logiciels pour opticiens et audios'), logos: [],
       phrase: (__EN ? 'Insurance payments tracked, no spreadsheets.' : 'Le tiers payant suivi, sans tableau Excel.'), liste: [(__EN ? 'Insurer tracking' : 'Suivi mutuelle'), (__EN ? 'Patient balance' : 'Reste à charge'), (__EN ? 'Auto reminders' : 'Relances auto'), (__EN ? 'Opticians & audiologists' : 'Opticiens et audios')] },
-    { n: '05', t1: 'Communauté', t2: 'le Club', sous: 'Groupe WhatsApp gratuit, entre entrepreneurs', logos: ['wa'],
+    { n: '05', t1: (__EN ? 'Community' : 'Communauté'), t2: 'le Club', sous: 'Groupe WhatsApp gratuit, entre entrepreneurs', logos: ['wa'],
       phrase: 'Entre entrepreneurs, on s’entraide.', liste: ['Tes questions', 'Un avis sur ton site', 'Skills et outils', 'Gratuit'] }
   ];
 

@@ -175,3 +175,6 @@
 
 /* 12/11 : animations en boucle en pause hors écran (voir commun.js) */
 .hors-ecran,.hors-ecran *{animation-play-state:paused!important}
+
+/* menu Services : 5e entrée (Communauté) sur toute la largeur, sous les 4 services (12/11) */
+.dr-grille a:nth-child(5),.onav .sous a:nth-child(5){grid-column:1/-1}
