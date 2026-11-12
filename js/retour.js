@@ -19,7 +19,8 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     if (memeSite && history.length > 1){ e.preventDefault(); history.back(); }
   });
   (document.body || document.documentElement).appendChild(b);
-  var der = window.scrollY || 0;
-  addEventListener('scroll', function(){ var y = window.scrollY || 0; if (innerWidth > 900){ der = y; return; }
-    if (y > der + 6 && y > 80) b.classList.add('cache'); else if (y < der - 6 || y < 80) b.classList.remove('cache'); der = y; }, { passive: true });
+  /* téléphone : caché à l'arrivée (il couvrait le bas du premier écran), il apparaît quand on remonte la page */
+  var der = window.scrollY || 0; if (innerWidth <= 900) b.classList.add('cache');
+  addEventListener('scroll', function(){ var y = window.scrollY || 0; if (innerWidth > 900){ b.classList.remove('cache'); der = y; return; }
+    if (y < der - 6 && y > 300) b.classList.remove('cache'); else if (y > der + 6 || y <= 300) b.classList.add('cache'); der = y; }, { passive: true });
 })();

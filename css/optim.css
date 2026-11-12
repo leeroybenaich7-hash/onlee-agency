@@ -6,6 +6,9 @@
 @media(max-width:900px){.onav-menu{width:44px!important;height:44px!important}.onav-capsule .onav-cta{min-height:44px}}
 /* liens du bas de page : zone tactile agrandie sans bouger la mise en page */
 @media(pointer:coarse){.opied a,.opied button{position:relative}.opied a::after,.opied button::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;transform:translateY(-50%)}}
+/* téléphone : petits boutons (son des vidéos, Rejouer, Voir en grand, Lire l'article, fil d'Ariane, adresse du site) touchables sur 44 px, sans changer leur taille à l'écran (12/11) */
+@media(pointer:coarse){#wid-rejouer,#wid-retour,.lire,.ariane a,.p-grand,.lien-site{position:relative}
+  .mini-son::after,#wid-rejouer::after,#wid-retour::after,.lire::after,.ariane a::after,.p-grand::after,.lien-site::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:max(100%,44px);transform:translate(-50%,-50%)}}
 
 /* ---------- La boîte sans 3D : image fixe + les 4 chapitres lisibles ---------- */
 .boite-sec.sans-3d{height:auto!important;padding:clamp(90px,10vw,130px) 0 clamp(60px,8vw,110px)}
