@@ -172,3 +172,6 @@
 /* textes « souris » / « doigt » : chacun sur son type d'écran */
 .si-tactile{display:none}
 @media(hover:none){.si-souris{display:none}.si-tactile{display:inline}}
+
+/* 12/11 : animations en boucle en pause hors écran (voir commun.js) */
+.hors-ecran,.hors-ecran *{animation-play-state:paused!important}

@@ -70,3 +70,10 @@ document.addEventListener('click', function(e){
     if (t.length > 1){ t[0].textContent = J[n.getDay()] + (__EN ? '' : '.'); t[1].textContent = n.getDate(); }
   }
 })();
+
+/* 12/11 : animations en boucle mises en pause quand leur section est hors de l'écran (moins de travail pour le téléphone, rien ne change à l'œil) */
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('hors-ecran', !e.isIntersecting); }); }, { rootMargin: '200px 0px' });
+  ['boite-sec', 'clients', 'faq', 'rdv'].forEach(function(id){ var el = document.getElementById(id); if (el) io.observe(el); });
+})();

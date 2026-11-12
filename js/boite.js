@@ -49,6 +49,8 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   /* même rendu que sur ordinateur : lissage + résolution x2 (plafond pour ne pas faire chauffer les écrans x3) */
   rendu.setPixelRatio(Math.min(2, devicePixelRatio || 1)); rendu.outputEncoding = THREE.sRGBEncoding; rendu.toneMapping = THREE.NoToneMapping;
   hote.appendChild(rendu.domElement);
+  var coupe = false; rendu.domElement.addEventListener('webglcontextlost', function(e){ e.preventDefault(); coupe = true; sans3d(); }, false);
+  rendu.debug.checkShaderErrors = false;   /* pas de vérification bloquante des shaders (la page se figeait à leur préparation) */
   var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, 1, .1, 80);
   var lin = function(hex){ return new THREE.Color(hex).convertSRGBToLinear(); };
   var ANISO = rendu.capabilities.getMaxAnisotropy();
@@ -70,7 +72,9 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     if (logoImg.naturalWidth){ x.drawImage(logoImg, 0, 0); x.globalCompositeOperation = 'source-in'; x.fillStyle = c; x.fillRect(0, 0, cv.width, cv.height); } return cv; }
   function logo(x, c, X, Y, h){ if (!logoImg.naturalWidth) return 0; var w = h * logoImg.naturalWidth / logoImg.naturalHeight; x.drawImage(logoCouleur(c), X, Y, w, h); return w; }
   function toile(dessin, w, h){ var c = document.createElement('canvas'); c.width = w; c.height = h; dessin(c.getContext('2d'), w, h); return c; }
-  function tex(c){ var t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = ANISO; return t; }
+  function tex(c){ var t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = ANISO; liberer(t, c); return t; }
+  /* l'image dessinée (canvas) n'est utile que pour l'envoi à la carte graphique : ensuite on la vide (sinon elle reste en double en mémoire) */
+  function liberer(t, c){ c.__reste = (c.__reste || 0) + 1; t.onUpdate = function(){ t.onUpdate = null; if (--c.__reste <= 0){ c.width = 1; c.height = 1; } }; }
   function arrondi(x, X, Y, w, h, r){ x.beginPath(); x.moveTo(X + r, Y); x.arcTo(X + w, Y, X + w, Y + h, r); x.arcTo(X + w, Y + h, X, Y + h, r); x.arcTo(X, Y + h, X, Y, r); x.arcTo(X, Y, X + w, Y, r); x.closePath(); }
   function bloc(x, X, Y, w, h, r, c){ x.fillStyle = c; arrondi(x, X, Y, w, h, r); x.fill(); }
   function espace(x, v){ try { x.letterSpacing = v; } catch(e){} }
@@ -149,10 +153,16 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     { nom:(__EN ? 'Websites and SEO' : 'Sites internet et SEO'), sous:(__EN ? 'WEBSITES · GOOGLE SEO' : 'SITES · RÉFÉRENCEMENT GOOGLE'), logos:['google'], ref:'WEB-03' },
     { nom:(__EN ? 'Vizor and AudioVizor' : 'Vizor et AudioVizor'), sous:(__EN ? 'OPTICIANS · AUDIOLOGISTS' : 'OPTICIENS · AUDIOPROTHÉSISTES'), logos:[], ref:'VIZ-04' }
   ];
-  var PX = 900, BLEU = '#3D7BFF', impression = -2;
+  var PX = innerWidth < 760 ? 560 : 900, BLEU = '#3D7BFF', impression = -2;
   function poser(mesh, c){ var m = mesh.material; if (m.map) m.map.dispose(); m.map = tex(c); m.needsUpdate = true; }
   /* i = -1 : impression « marque » (boîte fermée) ; 0..3 : le service du chapitre */
-  function imprimer(i){ if (i === impression) return; impression = i; var th = SERVICES[i];
+  /* ordinateur : les 5 impressions de la boîte sont préparées une fois puis simplement échangées (plus de calcul pendant le défilement) */
+  var CACHE_IMP = {}, cacheImp = innerWidth >= 760;
+  function imprimer(i){ if (i === impression) return;
+    if (cacheImp && CACHE_IMP[i]){ impression = i; imAvB.material.map = CACHE_IMP[i][0]; imDrB.material.map = CACHE_IMP[i][1]; imAvB.material.needsUpdate = true; imDrB.material.needsUpdate = true; return; }
+    if (cacheImp){ imAvB.material.map = null; imDrB.material.map = null; }
+    imprimerDessin(i); if (cacheImp) CACHE_IMP[i] = [imAvB.material.map, imDrB.material.map]; }
+  function imprimerDessin(i){ if (i === impression) return; impression = i; var th = SERVICES[i];
     var wB = Math.round((W - .02) * PX), hBp = Math.round((hB - .02) * PX);
     poser(imAvB, toile(function(x, w, h){
       if (!th){ logo(x, '#ffffff', w * .045, h * .25, h * .42);
@@ -179,9 +189,9 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
       x.textAlign = 'right'; texte(x, 'ONLEE.FR', w * .955, h * .64, h * .36, 700, '#ffffff', TEXTE, Math.round(h * .05) + 'px'); }, wC, hC));
     [imCoC, imCoC2].forEach(function(mm){ poser(mm, toile(function(x, w, h){ x.textAlign = 'center'; texte(x, 'ONLEE.FR', w / 2, h * .62, h * .3, 700, '#ffffff', TEXTE, Math.round(h * .05) + 'px'); }, Math.round((CD - .02) * PX), hC)); });
     poser(imDes, toile(function(x, w, h){ x.fillStyle = BLEU; x.fillRect(w * .47, h * .7, w * .06, h * .008);
-      x.textAlign = 'center'; texte(x, 'ONLEE.FR', w / 2, h * .82, h * .05, 600, 'rgba(255,255,255,.75)', TEXTE, Math.round(h * .018) + 'px'); }, Math.round((CW - .04) * 600), Math.round((CD - .04) * 600)));
+      x.textAlign = 'center'; texte(x, 'ONLEE.FR', w / 2, h * .82, h * .05, 600, 'rgba(255,255,255,.75)', TEXTE, Math.round(h * .018) + 'px'); }, Math.round((CW - .04) * PX * 2 / 3), Math.round((CD - .04) * PX * 2 / 3)));
     var cv = toile(function(x, w, h){ var lw = logoImg.naturalWidth ? h * logoImg.naturalWidth / logoImg.naturalHeight : 0; logo(x, '#ffffff', (w - lw) / 2, 0, h); }, 1400, 504);
-    var t = new THREE.CanvasTexture(cv); t.anisotropy = ANISO; vernis.material.alphaMap = t; vernis.material.needsUpdate = true;
+    var t = new THREE.CanvasTexture(cv); t.anisotropy = ANISO; liberer(t, cv); vernis.material.alphaMap = t; vernis.material.needsUpdate = true;
     vernisFond.material.alphaMap = t; vernisFond.material.needsUpdate = true;
     poser(imFond, toile(function(x, w, h){
       var m = h * .045, r = h * .02;   /* cadre embossé : un trait sombre + un trait clair décalé = relief */
@@ -195,7 +205,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
       texte(x, (__EN ? 'SOFTWARE · ADS · WEBSITES' : 'LOGICIELS · PUBS · SITES'), lx + p, ly + lh * .44, lh * .075, 700, '#0d0e12', TEXTE, Math.round(lh * .008) + 'px');
       texte(x, 'FAIT EN FRANCE  ·  ONLEE.FR', lx + p, ly + lh * .57, lh * .062, 500, 'rgba(13,14,18,.55)', TEXTE, Math.round(lh * .006) + 'px');
       for (var k = 0, bx = lx + p; bx < lx + lw - p; k++){ var bw = (k * 7 % 5 === 0 ? 3 : k % 3 === 0 ? 2 : 1) * lh * .012; x.fillStyle = '#0d0e12'; x.fillRect(bx, ly + lh * .66, bw, lh * .22); bx += bw + lh * .014; }
-      x.textAlign = 'left'; }, Math.round((W - .03) * 600), Math.round((D - .03) * 600)));
+      x.textAlign = 'left'; }, Math.round((W - .03) * PX * 2 / 3), Math.round((D - .03) * PX * 2 / 3)));
   }
 
   /* ---------- les 4 cartes, avec un mini aperçu de chaque service ---------- */
@@ -332,7 +342,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
         poserTex(m.material, calque); poserTex(fondM.material, base); fondM.material.metalness = M.metal; fondM.material.roughness = M.rough; fondM.visible = true;
         plat = toile(function(x, w, h){ x.drawImage(base, 0, 0, w, h); x.drawImage(calque, 0, 0, w, h); }, 900, 1193); poserTex(m.children[1].material, toileDos(i, null, M.c, base)); }
       else if (ATELIER[STYLE] && window.CARTES_V && LOGOS_AT){ var CC = couleurs(); window.CARTES_FONDS = CC.map(function(k){ return k.f; }); window.CARTES_TEXTES = CC.map(function(k){ return k.c; });
-        var K = innerWidth < 760 ? 1.4 : 1.75; plat = toile(function(x){ x.scale(K, K); window.CARTES_V[ATELIER[STYLE]](x, 1200, 1591, i, LOGOS_AT); }, Math.round(1200 * K), Math.round(1591 * K)); partage = true; poserTex(m.material, plat); fondM.visible = false;
+        var K = innerWidth < 760 ? 1.15 : 1.75; plat = toile(function(x){ x.scale(K, K); window.CARTES_V[ATELIER[STYLE]](x, 1200, 1591, i, LOGOS_AT); }, Math.round(1200 * K), Math.round(1591 * K)); partage = true; poserTex(m.material, plat); fondM.visible = false;
         var dc = STYLE === 'ecran' ? CC[i] : STYLE === 'affiche' ? { f:'#ffffff', c:'#0E0F13' } : { f:'#0E0F13', c:'#ffffff' }; poserTex(m.children[1].material, toileDos(i, dc.f, dc.c)); }
       else { var oc = Object.assign({}, o, couleurs()[i]); plat = toileCarte(oc, i); poserTex(m.material, plat); fondM.visible = false; poserTex(m.children[1].material, toileDos(i, oc.f, oc.c)); }
       var pf = pile[i].material[4]; if (partage){ if (pf.map && pf.map !== m.material.map) pf.map.dispose(); pf.map = m.material.map; pf.needsUpdate = true; } else poserTex(pf, plat); });
@@ -412,7 +422,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   var tailleW = 0, tailleH = 0;
   function taille(){ var w = hote.clientWidth, h = hote.clientHeight; if (!w || !h) return; if (w === tailleW && h === tailleH) return; tailleW = w; tailleH = h; rendu.setSize(w, h, false); cam.aspect = w / h; etroit = w < 900; cam.fov = w < 760 ? 44 : 28; cam.updateProjectionMatrix(); var recul = Math.max(1, LARGEUR_VUE / (Math.tan(cam.fov * Math.PI / 360) * cam.aspect)); CAM_F.p.copy(CAM_F.c).addScaledVector(VUE_F, recul); reveil(); }
   addEventListener('resize', taille);
-  function reveil(){ if (enCours || !visible || document.hidden) return; enCours = true; requestAnimationFrame(image); }
+  function reveil(){ if (enCours || !visible || document.hidden || coupe) return; enCours = true; requestAnimationFrame(image); }
   document.addEventListener('visibilitychange', reveil);
 
   var chapAvant = -9;
@@ -477,7 +487,19 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
 
   taille(); progression();
   Promise.all([logosPrets, logosAtelier, document.fonts ? document.fonts.ready : 0, new Promise(function(r){ if (logoImg.complete) r(); else { logoImg.onload = r; logoImg.onerror = r; } })]).then(function(){
-    imprimerFixe(); impression = -2; imprimer(cibleImp); habillerCartes(); reveil(); });
+    imprimerFixe(); impression = -2; imprimer(cibleImp); habillerCartes(); reveil(); prechauffer(); });
+  /* envoi à l'avance, une image à la fois quand le navigateur ne fait rien : cartes (face, dos), puis impressions de la boîte */
+  function quandLibre(f){ if (window.requestIdleCallback) requestIdleCallback(f, { timeout: 1500 }); else setTimeout(f, 120); }
+  function prechauffer(){ var file = [];
+    /* préparer tous les shaders d'un coup (objets cachés compris), sinon ils se préparent pendant le défilement */
+    file.push(function(){ var caches = []; scene.traverse(function(o){ if (!o.visible){ caches.push(o); o.visible = true; } }); try { rendu.compile(scene, cam); } catch (er) {} caches.forEach(function(o){ o.visible = false; }); return null; });
+    cartes.forEach(function(m, i){ file.push(function(){ return m.material.map; }); file.push(function(){ return m.children[1].material.map; }); file.push(function(){ return pile[i].material[4] && pile[i].material[4].map; }); });
+    if (cacheImp) [-1, 0, 1, 2, 3].forEach(function(k){ file.push(function(){ if (CACHE_IMP[k]) return null;
+      var avant = [imAvB.material.map, imDrB.material.map], impAvant = impression;
+      imAvB.material.map = null; imDrB.material.map = null; impression = -3; imprimerDessin(k); CACHE_IMP[k] = [imAvB.material.map, imDrB.material.map];
+      try { rendu.initTexture(CACHE_IMP[k][0]); rendu.initTexture(CACHE_IMP[k][1]); } catch (er) {}
+      imAvB.material.map = avant[0]; imDrB.material.map = avant[1]; impression = impAvant; return null; }); });
+    (function suite(){ if (coupe || !file.length) return; var t = file.shift()(); if (t) try { rendu.initTexture(t); } catch (er) {} quandLibre(suite); })(); }
   /* « Services » (capsule, menu, autre page) : on arrive directement au premier chapitre de la boîte, pas sur la boîte fermée */
   function versServices(immediat){ var q = S0 + LCH * .5;
     if (!immediat) return allerA(q);
