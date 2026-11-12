@@ -24,6 +24,6 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   /* pause quand le haut de page n'est plus à l'écran */
   new IntersectionObserver(function(es){ sec.classList.toggle('pause', !es[0].isIntersecting); }, { threshold: .2 }).observe(sec);
   aller(0);
-  setTimeout(function(){ sec.classList.add('cotes-on'); }, 500);
-  setTimeout(function(){ aller(1); }, reduit ? 0 : 1100);
+  setTimeout(function(){ sec.classList.add('cotes-on'); }, 200);   /* 12/11 : 500 -> 200 ms (ouverture plus rapide sur téléphone) */
+  setTimeout(function(){ aller(1); }, reduit ? 0 : 350);   /* 12/11 : 1,1 s -> 0,35 s */
 })();

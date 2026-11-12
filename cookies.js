@@ -437,6 +437,8 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
   }
 
   // Lien « Gérer les cookies » en bas de page : celui de la page s'il existe, sinon ajouté dans le pied de page.
+  /* 12/11 : le script part maintenant dès le haut de la page -> le pied de page n'existe pas encore, on attend qu'il soit lu */
+  function lienGerer() {
   var lien = document.getElementById("cookies-gerer");
   if (!lien) {
     var pied = document.querySelector("footer");
@@ -450,6 +452,8 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     lien.hidden = false; lien.textContent = T.gerer;
     lien.addEventListener("click", function (ev) { ev.preventDefault(); bandeau(); });
   }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", lienGerer, { once: true }); else lienGerer();
   window.onleeCookies = { ouvrir: bandeau };
 
   var c = lire();
@@ -458,8 +462,14 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     /* 11/11 : la page s'affiche d'abord, la fenêtre cookies arrive ensuite (sinon voile blanc à l'arrivée sur téléphone) */
     var parti = false;
     var ouvrirTard = function () { if (parti) return; parti = true; bandeau(); };
-    var apresChargement = function () { setTimeout(ouvrirTard, 2200); };
-    if (document.readyState === "complete") apresChargement(); else window.addEventListener("load", apresChargement, { once: true });
-    setTimeout(ouvrirTard, 6000);   // filet : si le chargement traîne, on l'ouvre quand même
+    /* 12/11 : trop tardif sur téléphone (« les cookies mettent du temps à apparaître ») -> juste après le premier affichage,
+       sans attendre les images ni la boîte 3D */
+    /* le script part dès le haut de la page : on attend juste qu'une première image soit peinte (deux images d'animation), puis 0,25 s */
+    var t0 = Date.now();
+    (function attendre() {
+      if (document.body || Date.now() - t0 > 2500) requestAnimationFrame(function () { requestAnimationFrame(function () { setTimeout(ouvrirTard, 250); }); });
+      else setTimeout(attendre, 30);
+    })();
+    setTimeout(ouvrirTard, 2500);   // filet
   }
 })();
