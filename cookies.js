@@ -66,6 +66,8 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
 
   var clarityCharge = false;
   function clarity() {
+    /* seulement sur le vrai site : les aperçus locaux (localhost) faussaient les chiffres de Clarity (12/11) */
+    if (!/(^|\.)onlee\.fr$/.test(location.hostname)) return;
     if (clarityCharge || !CLARITY_ID) return; clarityCharge = true;
     if (DEMO) { try { console.info("[labo] Clarity serait chargé ici (" + CLARITY_ID + ")"); } catch (_) {} return; }
     masquer(); surveiller();
@@ -79,6 +81,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
 
   var pixelCharge = false;
   function pixel() {
+    if (!/(^|\.)onlee\.fr$/.test(location.hostname)) return;   /* pas de Pixel sur les aperçus locaux */
     if (pixelCharge || !PIXEL_ID || DEMO) return; pixelCharge = true;
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
     fbq("init", PIXEL_ID); fbq("track", "PageView");
