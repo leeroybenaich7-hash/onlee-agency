@@ -71,6 +71,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://onlee.fr/blog/etre-trouve-sur-google/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/etre-trouve-sur-google/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/etre-trouve-sur-google/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/blog/prix-logiciel-sur-mesure/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/prix-logiciel-sur-mesure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/prix-logiciel-sur-mesure/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/blog/regler-campagne-facebook-instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/regler-campagne-facebook-instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/regler-campagne-facebook-instagram/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://onlee.fr/en/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/"/>
