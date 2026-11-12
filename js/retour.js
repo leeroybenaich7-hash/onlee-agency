@@ -9,6 +9,8 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     '.retour-onlee:hover{transform:translateX(-2px);box-shadow:0 0 0 1px rgba(14,15,19,.14),0 14px 30px -12px rgba(14,15,19,.45)}' +
     '.retour-onlee svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}' +
     '@media(max-width:1340px){.retour-onlee{top:auto;bottom:18px;width:46px;height:46px;padding:0;justify-content:center;font-size:0;gap:0}.retour-onlee svg{width:19px;height:19px}.opied-bas{padding-bottom:84px}}';
+  /* téléphone : le bouton s'efface quand on descend (il cachait le texte) et revient quand on remonte, comme la barre de Safari */
+  st.textContent += '@media(max-width:900px){.retour-onlee{transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .3s}.retour-onlee.cache{transform:translateY(80px);opacity:0;pointer-events:none}}';
   document.head.appendChild(st);
   var b = document.createElement('a'); b.className = 'retour-onlee'; b.href = __EN ? '/en/' : '/'; b.setAttribute('aria-label', (__EN ? 'Back to the previous page' : 'Retour à la page précédente'));
   b.innerHTML = (__EN ? '<svg viewBox="0 0 24 24"><path d="M19 12H6M11 6l-6 6 6 6"/></svg>Back' : '<svg viewBox="0 0 24 24"><path d="M19 12H6M11 6l-6 6 6 6"/></svg>Retour');
@@ -17,4 +19,7 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     if (memeSite && history.length > 1){ e.preventDefault(); history.back(); }
   });
   (document.body || document.documentElement).appendChild(b);
+  var der = window.scrollY || 0;
+  addEventListener('scroll', function(){ var y = window.scrollY || 0; if (innerWidth > 900){ der = y; return; }
+    if (y > der + 6 && y > 80) b.classList.add('cache'); else if (y < der - 6 || y < 80) b.classList.remove('cache'); der = y; }, { passive: true });
 })();
