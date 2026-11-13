@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HyperFrames : fais tes vidéos avec Claude · Skills du Club</title>
+<meta name="description" content="HyperFrames, un projet gratuit et open source de HeyGen : tu décris ta vidéo à Claude Code, il te sort un vrai fichier vidéo (MP4). Le lien, les 3 étapes et ce qu'il faut savoir avant.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="HyperFrames : fais tes vidéos avec Claude">
+<meta property="og:description" content="Le lien du projet, les 3 étapes et ce qu'il faut savoir avant. Partagé par Leeroy (Onlee).">
+<link rel="icon" type="image/png" href="/assets/favicon-32.png?v=2">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500 800;font-stretch:100%;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-latin.woff2) format("woff2")}@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/jetbrains-mono-latin.woff2) format("woff2")}</style>
+<style>
+  :root{--bleu:#0055FF;--bleu-clair:#3D7BFF;--nuit:#0B0D12;--carte:#141821;--trait:#262C38;--texte:#EEF1F6;--doux:#A9B1BF;--orange:#FFB020}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--nuit);color:var(--texte)}
+  body{font:16px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;padding:max(18px,env(safe-area-inset-top)) 18px max(28px,env(safe-area-inset-bottom));
+    background:radial-gradient(120% 60% at 50% -10%,rgba(0,85,255,.28),transparent 60%),var(--nuit)}
+  .wrap{max-width:520px;margin:0 auto}
+  .haut{display:flex;align-items:center;gap:10px;color:var(--doux);font-size:13.5px}
+  .haut img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+  .haut b{color:var(--texte)}
+  .etiquette{display:inline-flex;gap:8px;align-items:center;margin-top:26px;font:500 12px/1 "JetBrains Mono",monospace;color:#9FB6FF;letter-spacing:.06em;text-transform:uppercase}
+  h1{margin:10px 0 6px;font:800 44px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+  h1 em{font-style:normal;background:var(--bleu);padding:0 8px;border-radius:8px}
+  .chapo{margin:0;color:var(--doux);font-size:17px}
+  .puces{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .puces span{border:1px solid var(--trait);background:var(--carte);border-radius:999px;padding:5px 10px;font-size:13px;color:var(--texte)}
+  /* « Photo » du skill : la carte du projet sur GitHub */
+  .repo{margin-top:22px;background:var(--carte);border:1px solid var(--trait);border-radius:16px;padding:16px 16px 14px}
+  .repo .l1{display:flex;align-items:center;gap:10px;font:500 15px/1.2 "JetBrains Mono",monospace}
+  .repo .l1 svg{width:20px;height:20px;flex:none;color:var(--doux)}
+  .repo .l1 b{color:#fff}
+  .repo p{margin:8px 0 10px;color:var(--doux);font-size:14px}
+  .repo .meta{display:flex;gap:14px;font-size:13px;color:var(--doux)}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;text-decoration:none;border-radius:14px;font:700 17px/1 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;padding:18px 16px;margin-top:18px;transition:transform .15s ease}
+  .btn:active{transform:scale(.98)}
+  .btn svg{width:20px;height:20px}
+  .btn.principal{background:var(--bleu);color:#fff;box-shadow:0 10px 30px rgba(0,85,255,.35)}
+  h2{margin:30px 0 10px;font:800 22px/1.1 "Bricolage Grotesque",sans-serif}
+  ol.etapes{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  ol.etapes li{display:flex;gap:12px;align-items:flex-start;background:var(--carte);border:1px solid var(--trait);border-radius:14px;padding:13px 14px}
+  ol.etapes .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--bleu);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px}
+  ol.etapes b{display:block}
+  ol.etapes small{color:var(--doux);font-size:14px}
+  .attention{margin-top:16px;border:1px solid rgba(255,176,32,.45);background:rgba(255,176,32,.08);border-radius:14px;padding:14px 16px}
+  .attention h3{margin:0 0 6px;font:800 16px/1.2 "Bricolage Grotesque",sans-serif;color:var(--orange);display:flex;gap:8px;align-items:center}
+  .attention h3 svg{width:18px;height:18px}
+  .attention ul{margin:0;padding-left:18px;color:var(--texte);font-size:15px}
+  .attention li{margin:4px 0}
+  .club{margin-top:30px;border-top:1px solid var(--trait);padding-top:22px}
+  .club p{margin:0;color:var(--doux);font-size:15px}
+  .btn.secondaire{background:transparent;color:var(--texte);border:1px solid #3A4252;font-weight:600;margin-top:12px}
+  .pied{margin-top:26px;color:#7C8494;font-size:12.5px;line-height:1.5}
+  .pied a{color:#9FB6FF}
+  /* Les 2 lignes à copier */
+  .code{margin-top:10px;background:#0E1118;border:1px solid var(--trait);border-radius:12px;padding:12px 12px 10px;position:relative}
+  .code .l{display:block;font:500 13px/1.55 "JetBrains Mono",monospace;color:#DCE3EE;overflow-wrap:anywhere;padding-left:16px;text-indent:-16px}
+  .code .l+.l{margin-top:9px;padding-top:9px;border-top:1px dashed var(--trait)}
+  .code button{margin-top:10px;display:inline-flex;align-items:center;gap:6px;border:1px solid #3A4252;background:var(--carte);color:var(--texte);border-radius:10px;padding:8px 12px;font:600 14px/1 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;cursor:pointer}
+  .code button svg{width:15px;height:15px}
+  .code button.ok{border-color:var(--bleu);color:#9FB6FF}
+  ol.etapes .txt{min-width:0;flex:1}
+  .exemple{display:block;margin-top:6px;color:var(--texte);font-size:14px;border-left:3px solid var(--bleu);padding-left:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="haut">
+    <img src="/assets/leeroy-mini.webp" width="34" height="34" alt="">
+    <span>Partagé par <b>Leeroy</b> · Skills du Club</span>
+  </div>
+
+  <div class="etiquette">Skill n° 2 · gratuit</div>
+  <h1>Hyper<em>Frames</em></h1>
+  <p class="chapo">Tu décris ta vidéo à Claude, il la fabrique, et tu récupères un vrai fichier vidéo (MP4).</p>
+  <div class="puces"><span>Gratuit</span><span>Open source</span><span>Pour Claude Code</span></div>
+
+  <div class="repo" aria-label="Le projet sur GitHub">
+    <div class="l1">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+      <span>heygen-com / <b>hyperframes</b></span>
+    </div>
+    <p>Write HTML. Render video. Built for agents.</p>
+    <div class="meta"><span>Licence Apache-2.0</span><span>Gratuit</span><span>Claude Code</span></div>
+  </div>
+
+  <a class="btn principal" href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener" data-skill="hyperframes">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    Ouvrir HyperFrames sur GitHub
+  </a>
+
+  <h2>Comment l'utiliser</h2>
+  <ol class="etapes">
+    <li><span class="n">1</span><div class="txt"><b>Prépare ton ordinateur</b><small>Il te faut Claude Code, Node.js 22 et FFmpeg. Pas sûr de les avoir ? Demande à Claude de vérifier et de t'aider à les installer.</small></div></li>
+    <li><span class="n">2</span><div class="txt"><b>Colle ces 2 lignes dans le Terminal</b><small>Puis ouvre une nouvelle conversation dans Claude Code.</small>
+      <div class="code"><div id="lignes"><code class="l">claude plugin marketplace add heygen-com/hyperframes</code><code class="l">claude plugin install hyperframes@hyperframes</code></div>
+        <button type="button" id="copier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copier les 2 lignes</span></button>
+      </div></div></li>
+    <li><span class="n">3</span><div class="txt"><b>Demande ta vidéo</b><small>Claude te montre un aperçu, tu demandes les changements, puis il te sort le MP4.</small>
+      <span class="exemple">«&nbsp;Avec /hyperframes:hyperframes, fais-moi une vidéo de 10 secondes qui présente mon site [ton adresse].&nbsp;»</span></div></li>
+  </ol>
+
+  <div class="attention" role="note">
+    <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>À savoir avant</h3>
+    <ul>
+      <li>Ça marche dans <b>Claude Code, sur ordinateur</b> (Mac, Windows ou Linux), pas sur le téléphone.</li>
+      <li>Claude Code demande un <b>compte Claude payant</b>. HyperFrames, lui, est gratuit : seules quelques options de HeyGen (offre Pro) sont payantes, et tu n'en as pas besoin pour commencer.</li>
+      <li>Sans Claude Code : il existe un connecteur pour l'appli Claude, <b>en bêta</b>, qui passe par un compte HeyGen.</li>
+    </ul>
+  </div>
+
+  <div class="club">
+    <p>Tu veux d'autres outils comme ça ? Dans le Club, on se partage des skills entre entrepreneurs. <b>Ce n'est pas obligatoire pour récupérer HyperFrames.</b></p>
+    <a class="btn secondaire" href="https://onlee.fr/club" data-club="hyperframes">Rejoindre la communauté (gratuit)</a>
+  </div>
+
+  <p class="pied">HyperFrames est un projet open source de <a href="https://github.com/heygen-com" target="_blank" rel="noopener">HeyGen</a> et de sa communauté (licence Apache-2.0). Ce n'est pas un outil Onlee : on le partage parce qu'il peut t'être utile. Page proposée par Leeroy · <a href="https://onlee.fr">onlee.fr</a></p>
+</div>
+<script>
+(function(){var b=document.getElementById('copier');if(!b)return;var t=b.querySelector('span');
+b.addEventListener('click',function(){var txt=[].map.call(document.querySelectorAll('#lignes .l'),function(x){return x.textContent}).join('\n');
+var ok=function(){b.classList.add('ok');t.textContent='Copié';setTimeout(function(){b.classList.remove('ok');t.textContent='Copier les 2 lignes'},2000)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){})}});})();
+</script>
+<script src="/js/trafic.js"></script>
+</body>
+</html>
