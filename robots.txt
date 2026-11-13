@@ -3,25 +3,43 @@
 
 User-agent: *
 Allow: /
+Disallow: /medias/
 
 # Moteurs génératifs / IA (GEO) — explicitement autorisés
 User-agent: GPTBot
 Allow: /
+Disallow: /medias/
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /medias/
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /medias/
 User-agent: ClaudeBot
 Allow: /
+Disallow: /medias/
 User-agent: Claude-Web
 Allow: /
+Disallow: /medias/
 User-agent: PerplexityBot
 Allow: /
+Disallow: /medias/
 User-agent: Google-Extended
 Allow: /
+Disallow: /medias/
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /medias/
 User-agent: Bingbot
+Allow: /
+Disallow: /medias/
+
+# Robots de Meta (Instagram / Facebook) : accès à tout, y compris /medias/ (vidéos des Reels publiées par l'API)
+User-agent: facebookexternalhit
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: meta-externalfetcher
 Allow: /
 
 Sitemap: https://onlee.fr/sitemap.xml
