@@ -178,3 +178,13 @@
 #sect-haut .cote{width:280px!important}
 #sect-haut .c1{left:2.5%}#sect-haut .c3{left:3%}#sect-haut .c2{right:2.5%;top:14%}#sect-haut .c4{right:3%}
 @media(max-width:1380px){#sect-haut .cote{width:250px!important}}
+
+/* 16/11 (Leeroy, idée de Chris) : la bulle noire tout en haut, juste sous le menu (comme l'île d'un iPhone) ;
+   elle s'agrandit vers le bas. Le titre et les boutons restent seuls au centre de l'écran. */
+#sect-haut{padding-top:120px!important;padding-bottom:60px!important}
+#sect-haut .scene-h{position:static}
+#sect-haut .histoire{position:absolute;top:96px;left:0;right:0;margin:0;z-index:3;pointer-events:none}
+#sect-haut .scene-ile{margin:0 auto;align-items:flex-start;height:calc(var(--h3) + 4px)}
+#sect-haut .ile{pointer-events:auto}
+/* écran peu haut : le titre descend sous la place prise par la bulle quand elle est grande */
+@media (max-height:820px){#sect-haut{padding-top:300px!important}}

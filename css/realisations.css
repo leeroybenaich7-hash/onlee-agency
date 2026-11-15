@@ -322,4 +322,6 @@
 #realisations .fin .cta{transform:translate3d(0,-50%,0)}
 
 }
+#realisations .ind-nom{font-size:16px}
+#realisations .ind-nom b{font-weight:700;color:var(--encre)}
 
