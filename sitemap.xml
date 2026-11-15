@@ -103,6 +103,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://onlee.fr/blog/a-qui-tu-parles/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/a-qui-tu-parles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/a-qui-tu-parles/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/blog/etre-cite-par-les-ia/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/etre-cite-par-les-ia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/etre-cite-par-les-ia/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onlee.fr/blog/quand-passer-a-un-logiciel/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/quand-passer-a-un-logiciel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/quand-passer-a-un-logiciel/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://onlee.fr/en/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/"/>
