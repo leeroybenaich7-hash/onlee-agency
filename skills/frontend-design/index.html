@@ -3,126 +3,209 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>frontend-design : des sites qui n&#x27;ont pas l&#x27;air faits par l&#x27;IA · Skills du Club</title>
-<meta name="description" content="frontend-design, le skill d&#x27;Anthropic qui aide Claude à faire des sites et des écrans avec un vrai style, pas un modèle tout fait. Le lien, comment l&#x27;activer et ce qu&#x27;il faut savoir avant.">
+<title>Le kit frontend-design : un site qui ne fait plus « IA » · Skills du Club</title>
+<meta name="description" content="Le prompt prêt à coller, les réglages dans l'appli Claude et la check-list pour que ton site ne fasse plus « fait par l'IA ». Avec frontend-design, le skill officiel d'Anthropic.">
 <meta name="robots" content="noindex">
-<meta property="og:title" content="frontend-design : des sites qui n&#x27;ont pas l&#x27;air faits par l&#x27;IA">
-<meta property="og:description" content="Le lien du skill, comment l'installer et ce qu'il faut savoir avant. Partagé par Leeroy (Onlee).">
+<meta property="og:title" content="Le kit frontend-design : un site qui ne fait plus « IA »">
+<meta property="og:description" content="Le prompt, les réglages et la check-list, à copier en un geste. Partagé par Leeroy (Onlee).">
 <link rel="icon" type="image/png" href="/assets/favicon-32.png?v=2">
 <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500 800;font-stretch:100%;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-latin.woff2) format("woff2")}@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/jetbrains-mono-latin.woff2) format("woff2")}</style>
 <style>
-  :root{--bleu:#0055FF;--bleu-clair:#3D7BFF;--nuit:#0B0D12;--carte:#141821;--trait:#262C38;--texte:#EEF1F6;--doux:#A9B1BF;--orange:#FFB020}
+  :root{--bleu:#0055FF;--bleu-clair:#3D7BFF;--nuit:#0B0D12;--carte:#141821;--trait:#262C38;--texte:#EEF1F6;--doux:#A9B1BF;--orange:#FFB020;--papier:#F3F5F9;--encre:#151922}
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--nuit);color:var(--texte)}
-  body{font:16px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;padding:max(18px,env(safe-area-inset-top)) 18px max(28px,env(safe-area-inset-bottom));
-    background:radial-gradient(120% 60% at 50% -10%,rgba(0,85,255,.28),transparent 60%),var(--nuit)}
+  body{font:16px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;padding:max(14px,env(safe-area-inset-top)) 18px max(28px,env(safe-area-inset-bottom));
+    background:radial-gradient(120% 50% at 50% -12%,rgba(0,85,255,.24),transparent 60%),var(--nuit)}
   .wrap{max-width:520px;margin:0 auto}
-  .haut{display:flex;align-items:center;gap:10px;color:var(--doux);font-size:13.5px}
-  .haut img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+  .haut{display:flex;align-items:center;gap:9px;color:var(--doux);font-size:13px}
+  .haut img{width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid #fff}
   .haut b{color:var(--texte)}
-  .etiquette{display:inline-flex;gap:8px;align-items:center;margin-top:26px;font:500 12px/1 "JetBrains Mono",monospace;color:#9FB6FF;letter-spacing:.06em;text-transform:uppercase}
-  h1{margin:10px 0 6px;font:800 44px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
-  h1 em{font-style:normal;background:var(--bleu);padding:0 8px;border-radius:8px}
-  .chapo{margin:0;color:var(--doux);font-size:17px}
-  .puces{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-  .puces span{border:1px solid var(--trait);background:var(--carte);border-radius:999px;padding:5px 10px;font-size:13px;color:var(--texte)}
-  /* « Photo » du skill : la carte du projet sur GitHub */
-  .repo{margin-top:22px;background:var(--carte);border:1px solid var(--trait);border-radius:16px;padding:16px 16px 14px}
-  .repo .l1{display:flex;align-items:center;gap:10px;font:500 15px/1.2 "JetBrains Mono",monospace}
-  .repo .l1 svg{width:20px;height:20px;flex:none;color:var(--doux)}
-  .repo .l1 b{color:#fff}
-  .repo p{margin:8px 0 10px;color:var(--doux);font-size:14px}
-  .repo .meta{display:flex;gap:14px;font-size:13px;color:var(--doux)}
-  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;text-decoration:none;border-radius:14px;font:700 17px/1 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;padding:18px 16px;margin-top:18px;transition:transform .15s ease}
-  .btn:active{transform:scale(.98)}
-  .btn svg{width:20px;height:20px}
-  .btn.principal{background:var(--bleu);color:#fff;box-shadow:0 10px 30px rgba(0,85,255,.35)}
-  h2{margin:30px 0 10px;font:800 22px/1.1 "Bricolage Grotesque",sans-serif}
-  ol.etapes{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-  ol.etapes li{display:flex;gap:12px;align-items:flex-start;background:var(--carte);border:1px solid var(--trait);border-radius:14px;padding:13px 14px}
-  ol.etapes .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--bleu);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px}
-  ol.etapes b{display:block}
-  ol.etapes small{color:var(--doux);font-size:14px}
-  .attention{margin-top:16px;border:1px solid rgba(255,176,32,.45);background:rgba(255,176,32,.08);border-radius:14px;padding:14px 16px}
-  .attention h3{margin:0 0 6px;font:800 16px/1.2 "Bricolage Grotesque",sans-serif;color:var(--orange);display:flex;gap:8px;align-items:center}
-  .attention h3 svg{width:18px;height:18px}
-  .attention ul{margin:0;padding-left:18px;color:var(--texte);font-size:15px}
+  h1{margin:12px 0 3px;font:800 29px/1.05 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+  .chapo{margin:0;color:var(--doux);font-size:14.5px;line-height:1.4}
+  button{font:inherit;cursor:pointer}
+  :focus-visible{outline:2px solid var(--bleu-clair);outline-offset:2px}
+
+  /* Un bloc = un titre, un bouton Copier, son contenu */
+  .bloc{margin-top:13px}
+  .tete{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px}
+  .tete h2{margin:0;font:800 17px/1.15 "Bricolage Grotesque",sans-serif}
+  .copier{flex:none;display:inline-flex;align-items:center;gap:6px;border:1px solid #3A4252;background:var(--carte);color:var(--texte);border-radius:10px;padding:7px 11px;font-weight:600;font-size:13.5px;line-height:1}
+  .copier svg{width:14px;height:14px}
+  .copier.ok{border-color:var(--bleu);color:#9FB6FF}
+  .principal .copier{background:var(--bleu);border-color:var(--bleu);color:#fff;box-shadow:0 6px 18px rgba(0,85,255,.35)}
+  .principal .copier.ok{background:#fff;color:var(--bleu)}
+
+  /* 1. Le prompt : une feuille claire, c'est le texte que tu colles */
+  .feuille{position:relative;background:var(--papier);color:var(--encre);border-radius:12px;padding:11px 13px;font-size:13.5px;line-height:1.42;white-space:pre-wrap;overflow-wrap:anywhere;max-height:5.9em;overflow:hidden}
+  .feuille::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2.2em;background:linear-gradient(rgba(243,245,249,0),var(--papier))}
+  .ouvert .feuille{max-height:none}
+  .ouvert .feuille::after{display:none}
+  .plus{display:inline-block;margin-top:3px;background:none;border:0;padding:2px 0;color:#9FB6FF;font-size:13.5px;font-weight:600}
+
+  /* 2. Les étapes : une vraie suite, donc numérotée */
+  ol.etapes{margin:0;padding:0;list-style:none;counter-reset:e}
+  ol.etapes li{counter-increment:e;position:relative;padding:0 0 0 27px;font-size:14px;line-height:1.38;color:var(--texte)}
+  ol.etapes li+li{margin-top:5px}
+  ol.etapes li::before{content:counter(e);position:absolute;left:0;top:0;width:19px;height:19px;border-radius:50%;background:var(--bleu);color:#fff;font:800 11.5px/19px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;text-align:center}
+  ol.etapes b{font-weight:650}
+
+  /* 3. La check-list : des cases à cocher pour relire son site */
+  ul.liste{margin:0;padding:0;list-style:none;border-top:1px solid var(--trait)}
+  ul.liste li{border-bottom:1px solid var(--trait)}
+  ul.liste label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:14px;line-height:1.35;cursor:pointer}
+  ul.liste input{appearance:none;-webkit-appearance:none;flex:none;width:18px;height:18px;margin:1px 0 0;border:1.5px solid #59627A;border-radius:5px;display:grid;place-items:center}
+  ul.liste input:checked{background:var(--bleu);border-color:var(--bleu)}
+  ul.liste input:checked::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+  ul.liste input:checked+span{color:var(--doux);text-decoration:line-through;text-decoration-color:#59627A}
+  .liste-fermee li:nth-child(n+4){display:none}
+
+  /* Sous la ligne de flottaison */
+  .suite{margin-top:30px;border-top:1px solid var(--trait);padding-top:20px}
+  .suite h3{margin:0 0 8px;font:800 17px/1.2 "Bricolage Grotesque",sans-serif}
+  .suite p{margin:0;color:var(--doux);font-size:14.5px}
+  .code{margin-top:10px;background:#0E1118;border:1px solid var(--trait);border-radius:12px;padding:12px}
+  .code .l{display:block;font:500 13px/1.55 "JetBrains Mono",monospace;color:#DCE3EE;overflow-wrap:anywhere}
+  .code .l+.l{margin-top:8px;padding-top:8px;border-top:1px dashed var(--trait)}
+  .code .copier{margin-top:10px}
+  .lien{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:22px;text-decoration:none;border-radius:14px;padding:16px;font-weight:700;font-size:16px;color:var(--texte);border:1px solid #3A4252}
+  .lien svg{width:19px;height:19px;color:var(--doux)}
+  .attention{margin-top:22px;border:1px solid rgba(255,176,32,.45);background:rgba(255,176,32,.07);border-radius:14px;padding:13px 15px}
+  .attention h3{color:var(--orange);margin-bottom:4px}
+  .attention ul{margin:0;padding-left:18px;font-size:14.5px}
   .attention li{margin:4px 0}
-  .club{margin-top:30px;border-top:1px solid var(--trait);padding-top:22px}
-  .club p{margin:0;color:var(--doux);font-size:15px}
-  .btn.secondaire{background:transparent;color:var(--texte);border:1px solid #3A4252;font-weight:600;margin-top:12px}
-  .pied{margin-top:26px;color:#7C8494;font-size:12.5px;line-height:1.5}
+  .club{margin-top:26px}
+  .club p{margin:0;color:var(--doux);font-size:14.5px}
+  .club a{display:flex;justify-content:center;margin-top:12px;border-radius:14px;padding:16px;text-decoration:none;color:var(--texte);font-weight:600;border:1px solid #3A4252}
+  .pied{margin-top:24px;color:#7C8494;font-size:12.5px;line-height:1.5}
   .pied a{color:#9FB6FF}
-  /* Les 2 lignes à copier */
-  .code{margin-top:10px;background:#0E1118;border:1px solid var(--trait);border-radius:12px;padding:12px 12px 10px;position:relative}
-  .code .l{display:block;font:500 13px/1.55 "JetBrains Mono",monospace;color:#DCE3EE;overflow-wrap:anywhere;padding-left:16px;text-indent:-16px}
-  .code .l+.l{margin-top:9px;padding-top:9px;border-top:1px dashed var(--trait)}
-  .code button{margin-top:10px;display:inline-flex;align-items:center;gap:6px;border:1px solid #3A4252;background:var(--carte);color:var(--texte);border-radius:10px;padding:8px 12px;font:600 14px/1 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;cursor:pointer}
-  .code button svg{width:15px;height:15px}
-  .code button.ok{border-color:var(--bleu);color:#9FB6FF}
-  ol.etapes .txt{min-width:0;flex:1}
-  .exemple{display:block;margin-top:6px;color:var(--texte);font-size:14px;border-left:3px solid var(--bleu);padding-left:10px}
+  @media (prefers-reduced-motion:no-preference){.copier{transition:background-color .15s,color .15s,border-color .15s}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="haut">
-    <img src="/assets/leeroy-mini.webp" width="34" height="34" alt="">
-    <span>Partagé par <b>Leeroy</b> · Skills du Club</span>
+    <img src="/assets/leeroy-mini.webp" width="28" height="28" alt="">
+    <span>Partagé par <b>Leeroy</b>, Skills du Club</span>
   </div>
 
-  <div class="etiquette">Skill n° 6 · gratuit</div>
-  <h1>frontend-<em>design</em></h1>
-  <p class="chapo">Le skill officiel d'Anthropic pour que Claude fasse des sites avec un vrai style, et pas la même page « faite par l'IA » que tout le monde.</p>
-  <div class="puces"><span>Gratuit</span><span>Par Anthropic</span><span>Appli Claude et Claude Code</span></div>
+  <h1>Le kit frontend-design</h1>
+  <p class="chapo">Copie, colle : ton site ne fait plus «&nbsp;IA&nbsp;».</p>
 
-  <div class="repo" aria-label="Le projet sur GitHub">
-    <div class="l1">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-      <span>anthropics / <b>skills</b></span>
+  <section class="bloc principal" id="b-prompt">
+    <div class="tete">
+      <h2>Le prompt à coller</h2>
+      <button type="button" class="copier" data-copie="prompt" data-libelle="Copier le prompt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copier le prompt</span></button>
     </div>
-    <p>Public repository for Agent Skills</p>
-    <div class="meta"><span>Licence Apache-2.0</span><span>Gratuit</span><span>Claude</span></div>
-  </div>
+    <div class="feuille" id="prompt">Utilise le skill frontend-design.
+Fais la page d'accueil de mon site, en une seule page.
 
-  <a class="btn principal" href="https://github.com/anthropics/skills/tree/main/skills/frontend-design" target="_blank" rel="noopener" data-skill="frontend-design">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-    Ouvrir frontend-design sur GitHub
-  </a>
+Mon activité : [ce que je fais, en une phrase]
+Où : [ma ville ou ma zone]
+Mes clients : [qui ils sont, ce qu'ils cherchent]
+Ce qu'ils doivent faire sur la page : [appeler, réserver, demander un devis…]
+Mes preuves : [années d'expérience, avis, réalisations : que du vrai]
+Mes coordonnées : [téléphone, adresse, horaires]
 
-  <h2>Comment l'utiliser</h2>
-  <ol class="etapes">
-    <li><span class="n">1</span><div class="txt"><b>Dans l'appli Claude : il y est déjà</b><small>Les skills d'exemple d'Anthropic, dont frontend-design, sont déjà disponibles avec les offres payantes. Tu n'as rien à installer.</small></div></li>
-    <li><span class="n">2</span><div class="txt"><b>Dans Claude Code : tape ces 2 commandes</b><small>À taper dans Claude Code (pas dans le Terminal). Elles ajoutent les skills d'exemple d'Anthropic.</small>
-      <div class="code"><div id="lignes"><code class="l">/plugin marketplace add anthropics/skills</code><code class="l">/plugin install example-skills@anthropic-agent-skills</code></div>
-        <button type="button" id="copier" data-libelle="Copier les 2 lignes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copier les 2 lignes</span></button>
-      </div></div></li>
-    <li><span class="n">3</span><div class="txt"><b>Décris ton projet, avec ton sujet et tes clients</b><small>Plus tu donnes de détails sur ton métier, plus le style sera à toi.</small>
-      <span class="exemple">«&nbsp;Fais la page d&#x27;accueil de ma boulangerie à Lyon, chaleureuse, pour des familles.&nbsp;»</span></div></li>
-  </ol>
+Avant de coder, propose-moi en 5 lignes une direction de style (couleurs, police, mise en page) et dis-moi pourquoi elle colle à mon métier.
+Évite les signes des sites faits par l'IA : dégradés en décoration, cartes toutes identiques, un seul mot coloré dans le titre, petits titres en majuscules au-dessus de chaque bloc, flèches dans les boutons, emojis à la place des icônes.
+Textes courts et concrets, en français. N'invente aucun chiffre ni aucun avis : écris [à compléter] si tu ne sais pas.</div>
+    <button type="button" class="plus" data-ouvre="b-prompt" data-ferme="Replier le prompt">Lire tout le prompt</button>
+  </section>
 
-  <div class="attention" role="note">
-    <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>À savoir avant</h3>
-    <ul>
-      <li>Il faut une <b>offre Claude payante</b> (appli ou Claude Code).</li>
-      <li>C'est un guide de style : le résultat dépend de <b>ce que tu lui racontes</b> sur ton projet.</li>
-      <li>Relis toujours le site avant de le mettre en ligne : textes, prix, coordonnées.</li>
+  <section class="bloc" id="b-etapes">
+    <div class="tete">
+      <h2>Les étapes dans Claude</h2>
+      <button type="button" class="copier" data-copie="etapes" data-libelle="Copier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copier</span></button>
+    </div>
+    <ol class="etapes" id="etapes">
+      <li>claude.ai, <b>Paramètres › Capacités</b> : active «&nbsp;Créer et modifier des fichiers&nbsp;».</li>
+      <li><b>Personnaliser › Compétences</b> (Skills) : active frontend-design.</li>
+      <li>Nouvelle conversation : colle le prompt, remplis les [ ].</li>
+      <li>Retouches en une phrase : «&nbsp;plus sobre&nbsp;».</li>
+    </ol>
+  </section>
+
+  <section class="bloc" id="b-liste">
+    <div class="tete">
+      <h2>Ton site ne fait plus «&nbsp;IA&nbsp;» si…</h2>
+      <button type="button" class="copier" data-copie="liste" data-libelle="Copier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copier</span></button>
+    </div>
+    <ul class="liste liste-fermee" id="liste">
+      <li><label><input type="checkbox"><span>Tes couleurs viennent de ton métier, pas d'un dégradé posé pour faire joli.</span></label></li>
+      <li><label><input type="checkbox"><span>Aucun mot seul surligné ou coloré dans le grand titre.</span></label></li>
+      <li><label><input type="checkbox"><span>Chaque bouton dit ce qu'il fait : «&nbsp;Réserver une table&nbsp;», pas «&nbsp;En savoir plus&nbsp;».</span></label></li>
+      <li><label><input type="checkbox"><span>Pas de petit titre en majuscules au-dessus de chaque bloc.</span></label></li>
+      <li><label><input type="checkbox"><span>Tes blocs ne sont pas tous des cartes identiques avec la même ombre.</span></label></li>
+      <li><label><input type="checkbox"><span>Une ou deux polices, choisies exprès, pas celle par défaut.</span></label></li>
+      <li><label><input type="checkbox"><span>Aucun emoji à la place des icônes.</span></label></li>
+      <li><label><input type="checkbox"><span>Les textes parlent de toi : ta ville, tes clients, tes vraies preuves.</span></label></li>
+      <li><label><input type="checkbox"><span>Pas d'animation qui fait glisser chaque bloc quand on descend.</span></label></li>
+      <li><label><input type="checkbox"><span>Téléphone, adresse, horaires et prix sont exacts : tu les as relus.</span></label></li>
     </ul>
-  </div>
+    <button type="button" class="plus" data-ouvre="b-liste" data-ferme="Replier la liste">Voir les 10 points</button>
+  </section>
 
-  <div class="club">
-    <p>Tu veux d'autres outils comme ça ? Dans le Club, on se partage des skills entre entrepreneurs. <b>Ce n'est pas obligatoire pour récupérer frontend-design.</b></p>
-    <a class="btn secondaire" href="https://onlee.fr/club" data-club="frontend-design">Rejoindre la communauté (gratuit)</a>
-  </div>
+  <div class="suite">
+    <h3>Tu utilises Claude Code ?</h3>
+    <p>Tape ces 2 commandes dans Claude Code (pas dans le Terminal). Elles ajoutent les skills d'exemple d'Anthropic, dont frontend-design.</p>
+    <div class="code">
+      <code class="l" id="cc1">/plugin marketplace add anthropics/skills</code>
+      <code class="l" id="cc2">/plugin install example-skills@anthropic-agent-skills</code>
+      <button type="button" class="copier" data-copie="cc" data-libelle="Copier les 2 lignes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copier les 2 lignes</span></button>
+    </div>
 
-  <p class="pied">frontend-design est un skill open source d'<a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">Anthropic</a> (licence Apache-2.0), dans son dépôt public de skills. Ce n'est pas un outil Onlee : on le partage parce qu'il peut t'être utile. Page proposée par Leeroy · <a href="https://onlee.fr">onlee.fr</a></p>
+    <a class="lien" href="https://github.com/anthropics/skills/tree/main/skills/frontend-design" target="_blank" rel="noopener" data-skill="frontend-design">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+      Voir frontend-design sur GitHub
+    </a>
+
+    <div class="attention" role="note">
+      <h3>À savoir avant</h3>
+      <ul>
+        <li>D'après l'aide officielle de Claude (mise à jour du 10/11/2026), les skills sont ouverts à <b>toutes les offres, même gratuite</b>, si «&nbsp;Créer et modifier des fichiers&nbsp;» est activé.</li>
+        <li>C'est un guide de style : le résultat dépend de <b>ce que tu racontes</b> sur ton projet. Plus ce que tu mets entre [ ] est précis, plus le site est à toi.</li>
+        <li>Claude te fait la page. La mettre en ligne sur ton propre nom de domaine, c'est une autre étape.</li>
+        <li>Relis toujours avant de publier : textes, prix, coordonnées.</li>
+      </ul>
+    </div>
+
+    <div class="club">
+      <p>Tu veux d'autres outils comme ça ? Dans le Club, on se partage des skills entre entrepreneurs. <b>Ce n'est pas obligatoire pour récupérer le kit.</b></p>
+      <a href="https://onlee.fr/club" data-club="frontend-design">Rejoindre la communauté (gratuit)</a>
+    </div>
+
+    <p class="pied">frontend-design est un skill open source d'<a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">Anthropic</a> (licence Apache-2.0). La check-list reprend les signes de «&nbsp;page générée&nbsp;» décrits dans le skill lui-même. Réglages vérifiés dans l'aide Claude («&nbsp;Use skills in Claude&nbsp;»). Ce n'est pas un outil Onlee : on le partage parce qu'il peut t'être utile. Page proposée par Leeroy, <a href="https://onlee.fr">onlee.fr</a></p>
+  </div>
 </div>
 <script>
-(function(){var b=document.getElementById('copier');if(!b)return;var t=b.querySelector('span');var lib=b.getAttribute('data-libelle');
-b.addEventListener('click',function(){var txt=[].map.call(document.querySelectorAll('#lignes .l'),function(x){return x.textContent}).join('\n');
-var ok=function(){b.classList.add('ok');t.textContent='Copié';setTimeout(function(){b.classList.remove('ok');t.textContent=lib},2000)};
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){})}});})();
+(function(){
+  function texte(cle){
+    if(cle==='prompt')return document.getElementById('prompt').textContent;
+    if(cle==='etapes')return [].map.call(document.querySelectorAll('#etapes li'),function(li,i){return (i+1)+'. '+li.textContent.replace(/\s+/g,' ').trim()}).join('\n');
+    if(cle==='liste')return 'Ton site ne fait plus « IA » si…\n'+[].map.call(document.querySelectorAll('#liste li'),function(li){return '☐ '+li.textContent.replace(/\s+/g,' ').trim()}).join('\n');
+    if(cle==='cc')return document.getElementById('cc1').textContent+'\n'+document.getElementById('cc2').textContent;
+    return '';
+  }
+  function secours(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.top='-1000px';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);var ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(a);return ok}
+  [].forEach.call(document.querySelectorAll('.copier'),function(b){
+    var s=b.querySelector('span'),lib=b.getAttribute('data-libelle');
+    b.addEventListener('click',function(){
+      var t=texte(b.getAttribute('data-copie'));
+      var fait=function(){b.classList.add('ok');s.textContent='Copié';setTimeout(function(){b.classList.remove('ok');s.textContent=lib},2000)};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(fait,function(){if(secours(t))fait()})}
+      else if(secours(t))fait();
+    });
+  });
+  [].forEach.call(document.querySelectorAll('.plus'),function(b){
+    var bloc=document.getElementById(b.getAttribute('data-ouvre')),lib=b.textContent,ferme=b.getAttribute('data-ferme');
+    b.addEventListener('click',function(){
+      var ouvert=bloc.classList.toggle('ouvert');
+      var l=bloc.querySelector('.liste');if(l)l.classList.toggle('liste-fermee',!ouvert);
+      b.textContent=ouvert?ferme:lib;
+    });
+  });
+})();
 </script>
 <script src="/js/trafic.js"></script>
 </body>
