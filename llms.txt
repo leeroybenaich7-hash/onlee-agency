@@ -21,6 +21,7 @@
 
 - [Réalisations](https://onlee.fr/realisations/) : tous les projets d'onlee en grandes cartes, avec leurs vrais écrans, filtrables par type.
 - Logiciels sur mesure : Hello Collection, portail de commande pour les professionnels d'un magasin de meubles (https://hellocollection-pro.fr) ; Onlee Tournées, logiciel de tournées de livraison et d'abonnements, présenté en démo avec des données fictives. Boutique pro pour un fournisseur d'hygiène et portail de commande pour un grossiste en lunettes, présentés en démo (clients fictifs, nom du client non communiqué).
+- [Étude de cas Jofre Tapis](https://onlee.fr/realisations/jofre-tapis/) : logiciel sur mesure de tournées et de suivi clients pour une entreprise de location et d'entretien de tapis à logo, diffuseurs et fontaines (plus de 600 clients), avec l'appli du livreur (photo et signature comme preuve de passage) et le témoignage du président.
 - Nos logiciels : Vizor (opticiens : ventes du jour et suivi du tiers payant jusqu'au paiement) et AudioVizor (suivi du tiers payant de l'audition).
 - Sites internet : nao · studio pilates (https://nao-pilates.vercel.app) et un site de fabricant de tapis logo dont la nouvelle version est en préparation.
 - Pubs Facebook et Instagram : les campagnes de Vizor et AudioVizor.
