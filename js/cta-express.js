@@ -209,12 +209,25 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     if (!decor) construireDecor();
     clearTimeout(minuteCartes);
     if (vis) { document.body.appendChild(dessus); placer(); void decor.offsetWidth; decor.classList.add('oc-ouvert'); cartesSiPret(b); }
-    else { decor.classList.remove('oc-ouvert'); dessus.classList.remove('oc-ouvert'); }
+    else { decor.classList.remove('oc-ouvert'); dessus.classList.remove('oc-ouvert'); ecoute = false; clearTimeout(minuteEcoute); }   /* cartesRetirees reste vrai : en rouvrant, cal.com revient sur l'écran où on s'était arrêté (formulaire) */
   }
   /* les cartes autour de l'agenda n'arrivent qu'une fois la page de réservation affichée (state="loaded"), jamais avant */
   var minuteCartes;
+  /* 18/11 : dès que la personne quitte le calendrier (créneau choisi → formulaire, puis confirmation), les cartes partent :
+     ces écrans sont plus hauts et une carte finissait par cacher du texte. Elles ne reviennent pas pendant la visite. */
+  /* l'agenda change aussi d'écran tout seul pendant son ouverture : on n'écoute qu'1,2 s après « bookerReady »
+     (l'agenda est prêt), pour ne réagir qu'aux vrais clics de la personne */
+  var cartesRetirees = false, ecoute = false, minuteEcoute;
+  window.addEventListener('onlee-cal', function (e) {
+    var t = e.detail || '';
+    if (t === 'bookerReady') { clearTimeout(minuteEcoute); minuteEcoute = setTimeout(function () { ecoute = ouvert; }, 1200); return; }
+    if (!ouvert || !ecoute || cartesRetirees) return;
+    if (t === '__routeChanged' || t.indexOf('bookingSuccessful') === 0) {
+      cartesRetirees = true; clearTimeout(minuteCartes); dessus.classList.remove('oc-ouvert');
+    }
+  });
   function cartesSiPret(b) {
-    if (dessus.classList.contains('oc-ouvert') || b.getAttribute('state') !== 'loaded') return;
+    if (cartesRetirees || dessus.classList.contains('oc-ouvert') || b.getAttribute('state') !== 'loaded') return;
     clearTimeout(minuteCartes);
     minuteCartes = setTimeout(function () {
       if (!ouvert) return;
