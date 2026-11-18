@@ -17,7 +17,9 @@
   /* la page de réservation elle-même est préchargée en arrière-plan : au clic, l'agenda s'ouvre presque tout de suite */
   var prechargee = false;
   function precharger(){ if (prechargee) return; prechargee = true; chargerCal();
-    try { Cal.ns.rdv30('preload', { calLink: 'leeroy-benaich/30min' }); } catch (er) {} }
+    /* 18/11 : type 'modal' = cal.com prépare l'agenda entier (créneaux compris) en arrière-plan ; au clic il s'affiche aussitôt.
+       Sans type, seuls les fichiers étaient préchargés : l'agenda mettait ~15 s à apparaître. */
+    try { Cal.ns.rdv30('preload', { calLink: 'leeroy-benaich/30min', type: 'modal', options: { backgroundSlotsFetch: true } }); } catch (er) {} }
   document.addEventListener('touchstart', function(e){ if (e.target.closest && e.target.closest('[data-cal-link]')) precharger(); }, { passive: true, capture: true });
   document.addEventListener('pointerover', function(e){ if (e.target.closest && e.target.closest('[data-cal-link]')) precharger(); }, { passive: true });
   setTimeout(function(){ ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(function(){ chargerCal(); setTimeout(function(){ window.__calPret = true; }, 2500); }); }, 3000);

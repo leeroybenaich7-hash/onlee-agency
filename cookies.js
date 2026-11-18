@@ -391,6 +391,9 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
       if (c === "oui") accepter();
       else { if (window.clarity && clarityCharge) window.clarity("consent", false); effacer(); }
       d.setAttribute("data-humeur", c); fini = true;
+      /* 18/11 : la page redevient utilisable tout de suite (avant : bloquée ~2 s pendant l'au revoir de la mascotte,
+         un clic sur « Réserver un appel » juste après « Refuser » ne faisait rien) */
+      figerPage(false); d.style.pointerEvents = "none";
       titre.textContent = c === "oui" ? T.merci : T.boude;
       var bs = carte.querySelectorAll("button"); for (var i = 0; i < bs.length; i++) bs[i].disabled = true;
       carte.focus({ preventScroll: true });

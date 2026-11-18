@@ -149,17 +149,24 @@ var __EN = document.documentElement.lang === 'en';   /* textes en anglais sur le
     var ifr = boite && boite.querySelector('iframe'), ri = ifr && ifr.getBoundingClientRect();
     var L = Math.min(1040, vw - 32), Hh = Math.min(620, vh - 120);
     var bw = ri ? Math.min(ri.width, 1000) : 0, bl = ri ? ri.left + (ri.width - bw) / 2 : 0;  /* la fenêtre visible de cal.com fait ~1000 px de large, centrée dans sa zone */
-    var R = (ri && ri.height > 200 && ri.width > 300) ? { l: bl, t: ri.top, r: bl + bw, b: Math.min(ri.bottom, vh - 20, ri.top + 472) } : { l: (vw - L) / 2, t: (vh - Hh) / 2, r: (vw + L) / 2, b: (vh + Hh) / 2 };
+    var R = (ri && ri.height > 200 && ri.width > 300) ? { l: bl, t: ri.top, r: bl + bw, b: Math.min(ri.bottom, vh - 20, ri.top + 530) }   /* 18/11 : 530 et non 472, l'agenda visible fait jusqu'à ~490 px (mois sur 6 semaines) */ : { l: (vw - L) / 2, t: (vh - Hh) / 2, r: (vw + L) / 2, b: (vh + Hh) / 2 };
     var Wb = R.r - R.l, Hb = R.b - R.t;
+    /* 18/11 : les cartes vont UNIQUEMENT dans l'espace libre autour de l'agenda ; s'il n'y a pas la place, la carte n'apparaît pas.
+       (avant : elles étaient posées à cheval sur le bord et cachaient des jours ou des créneaux) */
+    var M = 14;   /* marge minimale entre une carte et l'agenda */
     var bords = [
-      function (c) { return { x: R.l - c.offsetWidth * .55, y: R.t + Hb * .6, rot: -2.5 }; },                       /* à gauche, sous les infos */
-      function (c) { return { x: R.l + Wb * .5 - c.offsetWidth / 2, y: R.t - c.offsetHeight * .55, rot: 1.5 }; },  /* en haut, au centre */
-      function (c) { return { x: R.r - c.offsetWidth * .32, y: R.t + Hb * .28, rot: 2.5 }; },                       /* à droite, en haut des créneaux */
-      function (c) { return { x: R.l + Wb * .44 - c.offsetWidth / 2, y: R.b - c.offsetHeight * .45, rot: -1.5 }; }  /* en bas, sous le calendrier */
+      function (c) { return R.l - M - 10 >= c.offsetWidth ? { x: R.l - M - c.offsetWidth, y: R.t + Hb * .6, rot: -2.5 } : null; },          /* à gauche */
+      function (c) { return R.t - M - 10 >= c.offsetHeight ? { x: R.l + Wb * .5 - c.offsetWidth / 2, y: R.t - M - c.offsetHeight, rot: 1.5 } : null; },  /* au-dessus */
+      function (c) { return vw - R.r - M - 10 >= c.offsetWidth ? { x: R.r + M, y: R.t + Hb * .28, rot: 2.5 } : null; },                     /* à droite */
+      function (c) { return vh - R.b - M - 10 >= c.offsetHeight ? { x: R.l + Wb * .44 - c.offsetWidth / 2, y: R.b + M, rot: -1.5 } : null; }  /* en dessous */
     ];
     var visibles = [];
     cartes.forEach(function (c, k) { c.classList.add('oc-place'); c.classList.remove('oc-ligne'); c.style.width = '';
-      var P = bords[k % 4](c), x = Math.max(10, Math.min(vw - c.offsetWidth - 10, P.x)), y = Math.max(10, Math.min(vh - c.offsetHeight - 10, P.y));
+      var P = bords[k % 4](c);
+      if (!P) { c.classList.remove('oc-place'); return; }
+      var x = Math.max(10, Math.min(vw - c.offsetWidth - 10, P.x)), y = Math.max(10, Math.min(vh - c.offsetHeight - 10, P.y));
+      /* dernier contrôle : si, une fois recadrée dans l'écran, la carte touche l'agenda, elle n'apparaît pas */
+      if (x < R.r + M && x + c.offsetWidth > R.l - M && y < R.b + M && y + c.offsetHeight > R.t - M) { c.classList.remove('oc-place'); return; }
       c.style.left = px(x); c.style.top = px(y); c.style.setProperty('--rot', P.rot + 'deg'); visibles.push(c); });
     visibles.forEach(function (c, i) { c.style.setProperty('--i', i); });
   }
