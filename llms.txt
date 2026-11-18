@@ -36,6 +36,8 @@
 - [Être cité par ChatGPT et les IA : ce qui compte vraiment](https://onlee.fr/blog/etre-cite-par-les-ia/) (15/11/2026) : Faire apparaître son entreprise dans ChatGPT et les IA : robots, Bing, pages claires, mentions. Ce qui compte vraiment, et ce que vaut le fichier llms.txt.
 - [Excel, papier, WhatsApp : quand passer à un vrai logiciel ?](https://onlee.fr/blog/quand-passer-a-un-logiciel/) (15/11/2026) : Quand passer d’Excel à un logiciel ? Les 7 signes qui ne trompent pas, le temps que tes outils te coûtent et par où commencer sans tout casser.
 - [Réussir les premières secondes de ta pub vidéo Facebook et Instagram](https://onlee.fr/blog/premieres-secondes-pub/) (16/11/2026) : Pub vidéo Facebook et Instagram : quoi montrer dans les premières secondes, comment être compris sans le son, quel format et comment filmer au téléphone.
+- [Connecter tes outils entre eux pour en finir avec la double saisie](https://onlee.fr/blog/connecter-ses-outils/) (17/11/2026) : Éviter la double saisie entre tes logiciels : faire la liste, choisir l’outil qui a le dernier mot, relier CRM et facturation sans tout recoder.
+- [Ton premier site avec Claude ou Codex, sans savoir coder](https://onlee.fr/blog/premier-site-claude-codex/) (18/11/2026) : Créer un site avec Claude Code ou Codex sans savoir coder : quoi préparer, quoi demander à l’IA, comment avancer page par page et ce qu’il faut vérifier.
 
 ## English
 
