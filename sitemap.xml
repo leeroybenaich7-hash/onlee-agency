@@ -19,6 +19,14 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://onlee.fr/logiciels/crm-sur-mesure/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/logiciels/crm-sur-mesure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/logiciels/crm-sur-mesure/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onlee.fr/publicites/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/publicites/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/ads/"/>
