@@ -51,6 +51,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onlee.fr/ia/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/ia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlee.fr/ia/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onlee.fr/publicites/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://onlee.fr/publicites/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlee.fr/en/ads/"/>
