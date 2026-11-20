@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saisie des commandes par IA : où elle aide, où elle se trompe</title>
+<meta name="description" content="Automatiser la saisie des commandes avec l’IA : où elle aide vraiment, ses limites, la relecture humaine, le RGPD, et comment faire un premier essai.">
+<link rel="canonical" href="https://onlee.fr/blog/ia-dans-ton-logiciel/">
+<link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/ia-dans-ton-logiciel/">
+<link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/ia-dans-ton-logiciel/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:site_name" content="onlee">
+<meta property="og:title" content="Saisie des commandes par IA : où elle aide, où elle se trompe">
+<meta property="og:description" content="Automatiser la saisie des commandes avec l’IA : où elle aide vraiment, ses limites, la relecture humaine, le RGPD, et comment faire un premier essai.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://onlee.fr/blog/ia-dans-ton-logiciel/">
+<meta property="og:image" content="https://onlee.fr/assets/og-onlee.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Saisie des commandes par IA : où elle aide, où elle se trompe">
+<meta name="twitter:description" content="Automatiser la saisie des commandes avec l’IA : où elle aide vraiment, ses limites, la relecture humaine, le RGPD, et comment faire un premier essai.">
+<meta name="twitter:image" content="https://onlee.fr/assets/og-onlee.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "onlee",
+     "item": "https://onlee.fr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Conseils",
+     "item": "https://onlee.fr/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Logiciels sur mesure",
+     "item": "https://onlee.fr/logiciels/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "L’IA dans ton logiciel : où elle aide vraiment",
+     "item": "https://onlee.fr/blog/ia-dans-ton-logiciel/"
+    }
+   ]
+  },
+  {
+   "@type": "BlogPosting",
+   "headline": "L’IA dans ton logiciel : où elle aide vraiment, et où elle se trompe",
+   "description": "Automatiser la saisie des commandes avec l’IA : où elle aide vraiment, ses limites, la relecture humaine, le RGPD, et comment faire un premier essai.",
+   "keywords": "automatiser la saisie des commandes avec l’IA, IA saisie bons de commande, agent IA PME, IA dans un logiciel métier, limites de l’IA, IA et RGPD",
+   "datePublished": "2026-11-20",
+   "dateModified": "2026-11-20",
+   "inLanguage": "fr-FR",
+   "mainEntityOfPage": "https://onlee.fr/blog/ia-dans-ton-logiciel/",
+   "image": "https://onlee.fr/assets/og-onlee.png",
+   "articleSection": "Logiciels sur mesure",
+   "about": {
+    "@type": "Service",
+    "name": "Logiciels sur mesure",
+    "url": "https://onlee.fr/logiciels/"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Leeroy Ben-Aich",
+    "url": "https://www.linkedin.com/in/leeroy-benaich/",
+    "jobTitle": "Fondateur d’onlee"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "onlee",
+    "url": "https://onlee.fr/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://onlee.fr/assets/onlee-logo-ink.png"
+    }
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Un agent IA peut-il saisir mes commandes tout seul ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Il peut les préparer, mais il ne devrait pas les valider seul, surtout au début : il peut mal lire ou combler une information manquante. Le bon réglage : l’IA prépare, le logiciel vérifie, une personne valide d’un clic."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "L’IA sait-elle lire une commande manuscrite ou une photo ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Souvent, oui, mais moins bien qu’un PDF propre. Plus l’écriture ou la photo est mauvaise, plus il faut vérifier. Teste avec tes propres documents, les pires compris, avant de t’engager."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Puis-je utiliser ChatGPT pour saisir mes commandes ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pour tester l’idée avec des exemples sans noms ni adresses, oui. Pour les vraies commandes de tes clients, évite la version grand public : utilise une offre pour les entreprises encadrée par un contrat, idéalement branchée à ton logiciel pour que tout soit vérifié."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Que se passe-t-il si un client change la forme de ses bons de commande ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "C’est un point fort de l’IA : elle ne dépend pas d’un modèle figé et sait lire une mise en page qu’elle n’a jamais vue. Surveille quand même de près les premières commandes au nouveau format, c’est là que les erreurs apparaissent."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "L’IA va-t-elle remplacer la personne qui saisit les commandes ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dans une petite entreprise, rarement. Elle change plutôt son travail : moins de recopie, plus de vérification, de suivi des clients et de gestion des cas difficiles, là où une personne reste indispensable."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Faut-il changer de logiciel pour ajouter de l’IA ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pas forcément. Regarde d’abord si ton logiciel propose déjà des fonctions d’IA, ou s’il peut être relié à un outil qui en a. Un logiciel sur mesure se justifie quand ta façon de travailler ne rentre dans aucun outil existant."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style data-polices>@font-face{font-family:'Archivo';font-style:normal;font-weight:800 900;font-stretch:125%;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/archivo-expanded-latin.woff2) format("woff2")}@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500 800;font-stretch:100%;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-latin.woff2) format("woff2")}@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format("woff2")}@font-face{font-family:'Patrick Hand';font-style:normal;font-weight:400;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/patrick-hand-latin.woff2) format("woff2")}@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/jetbrains-mono-latin.woff2) format("woff2")}</style>
+<style data-p="/css/p-b4fe736840.css" data-sources="/css/commun.css,/css/pages.css,/css/guides.css">:root{--o-bleu:#0055FF;--o-bleu-f:#0045D1;--o-encre:#0E0F13;--o-texte:#64656D;--o-pale:#A3A4AB;--o-gris:#F4F4F5;--o-filet:rgba(14,15,19,.10);--o-titre:"Bricolage Grotesque","Inter",-apple-system,sans-serif;--o-corps:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--o-courbe:cubic-bezier(.16,1,.3,1)}.onav *,.ofin *,.opied *{box-sizing:border-box}.onav{position:fixed;top:0;left:0;right:0;z-index:80;height:0;font-family:var(--o-corps);-webkit-font-smoothing:antialiased}.onav a{color:inherit;text-decoration:none}.onav-capsule{position:relative;margin:14px auto 0;width:min(1120px,calc(100% - 28px));height:64px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 9px 0 22px;background:rgba(255,255,255,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 0 0 1px rgba(14,15,19,.07),0 10px 30px -18px rgba(14,15,19,.3);transition:transform .55s var(--o-courbe), width .55s var(--o-courbe), box-shadow .4s}.onav.cache:not(.ouvert) .onav-capsule{transform:translateY(-110px)}.onav.compact .onav-capsule{width:min(980px,calc(100% - 28px));box-shadow:0 0 0 1px rgba(14,15,19,.08),0 18px 40px -20px rgba(14,15,19,.4)}.onav-logo{display:block;width:76px;height:38px;flex:none;background:var(--o-encre);-webkit-mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat;mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat}.onav-liens{display:flex;align-items:center;gap:2px;flex:1 1 auto;justify-content:center;min-width:0;height:100%}.onav-item{position:static;height:100%;display:flex;align-items:center}.onav-liens a.l{display:flex;align-items:center;gap:6px;font-size:14.5px;font-weight:500;color:var(--o-texte);padding:9px 14px;border-radius:999px;white-space:nowrap;transition:background .2s, color .2s}.onav-liens a.l:hover,.onav-item:focus-within > a.l{background:rgba(14,15,19,.05);color:var(--o-encre)}.onav-liens a.l.ici{color:var(--o-encre)}.onav-liens a.l svg{transition:transform .3s var(--o-courbe)}.onav-item:hover > a.l svg,.onav-item:focus-within > a.l svg{transform:rotate(180deg)}.onav-deroule{position:absolute;top:calc(100% + 10px);left:50%;width:min(620px,92vw);padding:10px;border-radius:24px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.07),0 2px 6px rgba(14,15,19,.04),0 34px 80px -30px rgba(14,15,19,.42);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-8px) scale(.97);transform-origin:50% 0;transition:opacity .22s ease,transform .45s var(--o-courbe),visibility 0s linear .45s}.onav-deroule::before{content:"";position:absolute;left:0;right:0;top:-22px;height:22px}.onav-item:hover .onav-deroule,.onav-item:focus-within .onav-deroule{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1);transition:opacity .22s ease,transform .45s var(--o-courbe),visibility 0s}.dr-grille{display:grid;grid-template-columns:1fr 1fr;gap:4px}.onav-deroule a{position:relative;display:flex;align-items:flex-start;gap:14px;padding:14px;border-radius:17px;transition:background .25s}.onav-deroule a:hover{background:var(--o-gris)}.dr-ic{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--c);color:var(--ic);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 8px 18px -10px var(--c);transition:transform .35s var(--o-courbe)}.dr-ic svg{width:21px;height:21px}.onav-deroule a:hover .dr-ic{transform:translateY(-2px) rotate(-4deg)}.dr-tx{min-width:0;padding-top:2px;padding-right:16px}.onav-deroule b{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--o-encre);line-height:1.25}.onav-deroule small{display:block;margin-top:3px;font-size:13px;line-height:1.35;color:var(--o-texte)}.onav-deroule .fl{position:absolute;top:14px;right:12px;opacity:0;transform:translate(-4px,4px);transition:all .25s var(--o-courbe);color:var(--o-encre)}.onav-deroule a:hover .fl{opacity:1;transform:none}.onav-deroule a{opacity:0;transform:translateY(6px)}.onav-item:hover .onav-deroule a,.onav-item:focus-within .onav-deroule a{opacity:1;transform:none;transition:background .25s,opacity .3s ease calc(.04s + var(--k) * .045s),transform .5s var(--o-courbe) calc(.04s + var(--k) * .045s)}@media (prefers-reduced-motion: reduce){.onav-deroule,.onav-deroule a{transition:none!important;transform:translate(-50%,0)!important}.onav-deroule a{transform:none!important}}.onav-droite{display:flex;align-items:center;gap:8px;flex:none;min-width:max-content}.onav-langue{display:inline-flex;align-items:center;gap:6px;height:32px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--o-filet);padding:2px;font-size:11.5px;font-weight:700;letter-spacing:.06em}.onav-langue a{padding:5px 9px;border-radius:999px;color:var(--o-texte);line-height:1.2;transition:color .2s}.onav-langue a:hover{color:var(--o-encre)}.onav-langue a.on{background:var(--o-encre);color:#fff}.onav-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:42px;padding:0 18px;border-radius:999px;border:0;cursor:pointer;font:600 14px var(--o-corps);white-space:nowrap;background:var(--o-bleu);color:#fff;box-shadow:0 12px 26px -12px rgba(0,85,255,.75);transition:transform .25s var(--o-courbe), background .25s var(--o-courbe)}.onav-cta:hover{transform:translateY(-2px);background:var(--o-bleu-f)}.onav-menu{display:none;position:relative;width:42px;height:42px;flex:none;border:0;border-radius:50%;background:var(--o-gris);cursor:pointer;padding:0}.onav-menu i{position:absolute;left:13px;right:13px;height:2px;border-radius:2px;background:var(--o-encre);transition:transform .45s var(--o-courbe), top .45s var(--o-courbe)}.onav-menu i:first-child{top:16px}.onav-menu i:last-child{top:24px}.onav.ouvert .onav-menu i:first-child{top:20px;transform:rotate(45deg)}.onav.ouvert .onav-menu i:last-child{top:20px;transform:rotate(-45deg)}.onav-panneau{position:fixed;left:14px;right:14px;top:86px;max-height:calc(100svh - 100px);overflow:auto;background:#fff;border-radius:26px;padding:10px;box-shadow:0 0 0 1px rgba(14,15,19,.07),0 30px 70px -24px rgba(14,15,19,.45);opacity:0;visibility:hidden;transform:translateY(-10px) scale(.98);transform-origin:50% 0;transition:opacity .3s var(--o-courbe), transform .45s var(--o-courbe), visibility 0s .45s}.onav.ouvert .onav-panneau{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--o-courbe), transform .45s var(--o-courbe), visibility 0s}.onav-panneau .grand{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-radius:16px;font:700 22px/1.15 var(--o-titre);letter-spacing:-.025em;color:var(--o-encre)}.onav-panneau .grand:hover{background:var(--o-gris)}.onav-panneau .grand svg{color:var(--o-pale)}.onav-panneau .sous{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:2px 4px 8px}.onav-panneau .sous a{display:block;padding:11px 12px;border-radius:14px;background:var(--o-gris);font-size:14px;font-weight:600;color:var(--o-encre);line-height:1.25}.onav-panneau .sous a small{display:block;font-size:12px;font-weight:500;color:var(--o-texte);margin-top:2px}.onav-panneau .bas{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 6px 4px;margin-top:6px;border-top:1px solid var(--o-filet)}.onav-panneau .bas .onav-cta{flex:1;height:48px;font-size:15px}@media(max-width:900px){.onav-liens{display:none}.onav-menu{display:block}.onav-capsule{padding-left:18px}}@media(min-width:901px){.onav-panneau{display:none}}@media(max-width:560px){.onav-droite .onav-langue{display:none}.onav-capsule{gap:10px;padding:0 8px 0 16px}.onav-logo{width:68px}.onav-droite .onav-cta{padding:0 15px;font-size:13.5px}}@media(max-width:340px){.onav-droite .onav-cta{display:none}}.ofin{position:relative;padding:clamp(40px,7vw,96px) 0 clamp(40px,6vw,80px);font-family:var(--o-corps);color:var(--o-encre)}.ofin-carte{position:relative;overflow:hidden;width:min(1240px,calc(100% - 32px));margin:0 auto;border-radius:clamp(26px,3vw,40px);background:var(--o-encre);color:#fff;display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:clamp(28px,5vw,72px);padding:clamp(34px,6vw,84px) clamp(24px,6vw,84px)}.ofin-carte::before{content:"";position:absolute;width:780px;height:780px;right:-260px;top:-300px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,85,255,.55),rgba(0,85,255,.12) 55%,transparent);pointer-events:none}.ofin-carte::after{content:"";position:absolute;width:520px;height:520px;left:-240px;bottom:-320px;border-radius:50%;background:radial-gradient(closest-side,rgba(91,140,255,.22),transparent);pointer-events:none}.ofin-txt{position:relative;z-index:1}.ofin-sur{display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;font-size:13px;font-weight:600;letter-spacing:.02em;color:#B9BAC2}.ofin-sur i{width:8px;height:8px;border-radius:50%;background:#30D158;box-shadow:0 0 0 0 rgba(48,209,88,.5);animation:ofinPouls 2.4s ease-out infinite}@keyframes ofinPouls{0%{box-shadow:0 0 0 0 rgba(48,209,88,.45)}100%{box-shadow:0 0 0 9px rgba(48,209,88,0)}}.ofin h2{margin:0;font-family:var(--o-titre);font-weight:800;letter-spacing:-.045em;line-height:.95;font-size:clamp(44px,6.4vw,96px);text-wrap:balance}.ofin h2 span{display:block;color:#5B8CFF}.ofin-p{margin:24px 0 0;max-width:46ch;font-size:clamp(16px,1.4vw,18px);line-height:1.55;color:#B9BAC2}.ofin-actions{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap;margin-top:34px}.ofin-btn{display:inline-flex;align-items:center;gap:14px;height:64px;padding:0 8px 0 30px;border:0;border-radius:999px;cursor:pointer;background:var(--o-bleu);color:#fff;font:600 17px var(--o-corps);white-space:nowrap;box-shadow:0 22px 44px -18px rgba(0,85,255,.95);transition:transform .25s var(--o-courbe), background .25s}.ofin-btn:hover{transform:translateY(-2px);background:var(--o-bleu-f)}.ofin-btn .rond{width:48px;height:48px;border-radius:50%;background:#fff;color:var(--o-bleu);display:grid;place-items:center;transition:transform .35s var(--o-courbe)}.ofin-btn:hover .rond{transform:rotate(-45deg)}.ofin-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ofin-wa{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s}.ofin-wa:hover{opacity:1}.ofin-wa svg{width:22px;height:22px}.ofin-agenda{position:relative;z-index:1;justify-self:center;width:min(360px,100%);border:0;padding:16px;border-radius:26px;text-align:left;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",sans-serif;color:var(--o-encre);background:rgba(255,255,255,.96);box-shadow:0 40px 80px -36px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.1);transform:rotate(2deg);transition:transform .5s var(--o-courbe)}.ofin-agenda:hover{transform:rotate(0) translateY(-4px)}.ofin-agenda .ent{display:flex;align-items:center;gap:9px;font-size:12.5px;color:rgba(0,0,0,.5)}.ofin-agenda .ent svg{width:24px;height:24px;border-radius:6px;flex:none}.ofin-agenda .ent b{color:var(--o-encre);font-weight:600;font-size:14px}.ofin-agenda .ent em{margin-left:auto;font-style:normal;font-size:12px}.ofin-agenda .sem{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:14px}.ofin-agenda .sem span{display:flex;flex-direction:column;align-items:center;padding:8px 0;border-radius:12px;background:#F4F6F9;font-size:10px;font-weight:600;color:#7a8090}.ofin-agenda .sem b{font-size:17px;color:var(--o-encre)}.ofin-agenda .sem .j{background:var(--o-encre);color:rgba(255,255,255,.7)}.ofin-agenda .sem .j b{color:#fff}.ofin-agenda .cr{display:flex;align-items:center;gap:11px;margin-top:11px;padding:12px;border-radius:14px;background:#EEF3FF;font-size:12.5px;color:#4b5060}.ofin-agenda .cr i{width:3px;align-self:stretch;border-radius:2px;background:var(--o-bleu)}.ofin-agenda .cr span{flex:1}.ofin-agenda .cr b{display:block;font-size:14px;color:var(--o-encre)}.ofin-agenda .cr img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:none}.ofin-agenda .choisir{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:11px;height:42px;border-radius:12px;background:var(--o-encre);color:#fff;font-size:13.5px;font-weight:600}@media(max-width:900px){.ofin-carte{grid-template-columns:1fr;text-align:center}.ofin-p{margin-left:auto;margin-right:auto}.ofin-actions{justify-content:center}.ofin-agenda{transform:none}}@media(max-width:480px){.ofin-btn{height:58px;font-size:16px;padding-left:24px}.ofin-btn .rond{width:42px;height:42px}}.opied{position:relative;overflow:hidden;background:#fff;color:var(--o-encre);font-family:var(--o-corps);font-size:15px;line-height:1.5;border-top:1px solid var(--o-filet);padding:clamp(48px,6vw,80px) 0 0}.opied a{color:inherit;text-decoration:none}.opied-wrap{width:min(1240px,calc(100% - 32px));margin:0 auto}.opied-haut{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px 28px}.opied-logo{display:block;width:96px;height:46px;background:var(--o-encre);-webkit-mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat;mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat}.opied-marque p{margin:16px 0 0;max-width:34ch;color:var(--o-texte);font-size:14.5px}.opied h3{margin:6px 0 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o-bleu)}.opied ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.opied li a{font-size:15px;font-weight:500;color:var(--o-encre);transition:color .2s}.opied li a:hover{color:var(--o-bleu)}.opied li small{display:block;font-size:12.5px;color:var(--o-texte)}.opied-contact a{display:flex;align-items:center;gap:10px}.opied-contact svg{width:20px;height:20px;flex:none}.opied-geant{display:block;width:100%;height:clamp(70px,17vw,250px);margin:clamp(40px,6vw,70px) 0 0;background:#F1F2F5;-webkit-mask:url(/assets/onlee-logo-ink.png) center bottom/contain no-repeat;mask:url(/assets/onlee-logo-ink.png) center bottom/contain no-repeat}.opied-bas{display:flex;align-items:center;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;padding:18px 0 26px;border-top:1px solid var(--o-filet);font-size:13.5px;color:var(--o-texte)}.opied-bas nav{display:flex;gap:6px 18px;flex-wrap:wrap}.opied-bas a:hover{color:var(--o-encre)}@media(max-width:980px){.opied-haut{grid-template-columns:1fr 1fr}.opied-marque{grid-column:1/-1}}@media(max-width:520px){.opied-haut{grid-template-columns:1fr;text-align:center}.opied-logo{margin:0 auto}.opied-marque p{margin-left:auto;margin-right:auto}.opied-contact a{justify-content:center}.opied-bas{justify-content:center;text-align:center}.opied-bas nav{justify-content:center}}@media print{.onav,.ofin{display:none}}.lire.lire-off{color:#A3A4AB;cursor:default}.si-tactile{display:none}@media(hover:none){.si-souris{display:none}.si-tactile{display:inline}}.hors-ecran,.hors-ecran *{animation-play-state:paused!important}.dr-grille a:nth-child(5),.onav .sous a:nth-child(5){grid-column:1/-1}
+:root{--blanc:#FFFFFF;--gris:#F4F4F5;--encre:#0E0F13;--texte:#64656D;--pale:#A3A4AB;--filet:rgba(14,15,19,.10);--bleu:#0055FF;--bleu-fonce:#0045D1;--titre:"Bricolage Grotesque","Inter",-apple-system,sans-serif;--corps:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--courbe:cubic-bezier(.16,1,.3,1)}*{box-sizing:border-box}html,body{margin:0}body{background:var(--blanc);color:var(--encre);font-family:var(--corps);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit}main{padding-top:110px}.ps-wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}.ps-etroit{width:min(760px,calc(100% - 32px))}.ps-sur{margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bleu)}.ps-haut{padding:clamp(30px,6vw,80px) 0 clamp(20px,3vw,40px);text-align:center}.ps-haut h1{margin:0;font-family:var(--titre);font-weight:800;letter-spacing:-.045em;line-height:.96;font-size:clamp(44px,7vw,100px);text-wrap:balance}.ps-haut h1 span{color:var(--bleu)}.ps-chapo{margin:22px auto 0;max-width:56ch;font-size:clamp(16px,1.5vw,19px);color:var(--texte)}.ps-liste{padding:clamp(20px,4vw,50px) 0 clamp(30px,5vw,60px)}.ps-liste .ps-wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}.ps-liste .art-carte{flex:0 1 560px}.art-carte{display:flex;flex-direction:column;gap:12px;padding:clamp(22px,3vw,34px);border-radius:28px;background:#fff;text-decoration:none;box-shadow:0 0 0 1px rgba(14,15,19,.07),0 24px 50px -32px rgba(14,15,19,.45);transition:transform .35s var(--courbe),box-shadow .35s var(--courbe)}.art-carte:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(0,85,255,.25),0 30px 60px -30px rgba(14,15,19,.5)}.art-rub{align-self:flex-start;padding:5px 11px;border-radius:999px;background:#EDF2FF;color:var(--bleu);font-size:12.5px;font-weight:600}.art-carte h2{margin:0;font-family:var(--titre);font-weight:700;letter-spacing:-.03em;line-height:1.08;font-size:clamp(24px,2.4vw,32px)}.art-carte p{margin:0;color:var(--texte)}.art-pied{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:14px;border-top:1px solid var(--filet);font-size:13.5px;color:var(--texte)}.art-pied .lire{font-weight:600;color:var(--encre)}.art-carte:hover .lire{color:var(--bleu)}.ariane{font-size:13.5px;color:var(--texte);margin:10px 0 0}.ariane a{text-decoration:none;color:var(--texte)}.ariane a:hover{color:var(--encre)}.ariane span{color:var(--pale);margin:0 4px}.art-tete{padding:clamp(24px,4vw,48px) 0 10px}.art-tete h1{margin:0;font-family:var(--titre);font-weight:800;letter-spacing:-.04em;line-height:1.02;font-size:clamp(34px,5vw,58px);text-wrap:balance}.art-meta{margin:16px 0 0;font-size:14px;color:var(--texte)}.prose{padding:10px 0 20px;font-size:17px;line-height:1.72;color:#2B2D33}.prose .standfirst{font-size:clamp(18px,1.7vw,20px);line-height:1.6;color:var(--encre);margin:18px 0 28px}.prose h2{margin:44px 0 12px;font-family:var(--titre);font-weight:700;letter-spacing:-.03em;line-height:1.12;font-size:clamp(25px,2.6vw,32px);color:var(--encre)}.prose p{margin:0 0 16px}.prose ul{margin:0 0 18px;padding-left:22px}.prose li{margin:0 0 8px}.prose li::marker{color:var(--bleu)}.prose a{color:var(--bleu);text-underline-offset:3px}.prose strong{color:var(--encre)}.callout{margin:34px 0;padding:22px 24px;border-radius:20px;background:#EDF2FF}.callout-lab{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bleu);margin-bottom:8px}.callout p{margin:0;color:var(--encre)}.faq{display:grid;gap:10px;margin:8px 0 30px}.faq details{border-radius:16px;background:var(--gris);padding:0 18px}.faq summary{cursor:pointer;list-style:none;padding:16px 28px 16px 0;position:relative;font-weight:600;color:var(--encre)}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";position:absolute;right:0;top:12px;font-size:22px;font-weight:400;color:var(--bleu);transition:transform .3s var(--courbe)}.faq details[open] summary::after{transform:rotate(45deg)}.faq details p{margin:0 0 16px;color:var(--texte)}.art-cta{margin:40px 0;padding:clamp(26px,4vw,40px);border-radius:28px;background:var(--encre);color:#fff;text-align:center}.art-cta h2{margin:0 0 10px;color:#fff}.art-cta p{color:#B9BAC2;max-width:52ch;margin:0 auto 22px}.art-btn{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 28px;border:0;border-radius:999px;cursor:pointer;background:var(--bleu);color:#fff;font:600 16px var(--corps);box-shadow:0 18px 40px -16px rgba(0,85,255,.9);transition:transform .25s var(--courbe),background .25s}.art-btn:hover{transform:translateY(-2px);background:var(--bleu-fonce)}.more-links{margin:40px 0 10px}.more-links .lab{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bleu);margin-bottom:12px}.ml-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.ml-grid a{display:block;padding:16px;border-radius:18px;background:var(--gris);text-decoration:none;color:var(--encre);font-size:14px;line-height:1.45;transition:background .2s}.ml-grid a:hover{background:#EDF2FF}.ml-grid b{display:block;font-size:15px;margin-bottom:4px}.ml-grid span{color:var(--texte)}@media(max-width:700px){.ml-grid{grid-template-columns:1fr}}.legal{padding-bottom:clamp(40px,6vw,80px);font-size:16px;color:#2B2D33}.legal h2{margin:38px 0 10px;padding-top:24px;border-top:1px solid var(--filet);font-family:var(--titre);font-weight:700;letter-spacing:-.025em;font-size:24px;color:var(--encre)}.legal ul{padding-left:20px}.legal a{color:var(--bleu)}.legal b{color:var(--encre)}.ps-404{min-height:calc(100svh - 240px);display:grid;place-items:center}.ps-liens{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:34px}.ps-btn{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;background:var(--bleu);color:#fff;font-weight:600;text-decoration:none;box-shadow:0 14px 30px -14px rgba(0,85,255,.8)}.ps-lien{display:inline-flex;align-items:center;height:52px;padding:0 20px;border-radius:999px;background:var(--gris);color:var(--encre);font-weight:600;text-decoration:none;transition:background .2s}.ps-lien:hover{background:#E8E9EC}
+.guide-page .art-tete{padding-bottom:4px}.g-auteur{display:flex;align-items:center;gap:12px;margin:22px 0 0}.g-auteur img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(14,15,19,.08)}.g-auteur p{margin:0;display:flex;flex-direction:column;line-height:1.35}.g-auteur b{font-size:15px;color:var(--encre)}.g-auteur span{font-size:13.5px;color:var(--texte)}.g-outils{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}.g-outil{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 9px;border-radius:999px;background:#fff;font-size:13.5px;font-weight:600;color:var(--encre);box-shadow:0 0 0 1px rgba(14,15,19,.08),0 6px 14px -10px rgba(14,15,19,.35)}.g-outil svg{width:22px;height:22px;flex:none}.g-sommaire{margin:28px 0 6px;padding:20px 24px;border-radius:20px;background:#F5F7FB;box-shadow:inset 0 0 0 1px rgba(14,15,19,.05)}.g-sommaire p{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--bleu)}.g-sommaire ol{margin:0;padding-left:20px;columns:2 260px;column-gap:28px}.g-sommaire li{margin:0 0 7px;font-size:15px;break-inside:avoid}.g-sommaire li::marker{color:var(--bleu);font-weight:700}.g-sommaire a{color:var(--encre);text-decoration:none}.g-sommaire a:hover{color:var(--bleu)}.guide .g-bref{margin:22px 0 8px;padding:22px 24px;border-radius:20px;background:var(--encre);color:#fff}.guide .g-bref p{margin:0;color:#E6E7EC}.guide .g-bref strong{color:#fff}.guide .g-bref .g-bref-t{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7FA6FF}.guide h2{scroll-margin-top:100px}.guide .g-astuce{margin:4px 0 22px;padding:14px 18px 14px 18px;border-left:3px solid var(--bleu);border-radius:0 14px 14px 0;background:#EEF3FF;font-size:16px;line-height:1.6}.guide .g-astuce span{display:block;margin:0 0 3px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bleu)}.guide .g-exemple{margin:26px 0;padding:22px 24px;border-radius:20px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08),0 18px 40px -26px rgba(14,15,19,.4)}.guide .g-exemple p{margin:0}.guide .g-exemple .g-exemple-t{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1FA855}.guide .g-etapes{list-style:none;margin:8px 0 26px;padding:0;counter-reset:e;display:grid;gap:10px}.guide .g-etapes li{counter-increment:e;position:relative;margin:0;padding:16px 18px 16px 62px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08)}.guide .g-etapes li::before{content:counter(e);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--bleu);color:#fff;display:grid;place-items:center;font:700 14px var(--corps,Inter),sans-serif}.guide .g-etapes b{display:block;color:var(--encre);font-size:16.5px;line-height:1.35}.guide .g-etapes span{display:block;margin-top:3px;font-size:15.5px;line-height:1.55;color:#4A4C55}.guide .g-faq{margin-top:10px}.guide details{border-bottom:1px solid rgba(14,15,19,.1)}.guide summary{position:relative;list-style:none;cursor:pointer;padding:16px 36px 16px 0;font-weight:600;color:var(--encre);font-size:17px}.guide summary::-webkit-details-marker{display:none}.guide summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:24px;font-weight:400;color:var(--bleu);transition:transform .25s}.guide details[open] summary::after{transform:rotate(45deg)}.guide details p{margin:0 0 18px;color:#4A4C55}.g-auteur-bloc{display:flex;gap:18px;align-items:flex-start;margin:34px 0 0;padding:22px;border-radius:20px;background:#F5F7FB}.g-auteur-bloc img{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none}.g-auteur-bloc b{display:block;font-size:16px;color:var(--encre)}.g-auteur-bloc p{margin:4px 0 8px;font-size:15px;line-height:1.55;color:#4A4C55}.g-auteur-bloc a{font-size:14.5px;font-weight:600;color:var(--bleu);text-decoration:none}.g-cta-lien{margin:16px 0 0!important}.g-cta-lien a{color:#B9BAC2;font-size:14.5px;text-decoration:none}.g-cta-lien a:hover{color:#fff}.g-silo{margin:0 0 50px}.g-silo p{margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--texte)}.g-silo ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.g-silo li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08);font-weight:600;color:var(--encre)}.g-silo li span{color:#6B6E78}.g-silo li em{font-style:normal;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;background:#F0F1F4;color:#7A7D86}.g-silo li a{color:var(--encre);text-decoration:none}.g-silo li a:hover{color:var(--bleu)}@media(max-width:600px){.g-sommaire{padding:16px 18px}.guide .g-etapes li{padding:14px 14px 14px 54px}.guide .g-etapes li::before{left:13px}.g-auteur-bloc{flex-direction:column}}.guide .gw{margin:18px 0 24px;padding:18px 20px;border-radius:20px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08),0 18px 40px -28px rgba(14,15,19,.45);font-size:15px;line-height:1.45}.guide .gw-t{margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--texte)}.gw-choix{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.gw-choix span{display:flex;flex-direction:column;gap:2px;padding:12px 12px 12px 38px;position:relative;border-radius:14px;background:#F5F6F8;font-weight:600;color:var(--encre)}.gw-choix small{font-weight:500;color:var(--texte);font-size:12.5px}.gw-choix i{position:absolute;left:12px;top:14px;width:16px;height:16px;border-radius:50%;box-shadow:inset 0 0 0 2px #C4C7CF;background:#fff}.gw-choix .on{background:#EEF3FF;box-shadow:inset 0 0 0 2px var(--bleu)}.gw-choix .on i{box-shadow:inset 0 0 0 5px var(--bleu)}.gw-calc label{display:block;margin:0 0 14px;font-weight:600;color:var(--encre)}.gw-calc label b{float:right;color:var(--bleu)}.gw-calc input[type=range]{display:block;width:100%;margin:10px 0 0;accent-color:var(--bleu);height:22px}.gw-res{margin:4px 0 0;padding:14px 16px;border-radius:14px;background:var(--encre);color:#fff;font-size:17px}.gw-res strong{font-family:var(--titre);font-size:30px;letter-spacing:-.03em;color:#fff}.gw-res small{display:block;margin-top:2px;font-size:13.5px;color:#B9BAC2}.gw-res.peu small{color:#FFB86B}.gw-zone{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;align-items:center}.gw-carte{position:relative;height:170px;border-radius:14px;overflow:hidden;background:linear-gradient(90deg,rgba(14,15,19,.05) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(rgba(14,15,19,.05) 1px,transparent 1px) 0 0/26px 26px,#EEF1F5}.gw-rayon{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;background:rgba(0,85,255,.14);box-shadow:inset 0 0 0 2px rgba(0,85,255,.55)}.gw-pin{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--bleu);box-shadow:0 0 0 4px #fff,0 4px 10px rgba(0,85,255,.5)}.gw-carte em{position:absolute;left:50%;top:calc(50% + 14px);transform:translateX(-50%);font-style:normal;font-weight:700;font-size:12.5px;color:var(--encre)}.gw-carte small{position:absolute;right:10px;bottom:8px;padding:2px 8px;border-radius:999px;background:#fff;font-weight:600;font-size:12px;color:var(--bleu)}.gw-reglages span{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(14,15,19,.07);color:var(--texte);font-size:14px}.gw-reglages b{color:var(--encre)}.guide .gw-form{display:flex;gap:20px;align-items:center;background:#F5F7FB}.gw-tel{flex:none;width:230px;padding:16px;border-radius:24px;background:#fff;box-shadow:0 0 0 6px #0E0F13,0 20px 40px -20px rgba(14,15,19,.6);font-size:13px}.gw-tel-tete{margin:0 0 10px;font-weight:700;color:var(--encre)}.gw-tel-tete span{display:block;font-weight:500;font-size:11.5px;color:var(--texte)}.gw-champ{display:block;margin:0 0 7px;padding:7px 10px;border-radius:9px;background:#F2F3F5;color:var(--encre);font-weight:600}.gw-champ small{display:block;font-weight:500;font-size:10.5px;color:var(--texte)}.gw-q{margin:8px 0 6px;font-weight:600;color:var(--encre)}.gw-puces{display:flex;flex-wrap:wrap;gap:5px}.gw-puces i{font-style:normal;padding:4px 9px;border-radius:999px;background:#F2F3F5;font-size:11.5px;color:#4A4C55}.gw-puces .on{background:var(--bleu);color:#fff}.gw-btn{display:block;margin-top:12px;padding:9px;border-radius:10px;background:#0866FF;color:#fff;text-align:center;font-weight:700}.gw-note{margin:0;color:#4A4C55}.gw-note b{display:block;color:var(--encre);font-size:17px;margin-bottom:4px}.gw-semaine ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.gw-semaine li{margin:0;padding:10px 4px;border-radius:12px;background:#F5F6F8;text-align:center;font-size:11.5px;line-height:1.3;color:var(--texte)}.gw-semaine li b{display:block;font-size:15px;color:var(--encre)}.gw-semaine li.fin{background:var(--bleu);color:#DCE6FF}.gw-semaine li.fin b{color:#fff}.guide .gw-notif{background:#0E0F13;padding:16px}.gw-n{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.08)}.gw-n-ic{flex:none;width:36px;height:36px;border-radius:10px;background:#0866FF url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="white" d="M13 22v-8h3l.5-3.5H13V8.4c0-1 .3-1.7 1.7-1.7H16.6V3.6c-.3 0-1.4-.1-2.7-.1-2.7 0-4.4 1.6-4.4 4.5v2.5H6.5V14h3v8z"/></svg>') center/20px no-repeat}.gw-n p{margin:0;flex:1;display:flex;flex-direction:column;color:#fff}.gw-n p b{font-size:14.5px}.gw-n p span{font-size:13.5px;color:#B9BAC2}.gw-n em{font-style:normal;font-size:12px;color:#8A8D96;align-self:flex-start}.gw-n-act{display:flex;gap:8px;margin-top:10px}.gw-n-act span{flex:1;padding:10px;border-radius:12px;text-align:center;font-weight:700;font-size:14px}.gw-n-a1{background:#fff;color:var(--encre)}.gw-n-a2{background:#25D366;color:#fff}@media(max-width:600px){.gw-choix{grid-template-columns:1fr}.gw-zone{grid-template-columns:1fr}.guide .gw-form{flex-direction:column;align-items:stretch}.gw-tel{width:auto}.gw-semaine ol{grid-template-columns:repeat(4,1fr)}}
+:focus-visible{outline:2px solid #0055FF;outline-offset:3px}:focus:not(:focus-visible){outline:none}@media(max-width:900px){.onav-menu{width:44px!important;height:44px!important}.onav-capsule .onav-cta{min-height:44px}}@media(pointer:coarse){.opied a,.opied button{position:relative}.opied a::after,.opied button::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;transform:translateY(-50%)}}@media(pointer:coarse){#wid-rejouer,#wid-retour,.lire,.ariane a,.p-grand,.lien-site{position:relative}.mini-son::after,#wid-rejouer::after,#wid-retour::after,.lire::after,.ariane a::after,.p-grand::after,.lien-site::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:max(100%,44px);transform:translate(-50%,-50%)}}.boite-sec.sans-3d{height:auto!important;padding:clamp(90px,10vw,130px) 0 clamp(60px,8vw,110px)}.sans-3d .colle{position:relative!important;height:auto!important;overflow:visible!important;display:flex;flex-direction:column;align-items:center}.sans-3d .boite3d{position:relative!important;inset:auto!important;width:min(760px,92vw);aspect-ratio:1200/397;margin:clamp(10px,2vw,24px) auto 0;background:url(/assets/boite-fixe.webp) center/contain no-repeat}.sans-3d .boite3d canvas{display:none!important}.sans-3d .propose{position:relative!important;top:auto!important;order:-1;max-width:calc(100% - 32px);margin:0 auto}@media(max-width:600px){.sans-3d .propose span{font-size:clamp(17px,5.4vw,32px)!important}}.sans-3d .propose .pl-logo{flex:none}.sans-3d .propose .pl-logo,.sans-3d .propose .pl-mots i{opacity:1!important;transform:none!important}.sans-3d .chap-panneaux{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:min(1180px,calc(100% - 32px))!important;margin:clamp(24px,3vw,44px) auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;pointer-events:auto!important}.sans-3d .chap{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;backdrop-filter:none!important;transform:none!important;opacity:1!important;visibility:visible!important;padding:26px 24px;border-radius:24px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.06),0 24px 50px -30px rgba(14,15,19,.35);text-align:left}.sans-3d .chap > *{opacity:1!important;transform:none!important}.sans-3d .chap h3{font-size:clamp(26px,2.4vw,34px)!important}.sans-3d .chap ul{display:grid!important}.sans-3d .propose span{opacity:1!important;transform:none!important;filter:none!important}.sans-3d .chap-suiv,.sans-3d .mini-widgets,.sans-3d .chap-prog,.sans-3d .boite-ui,.sans-3d .infobulle,.sans-3d .invite-dos{display:none!important}</style>
+<style>
+/* widgets du guide « l'IA dans ton logiciel » — tout est préfixé .guide .gw-… */
+
+/* ---------- tri des tâches en trois colonnes ---------- */
+.guide .gw-tri [hidden],.guide .gw-commande [hidden]{display:none!important}
+.guide .gw-tri-tache{padding:16px 18px;border-radius:14px;background:var(--encre);color:#fff}
+.guide .gw-tri-num{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7FA6FF}
+.guide .gw-tri-txt{margin:4px 0 2px;font-family:var(--titre);font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.25;color:#fff}
+.guide .gw-tri-tache small{display:block;font-size:13px;color:#B9BAC2}
+.guide .gw-tri-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.guide .gw-tri-col{display:flex;flex-direction:column;min-height:124px;padding:8px;border-radius:14px;background:#F5F6F8;
+  transition:background .35s var(--courbe),box-shadow .35s var(--courbe)}
+.guide .gw-tri-col.bonne{background:#EEF3FF;box-shadow:inset 0 0 0 2px var(--bleu)}
+.guide .gw-tri-col.choisie{box-shadow:inset 0 0 0 2px #C4C7CF}
+.guide .gw-tri-col > button{display:flex;align-items:center;gap:8px;width:100%;margin:0;padding:10px 12px;border:0;border-radius:10px;background:#fff;
+  font:600 14px/1.25 var(--corps,Inter),sans-serif;color:var(--encre);text-align:left;cursor:pointer;
+  box-shadow:0 0 0 1px rgba(14,15,19,.08),0 6px 14px -10px rgba(14,15,19,.35);transition:box-shadow .25s var(--courbe)}
+.guide .gw-tri-col > button:hover:not(:disabled){box-shadow:0 0 0 2px var(--bleu),0 6px 14px -10px rgba(14,15,19,.35)}
+.guide .gw-tri-col > button:focus-visible{outline:2px solid var(--bleu);outline-offset:2px}
+.guide .gw-tri-col > button:disabled{cursor:default}
+.guide .gw-tri-col > button i{flex:none;width:10px;height:10px;border-radius:50%;background:var(--bleu)}
+.guide .gw-tri-col[data-col="regle"] > button i{background:#1FA855}
+.guide .gw-tri-col[data-col="main"] > button i{background:var(--encre)}
+.guide .gw-tri-col ul{list-style:none;display:flex;flex-direction:column;gap:5px;margin:8px 0 0;padding:0}
+.guide .gw-tri-col li{margin:0;padding:6px 9px;border-radius:9px;background:#fff;font-size:12.5px;line-height:1.3;color:#3D3F46;border:1px solid transparent}
+.guide .gw-tri-col li.autre{border-color:#C4C7CF;border-style:dashed}
+.guide .gw-tri-col li.neuf{animation:gw-tri-entre .45s var(--courbe) both}
+@keyframes gw-tri-entre{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.guide .gw-tri-retour{margin:12px 2px 0;font-size:15px;line-height:1.55;color:#2B2D33}
+.guide .gw-tri-retour:empty{display:none}
+.guide .gw-tri-retour b{color:var(--encre)}
+.guide .gw-tri-bilan{display:block;margin-top:8px;padding-top:8px;border-top:1px solid rgba(14,15,19,.08);color:var(--encre)}
+.guide .gw-tri-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.guide .gw-tri-act[hidden]{display:none}
+.guide .gw-tri-act button{height:40px;margin:0;padding:0 18px;border:0;border-radius:999px;font:600 14px var(--corps,Inter),sans-serif;cursor:pointer}
+.guide .gw-tri-act button:focus-visible{outline:2px solid var(--bleu);outline-offset:2px}
+.guide .gw-tri-suite{background:var(--encre);color:#fff}
+.guide .gw-tri-zero{background:#F2F3F5;color:var(--encre)}
+
+/* ---------- de la commande au logiciel ---------- */
+.guide .gw-commande{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1.2fr);gap:10px;align-items:center;background:#F5F7FB}
+.guide .gw-cmd-mail,.guide .gw-cmd-fiche{padding:14px 16px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08),0 12px 26px -18px rgba(14,15,19,.4)}
+.guide .gw-cmd-mail p,.guide .gw-cmd-fiche p{margin:0}
+.guide .gw-cmd-tete{font-weight:700;color:var(--encre)}
+.guide .gw-cmd-tete span{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--texte)}
+.guide .gw-cmd-de{margin-top:2px!important;font-size:13px;color:var(--texte)}
+.guide .gw-cmd-de b{color:var(--encre)}
+.guide .gw-cmd-corps{margin-top:10px!important;padding-top:10px;border-top:1px solid rgba(14,15,19,.08);font-size:14.5px;line-height:1.55;color:#2B2D33}
+.guide .gw-cmd-hl{background:linear-gradient(transparent 58%,#FFE58A 58%);padding:0 1px}
+.guide .gw-cmd-fl{position:relative;justify-self:center;width:36px;height:36px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08)}
+.guide .gw-cmd-fl::before{content:"";position:absolute;left:10px;right:11px;top:17px;height:2px;background:var(--bleu)}
+.guide .gw-cmd-fl::after{content:"";position:absolute;right:11px;top:14px;width:7px;height:7px;border-top:2px solid var(--bleu);border-right:2px solid var(--bleu);transform:rotate(45deg)}
+.guide .gw-cmd-ft{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--encre)}
+.guide .gw-cmd-ft em{font-style:normal;font-size:11.5px;font-weight:600;color:#7A5B00;background:#FFF3C4;border-radius:6px;padding:2px 7px;white-space:nowrap}
+.guide .gw-cmd-ft em.ok{color:#157A3D;background:#E3F6EA}
+.guide .gw-cmd-fiche dl{margin:8px 0 0}
+.guide .gw-cmd-fiche dl > div{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;padding:8px 0;border-bottom:1px solid rgba(14,15,19,.07)}
+.guide .gw-cmd-fiche dl > div:last-child{border-bottom:0}
+.guide .gw-cmd-fiche dl > div.doute{margin:4px -8px;padding:8px;border:0;border-radius:9px;background:#FFFBEA}
+.guide .gw-cmd-fiche dt{font-size:12.5px;line-height:1.5;color:var(--texte)}
+.guide .gw-cmd-fiche dd{margin:0;font-size:14px;font-weight:600;line-height:1.4;color:var(--encre);min-width:0}
+.guide .gw-cmd-fiche dd small{display:block;margin-top:2px;font-size:11.5px;font-weight:500;line-height:1.35}
+.guide .gw-cmd-fiche dd small.ok{color:#157A3D}
+.guide .gw-cmd-fiche dd small.aver{display:inline-block;margin-top:5px;padding:3px 7px;border-radius:6px;background:#FFF3C4;color:#7A5B00}
+.guide .gw-cmd-edit{display:block;font-size:12px;font-weight:500;color:var(--texte)}
+.guide .gw-cmd-edit input{display:block;width:100%;height:36px;margin:4px 0 0;padding:0 10px;border:0;border-radius:8px;background:#fff;
+  box-shadow:inset 0 0 0 1.5px var(--bleu);font:600 14px var(--corps,Inter),sans-serif;color:var(--encre)}
+.guide .gw-cmd-edit input:focus{outline:2px solid rgba(0,85,255,.25);outline-offset:1px}
+.guide .gw-cmd-b{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.guide .gw-cmd-b button{height:36px;margin:0;padding:0 14px;border:0;border-radius:9px;background:#F0F1F3;font:600 14px var(--corps,Inter),sans-serif;color:var(--encre);cursor:pointer}
+.guide .gw-cmd-b button.ok{background:var(--encre);color:#fff}
+.guide .gw-cmd-b button.zero{background:transparent;color:var(--bleu);padding:0 6px}
+.guide .gw-cmd-b button:disabled{opacity:.4;cursor:default}
+.guide .gw-cmd-b button:focus-visible{outline:2px solid var(--bleu);outline-offset:2px}
+.guide .gw-cmd-msg{margin-top:10px!important;font-size:13.5px;line-height:1.5;color:#4A4C55}
+.guide .gw-cmd-msg:empty{display:none}
+
+/* ---------- petit calcul : temps de saisie (reprend le style .gw-calc) ---------- */
+.guide .gw-saisie .gw-res span{font-size:17px}
+
+@media(max-width:600px){
+  .guide .gw-tri-txt{font-size:19px}
+  .guide .gw-tri-cols{grid-template-columns:1fr;gap:6px}
+  .guide .gw-tri-col{min-height:0}
+  .guide .gw-tri-col ul{flex-direction:row;flex-wrap:wrap}
+  .guide .gw-tri-col ul:empty{display:none}
+  .guide .gw-commande{grid-template-columns:1fr;padding:14px}
+  .guide .gw-cmd-fl{transform:rotate(90deg)}
+  .guide .gw-cmd-fiche dl > div{grid-template-columns:74px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion: reduce){
+  .guide .gw-tri-col,.guide .gw-tri-col > button{transition:none}
+  .guide .gw-tri-col li.neuf{animation:none}
+}
+
+</style>
+<link rel="stylesheet" href="/css/cta-express.css" media="print" onload="this.media='all'">
+</head>
+<body class="page-simple">
+<script src="/cookies.js?v=vite1" async></script>
+
+<header class="onav" id="n2">
+  <div class="onav-capsule">
+    <a class="onav-logo" href="/" aria-label="onlee, accueil"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">onlee</span></a>
+    <nav class="onav-liens" aria-label="Navigation principale">
+      <div class="onav-item"><a class="l" href="/#services">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="onav-deroule"><div class="dr-grille"><a href="/logiciels/" style="--c:#0E0F13;--ic:#fff;--k:0"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7.5 13.5h4M7.5 16.5h7"/></svg></span><span class="dr-tx"><b>Logiciels sur mesure</b><small>Le logiciel qu’il manque à ton entreprise</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/publicites/" style="--c:#0866FF;--ic:#fff;--k:1"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.2v3.6a1 1 0 0 0 1 1h2.2L12 18.5v-13L7.2 9.2H5a1 1 0 0 0-1 1z"/><path d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.5 7.5 0 0 1 0 10.4"/></svg></span><span class="dr-tx"><b>Gestion des pubs</b><small>Campagnes Facebook et Instagram</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/sites/" style="--c:#F9AB00;--ic:#0E0F13;--k:2"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9S9.6 5.6 12 3z"/></svg></span><span class="dr-tx"><b>Sites internet et SEO</b><small>Rapides, trouvés sur Google et par les IA</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/vizor/?metier=opticien" style="--c:#4C3175;--ic:#fff;--k:3"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6.5h10M10 12h10M10 17.5h10"/><path d="M4 6.5l1.2 1.2L7.5 5.4M4 12l1.2 1.2 2.3-2.3M4 17.5l1.2 1.2 2.3-2.3"/></svg></span><span class="dr-tx"><b>Vizor et AudioVizor</b><small>Nos logiciels pour opticiens et audioprothésistes</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/communaute/" style="--c:#0055FF;--ic:#fff;--k:4"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9.5" r="2.5"/><path d="M15.8 14.2c2.3-.3 4.2 1.2 4.7 4.3"/></svg></span><span class="dr-tx"><b>Communauté</b><small>Le Club : groupe WhatsApp gratuit entre entrepreneurs</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
+      <a class="l" href="/realisations/">Réalisations</a>
+      <a class="l" href="/#a-propos">À propos</a>
+      <a class="l" href="/#faq">FAQ</a>
+      <a class="l ici" href="/blog/">Conseils</a>
+    </nav>
+    <div class="onav-droite">
+      <span class="onav-langue"><a class="on" href="/blog/ia-dans-ton-logiciel/" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/en/" hreflang="en" lang="en">EN</a></span>
+      <button type="button" class="onav-cta" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel</button>
+      <button type="button" class="onav-menu" aria-expanded="false" aria-controls="onav-panneau" aria-label="Ouvrir le menu"><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="onav-panneau" id="onav-panneau" aria-hidden="true">
+    <a class="grand" href="/#services">Services <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <div class="sous"><a href="/logiciels/">Logiciels sur mesure<small>Le logiciel qu’il manque à ton entreprise</small></a><a href="/publicites/">Gestion des pubs<small>Campagnes Facebook et Instagram</small></a><a href="/sites/">Sites internet et SEO<small>Rapides, trouvés sur Google et par les IA</small></a><a href="/vizor/?metier=opticien">Vizor et AudioVizor<small>Nos logiciels</small></a><a href="/communaute/">Communauté<small>Le Club : groupe WhatsApp gratuit entre entrepreneurs</small></a></div>
+    <a class="grand" href="/realisations/">Réalisations <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/#a-propos">À propos <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/#faq">FAQ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/blog/">Conseils <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <div class="bas"><span class="onav-langue"><a class="on" href="/blog/ia-dans-ton-logiciel/" hreflang="fr" lang="fr">FR</a><a href="/en/" hreflang="en" lang="en">EN</a></span><button type="button" class="onav-cta" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel</button></div>
+  </div>
+</header>
+
+<main>
+<div class="ps-wrap ps-etroit guide-page">
+  <nav class="ariane" aria-label="Fil d’Ariane"><a href="/">onlee</a> <span>›</span> <a href="/blog/">Conseils</a> <span>›</span> <a href="/logiciels/">Logiciels sur mesure</a> <span>›</span> L’IA dans ton logiciel : où elle aide vraiment</nav>
+  <header class="art-tete"><p class="ps-sur">Logiciels sur mesure</p><h1>L’IA dans ton logiciel : où elle aide vraiment, et où elle se trompe</h1>
+    <div class="g-auteur"><img src="/assets/leeroy-visage.webp" alt="" width="44" height="44" loading="lazy" decoding="async"><p><b>Leeroy Ben-Aich</b><span>Fondateur d’onlee · <time datetime="2026-11-20">20 novembre 2026</time> · 9 min de lecture</span></p></div>
+    <div class="g-outils" aria-label="Outils cités"><span class="g-outil"><svg aria-hidden="true" fill="#000000" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>ChatGPT</span><span class="g-outil"><svg aria-hidden="true" fill="#D97757" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg>Claude</span><span class="g-outil"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#25D366"/><path fill="#fff" d="M50 22c-15.5 0-28 12.4-28 27.8 0 5.3 1.5 10.3 4.1 14.5L22 78l14.2-4c4.1 2.3 8.8 3.6 13.8 3.6 15.5 0 28-12.4 28-27.8S65.5 22 50 22zm0 50.6c-4.4 0-8.6-1.2-12.2-3.4l-.9-.5-8.4 2.4 2.4-8.1-.6-.9c-2.4-3.6-3.7-7.8-3.7-12.3 0-12.6 10.4-22.8 23.3-22.8S73.3 37.2 73.3 49.8 62.9 72.6 50 72.6zm12.7-17c-.7-.4-4.1-2-4.7-2.3-.6-.2-1.1-.3-1.6.4-.5.7-1.8 2.3-2.2 2.7-.4.5-.8.5-1.5.2-.7-.4-2.9-1.1-5.6-3.4-2.1-1.8-3.5-4.1-3.9-4.8-.4-.7 0-1.1.3-1.4.3-.3.7-.8 1.1-1.2.4-.4.5-.7.7-1.2.2-.5.1-.9 0-1.3-.2-.4-1.6-3.7-2.1-5.1-.6-1.3-1.1-1.1-1.6-1.2h-1.3c-.5 0-1.2.2-1.9.9-.6.7-2.5 2.4-2.5 5.8s2.5 6.7 2.9 7.2c.4.5 5 7.5 12 10.5 1.7.7 3 1.1 4 1.5 1.7.5 3.2.5 4.4.3 1.4-.2 4.1-1.7 4.7-3.3.6-1.6.6-3 .4-3.3-.2-.3-.6-.5-1.3-.8z"/></svg>WhatsApp</span></div>
+  </header>
+  <div class="guide"><div class="g-bref">
+  <p class="g-bref-t">En bref</p>
+  <p>Dans un logiciel, l’IA aide surtout à <strong>lire, trier, résumer et préremplir</strong> : un mail de commande, un PDF, une photo de bon, un appel. Pour automatiser la saisie de tes commandes, elle peut lire ce que t’envoie le client et <strong>préparer la commande dans ton logiciel</strong>. Ensuite, c’est le logiciel qui vérifie (le client existe, la référence aussi, le prix est le bon) et <strong>une personne qui valide</strong> avant que quoi que ce soit parte. L’IA se trompe parfois, avec beaucoup d’assurance, et une commande contient des données personnelles : choisis un outil qui ne les réutilise pas, encadré par un contrat.</p>
+</div>
+
+</div>
+  <nav class="g-sommaire" aria-label="Sommaire"><p>Au sommaire</p><ol><li><a href="#ou-elle-aide">Où l’IA aide vraiment dans un logiciel ?</a></li><li><a href="#limites">Où l’IA n’aide pas, ou mal ?</a></li><li><a href="#commandes">Comment automatiser la saisie de tes commandes avec l’IA ?</a></li><li><a href="#agent">Agent IA, automatisation, assistant : c’est quoi la différence ?</a></li><li><a href="#erreurs">L’IA peut-elle se tromper sur une commande ?</a></li><li><a href="#donnees">Et les données de tes clients, avec le RGPD ?</a></li><li><a href="#vaut-le-coup">À partir de combien de commandes ça vaut le coup ?</a></li><li><a href="#chatgpt-ou-logiciel">ChatGPT à côté, ou l’IA branchée dans ton logiciel ?</a></li><li><a href="#pas-a-pas">Comment faire un premier essai, étape par étape ?</a></li></ol></nav>
+  <article class="prose guide">
+<h2 id="ou-elle-aide">Où l’IA aide vraiment dans un logiciel&nbsp;?</h2>
+<p>Oublie l’image du robot qui fait tout. Dans un logiciel de gestion, l’IA est surtout utile là où <strong>quelqu’un lit quelque chose de mal rangé pour le recopier proprement</strong> :</p>
+<ul>
+  <li><strong>Lire</strong> : un mail écrit à la va-vite, un bon de commande en PDF, une photo, un message vocal. Elle en sort les informations utiles : qui, quoi, combien, pour quand.</li>
+  <li><strong>Trier</strong> : ce mail est-il une commande, une demande de devis, une réclamation ? Elle le range dans la bonne file.</li>
+  <li><strong>Résumer</strong> : un appel, un long échange avec un client, l’historique d’un dossier, en trois lignes.</li>
+  <li><strong>Préremplir</strong> : une fiche client, un devis en brouillon, une réponse type que tu n’as plus qu’à relire.</li>
+  <li><strong>Retrouver</strong> : « qu’est-ce qu’on avait dit à ce client sur les délais ? », dans tes propres documents.</li>
+</ul>
+<p class="g-astuce"><span>Le repère</span>Si une personne fait la tâche en lisant puis en recopiant, l’IA peut sûrement aider. Si la tâche engage ton entreprise (un prix, une remise, un refus, un paiement), l’IA peut préparer, mais c’est une personne qui décide.</p>
+<div class="gw gw-tri" data-tri>
+  <p class="gw-t">À toi de trier : qui s’en charge ?</p>
+  <ul data-taches hidden>
+    <li data-col="ia" data-pourquoi="Lire un document mal rangé pour en sortir les informations, c’est là que l’IA est la plus utile. Le logiciel vérifie ensuite.">Lire un bon de commande en PDF</li>
+    <li data-col="regle" data-pourquoi="Un calcul exact se fait toujours de la même façon. Le logiciel ne se trompe pas, une IA peut se tromper sur un chiffre.">Calculer la TVA d’une facture</li>
+    <li data-col="ia" data-pourquoi="Résumer en trois lignes, l’IA sait le faire. Tu relis avant que le résumé rejoigne le dossier du client.">Résumer un appel client</li>
+    <li data-col="main" data-pourquoi="Une remise engage ton entreprise. L’IA peut rassembler l’historique du client, mais c’est une personne qui décide.">Accorder une remise</li>
+    <li data-col="ia" data-pourquoi="Comprendre un texte libre pour le ranger dans la bonne file (commande, devis, réclamation) : c’est typiquement un travail d’IA.">Trier les mails qui arrivent</li>
+    <li data-col="regle" data-pourquoi="« Facture échue depuis tant de jours : envoie la relance type. » Une règle fixe s’en charge. Pour un client en litige, reprends la main.">Relancer une facture impayée</li>
+    <li data-col="regle" data-pourquoi="C’est l’exemple type : une automatisation classique suffit, coûte moins cher et ne fait pas d’erreur d’interprétation.">Prévenir le responsable si une commande dépasse un montant</li>
+    <li data-col="regle" data-pourquoi="Le logiciel compare avec son catalogue, à l’identique. Pas besoin d’IA pour ça.">Vérifier qu’une référence existe au catalogue</li>
+    <li data-col="main" data-pourquoi="Le ton juste et le geste commercial, c’est une personne. L’IA peut tout au plus proposer un brouillon à relire.">Répondre à une réclamation délicate</li>
+    <li data-col="main" data-pourquoi="Accepter, c’est s’engager sur un délai. L’IA peut signaler la demande, la décision reste à une personne.">Accepter une commande hors délai</li>
+  </ul>
+  <div class="gw-tri-tache">
+    <span class="gw-tri-num" data-num>Tâche 1 sur 10</span>
+    <p class="gw-tri-txt" data-txt>Lire un bon de commande en PDF</p>
+    <small data-aide>Range-la dans la colonne qui te paraît la bonne.</small>
+  </div>
+  <div class="gw-tri-cols">
+    <div class="gw-tri-col" data-col="ia"><button type="button" data-place="ia"><i aria-hidden="true"></i>L’IA aide</button><ul aria-label="Rangé dans : l’IA aide"></ul></div>
+    <div class="gw-tri-col" data-col="regle"><button type="button" data-place="regle"><i aria-hidden="true"></i>Une règle simple suffit</button><ul aria-label="Rangé dans : une règle simple suffit"></ul></div>
+    <div class="gw-tri-col" data-col="main"><button type="button" data-place="main"><i aria-hidden="true"></i>Garde la main</button><ul aria-label="Rangé dans : garde la main"></ul></div>
+  </div>
+  <p class="gw-tri-retour" aria-live="polite" data-retour></p>
+  <div class="gw-tri-act" data-act hidden><button type="button" class="gw-tri-suite" data-suite hidden>Tâche suivante</button><button type="button" class="gw-tri-zero" data-zero hidden>Recommencer</button></div>
+</div>
+
+<h2 id="limites">Où l’IA n’aide pas, ou mal&nbsp;?</h2>
+<ul>
+  <li><strong>Les calculs exacts</strong> : prix, TVA, stocks, remises. Un logiciel classique les fait toujours de la même façon ; une IA peut se tromper sur un chiffre. Laisse-lui la lecture, et laisse les calculs au logiciel.</li>
+  <li><strong>Ce qu’une règle simple sait faire</strong> : « si la commande dépasse tel montant, préviens le responsable ». Pas besoin d’IA pour ça : une automatisation classique suffit, coûte moins cher et ne fait pas d’erreur d’interprétation.</li>
+  <li><strong>Les décisions qui engagent</strong> : accepter une commande hors délai, accorder un geste commercial, répondre à une réclamation délicate.</li>
+  <li><strong>Les tout petits volumes</strong> : si tu reçois trois commandes par semaine, les saisir te prendra moins de temps que de mettre en place une IA et de la surveiller.</li>
+</ul>
+
+<h2 id="commandes">Comment automatiser la saisie de tes commandes avec l’IA&nbsp;?</h2>
+<p>Le principe ne change pas : <strong>l’IA propose, le logiciel vérifie, une personne valide</strong>. Concrètement, ça se passe en cinq temps.</p>
+<ol>
+  <li><strong>La commande arrive comme d’habitude</strong> : un mail, un PDF en pièce jointe, la photo d’un bon écrit à la main, un message WhatsApp.</li>
+  <li><strong>L’IA la lit et en sort les informations</strong> : le client, les produits, les quantités, la date et l’adresse de livraison.</li>
+  <li><strong>Ton logiciel vérifie avec des règles fixes</strong> : ce client existe-t-il ? Cette référence est-elle au catalogue ? Le prix demandé correspond-il au tarif ? La quantité est-elle habituelle pour ce client ?</li>
+  <li><strong>Une commande « à valider » apparaît</strong>, avec les champs douteux signalés et le document d’origine à côté, pour comparer d’un coup d’œil.</li>
+  <li><strong>Une personne valide ou corrige</strong>, puis la commande part en préparation comme les autres.</li>
+</ol>
+<p>Le gain ne vient pas de la disparition de la personne qui saisit. Il vient du fait qu’elle <strong>relit au lieu de recopier</strong> : vérifier une commande déjà remplie est en général plus rapide et moins fatigant que de la taper.</p>
+<div class="gw gw-commande" data-commande aria-label="Exemple : un mail de commande préparé par l’IA, à valider">
+  <div class="gw-cmd-mail">
+    <p class="gw-cmd-tete"><span>Mail reçu</span>Commande</p>
+    <p class="gw-cmd-de"><b>Julien</b> · client</p>
+    <p class="gw-cmd-corps">Bonjour,<br>Comme d’habitude, 2 cartons de <span class="gw-cmd-hl">la référence habituelle</span>, livrés jeudi.<br>Merci,<br>Julien</p>
+  </div>
+  <span class="gw-cmd-fl" aria-hidden="true"></span>
+  <div class="gw-cmd-fiche">
+    <div class="gw-cmd-ft"><span>Commande préremplie</span><em data-etat>proposée · à relire</em></div>
+    <dl>
+      <div><dt>Client</dt><dd>Julien<small class="ok">trouvé dans ton fichier</small></dd></div>
+      <div class="doute" data-ref><dt>Référence</dt><dd><span data-refv>Carton de 12 · réf. 2041</span>
+        <label class="gw-cmd-edit" data-edit hidden>Référence corrigée<input type="text" value="Carton de 12 · réf. 2041" data-refi></label>
+        <small class="aver" data-refn>à vérifier : « habituelle » = celle de la dernière commande ?</small></dd></div>
+      <div><dt>Quantité</dt><dd>2 cartons<small class="ok">lu dans le mail</small></dd></div>
+      <div><dt>Livraison</dt><dd>jeudi<small class="ok">lu dans le mail</small></dd></div>
+    </dl>
+    <div class="gw-cmd-b"><button type="button" class="ok" data-valider>Valider</button><button type="button" data-modifier>Modifier</button><button type="button" class="zero" data-zero hidden>Revoir l’exemple</button></div>
+    <p class="gw-cmd-msg" aria-live="polite" data-msg></p>
+  </div>
+</div>
+<div class="g-exemple">
+  <p class="g-exemple-t">Un cas type</p>
+  <p>Un client écrit : « Comme d’habitude, deux cartons de la référence habituelle, livrés jeudi. » L’IA ne peut pas deviner ce que veut dire « habituelle ». Un système mal réglé va inventer une référence qui a l’air juste. Un système bien réglé va chercher la dernière commande de ce client, proposer la même référence et <strong>la signaler « à vérifier »</strong>. Toute la différence entre une IA qui fait gagner du temps et une IA qui crée des erreurs est là.</p>
+</div>
+
+<h2 id="agent">Agent IA, automatisation, assistant&nbsp;: c’est quoi la différence&nbsp;?</h2>
+<ul>
+  <li><strong>Une automatisation classique</strong> suit des règles fixes : « quand ceci arrive, fais cela ». Fiable et prévisible, mais incapable de comprendre un texte libre.</li>
+  <li><strong>Un assistant comme ChatGPT ou Claude</strong>, utilisé dans sa fenêtre de discussion, répond à tes questions. Il ne touche pas à tes outils, sauf si tu lui en donnes l’accès.</li>
+  <li><strong>Un agent IA</strong> est une IA à qui on donne le droit d’agir : lire une boîte mail, créer une commande, envoyer un message. C’est puissant, et c’est là qu’il faut être prudent.</li>
+</ul>
+<p>Plus tu donnes de droits à un agent, plus une erreur peut aller loin. La bonne règle : <strong>il peut lire et préparer, pas envoyer ni encaisser</strong>. Pas de mail au client, pas de facture, pas de commande fournisseur sans un clic humain, au moins tant que tu n’as pas plusieurs semaines de recul sur ses erreurs.</p>
+
+<h2 id="erreurs">L’IA peut-elle se tromper sur une commande&nbsp;?</h2>
+<p>Oui, et il vaut mieux le savoir avant de commencer. Elle peut mal lire un chiffre sur un scan flou, confondre deux références qui se ressemblent, ou <strong>combler une information manquante par quelque chose de plausible</strong> au lieu de dire qu’elle ne sait pas. La CNIL le rappelle dans ses <a href="https://www.cnil.fr/fr/comment-deployer-une-ia-generative-la-cnil-apporte-de-premieres-precisions">recommandations pour déployer une IA générative</a> : ces systèmes peuvent produire des résultats inexacts qui paraissent pourtant plausibles.</p>
+<p>Les garde-fous qui comptent :</p>
+<ul>
+  <li><strong>Le logiciel contrôle ce que l’IA a lu</strong> : client connu, référence au catalogue, prix au tarif, quantité habituelle.</li>
+  <li><strong>L’IA est réglée pour pouvoir dire « je ne sais pas »</strong> : un champ vide et signalé vaut mieux qu’un champ inventé.</li>
+  <li><strong>Une personne valide</strong>, avec le document d’origine sous les yeux.</li>
+  <li><strong>Tout est noté</strong> : ce que l’IA a proposé, ce qui a été corrigé, qui a validé. C’est comme ça que tu sais si elle fait de moins en moins d’erreurs, ou pas.</li>
+  <li><strong>Un essai à blanc avant de s’y fier</strong> : pendant quelques semaines, l’IA prépare les commandes pendant que tu continues à les saisir comme avant. Tu compares, puis tu décides.</li>
+</ul>
+
+<h2 id="donnees">Et les données de tes clients, avec le RGPD&nbsp;?</h2>
+<p>Une commande contient des données personnelles : un nom, une adresse, un téléphone. Les confier à une IA, c’est les confier à un prestataire. Quelques règles simples :</p>
+<ul>
+  <li><strong>Pas de service grand public pour les vraies commandes.</strong> La CNIL recommande de ne jamais y partager de données personnelles ni d’informations confidentielles (<a href="https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative">ses questions-réponses sur l’IA générative</a>). Utilise une offre prévue pour les entreprises, et vérifie dans le contrat que tes données ne servent pas à entraîner l’IA.</li>
+  <li><strong>N’envoie que le nécessaire</strong> : pour lire une commande, l’IA n’a pas besoin de tout l’historique du client.</li>
+  <li><strong>Sache où vont les données</strong> : dans quel pays elles sont traitées et stockées. Certains fournisseurs proposent un hébergement en Europe, c’est un vrai critère de choix.</li>
+  <li><strong>Signe le contrat de traitement des données</strong> que propose le fournisseur, et mentionne cet usage dans ta politique de confidentialité.</li>
+</ul>
+<p>Si tes documents contiennent des données de santé (une ordonnance, par exemple), la prudence doit être encore plus grande : vérifie ce que tu as le droit de faire avant tout projet.</p>
+
+<h2 id="vaut-le-coup">À partir de combien de commandes ça vaut le coup&nbsp;?</h2>
+<p>Il n’y a pas de seuil universel, mais un calcul simple que tu peux faire toi-même :</p>
+<ul>
+  <li><strong>Combien de commandes</strong> reçois-tu par semaine par mail, PDF ou message, hors commandes passées en ligne ?</li>
+  <li><strong>Combien de temps</strong> prend la saisie d’une commande ? Chronomètre-en une dizaine, des simples et des pénibles.</li>
+  <li><strong>Combien d’erreurs</strong> par mois (mauvaise référence, mauvaise quantité, mauvaise adresse), et que te coûte chacune : un renvoi, un avoir, un client mécontent ?</li>
+</ul>
+<p>En face, mets ce que coûtent la mise en place, l’abonnement de l’IA, la maintenance, et le temps de relecture qui restera. Si la saisie te prend quelques minutes par jour, ne change rien. Si elle occupe une personne une bonne partie de la journée, ou si les erreurs coûtent cher, ça mérite d’être étudié. Pour poser tout ça noir sur blanc, sers-toi de notre guide pour préparer ton projet de logiciel en une page.</p>
+<div class="gw gw-calc gw-saisie" data-saisie>
+  <p class="gw-t">Petit calcul : ton temps de saisie</p>
+  <label>Commandes reçues par semaine (mail, PDF, message) <b><output data-o="n">20</output></b><input type="range" min="1" max="200" step="1" value="20" data-i="n"></label>
+  <label>Minutes pour saisir une commande <b><output data-o="m">5</output> min</b><input type="range" min="1" max="30" step="1" value="5" data-i="m"></label>
+  <p class="gw-res" aria-live="polite">≈ <strong data-o="h">7,2</strong> <span data-o="u">h</span> de saisie par mois<small data-o="p">À regarder de près : compte aussi tes erreurs du mois avant de décider.</small></p>
+</div>
+<p class="g-astuce"><span>Le repère</span>Parfois, la meilleure solution n’est pas l’IA mais <strong>un bon formulaire</strong>. Si tes clients professionnels commandent souvent les mêmes produits, un espace de commande en ligne où ils choisissent eux-mêmes références et quantités supprime la saisie, et toute erreur de lecture avec. L’IA reste utile pour ceux qui continueront à t’écrire par mail.</p>
+
+<h2 id="chatgpt-ou-logiciel">ChatGPT à côté, ou l’IA branchée dans ton logiciel&nbsp;?</h2>
+<p>Coller une commande dans ChatGPT ou Claude pour qu’il la remette au propre, c’est bien pour <strong>tester l’idée</strong>, avec des exemples dont tu as retiré les noms et les adresses. Pour le quotidien, ça ne tient pas : on recopie toujours le résultat, rien n’est vérifié, et les données partent sans cadre.</p>
+<p>Branchée dans ton logiciel, l’IA ne reçoit que ce dont elle a besoin, son résultat arrive directement au bon endroit, il est contrôlé par les règles du logiciel, et tout reste tracé. Beaucoup de logiciels du marché ajoutent aujourd’hui des fonctions d’IA : regarde d’abord ce que le tien propose. Si ta façon de travailler est particulière, l’IA peut être intégrée à un <a href="/logiciels/">logiciel sur mesure</a>, ou ajoutée en lien avec tes outils actuels (voir notre guide pour <a href="/blog/connecter-ses-outils/">connecter tes outils entre eux</a>).</p>
+
+<h2 id="pas-a-pas">Comment faire un premier essai, étape par étape&nbsp;?</h2>
+<ol class="g-etapes">
+  <li><b>Choisis une seule tâche</b><span>Par exemple, la saisie des commandes reçues par mail. Pas « mettre de l’IA partout ».</span></li>
+  <li><b>Mesure la situation de départ</b><span>Nombre de commandes, temps de saisie, erreurs du mois. Sans ce point de départ, impossible de savoir si l’IA aide.</span></li>
+  <li><b>Rassemble de vrais exemples</b><span>Une vingtaine de commandes de formats différents, y compris les plus pénibles : scans flous, messages vagues, bons écrits à la main. Retire les noms et adresses avant de les tester dans un outil.</span></li>
+  <li><b>Écris ce que l’IA doit sortir</b><span>Client, références, quantités, date, adresse. Et ce qu’elle doit faire quand une information manque : la signaler, pas l’inventer.</span></li>
+  <li><b>Choisis l’outil et son cadre</b><span>Offre pour les entreprises, données non réutilisées, contrat signé, lieu d’hébergement connu.</span></li>
+  <li><b>Fais tourner à blanc</b><span>Quelques semaines en parallèle de la saisie habituelle. Compare chaque commande proposée avec celle saisie à la main.</span></li>
+  <li><b>Décide avec tes propres chiffres</b><span>Si la relecture prend presque autant de temps que la saisie, arrête ou ajuste. Sinon, passe en mode validation : l’IA prépare, une personne valide.</span></li>
+</ol>
+
+<div class="g-faq">
+  <h2 id="faq">Questions fréquentes</h2>
+  <details><summary>Un agent IA peut-il saisir mes commandes tout seul&nbsp;?</summary><p>Il peut les préparer, mais il ne devrait pas les valider seul, surtout au début : il peut mal lire ou combler une information manquante. Le bon réglage : l’IA prépare, le logiciel vérifie, une personne valide d’un clic.</p></details>
+  <details><summary>L’IA sait-elle lire une commande manuscrite ou une photo&nbsp;?</summary><p>Souvent, oui, mais moins bien qu’un PDF propre. Plus l’écriture ou la photo est mauvaise, plus il faut vérifier. Teste avec tes propres documents, les pires compris, avant de t’engager.</p></details>
+  <details><summary>Puis-je utiliser ChatGPT pour saisir mes commandes&nbsp;?</summary><p>Pour tester l’idée avec des exemples sans noms ni adresses, oui. Pour les vraies commandes de tes clients, évite la version grand public : utilise une offre pour les entreprises encadrée par un contrat, idéalement branchée à ton logiciel pour que tout soit vérifié.</p></details>
+  <details><summary>Que se passe-t-il si un client change la forme de ses bons de commande&nbsp;?</summary><p>C’est un point fort de l’IA : elle ne dépend pas d’un modèle figé et sait lire une mise en page qu’elle n’a jamais vue. Surveille quand même de près les premières commandes au nouveau format, c’est là que les erreurs apparaissent.</p></details>
+  <details><summary>L’IA va-t-elle remplacer la personne qui saisit les commandes&nbsp;?</summary><p>Dans une petite entreprise, rarement. Elle change plutôt son travail : moins de recopie, plus de vérification, de suivi des clients et de gestion des cas difficiles, là où une personne reste indispensable.</p></details>
+  <details><summary>Faut-il changer de logiciel pour ajouter de l’IA&nbsp;?</summary><p>Pas forcément. Regarde d’abord si ton logiciel propose déjà des fonctions d’IA, ou s’il peut être relié à un outil qui en a. Un logiciel sur mesure se justifie quand ta façon de travailler ne rentre dans aucun outil existant.</p></details>
+</div>
+
+  </article>
+  <aside class="g-auteur-bloc"><img src="/assets/leeroy-visage.webp" alt="Leeroy Ben-Aich" width="72" height="72" loading="lazy" decoding="async"><div><b>Leeroy Ben-Aich</b><p>Fondateur d’onlee. Je crée des logiciels sur mesure, des sites et je gère des campagnes Facebook et Instagram pour des entreprises. Ces conseils sont ceux qu’on applique sur nos propres projets.</p><a href="https://www.linkedin.com/in/leeroy-benaich/" target="_blank" rel="noopener">Me suivre sur LinkedIn</a></div></aside>
+  <aside class="art-cta">
+      <h2>Tu préfères qu’on s’en occupe&nbsp;?</h2>
+      <p>On conçoit, on code et on fait évoluer le logiciel qu’il manque à ton entreprise. Un appel de 30 minutes pour en parler.</p>
+      <button type="button" class="art-btn" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel <span aria-hidden="true">→</span></button>
+      <p class="g-cta-lien"><a href="/logiciels/">Voir la page logiciels sur mesure →</a></p>
+    </aside>
+  <nav class="g-silo" aria-label="Autres conseils"><p>Les autres conseils · Logiciels sur mesure</p><ul><li><a href="/blog/logiciel-sur-mesure-ou-logiciel-du-marche/">Logiciel sur mesure ou logiciel du marché</a></li><li><a href="/blog/prix-logiciel-sur-mesure/">Combien coûte un logiciel sur mesure</a></li><li><a href="/blog/quand-passer-a-un-logiciel/">Quand passer à un vrai logiciel</a></li><li><a href="/blog/connecter-ses-outils/">Connecter tes outils entre eux</a></li><li><span>Préparer ton projet en une page</span><em>bientôt</em></li></ul></nav>
+</div>
+<script>
+/* widgets du guide « l'IA dans ton logiciel » (aucun envoi, tout se passe dans la page) */
+
+/* tri des tâches : le lecteur range chaque tâche, puis la bonne colonne s'affiche avec une explication */
+(function(){
+  var NOMS = { ia: 'L’IA aide', regle: 'Une règle simple suffit', main: 'Garde la main' };
+  document.querySelectorAll('.gw-tri').forEach(function(w){
+    var taches = Array.prototype.map.call(w.querySelectorAll('[data-taches] li'), function(li){
+      return { txt: li.textContent, col: li.getAttribute('data-col'), pourquoi: li.getAttribute('data-pourquoi') };
+    });
+    if (!taches.length) return;
+    var num = w.querySelector('[data-num]'), txt = w.querySelector('[data-txt]'), aide = w.querySelector('[data-aide]');
+    var cols = w.querySelectorAll('.gw-tri-col'), boutons = w.querySelectorAll('[data-place]');
+    var retour = w.querySelector('[data-retour]'), act = w.querySelector('[data-act]');
+    var suite = w.querySelector('[data-suite]'), zero = w.querySelector('[data-zero]');
+    var i = 0, pareil = 0;
+
+    function marques(){ cols.forEach(function(c){ c.classList.remove('bonne', 'choisie'); }); }
+    function boutonsActifs(oui){ boutons.forEach(function(b){ b.disabled = !oui; }); }
+    function actions(s, z){ suite.hidden = !s; zero.hidden = !z; act.hidden = !(s || z); }
+    function montre(){
+      marques(); boutonsActifs(true); actions(false, false); retour.textContent = '';
+      num.textContent = 'Tâche ' + (i + 1) + ' sur ' + taches.length;
+      txt.textContent = taches[i].txt;
+      aide.hidden = false;
+    }
+    function place(choix){
+      var t = taches[i], bon = choix === t.col;
+      if (bon) pareil++;
+      boutonsActifs(false); marques();
+      w.querySelector('.gw-tri-col[data-col="' + t.col + '"]').classList.add('bonne');
+      if (!bon) w.querySelector('.gw-tri-col[data-col="' + choix + '"]').classList.add('choisie');
+      var li = document.createElement('li');
+      li.textContent = t.txt; li.className = 'neuf' + (bon ? '' : ' autre');
+      w.querySelector('.gw-tri-col[data-col="' + t.col + '"] ul').appendChild(li);
+      retour.innerHTML = '';
+      var b = document.createElement('b');
+      b.textContent = bon ? 'Bien vu. ' : 'Plutôt « ' + NOMS[t.col] + ' ». ';
+      retour.appendChild(b);
+      retour.appendChild(document.createTextNode(t.pourquoi));
+      aide.hidden = true;
+      if (i < taches.length - 1) { actions(true, false); suite.focus({ preventScroll: true }); }
+      else fin();
+    }
+    function fin(){
+      var n = { ia: 0, regle: 0, main: 0 };
+      taches.forEach(function(t){ n[t.col]++; });
+      num.textContent = 'Terminé';
+      txt.textContent = 'Les ' + taches.length + ' tâches sont rangées.';
+      marques();
+      var p = document.createElement('span'); p.className = 'gw-tri-bilan';
+      p.textContent = 'Dans notre tri : ' + n.ia + ' pour l’IA, ' + n.regle + ' pour une règle simple, ' + n.main + ' à garder en main. Tu en as rangé ' + pareil + ' comme nous.';
+      retour.appendChild(p);
+      actions(false, true);
+    }
+    boutons.forEach(function(b){
+      b.addEventListener('click', function(){ if (!b.disabled) place(b.getAttribute('data-place')); });
+    });
+    suite.addEventListener('click', function(){ i++; montre(); var p = w.querySelector('[data-place]'); if (p) p.focus({ preventScroll: true }); });
+    zero.addEventListener('click', function(){
+      i = 0; pareil = 0;
+      w.querySelectorAll('.gw-tri-col ul').forEach(function(u){ u.innerHTML = ''; });
+      montre();
+    });
+    montre();
+  });
+})();
+
+/* de la commande au logiciel : Valider / Modifier sur la commande préremplie */
+(function(){
+  document.querySelectorAll('.gw-commande').forEach(function(w){
+    var etat = w.querySelector('[data-etat]'), ref = w.querySelector('[data-ref]'), refv = w.querySelector('[data-refv]');
+    var edit = w.querySelector('[data-edit]'), refi = w.querySelector('[data-refi]'), refn = w.querySelector('[data-refn]');
+    var valider = w.querySelector('[data-valider]'), modifier = w.querySelector('[data-modifier]'), zero = w.querySelector('[data-zero]');
+    var msg = w.querySelector('[data-msg]');
+    if (!etat || !refv || !valider || !modifier) return;
+    var depart = { ref: refv.textContent, note: refn.textContent };
+
+    modifier.addEventListener('click', function(){
+      edit.hidden = false; refv.hidden = true; refn.hidden = true;
+      modifier.disabled = true;
+      refi.focus(); refi.select();
+      msg.textContent = 'Corrige la référence, puis valide.';
+    });
+    valider.addEventListener('click', function(){
+      var corrige = !edit.hidden;
+      if (corrige) { var v = refi.value.trim(); refv.textContent = v || depart.ref; }
+      edit.hidden = true; refv.hidden = false; refn.hidden = false;
+      refn.className = 'ok';
+      refn.textContent = corrige ? 'corrigée par une personne' : 'vérifiée par une personne';
+      ref.classList.remove('doute');
+      etat.textContent = 'validée'; etat.classList.add('ok');
+      valider.disabled = true; modifier.disabled = true; zero.hidden = false;
+      msg.textContent = 'Commande validée : elle part en préparation comme les autres. Ce que l’IA avait proposé et ce qui a été corrigé restent notés.';
+    });
+    zero.addEventListener('click', function(){
+      refv.textContent = depart.ref; refi.value = depart.ref;
+      refn.className = 'aver'; refn.textContent = depart.note;
+      edit.hidden = true; refv.hidden = false; refn.hidden = false;
+      ref.classList.add('doute');
+      etat.textContent = 'proposée · à relire'; etat.classList.remove('ok');
+      valider.disabled = false; modifier.disabled = false; zero.hidden = true;
+      msg.textContent = '';
+      valider.focus({ preventScroll: true });
+    });
+  });
+})();
+
+/* petit calcul : heures de saisie par mois (aucun gain promis) */
+(function(){
+  document.querySelectorAll('.gw-saisie').forEach(function(w){
+    var n = w.querySelector('[data-i=n]'), m = w.querySelector('[data-i=m]');
+    function o(k){ return w.querySelector('[data-o=' + k + ']'); }
+    if (!n || !m) return;
+    function maj(){
+      var minutes = n.value * m.value * 52 / 12, h = minutes / 60;
+      o('n').textContent = n.value; o('m').textContent = m.value;
+      if (h < 1) { o('h').textContent = Math.round(minutes); o('u').textContent = 'min'; }
+      else { o('h').textContent = h < 10 ? h.toFixed(1).replace('.', ',') : Math.round(h); o('u').textContent = 'h'; }
+      o('p').textContent = h < 4 ? 'Peu : pas besoin d’IA pour l’instant. Un modèle de saisie bien fait suffit souvent.'
+        : h < 20 ? 'À regarder de près : compte aussi tes erreurs du mois avant de décider.'
+        : 'À étudier : ajoute ce que te coûtent les erreurs, puis compare avec la mise en place et le temps de relecture qui restera.';
+    }
+    n.addEventListener('input', maj); m.addEventListener('input', maj); maj();
+  });
+})();
+
+</script>
+</main>
+
+<footer class="opied">
+  <div class="opied-wrap">
+    <div class="opied-haut">
+      <div class="opied-marque"><a class="opied-logo" href="/" aria-label="onlee, accueil"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">onlee</span></a><p>On conçoit des logiciels sur mesure, on gère tes pubs Facebook et Instagram et on crée des sites internet. Éditeur de Vizor et AudioVizor. À distance, partout en France.</p></div>
+      <div><h3>Services</h3><ul><li><a href="/logiciels/">Logiciels sur mesure</a></li><li><a href="/publicites/">Gestion des pubs</a></li><li><a href="/sites/">Sites internet et SEO</a></li><li><a href="/vizor/?metier=opticien">Vizor et AudioVizor</a></li><li><a href="/communaute/">Communauté</a></li></ul></div>
+      <div><h3>onlee</h3><ul><li><a href="/realisations/">Réalisations</a></li><li><a href="/#a-propos">À propos</a></li><li><a href="/blog/">Conseils</a></li><li><a href="/#faq">Questions fréquentes</a></li><li><a href="https://vizor.onlee.fr/" target="_blank" rel="noopener">Vizor <small>pour les opticiens</small></a></li><li><a href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener">AudioVizor <small>pour les audioprothésistes</small></a></li></ul></div>
+      <div class="opied-contact"><h3>Contact</h3><ul><li><a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.19.84.85-3.11-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg><span>WhatsApp<small>+33 6 80 71 52 62</small></span></a></li><li><a href="mailto:contact@onlee.fr"><svg viewBox="0 0 24 24" fill="none" stroke="#0E0F13" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><span>E-mail<small>contact@onlee.fr</small></span></a></li><li><a href="https://www.linkedin.com/in/leeroy-benaich/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h2.3V17H7.1zM8.25 6a1.33 1.33 0 1 1 0 2.66 1.33 1.33 0 0 1 0-2.66zM10.9 9.6h2.2v1h.03c.31-.58 1.06-1.2 2.18-1.2 2.33 0 2.76 1.53 2.76 3.53V17h-2.3v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9V17h-2.3z"/></svg><span>LinkedIn<small>Leeroy Ben-Aich</small></span></a></li></ul></div>
+    </div>
+    <span class="opied-geant" aria-hidden="true"></span>
+    <div class="opied-bas"><span>© <span data-annee>2026</span> onlee · Conçu et codé par onlee</span><nav aria-label="Liens légaux"><a href="/mentions-legales/">Mentions légales</a><a href="/mentions-legales/#cookies">Confidentialité</a><a href="#cookies" id="cookies-gerer" hidden>Gérer les cookies</a></nav></div>
+  </div>
+</footer>
+<script src="/js/commun.js" defer></script>
+<script defer src="/js/cal.js"></script>
+<script defer src="/js/cta-express.js" data-logo="/assets/onlee-logo-ink.png" data-photo="/assets/leeroy-visage.webp"></script>
+<script src="/js/trafic.js" defer></script>
+<script src="/js/retour.js" defer></script>
+</body>
+</html>
