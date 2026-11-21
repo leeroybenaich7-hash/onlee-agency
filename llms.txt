@@ -47,6 +47,7 @@
 - [Rappeler et relancer tes prospects Facebook jusqu’au rendez-vous](https://onlee.fr/blog/demande-a-rendez-vous/) (19/11/2026) : Relancer un prospect Facebook : rappeler dans l’heure, quoi dire, deux créneaux précis, SMS ou WhatsApp s’il ne répond pas, et confirmer le rendez-vous.
 - [L’IA dans ton logiciel : où elle aide vraiment, et où elle se trompe](https://onlee.fr/blog/ia-dans-ton-logiciel/) (20/11/2026) : Automatiser la saisie des commandes avec l’IA : où elle aide vraiment, ses limites, la relecture humaine, le RGPD, et comment faire un premier essai.
 - [Mettre ton site en ligne sur Vercel, étape par étape](https://onlee.fr/blog/mettre-site-en-ligne-vercel/) (21/11/2026) : Mettre son site en ligne sur Vercel avec GitHub : les étapes, le nom de domaine, et ce que l’offre gratuite Hobby ne permet pas pour un site d’entreprise.
+- [Préparer ton projet de logiciel en une page](https://onlee.fr/blog/preparer-projet-logiciel/) (21/11/2026) : Cahier des charges simplifié pour un logiciel sur mesure : les 7 rubriques d’une page, un exemple rempli et les questions à poser au développeur.
 
 ## English
 
