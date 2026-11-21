@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mettre son site en ligne sur Vercel avec GitHub · onlee</title>
+<meta name="description" content="Mettre son site en ligne sur Vercel avec GitHub : les étapes, le nom de domaine, et ce que l’offre gratuite Hobby ne permet pas pour un site d’entreprise.">
+<link rel="canonical" href="https://onlee.fr/blog/mettre-site-en-ligne-vercel/">
+<link rel="alternate" hreflang="fr" href="https://onlee.fr/blog/mettre-site-en-ligne-vercel/">
+<link rel="alternate" hreflang="x-default" href="https://onlee.fr/blog/mettre-site-en-ligne-vercel/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:site_name" content="onlee">
+<meta property="og:title" content="Mettre son site en ligne sur Vercel avec GitHub · onlee">
+<meta property="og:description" content="Mettre son site en ligne sur Vercel avec GitHub : les étapes, le nom de domaine, et ce que l’offre gratuite Hobby ne permet pas pour un site d’entreprise.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://onlee.fr/blog/mettre-site-en-ligne-vercel/">
+<meta property="og:image" content="https://onlee.fr/assets/og-onlee.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mettre son site en ligne sur Vercel avec GitHub · onlee">
+<meta name="twitter:description" content="Mettre son site en ligne sur Vercel avec GitHub : les étapes, le nom de domaine, et ce que l’offre gratuite Hobby ne permet pas pour un site d’entreprise.">
+<meta name="twitter:image" content="https://onlee.fr/assets/og-onlee.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "onlee",
+     "item": "https://onlee.fr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Conseils",
+     "item": "https://onlee.fr/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Sites internet et SEO",
+     "item": "https://onlee.fr/sites/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Mettre ton site en ligne sur Vercel",
+     "item": "https://onlee.fr/blog/mettre-site-en-ligne-vercel/"
+    }
+   ]
+  },
+  {
+   "@type": "BlogPosting",
+   "headline": "Mettre ton site en ligne sur Vercel, étape par étape",
+   "description": "Mettre son site en ligne sur Vercel avec GitHub : les étapes, le nom de domaine, et ce que l’offre gratuite Hobby ne permet pas pour un site d’entreprise.",
+   "keywords": "mettre son site en ligne sur Vercel, héberger un site sur Vercel, relier GitHub à Vercel, Vercel gratuit usage commercial, nom de domaine Vercel OVH",
+   "datePublished": "2026-11-21",
+   "dateModified": "2026-11-21",
+   "inLanguage": "fr-FR",
+   "mainEntityOfPage": "https://onlee.fr/blog/mettre-site-en-ligne-vercel/",
+   "image": "https://onlee.fr/assets/og-onlee.png",
+   "articleSection": "Sites internet et SEO",
+   "about": {
+    "@type": "Service",
+    "name": "Sites internet et SEO",
+    "url": "https://onlee.fr/sites/"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Leeroy Ben-Aich",
+    "url": "https://www.linkedin.com/in/leeroy-benaich/",
+    "jobTitle": "Fondateur d’onlee"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "onlee",
+    "url": "https://onlee.fr/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://onlee.fr/assets/onlee-logo-ink.png"
+    }
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Vercel est-il vraiment gratuit ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui pour un projet personnel non commercial, avec l’offre Hobby. Dès que le site sert une activité qui rapporte de l’argent (présenter tes services, vendre, être payé pour le faire), Vercel demande l’offre Pro, qui est payante."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Faut-il savoir coder pour mettre son site sur Vercel ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non. Tout se fait par quelques clics dans GitHub et dans Vercel. Le plus technique, c’est la zone DNS de ton nom de domaine, et il s’agit surtout d’y recopier deux lignes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Puis-je garder mon nom de domaine chez OVH ou ailleurs ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. Tu le gardes là où il est et tu ajoutes, dans sa zone DNS, les enregistrements que Vercel t’indique. Tu peux aussi acheter un domaine directement chez Vercel : l’offre Pro payante en inclut un gratuit la première année, sur certaines extensions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Mes e-mails vont-ils continuer à fonctionner ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui, si tu ne modifies que les lignes A et CNAME du site. Tes e-mails dépendent des lignes MX, qui doivent rester telles quelles."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Que se passe-t-il si mon site reçoit beaucoup de visites ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "L’offre gratuite inclut 100 Go de transfert par mois, ce qui suffit en général à un site vitrine léger. Si une limite est dépassée en Hobby, la fonction concernée peut être coupée jusqu’à 30 jours. En Pro, ce qui dépasse le crédit inclus est facturé."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Vercel ou un hébergeur classique ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vercel est fait pour les sites construits en code (HTML, Next.js, Astro…) : publication à chaque modification, HTTPS automatique, retour à la version précédente en un clic. Pour un site WordPress, un hébergeur classique reste le choix logique."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style data-polices>@font-face{font-family:'Archivo';font-style:normal;font-weight:800 900;font-stretch:125%;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/archivo-expanded-latin.woff2) format("woff2")}@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500 800;font-stretch:100%;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-latin.woff2) format("woff2")}@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format("woff2")}@font-face{font-family:'Patrick Hand';font-style:normal;font-weight:400;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/patrick-hand-latin.woff2) format("woff2")}@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;font-display:swap;src:url(/assets/fonts/jetbrains-mono-latin.woff2) format("woff2")}</style>
+<style data-p="/css/p-b4fe736840.css" data-sources="/css/commun.css,/css/pages.css,/css/guides.css">:root{--o-bleu:#0055FF;--o-bleu-f:#0045D1;--o-encre:#0E0F13;--o-texte:#64656D;--o-pale:#A3A4AB;--o-gris:#F4F4F5;--o-filet:rgba(14,15,19,.10);--o-titre:"Bricolage Grotesque","Inter",-apple-system,sans-serif;--o-corps:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--o-courbe:cubic-bezier(.16,1,.3,1)}.onav *,.ofin *,.opied *{box-sizing:border-box}.onav{position:fixed;top:0;left:0;right:0;z-index:80;height:0;font-family:var(--o-corps);-webkit-font-smoothing:antialiased}.onav a{color:inherit;text-decoration:none}.onav-capsule{position:relative;margin:14px auto 0;width:min(1120px,calc(100% - 28px));height:64px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 9px 0 22px;background:rgba(255,255,255,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 0 0 1px rgba(14,15,19,.07),0 10px 30px -18px rgba(14,15,19,.3);transition:transform .55s var(--o-courbe), width .55s var(--o-courbe), box-shadow .4s}.onav.cache:not(.ouvert) .onav-capsule{transform:translateY(-110px)}.onav.compact .onav-capsule{width:min(980px,calc(100% - 28px));box-shadow:0 0 0 1px rgba(14,15,19,.08),0 18px 40px -20px rgba(14,15,19,.4)}.onav-logo{display:block;width:76px;height:38px;flex:none;background:var(--o-encre);-webkit-mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat;mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat}.onav-liens{display:flex;align-items:center;gap:2px;flex:1 1 auto;justify-content:center;min-width:0;height:100%}.onav-item{position:static;height:100%;display:flex;align-items:center}.onav-liens a.l{display:flex;align-items:center;gap:6px;font-size:14.5px;font-weight:500;color:var(--o-texte);padding:9px 14px;border-radius:999px;white-space:nowrap;transition:background .2s, color .2s}.onav-liens a.l:hover,.onav-item:focus-within > a.l{background:rgba(14,15,19,.05);color:var(--o-encre)}.onav-liens a.l.ici{color:var(--o-encre)}.onav-liens a.l svg{transition:transform .3s var(--o-courbe)}.onav-item:hover > a.l svg,.onav-item:focus-within > a.l svg{transform:rotate(180deg)}.onav-deroule{position:absolute;top:calc(100% + 10px);left:50%;width:min(620px,92vw);padding:10px;border-radius:24px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.07),0 2px 6px rgba(14,15,19,.04),0 34px 80px -30px rgba(14,15,19,.42);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-8px) scale(.97);transform-origin:50% 0;transition:opacity .22s ease,transform .45s var(--o-courbe),visibility 0s linear .45s}.onav-deroule::before{content:"";position:absolute;left:0;right:0;top:-22px;height:22px}.onav-item:hover .onav-deroule,.onav-item:focus-within .onav-deroule{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1);transition:opacity .22s ease,transform .45s var(--o-courbe),visibility 0s}.dr-grille{display:grid;grid-template-columns:1fr 1fr;gap:4px}.onav-deroule a{position:relative;display:flex;align-items:flex-start;gap:14px;padding:14px;border-radius:17px;transition:background .25s}.onav-deroule a:hover{background:var(--o-gris)}.dr-ic{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--c);color:var(--ic);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 8px 18px -10px var(--c);transition:transform .35s var(--o-courbe)}.dr-ic svg{width:21px;height:21px}.onav-deroule a:hover .dr-ic{transform:translateY(-2px) rotate(-4deg)}.dr-tx{min-width:0;padding-top:2px;padding-right:16px}.onav-deroule b{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--o-encre);line-height:1.25}.onav-deroule small{display:block;margin-top:3px;font-size:13px;line-height:1.35;color:var(--o-texte)}.onav-deroule .fl{position:absolute;top:14px;right:12px;opacity:0;transform:translate(-4px,4px);transition:all .25s var(--o-courbe);color:var(--o-encre)}.onav-deroule a:hover .fl{opacity:1;transform:none}.onav-deroule a{opacity:0;transform:translateY(6px)}.onav-item:hover .onav-deroule a,.onav-item:focus-within .onav-deroule a{opacity:1;transform:none;transition:background .25s,opacity .3s ease calc(.04s + var(--k) * .045s),transform .5s var(--o-courbe) calc(.04s + var(--k) * .045s)}@media (prefers-reduced-motion: reduce){.onav-deroule,.onav-deroule a{transition:none!important;transform:translate(-50%,0)!important}.onav-deroule a{transform:none!important}}.onav-droite{display:flex;align-items:center;gap:8px;flex:none;min-width:max-content}.onav-langue{display:inline-flex;align-items:center;gap:6px;height:32px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--o-filet);padding:2px;font-size:11.5px;font-weight:700;letter-spacing:.06em}.onav-langue a{padding:5px 9px;border-radius:999px;color:var(--o-texte);line-height:1.2;transition:color .2s}.onav-langue a:hover{color:var(--o-encre)}.onav-langue a.on{background:var(--o-encre);color:#fff}.onav-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:42px;padding:0 18px;border-radius:999px;border:0;cursor:pointer;font:600 14px var(--o-corps);white-space:nowrap;background:var(--o-bleu);color:#fff;box-shadow:0 12px 26px -12px rgba(0,85,255,.75);transition:transform .25s var(--o-courbe), background .25s var(--o-courbe)}.onav-cta:hover{transform:translateY(-2px);background:var(--o-bleu-f)}.onav-menu{display:none;position:relative;width:42px;height:42px;flex:none;border:0;border-radius:50%;background:var(--o-gris);cursor:pointer;padding:0}.onav-menu i{position:absolute;left:13px;right:13px;height:2px;border-radius:2px;background:var(--o-encre);transition:transform .45s var(--o-courbe), top .45s var(--o-courbe)}.onav-menu i:first-child{top:16px}.onav-menu i:last-child{top:24px}.onav.ouvert .onav-menu i:first-child{top:20px;transform:rotate(45deg)}.onav.ouvert .onav-menu i:last-child{top:20px;transform:rotate(-45deg)}.onav-panneau{position:fixed;left:14px;right:14px;top:86px;max-height:calc(100svh - 100px);overflow:auto;background:#fff;border-radius:26px;padding:10px;box-shadow:0 0 0 1px rgba(14,15,19,.07),0 30px 70px -24px rgba(14,15,19,.45);opacity:0;visibility:hidden;transform:translateY(-10px) scale(.98);transform-origin:50% 0;transition:opacity .3s var(--o-courbe), transform .45s var(--o-courbe), visibility 0s .45s}.onav.ouvert .onav-panneau{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--o-courbe), transform .45s var(--o-courbe), visibility 0s}.onav-panneau .grand{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-radius:16px;font:700 22px/1.15 var(--o-titre);letter-spacing:-.025em;color:var(--o-encre)}.onav-panneau .grand:hover{background:var(--o-gris)}.onav-panneau .grand svg{color:var(--o-pale)}.onav-panneau .sous{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:2px 4px 8px}.onav-panneau .sous a{display:block;padding:11px 12px;border-radius:14px;background:var(--o-gris);font-size:14px;font-weight:600;color:var(--o-encre);line-height:1.25}.onav-panneau .sous a small{display:block;font-size:12px;font-weight:500;color:var(--o-texte);margin-top:2px}.onav-panneau .bas{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 6px 4px;margin-top:6px;border-top:1px solid var(--o-filet)}.onav-panneau .bas .onav-cta{flex:1;height:48px;font-size:15px}@media(max-width:900px){.onav-liens{display:none}.onav-menu{display:block}.onav-capsule{padding-left:18px}}@media(min-width:901px){.onav-panneau{display:none}}@media(max-width:560px){.onav-droite .onav-langue{display:none}.onav-capsule{gap:10px;padding:0 8px 0 16px}.onav-logo{width:68px}.onav-droite .onav-cta{padding:0 15px;font-size:13.5px}}@media(max-width:340px){.onav-droite .onav-cta{display:none}}.ofin{position:relative;padding:clamp(40px,7vw,96px) 0 clamp(40px,6vw,80px);font-family:var(--o-corps);color:var(--o-encre)}.ofin-carte{position:relative;overflow:hidden;width:min(1240px,calc(100% - 32px));margin:0 auto;border-radius:clamp(26px,3vw,40px);background:var(--o-encre);color:#fff;display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:clamp(28px,5vw,72px);padding:clamp(34px,6vw,84px) clamp(24px,6vw,84px)}.ofin-carte::before{content:"";position:absolute;width:780px;height:780px;right:-260px;top:-300px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,85,255,.55),rgba(0,85,255,.12) 55%,transparent);pointer-events:none}.ofin-carte::after{content:"";position:absolute;width:520px;height:520px;left:-240px;bottom:-320px;border-radius:50%;background:radial-gradient(closest-side,rgba(91,140,255,.22),transparent);pointer-events:none}.ofin-txt{position:relative;z-index:1}.ofin-sur{display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;font-size:13px;font-weight:600;letter-spacing:.02em;color:#B9BAC2}.ofin-sur i{width:8px;height:8px;border-radius:50%;background:#30D158;box-shadow:0 0 0 0 rgba(48,209,88,.5);animation:ofinPouls 2.4s ease-out infinite}@keyframes ofinPouls{0%{box-shadow:0 0 0 0 rgba(48,209,88,.45)}100%{box-shadow:0 0 0 9px rgba(48,209,88,0)}}.ofin h2{margin:0;font-family:var(--o-titre);font-weight:800;letter-spacing:-.045em;line-height:.95;font-size:clamp(44px,6.4vw,96px);text-wrap:balance}.ofin h2 span{display:block;color:#5B8CFF}.ofin-p{margin:24px 0 0;max-width:46ch;font-size:clamp(16px,1.4vw,18px);line-height:1.55;color:#B9BAC2}.ofin-actions{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap;margin-top:34px}.ofin-btn{display:inline-flex;align-items:center;gap:14px;height:64px;padding:0 8px 0 30px;border:0;border-radius:999px;cursor:pointer;background:var(--o-bleu);color:#fff;font:600 17px var(--o-corps);white-space:nowrap;box-shadow:0 22px 44px -18px rgba(0,85,255,.95);transition:transform .25s var(--o-courbe), background .25s}.ofin-btn:hover{transform:translateY(-2px);background:var(--o-bleu-f)}.ofin-btn .rond{width:48px;height:48px;border-radius:50%;background:#fff;color:var(--o-bleu);display:grid;place-items:center;transition:transform .35s var(--o-courbe)}.ofin-btn:hover .rond{transform:rotate(-45deg)}.ofin-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ofin-wa{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s}.ofin-wa:hover{opacity:1}.ofin-wa svg{width:22px;height:22px}.ofin-agenda{position:relative;z-index:1;justify-self:center;width:min(360px,100%);border:0;padding:16px;border-radius:26px;text-align:left;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",sans-serif;color:var(--o-encre);background:rgba(255,255,255,.96);box-shadow:0 40px 80px -36px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.1);transform:rotate(2deg);transition:transform .5s var(--o-courbe)}.ofin-agenda:hover{transform:rotate(0) translateY(-4px)}.ofin-agenda .ent{display:flex;align-items:center;gap:9px;font-size:12.5px;color:rgba(0,0,0,.5)}.ofin-agenda .ent svg{width:24px;height:24px;border-radius:6px;flex:none}.ofin-agenda .ent b{color:var(--o-encre);font-weight:600;font-size:14px}.ofin-agenda .ent em{margin-left:auto;font-style:normal;font-size:12px}.ofin-agenda .sem{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:14px}.ofin-agenda .sem span{display:flex;flex-direction:column;align-items:center;padding:8px 0;border-radius:12px;background:#F4F6F9;font-size:10px;font-weight:600;color:#7a8090}.ofin-agenda .sem b{font-size:17px;color:var(--o-encre)}.ofin-agenda .sem .j{background:var(--o-encre);color:rgba(255,255,255,.7)}.ofin-agenda .sem .j b{color:#fff}.ofin-agenda .cr{display:flex;align-items:center;gap:11px;margin-top:11px;padding:12px;border-radius:14px;background:#EEF3FF;font-size:12.5px;color:#4b5060}.ofin-agenda .cr i{width:3px;align-self:stretch;border-radius:2px;background:var(--o-bleu)}.ofin-agenda .cr span{flex:1}.ofin-agenda .cr b{display:block;font-size:14px;color:var(--o-encre)}.ofin-agenda .cr img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:none}.ofin-agenda .choisir{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:11px;height:42px;border-radius:12px;background:var(--o-encre);color:#fff;font-size:13.5px;font-weight:600}@media(max-width:900px){.ofin-carte{grid-template-columns:1fr;text-align:center}.ofin-p{margin-left:auto;margin-right:auto}.ofin-actions{justify-content:center}.ofin-agenda{transform:none}}@media(max-width:480px){.ofin-btn{height:58px;font-size:16px;padding-left:24px}.ofin-btn .rond{width:42px;height:42px}}.opied{position:relative;overflow:hidden;background:#fff;color:var(--o-encre);font-family:var(--o-corps);font-size:15px;line-height:1.5;border-top:1px solid var(--o-filet);padding:clamp(48px,6vw,80px) 0 0}.opied a{color:inherit;text-decoration:none}.opied-wrap{width:min(1240px,calc(100% - 32px));margin:0 auto}.opied-haut{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px 28px}.opied-logo{display:block;width:96px;height:46px;background:var(--o-encre);-webkit-mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat;mask:url(/assets/onlee-logo-ink.png) left center/contain no-repeat}.opied-marque p{margin:16px 0 0;max-width:34ch;color:var(--o-texte);font-size:14.5px}.opied h3{margin:6px 0 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o-bleu)}.opied ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.opied li a{font-size:15px;font-weight:500;color:var(--o-encre);transition:color .2s}.opied li a:hover{color:var(--o-bleu)}.opied li small{display:block;font-size:12.5px;color:var(--o-texte)}.opied-contact a{display:flex;align-items:center;gap:10px}.opied-contact svg{width:20px;height:20px;flex:none}.opied-geant{display:block;width:100%;height:clamp(70px,17vw,250px);margin:clamp(40px,6vw,70px) 0 0;background:#F1F2F5;-webkit-mask:url(/assets/onlee-logo-ink.png) center bottom/contain no-repeat;mask:url(/assets/onlee-logo-ink.png) center bottom/contain no-repeat}.opied-bas{display:flex;align-items:center;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;padding:18px 0 26px;border-top:1px solid var(--o-filet);font-size:13.5px;color:var(--o-texte)}.opied-bas nav{display:flex;gap:6px 18px;flex-wrap:wrap}.opied-bas a:hover{color:var(--o-encre)}@media(max-width:980px){.opied-haut{grid-template-columns:1fr 1fr}.opied-marque{grid-column:1/-1}}@media(max-width:520px){.opied-haut{grid-template-columns:1fr;text-align:center}.opied-logo{margin:0 auto}.opied-marque p{margin-left:auto;margin-right:auto}.opied-contact a{justify-content:center}.opied-bas{justify-content:center;text-align:center}.opied-bas nav{justify-content:center}}@media print{.onav,.ofin{display:none}}.lire.lire-off{color:#A3A4AB;cursor:default}.si-tactile{display:none}@media(hover:none){.si-souris{display:none}.si-tactile{display:inline}}.hors-ecran,.hors-ecran *{animation-play-state:paused!important}.dr-grille a:nth-child(5),.onav .sous a:nth-child(5){grid-column:1/-1}
+:root{--blanc:#FFFFFF;--gris:#F4F4F5;--encre:#0E0F13;--texte:#64656D;--pale:#A3A4AB;--filet:rgba(14,15,19,.10);--bleu:#0055FF;--bleu-fonce:#0045D1;--titre:"Bricolage Grotesque","Inter",-apple-system,sans-serif;--corps:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--courbe:cubic-bezier(.16,1,.3,1)}*{box-sizing:border-box}html,body{margin:0}body{background:var(--blanc);color:var(--encre);font-family:var(--corps);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit}main{padding-top:110px}.ps-wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}.ps-etroit{width:min(760px,calc(100% - 32px))}.ps-sur{margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bleu)}.ps-haut{padding:clamp(30px,6vw,80px) 0 clamp(20px,3vw,40px);text-align:center}.ps-haut h1{margin:0;font-family:var(--titre);font-weight:800;letter-spacing:-.045em;line-height:.96;font-size:clamp(44px,7vw,100px);text-wrap:balance}.ps-haut h1 span{color:var(--bleu)}.ps-chapo{margin:22px auto 0;max-width:56ch;font-size:clamp(16px,1.5vw,19px);color:var(--texte)}.ps-liste{padding:clamp(20px,4vw,50px) 0 clamp(30px,5vw,60px)}.ps-liste .ps-wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}.ps-liste .art-carte{flex:0 1 560px}.art-carte{display:flex;flex-direction:column;gap:12px;padding:clamp(22px,3vw,34px);border-radius:28px;background:#fff;text-decoration:none;box-shadow:0 0 0 1px rgba(14,15,19,.07),0 24px 50px -32px rgba(14,15,19,.45);transition:transform .35s var(--courbe),box-shadow .35s var(--courbe)}.art-carte:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(0,85,255,.25),0 30px 60px -30px rgba(14,15,19,.5)}.art-rub{align-self:flex-start;padding:5px 11px;border-radius:999px;background:#EDF2FF;color:var(--bleu);font-size:12.5px;font-weight:600}.art-carte h2{margin:0;font-family:var(--titre);font-weight:700;letter-spacing:-.03em;line-height:1.08;font-size:clamp(24px,2.4vw,32px)}.art-carte p{margin:0;color:var(--texte)}.art-pied{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:14px;border-top:1px solid var(--filet);font-size:13.5px;color:var(--texte)}.art-pied .lire{font-weight:600;color:var(--encre)}.art-carte:hover .lire{color:var(--bleu)}.ariane{font-size:13.5px;color:var(--texte);margin:10px 0 0}.ariane a{text-decoration:none;color:var(--texte)}.ariane a:hover{color:var(--encre)}.ariane span{color:var(--pale);margin:0 4px}.art-tete{padding:clamp(24px,4vw,48px) 0 10px}.art-tete h1{margin:0;font-family:var(--titre);font-weight:800;letter-spacing:-.04em;line-height:1.02;font-size:clamp(34px,5vw,58px);text-wrap:balance}.art-meta{margin:16px 0 0;font-size:14px;color:var(--texte)}.prose{padding:10px 0 20px;font-size:17px;line-height:1.72;color:#2B2D33}.prose .standfirst{font-size:clamp(18px,1.7vw,20px);line-height:1.6;color:var(--encre);margin:18px 0 28px}.prose h2{margin:44px 0 12px;font-family:var(--titre);font-weight:700;letter-spacing:-.03em;line-height:1.12;font-size:clamp(25px,2.6vw,32px);color:var(--encre)}.prose p{margin:0 0 16px}.prose ul{margin:0 0 18px;padding-left:22px}.prose li{margin:0 0 8px}.prose li::marker{color:var(--bleu)}.prose a{color:var(--bleu);text-underline-offset:3px}.prose strong{color:var(--encre)}.callout{margin:34px 0;padding:22px 24px;border-radius:20px;background:#EDF2FF}.callout-lab{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bleu);margin-bottom:8px}.callout p{margin:0;color:var(--encre)}.faq{display:grid;gap:10px;margin:8px 0 30px}.faq details{border-radius:16px;background:var(--gris);padding:0 18px}.faq summary{cursor:pointer;list-style:none;padding:16px 28px 16px 0;position:relative;font-weight:600;color:var(--encre)}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";position:absolute;right:0;top:12px;font-size:22px;font-weight:400;color:var(--bleu);transition:transform .3s var(--courbe)}.faq details[open] summary::after{transform:rotate(45deg)}.faq details p{margin:0 0 16px;color:var(--texte)}.art-cta{margin:40px 0;padding:clamp(26px,4vw,40px);border-radius:28px;background:var(--encre);color:#fff;text-align:center}.art-cta h2{margin:0 0 10px;color:#fff}.art-cta p{color:#B9BAC2;max-width:52ch;margin:0 auto 22px}.art-btn{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 28px;border:0;border-radius:999px;cursor:pointer;background:var(--bleu);color:#fff;font:600 16px var(--corps);box-shadow:0 18px 40px -16px rgba(0,85,255,.9);transition:transform .25s var(--courbe),background .25s}.art-btn:hover{transform:translateY(-2px);background:var(--bleu-fonce)}.more-links{margin:40px 0 10px}.more-links .lab{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bleu);margin-bottom:12px}.ml-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.ml-grid a{display:block;padding:16px;border-radius:18px;background:var(--gris);text-decoration:none;color:var(--encre);font-size:14px;line-height:1.45;transition:background .2s}.ml-grid a:hover{background:#EDF2FF}.ml-grid b{display:block;font-size:15px;margin-bottom:4px}.ml-grid span{color:var(--texte)}@media(max-width:700px){.ml-grid{grid-template-columns:1fr}}.legal{padding-bottom:clamp(40px,6vw,80px);font-size:16px;color:#2B2D33}.legal h2{margin:38px 0 10px;padding-top:24px;border-top:1px solid var(--filet);font-family:var(--titre);font-weight:700;letter-spacing:-.025em;font-size:24px;color:var(--encre)}.legal ul{padding-left:20px}.legal a{color:var(--bleu)}.legal b{color:var(--encre)}.ps-404{min-height:calc(100svh - 240px);display:grid;place-items:center}.ps-liens{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:34px}.ps-btn{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;background:var(--bleu);color:#fff;font-weight:600;text-decoration:none;box-shadow:0 14px 30px -14px rgba(0,85,255,.8)}.ps-lien{display:inline-flex;align-items:center;height:52px;padding:0 20px;border-radius:999px;background:var(--gris);color:var(--encre);font-weight:600;text-decoration:none;transition:background .2s}.ps-lien:hover{background:#E8E9EC}
+.guide-page .art-tete{padding-bottom:4px}.g-auteur{display:flex;align-items:center;gap:12px;margin:22px 0 0}.g-auteur img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(14,15,19,.08)}.g-auteur p{margin:0;display:flex;flex-direction:column;line-height:1.35}.g-auteur b{font-size:15px;color:var(--encre)}.g-auteur span{font-size:13.5px;color:var(--texte)}.g-outils{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}.g-outil{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 9px;border-radius:999px;background:#fff;font-size:13.5px;font-weight:600;color:var(--encre);box-shadow:0 0 0 1px rgba(14,15,19,.08),0 6px 14px -10px rgba(14,15,19,.35)}.g-outil svg{width:22px;height:22px;flex:none}.g-sommaire{margin:28px 0 6px;padding:20px 24px;border-radius:20px;background:#F5F7FB;box-shadow:inset 0 0 0 1px rgba(14,15,19,.05)}.g-sommaire p{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--bleu)}.g-sommaire ol{margin:0;padding-left:20px;columns:2 260px;column-gap:28px}.g-sommaire li{margin:0 0 7px;font-size:15px;break-inside:avoid}.g-sommaire li::marker{color:var(--bleu);font-weight:700}.g-sommaire a{color:var(--encre);text-decoration:none}.g-sommaire a:hover{color:var(--bleu)}.guide .g-bref{margin:22px 0 8px;padding:22px 24px;border-radius:20px;background:var(--encre);color:#fff}.guide .g-bref p{margin:0;color:#E6E7EC}.guide .g-bref strong{color:#fff}.guide .g-bref .g-bref-t{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7FA6FF}.guide h2{scroll-margin-top:100px}.guide .g-astuce{margin:4px 0 22px;padding:14px 18px 14px 18px;border-left:3px solid var(--bleu);border-radius:0 14px 14px 0;background:#EEF3FF;font-size:16px;line-height:1.6}.guide .g-astuce span{display:block;margin:0 0 3px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bleu)}.guide .g-exemple{margin:26px 0;padding:22px 24px;border-radius:20px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08),0 18px 40px -26px rgba(14,15,19,.4)}.guide .g-exemple p{margin:0}.guide .g-exemple .g-exemple-t{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1FA855}.guide .g-etapes{list-style:none;margin:8px 0 26px;padding:0;counter-reset:e;display:grid;gap:10px}.guide .g-etapes li{counter-increment:e;position:relative;margin:0;padding:16px 18px 16px 62px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08)}.guide .g-etapes li::before{content:counter(e);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--bleu);color:#fff;display:grid;place-items:center;font:700 14px var(--corps,Inter),sans-serif}.guide .g-etapes b{display:block;color:var(--encre);font-size:16.5px;line-height:1.35}.guide .g-etapes span{display:block;margin-top:3px;font-size:15.5px;line-height:1.55;color:#4A4C55}.guide .g-faq{margin-top:10px}.guide details{border-bottom:1px solid rgba(14,15,19,.1)}.guide summary{position:relative;list-style:none;cursor:pointer;padding:16px 36px 16px 0;font-weight:600;color:var(--encre);font-size:17px}.guide summary::-webkit-details-marker{display:none}.guide summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:24px;font-weight:400;color:var(--bleu);transition:transform .25s}.guide details[open] summary::after{transform:rotate(45deg)}.guide details p{margin:0 0 18px;color:#4A4C55}.g-auteur-bloc{display:flex;gap:18px;align-items:flex-start;margin:34px 0 0;padding:22px;border-radius:20px;background:#F5F7FB}.g-auteur-bloc img{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none}.g-auteur-bloc b{display:block;font-size:16px;color:var(--encre)}.g-auteur-bloc p{margin:4px 0 8px;font-size:15px;line-height:1.55;color:#4A4C55}.g-auteur-bloc a{font-size:14.5px;font-weight:600;color:var(--bleu);text-decoration:none}.g-cta-lien{margin:16px 0 0!important}.g-cta-lien a{color:#B9BAC2;font-size:14.5px;text-decoration:none}.g-cta-lien a:hover{color:#fff}.g-silo{margin:0 0 50px}.g-silo p{margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--texte)}.g-silo ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.g-silo li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08);font-weight:600;color:var(--encre)}.g-silo li span{color:#6B6E78}.g-silo li em{font-style:normal;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;background:#F0F1F4;color:#7A7D86}.g-silo li a{color:var(--encre);text-decoration:none}.g-silo li a:hover{color:var(--bleu)}@media(max-width:600px){.g-sommaire{padding:16px 18px}.guide .g-etapes li{padding:14px 14px 14px 54px}.guide .g-etapes li::before{left:13px}.g-auteur-bloc{flex-direction:column}}.guide .gw{margin:18px 0 24px;padding:18px 20px;border-radius:20px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08),0 18px 40px -28px rgba(14,15,19,.45);font-size:15px;line-height:1.45}.guide .gw-t{margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--texte)}.gw-choix{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.gw-choix span{display:flex;flex-direction:column;gap:2px;padding:12px 12px 12px 38px;position:relative;border-radius:14px;background:#F5F6F8;font-weight:600;color:var(--encre)}.gw-choix small{font-weight:500;color:var(--texte);font-size:12.5px}.gw-choix i{position:absolute;left:12px;top:14px;width:16px;height:16px;border-radius:50%;box-shadow:inset 0 0 0 2px #C4C7CF;background:#fff}.gw-choix .on{background:#EEF3FF;box-shadow:inset 0 0 0 2px var(--bleu)}.gw-choix .on i{box-shadow:inset 0 0 0 5px var(--bleu)}.gw-calc label{display:block;margin:0 0 14px;font-weight:600;color:var(--encre)}.gw-calc label b{float:right;color:var(--bleu)}.gw-calc input[type=range]{display:block;width:100%;margin:10px 0 0;accent-color:var(--bleu);height:22px}.gw-res{margin:4px 0 0;padding:14px 16px;border-radius:14px;background:var(--encre);color:#fff;font-size:17px}.gw-res strong{font-family:var(--titre);font-size:30px;letter-spacing:-.03em;color:#fff}.gw-res small{display:block;margin-top:2px;font-size:13.5px;color:#B9BAC2}.gw-res.peu small{color:#FFB86B}.gw-zone{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;align-items:center}.gw-carte{position:relative;height:170px;border-radius:14px;overflow:hidden;background:linear-gradient(90deg,rgba(14,15,19,.05) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(rgba(14,15,19,.05) 1px,transparent 1px) 0 0/26px 26px,#EEF1F5}.gw-rayon{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;background:rgba(0,85,255,.14);box-shadow:inset 0 0 0 2px rgba(0,85,255,.55)}.gw-pin{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--bleu);box-shadow:0 0 0 4px #fff,0 4px 10px rgba(0,85,255,.5)}.gw-carte em{position:absolute;left:50%;top:calc(50% + 14px);transform:translateX(-50%);font-style:normal;font-weight:700;font-size:12.5px;color:var(--encre)}.gw-carte small{position:absolute;right:10px;bottom:8px;padding:2px 8px;border-radius:999px;background:#fff;font-weight:600;font-size:12px;color:var(--bleu)}.gw-reglages span{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(14,15,19,.07);color:var(--texte);font-size:14px}.gw-reglages b{color:var(--encre)}.guide .gw-form{display:flex;gap:20px;align-items:center;background:#F5F7FB}.gw-tel{flex:none;width:230px;padding:16px;border-radius:24px;background:#fff;box-shadow:0 0 0 6px #0E0F13,0 20px 40px -20px rgba(14,15,19,.6);font-size:13px}.gw-tel-tete{margin:0 0 10px;font-weight:700;color:var(--encre)}.gw-tel-tete span{display:block;font-weight:500;font-size:11.5px;color:var(--texte)}.gw-champ{display:block;margin:0 0 7px;padding:7px 10px;border-radius:9px;background:#F2F3F5;color:var(--encre);font-weight:600}.gw-champ small{display:block;font-weight:500;font-size:10.5px;color:var(--texte)}.gw-q{margin:8px 0 6px;font-weight:600;color:var(--encre)}.gw-puces{display:flex;flex-wrap:wrap;gap:5px}.gw-puces i{font-style:normal;padding:4px 9px;border-radius:999px;background:#F2F3F5;font-size:11.5px;color:#4A4C55}.gw-puces .on{background:var(--bleu);color:#fff}.gw-btn{display:block;margin-top:12px;padding:9px;border-radius:10px;background:#0866FF;color:#fff;text-align:center;font-weight:700}.gw-note{margin:0;color:#4A4C55}.gw-note b{display:block;color:var(--encre);font-size:17px;margin-bottom:4px}.gw-semaine ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.gw-semaine li{margin:0;padding:10px 4px;border-radius:12px;background:#F5F6F8;text-align:center;font-size:11.5px;line-height:1.3;color:var(--texte)}.gw-semaine li b{display:block;font-size:15px;color:var(--encre)}.gw-semaine li.fin{background:var(--bleu);color:#DCE6FF}.gw-semaine li.fin b{color:#fff}.guide .gw-notif{background:#0E0F13;padding:16px}.gw-n{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.08)}.gw-n-ic{flex:none;width:36px;height:36px;border-radius:10px;background:#0866FF url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="white" d="M13 22v-8h3l.5-3.5H13V8.4c0-1 .3-1.7 1.7-1.7H16.6V3.6c-.3 0-1.4-.1-2.7-.1-2.7 0-4.4 1.6-4.4 4.5v2.5H6.5V14h3v8z"/></svg>') center/20px no-repeat}.gw-n p{margin:0;flex:1;display:flex;flex-direction:column;color:#fff}.gw-n p b{font-size:14.5px}.gw-n p span{font-size:13.5px;color:#B9BAC2}.gw-n em{font-style:normal;font-size:12px;color:#8A8D96;align-self:flex-start}.gw-n-act{display:flex;gap:8px;margin-top:10px}.gw-n-act span{flex:1;padding:10px;border-radius:12px;text-align:center;font-weight:700;font-size:14px}.gw-n-a1{background:#fff;color:var(--encre)}.gw-n-a2{background:#25D366;color:#fff}@media(max-width:600px){.gw-choix{grid-template-columns:1fr}.gw-zone{grid-template-columns:1fr}.guide .gw-form{flex-direction:column;align-items:stretch}.gw-tel{width:auto}.gw-semaine ol{grid-template-columns:repeat(4,1fr)}}
+:focus-visible{outline:2px solid #0055FF;outline-offset:3px}:focus:not(:focus-visible){outline:none}@media(max-width:900px){.onav-menu{width:44px!important;height:44px!important}.onav-capsule .onav-cta{min-height:44px}}@media(pointer:coarse){.opied a,.opied button{position:relative}.opied a::after,.opied button::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;transform:translateY(-50%)}}@media(pointer:coarse){#wid-rejouer,#wid-retour,.lire,.ariane a,.p-grand,.lien-site{position:relative}.mini-son::after,#wid-rejouer::after,#wid-retour::after,.lire::after,.ariane a::after,.p-grand::after,.lien-site::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:max(100%,44px);transform:translate(-50%,-50%)}}.boite-sec.sans-3d{height:auto!important;padding:clamp(90px,10vw,130px) 0 clamp(60px,8vw,110px)}.sans-3d .colle{position:relative!important;height:auto!important;overflow:visible!important;display:flex;flex-direction:column;align-items:center}.sans-3d .boite3d{position:relative!important;inset:auto!important;width:min(760px,92vw);aspect-ratio:1200/397;margin:clamp(10px,2vw,24px) auto 0;background:url(/assets/boite-fixe.webp) center/contain no-repeat}.sans-3d .boite3d canvas{display:none!important}.sans-3d .propose{position:relative!important;top:auto!important;order:-1;max-width:calc(100% - 32px);margin:0 auto}@media(max-width:600px){.sans-3d .propose span{font-size:clamp(17px,5.4vw,32px)!important}}.sans-3d .propose .pl-logo{flex:none}.sans-3d .propose .pl-logo,.sans-3d .propose .pl-mots i{opacity:1!important;transform:none!important}.sans-3d .chap-panneaux{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:min(1180px,calc(100% - 32px))!important;margin:clamp(24px,3vw,44px) auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;pointer-events:auto!important}.sans-3d .chap{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;backdrop-filter:none!important;transform:none!important;opacity:1!important;visibility:visible!important;padding:26px 24px;border-radius:24px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.06),0 24px 50px -30px rgba(14,15,19,.35);text-align:left}.sans-3d .chap > *{opacity:1!important;transform:none!important}.sans-3d .chap h3{font-size:clamp(26px,2.4vw,34px)!important}.sans-3d .chap ul{display:grid!important}.sans-3d .propose span{opacity:1!important;transform:none!important;filter:none!important}.sans-3d .chap-suiv,.sans-3d .mini-widgets,.sans-3d .chap-prog,.sans-3d .boite-ui,.sans-3d .infobulle,.sans-3d .invite-dos{display:none!important}</style>
+<style>
+/* Widgets du guide « Mettre ton site en ligne sur Vercel » (tout reste dans la page) */
+
+/* ---------- trajet d'une modification ---------- */
+.guide .gw-trajet-piste{position:relative;margin:4px 0 0}
+.guide .gw-trajet ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;position:relative}
+.guide .gw-trajet li{margin:0;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0}
+.guide .gw-trajet-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff;color:#8A8D96;
+  box-shadow:inset 0 0 0 2px #E1E3E8;transition:color .35s,box-shadow .35s,background .35s}
+.guide .gw-trajet-ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.guide .gw-trajet li b{margin-top:9px;font-size:13.5px;line-height:1.25;color:var(--encre);overflow-wrap:anywhere}
+.guide .gw-trajet li small{margin-top:2px;font-size:12px;color:var(--texte)}
+.guide .gw-trajet li.on .gw-trajet-ic{color:var(--bleu);background:#EEF3FF;box-shadow:inset 0 0 0 2px var(--bleu)}
+.guide .gw-trajet-ligne{position:absolute;left:10%;right:10%;top:22px;height:2px;background:repeating-linear-gradient(90deg,#D5D8DE 0 6px,transparent 6px 11px)}
+.guide .gw-trajet-point{position:absolute;left:0;top:0;z-index:2;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--bleu);
+  box-shadow:0 0 0 4px rgba(0,85,255,.18),0 4px 10px rgba(0,85,255,.45);opacity:0;transition:transform .7s var(--courbe,ease),opacity .3s}
+.guide .gw-trajet-point.vu{opacity:1}
+.guide .gw-trajet-bas{display:flex;align-items:center;gap:18px;margin:18px 0 0;padding:14px;border-radius:16px;background:#F5F7FB}
+.guide .gw-trajet-page{position:relative;flex:none;width:200px;border-radius:12px;background:#fff;box-shadow:0 0 0 1px rgba(14,15,19,.08),0 12px 26px -20px rgba(14,15,19,.55);overflow:hidden}
+.guide .gw-trajet .gw-trajet-nav{display:flex;align-items:center;gap:4px;margin:0;padding:7px 9px;background:#F2F3F5;font-size:10.5px;color:var(--texte)}
+.guide .gw-trajet-nav i{width:6px;height:6px;border-radius:50%;background:#D5D8DE}
+.guide .gw-trajet-nav span{margin-left:6px;padding:1px 8px;border-radius:999px;background:#fff;font-weight:600}
+.guide .gw-trajet-ecran{display:flex;flex-direction:column;gap:6px;padding:12px 12px 14px;background:#F0F1F4;transition:background .6s}
+.guide .gw-trajet-ecran span{display:block;height:7px;border-radius:4px;background:#C9CCD3;transition:background .6s}
+.guide .gw-trajet-ecran .gw-trajet-l1{width:75%;height:10px;background:#A9ADB6}
+.guide .gw-trajet-ecran .gw-trajet-l3{width:55%}
+.guide .gw-trajet-ecran .gw-trajet-bt{width:auto;height:auto;align-self:flex-start;margin-top:4px;padding:4px 12px;border-radius:7px;background:#A9ADB6;color:#fff;font-size:11px;font-weight:700}
+.guide .gw-trajet-page em{position:absolute;right:8px;bottom:8px;padding:2px 8px;border-radius:999px;background:#1FA855;color:#fff;font-style:normal;font-size:10.5px;font-weight:700;
+  opacity:0;transform:translateY(4px);transition:opacity .4s,transform .4s var(--courbe,ease)}
+.guide .gw-trajet-page.maj .gw-trajet-ecran{background:#EEF3FF}
+.guide .gw-trajet-page.maj .gw-trajet-l1{background:var(--encre)}
+.guide .gw-trajet-page.maj .gw-trajet-l2,.guide .gw-trajet-page.maj .gw-trajet-l3{background:#B7C9F2}
+.guide .gw-trajet-page.maj .gw-trajet-bt{background:var(--bleu)}
+.guide .gw-trajet-page.maj em{opacity:1;transform:none}
+.guide .gw-trajet-info{flex:1;min-width:0}
+.guide .gw-trajet .gw-trajet-info p{margin:0 0 10px;font-size:14.5px;line-height:1.45;color:#4A4C55;min-height:2.9em}
+.guide .gw-trajet-info button{height:38px;padding:0 16px;border:0;border-radius:10px;background:var(--encre);color:#fff;font:700 14px var(--corps,Inter),sans-serif;cursor:pointer;transition:background .2s}
+.guide .gw-trajet-info button:hover{background:#2B2D33}
+.guide .gw-trajet-info button:focus-visible{outline:2px solid var(--bleu);outline-offset:2px}
+
+/* ---------- test commercial ou non ---------- */
+.guide .gw-test ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:q}
+.guide .gw-test li{counter-increment:q;display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0;padding:10px 10px 10px 14px;border-radius:14px;background:#F5F6F8}
+.guide .gw-test li > span:first-child{position:relative;padding-left:30px;font-size:15px;font-weight:600;line-height:1.35;color:var(--encre)}
+.guide .gw-test li > span:first-child::before{content:counter(q);position:absolute;left:0;top:-1px;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#fff;color:var(--texte);font-size:12px;font-weight:700}
+.guide .gw-test-rep{flex:none;display:flex;gap:4px;padding:3px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px rgba(14,15,19,.08)}
+.guide .gw-test-rep button{min-width:58px;height:34px;padding:0 12px;border:0;border-radius:9px;background:none;font:600 14px var(--corps,Inter),sans-serif;color:#4A4C55;cursor:pointer;transition:background .2s,color .2s}
+.guide .gw-test-rep button:hover{background:#F2F3F5}
+.guide .gw-test-rep button[data-r=oui][aria-pressed=true]{background:var(--bleu);color:#fff}
+.guide .gw-test-rep button[data-r=non][aria-pressed=true]{background:var(--encre);color:#fff}
+.guide .gw-test-rep button:focus-visible{outline:2px solid var(--bleu);outline-offset:1px}
+.guide .gw-test .gw-test-res{display:flex;flex-direction:column;margin:14px 0 0;padding:14px 16px;border-radius:14px;background:#F5F6F8;color:var(--encre);transition:background .3s,color .3s}
+.guide .gw-test-res strong{font-family:var(--titre);font-size:22px;letter-spacing:-.02em;line-height:1.2;color:inherit}
+.guide .gw-test-res small{margin-top:3px;font-size:13.5px;line-height:1.45;color:var(--texte)}
+.guide .gw-test-res.pro,.guide .gw-test-res.hobby{background:var(--encre);color:#fff}
+.guide .gw-test-res.pro small,.guide .gw-test-res.hobby small{color:#B9BAC2}
+.guide .gw-test-res.pro strong::before,.guide .gw-test-res.hobby strong::before{content:"";display:inline-block;width:10px;height:10px;margin:0 10px 2px 0;border-radius:50%;vertical-align:middle}
+.guide .gw-test-res.pro strong::before{background:#7FA6FF}
+.guide .gw-test-res.hobby strong::before{background:#1FA855}
+.guide .gw-test .gw-test-source{margin:8px 0 0;font-size:12.5px;color:var(--texte)}
+
+/* ---------- zone DNS ---------- */
+.guide .gw-dns-tab{border-radius:14px;box-shadow:0 0 0 1px rgba(14,15,19,.08);overflow:hidden}
+.guide .gw-dns .gw-dns-l{display:grid;grid-template-columns:64px 76px minmax(0,1fr) auto;align-items:center;gap:10px;margin:0;padding:11px 14px;border-top:1px solid rgba(14,15,19,.07);font-size:14px}
+.guide .gw-dns .gw-dns-tete{border-top:0;padding:8px 14px;background:#F5F6F8;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--texte)}
+.guide .gw-dns-nom,.guide .gw-dns-type{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--encre)}
+.guide .gw-dns-val i{display:inline-block;max-width:100%;padding:3px 10px;border-radius:7px;font-style:normal;font-size:13px;font-weight:600;color:var(--bleu);
+  background:repeating-linear-gradient(135deg,#E3EBFF 0 6px,#EEF3FF 6px 12px);box-shadow:inset 0 0 0 1px rgba(0,85,255,.25)}
+.guide .gw-dns-etat{display:inline-flex;align-items:center;gap:6px;justify-self:end;padding:3px 10px;border-radius:999px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.guide .gw-dns-mod{background:#F7F9FF;box-shadow:inset 3px 0 0 var(--bleu)}
+.guide .gw-dns-mod .gw-dns-etat{background:var(--bleu);color:#fff}
+.guide .gw-dns-bloque{background:#FAFAFB}
+.guide .gw-dns-bloque .gw-dns-nom,.guide .gw-dns-bloque .gw-dns-type,.guide .gw-dns-bloque .gw-dns-val{color:#A3A5AD}
+.guide .gw-dns-bloque .gw-dns-etat{background:#F0F1F4;color:#5E616B}
+.guide .gw-dns-etat svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.guide .gw-dns .gw-dns-note{margin:10px 0 0;font-size:13px;color:var(--texte)}
+
+@media(max-width:600px){
+  .guide .gw-trajet ol{grid-template-columns:1fr;gap:0}
+  .guide .gw-trajet li{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:12px;height:58px;text-align:left}
+  .guide .gw-trajet-ic{width:40px;height:40px}
+  .guide .gw-trajet-ic svg{width:20px;height:20px}
+  .guide .gw-trajet li b{margin:0;flex:1}
+  .guide .gw-trajet li small{margin:0 0 0 auto}
+  .guide .gw-trajet-ligne{left:19px;right:auto;top:29px;bottom:29px;width:2px;height:auto;background:repeating-linear-gradient(180deg,#D5D8DE 0 6px,transparent 6px 11px)}
+  .guide .gw-trajet-bas{flex-direction:column;align-items:stretch}
+  .guide .gw-trajet-page{width:auto}
+  .guide .gw-trajet .gw-trajet-info p{min-height:0}
+  .guide .gw-trajet-info button{width:100%;height:42px}
+  .guide .gw-test li{flex-direction:column;align-items:stretch;gap:10px}
+  .guide .gw-test-rep button{flex:1}
+  .guide .gw-dns .gw-dns-l{grid-template-columns:44px 58px minmax(0,1fr);gap:8px;padding:10px 12px}
+  .guide .gw-dns .gw-dns-tete span:last-child{display:none}
+  .guide .gw-dns-etat{grid-column:3;justify-self:start;white-space:normal;border-radius:10px}
+  .guide .gw-dns-val i{font-size:12.5px}
+}
+@media (prefers-reduced-motion: reduce){
+  .guide .gw-trajet *,.guide .gw-test *,.guide .gw-test .gw-test-res{transition:none!important}
+}
+
+</style>
+<link rel="stylesheet" href="/css/cta-express.css" media="print" onload="this.media='all'">
+</head>
+<body class="page-simple">
+<script src="/cookies.js?v=vite1" async></script>
+
+<header class="onav" id="n2">
+  <div class="onav-capsule">
+    <a class="onav-logo" href="/" aria-label="onlee, accueil"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">onlee</span></a>
+    <nav class="onav-liens" aria-label="Navigation principale">
+      <div class="onav-item"><a class="l" href="/#services">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="onav-deroule"><div class="dr-grille"><a href="/logiciels/" style="--c:#0E0F13;--ic:#fff;--k:0"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7.5 13.5h4M7.5 16.5h7"/></svg></span><span class="dr-tx"><b>Logiciels sur mesure</b><small>Le logiciel qu’il manque à ton entreprise</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/publicites/" style="--c:#0866FF;--ic:#fff;--k:1"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.2v3.6a1 1 0 0 0 1 1h2.2L12 18.5v-13L7.2 9.2H5a1 1 0 0 0-1 1z"/><path d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.5 7.5 0 0 1 0 10.4"/></svg></span><span class="dr-tx"><b>Gestion des pubs</b><small>Campagnes Facebook et Instagram</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/sites/" style="--c:#F9AB00;--ic:#0E0F13;--k:2"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9S9.6 5.6 12 3z"/></svg></span><span class="dr-tx"><b>Sites internet et SEO</b><small>Rapides, trouvés sur Google et par les IA</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/vizor/?metier=opticien" style="--c:#4C3175;--ic:#fff;--k:3"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6.5h10M10 12h10M10 17.5h10"/><path d="M4 6.5l1.2 1.2L7.5 5.4M4 12l1.2 1.2 2.3-2.3M4 17.5l1.2 1.2 2.3-2.3"/></svg></span><span class="dr-tx"><b>Vizor et AudioVizor</b><small>Nos logiciels pour opticiens et audioprothésistes</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/communaute/" style="--c:#0055FF;--ic:#fff;--k:4"><span class="dr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9.5" r="2.5"/><path d="M15.8 14.2c2.3-.3 4.2 1.2 4.7 4.3"/></svg></span><span class="dr-tx"><b>Communauté</b><small>Le Club : groupe WhatsApp gratuit entre entrepreneurs</small></span><svg class="fl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
+      <a class="l" href="/realisations/">Réalisations</a>
+      <a class="l" href="/#a-propos">À propos</a>
+      <a class="l" href="/#faq">FAQ</a>
+      <a class="l ici" href="/blog/">Conseils</a>
+    </nav>
+    <div class="onav-droite">
+      <span class="onav-langue"><a class="on" href="/blog/mettre-site-en-ligne-vercel/" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/en/" hreflang="en" lang="en">EN</a></span>
+      <button type="button" class="onav-cta" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel</button>
+      <button type="button" class="onav-menu" aria-expanded="false" aria-controls="onav-panneau" aria-label="Ouvrir le menu"><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="onav-panneau" id="onav-panneau" aria-hidden="true">
+    <a class="grand" href="/#services">Services <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <div class="sous"><a href="/logiciels/">Logiciels sur mesure<small>Le logiciel qu’il manque à ton entreprise</small></a><a href="/publicites/">Gestion des pubs<small>Campagnes Facebook et Instagram</small></a><a href="/sites/">Sites internet et SEO<small>Rapides, trouvés sur Google et par les IA</small></a><a href="/vizor/?metier=opticien">Vizor et AudioVizor<small>Nos logiciels</small></a><a href="/communaute/">Communauté<small>Le Club : groupe WhatsApp gratuit entre entrepreneurs</small></a></div>
+    <a class="grand" href="/realisations/">Réalisations <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/#a-propos">À propos <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/#faq">FAQ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="grand" href="/blog/">Conseils <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <div class="bas"><span class="onav-langue"><a class="on" href="/blog/mettre-site-en-ligne-vercel/" hreflang="fr" lang="fr">FR</a><a href="/en/" hreflang="en" lang="en">EN</a></span><button type="button" class="onav-cta" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel</button></div>
+  </div>
+</header>
+
+<main>
+<div class="ps-wrap ps-etroit guide-page">
+  <nav class="ariane" aria-label="Fil d’Ariane"><a href="/">onlee</a> <span>›</span> <a href="/blog/">Conseils</a> <span>›</span> <a href="/sites/">Sites internet et SEO</a> <span>›</span> Mettre ton site en ligne sur Vercel</nav>
+  <header class="art-tete"><p class="ps-sur">Sites internet et SEO</p><h1>Mettre ton site en ligne sur Vercel, étape par étape</h1>
+    <div class="g-auteur"><img src="/assets/leeroy-visage.webp" alt="" width="44" height="44" loading="lazy" decoding="async"><p><b>Leeroy Ben-Aich</b><span>Fondateur d’onlee · <time datetime="2026-11-21">21 novembre 2026</time> · 7 min de lecture</span></p></div>
+    <div class="g-outils" aria-label="Outils cités"><span class="g-outil"><svg aria-hidden="true" fill="#181717" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</span><span class="g-outil"><svg aria-hidden="true" fill="#000000" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 22.525H0l12-21.05 12 21.05z"/></svg>Vercel</span></div>
+  </header>
+  <div class="guide"><div class="g-bref">
+  <p class="g-bref-t">En bref</p>
+  <p>Pour mettre ton site en ligne sur Vercel, range ses fichiers dans un dépôt <strong>GitHub</strong>, crée un compte Vercel avec ce même compte GitHub, importe le dépôt et lance la publication. Ton site est en ligne à une adresse en .vercel.app, puis tu y relies ton nom de domaine. Ensuite, <strong>chaque modification envoyée sur GitHub se publie toute seule</strong>. Un point que beaucoup de tutoriels oublient : <strong>l’offre gratuite Hobby est réservée aux projets personnels non commerciaux</strong>. Le site d’une entreprise relève de l’offre payante Pro.</p>
+</div>
+
+</div>
+  <nav class="g-sommaire" aria-label="Sommaire"><p>Au sommaire</p><ol><li><a href="#principe">GitHub et Vercel : à quoi sert chacun ?</a></li><li><a href="#gratuit">Vercel est-il gratuit pour le site d’une entreprise ?</a></li><li><a href="#avant">Que faut-il avant de commencer ?</a></li><li><a href="#github">Comment mettre ton site sur GitHub ?</a></li><li><a href="#relier">Comment relier GitHub à Vercel ?</a></li><li><a href="#modifier">Comment publier une modification ?</a></li><li><a href="#domaine">Comment relier ton nom de domaine ?</a></li><li><a href="#apres">Que vérifier une fois le site en ligne ?</a></li><li><a href="#erreurs">Les erreurs qui coûtent le plus cher</a></li><li><a href="#pas-a-pas">Le pas-à-pas pour mettre ton site en ligne</a></li></ol></nav>
+  <article class="prose guide">
+<h2 id="principe">GitHub et Vercel&nbsp;: à quoi sert chacun&nbsp;?</h2>
+<p>Deux outils, deux rôles bien séparés.</p>
+<ul>
+  <li><strong>GitHub</strong> est le coffre où sont rangés les fichiers de ton site, avec l’historique de chaque version. Le compte de base est gratuit, et ton site peut y rester privé.</li>
+  <li><strong>Vercel</strong> est l’hébergeur : il lit ce coffre et affiche ton site sur internet, avec le cadenas HTTPS.</li>
+</ul>
+<p>Une fois les deux reliés, tu n’ouvres presque plus Vercel : tu modifies ton site, tu l’envoies sur GitHub, et Vercel le republie de lui-même. C’est ce qui rend ce duo si pratique quand ton site est fait avec une IA de code (voir <a href="/blog/premier-site-claude-codex/">Ton premier site avec Claude ou Codex</a>).</p>
+<div class="gw gw-trajet" data-trajet>
+  <p class="gw-t">Le trajet d’une modification</p>
+  <div class="gw-trajet-piste" data-piste>
+    <span class="gw-trajet-ligne" aria-hidden="true"></span>
+    <span class="gw-trajet-point" data-point aria-hidden="true"></span>
+    <ol>
+      <li data-etape><span class="gw-trajet-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></span><b>Ton ordinateur</b><small>tu modifies</small></li>
+      <li data-etape><span class="gw-trajet-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><circle cx="12" cy="12" r="3.2"/><path d="M12 8.8V7M7 20v1.5M17 20v1.5"/></svg></span><b>GitHub</b><small>le coffre</small></li>
+      <li data-etape><span class="gw-trajet-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 11 3.5 3.5 0 0 0 7 18z"/></svg></span><b>Vercel</b><small>l’hébergeur</small></li>
+      <li data-etape><span class="gw-trajet-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg></span><b>ton-site.vercel.app</b><small>première adresse</small></li>
+      <li data-etape><span class="gw-trajet-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M6.5 7h.01M9 7h.01"/></svg></span><b>ton-entreprise.fr</b><small>ton domaine</small></li>
+    </ol>
+  </div>
+  <div class="gw-trajet-bas">
+    <div class="gw-trajet-page" data-page aria-hidden="true">
+      <p class="gw-trajet-nav"><i></i><i></i><i></i><span>ton-entreprise.fr</span></p>
+      <div class="gw-trajet-ecran"><span class="gw-trajet-l1"></span><span class="gw-trajet-l2"></span><span class="gw-trajet-l3"></span><span class="gw-trajet-bt">Appeler</span></div>
+      <em>nouvelle version</em>
+    </div>
+    <div class="gw-trajet-info">
+      <p data-statut aria-live="polite">Ta modification part de ton ordinateur, passe par GitHub, puis Vercel la publie.</p>
+      <button type="button" data-rejouer>Rejouer</button>
+    </div>
+  </div>
+</div>
+
+<h2 id="gratuit">Vercel est-il gratuit pour le site d’une entreprise&nbsp;?</h2>
+<p>Non, et c’est le point que la plupart des tutoriels passent sous silence. Vercel a une offre gratuite, appelée <strong>Hobby</strong>, mais ses règles sont claires : elle est <a href="https://vercel.com/docs/limits/fair-use-guidelines">réservée à un usage personnel et non commercial</a>.</p>
+<p>Pour Vercel, un site est commercial dès que quelqu’un en tire un revenu, à n’importe quelle étape. Les exemples qu’il donne :</p>
+<ul>
+  <li>le site <strong>présente des produits ou des services à vendre</strong>, même sans paiement en ligne ;</li>
+  <li>il encaisse des paiements ;</li>
+  <li>quelqu’un est <strong>payé pour le créer, le modifier ou l’héberger</strong> ;</li>
+  <li>il affiche des publicités, ou sert surtout à des liens d’affiliation.</li>
+</ul>
+<p>Le site vitrine d’un artisan, d’un commerce ou d’une entreprise de services est donc commercial. Il lui faut l’offre <strong>Pro</strong> : en novembre 2026, <a href="https://vercel.com/pricing">20 dollars par mois</a> pour une personne qui publie, hors taxes, avec 20 dollars de consommation inclus chaque mois. Un essai gratuit de 14 jours existe.</p>
+<p class="g-astuce"><span>Le repère</span>Hobby pour apprendre, tester et montrer une première version. Pro le jour où le site de ton entreprise est en ligne pour de bon. En cas de doute sur ton cas, le support de Vercel répond à la question.</p>
+<div class="gw gw-test" data-test>
+  <p class="gw-t">Petit test : ton site est-il commercial pour Vercel&nbsp;?</p>
+  <ol>
+    <li data-q><span id="gw-test-q1">Le site présente ce que tu vends&nbsp;?</span><span class="gw-test-rep" role="group" aria-labelledby="gw-test-q1"><button type="button" data-r="oui" aria-pressed="false">Oui</button><button type="button" data-r="non" aria-pressed="false">Non</button></span></li>
+    <li data-q><span id="gw-test-q2">Il encaisse des paiements&nbsp;?</span><span class="gw-test-rep" role="group" aria-labelledby="gw-test-q2"><button type="button" data-r="oui" aria-pressed="false">Oui</button><button type="button" data-r="non" aria-pressed="false">Non</button></span></li>
+    <li data-q><span id="gw-test-q3">Quelqu’un est payé pour le créer, le modifier ou l’héberger&nbsp;?</span><span class="gw-test-rep" role="group" aria-labelledby="gw-test-q3"><button type="button" data-r="oui" aria-pressed="false">Oui</button><button type="button" data-r="non" aria-pressed="false">Non</button></span></li>
+    <li data-q><span id="gw-test-q4">Il affiche des pubs ou des liens d’affiliation&nbsp;?</span><span class="gw-test-rep" role="group" aria-labelledby="gw-test-q4"><button type="button" data-r="oui" aria-pressed="false">Oui</button><button type="button" data-r="non" aria-pressed="false">Non</button></span></li>
+  </ol>
+  <p class="gw-test-res" data-res aria-live="polite"><strong data-titre>Réponds aux 4 questions</strong><small data-txt>Le résultat s’affiche ici.</small></p>
+  <p class="gw-test-source">D’après les règles d’usage publiées par Vercel</p>
+</div>
+
+<h2 id="avant">Que faut-il avant de commencer&nbsp;?</h2>
+<ul>
+  <li><strong>Ton site dans un dossier</strong>, avec la page d’accueil nommée « index.html » à la racine du dossier, pas dans un sous-dossier. Si ton site est fait avec un outil comme Next.js ou Astro, Vercel le reconnaît et s’en occupe.</li>
+  <li><strong>Un compte GitHub</strong>, gratuit.</li>
+  <li><strong>Un compte Vercel</strong>, que tu crées avec ton compte GitHub.</li>
+  <li><strong>Ton nom de domaine</strong> (ton-entreprise.fr) si tu en as un, et l’accès à ton espace client chez la société qui te l’a vendu (OVH, Gandi, IONOS…). Ce n’est pas obligatoire pour une première mise en ligne.</li>
+</ul>
+
+<h2 id="github">Comment mettre ton site sur GitHub&nbsp;?</h2>
+<p>Sur GitHub, ton site vit dans un « dépôt » : un dossier en ligne qui garde toutes les versions. Pour le créer, clique sur <strong>+</strong> en haut à droite de GitHub, puis sur « New repository ». Donne-lui un nom simple, choisis <strong>« Private »</strong> pour que ton code ne soit pas visible de tous, puis « Create repository ».</p>
+<p>Ensuite, envoie tes fichiers. Trois façons de faire :</p>
+<ul>
+  <li><strong>Depuis le navigateur.</strong> Dans ton dépôt : « Add file », puis « Upload files », et glisse le contenu de ton dossier. GitHub accepte <a href="https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository">jusqu’à 100 fichiers par envoi</a> et 25 Mo par fichier.</li>
+  <li><strong>Avec l’application GitHub Desktop</strong>, si tu préfères cliquer plutôt que taper des commandes.</li>
+  <li><strong>En le demandant à ton IA de code.</strong> Si ton site a été fait avec Claude Code ou Codex, écris-lui : « Envoie ce dossier sur mon dépôt GitHub ». Elle connaît les commandes, et ton historique de versions part avec. La première fois, il faudra autoriser l’accès à ton compte GitHub.</li>
+</ul>
+<p class="g-astuce"><span>Le repère</span>Ne mets jamais dans le dépôt un mot de passe, une clé d’accès à un service ou un fichier clients. Même privé, un dépôt n’est pas un coffre-fort.</p>
+
+<h2 id="relier">Comment relier GitHub à Vercel&nbsp;?</h2>
+<ul>
+  <li><strong>Inscris-toi sur vercel.com avec ton compte GitHub.</strong> Vercel te demande l’autorisation d’y accéder : c’est normal, c’est ce qui lui permet de lire ton site.</li>
+  <li><strong>Donne-lui accès à ce seul dépôt.</strong> Au moment d’installer Vercel sur GitHub, choisis « Only select repositories » et coche uniquement le dépôt de ton site. Vercel n’a pas besoin de voir le reste.</li>
+  <li><strong>Crée un nouveau projet et choisis ton dépôt</strong> dans la liste. S’il n’apparaît pas, c’est presque toujours que Vercel n’a pas reçu l’accès à ce dépôt : la page propose un lien pour <a href="https://vercel.com/docs/git/vercel-for-github">ajuster les permissions</a>.</li>
+  <li><strong>Laisse Vercel reconnaître ton site.</strong> Il détecte seul la plupart des outils (Next.js, Astro…). Pour un site simple en HTML et CSS, il choisit « Other » : <a href="https://vercel.com/docs/builds/configure-a-build">il n’y a rien à construire</a>, les fichiers sont publiés tels quels.</li>
+  <li><strong>Clique sur « Deploy ».</strong> Peu après, ton site est en ligne à une adresse du type ton-site.vercel.app. Ouvre-la sur ton téléphone.</li>
+</ul>
+
+<h2 id="modifier">Comment publier une modification&nbsp;?</h2>
+<p>C’est là que le duo prend tout son sens : <strong>chaque modification envoyée sur la branche principale de ton dépôt</strong> (souvent appelée « main ») <a href="https://vercel.com/docs/git">est publiée automatiquement</a> par Vercel. Tu n’as rien d’autre à faire.</p>
+<ul>
+  <li><strong>Pour tester sans risque</strong>, envoie ta modification sur une autre branche que « main ». Vercel crée une version d’essai, avec sa propre adresse, sans toucher au site que voient tes clients. Tu vérifies, puis tu la passes sur « main ».</li>
+  <li><strong>Si une publication échoue</strong>, l’ancienne version reste en ligne et Vercel affiche l’erreur. Copie-la à ton IA de code : elle sait la lire.</li>
+  <li><strong>Si tu as publié une erreur</strong>, Vercel garde les versions précédentes et tu peux remettre la précédente en quelques secondes. Sur l’offre gratuite, seulement la toute dernière ; <a href="https://vercel.com/docs/deployments/rollback-production-deployment">sur Pro, n’importe laquelle</a>.</li>
+</ul>
+<div class="g-exemple">
+  <p class="g-exemple-t">La routine d’une modification</p>
+  <p>Tu demandes le changement à ton IA de code. Tu regardes le résultat sur ton ordinateur. Tu lui demandes d’enregistrer la version et de l’envoyer sur GitHub. Peu après, la modification est en ligne, et tu vérifies sur ton téléphone. C’est tout.</p>
+</div>
+
+<h2 id="domaine">Comment relier ton nom de domaine&nbsp;?</h2>
+<p>Tu peux garder ton nom de domaine là où tu l’as acheté. Il suffit de lui indiquer où se trouve ton site.</p>
+<ol>
+  <li>Dans ton projet Vercel, ouvre « Settings », puis « Domains », et <a href="https://vercel.com/docs/domains/working-with-domains/add-a-domain">ajoute ton domaine</a>. Vercel te propose d’ajouter aussi la version avec « www » : accepte, et laisse l’une renvoyer vers l’autre.</li>
+  <li>Vercel t’affiche les réglages à faire : en général un enregistrement <strong>A</strong> pour ton-entreprise.fr et un enregistrement <strong>CNAME</strong> pour www. <strong>Copie les valeurs affichées par Vercel</strong>, pas celles d’un tutoriel : elles peuvent changer d’un projet à l’autre.</li>
+  <li>Chez la société qui gère ton domaine, ouvre la « zone DNS ». Remplace les anciens enregistrements A et CNAME du domaine et du www par ceux de Vercel. S’il reste un ancien enregistrement sur le même nom, ça ne marche pas. Pense aussi aux lignes <strong>AAAA</strong> : certains registraires en ajoutent une par défaut, et Vercel la signale comme <a href="https://vercel.com/docs/domains/working-with-domains/add-a-domain">un conflit à retirer</a>.</li>
+  <li>Patiente : la prise en compte peut demander un peu de temps. Dans Vercel, le statut du domaine indique quand tout est bon.</li>
+</ol>
+<p>Le cadenas HTTPS se met en place tout seul : Vercel crée le certificat dès que ton domaine pointe vers lui, puis <a href="https://vercel.com/docs/domains/working-with-ssl">le renouvelle automatiquement</a>.</p>
+<div class="gw gw-dns" role="img" aria-label="Exemple de zone DNS : la ligne @ de type A et la ligne www de type CNAME sont à modifier avec les valeurs copiées depuis Vercel ; la ligne @ de type MX, le serveur de messagerie, ne doit pas être touchée.">
+  <p class="gw-t">Zone DNS · ton-entreprise.fr</p>
+  <div class="gw-dns-tab">
+    <p class="gw-dns-l gw-dns-tete"><span>Nom</span><span>Type</span><span>Valeur</span><span></span></p>
+    <p class="gw-dns-l gw-dns-mod"><span class="gw-dns-nom">@</span><span class="gw-dns-type">A</span><span class="gw-dns-val"><i>valeur à copier depuis Vercel</i></span><span class="gw-dns-etat">à modifier</span></p>
+    <p class="gw-dns-l gw-dns-mod"><span class="gw-dns-nom">www</span><span class="gw-dns-type">CNAME</span><span class="gw-dns-val"><i>valeur à copier depuis Vercel</i></span><span class="gw-dns-etat">à modifier</span></p>
+    <p class="gw-dns-l gw-dns-bloque"><span class="gw-dns-nom">@</span><span class="gw-dns-type">MX</span><span class="gw-dns-val">serveur de messagerie</span><span class="gw-dns-etat"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>ne pas toucher : tes e-mails</span></p>
+  </div>
+  <p class="gw-dns-note">Valeurs masquées exprès : copie toujours celles que Vercel t’affiche pour ton projet.</p>
+</div>
+<p class="g-astuce"><span>Le repère</span>Dans la zone DNS, ne touche pas aux lignes MX : ce sont elles qui font arriver tes e-mails. Et si tu changes complètement de « serveurs DNS », Vercel rappelle qu’il faut recopier toutes les lignes avant, e-mails compris.</p>
+
+<h2 id="apres">Que vérifier une fois le site en ligne&nbsp;?</h2>
+<ul>
+  <li><strong>Toutes les pages s’ouvrent</strong>, avec et sans « www », et le cadenas s’affiche.</li>
+  <li><strong>Tes boutons marchent</strong> depuis un téléphone : appel, e-mail, WhatsApp, formulaire.</li>
+  <li><strong>Tes mentions légales citent l’hébergeur</strong> : nom, adresse et téléphone de Vercel, à reprendre sur son site. C’est une <a href="https://entreprendre.service-public.gouv.fr/vosdroits/F37351">mention obligatoire</a> pour le site d’une entreprise.</li>
+  <li><strong>Google connaît ton site.</strong> Déclare-le dans la Search Console de Google pour suivre son référencement : tout est expliqué dans <a href="/blog/etre-trouve-sur-google/">Être trouvé sur Google : les bases</a>.</li>
+</ul>
+<p>La mise en ligne n’est qu’un début : un site se met à jour, se surveille et s’améliore. Si tu préfères qu’on s’en occupe, c’est notre métier, tout est sur la page <a href="/sites/">sites internet et SEO</a>.</p>
+
+<h2 id="erreurs">Les erreurs qui coûtent le plus cher</h2>
+<ul>
+  <li><strong>Laisser le site d’une entreprise sur l’offre gratuite</strong>, réservée aux projets personnels non commerciaux.</li>
+  <li><strong>Ranger la page d’accueil dans un sous-dossier</strong> : Vercel affiche alors une page d’erreur au lieu de ton site.</li>
+  <li><strong>Mettre un mot de passe ou une clé dans le dépôt</strong>, même privé.</li>
+  <li><strong>Effacer les lignes MX</strong> en modifiant la zone DNS : tes e-mails n’arrivent plus.</li>
+  <li><strong>Relier seulement « www », ou seulement le domaine sans « www »</strong> : une partie de tes visiteurs tombe sur une erreur.</li>
+  <li><strong>Donner à Vercel l’accès à tous tes dépôts</strong> alors qu’un seul suffit.</li>
+  <li><strong>Publier sans regarder</strong> : tout ce qui part sur « main » arrive directement en ligne.</li>
+</ul>
+
+<h2 id="pas-a-pas">Le pas-à-pas pour mettre ton site en ligne</h2>
+<ol class="g-etapes">
+  <li><b>Range ton site dans un dossier</b><span>La page d’accueil « index.html » à la racine, rien d’inutile dedans.</span></li>
+  <li><b>Crée un dépôt privé sur GitHub</b><span>« New repository », visibilité « Private ».</span></li>
+  <li><b>Envoie tes fichiers</b><span>Par le navigateur, avec GitHub Desktop ou par ton IA de code.</span></li>
+  <li><b>Inscris-toi sur Vercel avec GitHub</b><span>Et donne-lui accès à ce seul dépôt.</span></li>
+  <li><b>Importe le dépôt et publie</b><span>« Deploy », puis vérifie l’adresse en .vercel.app sur ton téléphone.</span></li>
+  <li><b>Choisis la bonne offre</b><span>Hobby pour tester, Pro pour le site de ton entreprise.</span></li>
+  <li><b>Relie ton nom de domaine</b><span>Settings, Domains, puis les lignes A et CNAME données par Vercel, sans toucher aux MX.</span></li>
+</ol>
+
+<div class="g-faq">
+  <h2 id="faq">Questions fréquentes</h2>
+  <details><summary>Vercel est-il vraiment gratuit&nbsp;?</summary><p>Oui pour un projet personnel non commercial, avec l’offre Hobby. Dès que le site sert une activité qui rapporte de l’argent (présenter tes services, vendre, être payé pour le faire), Vercel demande l’offre Pro, qui est payante.</p></details>
+  <details><summary>Faut-il savoir coder pour mettre son site sur Vercel&nbsp;?</summary><p>Non. Tout se fait par quelques clics dans GitHub et dans Vercel. Le plus technique, c’est la zone DNS de ton nom de domaine, et il s’agit surtout d’y recopier deux lignes.</p></details>
+  <details><summary>Puis-je garder mon nom de domaine chez OVH ou ailleurs&nbsp;?</summary><p>Oui. Tu le gardes là où il est et tu ajoutes, dans sa zone DNS, les enregistrements que Vercel t’indique. Tu peux aussi acheter un domaine directement chez Vercel : l’offre Pro payante en inclut un gratuit la première année, sur certaines extensions.</p></details>
+  <details><summary>Mes e-mails vont-ils continuer à fonctionner&nbsp;?</summary><p>Oui, si tu ne modifies que les lignes A et CNAME du site. Tes e-mails dépendent des lignes MX, qui doivent rester telles quelles.</p></details>
+  <details><summary>Que se passe-t-il si mon site reçoit beaucoup de visites&nbsp;?</summary><p>L’offre gratuite inclut 100 Go de transfert par mois, ce qui suffit en général à un site vitrine léger. Si une limite est dépassée en Hobby, la fonction concernée peut être coupée jusqu’à 30 jours. En Pro, ce qui dépasse le crédit inclus est facturé.</p></details>
+  <details><summary>Vercel ou un hébergeur classique&nbsp;?</summary><p>Vercel est fait pour les sites construits en code (HTML, Next.js, Astro…) : publication à chaque modification, HTTPS automatique, retour à la version précédente en un clic. Pour un site WordPress, un hébergeur classique reste le choix logique.</p></details>
+</div>
+
+  </article>
+  <aside class="g-auteur-bloc"><img src="/assets/leeroy-visage.webp" alt="Leeroy Ben-Aich" width="72" height="72" loading="lazy" decoding="async"><div><b>Leeroy Ben-Aich</b><p>Fondateur d’onlee. Je crée des logiciels sur mesure, des sites et je gère des campagnes Facebook et Instagram pour des entreprises. Ces conseils sont ceux qu’on applique sur nos propres projets.</p><a href="https://www.linkedin.com/in/leeroy-benaich/" target="_blank" rel="noopener">Me suivre sur LinkedIn</a></div></aside>
+  <aside class="art-cta">
+      <h2>Tu préfères qu’on s’en occupe&nbsp;?</h2>
+      <p>On crée ton site, rapide et trouvé sur Google, puis on le suit chaque mois. Un appel de 30 minutes pour voir ce qu’il te faut.</p>
+      <button type="button" class="art-btn" data-cal-namespace="rdv30" data-cal-link="leeroy-benaich/30min" data-cal-config='{"layout":"month_view","theme":"light"}' data-onlee-express>Réserver un appel <span aria-hidden="true">→</span></button>
+      <p class="g-cta-lien"><a href="/sites/">Voir la page sites internet et seo →</a></p>
+    </aside>
+  <nav class="g-silo" aria-label="Autres conseils"><p>Les autres conseils · Sites internet et SEO</p><ul><li><a href="/blog/etre-trouve-sur-google/">Être trouvé sur Google : les bases</a></li><li><a href="/blog/etre-cite-par-les-ia/">Être cité par ChatGPT et les IA</a></li><li><a href="/blog/premier-site-claude-codex/">Ton premier site avec Claude ou Codex</a></li></ul></nav>
+</div>
+<script>
+/* Widgets du guide « Mettre ton site en ligne sur Vercel » : aucun envoi, rien n'est enregistré, tout se passe dans la page */
+
+/* trajet d'une modification : un point parcourt la ligne, la page d'exemple change à l'arrivée */
+(function(){
+  var reduit = false;
+  try { reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  var MSG = [
+    'Tu enregistres la modification sur ton ordinateur.',
+    'Elle part sur GitHub, dans le coffre.',
+    'Vercel la voit et republie le site tout seul.',
+    'Elle est en ligne sur ton-site.vercel.app.',
+    'Et sur ton-entreprise.fr : tes clients voient la nouvelle version.'
+  ];
+  document.querySelectorAll('.gw-trajet').forEach(function(w){
+    var piste = w.querySelector('[data-piste]'), point = w.querySelector('[data-point]'), page = w.querySelector('[data-page]'),
+        statut = w.querySelector('[data-statut]'), rejouer = w.querySelector('[data-rejouer]'),
+        etapes = w.querySelectorAll('[data-etape]'), minuteurs = [], actuelle = 0, lance = false;
+    if (!piste || !point || !etapes.length) return;
+    function placer(i, sansTransition){
+      var ic = etapes[i].querySelector('.gw-trajet-ic') || etapes[i], a = piste.getBoundingClientRect(), b = ic.getBoundingClientRect();
+      var x = b.left - a.left + b.width / 2, y = b.top - a.top + b.height / 2;
+      if (sansTransition) point.style.transition = 'none';
+      point.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+      if (sansTransition) { void point.offsetWidth; point.style.transition = ''; }
+      actuelle = i;
+    }
+    function arreter(){ minuteurs.forEach(clearTimeout); minuteurs = []; }
+    function fin(){
+      etapes.forEach(function(e){ e.classList.add('on'); });
+      placer(etapes.length - 1, true); point.classList.add('vu');
+      if (page) page.classList.add('maj');
+      if (statut) statut.textContent = MSG[MSG.length - 1];
+    }
+    function jouer(){
+      arreter(); lance = true;
+      if (reduit) { fin(); return; }
+      etapes.forEach(function(e){ e.classList.remove('on'); });
+      if (page) page.classList.remove('maj');
+      placer(0, true); point.classList.add('vu');
+      etapes.forEach(function(e, i){
+        minuteurs.push(setTimeout(function(){
+          placer(i);
+          minuteurs.push(setTimeout(function(){
+            e.classList.add('on');
+            if (statut) statut.textContent = MSG[i] || '';
+            if (i === etapes.length - 1 && page) page.classList.add('maj');
+          }, i === 0 ? 0 : 520));
+        }, i * 1100 + 200));
+      });
+    }
+    if (rejouer) rejouer.addEventListener('click', jouer);
+    window.addEventListener('resize', function(){ if (lance) placer(actuelle, true); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entrees){
+        entrees.forEach(function(en){ if (en.isIntersecting) { io.disconnect(); jouer(); } });
+      }, { threshold: 0.5 });
+      io.observe(w);
+    } else jouer();
+  });
+})();
+
+/* petit test : ton site est-il commercial pour Vercel ? */
+(function(){
+  document.querySelectorAll('.gw-test').forEach(function(w){
+    var questions = w.querySelectorAll('[data-q]'), res = w.querySelector('[data-res]'),
+        titre = w.querySelector('[data-titre]'), txt = w.querySelector('[data-txt]');
+    if (!questions.length || !res) return;
+    function maj(){
+      var oui = 0, non = 0;
+      questions.forEach(function(q){
+        var b = q.querySelector('[aria-pressed=true]');
+        if (b) { if (b.getAttribute('data-r') === 'oui') oui++; else non++; }
+      });
+      res.classList.remove('pro', 'hobby');
+      if (oui > 0) {
+        res.classList.add('pro');
+        titre.textContent = 'Offre Pro nécessaire';
+        txt.textContent = 'Pour Vercel, ton site est commercial : l’offre gratuite Hobby ne lui convient pas.';
+      } else if (non === questions.length) {
+        res.classList.add('hobby');
+        titre.textContent = 'Hobby possible';
+        txt.textContent = 'Un projet personnel et non commercial. Si ton site se met à servir ton activité, passe sur Pro.';
+      } else {
+        var reste = questions.length - non;
+        titre.textContent = 'Réponds aux 4 questions';
+        txt.textContent = 'Encore ' + reste + (reste > 1 ? ' questions.' : ' question.');
+      }
+    }
+    questions.forEach(function(q){
+      var boutons = q.querySelectorAll('[data-r]');
+      boutons.forEach(function(b){
+        b.addEventListener('click', function(){
+          var deja = b.getAttribute('aria-pressed') === 'true';
+          boutons.forEach(function(x){ x.setAttribute('aria-pressed', 'false'); });
+          if (!deja) b.setAttribute('aria-pressed', 'true');
+          maj();
+        });
+      });
+    });
+  });
+})();
+
+</script>
+</main>
+
+<footer class="opied">
+  <div class="opied-wrap">
+    <div class="opied-haut">
+      <div class="opied-marque"><a class="opied-logo" href="/" aria-label="onlee, accueil"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">onlee</span></a><p>On conçoit des logiciels sur mesure, on gère tes pubs Facebook et Instagram et on crée des sites internet. Éditeur de Vizor et AudioVizor. À distance, partout en France.</p></div>
+      <div><h3>Services</h3><ul><li><a href="/logiciels/">Logiciels sur mesure</a></li><li><a href="/publicites/">Gestion des pubs</a></li><li><a href="/sites/">Sites internet et SEO</a></li><li><a href="/vizor/?metier=opticien">Vizor et AudioVizor</a></li><li><a href="/communaute/">Communauté</a></li></ul></div>
+      <div><h3>onlee</h3><ul><li><a href="/realisations/">Réalisations</a></li><li><a href="/#a-propos">À propos</a></li><li><a href="/blog/">Conseils</a></li><li><a href="/#faq">Questions fréquentes</a></li><li><a href="https://vizor.onlee.fr/" target="_blank" rel="noopener">Vizor <small>pour les opticiens</small></a></li><li><a href="https://audiovizor.onlee.fr/" target="_blank" rel="noopener">AudioVizor <small>pour les audioprothésistes</small></a></li></ul></div>
+      <div class="opied-contact"><h3>Contact</h3><ul><li><a href="https://wa.me/33680715262?text=Bonjour%20onlee%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.19.84.85-3.11-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg><span>WhatsApp<small>+33 6 80 71 52 62</small></span></a></li><li><a href="mailto:contact@onlee.fr"><svg viewBox="0 0 24 24" fill="none" stroke="#0E0F13" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><span>E-mail<small>contact@onlee.fr</small></span></a></li><li><a href="https://www.linkedin.com/in/leeroy-benaich/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h2.3V17H7.1zM8.25 6a1.33 1.33 0 1 1 0 2.66 1.33 1.33 0 0 1 0-2.66zM10.9 9.6h2.2v1h.03c.31-.58 1.06-1.2 2.18-1.2 2.33 0 2.76 1.53 2.76 3.53V17h-2.3v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9V17h-2.3z"/></svg><span>LinkedIn<small>Leeroy Ben-Aich</small></span></a></li></ul></div>
+    </div>
+    <span class="opied-geant" aria-hidden="true"></span>
+    <div class="opied-bas"><span>© <span data-annee>2026</span> onlee · Conçu et codé par onlee</span><nav aria-label="Liens légaux"><a href="/mentions-legales/">Mentions légales</a><a href="/mentions-legales/#cookies">Confidentialité</a><a href="#cookies" id="cookies-gerer" hidden>Gérer les cookies</a></nav></div>
+  </div>
+</footer>
+<script src="/js/commun.js" defer></script>
+<script defer src="/js/cal.js"></script>
+<script defer src="/js/cta-express.js" data-logo="/assets/onlee-logo-ink.png" data-photo="/assets/leeroy-visage.webp"></script>
+<script src="/js/trafic.js" defer></script>
+<script src="/js/retour.js" defer></script>
+</body>
+</html>
