@@ -55,6 +55,7 @@
 - [IA et données clients : ce qu’une PME doit vérifier](https://onlee.fr/blog/ia-et-donnees-clients/) (22/11/2026) : IA et RGPD en entreprise : données à ne jamais coller, entraînement, hébergement, contrat de sous-traitance, information des clients et relecture humaine.
 - [Passer d’Excel à un CRM sans perdre ses données](https://onlee.fr/blog/passer-d-excel-a-un-crm/) (22/11/2026) : Passer d’Excel à un CRM sans perdre tes données : inventaire, nettoyage, export CSV en UTF-8, import test, vérification, bascule et formation de l’équipe.
 - [Quelles tâches automatiser en premier dans une PME ?](https://onlee.fr/blog/taches-a-automatiser-en-premier/) (22/11/2026) : Automatiser les tâches répétitives en PME : une méthode en 5 questions pour choisir la première, des exemples, ce qui attend, et comment tester avec relecture.
+- [Ranger les articles de ton blog en silos pour le SEO](https://onlee.fr/blog/articles-en-silos-seo/) (23/11/2026) : Silo SEO expliqué simplement : un thème par service, une page principale, des articles qui répondent aux questions de tes clients et des liens qui ont du sens.
 
 ## English
 
